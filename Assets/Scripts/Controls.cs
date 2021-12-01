@@ -18,6 +18,7 @@ public class Controls : MonoBehaviour
     public bool isPlayer1;
 
     public Character character;
+    public PlayerSoundEffectController sfxController;
 
     KeyCode p1_forward = KeyCode.D;
     KeyCode p1_back = KeyCode.A;
@@ -133,7 +134,7 @@ public class Controls : MonoBehaviour
                     colliderLow = false;
 
                     mySpriteRenderer.sprite = spr_High;
-                    
+
                     //TODO play sound 
 
                     //this could be the player blocking.
