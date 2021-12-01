@@ -5,6 +5,9 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
 
+    bool gameEndsPointThreshold = true;
+
+
     public Character otherPlayer;
 
 
@@ -85,7 +88,7 @@ public class Character : MonoBehaviour
         if(iHit && !wasBlocked) {
             //i hit and wasn't blocked. score a point 
             hitsScored++;
-            if(hitsScored == pointsToGame) {
+            if(gameEndsPointThreshold && hitsScored == pointsToGame) {
                 //WE HAVE A WINNER 
                 wonTheGame();
             }

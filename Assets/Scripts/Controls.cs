@@ -122,6 +122,7 @@ public class Controls : MonoBehaviour
                     colliderHighForward= true;
 
                     mySpriteRenderer.sprite = spr_HighForward;
+
                     //TODO play sound 
 
                 } else {
@@ -132,6 +133,7 @@ public class Controls : MonoBehaviour
                     colliderLow = false;
 
                     mySpriteRenderer.sprite = spr_High;
+                    
                     //TODO play sound 
 
                     //this could be the player blocking.
