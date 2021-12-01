@@ -5,8 +5,11 @@ using UnityEngine;
 public class PlayerSoundEffectController : MonoBehaviour
 {
 
-    public AudioSource src_step;
-    public AudioClip sfx_step;
+    public AudioSource src_stepForward;
+    public AudioClip sfx_stepForward;
+
+    public AudioSource src_stepBack;
+    public AudioClip sfx_stepBack;
 
     public AudioSource src_blockHigh;
     public AudioClip sfx_blockHigh;
@@ -29,6 +32,14 @@ public class PlayerSoundEffectController : MonoBehaviour
     public AudioSource src_attackLow;
     public AudioClip sfx_attackLow;
 
+    public AudioSource src_hit;
+    public AudioClip sfx_hit;
+
+    public AudioSource src_missBeat;
+    public AudioClip sfx_missBeat;
+
+    public float vol = 0.5f;
+
 
 
     // Start is called before the first frame update
@@ -43,39 +54,58 @@ public class PlayerSoundEffectController : MonoBehaviour
         
     }
 
-    public void Sfx_Step() {
-        src_step.Play();
+    public void Sfx_StepForward() {
+        src_stepForward.PlayOneShot(sfx_stepForward, vol);
+    }
+
+    public void Sfx_StepBack()
+    {
+        src_stepBack.PlayOneShot(sfx_stepBack, vol);
     }
 
     //aka clash
     public void Sfx_BlockHigh() {
-        src_blockHigh.Play();
+        src_blockHigh.PlayOneShot(sfx_blockHigh, vol);
     }
 
     public void Sfx_BlockLow()
     {
-        src_blockLow.Play();
+        src_blockLow.PlayOneShot(sfx_blockLow, vol);
     }
 
+    //num refers to the combo size, maxing out at 8
     public void Sfx_Combo(int num) {
-
+        src_combo.PlayOneShot(sfx_combos[num], vol);
     }
 
+    //aka swipe, used when switching between high and low stances
     public void Sfx_High() {
-
+        src_switchHigh.PlayOneShot(sfx_switchHigh, vol);
     }
 
     public void Sfx_Low() {
-
+        src_switchLow.PlayOneShot(sfx_switchLow, vol);
     }
 
+    //high and low attack
     public void Sfx_HighForward() {
-
+        src_attackHigh.PlayOneShot(sfx_attackHigh, vol);
     }
 
     public void Sfx_LowForward() {
-
+        src_attackLow.PlayOneShot(sfx_attackLow, vol);
     }
 
+    //successful hit, deals damage
+    public void Sfx_Hit()
+    {
+        src_hit.PlayOneShot(sfx_hit, vol);
+    }
+
+    //missed beat, not necessarily missed attack
+    public void Sfx_MissBeat()
+    {
+        src_missBeat.PlayOneShot(sfx_missBeat, vol);
+    }
 
 }
