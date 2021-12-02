@@ -10,6 +10,9 @@ public class Character : MonoBehaviour
 
     public Character otherPlayer;
 
+    public Controls controls;
+
+    public PlayerSoundEffectController sfxController;
 
 
     static int pointsToGame = 3;
@@ -55,18 +58,60 @@ public class Character : MonoBehaviour
 
         messedUp = true;
 
-        //TODO play a sound 
-
         //TODO splash
+    }
+
+    //we can hit or block an attack if the other player is 2 units in front of us. 
+    bool otherInProximity() {
+        return (controls.position == (-otherPlayer.controls.position + (otherPlayer.controls.posMax - 2)));
+    }
+
+    //whenever we do high/low, check if we've blocked someone. 
+    public void checkBlock() {
+
+        //we're in the right place to block an attack if the other player is 2 units in front of us
+        if(otherInProximity()) {
+            
+            //and we've blocked if our high/low matches their high/low-forward
+            if(controls.colliderHigh && otherPlayer.controls.colliderHighForward) {
+                block(true);
+            } else if(controls.colliderLow && otherPlayer.controls.colliderLowForward) {
+                block(false);
+            }
+            //TODO else- whiff- play a sound? test if we need this 
+
+        }
+
+    }
+
+    //whenever we do high/low-forward, check if we've hit someone. 
+    public void checkHit() {
+        //TODO 
+
+        //we're in the right place to hit if the other player is 2 units in front of us 
+        if(otherInProximity()) {
+
+            //and we've hit if our high/low-forward isn't met with another 
+            if(controls.colliderHighForward && !otherPlayer.controls.colliderHigh) {
+
+            } else {
+
+            }
+
+            //if we ARE met, we've been blocked 
+        }
     }
 
     //block the other's attack. 
     //initiates a riposte. TODO 
-    public void block(bool wasHigh, BeatController.Accuracy accuracy) {
+    public void block(bool wasHigh) {
 
         otherPlayer.wasBlocked = true; 
 
-        //TODO display a splash! 
+
+
+        //TODO display a splash depending on accuracy 
+        //BeatController.Accuracy accuracy 
 
     }
 

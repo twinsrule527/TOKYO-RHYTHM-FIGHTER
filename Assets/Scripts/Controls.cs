@@ -6,11 +6,9 @@ public class Controls : MonoBehaviour
 {
 
     /*
-        TODO 
-        - multi inputs? make an array maybe 
 
-        TO TEST:
-        - attack key vs pressing a directional twice 
+        WISHLIST: controller support 
+
     */
 
     public bool DEBUG = true;
@@ -24,22 +22,22 @@ public class Controls : MonoBehaviour
     KeyCode p1_back = KeyCode.A;
     KeyCode p1_high = KeyCode.W;
     KeyCode p1_low = KeyCode.S;
-    KeyCode p1_attack;
+    //KeyCode p1_attack;
 
     KeyCode p2_forward = KeyCode.LeftArrow;
     KeyCode p2_back = KeyCode.RightArrow;
     KeyCode p2_high = KeyCode.UpArrow;
     KeyCode p2_low = KeyCode.DownArrow;
-    KeyCode p2_attack;
+    //KeyCode p2_attack;
 
-    float moveDistance = 1f;    //distance to move in space as one unit
-    int position = 0;           //how many units we are from starting point/baseline 
-    int posMax = 6;             //how many units you can move forward from baseline
-    int posMin = -2;            //how many units you can move back from baseline
-    int posCenter;              //how many units away from 0,0 each are. will be gotten in Start() 
+    float moveDistance = 1f;        //distance to move in space as one unit
+    public int position = 0;        //how many units we are from starting point/baseline 
+    public int posMax = 6;          //how many units you can move forward from baseline
+    public int posMin = -2;         //how many units you can move back from baseline
+    int posCenter;                  //how many units away from 0,0 each are. will be gotten in Start() 
 
 
-    KeyCode forwardKey, backKey, highKey, lowKey, attackKey;
+    KeyCode forwardKey, backKey, highKey, lowKey; //attackKey;
     int moveSign = 1;
 
 
@@ -49,7 +47,7 @@ public class Controls : MonoBehaviour
     public GameObject debugcolliderLowForward;
 
 
-    bool colliderHigh, colliderHighForward, colliderLow, colliderLowForward; 
+    public bool colliderHigh, colliderHighForward, colliderLow, colliderLowForward; 
 
 
     public Sprite spr_High;
@@ -70,7 +68,7 @@ public class Controls : MonoBehaviour
             backKey = p1_back;
             highKey = p1_high;
             lowKey = p1_low;
-            attackKey = p1_attack;
+            //attackKey = p1_attack;
 
             //moveSign = 1;
         } else {
@@ -78,7 +76,7 @@ public class Controls : MonoBehaviour
             backKey = p2_back;
             highKey = p2_high;
             lowKey = p2_low;
-            attackKey = p2_attack;
+            //attackKey = p2_attack;
 
             //moveSign = 1;
         }
@@ -94,24 +92,28 @@ public class Controls : MonoBehaviour
         bool back = Input.GetKeyDown(backKey);
         bool high = Input.GetKeyDown(highKey);
         bool low = Input.GetKeyDown(lowKey);
-        bool attack = Input.GetKeyDown(attackKey);
+        //bool attack = Input.GetKeyDown(attackKey);
 
-        //TODO first of all, check if we're on the beat. 
-        //if we're on the beat, do all this logic. if we're not, mess up. 
-
+        
         //first of all, check if we're on beat. 
-        if(!BeatController.IsOnBeat()) {
+        //if we're on the beat, do all this logic. if we're not, mess up. 
+        if((forward || back || high || low) && !BeatController.IsOnBeat()) {
+
+            //we're not on beat! 
+            sfxController.Sfx_MissBeat();
             character.messUp();
 
         } else if(!character.messedUp) {
             
-            if(forward && position < posMax) {
+            if(forward && position < posMax) { //TODO check if the player can move and isnt blocked by the other player 
                 position++;
                 transform.Translate(moveDistance * moveSign, 0, 0);
+                sfxController.Sfx_StepForward();
             }
             if(back && position > posMin) {
                 position--;
                 transform.Translate(moveDistance * moveSign * -1, 0, 0);
+                sfxController.Sfx_StepBack();
             }
 
 
@@ -124,7 +126,9 @@ public class Controls : MonoBehaviour
 
                     mySpriteRenderer.sprite = spr_HighForward;
 
-                    //TODO play sound 
+                    sfxController.Sfx_HighForward();
+
+                    character.checkHit();
 
                 } else {
                     //collider high isn't active. 
@@ -135,12 +139,11 @@ public class Controls : MonoBehaviour
 
                     mySpriteRenderer.sprite = spr_High;
 
-                    //TODO play sound 
+                    sfxController.Sfx_High();
 
-                    //this could be the player blocking.
-                    //TODO how to check blocking?
-                    //check colliders? maybe there's a flag set on collide 
-                    //alternatively, do this in the enter function? 
+                    //this could be the player blocking. check if we blocked the other player.
+                    character.checkBlock();
+                    
                 }
                 
             }
@@ -150,7 +153,10 @@ public class Controls : MonoBehaviour
                     colliderLowForward = true;
 
                     mySpriteRenderer.sprite = spr_LowForward;
-                    //TODO play sound 
+                    
+                    sfxController.Sfx_LowForward();
+
+                    character.checkHit();
 
                 } else {
                     colliderLow = true;
@@ -158,9 +164,11 @@ public class Controls : MonoBehaviour
                     colliderHigh = false;
 
                     mySpriteRenderer.sprite = spr_Low;
-                    //TODO play sound 
+                    
+                    sfxController.Sfx_Low();
 
-                    //TODO blocking 
+                    character.checkBlock();
+
                 }
                 
             }
@@ -180,19 +188,6 @@ public class Controls : MonoBehaviour
 
         }
 
-
-
-        /*
-        POSSIBLE STATES 
-        high forward, high forward, forward meet in middle 
-        high forward, high forward, cross 
-
-        high, high forward- high blocks high forward, high gets a riposte 
-        high, low forward- low gets a hit 
-        low, high forward- high gets a hit 
-        low, low forward- low blocks low forward, low gets a riposte 
-
-        */
 
 /*
         if(high) {
