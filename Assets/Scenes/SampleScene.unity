@@ -349,7 +349,7 @@ MonoBehaviour:
   good: 1
   great: 1
   perfect: 1
-  offOpacity: 0
+  offOpacity: 0.33
   onOpacity: 1
 --- !u!212 &385834277
 SpriteRenderer:
@@ -451,7 +451,7 @@ MonoBehaviour:
   good: 0
   great: 1
   perfect: 1
-  offOpacity: 0
+  offOpacity: 0.33
   onOpacity: 1
 --- !u!212 &391494431
 SpriteRenderer:
@@ -649,7 +649,7 @@ MonoBehaviour:
   good: 0
   great: 0
   perfect: 1
-  offOpacity: 0
+  offOpacity: 0.33
   onOpacity: 1
 --- !u!212 &441591775
 SpriteRenderer:
@@ -751,7 +751,7 @@ MonoBehaviour:
   good: 1
   great: 1
   perfect: 1
-  offOpacity: 0
+  offOpacity: 0.33
   onOpacity: 1
 --- !u!212 &688353420
 SpriteRenderer:
@@ -1037,7 +1037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4138029348902706620, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 4138029348902706620, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1709,7 +1709,7 @@ MonoBehaviour:
   good: 0
   great: 1
   perfect: 1
-  offOpacity: 0
+  offOpacity: 0.33
   onOpacity: 1
 --- !u!212 &1506258382
 SpriteRenderer:
@@ -1811,7 +1811,7 @@ MonoBehaviour:
   good: 1
   great: 1
   perfect: 1
-  offOpacity: 0
+  offOpacity: 0.33
   onOpacity: 1
 --- !u!212 &1576417741
 SpriteRenderer:
@@ -1913,7 +1913,7 @@ MonoBehaviour:
   good: 1
   great: 1
   perfect: 1
-  offOpacity: 0
+  offOpacity: 0.33
   onOpacity: 1
 --- !u!212 &1630962746
 SpriteRenderer:
@@ -2206,7 +2206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4138029348902706620, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 4138029348902706620, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
       propertyPath: m_LocalPosition.z

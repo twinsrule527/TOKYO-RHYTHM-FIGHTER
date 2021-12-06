@@ -2053,6 +2053,7 @@ GameObject:
   - component: {fileID: 1458612321222599610}
   - component: {fileID: 5279837589644827638}
   - component: {fileID: 6515436511395516753}
+  - component: {fileID: 2772134012182543435}
   m_Layer: 0
   m_Name: CharacterSpriteController
   m_TagString: Untagged
@@ -2144,6 +2145,24 @@ MonoBehaviour:
   spr_Low: {fileID: 21300000, guid: 1ae731d7827ec0c4cb949bbc8ef08b18, type: 3}
   spr_LowForward: {fileID: 21300000, guid: 14ca45d296db25245ba7ae916b4cf7b5, type: 3}
   spr_MessUp: {fileID: 21300000, guid: 0bf3cc6fa37b4b148b52de4b07f1308a, type: 3}
+--- !u!114 &2772134012182543435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4466621527985935956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2407ff639cf6a6049b03db82a4033ae0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xScaleMax: 0.3225
+  xScaleMin: 0.3375
+  yScaleMax: 0.34
+  yScaleMin: 0.32
+  zScaleMin: 1
+  zScaleMax: 1
 --- !u!1 &4855458739826803145
 GameObject:
   m_ObjectHideFlags: 0
