@@ -164,11 +164,9 @@ public class Character : MonoBehaviour
 
         //cont- if we were forward, reset to blocking 
         if(controls.colliderHighForward) {
-            spriteController.high();
             controls.colliderHighForward = false;
         }
         if(controls.colliderLowForward) {
-            spriteController.low();
             controls.colliderLowForward = false;
         }
 

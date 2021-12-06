@@ -44,6 +44,8 @@ public class BeatController : MonoBehaviour
     public static float thresh_GREAT = 0.05f;
     public static float thresh_PERFECT = 0.01f;
 
+    bool beatEnded = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -77,9 +79,12 @@ public class BeatController : MonoBehaviour
 
         //check if we've passed the end of the threshold of this beat. 
         //if we have, call the end of beat functions for both players. 
-        if(getDistanceFromBeat() > thresh_OK) {
+        if(!beatEnded && getDistanceFromBeat() > thresh_GOOD) {
+            beatEnded = true;
             ch1.endOfBeat();
             ch2.endOfBeat();
+        } else if(getDistanceFromBeat() > 0.6f) {   //if we've moved on to the next beat, open this flag 
+            beatEnded = false;
         }
         
     }

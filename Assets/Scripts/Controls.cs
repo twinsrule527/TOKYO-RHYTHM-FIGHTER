@@ -132,6 +132,7 @@ public class Controls : MonoBehaviour
                     colliderHighForward= true;
 
                     spriteController.highForward();
+                    StartCoroutine(forwardReturn(true));
 
                     sfxController.Sfx_HighForward();
 
@@ -161,6 +162,7 @@ public class Controls : MonoBehaviour
                     colliderLowForward = true;
 
                     spriteController.lowForward();
+                    StartCoroutine(forwardReturn(false));
                     
                     sfxController.Sfx_LowForward();
 
@@ -196,45 +198,18 @@ public class Controls : MonoBehaviour
 
         }
 
+    }
 
-/*
-        if(high) {
+    //change the sprite to forward but only for like half a second. it'll return to normal state after. 
+    IEnumerator forwardReturn(bool isHigh) {
 
-            if(colliderHigh.activeSelf) {
-                //collider high is active. 
-                //set high forward to active. 
-                colliderHighForward.SetActive(true);
-
-            } else {
-                //collider high isn't active. 
-                //set collider high to active, set collider low to inactive, and set high forward to inactve
-                colliderHigh.SetActive(true);
-                colliderHighForward.SetActive(false);
-                colliderLow.SetActive(false);
-
-                //this could be the player blocking.
-                //TODO how to check blocking?
-                //check colliders? maybe there's a flag set on collide 
-                //alternatively, do this in the enter function? 
-            }
-            
+        yield return new WaitForSeconds(0.5f);
+        
+        if(isHigh && colliderHigh) {
+            spriteController.high();
+        } else if(colliderLow) {
+            spriteController.low();
         }
-        if(low) {
-
-            if(colliderLow.activeSelf) {
-                colliderLowForward.SetActive(true);
-            } else {
-                colliderLow.SetActive(true);
-                colliderLowForward.SetActive(false);
-                colliderHigh.SetActive(false);
-
-                //TODO blocking 
-            }
-            
-        }
-        */
-
-
     }
 
 }

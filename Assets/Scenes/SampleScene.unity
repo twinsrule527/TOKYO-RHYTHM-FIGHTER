@@ -617,7 +617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4138029348902706595, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4138029348902706620, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
       propertyPath: m_RootOrder
@@ -667,6 +667,38 @@ PrefabInstance:
       propertyPath: isPlayer1
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5279837589644827638, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5279837589644827638, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ba0d611a7b37b4d9782a95f78496e462, type: 3}
+    - target: {fileID: 6515436511395516753, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
+      propertyPath: spr_Low
+      value: 
+      objectReference: {fileID: 21300000, guid: 4168eb65af6bbab40b761e9314586714, type: 3}
+    - target: {fileID: 6515436511395516753, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
+      propertyPath: spr_High
+      value: 
+      objectReference: {fileID: 21300000, guid: 90a0a23f613a8b94db17542916c84567, type: 3}
+    - target: {fileID: 6515436511395516753, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
+      propertyPath: spr_Idle
+      value: 
+      objectReference: {fileID: 21300000, guid: ba0d611a7b37b4d9782a95f78496e462, type: 3}
+    - target: {fileID: 6515436511395516753, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
+      propertyPath: spr_MessUp
+      value: 
+      objectReference: {fileID: 21300000, guid: ba0d611a7b37b4d9782a95f78496e462, type: 3}
+    - target: {fileID: 6515436511395516753, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
+      propertyPath: spr_LowForward
+      value: 
+      objectReference: {fileID: 21300000, guid: ff444e12a74571f4eba5d7e62832f078, type: 3}
+    - target: {fileID: 6515436511395516753, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
+      propertyPath: spr_HighForward
+      value: 
+      objectReference: {fileID: 21300000, guid: eda39ded1a49a3a4b874dc520b329c5e, type: 3}
     - target: {fileID: 7311281237321399364, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
       propertyPath: m_FlipX
       value: 1
@@ -1282,7 +1314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4138029348902706595, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4138029348902706620, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
       propertyPath: m_RootOrder
@@ -1328,6 +1360,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6515436511395516753, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
+      propertyPath: spr_Low
+      value: 
+      objectReference: {fileID: 21300000, guid: 041ef900899580447937590d8835193f, type: 3}
+    - target: {fileID: 6515436511395516753, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
+      propertyPath: spr_High
+      value: 
+      objectReference: {fileID: 21300000, guid: 4cf2667bd55c809448ccf99ef8f50159, type: 3}
+    - target: {fileID: 6515436511395516753, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
+      propertyPath: spr_MessUp
+      value: 
+      objectReference: {fileID: 21300000, guid: 897658ad228304b149961cd3c98caf01, type: 3}
+    - target: {fileID: 6515436511395516753, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
+      propertyPath: spr_LowForward
+      value: 
+      objectReference: {fileID: 21300000, guid: 3d33f80645260f64d96d2820c7339900, type: 3}
+    - target: {fileID: 6515436511395516753, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
+      propertyPath: spr_HighForward
+      value: 
+      objectReference: {fileID: 21300000, guid: 22768bf7466769c4b94429761217922a, type: 3}
     - target: {fileID: 9161921744017233077, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
       propertyPath: otherPlayer
       value: 
