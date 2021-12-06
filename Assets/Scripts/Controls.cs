@@ -7,6 +7,9 @@ public class Controls : MonoBehaviour
 
     /*
 
+        TODO: when we can and can't act (ex. waiting for start)
+        or maybe they just cant move at the start lol 
+
         WISHLIST: controller support 
 
     */
@@ -51,7 +54,6 @@ public class Controls : MonoBehaviour
     public bool colliderHigh, colliderHighForward, colliderLow, colliderLowForward; 
 
     public bool actedThisBeat = false;
-
 
     
 

@@ -6,29 +6,31 @@ public class BeatController : MonoBehaviour
 {
 
     public enum Accuracy {
-        OK, GOOD, GREAT, PERFECT 
+        OK, GOOD, GREAT, PERFECT, OFFBEAT
     }
+
+    public AudioSource audioSource;
 
     public Character ch1;
     public Character ch2;
 
     //BPM 
     //easy to know and set. human-readable, will be used to do some conversion 
-    public static float BPM = 110; 
+    public static float BPM = 100; 
+
+    //will be calculated from BPM. in seconds. 
+    public static float secPerBeat;
 
     //song position, in seconds 
     public static float songPos = 0;
-
-    //when the song started, in unity audio time 
-    public static float songStartTime;
 
     //what beat the song is on ex. 1, 2, 4, 5.5, 6.75 
     //we will use a threshold with this for reaction 
     public static float beat = 0;
 
-    //will be calculated from BPM. in seconds. 
-    public static float secPerBeat;
-
+    //time the song started, in unity audio time 
+    public static float songStartTime;
+    
     //how near or far we are from a beat. 
     //1 when exactly on beat (ex. 5.0) 0 when exactly between beats (ex. 5.5)
     //would look like a triangle wave when graphed 
@@ -46,17 +48,32 @@ public class BeatController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //TODO convert BPM to functional value 
+        //convert BPM to functional value 
+        secPerBeat = 60f / BPM;
 
 
+        //TODO might have the song started by a button or soemthing idk. 
+        //for now just starts at startup 
+        startSong();
 
+
+    }
+
+    //call when we start the song. 
+    //records the time ect 
+    void startSong() {
+        //kick off tracker with current time 
+        songStartTime = (float)AudioSettings.dspTime;
+        audioSource.Play();
     }
 
     // Update is called once per frame
     void Update()
     {
         //update all our tracker variables. 
-        //TODO 
+        songPos = (float)(AudioSettings.dspTime - songStartTime);
+        beat = songPos / secPerBeat;
+        beatOffset = getAbsDistanceFromBeat();
 
         //check if we've passed the end of the threshold of this beat. 
         //if we have, call the end of beat functions for both players. 
@@ -74,8 +91,20 @@ public class BeatController : MonoBehaviour
 
     //get the current accuracy. returns OK, GOOD, GREAT, PERFECT according to thresholds. 
     public static Accuracy GetAccuracy() {
+
         float dist = getAbsDistanceFromBeat();
-        return Accuracy.GOOD;
+        if(dist < thresh_PERFECT) {
+            return Accuracy.PERFECT;
+        } else if(dist < thresh_GREAT) {
+            return Accuracy.GREAT;
+        } else if(dist < thresh_GOOD) {
+            return Accuracy.GOOD;
+        } else if(dist < thresh_OK) {
+            return Accuracy.OK;
+        } else {
+            return Accuracy.OFFBEAT;
+        }
+        
     }
 
 
