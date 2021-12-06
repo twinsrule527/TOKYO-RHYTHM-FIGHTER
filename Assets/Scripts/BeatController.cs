@@ -41,8 +41,8 @@ public class BeatController : MonoBehaviour
 
     //thresholds to be on beat, in seconds. 
     //OK represents the overall threshold. 
-    public static float thresh_OK = 0.1f;
-    public static float thresh_GOOD = 0.075f;
+    public static float thresh_OK = 0.13f;
+    public static float thresh_GOOD = 0.09f;
     public static float thresh_GREAT = 0.05f;
     public static float thresh_PERFECT = 0.025f;
 
