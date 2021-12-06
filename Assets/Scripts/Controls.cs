@@ -17,6 +17,7 @@ public class Controls : MonoBehaviour
 
     public Character character;
     public PlayerSoundEffectController sfxController;
+    public CharacterSpriteController spriteController;
 
     KeyCode p1_forward = KeyCode.D;
     KeyCode p1_back = KeyCode.A;
@@ -49,15 +50,10 @@ public class Controls : MonoBehaviour
 
     public bool colliderHigh, colliderHighForward, colliderLow, colliderLowForward; 
 
+    public bool actedThisBeat = false;
 
-    public Sprite spr_High;
-    public Sprite spr_HighForward;
-    public Sprite spr_Low;
-    public Sprite spr_LowForward;
-    public Sprite spr_MessUp;
 
-    public SpriteRenderer mySpriteRenderer;
-
+    
 
     void Start() {
 
@@ -97,34 +93,43 @@ public class Controls : MonoBehaviour
         
         //first of all, check if we're on beat. 
         //if we're on the beat, do all this logic. if we're not, mess up. 
-        if((forward || back || high || low) && !BeatController.IsOnBeat()) {
+        if((forward || back || high || low) && !actedThisBeat && !BeatController.IsOnBeat()) {
 
             //we're not on beat! 
+            colliderHigh = false;
+            colliderHighForward = false;
+            colliderLow = false;
+            colliderLowForward = false;
             sfxController.Sfx_MissBeat();
+            spriteController.messUp();
             character.messUp();
+            actedThisBeat = true;
 
-        } else if(!character.messedUp) {
+        } else if(!character.messedUp && !actedThisBeat) {
             
             if(forward && position < posMax) { //TODO check if the player can move and isnt blocked by the other player 
                 position++;
                 transform.Translate(moveDistance * moveSign, 0, 0);
                 sfxController.Sfx_StepForward();
+                actedThisBeat = true;
             }
             if(back && position > posMin) {
                 position--;
                 transform.Translate(moveDistance * moveSign * -1, 0, 0);
                 sfxController.Sfx_StepBack();
+                actedThisBeat = true;
             }
 
 
             if(high) {
+                actedThisBeat = true;
 
                 if(colliderHigh) {
                     //collider high is active. 
                     //set high forward to active. 
                     colliderHighForward= true;
 
-                    mySpriteRenderer.sprite = spr_HighForward;
+                    spriteController.highForward();
 
                     sfxController.Sfx_HighForward();
 
@@ -137,7 +142,7 @@ public class Controls : MonoBehaviour
                     colliderHighForward = false;
                     colliderLow = false;
 
-                    mySpriteRenderer.sprite = spr_High;
+                    spriteController.high();
 
                     sfxController.Sfx_High();
 
@@ -148,11 +153,12 @@ public class Controls : MonoBehaviour
                 
             }
             if(low) {
+                actedThisBeat = true;
 
                 if(colliderLow) {
                     colliderLowForward = true;
 
-                    mySpriteRenderer.sprite = spr_LowForward;
+                    spriteController.lowForward();
                     
                     sfxController.Sfx_LowForward();
 
@@ -163,7 +169,7 @@ public class Controls : MonoBehaviour
                     colliderLowForward = false;
                     colliderHigh = false;
 
-                    mySpriteRenderer.sprite = spr_Low;
+                    spriteController.low();
                     
                     sfxController.Sfx_Low();
 

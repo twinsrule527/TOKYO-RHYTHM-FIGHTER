@@ -13,6 +13,8 @@ public class Character : MonoBehaviour
     public Controls controls;
 
     public PlayerSoundEffectController sfxController;
+    public CharacterSpriteController spriteController;
+    public SpriteSplash spriteSplashController;
 
 
     static int pointsToGame = 3;
@@ -36,9 +38,7 @@ public class Character : MonoBehaviour
     public bool wasBlocked = false;
     public bool messedUp = false;
 
-
-
-    public SpriteSplash spriteSplashController;
+    
 
 
     // Start is called before the first frame update
@@ -86,42 +86,60 @@ public class Character : MonoBehaviour
 
     //whenever we do high/low-forward, check if we've hit someone. 
     public void checkHit() {
-        //TODO 
 
         //we're in the right place to hit if the other player is 2 units in front of us 
         if(otherInProximity()) {
 
             //and we've hit if our high/low-forward isn't met with another 
             if(controls.colliderHighForward && !otherPlayer.controls.colliderHigh) {
-
-            } else {
-
+                hit(true);
+            } else if(controls.colliderLowForward && !otherPlayer.controls.colliderLow) {
+                hit(false);
+            }
+            //but if we ARE met, WE'VE been blocked 
+            else if(controls.colliderHighForward && otherPlayer.controls.colliderHigh){
+                otherPlayer.block(true);
+            } else if(controls.colliderLowForward && otherPlayer.controls.colliderLow) {
+                otherPlayer.block(false);
             }
 
-            //if we ARE met, we've been blocked 
         }
     }
 
-    //block the other's attack. 
+    //we blocked the other player's attack. swords clashed. 
     //initiates a riposte. TODO 
     public void block(bool wasHigh) {
 
         otherPlayer.wasBlocked = true; 
 
+        //TODO rack up points depending on accuracy 
+        BeatController.Accuracy accuracy = BeatController.GetAccuracy();
 
+        //display a splash depending on accuracy 
+        spriteSplashController.showSplash(wasHigh, accuracy);
 
-        //TODO display a splash depending on accuracy 
-        //BeatController.Accuracy accuracy 
+        riposte();
+
+    }
+
+    //this player gets a riposte. 
+    //this could be called either by this player if they block, or by the other player if they were blocked by this player 
+    //this player can attack on the offbeat. 
+    //TODO
+    public void riposte() {
 
     }
 
     //high/low forward collides with body. 
     //this could get overwritten by a block, so it won't score until the end of the beat threshold. 
-    public void hit(bool wasHigh, BeatController.Accuracy accuracy) {
+    public void hit(bool wasHigh) {
 
         iHit = true;
 
-        //display a splash! 
+        //TODO rack up points depending on accuracy 
+        BeatController.Accuracy accuracy = BeatController.GetAccuracy();
+
+        //display a splash depending on accuracy 
         spriteSplashController.showSplash(wasHigh, accuracy);
     }
 
@@ -142,7 +160,24 @@ public class Character : MonoBehaviour
         //reset variables and flags. 
         iHit = false;
         wasBlocked = false;
-        messedUp = false;
+        controls.actedThisBeat = false;
+
+        //cont- if we were forward, reset to blocking 
+        if(controls.colliderHighForward) {
+            spriteController.high();
+            controls.colliderHighForward = false;
+        }
+        if(controls.colliderLowForward) {
+            spriteController.low();
+            controls.colliderLowForward = false;
+        }
+
+        //cont- return to baseline if messed up 
+        if(messedUp) {
+            messedUp = false;
+            spriteController.idle();
+        }
+
 
     }
 
