@@ -6,11 +6,12 @@ public class Controls : MonoBehaviour
 {
 
     /*
-        TODO 
-        - multi inputs? make an array maybe 
 
-        TO TEST:
-        - attack key vs pressing a directional twice 
+        TODO: when we can and can't act (ex. waiting for start)
+        or maybe they just cant move at the start lol 
+
+        WISHLIST: controller support 
+
     */
 
     public bool DEBUG = true;
@@ -19,27 +20,28 @@ public class Controls : MonoBehaviour
 
     public Character character;
     public PlayerSoundEffectController sfxController;
+    public CharacterSpriteController spriteController;
 
     KeyCode p1_forward = KeyCode.D;
     KeyCode p1_back = KeyCode.A;
     KeyCode p1_high = KeyCode.W;
     KeyCode p1_low = KeyCode.S;
-    KeyCode p1_attack;
+    //KeyCode p1_attack;
 
     KeyCode p2_forward = KeyCode.LeftArrow;
     KeyCode p2_back = KeyCode.RightArrow;
     KeyCode p2_high = KeyCode.UpArrow;
     KeyCode p2_low = KeyCode.DownArrow;
-    KeyCode p2_attack;
+    //KeyCode p2_attack;
 
-    float moveDistance = 1f;    //distance to move in space as one unit
-    int position = 0;           //how many units we are from starting point/baseline 
-    int posMax = 6;             //how many units you can move forward from baseline
-    int posMin = -2;            //how many units you can move back from baseline
-    int posCenter;              //how many units away from 0,0 each are. will be gotten in Start() 
+    float moveDistance = 1f;        //distance to move in space as one unit
+    public int position = 0;        //how many units we are from starting point/baseline 
+    public int posMax = 6;          //how many units you can move forward from baseline
+    public int posMin = -2;         //how many units you can move back from baseline
+    int posCenter;                  //how many units away from 0,0 each are. will be gotten in Start() 
 
 
-    KeyCode forwardKey, backKey, highKey, lowKey, attackKey;
+    KeyCode forwardKey, backKey, highKey, lowKey; //attackKey;
     int moveSign = 1;
 
 
@@ -49,17 +51,11 @@ public class Controls : MonoBehaviour
     public GameObject debugcolliderLowForward;
 
 
-    bool colliderHigh, colliderHighForward, colliderLow, colliderLowForward; 
+    public bool colliderHigh, colliderHighForward, colliderLow, colliderLowForward; 
 
+    public bool actedThisBeat = false;
 
-    public Sprite spr_High;
-    public Sprite spr_HighForward;
-    public Sprite spr_Low;
-    public Sprite spr_LowForward;
-    public Sprite spr_MessUp;
-
-    public SpriteRenderer mySpriteRenderer;
-
+    
 
     void Start() {
 
@@ -70,7 +66,7 @@ public class Controls : MonoBehaviour
             backKey = p1_back;
             highKey = p1_high;
             lowKey = p1_low;
-            attackKey = p1_attack;
+            //attackKey = p1_attack;
 
             //moveSign = 1;
         } else {
@@ -78,7 +74,7 @@ public class Controls : MonoBehaviour
             backKey = p2_back;
             highKey = p2_high;
             lowKey = p2_low;
-            attackKey = p2_attack;
+            //attackKey = p2_attack;
 
             //moveSign = 1;
         }
@@ -94,37 +90,62 @@ public class Controls : MonoBehaviour
         bool back = Input.GetKeyDown(backKey);
         bool high = Input.GetKeyDown(highKey);
         bool low = Input.GetKeyDown(lowKey);
-        bool attack = Input.GetKeyDown(attackKey);
+        //bool attack = Input.GetKeyDown(attackKey);
 
-        //TODO first of all, check if we're on the beat. 
-        //if we're on the beat, do all this logic. if we're not, mess up. 
-
+        
         //first of all, check if we're on beat. 
-        if(!BeatController.IsOnBeat()) {
-            character.messUp();
+        //if we're on the beat, do all this logic. if we're not, mess up. 
+        if((forward || back || high || low) && !actedThisBeat && !BeatController.IsOnBeat()) {
 
-        } else if(!character.messedUp) {
+            //we're not on beat! 
+            colliderHigh = false;
+            colliderHighForward = false;
+            colliderLow = false;
+            colliderLowForward = false;
+            sfxController.Sfx_MissBeat();
+            spriteController.messUp();
+            character.messUp();
+            actedThisBeat = true;
+
+        } else if(!character.messedUp && !actedThisBeat) {
             
-            if(forward && position < posMax) {
-                position++;
-                transform.Translate(moveDistance * moveSign, 0, 0);
+            if(forward && position < posMax) { //TODO check if the player can move and isnt blocked by the other player 
+                
+                //check if they're blocked by the other player! if they are, mess up. 
+                if(character.otherInProximity()) {
+                    sfxController.Sfx_MissBeat();
+                    actedThisBeat = true;
+                } else {
+                    //otherwise, they're free to move. 
+                    position++;
+                    transform.Translate(moveDistance * moveSign, 0, 0);
+                    sfxController.Sfx_StepForward();
+                    actedThisBeat = true;
+                }
+                
             }
             if(back && position > posMin) {
                 position--;
                 transform.Translate(moveDistance * moveSign * -1, 0, 0);
+                sfxController.Sfx_StepBack();
+                actedThisBeat = true;
             }
 
 
             if(high) {
+                actedThisBeat = true;
 
                 if(colliderHigh) {
                     //collider high is active. 
                     //set high forward to active. 
                     colliderHighForward= true;
 
-                    mySpriteRenderer.sprite = spr_HighForward;
+                    spriteController.highForward();
+                    StartCoroutine(forwardReturn(true));
 
-                    //TODO play sound 
+                    sfxController.Sfx_HighForward();
+
+                    character.checkHit();
 
                 } else {
                     //collider high isn't active. 
@@ -133,34 +154,40 @@ public class Controls : MonoBehaviour
                     colliderHighForward = false;
                     colliderLow = false;
 
-                    mySpriteRenderer.sprite = spr_High;
+                    spriteController.high();
 
-                    //TODO play sound 
+                    sfxController.Sfx_High();
 
-                    //this could be the player blocking.
-                    //TODO how to check blocking?
-                    //check colliders? maybe there's a flag set on collide 
-                    //alternatively, do this in the enter function? 
+                    //this could be the player blocking. check if we blocked the other player.
+                    character.checkBlock();
+                    
                 }
                 
             }
             if(low) {
+                actedThisBeat = true;
 
                 if(colliderLow) {
                     colliderLowForward = true;
 
-                    mySpriteRenderer.sprite = spr_LowForward;
-                    //TODO play sound 
+                    spriteController.lowForward();
+                    StartCoroutine(forwardReturn(false));
+                    
+                    sfxController.Sfx_LowForward();
+
+                    character.checkHit();
 
                 } else {
                     colliderLow = true;
                     colliderLowForward = false;
                     colliderHigh = false;
 
-                    mySpriteRenderer.sprite = spr_Low;
-                    //TODO play sound 
+                    spriteController.low();
+                    
+                    sfxController.Sfx_Low();
 
-                    //TODO blocking 
+                    character.checkBlock();
+
                 }
                 
             }
@@ -180,58 +207,18 @@ public class Controls : MonoBehaviour
 
         }
 
+    }
 
+    //change the sprite to forward but only for like half a second. it'll return to normal state after. 
+    IEnumerator forwardReturn(bool isHigh) {
 
-        /*
-        POSSIBLE STATES 
-        high forward, high forward, forward meet in middle 
-        high forward, high forward, cross 
-
-        high, high forward- high blocks high forward, high gets a riposte 
-        high, low forward- low gets a hit 
-        low, high forward- high gets a hit 
-        low, low forward- low blocks low forward, low gets a riposte 
-
-        */
-
-/*
-        if(high) {
-
-            if(colliderHigh.activeSelf) {
-                //collider high is active. 
-                //set high forward to active. 
-                colliderHighForward.SetActive(true);
-
-            } else {
-                //collider high isn't active. 
-                //set collider high to active, set collider low to inactive, and set high forward to inactve
-                colliderHigh.SetActive(true);
-                colliderHighForward.SetActive(false);
-                colliderLow.SetActive(false);
-
-                //this could be the player blocking.
-                //TODO how to check blocking?
-                //check colliders? maybe there's a flag set on collide 
-                //alternatively, do this in the enter function? 
-            }
-            
+        yield return new WaitForSeconds(0.4f);
+        
+        if(isHigh && colliderHigh) {
+            spriteController.high();
+        } else if(colliderLow) {
+            spriteController.low();
         }
-        if(low) {
-
-            if(colliderLow.activeSelf) {
-                colliderLowForward.SetActive(true);
-            } else {
-                colliderLow.SetActive(true);
-                colliderLowForward.SetActive(false);
-                colliderHigh.SetActive(false);
-
-                //TODO blocking 
-            }
-            
-        }
-        */
-
-
     }
 
 }

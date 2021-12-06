@@ -24,9 +24,15 @@ public class MusicReactive : MonoBehaviour
         //bounce 2 the music 
         //scale according to BeatController.nearToBeat
         //simple linear one for now, but TODO make this bouncier 
-        float vx = xScaleMin + ((xScaleMax - xScaleMin) * BeatController.beatOffset);
-        float vy = yScaleMin + ((yScaleMax - yScaleMin) * BeatController.beatOffset);
-        float vz = zScaleMin + ((zScaleMax - zScaleMin) * BeatController.beatOffset);
+        float vx = xScaleMin + ((xScaleMax - xScaleMin) * func(BeatController.beatOffset));
+        float vy = yScaleMin + ((yScaleMax - yScaleMin) * func(BeatController.beatOffset));
+        float vz = zScaleMin + ((zScaleMax - zScaleMin) * func(BeatController.beatOffset));
         transform.localScale = new Vector3(vx, vy, vz);
+    }
+
+    //|sin(x/2*pi)|
+    //bouncy! 
+    float func(float x) {
+        return Mathf.Abs(Mathf.Sin(x * Mathf.PI));
     }
 }
