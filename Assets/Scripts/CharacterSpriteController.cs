@@ -26,7 +26,7 @@ public class CharacterSpriteController : MonoBehaviour
     }
 
     public void high() {
-        spriteRenderer.sprite = spr_Low;
+        spriteRenderer.sprite = spr_High;
     }
 
     public void low() {

@@ -36,13 +36,15 @@ public class BeatController : MonoBehaviour
     //would look like a triangle wave when graphed 
     public static float beatOffset = 0;
 
+    public static Accuracy accuracy;
+
 
     //thresholds to be on beat, in seconds. 
     //OK represents the overall threshold. 
     public static float thresh_OK = 0.1f;
-    public static float thresh_GOOD = 0.08f;
+    public static float thresh_GOOD = 0.075f;
     public static float thresh_GREAT = 0.05f;
-    public static float thresh_PERFECT = 0.01f;
+    public static float thresh_PERFECT = 0.025f;
 
     bool beatEnded = false;
 
@@ -76,6 +78,7 @@ public class BeatController : MonoBehaviour
         songPos = (float)(AudioSettings.dspTime - songStartTime);
         beat = songPos / secPerBeat;
         beatOffset = getAbsDistanceFromBeat();
+        accuracy = GetAccuracy();
 
         //check if we've passed the end of the threshold of this beat. 
         //if we have, call the end of beat functions for both players. 

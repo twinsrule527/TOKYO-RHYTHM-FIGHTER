@@ -62,7 +62,7 @@ public class Character : MonoBehaviour
     }
 
     //we can hit or block an attack if the other player is 2 units in front of us. 
-    bool otherInProximity() {
+    public bool otherInProximity() {
         return (controls.position == (-otherPlayer.controls.position + (otherPlayer.controls.posMax - 2)));
     }
 

@@ -110,10 +110,19 @@ public class Controls : MonoBehaviour
         } else if(!character.messedUp && !actedThisBeat) {
             
             if(forward && position < posMax) { //TODO check if the player can move and isnt blocked by the other player 
-                position++;
-                transform.Translate(moveDistance * moveSign, 0, 0);
-                sfxController.Sfx_StepForward();
-                actedThisBeat = true;
+                
+                //check if they're blocked by the other player! if they are, mess up. 
+                if(character.otherInProximity()) {
+                    sfxController.Sfx_MissBeat();
+                    actedThisBeat = true;
+                } else {
+                    //otherwise, they're free to move. 
+                    position++;
+                    transform.Translate(moveDistance * moveSign, 0, 0);
+                    sfxController.Sfx_StepForward();
+                    actedThisBeat = true;
+                }
+                
             }
             if(back && position > posMin) {
                 position--;
@@ -203,7 +212,7 @@ public class Controls : MonoBehaviour
     //change the sprite to forward but only for like half a second. it'll return to normal state after. 
     IEnumerator forwardReturn(bool isHigh) {
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.4f);
         
         if(isHigh && colliderHigh) {
             spriteController.high();
