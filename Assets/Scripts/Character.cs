@@ -136,7 +136,7 @@ public class Character : MonoBehaviour
 
         iHit = true;
 
-        otherPlayer.spriteController.flashRed();
+        otherPlayer.spriteController.flashColor(!controls.isPlayer1);
 
         //TODO rack up points depending on accuracy 
         BeatController.Accuracy accuracy = BeatController.GetAccuracy();
