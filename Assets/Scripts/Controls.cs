@@ -34,11 +34,14 @@ public class Controls : MonoBehaviour
     KeyCode p2_low = KeyCode.DownArrow;
     //KeyCode p2_attack;
 
-    float moveDistance = 1f;        //distance to move in space as one unit
+    float moveDistance = 1.33f;        //distance to move in space as one unit
     public int position = 0;        //how many units we are from starting point/baseline 
     public int posMax = 6;          //how many units you can move forward from baseline
     public int posMin = -2;         //how many units you can move back from baseline
-    int posCenter;                  //how many units away from 0,0 each are. will be gotten in Start() 
+    //int posCenter = 3;                  //how many units away from 0,0 each are
+
+    // -2 -1 0 1 2 3 4 5 6 
+
 
 
     KeyCode forwardKey, backKey, highKey, lowKey; //attackKey;
@@ -59,7 +62,14 @@ public class Controls : MonoBehaviour
 
     void Start() {
 
-        posCenter = (int)(Mathf.Abs(transform.position.x));
+        int sign;
+        if(isPlayer1) { sign = -1; }
+        else { sign = 1; }
+
+        //set position based on move distance 
+        transform.position = new Vector3((moveDistance * posMax / 2 * sign), transform.position.y, transform.position.z);
+
+        //posCenter = (int)(Mathf.Abs(transform.position.x) / moveDistance);
 
         if(isPlayer1) {
             forwardKey = p1_forward;
@@ -192,7 +202,7 @@ public class Controls : MonoBehaviour
                 
             }
 
-
+/*
             //toggle collider objects, which are really just for debugging now 
             if(DEBUG) {
                 debugcolliderHigh.SetActive(colliderHigh);
@@ -200,6 +210,7 @@ public class Controls : MonoBehaviour
                 debugcolliderLow.SetActive(colliderLow);
                 debugcolliderLowForward.SetActive(colliderLowForward);
             }
+            */
 
 
             //check collision and hits, with the bools. 

@@ -45,4 +45,25 @@ public class CharacterSpriteController : MonoBehaviour
         spriteRenderer.sprite = spr_MessUp;
     }
 
+    public void flashColor(bool isP1) {
+        if(isP1) {
+            StartCoroutine(flashColorRoutine(Color.red));
+        } else {
+            StartCoroutine(flashColorRoutine(Color.blue));
+        }
+        
+    }
+
+    IEnumerator flashColorRoutine(Color colorFlash) {
+        spriteRenderer.color = colorFlash;
+        float ttracker = 0;
+        while(spriteRenderer.color != Color.white) {
+            spriteRenderer.color = Color.Lerp(colorFlash, Color.white, ttracker);
+            ttracker += (Time.deltaTime * 1.33f);
+            yield return null;
+        }
+        
+    }
+
+
 }
