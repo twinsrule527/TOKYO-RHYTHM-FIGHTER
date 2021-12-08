@@ -123,7 +123,7 @@ public class Controls : MonoBehaviour
                 
                 //check if they're blocked by the other player! if they are, mess up. 
                 if(character.otherInProximity()) {
-                    sfxController.Sfx_MissBeat();
+                    sfxController.Sfx_CantStepForward();
                     actedThisBeat = true;
                 } else {
                     //otherwise, they're free to move. 

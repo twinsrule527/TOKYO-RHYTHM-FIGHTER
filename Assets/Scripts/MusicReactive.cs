@@ -33,6 +33,6 @@ public class MusicReactive : MonoBehaviour
     //|sin(x/2*pi)|
     //bouncy! 
     float func(float x) {
-        return Mathf.Abs(Mathf.Sin(x * Mathf.PI));
+        return Mathf.Abs(Mathf.Sin((x) * Mathf.PI));
     }
 }
