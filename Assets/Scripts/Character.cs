@@ -112,6 +112,17 @@ public class Character : MonoBehaviour
 
         otherPlayer.wasBlocked = true; 
 
+        //play a sound 
+        if(wasHigh) {
+            sfxController.Sfx_BlockHigh();
+        } else {
+            sfxController.Sfx_BlockLow();
+        }
+        
+
+        //if we were hit and flashing a color, cancel it 
+        StopCoroutine(spriteController.coroutine);
+
         //TODO rack up points depending on accuracy 
         BeatController.Accuracy accuracy = BeatController.GetAccuracy();
 
@@ -135,6 +146,9 @@ public class Character : MonoBehaviour
     public void hit(bool wasHigh) {
 
         iHit = true;
+
+        //play a sound 
+        sfxController.Sfx_Hit();
 
         otherPlayer.spriteController.flashColor(!controls.isPlayer1);
 

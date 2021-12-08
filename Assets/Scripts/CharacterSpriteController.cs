@@ -11,6 +11,9 @@ public class CharacterSpriteController : MonoBehaviour
     public Sprite spr_Low;
     public Sprite spr_LowForward;
     public Sprite spr_MessUp;
+
+
+    public IEnumerator coroutine;
     
     
     SpriteRenderer spriteRenderer;
@@ -47,9 +50,12 @@ public class CharacterSpriteController : MonoBehaviour
 
     public void flashColor(bool isP1) {
         if(isP1) {
-            StartCoroutine(flashColorRoutine(Color.red));
+            coroutine = flashColorRoutine(Color.red);
+            StartCoroutine(coroutine);
+            
         } else {
-            StartCoroutine(flashColorRoutine(Color.blue));
+            coroutine = flashColorRoutine(Color.blue);
+            StartCoroutine(coroutine);
         }
         
     }
