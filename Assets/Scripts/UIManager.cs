@@ -24,8 +24,8 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreText1.text = "Player 1 Hits: " + 0;
-        scoreText2.text = "Player 2 Hits: " + 0;
+        scoreText1.text = " " + 0;
+        scoreText2.text = " " + 0;
     }
 
     public void AddScore()
@@ -36,7 +36,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText1.text = "Player 1 Hits: " + p1.hitsScored;
-        scoreText2.text = "Player 2 Hits: " + p2.hitsScored;
+        scoreText1.text = " " + p1.hitsScored;
+        scoreText2.text = " " + p2.hitsScored;
     }
 }
