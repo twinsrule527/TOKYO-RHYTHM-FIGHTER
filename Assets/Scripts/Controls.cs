@@ -34,7 +34,7 @@ public class Controls : MonoBehaviour
     KeyCode p2_low = KeyCode.DownArrow;
     //KeyCode p2_attack;
 
-    float moveDistance = 1.33f;        //distance to move in space as one unit
+    float moveDistance = 1.5f;        //distance to move in space as one unit
     public int position = 0;        //how many units we are from starting point/baseline 
     public int posMax = 6;          //how many units you can move forward from baseline
     public int posMin = -2;         //how many units you can move back from baseline
