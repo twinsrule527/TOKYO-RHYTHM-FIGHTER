@@ -121,7 +121,10 @@ public class Character : MonoBehaviour
         
 
         //if we were hit and flashing a color, cancel it 
-        StopCoroutine(spriteController.coroutine);
+        if(otherPlayer.iHit) {
+            spriteController.cancelFlash();
+        }
+        
 
         //TODO rack up points depending on accuracy 
         BeatController.Accuracy accuracy = BeatController.GetAccuracy();
