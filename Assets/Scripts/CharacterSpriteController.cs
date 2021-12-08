@@ -13,8 +13,6 @@ public class CharacterSpriteController : MonoBehaviour
     public Sprite spr_MessUp;
 
 
-    public IEnumerator coroutine;
-    
     
     SpriteRenderer spriteRenderer;
 
@@ -50,12 +48,10 @@ public class CharacterSpriteController : MonoBehaviour
 
     public void flashColor(bool isP1) {
         if(isP1) {
-            coroutine = flashColorRoutine(Color.red);
-            StartCoroutine(coroutine);
+            StartCoroutine(flashColorRoutine(Color.red));
             
         } else {
-            coroutine = flashColorRoutine(Color.blue);
-            StartCoroutine(coroutine);
+            StartCoroutine(flashColorRoutine(Color.blue));
         }
         
     }
@@ -64,11 +60,18 @@ public class CharacterSpriteController : MonoBehaviour
         spriteRenderer.color = colorFlash;
         float ttracker = 0;
         while(spriteRenderer.color != Color.white) {
+            if(spriteRenderer.color.Equals(Color.white)) {
+                break;
+            }
             spriteRenderer.color = Color.Lerp(colorFlash, Color.white, ttracker);
             ttracker += (Time.deltaTime * 1.33f);
             yield return null;
         }
         
+    }
+
+    public void cancelFlash() {
+        spriteRenderer.color = Color.white;
     }
 
 
