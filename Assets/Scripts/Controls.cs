@@ -22,6 +22,8 @@ public class Controls : MonoBehaviour
     public PlayerSoundEffectController sfxController;
     public CharacterSpriteController spriteController;
 
+    public Shaker charShake;
+
     KeyCode p1_forward = KeyCode.D;
     KeyCode p1_back = KeyCode.A;
     KeyCode p1_high = KeyCode.W;
@@ -114,6 +116,8 @@ public class Controls : MonoBehaviour
             colliderLowForward = false;
             sfxController.Sfx_MissBeat();
             spriteController.messUp();
+            //charShake.screenshake(0.8f, 0.2f);
+            charShake.screenshake(10, 10);
             character.messUp();
             actedThisBeat = true;
 
@@ -124,6 +128,7 @@ public class Controls : MonoBehaviour
                 //check if they're blocked by the other player! if they are, mess up. 
                 if(character.otherInProximity()) {
                     sfxController.Sfx_CantStepForward();
+                    charShake.screenshake(1, 0.2f);
                     actedThisBeat = true;
                 } else {
                     //otherwise, they're free to move. 

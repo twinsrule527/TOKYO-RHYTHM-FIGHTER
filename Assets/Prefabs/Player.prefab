@@ -1965,6 +1965,7 @@ GameObject:
   - component: {fileID: 4138029348902706620}
   - component: {fileID: 4138029348902706621}
   - component: {fileID: 9161921744017233077}
+  - component: {fileID: 7056600901547574214}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2009,6 +2010,7 @@ MonoBehaviour:
   character: {fileID: 9161921744017233077}
   sfxController: {fileID: 1135202077965203778}
   spriteController: {fileID: 6515436511395516753}
+  charShake: {fileID: 0}
   position: 0
   posMax: 6
   posMin: -2
@@ -2035,6 +2037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherPlayer: {fileID: 0}
   controls: {fileID: 4138029348902706621}
+  screenshake: {fileID: 7056600901547574214}
   sfxController: {fileID: 1135202077965203778}
   spriteController: {fileID: 6515436511395516753}
   spriteSplashController: {fileID: 4632370000512662333}
@@ -2042,6 +2045,20 @@ MonoBehaviour:
   hitsScored: 0
   wasBlocked: 0
   messedUp: 0
+  screenshakeMag: 1
+  screenshakeTime: 0.26
+--- !u!114 &7056600901547574214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4138029348902706595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e2f856f38be1244d8c192db8774f12f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4466621527985935956
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,8 @@ public class Character : MonoBehaviour
 
     public Controls controls;
 
+    public Shaker screenshake;
+
     public PlayerSoundEffectController sfxController;
     public CharacterSpriteController spriteController;
     public SpriteSplash spriteSplashController;
@@ -37,6 +39,10 @@ public class Character : MonoBehaviour
     bool iHit = false;
     public bool wasBlocked = false;
     public bool messedUp = false;
+
+
+    public float screenshakeMag;
+    public float screenshakeTime;
 
     
 
@@ -118,8 +124,10 @@ public class Character : MonoBehaviour
         } else {
             sfxController.Sfx_BlockLow();
         }
-        
 
+        //screenshake!
+        StartCoroutine(screenshake.screenshake(screenshakeMag / 2f, screenshakeTime * 0.75f));
+        
         //if we were hit and flashing a color, cancel it 
         if(otherPlayer.iHit) {
             spriteController.cancelFlash();
@@ -152,6 +160,9 @@ public class Character : MonoBehaviour
 
         //play a sound 
         sfxController.Sfx_Hit();
+
+        //screenshake!
+        StartCoroutine(screenshake.screenshake(screenshakeMag, screenshakeTime));
 
         otherPlayer.spriteController.flashColor(!controls.isPlayer1);
 
