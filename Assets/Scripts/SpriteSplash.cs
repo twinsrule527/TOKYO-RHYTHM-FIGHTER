@@ -49,8 +49,8 @@ public class SpriteSplash : MonoBehaviour
 
         renderer.color = Color.white;
 
-        float growTime = 0.5f;
-        float fadeTime = 0.6f;
+        float growTime = 0.4f;
+        float fadeTime = 0.5f;
 
         Vector3 scale = renderer.gameObject.transform.localScale;
         Vector3 origScale = new Vector3(scale.x, scale.y, scale.z);
@@ -64,8 +64,8 @@ public class SpriteSplash : MonoBehaviour
 
         //fade out
         for(float t = 0; t / fadeTime < fadeTime; t += Time.deltaTime) {
-            renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, 1 - t / fadeTime);
-            //renderer.gameObject.transform.localScale = new Vector3(origScale.x * t, origScale.y * t, origScale.z);
+            renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, (fadeTime - t) / fadeTime);
+            renderer.gameObject.transform.localScale = new Vector3(origScale.x + t, origScale.y + t, origScale.z);
             yield return null;
         }
         renderer.gameObject.transform.localScale = origScale;
