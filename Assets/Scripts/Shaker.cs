@@ -11,8 +11,6 @@ public class Shaker : MonoBehaviour
         
         Vector3 origPos = transform.position;
 
-        Debug.Log("hi");
-
         for(float tracker = 0; tracker < time; tracker += Time.deltaTime) {
             float thisMag = magnitude * (1 - (tracker / time)); //decreases mag over time 
             float x = Mathf.PerlinNoise(0, Time.time * perlinMult) * thisMag - (thisMag / 2);

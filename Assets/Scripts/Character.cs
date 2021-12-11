@@ -125,6 +125,13 @@ public class Character : MonoBehaviour
             sfxController.Sfx_BlockLow();
         }
 
+        //display a splash depending on accuracy 
+        if(wasHigh) {
+            spriteSplashController.showBlockHigh();
+        } else {
+            spriteSplashController.showBlockLow();
+        }
+
         //screenshake!
         StartCoroutine(screenshake.screenshake(screenshakeMag / 2f, screenshakeTime * 0.75f));
         
@@ -136,10 +143,8 @@ public class Character : MonoBehaviour
 
         //TODO rack up points depending on accuracy 
         BeatController.Accuracy accuracy = BeatController.GetAccuracy();
-
-        //display a splash depending on accuracy 
-        spriteSplashController.showSplash(wasHigh, accuracy);
-
+        
+        
         riposte();
 
     }
@@ -170,7 +175,8 @@ public class Character : MonoBehaviour
         BeatController.Accuracy accuracy = BeatController.GetAccuracy();
 
         //display a splash depending on accuracy 
-        spriteSplashController.showSplash(wasHigh, accuracy);
+        //spriteSplashController.showSplash(wasHigh, accuracy);
+        //TODO 
     }
 
     //called every time the beat threshold is over. 
