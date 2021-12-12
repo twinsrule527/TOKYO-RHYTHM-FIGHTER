@@ -37,6 +37,7 @@ public class Character : MonoBehaviour
 
 
     bool iHit = false;
+    bool iHitLastTime = false;
     public bool wasBlocked = false;
     public bool messedUp = false;
 
@@ -142,7 +143,7 @@ public class Character : MonoBehaviour
         
 
         //TODO rack up points depending on accuracy 
-        BeatController.Accuracy accuracy = BeatController.GetAccuracy();
+        //BeatController.Accuracy accuracy = BeatController.GetAccuracy();
         
         
         riposte();
@@ -172,7 +173,7 @@ public class Character : MonoBehaviour
         otherPlayer.spriteController.flashColor(!controls.isPlayer1);
 
         //TODO rack up points depending on accuracy 
-        BeatController.Accuracy accuracy = BeatController.GetAccuracy();
+        //BeatController.Accuracy accuracy = BeatController.GetAccuracy();
 
         //display a splash depending on accuracy 
         //spriteSplashController.showSplash(wasHigh, accuracy);
@@ -193,17 +194,28 @@ public class Character : MonoBehaviour
             }
         }
 
+        if(iHitLastTime) {
+            iHitLastTime = false;
+        }
+        if(iHit) {
+            iHitLastTime = true;
+        }
+
         //reset variables and flags. 
         iHit = false;
         wasBlocked = false;
         controls.actedThisBeat = false;
 
-        //cont- if we were forward, reset to blocking 
+        //cont- if we were forward, reset to baseline (changed from resetting to blocking)
         if(controls.colliderHighForward) {
             controls.colliderHighForward = false;
+            controls.colliderHigh = false;
+            spriteController.idle();
         }
         if(controls.colliderLowForward) {
             controls.colliderLowForward = false;
+            controls.colliderLow = false;
+            spriteController.idle();
         }
 
         //cont- return to baseline if messed up 

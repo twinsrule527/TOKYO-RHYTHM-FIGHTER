@@ -152,6 +152,7 @@ public class Controls : MonoBehaviour
 
                 if(colliderHigh) {
                     //collider high is active. 
+
                     //set high forward to active. 
                     colliderHighForward= true;
 
