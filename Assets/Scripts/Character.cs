@@ -12,12 +12,16 @@ public class Character : MonoBehaviour
 
     public Controls controls;
 
+    public Shaker screenshake;
+
     public PlayerSoundEffectController sfxController;
     public CharacterSpriteController spriteController;
     public SpriteSplash spriteSplashController;
 
+    public GameObject winningSplash;
 
-    static int pointsToGame = 3;
+
+    static int pointsToGame = 10;
     public int points = 0;
 
     public int hitsScored = 0;
@@ -32,11 +36,16 @@ public class Character : MonoBehaviour
     float pmult_GOOD = 0.75f;
     float pmult_GREAT = 1f;
     float pmult_PERFECT = 1.25f;
-
+    
 
     bool iHit = false;
+    bool iHitLastTime = false;
     public bool wasBlocked = false;
     public bool messedUp = false;
+
+
+    public float screenshakeMag;
+    public float screenshakeTime;
 
     
 
@@ -112,12 +121,45 @@ public class Character : MonoBehaviour
 
         otherPlayer.wasBlocked = true; 
 
+        //play a sound 
+        if(wasHigh) {
+            sfxController.Sfx_BlockHigh();
+        } else {
+            sfxController.Sfx_BlockLow();
+        }
+
+        //decide which splash to display. if the attack was just blocked, display the block splash.
+        //if both players were attacking forward, display the clash splash. 
+        if(controls.colliderHighForward && otherPlayer.controls.colliderHighForward) {
+            //clash high! 
+            spriteSplashController.showClashHigh();
+        } else if(controls.colliderLowForward && otherPlayer.controls.colliderLowForward) {
+            //clash low!
+            spriteSplashController.showClashLow();
+        } else {
+            //display a block splash, high or low 
+            if(wasHigh) {
+                spriteSplashController.showBlockHigh();
+            } else {
+                spriteSplashController.showBlockLow();
+            }
+        }
+
+        
+
+        //screenshake!
+        StartCoroutine(screenshake.screenshake(screenshakeMag / 2f, screenshakeTime * 0.75f));
+        
+        //if we were hit and flashing a color, cancel it 
+        if(otherPlayer.iHit) {
+            spriteController.cancelFlash();
+        }
+        
+
         //TODO rack up points depending on accuracy 
-        BeatController.Accuracy accuracy = BeatController.GetAccuracy();
-
-        //display a splash depending on accuracy 
-        spriteSplashController.showSplash(wasHigh, accuracy);
-
+        //BeatController.Accuracy accuracy = BeatController.GetAccuracy();
+        
+        
         riposte();
 
     }
@@ -136,13 +178,20 @@ public class Character : MonoBehaviour
 
         iHit = true;
 
-        otherPlayer.spriteController.flashRed();
+        //play a sound 
+        sfxController.Sfx_Hit();
+
+        //screenshake!
+        StartCoroutine(screenshake.screenshake(screenshakeMag, screenshakeTime));
+
+        otherPlayer.spriteController.flashColor(!controls.isPlayer1);
 
         //TODO rack up points depending on accuracy 
-        BeatController.Accuracy accuracy = BeatController.GetAccuracy();
+        //BeatController.Accuracy accuracy = BeatController.GetAccuracy();
 
         //display a splash depending on accuracy 
-        spriteSplashController.showSplash(wasHigh, accuracy);
+        //spriteSplashController.showSplash(wasHigh, accuracy);
+        //TODO 
     }
 
     //called every time the beat threshold is over. 
@@ -159,17 +208,28 @@ public class Character : MonoBehaviour
             }
         }
 
+        if(iHitLastTime) {
+            iHitLastTime = false;
+        }
+        if(iHit) {
+            iHitLastTime = true;
+        }
+
         //reset variables and flags. 
         iHit = false;
         wasBlocked = false;
         controls.actedThisBeat = false;
 
-        //cont- if we were forward, reset to blocking 
+        //cont- if we were forward, reset to baseline (changed from resetting to blocking)
         if(controls.colliderHighForward) {
             controls.colliderHighForward = false;
+            controls.colliderHigh = false;
+            //spriteController.idle();
         }
         if(controls.colliderLowForward) {
             controls.colliderLowForward = false;
+            controls.colliderLow = false;
+            //spriteController.idle();
         }
 
         //cont- return to baseline if messed up 
@@ -183,7 +243,16 @@ public class Character : MonoBehaviour
 
 
     void wonTheGame() {
-        //TODO 
+
+        //disable controls for players 
+        controls.canControlCharacter = false;
+        otherPlayer.controls.canControlCharacter = false;
+
+        //enable winning splash 
+        winningSplash.SetActive(true);
+
+        //TODO any animation coroutines when showing it? 
+        
     }
 
 

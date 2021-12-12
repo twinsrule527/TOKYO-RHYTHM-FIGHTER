@@ -11,7 +11,8 @@ public class CharacterSpriteController : MonoBehaviour
     public Sprite spr_Low;
     public Sprite spr_LowForward;
     public Sprite spr_MessUp;
-    
+
+
     
     SpriteRenderer spriteRenderer;
 
@@ -45,19 +46,33 @@ public class CharacterSpriteController : MonoBehaviour
         spriteRenderer.sprite = spr_MessUp;
     }
 
-    public void flashRed() {
-        StartCoroutine(flashRedRoutine());
+    public void flashColor(bool isP1) {
+        if(isP1) {
+            StartCoroutine(flashColorRoutine(Color.red));
+            
+        } else {
+            StartCoroutine(flashColorRoutine(Color.blue));
+        }
+        
     }
 
-    IEnumerator flashRedRoutine() {
-        spriteRenderer.color = Color.red;
+    IEnumerator flashColorRoutine(Color colorFlash) {
+        spriteRenderer.color = colorFlash;
         float ttracker = 0;
         while(spriteRenderer.color != Color.white) {
-            ttracker += (Time.deltaTime * 1.1f);
-            spriteRenderer.color = Color.Lerp(Color.red, Color.white, ttracker);
+            if(spriteRenderer.color.Equals(Color.white)) {
+                break;
+            }
+            spriteRenderer.color = Color.Lerp(colorFlash, Color.white, ttracker);
+            ttracker += (Time.deltaTime * 1.33f);
             yield return null;
         }
         
     }
+
+    public void cancelFlash() {
+        spriteRenderer.color = Color.white;
+    }
+
 
 }

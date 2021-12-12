@@ -22,6 +22,8 @@ public class Controls : MonoBehaviour
     public PlayerSoundEffectController sfxController;
     public CharacterSpriteController spriteController;
 
+    public Shaker charShake;
+
     KeyCode p1_forward = KeyCode.D;
     KeyCode p1_back = KeyCode.A;
     KeyCode p1_high = KeyCode.W;
@@ -34,32 +36,38 @@ public class Controls : MonoBehaviour
     KeyCode p2_low = KeyCode.DownArrow;
     //KeyCode p2_attack;
 
-    float moveDistance = 1f;        //distance to move in space as one unit
+    float moveDistance = 1.5f;        //distance to move in space as one unit
     public int position = 0;        //how many units we are from starting point/baseline 
     public int posMax = 6;          //how many units you can move forward from baseline
     public int posMin = -2;         //how many units you can move back from baseline
-    int posCenter;                  //how many units away from 0,0 each are. will be gotten in Start() 
+    //int posCenter = 3;                  //how many units away from 0,0 each are
+
+    // -2 -1 0 1 2 3 4 5 6 
+
 
 
     KeyCode forwardKey, backKey, highKey, lowKey; //attackKey;
     int moveSign = 1;
 
 
-    public GameObject debugcolliderHigh;
-    public GameObject debugcolliderHighForward;
-    public GameObject debugcolliderLow;
-    public GameObject debugcolliderLowForward;
-
-
     public bool colliderHigh, colliderHighForward, colliderLow, colliderLowForward; 
 
     public bool actedThisBeat = false;
+
+    public bool canControlCharacter = true;
 
     
 
     void Start() {
 
-        posCenter = (int)(Mathf.Abs(transform.position.x));
+        int sign;
+        if(isPlayer1) { sign = -1; }
+        else { sign = 1; }
+
+        //set position based on move distance 
+        transform.position = new Vector3((moveDistance * posMax / 2 * sign), transform.position.y, transform.position.z);
+
+        //posCenter = (int)(Mathf.Abs(transform.position.x) / moveDistance);
 
         if(isPlayer1) {
             forwardKey = p1_forward;
@@ -85,6 +93,10 @@ public class Controls : MonoBehaviour
     // Update is called once per frame
     void Update() {
 
+        if(!canControlCharacter) {
+            return;
+        }
+
         //only check key once
         bool forward = Input.GetKeyDown(forwardKey);
         bool back = Input.GetKeyDown(backKey);
@@ -104,6 +116,8 @@ public class Controls : MonoBehaviour
             colliderLowForward = false;
             sfxController.Sfx_MissBeat();
             spriteController.messUp();
+            //charShake.screenshake(0.8f, 0.2f);
+            charShake.screenshake(10, 10);
             character.messUp();
             actedThisBeat = true;
 
@@ -113,7 +127,8 @@ public class Controls : MonoBehaviour
                 
                 //check if they're blocked by the other player! if they are, mess up. 
                 if(character.otherInProximity()) {
-                    sfxController.Sfx_MissBeat();
+                    sfxController.Sfx_CantForward();
+                    charShake.screenshake(1, 0.2f);
                     actedThisBeat = true;
                 } else {
                     //otherwise, they're free to move. 
@@ -137,6 +152,7 @@ public class Controls : MonoBehaviour
 
                 if(colliderHigh) {
                     //collider high is active. 
+
                     //set high forward to active. 
                     colliderHighForward= true;
 
@@ -192,19 +208,6 @@ public class Controls : MonoBehaviour
                 
             }
 
-
-            //toggle collider objects, which are really just for debugging now 
-            if(DEBUG) {
-                debugcolliderHigh.SetActive(colliderHigh);
-                debugcolliderHighForward.SetActive(colliderHighForward);
-                debugcolliderLow.SetActive(colliderLow);
-                debugcolliderLowForward.SetActive(colliderLowForward);
-            }
-
-
-            //check collision and hits, with the bools. 
-
-
         }
 
     }
@@ -214,11 +217,17 @@ public class Controls : MonoBehaviour
 
         yield return new WaitForSeconds(0.4f);
         
+        /*
         if(isHigh && colliderHigh) {
             spriteController.high();
         } else if(colliderLow) {
             spriteController.low();
         }
+        
+        yield return new WaitForSeconds(0.1f);
+        */
+
+        spriteController.idle();
     }
 
 }

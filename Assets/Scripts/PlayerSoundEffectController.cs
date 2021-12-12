@@ -38,6 +38,12 @@ public class PlayerSoundEffectController : MonoBehaviour
     public AudioSource src_missBeat;
     public AudioClip sfx_missBeat;
 
+    public AudioSource src_cantForward;
+    public AudioClip sfx_cantForward;
+
+    public AudioSource src_cantAttack;
+    public AudioClip sfx_cantAttack;
+
     public float vol = 0.5f;
 
 
@@ -106,6 +112,14 @@ public class PlayerSoundEffectController : MonoBehaviour
     public void Sfx_MissBeat()
     {
         src_missBeat.PlayOneShot(sfx_missBeat, vol);
+    }
+
+    public void Sfx_CantForward() {
+        src_cantForward.PlayOneShot(sfx_cantForward, vol);
+    }
+
+    public void Sfx_CantAttack() {
+        src_cantAttack.PlayOneShot(sfx_cantAttack, vol); 
     }
 
 }
