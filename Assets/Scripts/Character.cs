@@ -126,12 +126,24 @@ public class Character : MonoBehaviour
             sfxController.Sfx_BlockLow();
         }
 
-        //display a splash depending on accuracy 
-        if(wasHigh) {
-            spriteSplashController.showBlockHigh();
+        //decide which splash to display. if the attack was just blocked, display the block splash.
+        //if both players were attacking forward, display the clash splash. 
+        if(controls.colliderHighForward && otherPlayer.controls.colliderHighForward) {
+            //clash high! 
+            spriteSplashController.showClashHigh();
+        } else if(controls.colliderLowForward && otherPlayer.controls.colliderLowForward) {
+            //clash low!
+            spriteSplashController.showClashLow();
         } else {
-            spriteSplashController.showBlockLow();
+            //display a block splash, high or low 
+            if(wasHigh) {
+                spriteSplashController.showBlockHigh();
+            } else {
+                spriteSplashController.showBlockLow();
+            }
         }
+
+        
 
         //screenshake!
         StartCoroutine(screenshake.screenshake(screenshakeMag / 2f, screenshakeTime * 0.75f));
@@ -210,12 +222,12 @@ public class Character : MonoBehaviour
         if(controls.colliderHighForward) {
             controls.colliderHighForward = false;
             controls.colliderHigh = false;
-            spriteController.idle();
+            //spriteController.idle();
         }
         if(controls.colliderLowForward) {
             controls.colliderLowForward = false;
             controls.colliderLow = false;
-            spriteController.idle();
+            //spriteController.idle();
         }
 
         //cont- return to baseline if messed up 

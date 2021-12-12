@@ -7,11 +7,17 @@ public class SpriteSplash : MonoBehaviour
 
     public SpriteRenderer block_high;
     public SpriteRenderer block_low;
-    public SpriteRenderer clash; 
+    public SpriteRenderer clash_high; 
+    public SpriteRenderer clash_low; 
 
 
-    public void showClash() {
-        StartCoroutine(showSplash(clash));
+    public void showClashHigh() {
+        block_high.gameObject.SetActive(false);
+        StartCoroutine(showSplash(clash_high));
+    }
+    public void showClashLow() {
+        block_low.gameObject.SetActive(false);
+        StartCoroutine(showSplash(clash_low));
     }
     public void showBlockHigh() {
         StartCoroutine(showSplash(block_high));

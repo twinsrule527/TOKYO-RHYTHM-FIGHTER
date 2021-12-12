@@ -50,12 +50,6 @@ public class Controls : MonoBehaviour
     int moveSign = 1;
 
 
-    public GameObject debugcolliderHigh;
-    public GameObject debugcolliderHighForward;
-    public GameObject debugcolliderLow;
-    public GameObject debugcolliderLowForward;
-
-
     public bool colliderHigh, colliderHighForward, colliderLow, colliderLowForward; 
 
     public bool actedThisBeat = false;
@@ -208,20 +202,6 @@ public class Controls : MonoBehaviour
                 
             }
 
-/*
-            //toggle collider objects, which are really just for debugging now 
-            if(DEBUG) {
-                debugcolliderHigh.SetActive(colliderHigh);
-                debugcolliderHighForward.SetActive(colliderHighForward);
-                debugcolliderLow.SetActive(colliderLow);
-                debugcolliderLowForward.SetActive(colliderLowForward);
-            }
-            */
-
-
-            //check collision and hits, with the bools. 
-
-
         }
 
     }
@@ -231,11 +211,17 @@ public class Controls : MonoBehaviour
 
         yield return new WaitForSeconds(0.4f);
         
+        /*
         if(isHigh && colliderHigh) {
             spriteController.high();
         } else if(colliderLow) {
             spriteController.low();
         }
+        
+        yield return new WaitForSeconds(0.1f);
+        */
+
+        spriteController.idle();
     }
 
 }

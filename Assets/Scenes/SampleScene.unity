@@ -1799,6 +1799,10 @@ PrefabInstance:
       propertyPath: spr_HighForward
       value: 
       objectReference: {fileID: 21300000, guid: eda39ded1a49a3a4b874dc520b329c5e, type: 3}
+    - target: {fileID: 6810465491270020629, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7116906305799852333, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
       propertyPath: m_FlipX
       value: 1
