@@ -1113,9 +1113,9 @@ MonoBehaviour:
   src_missBeat: {fileID: 1401571939996527814}
   sfx_missBeat: {fileID: 8300000, guid: 5764646c6a5e0a04e8fd64a6bb3c6f5d, type: 3}
   src_cantForward: {fileID: 2633459861179298303}
-  sfx_cantForward: {fileID: 8300000, guid: 5764646c6a5e0a04e8fd64a6bb3c6f5d, type: 3}
+  sfx_cantForward: {fileID: 8300000, guid: ccc53171bbd5d244da3d2292b237a42b, type: 3}
   src_cantAttack: {fileID: 9044396916362636180}
-  sfx_cantAttack: {fileID: 8300000, guid: 5764646c6a5e0a04e8fd64a6bb3c6f5d, type: 3}
+  sfx_cantAttack: {fileID: 8300000, guid: ccc53171bbd5d244da3d2292b237a42b, type: 3}
   vol: 0.5
 --- !u!1 &2755933073065818408
 GameObject:
