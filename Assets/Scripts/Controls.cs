@@ -127,7 +127,7 @@ public class Controls : MonoBehaviour
                 
                 //check if they're blocked by the other player! if they are, mess up. 
                 if(character.otherInProximity()) {
-                    sfxController.Sfx_CantStepForward();
+                    sfxController.Sfx_CantForward();
                     charShake.screenshake(1, 0.2f);
                     actedThisBeat = true;
                 } else {
