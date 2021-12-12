@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ba0d611a7b37b4d9782a95f78496e462, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4c02bf674dd7f9e448dcd78cb9188871, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -680,7 +680,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 897658ad228304b149961cd3c98caf01, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3567fed25a642444299dbd0303c68c85, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1924,7 +1924,7 @@ PrefabInstance:
     - target: {fileID: 5279837589644827638, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ba0d611a7b37b4d9782a95f78496e462, type: 3}
+      objectReference: {fileID: 21300000, guid: 4c02bf674dd7f9e448dcd78cb9188871, type: 3}
     - target: {fileID: 6515436511395516753, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
       propertyPath: spr_Low
       value: 
@@ -2923,7 +2923,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ba0d611a7b37b4d9782a95f78496e462, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4c02bf674dd7f9e448dcd78cb9188871, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3112,7 +3112,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 897658ad228304b149961cd3c98caf01, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3567fed25a642444299dbd0303c68c85, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4310,6 +4310,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1458612321222599610, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.335
+      objectReference: {fileID: 0}
+    - target: {fileID: 1458612321222599610, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.335
+      objectReference: {fileID: 0}
     - target: {fileID: 4138029348902706595, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
       propertyPath: m_Name
       value: Player1
@@ -4366,6 +4374,10 @@ PrefabInstance:
       propertyPath: charShake
       value: 
       objectReference: {fileID: 2132662489}
+    - target: {fileID: 5279837589644827638, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3567fed25a642444299dbd0303c68c85, type: 3}
     - target: {fileID: 6515436511395516753, guid: c8b425b74c9012d4486e21cb96812bba, type: 3}
       propertyPath: spr_Low
       value: 
