@@ -18,8 +18,10 @@ public class Character : MonoBehaviour
     public CharacterSpriteController spriteController;
     public SpriteSplash spriteSplashController;
 
+    public GameObject winningSplash;
 
-    static int pointsToGame = 3;
+
+    static int pointsToGame = 10;
     public int points = 0;
 
     public int hitsScored = 0;
@@ -34,7 +36,7 @@ public class Character : MonoBehaviour
     float pmult_GOOD = 0.75f;
     float pmult_GREAT = 1f;
     float pmult_PERFECT = 1.25f;
-
+    
 
     bool iHit = false;
     bool iHitLastTime = false;
@@ -241,7 +243,16 @@ public class Character : MonoBehaviour
 
 
     void wonTheGame() {
-        //TODO 
+
+        //disable controls for players 
+        controls.canControlCharacter = false;
+        otherPlayer.controls.canControlCharacter = false;
+
+        //enable winning splash 
+        winningSplash.SetActive(true);
+
+        //TODO any animation coroutines when showing it? 
+        
     }
 
 

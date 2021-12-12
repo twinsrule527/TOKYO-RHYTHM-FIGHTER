@@ -2024,6 +2024,7 @@ MonoBehaviour:
   colliderLow: 0
   colliderLowForward: 0
   actedThisBeat: 0
+  canControlCharacter: 1
 --- !u!114 &9161921744017233077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2042,11 +2043,12 @@ MonoBehaviour:
   sfxController: {fileID: 1135202077965203778}
   spriteController: {fileID: 6515436511395516753}
   spriteSplashController: {fileID: 4632370000512662333}
+  winningSplash: {fileID: 0}
   points: 0
   hitsScored: 0
   wasBlocked: 0
   messedUp: 0
-  screenshakeMag: 1
+  screenshakeMag: 1.1
   screenshakeTime: 0.26
 --- !u!114 &7056600901547574214
 MonoBehaviour:

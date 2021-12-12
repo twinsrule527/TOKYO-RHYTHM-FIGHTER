@@ -54,6 +54,8 @@ public class Controls : MonoBehaviour
 
     public bool actedThisBeat = false;
 
+    public bool canControlCharacter = true;
+
     
 
     void Start() {
@@ -90,6 +92,10 @@ public class Controls : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
+
+        if(!canControlCharacter) {
+            return;
+        }
 
         //only check key once
         bool forward = Input.GetKeyDown(forwardKey);
