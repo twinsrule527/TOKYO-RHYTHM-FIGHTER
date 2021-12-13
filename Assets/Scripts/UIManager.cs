@@ -94,4 +94,8 @@ public class UIManager : MonoBehaviour
         
     }
 
+    //IEnumerator juiceScore(MusicReactive bouncing) {
+        //TODO just make it bounce bigger for a sec lol 
+    //}
+
 }
