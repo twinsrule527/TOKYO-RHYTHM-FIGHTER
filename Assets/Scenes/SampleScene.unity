@@ -1537,13 +1537,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8700617353114198275, guid: c47542f12d5b88746a553c38cf87fbdd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c47542f12d5b88746a553c38cf87fbdd, type: 3}
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c47542f12d5b88746a553c38cf87fbdd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: -2.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c47542f12d5b88746a553c38cf87fbdd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1551,7 +1555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c47542f12d5b88746a553c38cf87fbdd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 69.4
+      value: 64.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c47542f12d5b88746a553c38cf87fbdd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1581,6 +1585,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7029948723529949830, guid: c47542f12d5b88746a553c38cf87fbdd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6722085885383957590, guid: c47542f12d5b88746a553c38cf87fbdd, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6722085885383957590, guid: c47542f12d5b88746a553c38cf87fbdd, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6722085885383957590, guid: c47542f12d5b88746a553c38cf87fbdd, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6722085885383957590, guid: c47542f12d5b88746a553c38cf87fbdd, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 65702495048144492, guid: c47542f12d5b88746a553c38cf87fbdd, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1588,6 +1612,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c47542f12d5b88746a553c38cf87fbdd, type: 3}
       propertyPath: m_Name
       value: CyberStreet2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8134837689134937748, guid: c47542f12d5b88746a553c38cf87fbdd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c47542f12d5b88746a553c38cf87fbdd, type: 3}
@@ -1626,12 +1654,12 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
+    m_Bias: 0
+    m_NormalBias: 0
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
       e00: 1
