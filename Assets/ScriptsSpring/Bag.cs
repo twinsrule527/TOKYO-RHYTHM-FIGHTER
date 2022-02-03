@@ -16,6 +16,31 @@ public class Bag<T>
 
     T lastDrawn;
 
+    //The default lineup for this bag. 
+    //With refillFromLineup=true, when the bag empties, it will refill itself with the
+    //default lineup declared here 
+    //ex. the tetris lineup is 2 of each piece 
+    List<T> lineup = new List<T>();
+
+    public bool refill = true;
+
+
+    //Add something to the default lineup, which is what refills the bag when empty.
+    public void AddToLineup(T item) {
+        lineup.Add(item);
+    }
+
+    //Add a number of something to the default lineup, which is what refills the bag. 
+    public void AddToLineup(T item, int num) {
+        for(int i = 0; i < num; i++) {
+            lineup.Add(item);
+        }
+    }
+
+    //Set a whole list as the lineup. 
+    public void SetLineup(List<T> li) {
+        lineup = new List<T>(li);
+    }
 
     //Add something to the bag. 
     public void Add(T item) {
@@ -25,8 +50,13 @@ public class Bag<T>
     //Add a number of something to the bag.
     public void Add(T item, int num) {
         for(int i = 0; i < num; i++) {
-            Add(item);
+            list.Add(item);
         }
+    }
+
+    //Set the whole bag as a list.
+    public void SetBag(List<T> li) {
+        list = new List<T>(li);
     }
 
     //Clear the bag. 
@@ -39,6 +69,7 @@ public class Bag<T>
         int rand = Random.Range(0, list.Count);
         lastDrawn = list[rand];
         list.RemoveAt(rand);
+        RefillIfNeeded();
         return lastDrawn;
     }
 
@@ -57,12 +88,33 @@ public class Bag<T>
             if(!lastDrawn.Equals(list[rand])) {
                 lastDrawn = list[rand];
                 list.RemoveAt(rand);
+                RefillIfNeeded();
                 return lastDrawn;
             }
         } 
     }
 
     //TODO if needed, a "draw no repeat with replace" 
+
+
+    //set the bag to what's in the lineup.
+    //mostly just wanted to take advantage of making a copy 
+    public void ClearAndRefill() {
+        list = new List<T>(lineup);
+    }
+
+    //Refill the bag from the lineup without clearing it first. 
+    public void Refill() {
+        for(int i = 0; i < lineup.Count; i++) {
+            list.Add(lineup[i]);
+        }
+    }
+
+    public void RefillIfNeeded() {
+        if(refill && list.Count == 0) {
+            ClearAndRefill();
+        }
+    }
 
 
 }
