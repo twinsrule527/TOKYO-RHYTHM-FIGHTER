@@ -4,22 +4,40 @@ using UnityEngine;
 //The Boss AI Superclass - uses a state machine w/ coroutines
     //Manages Boss attack patterns
         //Subclasses are implementations of each boss with actual attack pattern
-public class BossAI : MonoBehaviour
+public abstract class BossAI : MonoBehaviour
 {
-    //TODO: Move to Boss Class
-    protected float bossHP;//Design question: should this be an integer?
-    public void ChangeBossHP(int amt) {//Function to be called by others when increasing/decreasing hp
-        bossHP += amt;
+    protected Bag<AttackPattern> attackBag;
+
+    //Updates the Boss State after each attack pattern
+    public virtual IEnumerator StateUpdate() {
+        while(attackBag.Count > 0) {
+            AttackPattern newAttack = attackBag.Draw();
+            yield return StartCoroutine(StartAttacks(newAttack));
+            
+        }
+    }
+    
+    public IEnumerator StartAttacks(AttackPattern myAttack) {
+        for(int i = 0; i < myAttack.coroutines.Count; i++) {
+            yield return StartCoroutine(myAttack.coroutines[i].name, myAttack.coroutines[i].val);
+            //yield return myAttack.CoroutineSource.StartCoroutine(myAttack.coroutines[i]);
+        }
+    }
+    //When the boss dies, it stops all attacks and does a death coroutine
+    void Die() {
+        StopAllCoroutines();
+        StartCoroutine("Death");
     }
 
-    protected Bag<AttackPattern> attackBag;
-    
+    //Each boss has their own Death Coroutine
+    public abstract IEnumerator Death();
+
     //All bosses have a Coroutine to just wait
-    public IEnumerator Wait(float amt = 0) {
+    public virtual IEnumerator Wait(float amt = 0) {
         yield return new WaitForSeconds(amt);
     }
 
-    public IEnumerator Reposition() {
+    public virtual IEnumerator Reposition(float amt = 0) {
         yield return null;   
     }
 }

@@ -2,6 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public struct Attack {
+    public string name;
+    public float val;
+
+    public Attack(string Name, float Val) {
+        name = Name;
+        val = Val;
+    }
+}
+
 public class AttackPattern
 {
 
@@ -12,21 +23,21 @@ public class AttackPattern
 
     */
 
-    List<IEnumerator> coroutines;
-    BossAI CoroutineSource;
+    public List<Attack> coroutines { get; private set; }
+    public BossAI CoroutineSource { get; private set; }
     public string name { get; private set; }
 
-    public AttackPattern(List<IEnumerator> attackCoroutine, BossAI attackSource, string attackName) {
+    public AttackPattern(List<Attack> attackCoroutine, BossAI attackSource, string attackName) {
         coroutines = attackCoroutine;
         CoroutineSource = attackSource;
         name = attackName;
     }
-
+/*
     public IEnumerator StartAttacks() {
         for(int i = 0; i < coroutines.Count; i++) {
             yield return CoroutineSource.StartCoroutine(coroutines[i]);
         }
-    }
+    }*/
 
     public override bool Equals(System.Object obj) {
 

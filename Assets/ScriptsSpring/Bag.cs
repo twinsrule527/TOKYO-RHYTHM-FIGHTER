@@ -42,6 +42,13 @@ public class Bag<T>
         lineup = new List<T>(li);
     }
 
+    //gives a count of elements in the lineup
+    public int CountLineup {
+        get  {
+            return lineup.Count;
+        }
+    }
+
     //Add something to the bag. 
     public void Add(T item) {
         list.Add(item);
@@ -51,6 +58,13 @@ public class Bag<T>
     public void Add(T item, int num) {
         for(int i = 0; i < num; i++) {
             list.Add(item);
+        }
+    }
+
+    //gives a count of elements currently in the bag
+    public int Count {
+        get  {
+            return list.Count;
         }
     }
 
