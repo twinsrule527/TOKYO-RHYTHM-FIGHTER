@@ -12,13 +12,20 @@ public class AttackPattern
 
     */
 
-    Coroutine coroutine;
-
+    List<IEnumerator> coroutines;
+    BossAI CoroutineSource;
     public string name { get; private set; }
 
-    public AttackPattern(Coroutine attackCoroutine, string attackName) {
-        coroutine = attackCoroutine;
+    public AttackPattern(List<IEnumerator> attackCoroutine, BossAI attackSource, string attackName) {
+        coroutines = attackCoroutine;
+        CoroutineSource = attackSource;
         name = attackName;
+    }
+
+    public IEnumerator StartAttacks() {
+        for(int i = 0; i < coroutines.Count; i++) {
+            yield return CoroutineSource.StartCoroutine(coroutines[i]);
+        }
     }
 
     public override bool Equals(System.Object obj) {
