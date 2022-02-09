@@ -13,7 +13,7 @@ public class BeatController : MonoBehaviour
 
     //BPM 
     //easy to know and set. human-readable, will be used to do some conversion 
-    [SerializeField] static float BPM = 100; 
+    static float BPM = 100; 
 
     //will be calculated from BPM. in seconds. 
     static float secPerBeat;
@@ -159,9 +159,9 @@ public class BeatController : MonoBehaviour
 
     //Like WaitForSeconds, but in sync with the music. 
     //USE THIS INSTEAD OF WAITFORSECONDS
-    public IEnumerator WaitForBeat(float fraction) {
+    public static IEnumerator WaitForBeat(float fraction) {
         float lastDistFromBeat = getDistanceFromBeat(fraction);
-        while(lastDistFromBeat > getDistanceFromBeat(fraction)) {
+        while(lastDistFromBeat < getDistanceFromBeat(fraction)) {
             lastDistFromBeat = getDistanceFromBeat(fraction);
             yield return null;
         }
