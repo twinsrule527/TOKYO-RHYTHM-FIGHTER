@@ -113,7 +113,7 @@ public class Controls : MonoBehaviour
         
         //first of all, check if we're on beat. 
         //if we're on the beat, do all this logic. if we're not, mess up. 
-        if((forward || back || high || low) && !actedThisBeat && !BeatController.IsOnBeat()) {
+        if((forward || back || high || low) && !actedThisBeat && !OLD_BeatController.IsOnBeat()) {
 
             //we're not on beat! 
             colliderHigh = false;
