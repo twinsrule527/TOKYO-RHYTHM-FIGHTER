@@ -8,9 +8,8 @@ public class BeatController : MonoBehaviour
     /*public enum Accuracy {
         OK, GOOD, GREAT, PERFECT, OFFBEAT
     }*/
-
     public AudioSource audioSource;
-
+    public static BeatController Instance;
     //BPM 
     //easy to know and set. human-readable, will be used to do some conversion 
     [SerializeField] static float BPM = 100; 
@@ -57,10 +56,10 @@ public class BeatController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Instance = this;
         //convert BPM to functional value 
         secPerBeat = 60f / BPM;
 
-        
         //TODO might have the song started by a button or soemthing idk. 
         //for now just starts at startup 
         startSong();
@@ -159,7 +158,7 @@ public class BeatController : MonoBehaviour
 
     //Like WaitForSeconds, but in sync with the music. 
     //USE THIS INSTEAD OF WAITFORSECONDS
-    public IEnumerator WaitForBeat(float fraction) {
+    public static IEnumerator WaitForBeat(float fraction) {
         float lastDistFromBeat = getDistanceFromBeat(fraction);
         while(lastDistFromBeat > getDistanceFromBeat(fraction)) {
             lastDistFromBeat = getDistanceFromBeat(fraction);

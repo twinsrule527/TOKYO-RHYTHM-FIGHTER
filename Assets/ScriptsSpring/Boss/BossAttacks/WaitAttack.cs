@@ -6,7 +6,7 @@ public class WaitAttack : BossAttack
 {
     [SerializeField] private float beatToWait;
     public override IEnumerator Attack() {
-        yield return new WaitForSeconds(beatToWait);//Never do this
+        yield return BeatController.WaitForBeat(beatToWait);//Never do this
     }
 
     public override void Interrupt() {

@@ -8,20 +8,9 @@ public class PlaytestAttack3 : BossAttack
     private bool interruptable;
     public override IEnumerator Attack() {
         mySprite.color = Color.blue;
-        float curTime = BeatController.songPos;
-        float endTime = curTime + 2;
-        Debug.Log(endTime);
-        while(curTime < endTime) {
-            yield return null;
-            curTime = BeatController.songPos;
-        }
-        curTime = BeatController.songPos;
-        endTime = curTime + 1;
+        yield return BeatController.Instance.StartCoroutine(BeatController.WaitForBeat(150));
         interruptable = true;
-        while(curTime < endTime) {
-            yield return null;
-            curTime = BeatController.songPos;
-        }
+        yield return BeatController.Instance.StartCoroutine(BeatController.WaitForBeat(2));
         mySprite.color = Color.black;
     }
 
