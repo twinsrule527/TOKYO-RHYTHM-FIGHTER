@@ -9,7 +9,6 @@ public class BeatController : MonoBehaviour
         OK, GOOD, GREAT, PERFECT, OFFBEAT
     }*/
     public AudioSource audioSource;
-    public static BeatController Instance;
     //BPM 
     //easy to know and set. human-readable, will be used to do some conversion 
     static float BPM = 100; 
@@ -56,7 +55,6 @@ public class BeatController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instance = this;
         //convert BPM to functional value 
         secPerBeat = 60f / BPM;
 
