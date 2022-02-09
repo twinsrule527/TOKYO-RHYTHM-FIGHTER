@@ -6,25 +6,26 @@ using UnityEngine;
 public class PlaytestBossAI : BossAI
 {
     public GameObject Boss;
+    
+    //Temporary AttackPattern Construction
+    [SerializeField] protected List<BossAttack> AttackChildren;
+    
     [SerializeField] private float bossBeat;//The beat that this goes along with
     [SerializeField] private SpriteRenderer mySprite;//This will eventually go in a separate object
     void Start() {
         attackBag = new Bag<AttackPattern>();
-        attackBag.AddToLineup(AttackPattern1());
+        CreateAttackPatterns();
         attackBag.Refill();
         StartCoroutine("StateUpdate");
     }
 
-    
-    //Each rhythmic set of attacks is compiled in a single attackpattern
-    public AttackPattern AttackPattern1() {
-        List<Attack> attacks = new List<Attack>();
-        attacks.Add(new Attack("Reposition", -1));
-        //attacks.Add(new Attack("DashAttack", 0));
-        attacks.Add(new Attack("Wait",0.5f));
-        //attacks.Add(new Attack("DashAttack",1));
-        attacks.Add(new Attack("FastAttack", -1));
-        return new AttackPattern(attacks, this, "atk1");
+    //Creates all attack patterns - a temporary measure until we get a tool to do this working
+    public void CreateAttackPatterns() {
+        List<BossAttack> newAttacks = new List<BossAttack>();
+        newAttacks.Add(AttackChildren[0]);
+        newAttacks.Add(AttackChildren[1]);
+        //newAttacks.Add(AttackChildren[0]);
+        attackBag.AddToLineup(new AttackPattern(newAttacks, this, "1"));
     }
 
     //An example attack coroutine, where the boss dashes across the screen

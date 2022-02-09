@@ -7,19 +7,20 @@ using UnityEngine;
 public abstract class BossAI : MonoBehaviour
 {
     protected Bag<AttackPattern> attackBag;
-
+        public BossAttack CurrentAttack { get; private set; }//Whatever the attack the boss is currently on - is needed for Interrupts
+    
     //Updates the Boss State after each attack pattern
     public virtual IEnumerator StateUpdate() {
         while(attackBag.Count > 0) {
             AttackPattern newAttack = attackBag.Draw();
             yield return StartCoroutine(StartAttacks(newAttack));
-            
         }
     }
     
     public IEnumerator StartAttacks(AttackPattern myAttack) {
         for(int i = 0; i < myAttack.coroutines.Count; i++) {
-            yield return StartCoroutine(myAttack.coroutines[i].name, myAttack.coroutines[i].val);
+            CurrentAttack = myAttack.coroutines[i];
+            yield return CurrentAttack.StartCoroutine(CurrentAttack.Attack());
             //yield return myAttack.CoroutineSource.StartCoroutine(myAttack.coroutines[i]);
         }
     }
