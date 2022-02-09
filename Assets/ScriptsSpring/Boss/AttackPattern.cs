@@ -23,11 +23,11 @@ public class AttackPattern
 
     */
 
-    public List<Attack> coroutines { get; private set; }
+    public List<BossAttack> coroutines { get; private set; }
     public BossAI CoroutineSource { get; private set; }
     public string name { get; private set; }
 
-    public AttackPattern(List<Attack> attackCoroutine, BossAI attackSource, string attackName) {
+    public AttackPattern(List<BossAttack> attackCoroutine, BossAI attackSource, string attackName) {
         coroutines = attackCoroutine;
         CoroutineSource = attackSource;
         name = attackName;
