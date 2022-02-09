@@ -117,4 +117,8 @@ public class Bag<T>
     }
 
 
+    //TODO 
+    //checking to prevent too many in a row at "seams" of bag 
+    //ie last 2 then first 2 means 4 total 
+
 }
