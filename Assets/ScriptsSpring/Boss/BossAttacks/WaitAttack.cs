@@ -12,4 +12,9 @@ public class WaitAttack : BossAttack
     public override void Interrupt() {
 
     }
+    
+    public override IEnumerator Cancel()
+    {
+        yield return null;
+    }
 }

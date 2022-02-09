@@ -26,41 +26,21 @@ public class PlaytestBossAI : BossAI
         newAttacks.Add(AttackChildren[1]);
         //newAttacks.Add(AttackChildren[0]);
         attackBag.AddToLineup(new AttackPattern(newAttacks, this, "1"));
+        newAttacks = new List<BossAttack>();
+        newAttacks.Add(AttackChildren[3]);
+        newAttacks.Add(AttackChildren[1]);
+        newAttacks.Add(AttackChildren[4]);
+        newAttacks.Add(AttackChildren[2]);
+        newAttacks.Add(AttackChildren[0]);
+        attackBag.AddToLineup(new AttackPattern(newAttacks, this, "2"));
+        newAttacks = new List<BossAttack>();
+        newAttacks.Add(AttackChildren[0]);
+        newAttacks.Add(AttackChildren[5]);
+        attackBag.AddToLineup(new AttackPattern(newAttacks, this, "3"));
+
     }
 
-    //An example attack coroutine, where the boss dashes across the screen
-    [SerializeField] private float DashAttack_DashTime;
-    [SerializeField] private float DashAttack_DashDistance;
-
-    private IEnumerator DashAttack(float directionFloat) {
-        Vector3 direction;
-        if(directionFloat == 0) {
-            direction = transform.right;
-        }
-        else {
-            direction = -transform.right;
-        }
-        Vector3 startPosition = Boss.transform.position;
-        Vector3 endPosition = Boss.transform.position + direction * DashAttack_DashDistance;
-        float curTime = 0;
-        //At the start, it also starts an animation
-        while(curTime < DashAttack_DashTime) {
-            curTime += Time.deltaTime;
-            transform.position = Vector3.Lerp(startPosition, endPosition, curTime / DashAttack_DashTime);
-            yield return null;
-        }
-        transform.position = endPosition;
-    }
-
-    //Three different attacks, to test our rhythm system
-    private IEnumerator FastAttack(int val) {
-        mySprite.color = Color.red;
-        yield return new WaitForSeconds(bossBeat);
-        mySprite.color = Color.white;
-        yield return null;
-        mySprite.color = Color.black;
-    }
-
+    //Example attacks
     private IEnumerator ChargeAttack(int val) {
         mySprite.color = Color.blue;
         yield return new WaitForSeconds(bossBeat);

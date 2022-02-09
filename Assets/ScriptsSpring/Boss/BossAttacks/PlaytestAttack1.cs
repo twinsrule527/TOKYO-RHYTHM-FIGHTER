@@ -11,10 +11,14 @@ public class PlaytestAttack1 : BossAttack
         mySprite.color = Color.white;
         yield return null;
         mySprite.color = Color.black;
-        Debug.Log("end");
     }   
 
     public override void Interrupt() {
 
+    }
+
+    public override IEnumerator Cancel()
+    {
+        yield return null;
     }
 }
