@@ -160,7 +160,7 @@ public class BeatController : MonoBehaviour
     //USE THIS INSTEAD OF WAITFORSECONDS
     public static IEnumerator WaitForBeat(float fraction) {
         float lastDistFromBeat = getDistanceFromBeat(fraction);
-        while(lastDistFromBeat < getDistanceFromBeat(fraction)) {
+        while(lastDistFromBeat <= getDistanceFromBeat(fraction)) {
             lastDistFromBeat = getDistanceFromBeat(fraction);
             yield return null;
         }
