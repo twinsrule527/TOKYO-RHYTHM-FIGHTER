@@ -154,6 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Boss: {fileID: 952360900}
+  bossBeat: 1
+  mySprite: {fileID: 952360902}
   DashAttack_DashTime: 1
   DashAttack_DashDistance: 5
 --- !u!212 &952360902
@@ -317,6 +319,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Boss: {fileID: 0}
+  bossBeat: 0
+  mySprite: {fileID: 0}
   DashAttack_DashTime: 1
   DashAttack_DashDistance: 5
 --- !u!1 &1254522217

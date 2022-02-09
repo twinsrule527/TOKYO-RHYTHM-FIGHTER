@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlaytestBossAI : BossAI
 {
     public GameObject Boss;
+    [SerializeField] private float bossBeat;//The beat that this goes along with
+    [SerializeField] private SpriteRenderer mySprite;//This will eventually go in a separate object
     void Start() {
         attackBag = new Bag<AttackPattern>();
         attackBag.AddToLineup(AttackPattern1());
@@ -13,24 +15,15 @@ public class PlaytestBossAI : BossAI
         StartCoroutine("StateUpdate");
     }
 
-    /*public override IEnumerator StateUpdate()
-    {
-        while(attackBag.Count > 0) {
-            AttackPattern newAttack = attackBag.Draw();
-            attackBag.SetLineup(new List<AttackPattern>());
-            //attackBag.AddToLineup(AttackPattern1());
-            attackBag.Refill();
-            yield return StartCoroutine(StartAttacks(newAttack));
-            
-        }
-    }*/
+    
     //Each rhythmic set of attacks is compiled in a single attackpattern
     public AttackPattern AttackPattern1() {
         List<Attack> attacks = new List<Attack>();
         attacks.Add(new Attack("Reposition", -1));
-        attacks.Add(new Attack("DashAttack", 0));
+        //attacks.Add(new Attack("DashAttack", 0));
         attacks.Add(new Attack("Wait",0.5f));
-        attacks.Add(new Attack("DashAttack",1));
+        //attacks.Add(new Attack("DashAttack",1));
+        attacks.Add(new Attack("FastAttack", -1));
         return new AttackPattern(attacks, this, "atk1");
     }
 
@@ -56,6 +49,23 @@ public class PlaytestBossAI : BossAI
             yield return null;
         }
         transform.position = endPosition;
+    }
+
+    //Three different attacks, to test our rhythm system
+    private IEnumerator FastAttack(int val) {
+        mySprite.color = Color.red;
+        yield return new WaitForSeconds(bossBeat);
+        mySprite.color = Color.white;
+        yield return null;
+        mySprite.color = Color.black;
+    }
+
+    private IEnumerator ChargeAttack(int val) {
+        mySprite.color = Color.blue;
+        yield return new WaitForSeconds(bossBeat);
+        mySprite.color = Color.white;
+        yield return null;
+        mySprite.color = Color.black;
     }
 
     public override IEnumerator Reposition(float amt = 0) {
