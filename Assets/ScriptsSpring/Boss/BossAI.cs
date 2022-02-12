@@ -7,7 +7,7 @@ using UnityEngine;
 public abstract class BossAI : MonoBehaviour
 {
     protected Bag<AttackPattern> attackBag;
-        public BossAttack CurrentAttack { get; private set; }//Whatever the attack the boss is currently on - is needed for Interrupts
+    public BossAttack CurrentAttack { get; private set; }//Whatever the attack the boss is currently on - is needed for Interrupts
     
     //Updates the Boss State after each attack pattern
     public virtual IEnumerator StateUpdate() {
