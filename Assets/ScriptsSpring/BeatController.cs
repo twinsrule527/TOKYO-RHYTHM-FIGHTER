@@ -165,6 +165,21 @@ public class BeatController : MonoBehaviour
     }
 
 
+    //Wait for X number of a type of beat 
+    //Ex. wait for 2 0.5s to go by 
+    public static IEnumerator WaitForBeatsMulti(int numBeats, float fraction) {
+        int counter = 0;
+        float lastDistFromBeat = getDistanceFromBeat(fraction);
+        while(counter < numBeats) {
+            while(lastDistFromBeat <= getDistanceFromBeat(fraction)) {
+                lastDistFromBeat = getDistanceFromBeat(fraction);
+                yield return null;
+            }
+            counter++;
+        }
+    }
+
+
     //get the current accuracy. returns OK, GOOD, GREAT, PERFECT according to thresholds. 
     /*
     public static Accuracy GetAccuracy() {
