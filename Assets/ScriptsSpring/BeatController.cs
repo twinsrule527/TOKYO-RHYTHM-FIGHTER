@@ -9,7 +9,6 @@ public class BeatController : MonoBehaviour
         OK, GOOD, GREAT, PERFECT, OFFBEAT
     }*/
     public AudioSource audioSource;
-    public static BeatController Instance;
     //BPM 
     //easy to know and set. human-readable, will be used to do some conversion 
     static float BPM = 100; 
@@ -56,7 +55,6 @@ public class BeatController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instance = this;
         //convert BPM to functional value 
         secPerBeat = 60f / BPM;
 
@@ -163,6 +161,21 @@ public class BeatController : MonoBehaviour
         while(lastDistFromBeat <= getDistanceFromBeat(fraction)) {
             lastDistFromBeat = getDistanceFromBeat(fraction);
             yield return null;
+        }
+    }
+
+
+    //Wait for X number of a type of beat 
+    //Ex. wait for 2 0.5s to go by 
+    public static IEnumerator WaitForBeatsMulti(int numBeats, float fraction) {
+        int counter = 0;
+        float lastDistFromBeat = getDistanceFromBeat(fraction);
+        while(counter < numBeats) {
+            while(lastDistFromBeat <= getDistanceFromBeat(fraction)) {
+                lastDistFromBeat = getDistanceFromBeat(fraction);
+                yield return null;
+            }
+            counter++;
         }
     }
 

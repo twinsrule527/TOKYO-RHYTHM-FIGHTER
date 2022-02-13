@@ -8,9 +8,10 @@ public class PlaytestAttack3 : BossAttack
     private bool interruptable;
     public override IEnumerator Attack() {
         mySprite.color = Color.blue;
-        yield return BeatController.Instance.StartCoroutine(BeatController.WaitForBeat(1));
+        yield return StartCoroutine(BeatController.WaitForBeat(1));
         interruptable = true;
-        yield return BeatController.Instance.StartCoroutine(BeatController.WaitForBeat(1));
+        mySprite.color = Color.green;
+        yield return StartCoroutine(BeatController.WaitForBeat(3));
         mySprite.color = Color.black;
     }
 
@@ -23,6 +24,7 @@ public class PlaytestAttack3 : BossAttack
     
     public override IEnumerator Cancel()
     {
-        yield return null;
+        mySprite.color = Color.cyan;
+        yield return StartCoroutine(BeatController.WaitForBeat(10));
     }
 }
