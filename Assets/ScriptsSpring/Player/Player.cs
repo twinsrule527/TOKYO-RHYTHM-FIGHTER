@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         //load PlayerActions, which will be components on the Player object or its children 
-        actions = GetComponentsInChildren(typeof(PlayerAction)) as PlayerAction[];
+        actions = GetComponentsInChildren<PlayerAction>();
 
     }
 
