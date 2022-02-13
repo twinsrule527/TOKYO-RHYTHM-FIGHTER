@@ -8,8 +8,9 @@ public class AnimationController : MonoBehaviour
     //This code assumes us to make every animation 6 frames (with just different speeds)
 
 
-    //Delay is the time played in between frames of animation
-    public float delay;
+    //Delay is the time played in between frames of animation. THIS IS THE FLOAT FRACTION
+    public float delayFraction;
+    public float AnimationEnd;
     public bool loops;
 
     public SpriteRenderer spriteRenderer;
@@ -37,6 +38,8 @@ public class AnimationController : MonoBehaviour
         Sprites.Add(frame5);
 
         SetFrame(0);
+        AnimationEnd = delayFraction * Sprites.Count;
+
 
     }
 
@@ -55,32 +58,32 @@ public class AnimationController : MonoBehaviour
 
     public void PlayAnimationOnBeat(float beatFraction)
     {
-
-        //if (BeatController.IsEarly(beatFraction))
+        //if (BeatController.getAbsDistanceFromBeat(beatFraction) > BeatController.thresholdBeforeBeat)
         //{
+        //    //If we are early and off beat
+        //    StartCoroutine(BeatController.WaitForBeat(beatFraction));
+        //    PlayAnimation();
 
-        //    //if we're early (before the beat hits) 
-        //    //delay starting the animation until the beat hits
-              //if(beatEnded
-        //    //TODO 
-        //    //remember, time should be relative to BeatController not to deltaTime. This is because BeatController uses time relative to the music's samples playing, which keeps it in sync with the music at the lowest level, where deltaTime may fall out of sync. 
-
-        //}
-        //else if (BeatController.IsLate(beatFraction) {
-
-        //    //if we're late, we might have to skip some frames from the start.  
-        //    //calculate how many frames we need to skip, and how much to delay before starting to play the frames. 
-        //    //also, we probably want to set the sprite to the first frame we're playing right now using setFrame(#) so the game feels responsive.
-        //    //TODO 
-        //    //Ditto on using time relative to BeatController rather than deltaTime. 
-
-        //}
-        //else
+        //} else if ((BeatController.getAbsDistanceFromBeat(beatFraction) > BeatController.thresholdAfterBeat))
         //{
+        //    //if we are late
+        //    SetFrame(Sprites.IndexOf(spriteRenderer.sprite));
 
-        //    //miraculously, we're perfectly on beat 
-        //    PlayFromFrame(0);
+        //    //calculate frames to cut out
+        //    int framesToCut = 0 ;
+
+        //    //cuts out frames based on how many delayFractions(distance between each frame) would have fit within the abs distance from beat
+        //    framesToCut = (int) (BeatController.getAbsDistanceFromBeat(beatFraction) % delayFraction);
+            
+        //    PlayFromFrame(framesToCut);
+        //} else
+        //{
+        //    PlayAnimation();
         //}
+
+
+
+      
 
 
     }
@@ -88,12 +91,12 @@ public class AnimationController : MonoBehaviour
     //Plays animation from frame and checks if it should loop. 
     private IEnumerator PlayFromFrame(int frame)
     {
-        
-        WaitForSeconds wait = new WaitForSeconds(delay);
+
         for (int i = frame; i < Sprites.Count; i++)
         {
             spriteRenderer.sprite = Sprites[i];
-            yield return wait;
+            StartCoroutine(BeatController.WaitForBeat(delayFraction));
+            yield return null;
 
             if (loops == true)
             {
