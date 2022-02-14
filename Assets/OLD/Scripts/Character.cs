@@ -29,13 +29,13 @@ public class Character : MonoBehaviour
 
 
     //// POINT VALUES ////
-    int pval_block = 1;
-    int pval_hit = 1;
+    //int pval_block = 1;
+    //int pval_hit = 1;
 
-    float pmult_OK = 0.5f;
-    float pmult_GOOD = 0.75f;
-    float pmult_GREAT = 1f;
-    float pmult_PERFECT = 1.25f;
+    //float pmult_OK = 0.5f;
+    //float pmult_GOOD = 0.75f;
+    //float pmult_GREAT = 1f;
+    //float pmult_PERFECT = 1.25f;
     
 
     bool iHit = false;

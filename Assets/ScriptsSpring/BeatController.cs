@@ -84,8 +84,8 @@ public class BeatController : MonoBehaviour
         //If we've hit major beats (1, 0.5, 0.25) send out events. 
         if(!beatEnded1 && GetDistanceFromBeat(1) > thresholdAfterBeat) {
             beatEnded1 = true;
-            Global.Player.EndOfBeat1();
             Global.Boss.EndOfBeat1();
+            Global.Player.EndOfBeat1();
         } else if(GetDistanceFromBeat(1) > 1 - thresholdBeforeBeat) {
             //if we've moved on to the next beat, open this flag 
             beatEnded1 = false;
@@ -93,17 +93,17 @@ public class BeatController : MonoBehaviour
 
         if(!beatEnded05 && GetDistanceFromBeat(0.5f) > thresholdAfterBeat) {
             beatEnded05 = true;
-            Global.Player.EndOfBeat05();
             Global.Boss.EndOfBeat05();
+            Global.Player.EndOfBeat05();
         } else if(GetDistanceFromBeat(0.5f) > 0.5 - thresholdBeforeBeat) {
             //if we've moved on to the next beat, open this flag 
             beatEnded05 = false;
         }
 
-        if(!beatEnded1 && GetDistanceFromBeat(0.25f) > thresholdAfterBeat) {
+        if(!beatEnded025 && GetDistanceFromBeat(0.25f) > thresholdAfterBeat) {
             beatEnded025 = true;
-            Global.Player.EndOfBeat025();
             Global.Boss.EndOfBeat025(); 
+            Global.Player.EndOfBeat025();
         } else if(GetDistanceFromBeat(0.25f) > 0.25 - thresholdBeforeBeat) {
             //if we've moved on to the next beat, open this flag 
             beatEnded025 = false;
