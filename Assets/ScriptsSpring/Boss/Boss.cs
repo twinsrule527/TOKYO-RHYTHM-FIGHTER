@@ -4,7 +4,7 @@ using UnityEngine;
 //Class that manages boss health and AI
 public class Boss : MonoBehaviour
 {
-    public static Boss CurrentBoss;//Declares whichever boss is the current boss, for reference with player input & such
+    //public static Boss CurrentBoss;//Declares whichever boss is the current boss, for reference with player input & such
     protected float bossHP;
 
     public void ChangeBossHP(int amt) {//Function to be called by others when increasing/decreasing hp
@@ -13,8 +13,13 @@ public class Boss : MonoBehaviour
 
     [SerializeField] public BossAI AttackAI;
 
-    void Start() {
+    public virtual void Awake() {
         //Going to remove this later:
-        CurrentBoss = this;
+        Global.CurrentBoss = this;
+    }
+
+    //Allows player attacks to interupt the boss' current attack
+    public static void InterruptAttack(PlayerAction action) {
+        Global.CurrentBoss.AttackAI.CurrentAttack.Interrupt(action);
     }
 }

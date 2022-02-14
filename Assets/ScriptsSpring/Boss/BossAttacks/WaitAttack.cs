@@ -9,7 +9,7 @@ public class WaitAttack : BossAttack
         yield return BeatController.WaitForBeat(beatToWait);//Never do this
     }
 
-    public override void Interrupt() {
+    public override void Interrupt(PlayerAction action) {
 
     }
     

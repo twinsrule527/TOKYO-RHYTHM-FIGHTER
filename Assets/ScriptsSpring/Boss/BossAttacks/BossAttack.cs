@@ -29,7 +29,7 @@ public abstract class BossAttack : MonoBehaviour
 
     public abstract IEnumerator Attack();
 
-    public abstract void Interrupt();
+    public abstract void Interrupt(PlayerAction action);
 
     public abstract IEnumerator Cancel();
 }

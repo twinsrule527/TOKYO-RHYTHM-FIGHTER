@@ -15,7 +15,7 @@ public class PlaytestAttack3 : BossAttack
         mySprite.color = Color.black;
     }
 
-    public override void Interrupt() {
+    public override void Interrupt(PlayerAction action) {
         if(interruptable) {
             StopCoroutine("Attack");
             StartCoroutine("Cancel");
