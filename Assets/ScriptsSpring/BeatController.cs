@@ -33,7 +33,6 @@ public class BeatController : MonoBehaviour
 
     //public static Accuracy accuracy;
 
-
     //thresholds to be on beat, in seconds. 
     //OK represents the overall threshold. 
     /*
@@ -78,30 +77,34 @@ public class BeatController : MonoBehaviour
         //update all our tracker variables. 
         songPos = (float)(AudioSettings.dspTime - songStartTime);
         beat = songPos / secPerBeat;
-        beatOffset = getAbsDistanceFromBeat();
+        beatOffset = GetAbsDistanceFromBeat();
         //accuracy = GetAccuracy();
 
+
         //If we've hit major beats (1, 0.5, 0.25) send out events. 
-        if(!beatEnded1 && getDistanceFromBeat(1) > thresholdAfterBeat) {
+        if(!beatEnded1 && GetDistanceFromBeat(1) > thresholdAfterBeat) {
             beatEnded1 = true;
-            //TODO send out events 
-        } else if(getDistanceFromBeat(1) > 1 - thresholdBeforeBeat) {
+            Global.Player.EndOfBeat1();
+            Global.Boss.EndOfBeat1();
+        } else if(GetDistanceFromBeat(1) > 1 - thresholdBeforeBeat) {
             //if we've moved on to the next beat, open this flag 
             beatEnded1 = false;
         }
 
-        if(!beatEnded05 && getDistanceFromBeat(0.5f) > thresholdAfterBeat) {
+        if(!beatEnded05 && GetDistanceFromBeat(0.5f) > thresholdAfterBeat) {
             beatEnded05 = true;
-            //TODO send out events 
-        } else if(getDistanceFromBeat(0.5f) > 0.5 - thresholdBeforeBeat) {
+            Global.Player.EndOfBeat05();
+            Global.Boss.EndOfBeat05();
+        } else if(GetDistanceFromBeat(0.5f) > 0.5 - thresholdBeforeBeat) {
             //if we've moved on to the next beat, open this flag 
             beatEnded05 = false;
         }
 
-        if(!beatEnded1 && getDistanceFromBeat(0.25f) > thresholdAfterBeat) {
+        if(!beatEnded1 && GetDistanceFromBeat(0.25f) > thresholdAfterBeat) {
             beatEnded025 = true;
-            //TODO send out events 
-        } else if(getDistanceFromBeat(0.25f) > 0.25 - thresholdBeforeBeat) {
+            Global.Player.EndOfBeat025();
+            Global.Boss.EndOfBeat025(); 
+        } else if(GetDistanceFromBeat(0.25f) > 0.25 - thresholdBeforeBeat) {
             //if we've moved on to the next beat, open this flag 
             beatEnded025 = false;
         }
@@ -110,23 +113,23 @@ public class BeatController : MonoBehaviour
 
 
     //5.1 returns 0.1, 5.5 returns 0.5, 5.9 returns 0.9
-    public static float getDistanceFromBeat() {
+    public static float GetDistanceFromBeat() {
         return beat % 1;
     }
 
-    public static float getDistanceFromBeat(float fraction) {
+    public static float GetDistanceFromBeat(float fraction) {
         return beat % fraction;
     }
 
     //5.1 returns 0.1, 5.5 returns 0.5, 5.9 returns 0.1
-    public static float getAbsDistanceFromBeat() {
-        float b = getDistanceFromBeat() - 0.5f;
+    public static float GetAbsDistanceFromBeat() {
+        float b = GetDistanceFromBeat() - 0.5f;
         b = -Mathf.Abs(b);
         return b + 0.5f;
     }
     
-    public static float getAbsDistanceFromBeat(float fraction) {
-        float b = getDistanceFromBeat(fraction) - (fraction / 2);
+    public static float GetAbsDistanceFromBeat(float fraction) {
+        float b = GetDistanceFromBeat(fraction) - (fraction / 2);
         b = Mathf.Abs(b);
         return b + (fraction / 2);
     }
@@ -135,7 +138,7 @@ public class BeatController : MonoBehaviour
     //are we on beat, within the threshold, according to a certain fraction?
     public static bool IsOnBeat(float fraction) {
         
-        float distFromBeat = getDistanceFromBeat(fraction);
+        float distFromBeat = GetDistanceFromBeat(fraction);
 
         if(distFromBeat < fraction / 2) {
             //if this is after 
@@ -146,7 +149,7 @@ public class BeatController : MonoBehaviour
             }
         } else {
             //if this is before 
-            if(getAbsDistanceFromBeat(fraction) <= thresholdBeforeBeat) {
+            if(GetAbsDistanceFromBeat(fraction) <= thresholdBeforeBeat) {
                 return true;
             } else {
                 return false;
@@ -157,25 +160,41 @@ public class BeatController : MonoBehaviour
     //Like WaitForSeconds, but in sync with the music. 
     //USE THIS INSTEAD OF WAITFORSECONDS
     public static IEnumerator WaitForBeat(float fraction) {
-        float lastDistFromBeat = getDistanceFromBeat(fraction);
-        while(lastDistFromBeat <= getDistanceFromBeat(fraction)) {
-            lastDistFromBeat = getDistanceFromBeat(fraction);
+        float lastDistFromBeat = GetDistanceFromBeat(fraction);
+        while(lastDistFromBeat <= GetDistanceFromBeat(fraction)) {
+            lastDistFromBeat = GetDistanceFromBeat(fraction);
             yield return null;
         }
     }
-
 
     //Wait for X number of a type of beat 
     //Ex. wait for 2 0.5s to go by 
     public static IEnumerator WaitForBeatsMulti(int numBeats, float fraction) {
         int counter = 0;
-        float lastDistFromBeat = getDistanceFromBeat(fraction);
+        float lastDistFromBeat = GetDistanceFromBeat(fraction);
         while(counter < numBeats) {
-            while(lastDistFromBeat <= getDistanceFromBeat(fraction)) {
-                lastDistFromBeat = getDistanceFromBeat(fraction);
+            while(lastDistFromBeat <= GetDistanceFromBeat(fraction)) {
+                lastDistFromBeat = GetDistanceFromBeat(fraction);
                 yield return null;
             }
             counter++;
+        }
+    }
+
+    //Wait for the end of the threshold in which you can make an attack. 
+    //For use with updating variables after everything has happened on a beat. 
+    public static IEnumerator WaitForEndOfThreshold(float fraction) {
+
+        //if we're not on beat, first wait until we're on beat. (we've entered the threshold.)
+        if(!IsOnBeat(fraction)) {
+            while(!IsOnBeat(fraction)) {
+                yield return null;
+            }
+        }
+
+        //if we're on beat, wait for the end of the threshold.
+        while(IsOnBeat(fraction)) {
+            yield return null;
         }
     }
 

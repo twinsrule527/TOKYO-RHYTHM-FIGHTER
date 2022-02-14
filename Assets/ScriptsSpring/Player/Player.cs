@@ -26,4 +26,17 @@ public class Player : MonoBehaviour
             a.CheckInput();
         }
     }
+
+    public void EndOfBeat1() {
+
+    }
+
+    public void EndOfBeat05() {
+
+    }
+
+    public void EndOfBeat025() {
+
+    }
+
 }
