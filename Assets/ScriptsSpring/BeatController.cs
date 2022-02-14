@@ -45,8 +45,8 @@ public class BeatController : MonoBehaviour
 
     //TODO: should there be different thresholds for different fractions of beats? 
 
-    [SerializeField] static float thresholdBeforeBeat;
-    [SerializeField] static float thresholdAfterBeat;
+    [SerializeField] static float thresholdBeforeBeat = 0.20f;
+    [SerializeField] static float thresholdAfterBeat = 0.15f;
 
     bool beatEnded1, beatEnded05, beatEnded025;
 
@@ -108,13 +108,16 @@ public class BeatController : MonoBehaviour
             //if we've moved on to the next beat, open this flag 
             beatEnded025 = false;
         }
+
+
+        Debug.Log(IsOnBeat(1));
         
     }
 
 
     //5.1 returns 0.1, 5.5 returns 0.5, 5.9 returns 0.9
     public static float GetDistanceFromBeat() {
-        return beat % 1;
+        return beat % 1f;
     }
 
     public static float GetDistanceFromBeat(float fraction) {
@@ -139,6 +142,8 @@ public class BeatController : MonoBehaviour
     public static bool IsOnBeat(float fraction) {
         
         float distFromBeat = GetDistanceFromBeat(fraction);
+
+        Debug.Log("dist: " + distFromBeat);
 
         if(distFromBeat < fraction / 2) {
             //if this is after 

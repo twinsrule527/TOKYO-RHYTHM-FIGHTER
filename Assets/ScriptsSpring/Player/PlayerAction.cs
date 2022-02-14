@@ -7,7 +7,7 @@ public class PlayerAction : MonoBehaviour
 
     //beat fraction this action can be done on 
     //override TryAction for more complicated patterns 
-    [SerializeField] float beatFraction = 1f;    
+    [SerializeField] float beatFraction = 1f;   
 
     //what key, when pressed, makes this action happen
     //override CheckInput for other behavior that isn't a KeyCode press, this is just a useful default
@@ -60,6 +60,8 @@ public class PlayerAction : MonoBehaviour
         if(canInterrupt) {
             Boss.InterruptAttack(this);
         }
+
+        //TODO set the current player action to this 
 
     } 
 
