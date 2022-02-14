@@ -13,24 +13,15 @@ public class PlayerAction : MonoBehaviour
     //override CheckInput for other behavior that isn't a KeyCode press, this is just a useful default
     [SerializeField] protected KeyCode key; 
 
-    //int comboCounter;   //may be used if needed 
+    int comboCounter;   //may be used if needed 
+
+    bool canInterrupt;  //do we call Boss.Interrupt()?
 
     //TODO: track when the player has done input for a beat and what type of beat. 
     //ex. locking down input however long needed 
     //both in fail and success 
     //TODO also want to increment the Player-wide combo counter 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     //Checks for input. ex. GetKeyPressed. 
     //This is here instead of in Update so that the Player can call this and control, for example,
@@ -65,6 +56,14 @@ public class PlayerAction : MonoBehaviour
         Debug.Log("Success, you're on beat");
         //Typically, sets the Player's current action to be this
         Global.Player.CurrentAction = this;
+
+        //call Interrupt on boss here 
+        //Boss.InterruptAttack();
+        if(canInterrupt) {
+            Boss.InterruptAttack(this);
+        }
+
+        //TODO set the current player action to this 
 
     } 
 

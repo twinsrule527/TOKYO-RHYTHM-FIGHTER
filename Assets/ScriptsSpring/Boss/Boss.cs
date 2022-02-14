@@ -22,4 +22,16 @@ public class Boss : MonoBehaviour
     public static void InterruptAttack(PlayerAction action) {
         Global.Boss.AttackAI.CurrentAttack.Interrupt(action);
     }
+
+    public void EndOfBeat1() {
+
+    }
+
+    public void EndOfBeat05() {
+
+    }
+
+    public void EndOfBeat025() {
+
+    }
 }

@@ -38,4 +38,17 @@ public class Player : MonoBehaviour
     public void ChangeHP(float amt = 0) {
         playerHealth += amt;
     }
+
+    public void EndOfBeat1() {
+
+    }
+
+    public void EndOfBeat05() {
+
+    }
+
+    public void EndOfBeat025() {
+
+    }
+
 }
