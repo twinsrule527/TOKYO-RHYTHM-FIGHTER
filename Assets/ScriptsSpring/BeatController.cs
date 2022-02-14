@@ -110,11 +110,11 @@ public class BeatController : MonoBehaviour
 
 
     //5.1 returns 0.1, 5.5 returns 0.5, 5.9 returns 0.9
-    static float getDistanceFromBeat() {
+    public static float getDistanceFromBeat() {
         return beat % 1;
     }
 
-    static float getDistanceFromBeat(float fraction) {
+    public static float getDistanceFromBeat(float fraction) {
         return beat % fraction;
     }
 
@@ -133,7 +133,7 @@ public class BeatController : MonoBehaviour
 
     //for use by player actions. 
     //are we on beat, within the threshold, according to a certain fraction?
-    public bool IsOnBeat(float fraction) {
+    public static bool IsOnBeat(float fraction) {
         
         float distFromBeat = getDistanceFromBeat(fraction);
 
