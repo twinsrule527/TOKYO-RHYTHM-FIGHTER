@@ -13,7 +13,7 @@ public class PlaytestAttack1 : BossAttack
         mySprite.color = Color.white;
         //Checks to see if they can hit the player - if they do, the player gets hit
         if(canHitPlayer) {
-            Global.PlayerInstance.ChangeHP(-damage);
+            Global.Player.ChangeHP(-damage);
         }
         yield return null;
         mySprite.color = Color.black;

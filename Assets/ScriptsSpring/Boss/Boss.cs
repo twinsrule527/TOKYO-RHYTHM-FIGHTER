@@ -15,11 +15,11 @@ public class Boss : MonoBehaviour
 
     public virtual void Awake() {
         //Going to remove this later:
-        Global.CurrentBoss = this;
+        Global.Boss = this;
     }
 
     //Allows player attacks to interupt the boss' current attack
     public static void InterruptAttack(PlayerAction action) {
-        Global.CurrentBoss.AttackAI.CurrentAttack.Interrupt(action);
+        Global.Boss.AttackAI.CurrentAttack.Interrupt(action);
     }
 }

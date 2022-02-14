@@ -4,6 +4,6 @@ using UnityEngine;
 
 public static class Global
 {
-    public static Boss CurrentBoss;
-    public static Player PlayerInstance;
+    public static Boss Boss;
+    public static Player Player;
 }
