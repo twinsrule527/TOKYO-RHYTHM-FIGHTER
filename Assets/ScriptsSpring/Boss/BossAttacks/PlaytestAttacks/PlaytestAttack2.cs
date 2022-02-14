@@ -21,11 +21,16 @@ public class PlaytestAttack2 : BossAttack
         transform.position = endPosition;
     }   
 
-    public override void Interrupt() {
+    public override void Interrupt(PlayerAction action) {
 
     }
     
     public override IEnumerator Cancel()
+    {
+        yield return null;
+    }
+    
+    public override IEnumerator CheckAttackSuccess()
     {
         yield return null;
     }

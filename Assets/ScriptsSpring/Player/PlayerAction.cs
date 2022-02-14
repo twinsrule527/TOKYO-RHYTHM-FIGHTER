@@ -38,7 +38,7 @@ public class PlayerAction : MonoBehaviour
 
     //This function gets called, for example, when the key tied to this action is pressed.
     //Can be overridden.
-    void TryAction() {
+    protected virtual void TryAction() {
 
         if(BeatController.IsOnBeat(beatFraction)) {
             Success();
@@ -51,7 +51,7 @@ public class PlayerAction : MonoBehaviour
 
     //This function gets called when the player presses this key on beat. Carry out whatever action this is. 
     //Should be overridden and implemented with what pressing this key does.
-    void Success() {
+    protected virtual void Success() {
 
         Debug.Log("Success, you're on beat");
 
@@ -66,7 +66,7 @@ public class PlayerAction : MonoBehaviour
 
     //This function gets called when the player presses this key, but it's off beat.
     //Should be overridden and implemented. 
-    void MessUp() {
+    protected virtual void MessUp() {
 
         Debug.Log("you messed up, you were off beat");
 
