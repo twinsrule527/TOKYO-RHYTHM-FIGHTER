@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5448173835734764356}
-  - component: {fileID: 6265957452018966332}
+  - component: {fileID: 6455640301251989689}
+  - component: {fileID: 4014683580531015158}
   m_Layer: 0
   m_Name: PlayerActions
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_Father: {fileID: 8597708211883435789}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6265957452018966332
+--- !u!114 &6455640301251989689
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,11 +41,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 2119660171438282353}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0801efbe819b6bf45b374ba18acc3fd5, type: 3}
+  m_Script: {fileID: 11500000, guid: 27aede90d7eec954c995d17127fbf383, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   beatFraction: 1
-  key: 32
+  key: 0
+--- !u!114 &4014683580531015158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119660171438282353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 156a0f8c4783cf0478a4c72fa7783dad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatFraction: 1
+  key: 0
 --- !u!1 &5503060289815778078
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,4 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4140800e3e822a4aa99dacd2a156517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  messUpAction: {fileID: 0}
   comboCounter: 0
+  CurrentAction: {fileID: 0}
+  playerStartHealth: 0
