@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public static Player Instance;//A singleton instance of the player
     PlayerAction[] actions;
 
     public int comboCounter;
@@ -12,13 +11,12 @@ public class Player : MonoBehaviour
     //How much health the player starts with
     [SerializeField] private float playerStartHealth;
     public float playerHealth {get; private set;}
-    public Boss CurrentBoss;
 
     // Start is called before the first frame update
     void Start()
     {   
         //There can only be 1 player, and it will be the Instance of the player
-        Instance = this;
+        Global.PlayerInstance = this;
         //load PlayerActions, which will be components on the Player object or its children 
         actions = GetComponentsInChildren<PlayerAction>();
 

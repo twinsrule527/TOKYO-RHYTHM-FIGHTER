@@ -27,4 +27,10 @@ public class PlaytestAttack3 : BossAttack
         mySprite.color = Color.cyan;
         yield return StartCoroutine(BeatController.WaitForBeat(10));
     }
+
+    
+    public override IEnumerator CheckAttackSuccess()
+    {
+        yield return null;
+    }
 }

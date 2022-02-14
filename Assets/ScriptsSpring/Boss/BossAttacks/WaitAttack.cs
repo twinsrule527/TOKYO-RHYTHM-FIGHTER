@@ -17,4 +17,10 @@ public class WaitAttack : BossAttack
     {
         yield return null;
     }
+
+    
+    public override IEnumerator CheckAttackSuccess()
+    {
+        yield return null;
+    }
 }

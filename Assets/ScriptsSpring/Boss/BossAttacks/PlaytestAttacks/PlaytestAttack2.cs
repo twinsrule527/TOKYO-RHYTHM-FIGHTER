@@ -29,4 +29,9 @@ public class PlaytestAttack2 : BossAttack
     {
         yield return null;
     }
+    
+    public override IEnumerator CheckAttackSuccess()
+    {
+        yield return null;
+    }
 }
