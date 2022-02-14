@@ -11,7 +11,7 @@ public class A_BossLongAttack : BossAttack
         mySprite.color = Color.red;
         yield return StartCoroutine(BeatController.WaitForBeatsMulti(4, 1));
         //Checks to see if they can hit the player - if they do, the player gets hit
-        StartCoroutine(CheckAttackSuccess());
+        Global.Boss.makeAttackThisBeat = true;
         yield return null;
         mySprite.color = Color.black;
     }   
@@ -27,10 +27,9 @@ public class A_BossLongAttack : BossAttack
     }
     
     //Waits until the end of threshold, then checks to see if the attack is successful
-    public override IEnumerator CheckAttackSuccess()
+    public override void CheckAttackSuccess()
     {
 
-        yield return null;
         if(Global.Player.CurrentAction == null || Global.Player.CurrentAction == Global.Player.messUpAction) {
             Global.Player.ChangeHP(-damageToDeal);
         }

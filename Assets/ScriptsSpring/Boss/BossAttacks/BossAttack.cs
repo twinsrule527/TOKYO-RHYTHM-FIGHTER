@@ -34,5 +34,5 @@ public abstract class BossAttack : MonoBehaviour
 
     public abstract IEnumerator Cancel();
 
-    public abstract IEnumerator CheckAttackSuccess();
+    public abstract void CheckAttackSuccess();
 }
