@@ -109,9 +109,6 @@ public class BeatController : MonoBehaviour
             beatEnded025 = false;
         }
 
-
-        Debug.Log(IsOnBeat(1));
-        
     }
 
 
@@ -142,8 +139,6 @@ public class BeatController : MonoBehaviour
     public static bool IsOnBeat(float fraction) {
         
         float distFromBeat = GetDistanceFromBeat(fraction);
-
-        Debug.Log("dist: " + distFromBeat);
 
         if(distFromBeat < fraction / 2) {
             //if this is after 
