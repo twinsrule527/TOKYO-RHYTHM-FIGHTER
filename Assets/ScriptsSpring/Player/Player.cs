@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     {   
         //There can only be 1 player, and it will be the Instance of the player
         Global.Player = this;
+        playerHealth = playerStartHealth;
         //load PlayerActions, which will be components on the Player object or its children 
         actions = GetComponentsInChildren<PlayerAction>();
     }
