@@ -5,8 +5,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     PlayerAction[] actions;
+    public MessUpAction messUpAction;//The player has a mess-up action that their current action gets set to if they fail to perform an action
 
     public int comboCounter;
+
+    public PlayerAction CurrentAction;//The action the player is currently performing
     
     //How much health the player starts with
     [SerializeField] private float playerStartHealth;
@@ -19,7 +22,6 @@ public class Player : MonoBehaviour
         Global.Player = this;
         //load PlayerActions, which will be components on the Player object or its children 
         actions = GetComponentsInChildren<PlayerAction>();
-
     }
 
     // Update is called once per frame

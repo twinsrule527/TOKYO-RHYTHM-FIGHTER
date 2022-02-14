@@ -1,32 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//A short attack the boss performs over the course of 2 beats
-public class A_BossShortAttack : BossAttack
+//A longer attack the boss performs over the course of 4 beats
+public class A_BossLongAttack : BossAttack
 {
     [SerializeField] private SpriteRenderer mySprite;
     [SerializeField] private float damageToDeal;
 
     public override IEnumerator Attack() {
-        mySprite.color = Color.green;
-        yield return StartCoroutine(BeatController.WaitForBeat(1));
-        mySprite.color = Color.cyan;
-        yield return StartCoroutine(BeatController.WaitForBeat(1));
-        mySprite.color = Color.white;
+        mySprite.color = Color.red;
+        yield return StartCoroutine(BeatController.WaitForBeatsMulti(4, 1));
         //Checks to see if they can hit the player - if they do, the player gets hit
         StartCoroutine(CheckAttackSuccess());
         yield return null;
         mySprite.color = Color.black;
     }   
 
-    //This attack cannot be cancelled
     public override void Interrupt(PlayerAction action) {
-
+        //This attack is cancelled if hit twice before 
     }
 
+//When cancelled, this waits for the next beat
     public override IEnumerator Cancel()
     {
-        yield return null;
+        yield return StartCoroutine(BeatController.WaitForBeat(1));
     }
     
     //Waits until the end of threshold, then checks to see if the attack is successful
@@ -42,6 +39,4 @@ public class A_BossShortAttack : BossAttack
 
         //else { Global.PlayerInstance.ChangeHP(-damage);}
     }
-
-
 }

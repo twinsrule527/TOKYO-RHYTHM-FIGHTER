@@ -7,11 +7,11 @@ public class PlayerAction : MonoBehaviour
 
     //beat fraction this action can be done on 
     //override TryAction for more complicated patterns 
-    [SerializeField] float beatFraction = 1f;    
+    [SerializeField] protected float beatFraction = 1f;    
 
     //what key, when pressed, makes this action happen
     //override CheckInput for other behavior that isn't a KeyCode press, this is just a useful default
-    [SerializeField] KeyCode key; 
+    [SerializeField] protected KeyCode key; 
 
     //int comboCounter;   //may be used if needed 
 
@@ -38,7 +38,7 @@ public class PlayerAction : MonoBehaviour
     //Checks GetKeyDown by default, but can be overridden if other behavior wanted.
     //Should call TryAction(). 
     public void CheckInput() {
-
+        
         if(Input.GetKeyDown(key)) {
             TryAction();
         }
@@ -63,6 +63,8 @@ public class PlayerAction : MonoBehaviour
     protected virtual void Success() {
 
         Debug.Log("Success, you're on beat");
+        //Typically, sets the Player's current action to be this
+        Global.Player.CurrentAction = this;
 
     } 
 
@@ -72,6 +74,7 @@ public class PlayerAction : MonoBehaviour
     protected virtual void MessUp() {
 
         Debug.Log("you messed up, you were off beat");
+        Global.Player.CurrentAction = Global.Player.messUpAction;
 
     }
 }
