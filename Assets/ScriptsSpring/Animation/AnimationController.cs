@@ -5,23 +5,23 @@ using UnityEngine;
 public class AnimationController : MonoBehaviour
 {
     //The only way to streamline is to keep each animation within 6 frames. 
-    //This code assumes us to make every animation 6 frames (with just different speeds)
+    //This code assumes us to make every animation 5 frames (with just different speeds)
 
 
     //Delay is the time played in between frames of animation. THIS IS THE FLOAT FRACTION
+    //delayFraction should be like the beat which each animation frame plays on, like every 0.5 beat (It should hit by frame 3); we can change this later accordingly
     public float delayFraction;
-    public float AnimationEnd;
+    private float AnimationEnd;
     public bool loops;
 
-    public SpriteRenderer spriteRenderer;
-    public List<Sprite> Sprites;
+    private SpriteRenderer spriteRenderer;
+    private List<Sprite> Sprites;
 
     public Sprite frame0;
     public Sprite frame1;
     public Sprite frame2;
     public Sprite frame3;
     public Sprite frame4;
-    public Sprite frame5;
 
 
     // Start is called before the first frame update
@@ -35,7 +35,6 @@ public class AnimationController : MonoBehaviour
         Sprites.Add(frame2);
         Sprites.Add(frame3);
         Sprites.Add(frame4);
-        Sprites.Add(frame5);
 
         SetFrame(0);
         AnimationEnd = delayFraction * Sprites.Count;
@@ -58,32 +57,39 @@ public class AnimationController : MonoBehaviour
 
     public void PlayAnimationOnBeat(float beatFraction)
     {
-        //if (BeatController.getAbsDistanceFromBeat(beatFraction) > BeatController.thresholdBeforeBeat)
-        //{
-        //    //If we are early and off beat
-        //    StartCoroutine(BeatController.WaitForBeat(beatFraction));
-        //    PlayAnimation();
+        //If its early it should be a realm greater than or above the designated half beat
 
-        //} else if ((BeatController.getAbsDistanceFromBeat(beatFraction) > BeatController.thresholdAfterBeat))
-        //{
-        //    //if we are late
-        //    SetFrame(Sprites.IndexOf(spriteRenderer.sprite));
+        float distFromBeat = BeatController.getDistanceFromBeat(beatFraction);
+        //modeled after the BeatController checks for early or lateness
 
-        //    //calculate frames to cut out
-        //    int framesToCut = 0 ;
+        if (distFromBeat >= beatFraction/2)
+        {
+            //If we are early and off beat
+            StartCoroutine(BeatController.WaitForBeat(beatFraction));
+            PlayAnimation();
 
-        //    //cuts out frames based on how many delayFractions(distance between each frame) would have fit within the abs distance from beat
-        //    framesToCut = (int) (BeatController.getAbsDistanceFromBeat(beatFraction) % delayFraction);
-            
-        //    PlayFromFrame(framesToCut);
-        //} else
-        //{
-        //    PlayAnimation();
-        //}
+        }
+        else if (distFromBeat < beatFraction/2)
+        {
+            //if we are late
+            SetFrame(Sprites.IndexOf(spriteRenderer.sprite));
+
+            //calculate frames to cut out
+            int framesToCut = 0;
+
+            //cuts out frames based on how many delayFractions(distance between each frame) would have fit within the abs distance from beat
+            framesToCut = (int)(distFromBeat/delayFraction);
+
+            PlayFromFrame(framesToCut);
+        }
+        else
+        {
+            PlayAnimation();
+        }
 
 
 
-      
+
 
 
     }
