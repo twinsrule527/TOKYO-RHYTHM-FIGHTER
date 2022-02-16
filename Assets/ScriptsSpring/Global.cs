@@ -6,5 +6,5 @@ public static class Global
 {
     public static Boss Boss;
     public static Player Player;
-    public static UI_Manager UIManager;
+    public static UIManager UIManager;
 }

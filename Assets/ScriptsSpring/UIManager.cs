@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 //A general UI Manager
     //As of sprint 1, only displays player and enemy health
-public class UI_Manager : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text PlayerHealthText;
     [SerializeField] private TMP_Text EnemyHealthText;

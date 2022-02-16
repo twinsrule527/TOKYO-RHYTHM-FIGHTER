@@ -10,8 +10,8 @@ public class A_BossShortAttack : BossAttack
     public override IEnumerator Attack() {
         mySprite.color = Color.green;
         yield return StartCoroutine(BeatController.WaitForBeat(1));
-        mySprite.color = Color.cyan;
-        yield return StartCoroutine(BeatController.WaitForBeat(1));
+        mySprite.color = Color.red;
+        yield return StartCoroutine(BeatController.WaitForBeat(1f));
         mySprite.color = Color.white;
         //Checks to see if they can hit the player - if they do, the player gets hit
         Global.Boss.makeAttackThisBeat = true;
