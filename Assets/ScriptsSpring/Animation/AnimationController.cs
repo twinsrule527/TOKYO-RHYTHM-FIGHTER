@@ -59,7 +59,7 @@ public class AnimationController : MonoBehaviour
     {
         //If its early it should be a realm greater than or above the designated half beat
 
-        float distFromBeat = BeatController.getDistanceFromBeat(beatFraction);
+        float distFromBeat = BeatController.GetDistanceFromBeat(beatFraction);
         //modeled after the BeatController checks for early or lateness
 
         if (distFromBeat >= beatFraction/2)

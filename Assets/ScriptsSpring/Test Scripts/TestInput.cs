@@ -5,11 +5,10 @@ using UnityEngine;
 public class TestInput : MonoBehaviour
 {
 
-    // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)) {
-            Boss.CurrentBoss.AttackAI.CurrentAttack.Interrupt();
+        if(Input.GetKeyDown(KeyCode.X)) {
+            Debug.Log(Global.Player.playerHealth);
         }
     }
 }
