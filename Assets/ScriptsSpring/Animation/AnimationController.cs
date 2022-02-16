@@ -28,7 +28,10 @@ public class AnimationController : MonoBehaviour
     void Start()
     {
         Sprites = new List<Sprite>();
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        //Pass renderer here
+        //hard drag it in
+        //At runtime get component in parent
+        spriteRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
 
         Sprites.Add(frame0);
         Sprites.Add(frame1);
@@ -52,12 +55,18 @@ public class AnimationController : MonoBehaviour
     //no sync, plays from 0 frame. 
     public void PlayAnimation()
     {
-        PlayFromFrame(0);
+        StartCoroutine(PlayFromFrame(0));
     }
 
     public void PlayAnimationOnBeat(float beatFraction)
     {
+
+        if(beatFraction == 0)
+        {
+            PlayAnimation();
+        }
         //If its early it should be a realm greater than or above the designated half beat
+        //Inputting fractions, 
 
         float distFromBeat = BeatController.GetDistanceFromBeat(beatFraction);
         //modeled after the BeatController checks for early or lateness
