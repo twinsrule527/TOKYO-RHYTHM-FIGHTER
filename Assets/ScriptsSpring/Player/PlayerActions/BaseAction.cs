@@ -4,6 +4,8 @@ using UnityEngine;
 //A starting action in the game, which works as both an attack & a parry
 public class BaseAction : PlayerAction
 {
+    public float damage;//How much damage this attack does
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,5 +27,11 @@ public class BaseAction : PlayerAction
         else {
             MessUp();
         }
+    }
+
+    protected override void Success()
+    {
+        base.Success();
+        Global.Boss.ChangeBossHP(-damage);
     }
 }
