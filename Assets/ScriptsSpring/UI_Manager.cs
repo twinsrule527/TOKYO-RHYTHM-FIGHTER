@@ -9,6 +9,11 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private TMP_Text PlayerHealthText;
     [SerializeField] private TMP_Text EnemyHealthText;
 
+    void Start() {
+        Global.UIManager = this;
+    }
+
+
     //Sets the text to player and enemy's current health - called by change Health functions
     public void SetHealthText() {
         PlayerHealthText.text = "Player Health: " + ((int)Global.Player.playerHealth).ToString();

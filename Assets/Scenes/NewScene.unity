@@ -197,8 +197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3c8e6b6431d68c4686f2021d99e4b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerHealthText: {fileID: 0}
-  EnemyHealthText: {fileID: 0}
+  PlayerHealthText: {fileID: 1455975168}
+  EnemyHealthText: {fileID: 1439271420}
 --- !u!4 &30287147
 Transform:
   m_ObjectHideFlags: 0
