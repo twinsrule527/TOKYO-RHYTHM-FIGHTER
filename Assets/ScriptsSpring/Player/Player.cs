@@ -39,10 +39,13 @@ public class Player : MonoBehaviour
     public void ChangeHP(float amt = 0) {
         playerHealth += amt;
         Global.UIManager.SetHealthText();
+        if(playerHealth <= 0) {
+            GameManager.PlayerLoses();
+        }
     }
 
     public void EndOfBeat1() {
-        CurrentAction = null;
+        CurrentAction = null; //TODO bandaid fix 
     }
 
     public void EndOfBeat05() {
@@ -52,5 +55,7 @@ public class Player : MonoBehaviour
     public void EndOfBeat025() {
 
     }
+
+
 
 }
