@@ -28,7 +28,7 @@ public class AccuracyReactive : MonoBehaviour
     {
         
         if(ok) {
-            if(BeatController.accuracy == BeatController.Accuracy.OK) {
+            if(OLD_BeatController.accuracy == OLD_BeatController.Accuracy.OK) {
                 myRenderer.color = on;
                 return;
             } else {
@@ -36,7 +36,7 @@ public class AccuracyReactive : MonoBehaviour
             }
         }
         if(good) {
-            if(BeatController.accuracy == BeatController.Accuracy.GOOD) {
+            if(OLD_BeatController.accuracy == OLD_BeatController.Accuracy.GOOD) {
                 myRenderer.color = on;
                 return;
             } else {
@@ -44,7 +44,7 @@ public class AccuracyReactive : MonoBehaviour
             }
         }
         if(great) {
-            if(BeatController.accuracy == BeatController.Accuracy.GREAT) {
+            if(OLD_BeatController.accuracy == OLD_BeatController.Accuracy.GREAT) {
                 myRenderer.color = on;
                 return;
             } else {
@@ -52,7 +52,7 @@ public class AccuracyReactive : MonoBehaviour
             }
         }
         if(perfect) {
-            if(BeatController.accuracy == BeatController.Accuracy.PERFECT) {
+            if(OLD_BeatController.accuracy == OLD_BeatController.Accuracy.PERFECT) {
                 myRenderer.color = on;
                 return;
             } else {

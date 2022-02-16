@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeatController : MonoBehaviour
+public class OLD_BeatController : MonoBehaviour
 {
 
     public enum Accuracy {
