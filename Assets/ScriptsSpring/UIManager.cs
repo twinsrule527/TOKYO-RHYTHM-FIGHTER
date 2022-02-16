@@ -19,4 +19,12 @@ public class UIManager : MonoBehaviour
         PlayerHealthText.text = "Player Health: " + ((int)Global.Player.playerHealth).ToString();
         EnemyHealthText.text = "Boss Health: " + ((int)Global.Boss.bossHP).ToString();
     }
+
+    public void PlayerWins() {
+        //TODO show sprite 
+    }
+
+    public void PlayerLoses() {
+        //TODO show sprite
+    }
 }
