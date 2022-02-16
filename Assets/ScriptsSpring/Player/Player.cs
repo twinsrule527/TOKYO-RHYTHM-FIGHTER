@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
     //How outside objects should affect the player's health
     public void ChangeHP(float amt = 0) {
         playerHealth += amt;
+        Global.UIManager.SetHealthText();
         if(playerHealth <= 0) {
             GameManager.PlayerLoses();
         }
