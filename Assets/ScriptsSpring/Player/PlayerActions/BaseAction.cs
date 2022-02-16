@@ -17,8 +17,10 @@ public class BaseAction : PlayerAction
 
     protected override void TryAction()
     {
-        if(BeatController.IsOnBeat(beatFraction) && Global.Player.CurrentAction == null) {
-            Success();
+        if(BeatController.IsOnBeat(beatFraction)) {
+            if(Global.Player.CurrentAction == null) {
+                Success();
+            }
         }
         else {
             MessUp();

@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
     }
 
     public void EndOfBeat1() {
-
+        CurrentAction = null;
     }
 
     public void EndOfBeat05() {
