@@ -12,6 +12,9 @@ public class Boss : MonoBehaviour
 
     public void ChangeBossHP(int amt) {//Function to be called by others when increasing/decreasing hp
         bossHP += amt;
+        if(bossHP <= 0) {
+            GameManager.PlayerWins();
+        }
     }
 
     [SerializeField] public BossAI AttackAI;
