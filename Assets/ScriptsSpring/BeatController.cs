@@ -8,10 +8,19 @@ public class BeatController : MonoBehaviour
     /*public enum Accuracy {
         OK, GOOD, GREAT, PERFECT, OFFBEAT
     }*/
-    public AudioSource audioSource;
+    
+
+    //TODO: should there be different thresholds for different fractions of beats? 
+
+    [SerializeField] static float thresholdBeforeBeat = 0.20f;
+    [SerializeField] static float thresholdAfterBeat = 0.15f;
+
     //BPM 
     //easy to know and set. human-readable, will be used to do some conversion 
     static float BPM = 100; 
+
+
+    public AudioSource audioSource;
 
     //will be calculated from BPM. in seconds. 
     static float secPerBeat;
@@ -43,11 +52,6 @@ public class BeatController : MonoBehaviour
     */
 
 
-    //TODO: should there be different thresholds for different fractions of beats? 
-
-    [SerializeField] static float thresholdBeforeBeat = 0.20f;
-    [SerializeField] static float thresholdAfterBeat = 0.15f;
-
     bool beatEnded1, beatEnded05, beatEnded025;
 
 
@@ -59,13 +63,13 @@ public class BeatController : MonoBehaviour
 
         //TODO might have the song started by a button or soemthing idk. 
         //for now just starts at startup 
-        startSong();
+        StartSong();
 
     }
 
     //call when we start the song. 
     //records the time ect 
-    void startSong() {
+    void StartSong() {
         //kick off tracker with current time 
         songStartTime = (float)AudioSettings.dspTime;
         audioSource.Play();
