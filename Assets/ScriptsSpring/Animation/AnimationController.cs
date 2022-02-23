@@ -60,9 +60,15 @@ public class AnimationController : MonoBehaviour
         StartCoroutine(PlayFromFrame(0));
     }
 
+
+    //Whole note for heavy attack, half note attack for medium attack, quarter note attack
+    //could start quarter note attack 
+    //Change when the attack finishes
+
+    //MAKE THE ATTACKS END on the beat
     public void PlayAnimationOnBeat(float beatFraction)
     {
-
+        //Okay this is how long the attack, where I am, this is how long I will need to play for. 
         if(beatFraction == 0)
         {
             PlayAnimation();
