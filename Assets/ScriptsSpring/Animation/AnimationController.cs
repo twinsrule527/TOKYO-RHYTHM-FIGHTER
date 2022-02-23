@@ -14,6 +14,8 @@ public class AnimationController : MonoBehaviour
     private float AnimationEnd;
     public bool loops;
 
+    public string animationName; 
+
     private SpriteRenderer spriteRenderer;
     private List<Sprite> Sprites;
 
