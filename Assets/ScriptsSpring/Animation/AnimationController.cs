@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
-    //The only way to streamline is to keep each animation within 6 frames. 
+    //The only way to streamline is to keep each animation within 5 frames. 
     //This code assumes us to make every animation 5 frames (with just different speeds)
 
 
