@@ -7,6 +7,7 @@ public class BounceToBeat : MonoBehaviour
     //scale something's transform so it bounces to the beat!
     //TIP: utilize SQUASH AND STRETCH! 
 
+    public float beatFrac = 1f;
     public float xScaleMax = 1;
     public float xScaleMin = 1;
     public float yScaleMax = 1;
@@ -20,9 +21,9 @@ public class BounceToBeat : MonoBehaviour
     {
         //bounce 2 the music 
         //scale according to BeatController.nearToBeat
-        float vx = xScaleMin + ((xScaleMax - xScaleMin) * func(BeatController.beatOffset));
-        float vy = yScaleMin + ((yScaleMax - yScaleMin) * func(BeatController.beatOffset));
-        float vz = zScaleMin + ((zScaleMax - zScaleMin) * func(BeatController.beatOffset));
+        float vx = xScaleMin + ((xScaleMax - xScaleMin) * func(BeatController.GetDistanceFromBeat(beatFrac)));
+        float vy = yScaleMin + ((yScaleMax - yScaleMin) * func(BeatController.GetDistanceFromBeat(beatFrac)));
+        float vz = zScaleMin + ((zScaleMax - zScaleMin) * func(BeatController.GetDistanceFromBeat(beatFrac)));
         transform.localScale = new Vector3(vx, vy, vz);
     }
 

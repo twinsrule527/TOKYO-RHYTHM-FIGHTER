@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
 
     /*
-        This class is for high level game management only 
+        This class is for high level game state management only 
         changing high level gamestate like restarting the scene, changing the scene, and
         calling changes when the player wins and loses 
         little logic should be in here, it should call other scripts' functions. 

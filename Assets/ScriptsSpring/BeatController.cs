@@ -22,7 +22,7 @@ public class BeatController : MonoBehaviour
     //TODO: should there be different thresholds for different fractions of beats? 
     public static readonly Accuracy MINIMUM = new Accuracy(0.30f, 0.25f);
     public static readonly Accuracy GREAT = new Accuracy(0.20f, 0.15f);
-    public static readonly Accuracy PERFECT = new Accuracy(0.15f, 0.10f);
+    public static readonly Accuracy PERFECT = new Accuracy(0.15f, 0.12f);
     public static readonly Accuracy OFFBEAT = new Accuracy(float.NaN, float.NaN);
 
     
@@ -44,12 +44,14 @@ public class BeatController : MonoBehaviour
 
     //what beat the song is on ex. 1, 2, 4, 5.5, 6.75 
     //we will use a threshold with this for reaction 
-    public static float beat { get; private set; }
+    //public static float beat { get; private set; }
+    //^^^^^ REPLCAED WITh GetBeat()
 
     //how near or far we are from a beat. 
     //1 when exactly on beat (ex. 5.0) 0 when exactly between beats (ex. 5.5)
     //would look like a triangle wave when graphed 
-    public static float beatOffset { get; private set; }
+    //public static float beatOffset { get; private set; }
+    //^^^ REPLACED WITH GetDistanceFromBeat(1)
 
     bool beatEnded1, beatEnded05, beatEnded025;
 
@@ -60,7 +62,7 @@ public class BeatController : MonoBehaviour
         //convert BPM to functional value 
         secPerBeat = 60f / BPM;
 
-        //TODO might have the song started by a button or soemthing idk. 
+        //TODO have the song started by a button or soemthing idk. 
         //for now just starts at startup 
         StartSong();
 
@@ -78,59 +80,63 @@ public class BeatController : MonoBehaviour
     void Update()
     {
         //update all our tracker variables. 
-        songPos = (float)(AudioSettings.dspTime - songStartTime);
-        beat = songPos / secPerBeat;
-        beatOffset = GetAbsDistanceFromBeat();
-        //accuracy = GetAccuracy();
+        //songPos = (float)(AudioSettings.dspTime - songStartTime);
+        //beat = songPos / secPerBeat;
+        //beatOffset = GetAbsDistanceFromBeat(1);
+        //^^^^ moved these to more direct getters.
 
 
-        //If we've hit major beats (1, 0.5, 0.25) send out events. 
-        if(!beatEnded1 && GetDistanceFromBeat(1) > MINIMUM.thresholdAfterBeat) {
+        //If we've hit major beats (1, 0.5, 0.25) send out events.
+
+        float dist = GetDistanceFromBeat(1);
+        if(!beatEnded1 && dist > MINIMUM.thresholdAfterBeat) {
             beatEnded1 = true;
             Global.Boss.EndOfBeat1();
             Global.Player.EndOfBeat1();
-        } else if(GetDistanceFromBeat(1) > 1 - MINIMUM.thresholdBeforeBeat) {
+        } else if(dist > 1 - MINIMUM.thresholdBeforeBeat) {
             //if we've moved on to the next beat, open this flag 
             beatEnded1 = false;
         }
 
-        if(!beatEnded05 && GetDistanceFromBeat(0.5f) > MINIMUM.thresholdAfterBeat) {
+        dist = GetDistanceFromBeat(0.5f);
+        if(!beatEnded05 && dist > MINIMUM.thresholdAfterBeat) {
             beatEnded05 = true;
             Global.Boss.EndOfBeat05();
             Global.Player.EndOfBeat05();
-        } else if(GetDistanceFromBeat(0.5f) > 0.5 - MINIMUM.thresholdBeforeBeat) {
+        } else if(dist > 0.5 - MINIMUM.thresholdBeforeBeat) {
             //if we've moved on to the next beat, open this flag 
             beatEnded05 = false;
         }
 
-        if(!beatEnded025 && GetDistanceFromBeat(0.25f) > MINIMUM.thresholdAfterBeat) {
+        dist = GetDistanceFromBeat(0.25f);
+        if(!beatEnded025 && dist > MINIMUM.thresholdAfterBeat) {
             beatEnded025 = true;
             Global.Boss.EndOfBeat025(); 
             Global.Player.EndOfBeat025();
-        } else if(GetDistanceFromBeat(0.25f) > 0.25 - MINIMUM.thresholdBeforeBeat) {
+        } else if(dist > 0.25 - MINIMUM.thresholdBeforeBeat) {
             //if we've moved on to the next beat, open this flag 
             beatEnded025 = false;
         }
 
     }
 
-
-    //5.1 returns 0.1, 5.5 returns 0.5, 5.9 returns 0.9
-    public static float GetDistanceFromBeat() {
-        return beat % 1f;
+    //instead of tracker variables, use more direct getters. 
+    public static float GetBeat() {
+        songPos = (float)(AudioSettings.dspTime - songStartTime);
+        return songPos / secPerBeat;
     }
 
+    //ex. for 1, 5.1 returns 0.1, 5.5 returns 0.5, 5.9 returns 0.9
     public static float GetDistanceFromBeat(float fraction) {
-        return beat % fraction;
+        return GetBeat() % fraction;
     }
 
-    //5.1 returns 0.1, 5.5 returns 0.5, 5.9 returns 0.1
-    public static float GetAbsDistanceFromBeat() {
+    //ex. for 1, 5.1 returns 0.1, 5.5 returns 0.5, 5.9 returns 0.1
+   /* public static float GetAbsDistanceFromBeat() {
         float b = GetDistanceFromBeat() - 0.5f;
         b = -Mathf.Abs(b);
         return b + 0.5f;
-    }
-    
+    }*/
     public static float GetAbsDistanceFromBeat(float fraction) {
         float b = GetDistanceFromBeat(fraction) - (fraction / 2);
         b = Mathf.Abs(b);
@@ -138,7 +144,7 @@ public class BeatController : MonoBehaviour
     }
 
     //for use by player actions. 
-    //are we on beat, within the threshold, according to a certain fraction?
+    //are we on beat, within the actionable threshold, according to a certain fraction?
     public static bool IsOnBeat(float fraction) {
         
         float distFromBeat = GetDistanceFromBeat(fraction);
@@ -162,10 +168,16 @@ public class BeatController : MonoBehaviour
 
     //Like WaitForSeconds, but in sync with the music. 
     //USE THIS INSTEAD OF WAITFORSECONDS
+    //similar code as below, would re-use by calling WaitForBeatsMulti(1) here but it's a coroutine so ? 
     public static IEnumerator WaitForBeat(float fraction) {
+        
         float lastDistFromBeat = GetDistanceFromBeat(fraction);
-        while(lastDistFromBeat <= GetDistanceFromBeat(fraction)) {
-            lastDistFromBeat = GetDistanceFromBeat(fraction);
+        while(true) {
+            float newDistFromBeat = GetDistanceFromBeat(fraction);
+            if(lastDistFromBeat > newDistFromBeat) {
+                break;
+            }
+            lastDistFromBeat = newDistFromBeat;
             yield return null;
         }
     }
@@ -173,14 +185,21 @@ public class BeatController : MonoBehaviour
     //Wait for X number of a type of beat 
     //Ex. wait for 2 0.5s to go by 
     public static IEnumerator WaitForBeatsMulti(int numBeats, float fraction) {
+       
         int counter = 0;
+
         float lastDistFromBeat = GetDistanceFromBeat(fraction);
+
         while(counter < numBeats) {
-            while(lastDistFromBeat <= GetDistanceFromBeat(fraction)) {
-                lastDistFromBeat = GetDistanceFromBeat(fraction);
-                yield return null;
+            float newDistFromBeat = GetDistanceFromBeat(fraction);
+            if(lastDistFromBeat > newDistFromBeat) {
+                counter++;
+                if(counter >= numBeats) {
+                    break;
+                }
             }
-            counter++;
+            lastDistFromBeat = newDistFromBeat;
+            yield return null;
         }
     }
 
@@ -199,6 +218,14 @@ public class BeatController : MonoBehaviour
         while(IsOnBeat(fraction)) {
             yield return null;
         }
+    }
+
+    //get the current accuracy. returns an Accuracy, which 
+    //can be checked against, for example. BeatController.PERFECT 
+    public static Accuracy GetAccuracy(float fraction) {
+        
+        //TODO 
+        return OFFBEAT;
     }
 
 
