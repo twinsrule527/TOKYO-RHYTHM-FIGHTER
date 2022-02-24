@@ -5,16 +5,27 @@ using UnityEngine;
 public class BeatController : MonoBehaviour
 {
 
-    /*public enum Accuracy {
-        OK, GOOD, GREAT, PERFECT, OFFBEAT
-    }*/
-    
+    public struct Accuracy {
+        public Accuracy(float threshBefore, float threshAfter) {
+            this.thresholdBeforeBeat = threshBefore;
+            this.thresholdAfterBeat = threshAfter;
+        }
+        public float thresholdBeforeBeat { get; }
+        public float thresholdAfterBeat { get; }
+    }
+
+    //// Beat accuracies! 
+    //You might get these from BeatController functions.
+    //You can check them against each other
+    //ex. if(accuracyPassedIn.Equals(BeatController.PERFECT)) { do something cause it's perfect }
 
     //TODO: should there be different thresholds for different fractions of beats? 
+    public static readonly Accuracy MINIMUM = new Accuracy(0.30f, 0.25f);
+    public static readonly Accuracy GREAT = new Accuracy(0.20f, 0.15f);
+    public static readonly Accuracy PERFECT = new Accuracy(0.15f, 0.10f);
+    public static readonly Accuracy OFFBEAT = new Accuracy(float.NaN, float.NaN);
 
-    [SerializeField] static float thresholdBeforeBeat = 0.20f;
-    [SerializeField] static float thresholdAfterBeat = 0.15f;
-
+    
     //BPM 
     //easy to know and set. human-readable, will be used to do some conversion 
     static float BPM = 100; 
@@ -25,6 +36,9 @@ public class BeatController : MonoBehaviour
     //will be calculated from BPM. in seconds. 
     static float secPerBeat;
 
+    //time the song started, in unity audio time 
+    static float songStartTime;
+
     //song position, in seconds 
     static float songPos = 0;
 
@@ -32,25 +46,10 @@ public class BeatController : MonoBehaviour
     //we will use a threshold with this for reaction 
     public static float beat { get; private set; }
 
-    //time the song started, in unity audio time 
-    static float songStartTime;
-    
     //how near or far we are from a beat. 
     //1 when exactly on beat (ex. 5.0) 0 when exactly between beats (ex. 5.5)
     //would look like a triangle wave when graphed 
     public static float beatOffset { get; private set; }
-
-    //public static Accuracy accuracy;
-
-    //thresholds to be on beat, in seconds. 
-    //OK represents the overall threshold. 
-    /*
-    public static float thresh_OK = 0.20f;
-    public static float thresh_GOOD = 0.15f;
-    public static float thresh_GREAT = 0.10f;
-    public static float thresh_PERFECT = 0.05f;
-    */
-
 
     bool beatEnded1, beatEnded05, beatEnded025;
 
@@ -86,29 +85,29 @@ public class BeatController : MonoBehaviour
 
 
         //If we've hit major beats (1, 0.5, 0.25) send out events. 
-        if(!beatEnded1 && GetDistanceFromBeat(1) > thresholdAfterBeat) {
+        if(!beatEnded1 && GetDistanceFromBeat(1) > MINIMUM.thresholdAfterBeat) {
             beatEnded1 = true;
             Global.Boss.EndOfBeat1();
             Global.Player.EndOfBeat1();
-        } else if(GetDistanceFromBeat(1) > 1 - thresholdBeforeBeat) {
+        } else if(GetDistanceFromBeat(1) > 1 - MINIMUM.thresholdBeforeBeat) {
             //if we've moved on to the next beat, open this flag 
             beatEnded1 = false;
         }
 
-        if(!beatEnded05 && GetDistanceFromBeat(0.5f) > thresholdAfterBeat) {
+        if(!beatEnded05 && GetDistanceFromBeat(0.5f) > MINIMUM.thresholdAfterBeat) {
             beatEnded05 = true;
             Global.Boss.EndOfBeat05();
             Global.Player.EndOfBeat05();
-        } else if(GetDistanceFromBeat(0.5f) > 0.5 - thresholdBeforeBeat) {
+        } else if(GetDistanceFromBeat(0.5f) > 0.5 - MINIMUM.thresholdBeforeBeat) {
             //if we've moved on to the next beat, open this flag 
             beatEnded05 = false;
         }
 
-        if(!beatEnded025 && GetDistanceFromBeat(0.25f) > thresholdAfterBeat) {
+        if(!beatEnded025 && GetDistanceFromBeat(0.25f) > MINIMUM.thresholdAfterBeat) {
             beatEnded025 = true;
             Global.Boss.EndOfBeat025(); 
             Global.Player.EndOfBeat025();
-        } else if(GetDistanceFromBeat(0.25f) > 0.25 - thresholdBeforeBeat) {
+        } else if(GetDistanceFromBeat(0.25f) > 0.25 - MINIMUM.thresholdBeforeBeat) {
             //if we've moved on to the next beat, open this flag 
             beatEnded025 = false;
         }
@@ -146,14 +145,14 @@ public class BeatController : MonoBehaviour
 
         if(distFromBeat < fraction / 2) {
             //if this is after 
-            if(distFromBeat <= thresholdAfterBeat) {
+            if(distFromBeat <= MINIMUM.thresholdAfterBeat) {
                 return true;
             } else {
                 return false;
             }
         } else {
             //if this is before 
-            if(GetAbsDistanceFromBeat(fraction) <= thresholdBeforeBeat) {
+            if(GetAbsDistanceFromBeat(fraction) <= MINIMUM.thresholdBeforeBeat) {
                 return true;
             } else {
                 return false;
