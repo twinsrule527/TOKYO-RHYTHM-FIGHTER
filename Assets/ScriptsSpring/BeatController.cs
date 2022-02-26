@@ -55,13 +55,13 @@ public class BeatController : MonoBehaviour
     public AudioSource audioSource;
 
     //will be calculated from BPM. in seconds. 
-    static float secPerBeat;
+    private static double secPerBeat;
 
     //time the song started, in unity audio time 
-    static float songStartTime;
+    private static double songStartTime;
 
     //song position, in seconds 
-    static float songPos = 0;
+    //private static float songPos = 0;
 
     //what beat the song is on ex. 1, 2, 4, 5.5, 6.75 
     //we will use a threshold with this for reaction 
@@ -81,7 +81,7 @@ public class BeatController : MonoBehaviour
     void Start()
     {
         //convert BPM to functional value 
-        secPerBeat = 60f / BPM;
+        secPerBeat = 60 / BPM;
 
         //TODO have the song started by a button or soemthing idk. 
         //for now just starts at startup 
@@ -93,7 +93,7 @@ public class BeatController : MonoBehaviour
     //records the time ect 
     void StartSong() {
         //kick off tracker with current time 
-        songStartTime = (float)AudioSettings.dspTime;
+        songStartTime = AudioSettings.dspTime;
         audioSource.Play();
     }
 
@@ -146,8 +146,8 @@ public class BeatController : MonoBehaviour
 
     //instead of tracker variables, use more direct getters. 
     public static float GetBeat() {
-        songPos = (float)(AudioSettings.dspTime - songStartTime);
-        return songPos / secPerBeat;
+        double songPos = AudioSettings.dspTime - songStartTime;
+        return (float)(songPos / secPerBeat);
     }
 
     //ex. for 1, 5.1 returns 0.1, 5.5 returns 0.5, 5.9 returns 0.9
