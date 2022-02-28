@@ -47,8 +47,9 @@ MonoBehaviour:
   loops: 0
   animationName: PlayerHurt
   spriteRenderer: {fileID: 0}
-  frame0: {fileID: 21300000, guid: 4d60b66137883ae4fbfaad8fd1ac1bef, type: 3}
-  frame1: {fileID: 21300000, guid: bae7b973080071c4c85305514cf830c3, type: 3}
-  frame2: {fileID: 21300000, guid: bae7b973080071c4c85305514cf830c3, type: 3}
-  frame3: {fileID: 21300000, guid: bae7b973080071c4c85305514cf830c3, type: 3}
-  frame4: {fileID: 21300000, guid: 4d60b66137883ae4fbfaad8fd1ac1bef, type: 3}
+  Sprites:
+  - {fileID: 21300000, guid: 4d60b66137883ae4fbfaad8fd1ac1bef, type: 3}
+  - {fileID: 21300000, guid: bae7b973080071c4c85305514cf830c3, type: 3}
+  - {fileID: 21300000, guid: bae7b973080071c4c85305514cf830c3, type: 3}
+  - {fileID: 21300000, guid: bae7b973080071c4c85305514cf830c3, type: 3}
+  - {fileID: 21300000, guid: 4d60b66137883ae4fbfaad8fd1ac1bef, type: 3}

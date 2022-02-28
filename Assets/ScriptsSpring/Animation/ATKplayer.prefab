@@ -47,6 +47,12 @@ MonoBehaviour:
   loops: 0
   animationName: PlayerAttack
   spriteRenderer: {fileID: 0}
+  Sprites:
+  - {fileID: 21300000, guid: 4d60b66137883ae4fbfaad8fd1ac1bef, type: 3}
+  - {fileID: 21300000, guid: 5137e76a9bcc271429f319a3070c702a, type: 3}
+  - {fileID: 21300000, guid: 5137e76a9bcc271429f319a3070c702a, type: 3}
+  - {fileID: 21300000, guid: 8c89a8cc03874f94895f0d999707ec25, type: 3}
+  - {fileID: 21300000, guid: 5137e76a9bcc271429f319a3070c702a, type: 3}
   frame0: {fileID: 21300000, guid: 4d60b66137883ae4fbfaad8fd1ac1bef, type: 3}
   frame1: {fileID: 21300000, guid: 5137e76a9bcc271429f319a3070c702a, type: 3}
   frame2: {fileID: 21300000, guid: 8c89a8cc03874f94895f0d999707ec25, type: 3}
