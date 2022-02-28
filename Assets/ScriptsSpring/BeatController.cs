@@ -37,10 +37,12 @@ public class BeatController : MonoBehaviour
     //ex. if(accuracyPassedIn.Equals(BeatController.PERFECT)) { do something cause it's perfect }
 
     //TODO: should there be different thresholds for different fractions of beats? 
-    public static readonly Accuracy MINIMUM = new Accuracy(0.30f, 0.25f, "MINIMUM", 0);
-    public static readonly Accuracy GREAT = new Accuracy(0.20f, 0.18f, "GREAT", 1);
-    public static readonly Accuracy PERFECT = new Accuracy(0.8f, 0.6f, "PERFECT", 10);
-    public static readonly Accuracy OFFBEAT = new Accuracy(float.NaN, float.NaN, "OFFBEAT", -1);
+    //they could be repurposed as percents?
+    public static readonly Accuracy MINIMUM = new Accuracy(0.15f, 0.15f, "OK", 1);
+    public static readonly Accuracy GREAT = new Accuracy(0.10f, 0.10f, "GREAT", 5);
+    public static readonly Accuracy PERFECT = new Accuracy(0.5f, 0.5f, "PERFECT", 9);
+    public static readonly Accuracy TOO_EARLY = new Accuracy(float.NaN, float.NaN, "TOO EARLY", -1);
+    public static readonly Accuracy TOO_LATE = new Accuracy(float.NaN, float.NaN, "TOO LATE", -2);
     //below: accuracies checked in GetAccuracy() func
     //declared up here so we don't forget anything when making new ones.
     //IN ORDER of checked. So, go SMALLEST TO GREATEST window 
@@ -100,8 +102,6 @@ public class BeatController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Debug.Log(GetBeat() + " " + GetAccuracy(1).name);
 
         //update all our tracker variables. 
         //songPos = (float)(AudioSettings.dspTime - songStartTime);
@@ -205,6 +205,7 @@ public class BeatController : MonoBehaviour
                     return a;
                 }
             }
+            return TOO_LATE;
         } else {
             //if before 
             foreach(Accuracy a in accuraciesToCheck) {
@@ -212,8 +213,8 @@ public class BeatController : MonoBehaviour
                     return a;
                 }
             }
+            return TOO_EARLY;
         }
-        return OFFBEAT;
     }
 
     //Like WaitForSeconds, but in sync with the music. 
