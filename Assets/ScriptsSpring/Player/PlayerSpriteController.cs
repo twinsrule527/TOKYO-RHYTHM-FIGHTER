@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerSpriteController : MonoBehaviour
 {
-    public SpriteRenderer trueRenderer;
+    //public SpriteRenderer trueRenderer;
 
     public AnimationController attack;
     public AnimationController messUp;
@@ -17,7 +17,7 @@ public class PlayerSpriteController : MonoBehaviour
     void Start()
     {
 
-        trueRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
+        //trueRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -37,7 +37,7 @@ public class PlayerSpriteController : MonoBehaviour
     //Attack is usually played as animation on beat
     public void Attack(float beatFraction)
     {
-        trueRenderer.sprite = attack.frame0;
+        attack.spriteRenderer.sprite = attack.Sprites[0];
         attack.PlayAnimationOnBeat(beatFraction);
     }
 
@@ -45,7 +45,7 @@ public class PlayerSpriteController : MonoBehaviour
     //Mess Up plays from 0 bc it should play immediately when players mess up. 
     public void MessUp()
     {
-        trueRenderer.sprite = messUp.frame0;
+        messUp.spriteRenderer.sprite = messUp.Sprites[0];
         messUp.PlayAnimation();
     }
 
@@ -53,7 +53,7 @@ public class PlayerSpriteController : MonoBehaviour
     //Might replace with a block/Parry
     public void Hurt()
     {
-        trueRenderer.sprite = hurt.frame0;
+        hurt.spriteRenderer.sprite = hurt.Sprites[0];
         hurt.PlayAnimation();
     }
 }
