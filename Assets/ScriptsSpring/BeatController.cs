@@ -217,6 +217,17 @@ public class BeatController : MonoBehaviour
         }
     }
 
+    //Gets the nearest beat of this fraction, both before and after.
+    public float GetNearestBeat(float fraction) {
+        float beat = GetBeat();
+        float dist = GetDistanceFromBeat(fraction);
+        if(dist > fraction / 2) {
+            return beat + (1 - dist);
+        } else {
+            return beat - dist;
+        }
+    }
+
     //Like WaitForSeconds, but in sync with the music. 
     //USE THIS INSTEAD OF WAITFORSECONDS
     //similar code as below, would re-use by calling WaitForBeatsMulti(1) here but it's a coroutine so ? 
