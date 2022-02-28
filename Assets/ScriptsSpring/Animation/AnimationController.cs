@@ -50,6 +50,12 @@ public class AnimationController : MonoBehaviour
             PlayAnimation();
         }
 
+        if(animationName == "MidbossAttack")
+        {
+            PlayAnimation();
+            
+        }
+
     }
 
     // Update is called once per frame
@@ -63,6 +69,7 @@ public class AnimationController : MonoBehaviour
     public void PlayAnimation()
     {
         StartCoroutine(PlayFromFrame(0));
+        SetFrame(0);
     }
 
 
@@ -135,6 +142,8 @@ public class AnimationController : MonoBehaviour
                 }
             }
         }
+
+        SetFrame(0);
     }
 
 

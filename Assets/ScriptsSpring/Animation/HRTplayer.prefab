@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayFraction: 0.2
   loops: 0
-  animationName: hurt
+  animationName: PlayerHurt
   spriteRenderer: {fileID: 0}
   frame0: {fileID: 21300000, guid: 4d60b66137883ae4fbfaad8fd1ac1bef, type: 3}
   frame1: {fileID: 21300000, guid: bae7b973080071c4c85305514cf830c3, type: 3}
