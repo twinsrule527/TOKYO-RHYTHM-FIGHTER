@@ -16,13 +16,22 @@ public class PlayerSpriteController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        trueRenderer = GetComponent<SpriteRenderer>();
+
+        trueRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.O))
+        {
+            Attack(1.0f);
+        }
+
+        if (Input.GetKey(KeyCode.P))
+        {
+            Hurt();
+        }
     }
 
     //Attack is usually played as animation on beat
@@ -37,13 +46,14 @@ public class PlayerSpriteController : MonoBehaviour
     public void MessUp()
     {
         trueRenderer.sprite = messUp.frame0;
-        attack.PlayAnimation();
+        messUp.PlayAnimation();
     }
 
     //Getting hurt animation should also be played immediately. 
+    //Might replace with a block/Parry
     public void Hurt()
     {
         trueRenderer.sprite = hurt.frame0;
-        attack.PlayAnimation();
+        hurt.PlayAnimation();
     }
 }

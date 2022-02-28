@@ -16,7 +16,7 @@ public class AnimationController : MonoBehaviour
 
     public string animationName; 
 
-    private SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
     private List<Sprite> Sprites;
 
     public Sprite frame0;
@@ -34,6 +34,7 @@ public class AnimationController : MonoBehaviour
         //hard drag it in
         //At runtime get component in parent
         spriteRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
+        //gameObject.transform.parent.GetComponentInParent<SpriteRenderer>();
 
         Sprites.Add(frame0);
         Sprites.Add(frame1);
@@ -44,6 +45,10 @@ public class AnimationController : MonoBehaviour
         SetFrame(0);
         AnimationEnd = delayFraction * Sprites.Count;
 
+        if(animationName == "Note")
+        {
+            PlayAnimation();
+        }
 
     }
 
@@ -118,8 +123,9 @@ public class AnimationController : MonoBehaviour
         for (int i = frame; i < Sprites.Count; i++)
         {
             spriteRenderer.sprite = Sprites[i];
-            StartCoroutine(BeatController.WaitForBeat(delayFraction));
-            yield return null;
+            //StartCoroutine(BeatController.WaitForBeat(1.0f));
+            yield return StartCoroutine(BeatController.WaitForBeat(delayFraction));
+            ;
 
             if (loops == true)
             {
