@@ -12,7 +12,7 @@ public abstract class BossAI : MonoBehaviour
     
     public virtual void Start() {
         AttackQueue = new List<AttackPattern>();
-        
+
     }
     //Updates the Boss State after each attack pattern
     public virtual IEnumerator StateUpdate() {

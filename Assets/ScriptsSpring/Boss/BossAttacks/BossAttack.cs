@@ -39,5 +39,6 @@ public abstract class BossAttack : MonoBehaviour
     public abstract void AddBeatToIndicator();
     public float length = 1f;//How long in beats this attack should take
     public Sprite attackIndicatorSprite;//The Sprite the beat Indicator should take when making this attack
+    [SerializeField] protected AnimationController myAnimationController;
 
 }
