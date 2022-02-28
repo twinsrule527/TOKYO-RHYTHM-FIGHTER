@@ -8,11 +8,17 @@ public abstract class BossAI : MonoBehaviour
 {
     protected Bag<AttackPattern> attackBag;
     public BossAttack CurrentAttack { get; private set; }//Whatever the attack the boss is currently on - is needed for Interrupts
+    public List<AttackPattern> AttackQueue;
     
+    public virtual void Start() {
+        AttackQueue = new List<AttackPattern>();
+    }
     //Updates the Boss State after each attack pattern
     public virtual IEnumerator StateUpdate() {
-        while(attackBag.Count > 0) {
-            AttackPattern newAttack = attackBag.Draw();
+        while(AttackQueue.Count > 0) {
+            AttackPattern newAttack = AttackQueue[0];
+            AttackQueue.RemoveAt(0);
+            RefillAttackQueue();
             yield return StartCoroutine(StartAttacks(newAttack));
         }
     }
@@ -40,5 +46,23 @@ public abstract class BossAI : MonoBehaviour
 
     public virtual IEnumerator Reposition(float amt = 0) {
         yield return null;   
+    }
+
+    //Adds attack patterns to the attack queue until it has a length longer than the beatIndicatorBrain
+    public void RefillAttackQueue() {
+        float attackQueueBeatLength = 0;
+        //Get the length of the attackQueue
+        for(int i = 0; i < AttackQueue.Count; i++) {
+            attackQueueBeatLength += AttackQueue[i].AttackPatternLength();
+        }
+        //A temp variable in case something breaks
+        float temp = 0;
+        while(attackQueueBeatLength < BeatIndicatorBrain.beatsInAdvanceShown && temp < 20) {
+            temp++;
+            AttackPattern newAttack = attackBag.Draw();
+            AttackQueue.Add(newAttack);
+            attackQueueBeatLength += newAttack.AttackPatternLength();
+            //Also, needs to add the attackPattern to the BeatIndicatorBrain
+        }
     }
 }
