@@ -38,7 +38,7 @@ public class BeatIndicatorBrain : MonoBehaviour
     }
     void Start() {
         BossIndicatorStartPos = startPosTransform.position;//TODO: Change the way that the bossindicator start pos is set
-        BossIndicatorEndPos = endPosTransform.position;
+        BossIndicatorEndPos = endPosTransform.position + Vector3.back;
         for(int i = 0; i < 10; i++) {
             AddBaseBeat(BossBeats);
         }
@@ -55,6 +55,7 @@ public class BeatIndicatorBrain : MonoBehaviour
                     if(BossIndicators[i].enabled == false) {
                         newIndicator = BossIndicators[i];
                         newIndicator.enabled = true;
+                        newIndicator.moving = true;
                         break;
                     }
                 }
@@ -66,9 +67,9 @@ public class BeatIndicatorBrain : MonoBehaviour
                 newIndicator.SetIndicatorStart(BossBeats[0]);
                 //Checks to see if it needs to add a base beat
                     //Does so if the next beat that will appear doesn't exist
-                if(BossBeats[BossBeats.Count - 1].beatToHit <= curBeat + beatsInAdvanceShown + 1) {
+                /*if(BossBeats.Count <= 10) {
                     AddBaseBeat(BossBeats);
-                }
+                }*/
                 BossBeats.RemoveAt(0);
             }
         }
@@ -110,9 +111,10 @@ public class BeatIndicatorBrain : MonoBehaviour
             }
             //then, checks to see if this new Base beat just needs to be removed
                 //Removes the base beat if there exists another beat in the same position
-            if(newElement > 0 && beats[newElement].beatToHit == beats[newElement - 1].beatToHit) {
+            /*if(newElement > 0 && beats[newElement].beatToHit == beats[newElement - 1].beatToHit) {
                 beats.RemoveAt(newElement);
-            }
+                Debug.Log("happened");
+            }*/
         }
     }
 

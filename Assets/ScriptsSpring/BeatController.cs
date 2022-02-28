@@ -101,7 +101,7 @@ public class BeatController : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(GetBeat() + " " + GetAccuracy(1).name);
+        //Debug.Log(GetBeat() + " " + GetAccuracy(1).name);
 
         //update all our tracker variables. 
         //songPos = (float)(AudioSettings.dspTime - songStartTime);
