@@ -7,9 +7,11 @@ public class BossBeatIndicator : MonoBehaviour
     [SerializeField] private SpriteRenderer mySprite;
     [SerializeField] private float beatToHit;
     [SerializeField] private float startBeat;//The beat that this first shows up on
+    public bool moving;
+    private Vector3 baseScale;
     void Start()
     {
-        
+        baseScale = transform.localScale;
     }
 
     void Update()
@@ -17,7 +19,7 @@ public class BossBeatIndicator : MonoBehaviour
         float lerpValue = (BeatController.GetBeat() - startBeat) / (beatToHit - startBeat);
         lerpValue = Mathf.Min(lerpValue, 1);
         transform.position = Vector3.Lerp(BeatIndicatorBrain.BossIndicatorStartPos, BeatIndicatorBrain.BossIndicatorEndPos, lerpValue);
-        if(lerpValue == 1) {
+        if(lerpValue == 1) { //&& !moving) {
             //Deactivates when it reaches 1
             Disable();
         }
@@ -34,7 +36,18 @@ public class BossBeatIndicator : MonoBehaviour
 
     //A function to disable the boss Beat indicator
     public void Disable() {
-        mySprite.enabled = false;
+        //StartCoroutine(Disappear());
+        moving = false;
         enabled = false;
+        mySprite.enabled = false;
+    }
+
+    public IEnumerator Disappear() {
+        float beatToStopOn = BeatController.GetBeat() + 0.25f;
+        while(BeatController.GetBeat() < beatToStopOn) {
+            yield return null;
+        }
+        enabled = false;
+        mySprite.enabled = false;
     }
 }

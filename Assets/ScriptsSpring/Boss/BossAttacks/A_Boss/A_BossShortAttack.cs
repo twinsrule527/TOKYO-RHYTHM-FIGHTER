@@ -8,6 +8,7 @@ public class A_BossShortAttack : BossAttack
     [SerializeField] private float damageToDeal;
 
     public override IEnumerator Attack() {
+        //Call the animation controller
         mySprite.color = Color.green;
         yield return StartCoroutine(BeatController.WaitForBeat(1));
         mySprite.color = Color.red;

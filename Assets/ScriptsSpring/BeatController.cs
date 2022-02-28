@@ -6,12 +6,29 @@ public class BeatController : MonoBehaviour
 {
 
     public struct Accuracy {
-        public Accuracy(float threshBefore, float threshAfter) {
+        public Accuracy(float threshBefore, float threshAfter, string nam, int num) {
             this.thresholdBeforeBeat = threshBefore;
             this.thresholdAfterBeat = threshAfter;
+            this.name = nam;
+            this.number = num;
         }
         public float thresholdBeforeBeat { get; }
         public float thresholdAfterBeat { get; }
+
+        int number;  //for doing faster equals comparisons, i think 
+        public string name { get; } //for debugging- TODO remove later?
+
+        //do we need this?
+        public override bool Equals(object obj) {
+            if (!(obj is Accuracy))
+                return false;
+
+            Accuracy other = (Accuracy) obj;
+            if(other.number == this.number) 
+                return true;
+            return false;
+
+        }
     }
 
     //// Beat accuracies! 
@@ -20,10 +37,14 @@ public class BeatController : MonoBehaviour
     //ex. if(accuracyPassedIn.Equals(BeatController.PERFECT)) { do something cause it's perfect }
 
     //TODO: should there be different thresholds for different fractions of beats? 
-    public static readonly Accuracy MINIMUM = new Accuracy(0.30f, 0.25f);
-    public static readonly Accuracy GREAT = new Accuracy(0.20f, 0.15f);
-    public static readonly Accuracy PERFECT = new Accuracy(0.15f, 0.12f);
-    public static readonly Accuracy OFFBEAT = new Accuracy(float.NaN, float.NaN);
+    public static readonly Accuracy MINIMUM = new Accuracy(0.30f, 0.25f, "MINIMUM", 0);
+    public static readonly Accuracy GREAT = new Accuracy(0.20f, 0.18f, "GREAT", 1);
+    public static readonly Accuracy PERFECT = new Accuracy(0.8f, 0.6f, "PERFECT", 10);
+    public static readonly Accuracy OFFBEAT = new Accuracy(float.NaN, float.NaN, "OFFBEAT", -1);
+    //below: accuracies checked in GetAccuracy() func
+    //declared up here so we don't forget anything when making new ones.
+    //IN ORDER of checked. So, go SMALLEST TO GREATEST window 
+    static Accuracy [] accuraciesToCheck = {PERFECT, GREAT, MINIMUM};
 
     
     //BPM 
@@ -79,6 +100,9 @@ public class BeatController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //Debug.Log(GetBeat() + " " + GetAccuracy(1).name);
+
         //update all our tracker variables. 
         //songPos = (float)(AudioSettings.dspTime - songStartTime);
         //beat = songPos / secPerBeat;
@@ -139,7 +163,7 @@ public class BeatController : MonoBehaviour
     }*/
     public static float GetAbsDistanceFromBeat(float fraction) {
         float b = GetDistanceFromBeat(fraction) - (fraction / 2);
-        b = Mathf.Abs(b);
+        b = -Mathf.Abs(b);
         return b + (fraction / 2);
     }
 
@@ -148,6 +172,7 @@ public class BeatController : MonoBehaviour
     public static bool IsOnBeat(float fraction) {
         
         float distFromBeat = GetDistanceFromBeat(fraction);
+        float distFromBeatAbs = GetAbsDistanceFromBeat(fraction);
 
         if(distFromBeat < fraction / 2) {
             //if this is after 
@@ -158,12 +183,37 @@ public class BeatController : MonoBehaviour
             }
         } else {
             //if this is before 
-            if(GetAbsDistanceFromBeat(fraction) <= MINIMUM.thresholdBeforeBeat) {
+            if(distFromBeatAbs <= MINIMUM.thresholdBeforeBeat) {
                 return true;
             } else {
                 return false;
             }
         }
+    }
+
+    //get the current accuracy. returns an Accuracy, which 
+    //can be checked against, for example. BeatController.PERFECT 
+    public static Accuracy GetAccuracy(float fraction) {
+        
+        float distFromBeat = GetDistanceFromBeat(fraction);
+        float distFromBeatAbs = GetAbsDistanceFromBeat(fraction);
+
+        if(distFromBeat < fraction / 2) {
+            //if after
+            foreach(Accuracy a in accuraciesToCheck) {
+                if(distFromBeat <= a.thresholdAfterBeat) {
+                    return a;
+                }
+            }
+        } else {
+            //if before 
+            foreach(Accuracy a in accuraciesToCheck) {
+                if(distFromBeatAbs <= a.thresholdBeforeBeat) {
+                    return a;
+                }
+            }
+        }
+        return OFFBEAT;
     }
 
     //Like WaitForSeconds, but in sync with the music. 
@@ -219,35 +269,6 @@ public class BeatController : MonoBehaviour
             yield return null;
         }
     }
-
-    //get the current accuracy. returns an Accuracy, which 
-    //can be checked against, for example. BeatController.PERFECT 
-    public static Accuracy GetAccuracy(float fraction) {
-        
-        //TODO 
-        return OFFBEAT;
-    }
-
-
-    //get the current accuracy. returns OK, GOOD, GREAT, PERFECT according to thresholds. 
-    /*
-    public static Accuracy GetAccuracy() {
-
-        float dist = getAbsDistanceFromBeat();
-        if(dist < thresh_PERFECT) {
-            return Accuracy.PERFECT;
-        } else if(dist < thresh_GREAT) {
-            return Accuracy.GREAT;
-        } else if(dist < thresh_GOOD) {
-            return Accuracy.GOOD;
-        } else if(dist < thresh_OK) {
-            return Accuracy.OK;
-        } else {
-            return Accuracy.OFFBEAT;
-        }
-        
-    } */ 
-    
 
 
 }
