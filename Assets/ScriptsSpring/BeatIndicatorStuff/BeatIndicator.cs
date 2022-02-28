@@ -22,7 +22,7 @@ public class BeatIndicator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float newx = BeatController.beat % total + total;
+        float newx = BeatController.GetBeat() % total + total;
         newx = Mathf.Repeat(newx + initial, total);
         newx *= sign;
         newx = newx + (total * -sign);
