@@ -9,6 +9,8 @@ public abstract class BossAI : MonoBehaviour
     protected Bag<AttackPattern> attackBag;
     public BossAttack CurrentAttack { get; private set; }//Whatever the attack the boss is currently on - is needed for Interrupts
     public List<AttackPattern> AttackQueue;
+
+    //[SerializeField] private BossSpriteController mySpriteController; /- For ERIC
     
     public virtual void Start() {
         AttackQueue = new List<AttackPattern>();
@@ -27,6 +29,7 @@ public abstract class BossAI : MonoBehaviour
     public IEnumerator StartAttacks(AttackPattern myAttack) {
         for(int i = 0; i < myAttack.coroutines.Count; i++) {
             CurrentAttack = myAttack.coroutines[i];
+            //mySpriteController.StartAttackAnim(CurrentAttack.name);//FOR ERIC
             yield return CurrentAttack.StartCoroutine(CurrentAttack.Attack());
             //yield return myAttack.CoroutineSource.StartCoroutine(myAttack.coroutines[i]);
         }
