@@ -46,5 +46,10 @@ public class A_BossShortAttack : BossAttack
         //else { Global.PlayerInstance.ChangeHP(-damage);}
     }
 
+    public override void AddBeatToIndicator()
+    {
+        Global.BeatIndicatorBrain.AddBossBeat(length, attackIndicatorSprite);
+    }
+
 
 }

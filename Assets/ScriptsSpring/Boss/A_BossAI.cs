@@ -14,7 +14,7 @@ public class A_BossAI : BossAI
         attackBag = new Bag<AttackPattern>();
         CreateAttackPatterns();
         attackBag.Refill();
-
+        RefillAttackQueue();
         StartCoroutine("StateUpdate");
     }
 

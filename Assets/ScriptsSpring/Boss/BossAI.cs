@@ -12,6 +12,7 @@ public abstract class BossAI : MonoBehaviour
     
     public virtual void Start() {
         AttackQueue = new List<AttackPattern>();
+        
     }
     //Updates the Boss State after each attack pattern
     public virtual IEnumerator StateUpdate() {
@@ -63,6 +64,7 @@ public abstract class BossAI : MonoBehaviour
             AttackQueue.Add(newAttack);
             attackQueueBeatLength += newAttack.AttackPatternLength();
             //Also, needs to add the attackPattern to the BeatIndicatorBrain
+            newAttack.AddAttacksToBeatIndicator();
         }
     }
 }

@@ -32,4 +32,8 @@ public class PlaytestAttack3 : BossAttack
     public override void CheckAttackSuccess()
     {
     }
+    public override void AddBeatToIndicator()
+        {
+            Global.BeatIndicatorBrain.AddBossBeat(length, attackIndicatorSprite);
+        }
 }

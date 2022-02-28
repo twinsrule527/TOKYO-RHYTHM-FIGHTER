@@ -38,6 +38,20 @@ public class AttackPattern
             yield return CoroutineSource.StartCoroutine(coroutines[i]);
         }
     }*/
+    //Adds the boss attack pattern to the boss Beat indicator
+    public void AddAttacksToBeatIndicator() {
+        for(int i = 0; i < coroutines.Count; i++) {
+            coroutines[i].AddBeatToIndicator();
+        }
+    }
+
+    public float AttackPatternLength() {
+        float length = 0;
+        foreach(BossAttack atk in coroutines) {
+            length += atk.length;
+        }
+        return length;
+    }
 
     public override bool Equals(System.Object obj) {
 
