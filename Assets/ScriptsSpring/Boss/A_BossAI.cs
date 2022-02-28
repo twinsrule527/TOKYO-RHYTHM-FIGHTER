@@ -9,10 +9,12 @@ public class A_BossAI : BossAI
     
     [SerializeField] private float bossBeat;//The beat that this goes along with
     [SerializeField] private SpriteRenderer mySprite;//This will eventually go in a separate object
-    void Start() {
+    public override void Start() {
+        base.Start();
         attackBag = new Bag<AttackPattern>();
         CreateAttackPatterns();
         attackBag.Refill();
+        RefillAttackQueue();
         StartCoroutine("StateUpdate");
     }
 
