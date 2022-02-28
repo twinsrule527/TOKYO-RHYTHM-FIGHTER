@@ -50,6 +50,7 @@ public class PlayerSpriteController : MonoBehaviour
     }
 
     //Getting hurt animation should also be played immediately. 
+    //Might replace with a block/Parry
     public void Hurt()
     {
         trueRenderer.sprite = hurt.frame0;

@@ -45,6 +45,10 @@ public class AnimationController : MonoBehaviour
         SetFrame(0);
         AnimationEnd = delayFraction * Sprites.Count;
 
+        if(animationName == "Note")
+        {
+            PlayAnimation();
+        }
 
     }
 
