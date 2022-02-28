@@ -48,5 +48,10 @@ public class A_BossLongAttack : BossAttack
         //If player action is on beat, this attack is blocked and does nothing
 
         //else { Global.PlayerInstance.ChangeHP(-damage);}
+        
+    }
+    public override void AddBeatToIndicator()
+    {
+        Global.BeatIndicatorBrain.AddBossBeat(length, attackIndicatorSprite);
     }
 }

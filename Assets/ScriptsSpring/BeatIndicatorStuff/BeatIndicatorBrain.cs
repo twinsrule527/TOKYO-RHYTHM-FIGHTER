@@ -18,7 +18,7 @@ public class BeatIndicatorBrain : MonoBehaviour
     [SerializeField] private Transform endPosTransform;//Similarly to above, but for end pos
     public static Vector3 BossIndicatorStartPos;
     public static Vector3 BossIndicatorEndPos;
-    public static readonly float beatsInAdvanceShown = 3.5f;//How much in advance beats appear on the beat indicator
+    public static readonly float beatsInAdvanceShown = 4f;//How much in advance beats appear on the beat indicator
     private float curBossStartBeat;//Keeps track of what beat each boss attack should start on
     private float curBaseBeat;
     [SerializeField] private Sprite baseBeatSprite;
@@ -31,13 +31,15 @@ public class BeatIndicatorBrain : MonoBehaviour
         //How long (in beat-form) from now does that note actually occur
         //what type of beat it is
    
+    void Awake() {
+        Global.BeatIndicatorBrain = this;
+        BossBeats = new List<beatIndicatorInfo>();
+        BossIndicators = new List<BossBeatIndicator>();
+    }
     void Start() {
         BossIndicatorStartPos = startPosTransform.position;//TODO: Change the way that the bossindicator start pos is set
         BossIndicatorEndPos = endPosTransform.position;
-        BossBeats = new List<beatIndicatorInfo>();
-        BossIndicators = new List<BossBeatIndicator>();
-        for(int i = 0; i < TestBeats.Count; i++) {
-            AddBossBeat(TestBeats[i], TestSprites[i]);
+        for(int i = 0; i < 10; i++) {
             AddBaseBeat(BossBeats);
         }
     }
