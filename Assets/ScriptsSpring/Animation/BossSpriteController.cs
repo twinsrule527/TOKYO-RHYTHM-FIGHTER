@@ -12,12 +12,43 @@ public class BossSpriteController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyUp(KeyCode.O))
+        {
+            ShortAttack(1.0f);
+        }
+
+        if (Input.GetKeyUp(KeyCode.I))
+        {
+            longAttack.delayFraction = 1.0f;
+            LongAttack();
+        }
+    }
+
+    public void ShortAttack(float beatFraction)
+    {
+        shortAttack.spriteRenderer.sprite = shortAttack.Sprites[0];
+        shortAttack.PlayAnimationOnBeat(beatFraction);
+    }
+
+
+    //Mess Up plays from 0 bc it should play immediately when players mess up. 
+    public void LongAttack()
+    {
+        longAttack.spriteRenderer.sprite = longAttack.Sprites[0];
+        longAttack.PlayAnimation();
+    }
+
+    //Getting hurt animation should also be played immediately. 
+    //Might replace with a block/Parry
+    public void Hurt()
+    {
+        hurt.spriteRenderer.sprite = hurt.Sprites[0];
+        hurt.PlayAnimation();
     }
 }

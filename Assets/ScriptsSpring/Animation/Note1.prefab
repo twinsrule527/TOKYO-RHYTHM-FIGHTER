@@ -100,5 +100,8 @@ MonoBehaviour:
   animationName: Note
   spriteRenderer: {fileID: 0}
   Sprites:
+  - {fileID: 21300000, guid: ff8efa317db35f94db58e5be78562612, type: 3}
+  - {fileID: 21300000, guid: d07fea906657ca34c950215883b20bf0, type: 3}
+  - {fileID: 21300000, guid: ff8efa317db35f94db58e5be78562612, type: 3}
   - {fileID: 21300000, guid: d07fea906657ca34c950215883b20bf0, type: 3}
   - {fileID: 21300000, guid: ff8efa317db35f94db58e5be78562612, type: 3}

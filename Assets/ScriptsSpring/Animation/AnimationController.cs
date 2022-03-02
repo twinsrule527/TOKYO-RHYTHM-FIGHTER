@@ -53,7 +53,7 @@ public class AnimationController : MonoBehaviour
 
         if(animationName == "MidbossAttack")
         {
-            PlayAnimation();
+            //PlayAnimationOnBeat(1.0f);
             
         }
 
