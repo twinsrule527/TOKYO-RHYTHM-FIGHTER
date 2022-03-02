@@ -8,12 +8,14 @@ public class A_BossLongAttack : BossAttack
     [SerializeField] private float damageToDeal;
 
     public override IEnumerator Attack() {
-        mySprite.color = Color.blue;
+        Global.Boss.spriteController.CallAttack(atkName, 1);
+        mySprite.color = Color.white;
+        //mySprite.color = Color.blue;
         yield return StartCoroutine(BeatController.WaitForBeatsMulti(3, 1));
-        mySprite.color = Color.red;
+        //mySprite.color = Color.red;
         yield return StartCoroutine(BeatController.WaitForBeat(1));
         //Checks to see if they can hit the player - if they do, the player gets hit
-        mySprite.color = Color.gray;
+        //mySprite.color = Color.gray;
         Global.Boss.makeAttackThisBeat = true;
         Global.Boss.CurrentMakingAttack = this;
         yield return null;
