@@ -2,20 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeatController : MonoBehaviour
-{
-
     public struct Accuracy {
         public Accuracy(float threshBefore, float threshAfter, string nam, int num) {
             this.thresholdBeforeBeat = threshBefore;
             this.thresholdAfterBeat = threshAfter;
             this.name = nam;
-            this.number = num;
+            this.priority = num;
         }
         public float thresholdBeforeBeat { get; }
         public float thresholdAfterBeat { get; }
 
-        int number;  //for doing faster equals comparisons, i think 
+        public int priority;  //for doing faster equals comparisons, i think //Negative = Off-beat, positive = on-beat
         public string name { get; } //for debugging- TODO remove later?
 
         //do we need this?
@@ -24,13 +21,17 @@ public class BeatController : MonoBehaviour
                 return false;
 
             Accuracy other = (Accuracy) obj;
-            if(other.number == this.number) 
+            if(other.priority == this.priority) 
                 return true;
             return false;
 
         }
     }
 
+public class BeatController : MonoBehaviour
+{
+
+    
     //// Beat accuracies! 
     //You might get these from BeatController functions.
     //You can check them against each other

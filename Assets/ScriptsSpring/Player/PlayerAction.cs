@@ -40,10 +40,15 @@ public class PlayerAction : MonoBehaviour
     //Can be overridden.
     protected virtual void TryAction() {
 
-        if(BeatController.IsOnBeat(beatFraction)) {
-            Success();
-        } else {
-            MessUp();
+        if(Global.Player.CurrentAction == null) {
+            Accuracy curAccuracy = BeatController.GetAccuracy(beatFraction);
+            //Call PlayerSpriteController.DisplayAccuracy(Accuracy);
+            if(curAccuracy.priority > 0) {
+                    Success();
+            }
+            else {
+                MessUp();
+            }
         }
 
     }
