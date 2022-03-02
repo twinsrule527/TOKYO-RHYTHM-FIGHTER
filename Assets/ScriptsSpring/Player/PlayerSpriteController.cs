@@ -6,9 +6,12 @@ public class PlayerSpriteController : MonoBehaviour
 {
     //public SpriteRenderer trueRenderer;
 
-    public AnimationController attack;
-    public AnimationController messUp;
-    public AnimationController hurt;
+    [SerializeField] AnimationController attack;
+    [SerializeField] AnimationController messUp;
+    [SerializeField] AnimationController hurt;
+
+
+    [SerializeField] AccuracyPrefab accuracyTOO_EARLY, accuracyTOO_LATE, accuracyMINIMUM, accuracyGREAT, accuracyPERFECT;
 
 
     private void Awake()
@@ -61,5 +64,23 @@ public class PlayerSpriteController : MonoBehaviour
     {
         hurt.spriteRenderer.sprite = hurt.Sprites[0];
         hurt.PlayAnimation();
+    }
+
+    public void DisplayAccuracy(Accuracy acc) {
+
+        if(acc.Equals(BeatController.TOO_EARLY)) {
+            accuracyTOO_EARLY.DisplayAccuracy();
+        } else if(acc.Equals(BeatController.TOO_LATE)) {
+            accuracyTOO_LATE.DisplayAccuracy();
+        } else if(acc.Equals(BeatController.MINIMUM)) {
+            accuracyMINIMUM.DisplayAccuracy();
+        } else if(acc.Equals(BeatController.GREAT)) {
+            accuracyGREAT.DisplayAccuracy();
+        } else if(acc.Equals(BeatController.PERFECT)) {
+            accuracyPERFECT.DisplayAccuracy();
+        } else {
+            Debug.Log("ERROR: an Accuracy was passed to PlayerSpriteController.DisplayAccuracy that doesn't match any of the ones checked!!!");
+        }
+
     }
 }
