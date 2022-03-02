@@ -164,8 +164,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatFraction: 1
-  key: 0
-  damage: 0
+  key: 32
+  damage: 5
 --- !u!1 &8597708211883435790
 GameObject:
   m_ObjectHideFlags: 0

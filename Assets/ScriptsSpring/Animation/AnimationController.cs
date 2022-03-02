@@ -81,6 +81,7 @@ public class AnimationController : MonoBehaviour
         if(beatFraction == 0)
         {
             PlayAnimation();
+            return;
         }
         //If its early it should be a realm greater than or above the designated half beat
         //Inputting fractions, 
