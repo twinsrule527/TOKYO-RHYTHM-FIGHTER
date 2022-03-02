@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    public PlayerSpriteController spriteController {get; private set;}
+    public PlayerSpriteController spriteController;
 
     PlayerAction[] actions;
     public MessUpAction messUpAction;//The player has a mess-up action that their current action gets set to if they fail to perform an action

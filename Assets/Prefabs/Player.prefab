@@ -213,6 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4140800e3e822a4aa99dacd2a156517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteController: {fileID: 5491050542424892196}
   messUpAction: {fileID: 9180100372514155346}
   comboCounter: 0
   CurrentAction: {fileID: 4472115705231886289}
@@ -338,3 +339,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1397655393078538866, guid: e27ce9a720fdda84d99bd4392814a1df, type: 3}
   m_PrefabInstance: {fileID: 6562861732006516200}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5491050542424892196 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1668538141305435852, guid: e27ce9a720fdda84d99bd4392814a1df, type: 3}
+  m_PrefabInstance: {fileID: 6562861732006516200}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d70bdba628284488854fdb7d8d1be3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
