@@ -22,7 +22,7 @@ public class AnimationController : MonoBehaviour
 
     private void Awake()
     {
-        if (animationName == "Note")
+        if (animationName == "Note") //TODO remove
         {
             spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
             PlayAnimation();
@@ -46,17 +46,12 @@ public class AnimationController : MonoBehaviour
         SetFrame(0);
         AnimationEnd = delayFraction * Sprites.Count;
 
-        if(animationName == "Note")
+        if(animationName == "Note") //TODO remove 
         {
             spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
             PlayAnimation();
         }
 
-        if(animationName == "MidbossAttack")
-        {
-            //PlayAnimationOnBeat(1.0f);
-            
-        }
 
     }
 
