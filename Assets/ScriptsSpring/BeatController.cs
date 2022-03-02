@@ -2,20 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeatController : MonoBehaviour
-{
-
     public struct Accuracy {
         public Accuracy(float threshBefore, float threshAfter, string nam, int num) {
             this.thresholdBeforeBeat = threshBefore;
             this.thresholdAfterBeat = threshAfter;
             this.name = nam;
-            this.number = num;
+            this.priority = num;
         }
         public float thresholdBeforeBeat { get; }
         public float thresholdAfterBeat { get; }
 
-        int number;  //for doing faster equals comparisons, i think 
+        public int priority;  //for doing faster equals comparisons, i think //Negative = Off-beat, positive = on-beat
         public string name { get; } //for debugging- TODO remove later?
 
         //do we need this?
@@ -24,23 +21,29 @@ public class BeatController : MonoBehaviour
                 return false;
 
             Accuracy other = (Accuracy) obj;
-            if(other.number == this.number) 
+            if(other.priority == this.priority) 
                 return true;
             return false;
 
         }
     }
 
+public class BeatController : MonoBehaviour
+{
+
+    
     //// Beat accuracies! 
     //You might get these from BeatController functions.
     //You can check them against each other
     //ex. if(accuracyPassedIn.Equals(BeatController.PERFECT)) { do something cause it's perfect }
 
     //TODO: should there be different thresholds for different fractions of beats? 
-    public static readonly Accuracy MINIMUM = new Accuracy(0.30f, 0.25f, "MINIMUM", 0);
-    public static readonly Accuracy GREAT = new Accuracy(0.20f, 0.18f, "GREAT", 1);
-    public static readonly Accuracy PERFECT = new Accuracy(0.8f, 0.6f, "PERFECT", 10);
-    public static readonly Accuracy OFFBEAT = new Accuracy(float.NaN, float.NaN, "OFFBEAT", -1);
+    //they could be repurposed as percents?
+    public static readonly Accuracy MINIMUM = new Accuracy(0.15f, 0.15f, "OK", 1);
+    public static readonly Accuracy GREAT = new Accuracy(0.10f, 0.10f, "GREAT", 5);
+    public static readonly Accuracy PERFECT = new Accuracy(0.5f, 0.5f, "PERFECT", 9);
+    public static readonly Accuracy TOO_EARLY = new Accuracy(float.NaN, float.NaN, "TOO EARLY", -1);
+    public static readonly Accuracy TOO_LATE = new Accuracy(float.NaN, float.NaN, "TOO LATE", -2);
     //below: accuracies checked in GetAccuracy() func
     //declared up here so we don't forget anything when making new ones.
     //IN ORDER of checked. So, go SMALLEST TO GREATEST window 
@@ -55,13 +58,13 @@ public class BeatController : MonoBehaviour
     public AudioSource audioSource;
 
     //will be calculated from BPM. in seconds. 
-    static float secPerBeat;
+    private static double secPerBeat;
 
     //time the song started, in unity audio time 
-    static float songStartTime;
+    private static double songStartTime;
 
     //song position, in seconds 
-    static float songPos = 0;
+    //private static float songPos = 0;
 
     //what beat the song is on ex. 1, 2, 4, 5.5, 6.75 
     //we will use a threshold with this for reaction 
@@ -81,7 +84,7 @@ public class BeatController : MonoBehaviour
     void Start()
     {
         //convert BPM to functional value 
-        secPerBeat = 60f / BPM;
+        secPerBeat = 60 / BPM;
 
         //TODO have the song started by a button or soemthing idk. 
         //for now just starts at startup 
@@ -93,15 +96,13 @@ public class BeatController : MonoBehaviour
     //records the time ect 
     void StartSong() {
         //kick off tracker with current time 
-        songStartTime = (float)AudioSettings.dspTime;
+        songStartTime = AudioSettings.dspTime;
         audioSource.Play();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        //Debug.Log(GetBeat() + " " + GetAccuracy(1).name);
 
         //update all our tracker variables. 
         //songPos = (float)(AudioSettings.dspTime - songStartTime);
@@ -117,7 +118,8 @@ public class BeatController : MonoBehaviour
             beatEnded1 = true;
             Global.Boss.EndOfBeat1();
             Global.Player.EndOfBeat1();
-        } else if(dist > 1 - MINIMUM.thresholdBeforeBeat) {
+        } else if(dist < MINIMUM.thresholdAfterBeat) {//> 1 - MINIMUM.thresholdBeforeBeat) {
+            //Debug.Log(dist - MINIMUM.thresholdAfterBeat);
             //if we've moved on to the next beat, open this flag 
             beatEnded1 = false;
         }
@@ -127,7 +129,7 @@ public class BeatController : MonoBehaviour
             beatEnded05 = true;
             Global.Boss.EndOfBeat05();
             Global.Player.EndOfBeat05();
-        } else if(dist > 0.5 - MINIMUM.thresholdBeforeBeat) {
+        } else if(dist < MINIMUM.thresholdAfterBeat) {//> 0.5 - MINIMUM.thresholdBeforeBeat) {
             //if we've moved on to the next beat, open this flag 
             beatEnded05 = false;
         }
@@ -137,7 +139,7 @@ public class BeatController : MonoBehaviour
             beatEnded025 = true;
             Global.Boss.EndOfBeat025(); 
             Global.Player.EndOfBeat025();
-        } else if(dist > 0.25 - MINIMUM.thresholdBeforeBeat) {
+        } else if(dist < MINIMUM.thresholdAfterBeat) {//> 0.25 - MINIMUM.thresholdBeforeBeat) {
             //if we've moved on to the next beat, open this flag 
             beatEnded025 = false;
         }
@@ -146,8 +148,8 @@ public class BeatController : MonoBehaviour
 
     //instead of tracker variables, use more direct getters. 
     public static float GetBeat() {
-        songPos = (float)(AudioSettings.dspTime - songStartTime);
-        return songPos / secPerBeat;
+        double songPos = AudioSettings.dspTime - songStartTime;
+        return (float)(songPos / secPerBeat);
     }
 
     //ex. for 1, 5.1 returns 0.1, 5.5 returns 0.5, 5.9 returns 0.9
@@ -205,6 +207,7 @@ public class BeatController : MonoBehaviour
                     return a;
                 }
             }
+            return TOO_LATE;
         } else {
             //if before 
             foreach(Accuracy a in accuraciesToCheck) {
@@ -212,8 +215,19 @@ public class BeatController : MonoBehaviour
                     return a;
                 }
             }
+            return TOO_EARLY;
         }
-        return OFFBEAT;
+    }
+
+    //Gets the nearest beat of this fraction, both before and after.
+    public float GetNearestBeat(float fraction) {
+        float beat = GetBeat();
+        float dist = GetDistanceFromBeat(fraction);
+        if(dist > fraction / 2) {
+            return beat + (1 - dist);
+        } else {
+            return beat - dist;
+        }
     }
 
     //Like WaitForSeconds, but in sync with the music. 

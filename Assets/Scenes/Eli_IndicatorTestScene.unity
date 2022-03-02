@@ -283,28 +283,8 @@ MonoBehaviour:
   startPosTransform: {fileID: 55607828}
   endPosTransform: {fileID: 713008690}
   baseBeatSprite: {fileID: 8338978881563222977, guid: 8fe07d4e5af736949ac9e9e8b949edf3, type: 3}
-  TestBeats:
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  TestSprites:
-  - {fileID: 8338978881563222977, guid: 8fe07d4e5af736949ac9e9e8b949edf3, type: 3}
-  - {fileID: 8338978881563222977, guid: 8fe07d4e5af736949ac9e9e8b949edf3, type: 3}
-  - {fileID: 8338978881563222977, guid: 8fe07d4e5af736949ac9e9e8b949edf3, type: 3}
-  - {fileID: 8338978881563222977, guid: 8fe07d4e5af736949ac9e9e8b949edf3, type: 3}
-  - {fileID: -2413806693520163455, guid: f110fec9239090c43810891733790d36, type: 3}
-  - {fileID: 8338978881563222977, guid: 8fe07d4e5af736949ac9e9e8b949edf3, type: 3}
-  - {fileID: -2413806693520163455, guid: f110fec9239090c43810891733790d36, type: 3}
-  - {fileID: 8338978881563222977, guid: 8fe07d4e5af736949ac9e9e8b949edf3, type: 3}
-  - {fileID: 8338978881563222977, guid: 8fe07d4e5af736949ac9e9e8b949edf3, type: 3}
-  - {fileID: 8338978881563222977, guid: 8fe07d4e5af736949ac9e9e8b949edf3, type: 3}
+  TestBeats: []
+  TestSprites: []
 --- !u!4 &273810251
 Transform:
   m_ObjectHideFlags: 0
@@ -562,7 +542,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &713008690
 Transform:
   m_ObjectHideFlags: 0
@@ -571,8 +551,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713008689}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.03, y: 0.15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -3.961, y: 0.1751, z: 0}
+  m_LocalScale: {x: 0.3099444, y: 2.0037293, z: 1}
   m_Children: []
   m_Father: {fileID: 273810251}
   m_RootOrder: 1
@@ -618,7 +598,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -636,13 +616,37 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7374144325323111439, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: length
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7374144325323111439, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: damageToDeal
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7374144325323111439, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: attackIndicatorSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ff8efa317db35f94db58e5be78562612, type: 3}
+    - target: {fileID: 7374144325704998262, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: length
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7374144325704998262, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: attackIndicatorSprite
+      value: 
+      objectReference: {fileID: 8338978881563222977, guid: 8fe07d4e5af736949ac9e9e8b949edf3, type: 3}
+    - target: {fileID: 7374144326084580890, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: length
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7374144326084580890, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: damageToDeal
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7374144326084580890, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: attackIndicatorSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d07fea906657ca34c950215883b20bf0, type: 3}
     - target: {fileID: 7374144326298839353, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: m_Name
       value: BossA

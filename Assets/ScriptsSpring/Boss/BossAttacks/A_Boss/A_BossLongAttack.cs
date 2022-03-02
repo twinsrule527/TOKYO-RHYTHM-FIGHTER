@@ -9,9 +9,7 @@ public class A_BossLongAttack : BossAttack
 
     public override IEnumerator Attack() {
         mySprite.color = Color.blue;
-        yield return StartCoroutine(BeatController.WaitForBeat(1));
-        yield return StartCoroutine(BeatController.WaitForBeat(1));
-        yield return StartCoroutine(BeatController.WaitForBeat(1));
+        yield return StartCoroutine(BeatController.WaitForBeatsMulti(3, 1));
         mySprite.color = Color.red;
         yield return StartCoroutine(BeatController.WaitForBeat(1));
         //Checks to see if they can hit the player - if they do, the player gets hit

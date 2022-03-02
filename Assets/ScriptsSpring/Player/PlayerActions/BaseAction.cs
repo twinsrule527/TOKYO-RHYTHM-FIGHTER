@@ -19,13 +19,15 @@ public class BaseAction : PlayerAction
 
     protected override void TryAction()
     {
-        if(BeatController.IsOnBeat(beatFraction)) {
-            if(Global.Player.CurrentAction == null) {
-                Success();
+        if(Global.Player.CurrentAction == null) {
+            Accuracy curAccuracy = BeatController.GetAccuracy(beatFraction);
+            //Call PlayerSpriteController.DisplayAccuracy(Accuracy);
+            if(curAccuracy.priority > 0) {
+                    Success();
             }
-        }
-        else {
-            MessUp();
+            else {
+                MessUp();
+            }
         }
     }
 
