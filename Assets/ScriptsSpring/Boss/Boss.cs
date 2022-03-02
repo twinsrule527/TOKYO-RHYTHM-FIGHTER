@@ -19,7 +19,7 @@ public class Boss : MonoBehaviour
     }
 
     [SerializeField] public BossAI AttackAI;
-
+    public BossSpriteController spriteController;
     public virtual void Awake() {
         //Going to remove this later:
         Global.Boss = this;
