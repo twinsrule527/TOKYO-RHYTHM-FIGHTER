@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &57715720951305126
+--- !u!1 &1415864590654936306
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 57715720951305124}
-  - component: {fileID: 57715720951305127}
+  - component: {fileID: 1415864590654936269}
+  - component: {fileID: 1415864590654936268}
   m_Layer: 0
-  m_Name: HRTplayer
+  m_Name: LATKmidboss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &57715720951305124
+--- !u!4 &1415864590654936269
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 57715720951305126}
+  m_GameObject: {fileID: 1415864590654936306}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,25 +31,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &57715720951305127
+--- !u!114 &1415864590654936268
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 57715720951305126}
+  m_GameObject: {fileID: 1415864590654936306}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12c0b1b4475024f49b0164d1c0472d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayFraction: 0.2
+  delayFraction: 1
   loops: 0
-  animationName: PlayerHurt
+  animationName: LongMidbossAttack
   spriteRenderer: {fileID: 0}
   Sprites:
-  - {fileID: 21300000, guid: 4d60b66137883ae4fbfaad8fd1ac1bef, type: 3}
-  - {fileID: 21300000, guid: bae7b973080071c4c85305514cf830c3, type: 3}
-  - {fileID: 21300000, guid: bae7b973080071c4c85305514cf830c3, type: 3}
-  - {fileID: 21300000, guid: bae7b973080071c4c85305514cf830c3, type: 3}
-  - {fileID: 21300000, guid: 4d60b66137883ae4fbfaad8fd1ac1bef, type: 3}
+  - {fileID: 21300000, guid: fac95527dc04fec40bf499a16d89cbe6, type: 3}
+  - {fileID: 21300000, guid: 9b5791b886bb5ec43a972e38643b3d61, type: 3}
+  - {fileID: 21300000, guid: 9b5791b886bb5ec43a972e38643b3d61, type: 3}
+  - {fileID: 21300000, guid: 740e0ca8936520a498f39eb3b26ebfd4, type: 3}
+  - {fileID: 21300000, guid: 9b5791b886bb5ec43a972e38643b3d61, type: 3}
