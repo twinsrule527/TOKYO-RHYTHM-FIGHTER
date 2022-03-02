@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossASpriteController : MonoBehaviour
+public class BossASpriteController : BossSpriteController
 {
 
     public AnimationController shortAttack;
@@ -36,7 +36,18 @@ public class BossASpriteController : MonoBehaviour
             LongAttack();
         }
     }
-
+    public override void CallAttack(string ATKname, float beatFraction)
+    {
+        if(ATKname == "ShortAttack") {
+            ShortAttack(beatFraction);
+        }
+        else if(ATKname == "LongAttack") {
+            LongAttack();
+        }
+        /*else if(ATKname == "WaitAttack") {
+            Hurt();
+        }*/
+    }
     public void ShortAttack(float beatFraction)
     {
         shortAttack.spriteRenderer.sprite = shortAttack.Sprites[0];

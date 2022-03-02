@@ -8,17 +8,19 @@ public class A_BossShortAttack : BossAttack
     [SerializeField] private float damageToDeal;
 
     public override IEnumerator Attack() {
-        //Call the animation controller
-        mySprite.color = Color.green;
-        yield return StartCoroutine(BeatController.WaitForBeat(1));
-        mySprite.color = Color.red;
-        yield return StartCoroutine(BeatController.WaitForBeat(1f));
         mySprite.color = Color.white;
+        //Call the animation controller
+        Global.Boss.spriteController.CallAttack(atkName, 1);
+        //mySprite.color = Color.green;
+        yield return StartCoroutine(BeatController.WaitForBeat(1));
+        //mySprite.color = Color.red;
+        yield return StartCoroutine(BeatController.WaitForBeat(1f));
+        //mySprite.color = Color.white;
         //Checks to see if they can hit the player - if they do, the player gets hit
         Global.Boss.makeAttackThisBeat = true;
         Global.Boss.CurrentMakingAttack = this;
         yield return null;
-        mySprite.color = Color.black;
+        //mySprite.color = Color.black;
     }   
 
     //This attack cannot be cancelled
