@@ -19,11 +19,15 @@ public class AnimationController : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public List<Sprite> Sprites;
 
-    //public Sprite frame0;
-    //public Sprite frame1;
-    //public Sprite frame2;
-    //public Sprite frame3;
-    //public Sprite frame4;
+
+    private void Awake()
+    {
+        if (animationName == "Note")
+        {
+            spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+            PlayAnimation();
+        }
+    }
 
 
     // Start is called before the first frame update
@@ -33,14 +37,11 @@ public class AnimationController : MonoBehaviour
         //Pass renderer here
         //hard drag it in
         //At runtime get component in parent
-        spriteRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
+        //spriteRenderer = gameObject.transform.parent.GetComponentInParent<SpriteRenderer>();
+
+        //gameObject.GetComponentInParent<SpriteRenderer>();
         //gameObject.transform.parent.GetComponentInParent<SpriteRenderer>();
 
-        //Sprites.Add(frame0);
-        //Sprites.Add(frame1);
-        //Sprites.Add(frame2);
-        //Sprites.Add(frame3);
-        //Sprites.Add(frame4);
 
         SetFrame(0);
         AnimationEnd = delayFraction * Sprites.Count;

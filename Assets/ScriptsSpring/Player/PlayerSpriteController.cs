@@ -11,12 +11,18 @@ public class PlayerSpriteController : MonoBehaviour
     public AnimationController hurt;
 
 
+    private void Awake()
+    {
+        attack.spriteRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
+        messUp.spriteRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
+        hurt.spriteRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
 
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
         //trueRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
     }
 
