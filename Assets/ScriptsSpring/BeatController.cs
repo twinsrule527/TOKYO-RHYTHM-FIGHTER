@@ -117,7 +117,8 @@ public class BeatController : MonoBehaviour
             beatEnded1 = true;
             Global.Boss.EndOfBeat1();
             Global.Player.EndOfBeat1();
-        } else if(dist > 1 - MINIMUM.thresholdBeforeBeat) {
+        } else if(dist < MINIMUM.thresholdAfterBeat) {//> 1 - MINIMUM.thresholdBeforeBeat) {
+            //Debug.Log(dist - MINIMUM.thresholdAfterBeat);
             //if we've moved on to the next beat, open this flag 
             beatEnded1 = false;
         }
@@ -127,7 +128,7 @@ public class BeatController : MonoBehaviour
             beatEnded05 = true;
             Global.Boss.EndOfBeat05();
             Global.Player.EndOfBeat05();
-        } else if(dist > 0.5 - MINIMUM.thresholdBeforeBeat) {
+        } else if(dist < MINIMUM.thresholdAfterBeat) {//> 0.5 - MINIMUM.thresholdBeforeBeat) {
             //if we've moved on to the next beat, open this flag 
             beatEnded05 = false;
         }
@@ -137,7 +138,7 @@ public class BeatController : MonoBehaviour
             beatEnded025 = true;
             Global.Boss.EndOfBeat025(); 
             Global.Player.EndOfBeat025();
-        } else if(dist > 0.25 - MINIMUM.thresholdBeforeBeat) {
+        } else if(dist < MINIMUM.thresholdAfterBeat) {//> 0.25 - MINIMUM.thresholdBeforeBeat) {
             //if we've moved on to the next beat, open this flag 
             beatEnded025 = false;
         }
