@@ -40,11 +40,15 @@ public class PlayerAction : MonoBehaviour
     //Can be overridden.
     protected virtual void TryAction() {
 
-        if(Global.Player.CurrentAction == null) {
+        Debug.Log("got try action");
+
+        if(Global.Player.CurrentAction == null) { //if we aren't locked down 
+
+            //if we're on beat 
             Accuracy curAccuracy = BeatController.GetAccuracy(beatFraction);
-            //Call PlayerSpriteController.DisplayAccuracy(Accuracy);
+            Global.Player.spriteController.DisplayAccuracy(curAccuracy);
             if(curAccuracy.priority > 0) {
-                    Success();
+                Success();
             }
             else {
                 MessUp();

@@ -17,8 +17,10 @@ public class BaseAction : PlayerAction
     {
     }
 
+/*
     protected override void TryAction()
     {
+        
         if(Global.Player.CurrentAction == null) {
             Accuracy curAccuracy = BeatController.GetAccuracy(beatFraction);
             //Call PlayerSpriteController.DisplayAccuracy(Accuracy);
@@ -29,7 +31,10 @@ public class BaseAction : PlayerAction
                 MessUp();
             }
         }
+        
+
     }
+    */
 
     protected override void Success()
     {
