@@ -41,7 +41,7 @@ public class BossASpriteController : BossSpriteController
         if(ATKname == "ShortAttack") {
             ShortAttack(beatFraction);
         }
-        else if(ATKname == "LongAttack") {
+        /*else if(ATKname == "LongAttack") {
             LongAttack();
         }
         /*else if(ATKname == "WaitAttack") {
