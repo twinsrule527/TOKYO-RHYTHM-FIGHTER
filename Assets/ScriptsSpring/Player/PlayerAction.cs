@@ -40,11 +40,13 @@ public class PlayerAction : MonoBehaviour
     //Can be overridden.
     protected virtual void TryAction() {
 
-        if(Global.Player.CurrentAction == null) {
+        if(Global.Player.CurrentAction == null) { //if we aren't locked down 
+
+            //if we're on beat 
             Accuracy curAccuracy = BeatController.GetAccuracy(beatFraction);
-            //Call PlayerSpriteController.DisplayAccuracy(Accuracy);
+            Global.Player.spriteController.DisplayAccuracy(curAccuracy);
             if(curAccuracy.priority > 0) {
-                    Success();
+                Success();
             }
             else {
                 MessUp();
@@ -58,7 +60,7 @@ public class PlayerAction : MonoBehaviour
     //Should be overridden and implemented with what pressing this key does.
     protected virtual void Success() {
 
-        Debug.Log("Success, you're on beat");
+        //Debug.Log("Success, you're on beat");
         //Typically, sets the Player's current action to be this
         Global.Player.CurrentAction = this;
 
