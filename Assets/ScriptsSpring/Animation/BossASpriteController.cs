@@ -41,7 +41,7 @@ public class BossASpriteController : BossSpriteController
         if(ATKname == "ShortAttack") {
             ShortAttack(beatFraction);
         }
-        /*else if(ATKname == "LongAttack") {
+        else if(ATKname == "LongAttack") {
             LongAttack();
         }
         /*else if(ATKname == "WaitAttack") {
@@ -51,7 +51,7 @@ public class BossASpriteController : BossSpriteController
     public void ShortAttack(float beatFraction)
     {
         shortAttack.spriteRenderer.sprite = shortAttack.Sprites[0];
-        shortAttack.PlayAnimationOnBeat(beatFraction);
+        shortAttack.PlayAnimation();//Beat(beatFraction);
     }
 
 
