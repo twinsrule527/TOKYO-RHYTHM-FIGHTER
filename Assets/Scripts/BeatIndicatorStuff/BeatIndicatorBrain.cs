@@ -14,16 +14,22 @@ public struct beatIndicatorInfo {
 public class BeatIndicatorBrain : MonoBehaviour
 {
     [SerializeField] private BossBeatIndicator bossIndicatorPrefab;//Uses this prefab to instantiate more when needed
-    [SerializeField] private Transform startPosTransform;//A transform indicator for the start position of the boss indicator
+    [SerializeField] private PlayerBeatIndicator playerIndicatorPrefab;
+    [SerializeField] private Transform startPosBossTransform;//A transform indicator for the start position of the boss indicator
+    [SerializeField] private Transform startPosPlayerTransform;//A transform indicator for the start position of the player indicator
     [SerializeField] private Transform endPosTransform;//Similarly to above, but for end pos
     public static Vector3 BossIndicatorStartPos;
     public static Vector3 BossIndicatorEndPos;
+    public static Vector3 PlayerIndicatorStartPos;
+    public static Vector3 PlayerIndicatorEndPos;
     public static readonly float beatsInAdvanceShown = 4f;//How much in advance beats appear on the beat indicator
     private float curBossStartBeat;//Keeps track of what beat each boss attack should start on
     private float curBaseBeat;
     [SerializeField] private Sprite baseBeatSprite;
     private List<BossBeatIndicator> BossIndicators;//a list of exisitng indicators - so that when they deactive, this can start using them again
+    private List<PlayerBeatIndicator> PlayerIndicators;
     private List<beatIndicatorInfo> BossBeats;
+    private List<beatIndicatorInfo> PlayerBeats;
     //Test lists
     [SerializeField] private List<float> TestBeats;
     [SerializeField] private List<Sprite> TestSprites;
@@ -35,12 +41,16 @@ public class BeatIndicatorBrain : MonoBehaviour
         Global.BeatIndicatorBrain = this;
         BossBeats = new List<beatIndicatorInfo>();
         BossIndicators = new List<BossBeatIndicator>();
+        PlayerBeats = new List<beatIndicatorInfo>();
+        PlayerIndicators = new List<PlayerBeatIndicator>();
     }
     void Start() {
-        BossIndicatorStartPos = startPosTransform.position;//TODO: Change the way that the bossindicator start pos is set
+        BossIndicatorStartPos = startPosBossTransform.position;//TODO: Change the way that the bossindicator start pos is set
         BossIndicatorEndPos = endPosTransform.position + Vector3.back;
+        PlayerIndicatorStartPos = startPosPlayerTransform.position;
+        PlayerIndicatorEndPos = endPosTransform.position + Vector3.back;
         for(int i = 0; i < 10; i++) {
-            AddBaseBeat(BossBeats);
+            AddBaseBeat(PlayerBeats);
         }
     }
     void Update() {
@@ -71,6 +81,36 @@ public class BeatIndicatorBrain : MonoBehaviour
                     AddBaseBeat(BossBeats);
                 }*/
                 BossBeats.RemoveAt(0);
+            }
+        }
+        //ALso plays out the player beat indicators
+        if(PlayerBeats.Count > 0) {
+            float curBeat = BeatController.GetBeat();
+            //Checks to see if the current beat is close enough to the beat to hit - if it is, the beat shows up
+            if(curBeat >= PlayerBeats[0].beatToHit - beatsInAdvanceShown) {
+                //Activates a BeatIndicator and gives it the information it needs
+                PlayerBeatIndicator newIndicator = null;
+                //So that it doesn't usually create a new indicator, it checks to see if it has a disabled indicator it can use
+                for(int i = 0; i < PlayerIndicators.Count; i++) {
+                    if(PlayerIndicators[i].enabled == false) {
+                        newIndicator = PlayerIndicators[i];
+                        newIndicator.enabled = true;
+                        break;
+                    }
+                }
+                if(newIndicator == null) {
+                    newIndicator = Instantiate(playerIndicatorPrefab, Vector3.zero, Quaternion.identity);
+                    PlayerIndicators.Add(newIndicator);
+                }
+                //Now, it gives the boss beat indicator the information it needs to operate
+                newIndicator.SetIndicatorStart(PlayerBeats[0]);
+                //Checks to see if it needs to add a base beat
+                    //Does so if the next beat that will appear doesn't exist
+                /*if(BossBeats.Count <= 10) {
+                    AddBaseBeat(BossBeats);
+                }*/
+                PlayerBeats.RemoveAt(0);
+                AddBaseBeat(PlayerBeats);
             }
         }
     }

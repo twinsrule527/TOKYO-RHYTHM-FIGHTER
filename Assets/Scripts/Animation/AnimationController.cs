@@ -144,7 +144,6 @@ public class AnimationController : MonoBehaviour
         SetFrame(0);
     }
 
-
     private void SetFrame(int frame)
     {
         spriteRenderer.sprite = Sprites[frame];

@@ -45,7 +45,7 @@ public class PlayerAction : MonoBehaviour
             //if we're on beat 
             Accuracy curAccuracy = BeatController.GetAccuracy(beatFraction);
             Global.Player.spriteController.DisplayAccuracy(curAccuracy);
-            if(curAccuracy.priority > 0) {
+            if(BeatController.IsOnBeat(beatFraction)) {//curAccuracy.priority > 0) {
                 Success();
             }
             else {
@@ -63,7 +63,6 @@ public class PlayerAction : MonoBehaviour
         //Debug.Log("Success, you're on beat");
         //Typically, sets the Player's current action to be this
         Global.Player.CurrentAction = this;
-
         //call Interrupt on boss here 
         //Boss.InterruptAttack();
         if(canInterrupt) {
@@ -81,6 +80,6 @@ public class PlayerAction : MonoBehaviour
 
         Debug.Log("you messed up, you were off beat");
         Global.Player.CurrentAction = Global.Player.messUpAction;
-
+        Global.Player.spriteController.MessUp();
     }
 }

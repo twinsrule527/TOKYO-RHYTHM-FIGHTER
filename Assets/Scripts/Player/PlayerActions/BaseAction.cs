@@ -40,5 +40,6 @@ public class BaseAction : PlayerAction
     {
         base.Success();
         Global.Boss.ChangeBossHP(-damage);
+        Global.Player.spriteController.Attack(1);
     }
 }
