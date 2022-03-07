@@ -2,6 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public struct SongInfo {
+    public SongInfo(double songBPM, double fileMP3Delay) {
+        this.BPM = songBPM;
+        this.mp3Delay = fileMP3Delay;
+    }
+    public double BPM { get; } //beats per minute of the song. 
+    public double mp3Delay { get; } //delay at the beginning of the file before the music starts.
+}
+
 public struct Accuracy {
     public Accuracy(float threshBefore, float threshAfter, string nam, int num) {
         this.thresholdBeforeBeat = threshBefore;
@@ -12,7 +21,9 @@ public struct Accuracy {
     public float thresholdBeforeBeat { get; }
     public float thresholdAfterBeat { get; }
 
-    public int priority;  //for doing faster equals comparisons, i think //Negative = Off-beat, positive = on-beat
+    //for doing faster equals comparisons, i think 
+    //Negative = Off-beat, positive = on-beat
+    public int priority;  
     public string name { get; } //for debugging- TODO remove later?
 
     //do we need this?
@@ -29,6 +40,14 @@ public struct Accuracy {
 
 public class BeatController : MonoBehaviour
 {
+
+    //song info 
+    //store bpm and mp3 delay here 
+    static readonly SongInfo oldSong = new SongInfo(100, 0.01);
+    static readonly SongInfo songBossMid = new SongInfo(148, 13.33); //inspion 
+    SongInfo songToPlayTemp = oldSong;
+    
+
     //// Beat accuracies! 
     //You might get these from BeatController functions.
     //You can check them against each other
@@ -46,11 +65,10 @@ public class BeatController : MonoBehaviour
     //IN ORDER of checked. So, go SMALLEST TO GREATEST window 
     static Accuracy [] accuraciesToCheck = {PERFECT, GREAT, MINIMUM};
 
-    
+
     //BPM 
     //easy to know and set. human-readable, will be used to do some conversion 
-    static float BPM = 100; 
-
+    static double BPM; 
 
     public AudioSource audioSource;
 
@@ -80,20 +98,22 @@ public class BeatController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //convert BPM to functional value 
-        secPerBeat = 60 / BPM;
 
-        //TODO have the song started by a button or soemthing idk. 
+        //TODO the song should be started by something else.
         //for now just starts at startup 
-        StartSong();
+        StartSong(songToPlayTemp);
 
     }
 
     //call when we start the song. 
     //records the time ect 
-    void StartSong() {
+    void StartSong(SongInfo songInfo) {
+    
+        BPM = songInfo.BPM;
+        secPerBeat = 60 / BPM;
+
         //kick off tracker with current time 
-        songStartTime = AudioSettings.dspTime;
+        songStartTime = AudioSettings.dspTime + songInfo.mp3Delay;
         audioSource.Play();
     }
 
@@ -193,9 +213,11 @@ public class BeatController : MonoBehaviour
     //get the current accuracy. returns an Accuracy, which 
     //can be checked against, for example. BeatController.PERFECT 
     public static Accuracy GetAccuracy(float fraction) {
-        
+
         float distFromBeat = GetDistanceFromBeat(fraction);
         float distFromBeatAbs = GetAbsDistanceFromBeat(fraction);
+
+        Debug.Log(distFromBeat);
 
         if(distFromBeat < fraction / 2) {
             //if after
