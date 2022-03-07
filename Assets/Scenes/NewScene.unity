@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -152,6 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7496374f7acc37643b7488fe735b020e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  length: 1
+  attackIndicatorSprite: {fileID: 0}
+  myAnimationController: {fileID: 0}
+  atkName: 
   mySprite: {fileID: 952360902}
   damage: 0
 --- !u!4 &20224861
@@ -308,6 +312,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a389297447d9b3a4581c5f975f18622e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  length: 1
+  attackIndicatorSprite: {fileID: 0}
+  myAnimationController: {fileID: 0}
+  atkName: 
   beatToWait: 0.15
 --- !u!4 &460378322
 Transform:
@@ -353,6 +361,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossIndicatorPrefab: {fileID: 5593002669349206948, guid: 49b94e13ba272c94099e4b4da6dd927b, type: 3}
+  startPosTransform: {fileID: 0}
+  endPosTransform: {fileID: 0}
+  baseBeatSprite: {fileID: 0}
+  TestBeats: []
+  TestSprites: []
 --- !u!4 &612412169
 Transform:
   m_ObjectHideFlags: 0
@@ -494,17 +507,7 @@ MonoBehaviour:
   makeAttackThisBeat: 0
   CurrentMakingAttack: {fileID: 0}
   AttackAI: {fileID: 952360901}
---- !u!114 &1005745544 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4014683580531015158, guid: 0bae8102314e7a642b51f834926338da, type: 3}
-  m_PrefabInstance: {fileID: 8597708211831153007}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 156a0f8c4783cf0478a4c72fa7783dad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  spriteController: {fileID: 0}
 --- !u!1 &1054402412
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,6 +860,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a743c3315be9ef74fa589cf7a453d82d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  length: 1
+  attackIndicatorSprite: {fileID: 0}
+  myAnimationController: {fileID: 0}
+  atkName: 
   direction: {x: -1, y: 0, z: 0}
   myParent: {fileID: 952360903}
   DashAttack_DashTime: 0.5
@@ -904,6 +911,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a389297447d9b3a4581c5f975f18622e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  length: 1
+  attackIndicatorSprite: {fileID: 0}
+  myAnimationController: {fileID: 0}
+  atkName: 
   beatToWait: 0.5
 --- !u!4 &1358261233
 Transform:
@@ -1230,6 +1241,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e40c9df5f14c10418b9f7773d880c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  length: 1
+  attackIndicatorSprite: {fileID: 0}
+  myAnimationController: {fileID: 0}
+  atkName: 
   mySprite: {fileID: 952360902}
 --- !u!1 &1710603995
 GameObject:
@@ -1342,6 +1357,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a743c3315be9ef74fa589cf7a453d82d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  length: 1
+  attackIndicatorSprite: {fileID: 0}
+  myAnimationController: {fileID: 0}
+  atkName: 
   direction: {x: 1, y: 0, z: 0}
   myParent: {fileID: 952360903}
   DashAttack_DashTime: 0.5
@@ -2123,7 +2142,7 @@ PrefabInstance:
     - target: {fileID: 8597708211883435788, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: messUpAction
       value: 
-      objectReference: {fileID: 1005745544}
+      objectReference: {fileID: 0}
     - target: {fileID: 8597708211883435788, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: playerStartHealth
       value: 50
