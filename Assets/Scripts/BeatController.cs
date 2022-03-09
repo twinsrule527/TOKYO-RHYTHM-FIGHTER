@@ -68,7 +68,7 @@ public class BeatController : MonoBehaviour
 
     //BPM 
     //easy to know and set. human-readable, will be used to do some conversion 
-    static double BPM; 
+    public static double BPM { get; private set; }
 
     public AudioSource audioSource;
 

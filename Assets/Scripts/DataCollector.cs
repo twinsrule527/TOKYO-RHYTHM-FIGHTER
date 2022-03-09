@@ -25,7 +25,7 @@ public class DataCollector : MonoBehaviour
 
     void OnApplicationQuit() {
 
-        System.IO.File.WriteAllText(Directory.GetCurrentDirectory() + @"DATA\DATA " + System.DateTime.Now.ToString("MM.dd.y ddd h.mm tt") + ".csv", dataStringBuilder.ToString());
+        System.IO.File.WriteAllText(Directory.GetCurrentDirectory() + @"\DATA\DATA " + System.DateTime.Now.ToString("MM.dd.y ddd h.mm tt") + ".csv", dataStringBuilder.ToString());
 
     }
 }
