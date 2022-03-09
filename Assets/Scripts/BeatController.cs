@@ -170,6 +170,9 @@ public class BeatController : MonoBehaviour
     }
 
     //ex. for 1, 5.1 returns 0.1, 5.5 returns 0.5, 5.9 returns 0.9
+    public static float GetDistanceFromBeat() {
+        return GetDistanceFromBeat(1);
+    }
     public static float GetDistanceFromBeat(float fraction) {
         return GetBeat() % fraction;
     }
@@ -180,6 +183,9 @@ public class BeatController : MonoBehaviour
         b = -Mathf.Abs(b);
         return b + 0.5f;
     }*/
+    public static float GetAbsDistanceFromBeat() {
+        return GetAbsDistanceFromBeat(1);
+    }
     public static float GetAbsDistanceFromBeat(float fraction) {
         float b = GetDistanceFromBeat(fraction) - (fraction / 2);
         b = -Mathf.Abs(b);
@@ -188,6 +194,9 @@ public class BeatController : MonoBehaviour
 
     //for use by player actions. 
     //are we on beat, within the actionable threshold, according to a certain fraction?
+    public static bool IsOnBeat() {
+        return IsOnBeat(1);
+    }
     public static bool IsOnBeat(float fraction) {
         
         float distFromBeat = GetDistanceFromBeat(fraction);
@@ -212,6 +221,9 @@ public class BeatController : MonoBehaviour
 
     //get the current accuracy. returns an Accuracy, which 
     //can be checked against, for example. BeatController.PERFECT 
+    public static Accuracy GetAccuracy() {
+        return GetAccuracy(1);
+    }
     public static Accuracy GetAccuracy(float fraction) {
 
         float distFromBeat = GetDistanceFromBeat(fraction);
@@ -239,6 +251,9 @@ public class BeatController : MonoBehaviour
     }
 
     //Gets the nearest beat of this fraction, both before and after.
+    public float GetNearestBeat() {
+        return GetNearestBeat(1);
+    }
     public float GetNearestBeat(float fraction) {
         float beat = GetBeat();
         float dist = GetDistanceFromBeat(fraction);
@@ -248,6 +263,7 @@ public class BeatController : MonoBehaviour
             return beat - dist;
         }
     }
+    
 
     //Like WaitForSeconds, but in sync with the music. 
     //USE THIS INSTEAD OF WAITFORSECONDS
