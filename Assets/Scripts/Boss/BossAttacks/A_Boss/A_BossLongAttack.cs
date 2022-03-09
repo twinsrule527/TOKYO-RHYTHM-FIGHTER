@@ -37,7 +37,7 @@ public class A_BossLongAttack : BossAttack
     //Waits until the end of threshold, then checks to see if the attack is successful
     public override void CheckAttackSuccess()
     {
-        if(Global.Player.CurrentAction == null || Global.Player.CurrentAction == Global.Player.messUpAction) {
+        if(Global.Player.CurrentAction == null || Global.Player.CurrentAction.GetComponent<ParryAction>() == null) {
 
             Global.Player.ChangeHP(-damageToDeal);
         }
