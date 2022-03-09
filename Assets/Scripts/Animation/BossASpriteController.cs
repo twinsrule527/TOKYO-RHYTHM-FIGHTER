@@ -25,16 +25,16 @@ public class BossASpriteController : BossSpriteController
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.O))
-        {
-            ShortAttack(1.0f);
-        }
+        //if (Input.GetKeyUp(KeyCode.O))
+        //{
+        //    ShortAttack(1.0f);
+        //}
 
-        if (Input.GetKeyUp(KeyCode.I))
-        {
-            longAttack.delayFraction = 1.0f;
-            LongAttack();
-        }
+        //if (Input.GetKeyUp(KeyCode.I))
+        //{
+        //    longAttack.delayFraction = 1.0f;
+        //    LongAttack();
+        //}
     }
     public override void CallAttack(string ATKname, float beatFraction)
     {

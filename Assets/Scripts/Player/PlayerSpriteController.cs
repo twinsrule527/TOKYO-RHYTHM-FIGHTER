@@ -32,15 +32,15 @@ public class PlayerSpriteController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.O))
-        {
-            Attack(1.0f);
-        }
+        //if (Input.GetKey(KeyCode.O))
+        //{
+        //    Attack(1.0f);
+        //}
 
-        if (Input.GetKey(KeyCode.P))
-        {
-            Hurt();
-        }
+        //if (Input.GetKey(KeyCode.P))
+        //{
+        //    Hurt();
+        //}
     }
 
     //Attack is usually played as animation on beat
