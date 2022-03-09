@@ -79,7 +79,8 @@ public class BeatController : MonoBehaviour
     private static double songStartTime;
 
     //song position, in seconds 
-    //private static float songPos = 0;
+    private static double audioPos = 0;
+    private static double timePos = 0;
 
     //what beat the song is on ex. 1, 2, 4, 5.5, 6.75 
     //we will use a threshold with this for reaction 
@@ -163,10 +164,24 @@ public class BeatController : MonoBehaviour
 
     }
 
+    //non-interpolated beat. idk why you'd need this.
+    public static float GetBeatAudioTime() {
+        double pos = AudioSettings.dspTime - songStartTime;
+        return (float)(pos / secPerBeat);
+    }
+
     //instead of tracker variables, use more direct getters. 
+    //interpolates w/ Time.time if audio time hasn't changed between frames. 
     public static float GetBeat() {
-        double songPos = AudioSettings.dspTime - songStartTime;
-        return (float)(songPos / secPerBeat);
+        double newPos = AudioSettings.dspTime - songStartTime;
+        if(newPos != audioPos) {
+            audioPos = newPos;
+            timePos = Time.time;
+            return (float)(newPos / secPerBeat);
+        } else {
+            double diff = Time.time - timePos;
+            return (float)((newPos + diff) / secPerBeat);
+        }
     }
 
     //ex. for 1, 5.1 returns 0.1, 5.5 returns 0.5, 5.9 returns 0.9
