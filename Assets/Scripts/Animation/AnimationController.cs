@@ -14,6 +14,8 @@ public class AnimationController : MonoBehaviour
     private float AnimationEnd;
     public bool loops;
 
+    public bool startAnimation;
+
     public string animationName; 
 
     public SpriteRenderer spriteRenderer;
@@ -22,7 +24,8 @@ public class AnimationController : MonoBehaviour
 
     private void Awake()
     {
-        if (animationName == "Note") //TODO remove
+        //for just making the animationController go ahead and begin its own animation
+        if (startAnimation) 
         {
             spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
             PlayAnimation();
