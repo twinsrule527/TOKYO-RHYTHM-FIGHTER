@@ -129,8 +129,8 @@ public class BeatController : MonoBehaviour
 
 
         //If we've hit major beats (1, 0.5, 0.25) send out events.
-
-        float dist = GetDistanceFromBeat(1);
+        float beat = GetBeat();
+        float dist = GetDistanceFromBeat(1, beat);
         if(!beatEnded1 && dist > MINIMUM.thresholdAfterBeat) {
             beatEnded1 = true;
             Global.Boss.EndOfBeat1();
@@ -141,7 +141,7 @@ public class BeatController : MonoBehaviour
             beatEnded1 = false;
         }
 
-        dist = GetDistanceFromBeat(0.5f);
+        dist = GetDistanceFromBeat(0.5f, beat);
         if(!beatEnded05 && dist > MINIMUM.thresholdAfterBeat) {
             beatEnded05 = true;
             Global.Boss.EndOfBeat05();
@@ -151,7 +151,7 @@ public class BeatController : MonoBehaviour
             beatEnded05 = false;
         }
 
-        dist = GetDistanceFromBeat(0.25f);
+        dist = GetDistanceFromBeat(0.25f, beat);
         if(!beatEnded025 && dist > MINIMUM.thresholdAfterBeat) {
             beatEnded025 = true;
             Global.Boss.EndOfBeat025(); 
@@ -174,7 +174,10 @@ public class BeatController : MonoBehaviour
         return GetDistanceFromBeat(1);
     }
     public static float GetDistanceFromBeat(float fraction) {
-        return GetBeat() % fraction;
+        return GetDistanceFromBeat(fraction, GetBeat());
+    }
+    public static float GetDistanceFromBeat(float fraction, float beat) {
+        return beat % fraction;
     }
 
     //ex. for 1, 5.1 returns 0.1, 5.5 returns 0.5, 5.9 returns 0.1
@@ -187,7 +190,10 @@ public class BeatController : MonoBehaviour
         return GetAbsDistanceFromBeat(1);
     }
     public static float GetAbsDistanceFromBeat(float fraction) {
-        float b = GetDistanceFromBeat(fraction) - (fraction / 2);
+        return GetAbsDistanceFromBeat(fraction, GetBeat());
+    }
+    public static float GetAbsDistanceFromBeat(float fraction, float beat) {
+        float b = GetDistanceFromBeat(fraction, beat) - (fraction / 2);
         b = -Mathf.Abs(b);
         return b + (fraction / 2);
     }
@@ -198,9 +204,12 @@ public class BeatController : MonoBehaviour
         return IsOnBeat(1);
     }
     public static bool IsOnBeat(float fraction) {
+        return IsOnBeat(fraction, GetBeat());
+    }
+    public static bool IsOnBeat(float fraction, float beat) {
         
-        float distFromBeat = GetDistanceFromBeat(fraction);
-        float distFromBeatAbs = GetAbsDistanceFromBeat(fraction);
+        float distFromBeat = GetDistanceFromBeat(fraction, beat);
+        float distFromBeatAbs = GetAbsDistanceFromBeat(fraction, beat);
 
         if(distFromBeat < fraction / 2) {
             //if this is after 
@@ -225,9 +234,12 @@ public class BeatController : MonoBehaviour
         return GetAccuracy(1);
     }
     public static Accuracy GetAccuracy(float fraction) {
+        return GetAccuracy(fraction, GetBeat());
+    }
+    public static Accuracy GetAccuracy(float fraction, float beat) {
 
-        float distFromBeat = GetDistanceFromBeat(fraction);
-        float distFromBeatAbs = GetAbsDistanceFromBeat(fraction);
+        float distFromBeat = GetDistanceFromBeat(fraction, beat);
+        float distFromBeatAbs = GetAbsDistanceFromBeat(fraction, beat);
 
         Debug.Log(distFromBeat);
 
@@ -255,8 +267,10 @@ public class BeatController : MonoBehaviour
         return GetNearestBeat(1);
     }
     public float GetNearestBeat(float fraction) {
-        float beat = GetBeat();
-        float dist = GetDistanceFromBeat(fraction);
+        return GetNearestBeat(fraction, GetBeat());
+    }
+    public float GetNearestBeat(float fraction, float beat) {
+        float dist = GetDistanceFromBeat(fraction, beat);
         if(dist > fraction / 2) {
             return beat + (1 - dist);
         } else {
@@ -318,6 +332,5 @@ public class BeatController : MonoBehaviour
             yield return null;
         }
     }
-
 
 }

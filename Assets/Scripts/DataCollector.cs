@@ -18,7 +18,8 @@ public class DataCollector : MonoBehaviour
     void Update()
     {
         if(Input.anyKeyDown) {
-            dataStringBuilder.AppendLine(BeatController.GetBeat() + "," + BeatController.GetDistanceFromBeat(1) + ",\"" + BeatController.GetAbsDistanceFromBeat(1) + "\"," + BeatController.GetAccuracy(1).name + ",\"" + Input.inputString + "\"");
+            float beat = BeatController.GetBeat();
+            dataStringBuilder.AppendLine(beat + "," + BeatController.GetDistanceFromBeat(1, beat) + ",\"" + BeatController.GetAbsDistanceFromBeat(1, beat) + "\"," + BeatController.GetAccuracy(1, beat).name + ",\"" + Input.inputString + "\"");
         }
     }
 
