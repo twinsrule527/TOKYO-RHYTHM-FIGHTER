@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//A short attack the boss performs over the course of 2 beats
-public class A_BossShortAttack : BossAttack
+
+public class A_Boss_1BeatAttack : BossAttack
 {
     [SerializeField] private SpriteRenderer mySprite;
     [SerializeField] private float damageToDeal;
@@ -11,11 +11,7 @@ public class A_BossShortAttack : BossAttack
         mySprite.color = Color.white;
         //Call the animation controller
         Global.Boss.spriteController.CallAttack(atkName, 1);
-        //mySprite.color = Color.green;
-        yield return StartCoroutine(BeatController.WaitForBeat(1));
-        //mySprite.color = Color.red;
         yield return StartCoroutine(BeatController.WaitForBeat(1f));
-        //mySprite.color = Color.white;
         //Checks to see if they can hit the player - if they do, the player gets hit
         Global.Boss.makeAttackThisBeat = true;
         Global.Boss.CurrentMakingAttack = this;
@@ -53,6 +49,4 @@ public class A_BossShortAttack : BossAttack
     {
         Global.BeatIndicatorBrain.AddBossBeat(length, attackIndicatorSprite);
     }
-
-
 }

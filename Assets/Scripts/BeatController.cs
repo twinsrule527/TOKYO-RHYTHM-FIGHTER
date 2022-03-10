@@ -103,7 +103,6 @@ public class BeatController : MonoBehaviour
         //TODO the song should be started by something else.
         //for now just starts at startup 
         StartSong(songToPlayTemp);
-
     }
 
     //call when we start the song. 
