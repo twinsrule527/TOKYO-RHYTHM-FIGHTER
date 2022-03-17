@@ -55,9 +55,9 @@ public class BeatController : MonoBehaviour
 
     //TODO: should there be different thresholds for different fractions of beats? 
     //they could be repurposed as percents?
-    public static readonly Accuracy MINIMUM = new Accuracy(0.15f, 0.15f, "OK", 1);
-    public static readonly Accuracy GREAT = new Accuracy(0.10f, 0.10f, "GREAT", 5);
-    public static readonly Accuracy PERFECT = new Accuracy(0.05f, 0.05f, "PERFECT", 9);
+    public static readonly Accuracy MINIMUM = new Accuracy(0.10f, 0.10f, "OK", 1);
+    public static readonly Accuracy GREAT = new Accuracy(0.07f, 0.07f, "GREAT", 5);
+    public static readonly Accuracy PERFECT = new Accuracy(0.04f, 0.04f, "PERFECT", 9);
     public static readonly Accuracy TOO_EARLY = new Accuracy(float.NaN, float.NaN, "TOO EARLY", -1);
     public static readonly Accuracy TOO_LATE = new Accuracy(float.NaN, float.NaN, "TOO LATE", -2);
     //below: accuracies checked in GetAccuracy() func
@@ -278,13 +278,13 @@ public class BeatController : MonoBehaviour
     }
 
     //Gets the nearest beat of this fraction, both before and after.
-    public float GetNearestBeat() {
+    public static float GetNearestBeat() {
         return GetNearestBeat(1);
     }
-    public float GetNearestBeat(float fraction) {
+    public static float GetNearestBeat(float fraction) {
         return GetNearestBeat(fraction, GetBeat());
     }
-    public float GetNearestBeat(float fraction, float beat) {
+    public static float GetNearestBeat(float fraction, float beat) {
         float dist = GetDistanceFromBeat(fraction, beat);
         if(dist > fraction / 2) {
             return beat + (1 - dist);
