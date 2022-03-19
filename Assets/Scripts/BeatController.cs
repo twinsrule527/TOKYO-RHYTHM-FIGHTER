@@ -277,13 +277,13 @@ public class BeatController : MonoBehaviour
     }
 
     //Gets the nearest beat of this fraction, both before and after.
-    public float GetNearestBeat() {
+    public static float GetNearestBeat() {
         return GetNearestBeat(1);
     }
-    public float GetNearestBeat(float fraction) {
+    public static float GetNearestBeat(float fraction) {
         return GetNearestBeat(fraction, GetBeat());
     }
-    public float GetNearestBeat(float fraction, float beat) {
+    public static float GetNearestBeat(float fraction, float beat) {
         float dist = GetDistanceFromBeat(fraction, beat);
         if(dist > fraction / 2) {
             return beat + (1 - dist);
