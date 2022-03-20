@@ -20,8 +20,8 @@ public class GameManager : MonoBehaviour
 
     //change to a specific scene 
     //TODO 
-    public static void ChangeScene() {
-        //TODO 
+    public static void ChangeScene(string sceneName) {
+        SceneManager.LoadScene(sceneName);
     }
 
     //this is the high level function called when the player wins

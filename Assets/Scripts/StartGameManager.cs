@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 //Manages the game start menu screen
 public class StartGameManager : MonoBehaviour
 {
-    [SerializeField] private int mainSceneNum;
+    [SerializeField] private string mainSceneName;
     public void StartGame() {
-        SceneManager.LoadScene(mainSceneNum);
+        GameManager.ChangeScene(mainSceneName);
     }
 }

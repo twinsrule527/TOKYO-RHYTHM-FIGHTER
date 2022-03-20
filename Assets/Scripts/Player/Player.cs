@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public int comboCounter;
 
     public PlayerAction CurrentAction;//The action the player is currently performing
+    public float currActionEndBeat;//The exact beat in the song that the current action is supposed to end on
     
     //How much health the player starts with
     [SerializeField] private float playerStartHealth;
@@ -48,7 +49,7 @@ public class Player : MonoBehaviour
     }
 
     public void EndOfBeat1() {
-        CurrentAction = null; //TODO bandaid fix 
+        //CurrentAction = null; //TODO bandaid fix 
     }
 
     public void EndOfBeat05() {
@@ -56,7 +57,18 @@ public class Player : MonoBehaviour
     }
 
     public void EndOfBeat025() {
+        ClearCurrentAction();
+    }
 
+    //A function that is triggered at the end of every possible beatFraction, checking to see if the current action being performed needs to be cleared
+    private void ClearCurrentAction() {
+        if(CurrentAction != null) {
+            //Checks to see if the beat's end time has passed
+            if(currActionEndBeat < BeatController.GetBeat()) {
+                CurrentAction = null;
+                Debug.Log("cleared");
+            }
+        }
     }
 
 

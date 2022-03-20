@@ -46,13 +46,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayFraction: 0
   loops: 1
+  startAnimation: 0
   animationName: BeatKeeper
   spriteRenderer: {fileID: 3413682732695585714}
   Sprites:
-  - {fileID: -6997555370200493309, guid: a23ecf83fb7a6a644bfab7df50b5016b, type: 3}
-  - {fileID: 4748463681020944024, guid: a23ecf83fb7a6a644bfab7df50b5016b, type: 3}
-  - {fileID: 6008182595847012862, guid: a23ecf83fb7a6a644bfab7df50b5016b, type: 3}
   - {fileID: -1677828737314775479, guid: a23ecf83fb7a6a644bfab7df50b5016b, type: 3}
+  - {fileID: 6008182595847012862, guid: a23ecf83fb7a6a644bfab7df50b5016b, type: 3}
+  - {fileID: 4748463681020944024, guid: a23ecf83fb7a6a644bfab7df50b5016b, type: 3}
+  - {fileID: -6997555370200493309, guid: a23ecf83fb7a6a644bfab7df50b5016b, type: 3}
 --- !u!212 &3413682732695585714
 SpriteRenderer:
   m_ObjectHideFlags: 0
