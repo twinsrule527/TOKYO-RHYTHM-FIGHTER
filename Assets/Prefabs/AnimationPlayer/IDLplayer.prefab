@@ -49,7 +49,7 @@ MonoBehaviour:
   animationName: PlayerIdle
   spriteRenderer: {fileID: 0}
   Sprites:
-  - {fileID: -3386779952996432530, guid: 53ab70ff7832138458722f464a760890, type: 3}
-  - {fileID: 2139089592583483880, guid: 53ab70ff7832138458722f464a760890, type: 3}
-  - {fileID: -6912220600979567084, guid: 53ab70ff7832138458722f464a760890, type: 3}
-  - {fileID: -7679693355238920884, guid: 53ab70ff7832138458722f464a760890, type: 3}
+  - {fileID: 4463307110657780765, guid: 6b48eff0a8db3784e8381856afdea1ad, type: 3}
+  - {fileID: -5701200184375791423, guid: 6b48eff0a8db3784e8381856afdea1ad, type: 3}
+  - {fileID: 2054791495449147965, guid: 6b48eff0a8db3784e8381856afdea1ad, type: 3}
+  - {fileID: -5044343690983263885, guid: 6b48eff0a8db3784e8381856afdea1ad, type: 3}
