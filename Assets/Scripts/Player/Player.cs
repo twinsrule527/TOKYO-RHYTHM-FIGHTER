@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ClearCurrentAction();
         //check for input that might activate a PlayerAction
         //we can control the order these are executed in here if we need to 
         foreach(PlayerAction a in actions) {
@@ -57,16 +58,14 @@ public class Player : MonoBehaviour
     }
 
     public void EndOfBeat025() {
-        ClearCurrentAction();
     }
 
     //A function that is triggered at the end of every possible beatFraction, checking to see if the current action being performed needs to be cleared
     private void ClearCurrentAction() {
         if(CurrentAction != null) {
             //Checks to see if the beat's end time has passed
-            if(currActionEndBeat < BeatController.GetBeat()) {
+            if(currActionEndBeat - BeatController.MINIMUM.thresholdBeforeBeat < BeatController.GetBeat()) {
                 CurrentAction = null;
-                Debug.Log("cleared");
             }
         }
     }
