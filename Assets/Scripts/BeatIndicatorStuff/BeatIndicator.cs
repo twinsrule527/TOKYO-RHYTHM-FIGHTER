@@ -5,27 +5,64 @@ using UnityEngine;
 public class BeatIndicator : MonoBehaviour
 {
 
-    //THE TOTAL HIGHEST FOR ALL
-    //NEEDS TO BE UPDATED IF ADDING MORE BEATS 
-    static float total = 3f;
+    [SerializeField] protected SpriteRenderer mySprite;
+    [SerializeField] protected float beatToHit;
+    [SerializeField] protected float startBeat;//The beat that this first shows up on
+    public bool moving;
+    float fadeOutTime = 0.25f;
+    public Vector3 startPos;
+    public Vector3 endPos;
 
-    int sign;
-    float initial;
+    Vector3 distPerBeat;
+    Color originalColor;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        initial = transform.localPosition.x;
-        sign = (int)Mathf.Sign(initial);
+    void Start() {
+        originalColor = mySprite.color;
     }
 
-    // Update is called once per frame
     void Update()
-    {
-        float newx = BeatController.GetBeat() % total + total;
-        newx = Mathf.Repeat(newx + initial, total);
-        newx *= sign;
-        newx = newx + (total * -sign);
-        transform.localPosition = new Vector3(newx, transform.localPosition.y, transform.localPosition.z);
+    {   
+        //if(moving) {
+            float lerpValue = (BeatController.GetBeat() - startBeat) / (beatToHit - startBeat);
+            lerpValue = Mathf.Min(lerpValue, 1);
+            transform.position = Vector3.Lerp(startPos, endPos, lerpValue);
+            if(lerpValue == 1) { //&& !moving) {
+                //Deactivates when it reaches 1
+                Disable();
+            }
+        //}
     }
+
+    public virtual void SetIndicatorStart(beatIndicatorInfo info) {
+        mySprite.enabled = true;
+        beatToHit = info.beatToHit;
+        startBeat = beatToHit - BeatIndicatorBrain.beatsInAdvanceShown;
+        //Sets position to the starting position
+        transform.position = startPos;
+
+        distPerBeat = (endPos - startPos) / (beatToHit - startBeat);
+    }
+
+    public void Disable() {
+        StartCoroutine(Disappear());
+    }
+
+    public IEnumerator Disappear() {
+        float beatToStopOn = BeatController.GetBeat() + fadeOutTime;
+        //Color originalColor = new Color(mySprite.color.r, mySprite.color.g, mySprite.color.b);
+        while(BeatController.GetBeat() < beatToStopOn) {
+            transform.position = endPos + (distPerBeat * (BeatController.GetBeat() - beatToHit));
+
+            //fade out
+            float fade = Mathf.Lerp(originalColor.a, 0, ((BeatController.GetBeat() - beatToHit)));
+            mySprite.color = new Color(mySprite.color.r, mySprite.color.g, mySprite.color.b, fade);
+
+            yield return null;
+        }
+        moving = false;
+        mySprite.color = originalColor;
+        enabled = false;
+        mySprite.enabled = false;
+    }
+
 }

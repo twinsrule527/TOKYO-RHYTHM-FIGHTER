@@ -172,15 +172,16 @@ public class BeatController : MonoBehaviour
 
     }
 
-    //non-interpolated beat. idk why you'd need this.
-    public static float GetBeatAudioTime() {
+    //instead of tracker variables, use more direct getters. 
+    //non-interpolated.
+    public static float GetBeat() {
         double pos = AudioSettings.dspTime - songStartTime;
         return (float)(pos / secPerBeat);
     }
 
-    //instead of tracker variables, use more direct getters. 
     //interpolates w/ Time.time if audio time hasn't changed between frames. 
-    public static float GetBeat() {
+    //may cause the beat to go backwards?
+    public static float GetBeatInterp() {
         double newPos = AudioSettings.dspTime - songStartTime;
         if(newPos != audioPos) {
             audioPos = newPos;

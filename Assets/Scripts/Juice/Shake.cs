@@ -10,17 +10,17 @@ public class Shake : MonoBehaviour
     [SerializeField] float shakeTime = 1f;
 
     //if no vars specified, will shake with this thing's default values 
-    public void ShakeMe() {
+    public void ShakeIt() {
 
         StartCoroutine(ShakeTransform(transform, shakeMagnitude, shakeTime, perlinMult));
     }
 
     //if args specified, will shake according to input
-    public void ShakeMe(float magnitude, float time) {
+    public void ShakeIt(float magnitude, float time) {
         
         StartCoroutine(ShakeTransform(transform, magnitude, time, perlinMult));
     }
-    public void ShakeMe(float magnitude, float time, float perlinMultipl) {
+    public void ShakeIt(float magnitude, float time, float perlinMultipl) {
         
         StartCoroutine(ShakeTransform(transform, magnitude, time, perlinMultipl));
     }
