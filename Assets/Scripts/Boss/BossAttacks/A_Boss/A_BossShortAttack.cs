@@ -14,7 +14,7 @@ public class A_BossShortAttack : BossAttack
         //mySprite.color = Color.green;
         yield return StartCoroutine(BeatController.WaitForBeat(1));
         //mySprite.color = Color.red;
-        yield return StartCoroutine(BeatController.WaitForBeat(1f));
+        yield return StartCoroutine(BeatController.WaitForBeat(1));
         //mySprite.color = Color.white;
         //Checks to see if they can hit the player - if they do, the player gets hit
         Global.Boss.makeAttackThisBeat = true;
@@ -36,9 +36,11 @@ public class A_BossShortAttack : BossAttack
     //Waits until the end of threshold, then checks to see if the attack is successful
     public override void CheckAttackSuccess()
     {
-
+        
+        Debug.Log("2");
         if(Global.Player.CurrentAction == null || Global.Player.CurrentAction.GetComponent<ParryAction>() == null) {
             Global.Player.ChangeHP(-damageToDeal);
+            Global.Boss.CurrentMakingAttack = null;
         }
         else {
             mySprite.color = Color.white;

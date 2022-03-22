@@ -18,8 +18,7 @@ public class PlayerAction : MonoBehaviour
 
     bool canInterrupt;  //do we call Boss.Interrupt()?
 
-    private const float SMALLEST_BEATFRACTION = 0.25f;//The smallest beatfraction upon which an attack can be performed
-
+    
     //TODO: track when the player has done input for a beat and what type of beat. 
     //ex. locking down input however long needed 
     //both in fail and success 
@@ -66,7 +65,7 @@ public class PlayerAction : MonoBehaviour
         //Debug.Log("Success, you're on beat");
         //Typically, sets the Player's current action to be this
         Global.Player.CurrentAction = this;
-        Global.Player.currActionEndBeat = BeatController.GetNearestBeat(beatFraction) + length - SMALLEST_BEATFRACTION;//Subtracts smallest beat fraction, so that it actually occurs before the beat, rather than after
+        Global.Player.currActionEndBeat = BeatController.GetNearestBeat(beatFraction) + length;//Subtracts smallest beat fraction, so that it actually occurs before the beat, rather than after
         //call Interrupt on boss here 
         //Boss.InterruptAttack();
         if(canInterrupt) {

@@ -30,7 +30,7 @@ public abstract class BossAI : MonoBehaviour
         for(int i = 0; i < myAttack.coroutines.Count; i++) {
             CurrentAttack = myAttack.coroutines[i];
             //mySpriteController.StartAttackAnim(CurrentAttack.name);//FOR ERIC
-            yield return CurrentAttack.StartCoroutine(CurrentAttack.Attack());
+            yield return StartCoroutine(CurrentAttack.Attack());
             //yield return myAttack.CoroutineSource.StartCoroutine(myAttack.coroutines[i]);
         }
     }
@@ -69,5 +69,6 @@ public abstract class BossAI : MonoBehaviour
             //Also, needs to add the attackPattern to the BeatIndicatorBrain
             newAttack.AddAttacksToBeatIndicator();
         }
+        
     }
 }

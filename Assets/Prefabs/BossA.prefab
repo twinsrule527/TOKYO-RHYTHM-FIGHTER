@@ -44,11 +44,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   length: 1
-  attackIndicatorSprite: {fileID: 21300000, guid: d07fea906657ca34c950215883b20bf0, type: 3}
+  attackIndicatorSprite: {fileID: 21300000, guid: cb6dda2c0410b074c86d40e7d679b57d, type: 3}
   myAnimationController: {fileID: 0}
   atkName: OneBeatAttack
   mySprite: {fileID: 7374144326298839354}
   damageToDeal: 1
+--- !u!1 &6385858517873614868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 939773572143581820}
+  - component: {fileID: 1249257266678878243}
+  m_Layer: 0
+  m_Name: WaitAttack2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &939773572143581820
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6385858517873614868}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.7322958, y: -0.63740706, z: 0.27247265}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7374144326298839357}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1249257266678878243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6385858517873614868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a389297447d9b3a4581c5f975f18622e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  length: 2
+  attackIndicatorSprite: {fileID: 0}
+  myAnimationController: {fileID: 7572151231906659114}
+  atkName: WaitAttack
+  beatToWait: 2
 --- !u!1 &7374144325323111436
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,11 +141,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   length: 2
-  attackIndicatorSprite: {fileID: 21300000, guid: ff8efa317db35f94db58e5be78562612, type: 3}
+  attackIndicatorSprite: {fileID: 21300000, guid: cb6dda2c0410b074c86d40e7d679b57d, type: 3}
   myAnimationController: {fileID: 4431511137712019732}
   atkName: ShortAttack
   mySprite: {fileID: 7374144326298839354}
-  damageToDeal: 1
+  damageToDeal: 5
 --- !u!1 &7374144325704998263
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   length: 1
-  attackIndicatorSprite: {fileID: 8338978881563222977, guid: 8fe07d4e5af736949ac9e9e8b949edf3, type: 3}
+  attackIndicatorSprite: {fileID: 0}
   myAnimationController: {fileID: 7572151231906659114}
   atkName: WaitAttack
   beatToWait: 1
@@ -190,11 +238,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   length: 4
-  attackIndicatorSprite: {fileID: 21300000, guid: ff8efa317db35f94db58e5be78562612, type: 3}
+  attackIndicatorSprite: {fileID: 21300000, guid: cb6dda2c0410b074c86d40e7d679b57d, type: 3}
   myAnimationController: {fileID: 7572151231438386553}
   atkName: LongAttack
   mySprite: {fileID: 7374144326298839354}
-  damageToDeal: 5
+  damageToDeal: 10
 --- !u!1 &7374144326298839353
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,13 +271,15 @@ Transform:
   m_GameObject: {fileID: 7374144326298839353}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.7322958, y: 0.63740706, z: -0.27247265}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.9987, y: 1.9987, z: 1}
   m_Children:
   - {fileID: 7374144325704998249}
   - {fileID: 7374144325323111438}
   - {fileID: 9126627768777922809}
   - {fileID: 7374144326084580893}
   - {fileID: 7572151231474549404}
+  - {fileID: 939773572143581820}
+  - {fileID: 5180745747708026406}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -298,8 +348,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackChildren:
   - {fileID: 7374144325704998262}
+  - {fileID: 1249257266678878243}
   - {fileID: 4242145293405554476}
   - {fileID: 7374144325323111439}
+  - {fileID: 6201973474100251465}
   - {fileID: 7374144326084580890}
   bossBeat: 1
   mySprite: {fileID: 7374144326298839354}
@@ -319,6 +371,55 @@ MonoBehaviour:
   CurrentMakingAttack: {fileID: 0}
   AttackAI: {fileID: 7374144326298839355}
   spriteController: {fileID: 7572151231474549405}
+--- !u!1 &8729248318235316810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5180745747708026406}
+  - component: {fileID: 6201973474100251465}
+  m_Layer: 0
+  m_Name: ThreeLengthAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5180745747708026406
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8729248318235316810}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.7322958, y: -0.63740706, z: 0.27247265}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7374144326298839357}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6201973474100251465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8729248318235316810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb7793f66bbde7b4e97e9c482f999551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  length: 3
+  attackIndicatorSprite: {fileID: 21300000, guid: cb6dda2c0410b074c86d40e7d679b57d, type: 3}
+  myAnimationController: {fileID: 4431511137712019732}
+  atkName: ThreeBeatAttack
+  mySprite: {fileID: 0}
+  damageToDeal: 7
 --- !u!1001 &8220599868352148573
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -376,12 +477,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1945800692340572452, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
       propertyPath: delayFraction
-      value: 0.8
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1945800692340572452, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 7374144326298839354}
+    - target: {fileID: 1945800692340572452, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
+      propertyPath: Sprites.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1945800692340572452, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
+      propertyPath: Sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: fac95527dc04fec40bf499a16d89cbe6, type: 3}
+    - target: {fileID: 1945800692340572452, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
+      propertyPath: Sprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: fac95527dc04fec40bf499a16d89cbe6, type: 3}
+    - target: {fileID: 1945800692340572452, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
+      propertyPath: Sprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: fac95527dc04fec40bf499a16d89cbe6, type: 3}
+    - target: {fileID: 1945800692340572452, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
+      propertyPath: Sprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: fac95527dc04fec40bf499a16d89cbe6, type: 3}
+    - target: {fileID: 1945800692340572452, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
+      propertyPath: Sprites.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9b5791b886bb5ec43a972e38643b3d61, type: 3}
+    - target: {fileID: 1945800692340572452, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
+      propertyPath: Sprites.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9b5791b886bb5ec43a972e38643b3d61, type: 3}
+    - target: {fileID: 1945800692340572452, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
+      propertyPath: Sprites.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 740e0ca8936520a498f39eb3b26ebfd4, type: 3}
+    - target: {fileID: 1945800692340572452, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
+      propertyPath: Sprites.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9b5791b886bb5ec43a972e38643b3d61, type: 3}
     - target: {fileID: 1945800692808912759, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
       propertyPath: delayFraction
       value: 0.4
@@ -398,6 +535,22 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 7374144326298839354}
+    - target: {fileID: 5722548867283791177, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
+      propertyPath: Sprites.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5722548867283791177, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
+      propertyPath: Sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: fac95527dc04fec40bf499a16d89cbe6, type: 3}
+    - target: {fileID: 5722548867283791177, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
+      propertyPath: Sprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9b5791b886bb5ec43a972e38643b3d61, type: 3}
+    - target: {fileID: 5722548867283791177, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
+      propertyPath: Sprites.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: fac95527dc04fec40bf499a16d89cbe6, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
 --- !u!4 &7572151231474549404 stripped
