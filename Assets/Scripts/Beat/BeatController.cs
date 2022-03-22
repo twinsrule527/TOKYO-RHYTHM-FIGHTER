@@ -129,7 +129,7 @@ public class BeatController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log("Beat: " + GetBeat().ToString() + " Frame: " + Time.frameCount);
         //update all our tracker variables. 
         //songPos = (float)(AudioSettings.dspTime - songStartTime);
         //beat = songPos / secPerBeat;
@@ -309,12 +309,17 @@ public class BeatController : MonoBehaviour
         
         float lastDistFromBeat = GetDistanceFromBeat(fraction);
         while(true) {
+            yield return null;
             float newDistFromBeat = GetDistanceFromBeat(fraction);
             if(lastDistFromBeat > newDistFromBeat) {
+                /*Debug.Log(lastDistFromBeat);
+                Debug.Log(newDistFromBeat);
+                Debug.Log(GetBeat());
+                Debug.Log(fraction);
+                Debug.Log(Time.frameCount);*/
                 break;
             }
             lastDistFromBeat = newDistFromBeat;
-            yield return null;
         }
     }
 
