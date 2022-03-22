@@ -9,11 +9,16 @@ public class BeatIndicator : MonoBehaviour
     [SerializeField] protected float beatToHit;
     [SerializeField] protected float startBeat;//The beat that this first shows up on
     public bool moving;
-    float fadeOutTime = 1f;
+    float fadeOutTime = 0.25f;
     public Vector3 startPos;
     public Vector3 endPos;
 
     Vector3 distPerBeat;
+    Color originalColor;
+
+    void Start() {
+        originalColor = mySprite.color;
+    }
 
     void Update()
     {   
@@ -39,20 +44,23 @@ public class BeatIndicator : MonoBehaviour
     }
 
     public void Disable() {
-        //moving = false;
-        //enabled = false;
-        //mySprite.enabled = false;
         StartCoroutine(Disappear());
     }
 
     public IEnumerator Disappear() {
-        Debug.Log("called disappear");
         float beatToStopOn = BeatController.GetBeat() + fadeOutTime;
+        //Color originalColor = new Color(mySprite.color.r, mySprite.color.g, mySprite.color.b);
         while(BeatController.GetBeat() < beatToStopOn) {
             transform.position = endPos + (distPerBeat * (BeatController.GetBeat() - beatToHit));
+
+            //fade out
+            float fade = Mathf.Lerp(originalColor.a, 0, ((BeatController.GetBeat() - beatToHit)));
+            mySprite.color = new Color(mySprite.color.r, mySprite.color.g, mySprite.color.b, fade);
+
             yield return null;
         }
         moving = false;
+        mySprite.color = originalColor;
         enabled = false;
         mySprite.enabled = false;
     }
