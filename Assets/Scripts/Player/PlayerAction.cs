@@ -66,6 +66,8 @@ public class PlayerAction : MonoBehaviour
         //Typically, sets the Player's current action to be this
         Global.Player.CurrentAction = this;
         Global.Player.currActionEndBeat = BeatController.GetNearestBeat(beatFraction) + length;//Subtracts smallest beat fraction, so that it actually occurs before the beat, rather than after
+        //Disables the next few BeatIndicators
+        Global.BeatIndicatorBrain.DisablePlayerIndicators(Global.Player.currActionEndBeat);
         //call Interrupt on boss here 
         //Boss.InterruptAttack();
         if(canInterrupt) {

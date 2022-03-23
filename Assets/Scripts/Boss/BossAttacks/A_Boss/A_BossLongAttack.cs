@@ -13,6 +13,7 @@ public class A_BossLongAttack : BossAttack
         //Checks to see if they can hit the player - if they do, the player gets hit
         Global.Boss.makeAttackThisBeat = true;
         Global.Boss.CurrentMakingAttack = this;
+        Debug.Log("4");
         yield return null;
     }   
 
@@ -29,7 +30,6 @@ public class A_BossLongAttack : BossAttack
     //Waits until the end of threshold, then checks to see if the attack is successful
     public override void CheckAttackSuccess()
     {
-        Debug.Log("4");
         if(Global.Player.CurrentAction == null || Global.Player.CurrentAction.GetComponent<ParryAction>() == null) {
 
             Global.Player.ChangeHP(-damageToDeal);

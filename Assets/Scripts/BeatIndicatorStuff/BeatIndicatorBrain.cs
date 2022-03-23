@@ -43,12 +43,13 @@ public class BeatIndicatorBrain : MonoBehaviour
         BossIndicators = new List<BossBeatIndicator>();
         PlayerBeats = new List<beatIndicatorInfo>();
         PlayerIndicators = new List<PlayerBeatIndicator>();
-    }
-    void Start() {
         BossIndicatorStartPos = startPosBossTransform.position;//TODO: Change the way that the bossindicator start pos is set
         BossIndicatorEndPos = endPosTransform.position + Vector3.back;
         PlayerIndicatorStartPos = startPosPlayerTransform.position;
         PlayerIndicatorEndPos = endPosTransform.position + Vector3.back;
+        enabled = false;
+    }
+    public void SongStarted() {
         for(int i = 0; i < 10; i++) {
             AddBaseBeat(PlayerBeats);
         }
@@ -155,6 +156,17 @@ public class BeatIndicatorBrain : MonoBehaviour
                 beats.RemoveAt(newElement);
                 Debug.Log("happened");
             }*/
+        }
+    }
+
+    //Greys out the Player BeatIndicators for the corresponding attack length
+    public void DisablePlayerIndicators(float beatTil) {
+        foreach(PlayerBeatIndicator beatIndicator in PlayerIndicators) {
+            if(beatIndicator.enabled) {
+                if(beatIndicator.beatToHit < beatTil) {
+                    beatIndicator.mySprite.color = Color.gray;
+                }
+            }
         }
     }
 

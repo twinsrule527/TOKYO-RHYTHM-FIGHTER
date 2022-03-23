@@ -96,8 +96,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mySprite: {fileID: 4084128278871656799}
-  beatToHit: 5
   startBeat: 0
   moving: 0
   startPos: {x: 0, y: 0, z: 0}
   endPos: {x: 0, y: 0, z: 0}
+  originalColor: {r: 1, g: 1, b: 1, a: 1}

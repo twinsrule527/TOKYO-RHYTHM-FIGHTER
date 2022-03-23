@@ -13,6 +13,28 @@ public class GameManager : MonoBehaviour
         little logic should be in here, it should call other scripts' functions. 
     */
 
+    //start playing the song. 
+    //this one with no input uses the one given to the beat controller.
+    public static void StartSong() {
+        BeatController.StartSong();
+    }
+    //this one uses whatever input you give it.
+    public static void StartSong(SongData songData) {
+        BeatController.StartSong(songData);
+    }
+
+    //the song has started playing- call everybody who needs to know!
+    public static void SongStarted(SongData songData) {
+
+        Global.BeatIndicatorBrain.enabled = true;
+        Global.Player.enabled = true;
+
+        Global.BeatIndicatorBrain.SongStarted(); //boss attacks depend on brain, call first 
+        Global.Player.SongStarted();
+        Global.Boss.SongStarted();
+        Global.UIManager.SongStarted();
+    }
+
     //restart the current scene 
     public static void RestartScene() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -41,6 +63,5 @@ public class GameManager : MonoBehaviour
         Global.UIManager.PlayerLoses();
 
     }
-
-    
+  
 }
