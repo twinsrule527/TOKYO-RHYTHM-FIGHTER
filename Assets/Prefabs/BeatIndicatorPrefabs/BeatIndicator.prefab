@@ -44,6 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a34df4f372fe10240838e71c6541972e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mySprite: {fileID: 0}
+  startBeat: 0
+  moving: 0
+  startPos: {x: 0, y: 0, z: 0}
+  endPos: {x: 0, y: 0, z: 0}
+  originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &1419331811018682802
 SpriteRenderer:
   m_ObjectHideFlags: 0
