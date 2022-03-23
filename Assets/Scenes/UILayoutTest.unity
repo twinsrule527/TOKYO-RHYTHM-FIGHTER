@@ -202,6 +202,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12c0b1b4475024f49b0164d1c0472d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &367196705 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 816332862464312378, guid: 5616b084a679a6943949e139a843212b, type: 3}
+  m_PrefabInstance: {fileID: 1031086323}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12c0b1b4475024f49b0164d1c0472d27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &468444467 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3458722030318523980, guid: 5616b084a679a6943949e139a843212b, type: 3}
@@ -217,6 +228,17 @@ MonoBehaviour:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3795154453095853364, guid: 0bae8102314e7a642b51f834926338da, type: 3}
   m_PrefabInstance: {fileID: 1419922952}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12c0b1b4475024f49b0164d1c0472d27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &843844281 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9156956826881162296, guid: 5616b084a679a6943949e139a843212b, type: 3}
+  m_PrefabInstance: {fileID: 1031086323}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -527,6 +549,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7572151231474549405, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: hurt
+      value: 
+      objectReference: {fileID: 367196705}
+    - target: {fileID: 7572151231474549405, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: longAttack
+      value: 
+      objectReference: {fileID: 1687780855}
+    - target: {fileID: 7572151231474549405, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: shortAttack
+      value: 
+      objectReference: {fileID: 990047191}
+    - target: {fileID: 7572151231474549405, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: waitAttack1
+      value: 
+      objectReference: {fileID: 933395564}
+    - target: {fileID: 7572151231474549405, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: waitAttack2
+      value: 
+      objectReference: {fileID: 883429203}
+    - target: {fileID: 7572151231474549405, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: length1Attack
+      value: 
+      objectReference: {fileID: 843844281}
+    - target: {fileID: 7572151231474549405, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: length3Attack
+      value: 
+      objectReference: {fileID: 93677249}
+    - target: {fileID: 7572151231474549405, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: oneBeatAttack
+      value: 
+      objectReference: {fileID: 468444467}
     - target: {fileID: 7808435164365564726, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: delayFraction
       value: 0.5
@@ -760,6 +814,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1502304164}
     - target: {fileID: 3795154453095853364, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: loops
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3795154453095853364, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: delayFraction
       value: 0.25
       objectReference: {fileID: 0}
@@ -815,6 +873,10 @@ PrefabInstance:
       propertyPath: messUp
       value: 
       objectReference: {fileID: 177532992}
+    - target: {fileID: 5796356841045519873, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6052075309043987471, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: animationName
       value: PlayerHurt
