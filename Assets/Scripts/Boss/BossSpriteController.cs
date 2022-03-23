@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BossSpriteController : MonoBehaviour
+public abstract class BossSpriteController : SpriteController
 {
     //Calls the animation for an attack
     public abstract void CallAttack(string ATKname, float ATKlength);
