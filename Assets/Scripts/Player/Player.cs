@@ -27,6 +27,12 @@ public class Player : MonoBehaviour
         playerHealth = playerStartHealth;
         //load PlayerActions, which will be components on the Player object or its children 
         actions = GetComponentsInChildren<PlayerAction>();
+        enabled = false;
+    }
+
+    public void SongStarted() {
+        //Calls the sprite controller's song started
+        spriteController.SongStarted();
     }
 
     // Update is called once per frame

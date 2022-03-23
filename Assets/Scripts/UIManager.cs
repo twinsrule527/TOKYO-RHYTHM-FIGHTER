@@ -13,6 +13,9 @@ public class UIManager : MonoBehaviour
         Global.UIManager = this;
     }
 
+    public void SongStarted() {
+        
+    }
 
     //Sets the text to player and enemy's current health - called by change Health functions
     public void SetHealthText() {

@@ -18,12 +18,17 @@ public class Boss : MonoBehaviour
         }
     }
 
-    [SerializeField] public BossAI AttackAI;
+    public BossAI AttackAI;
     public BossSpriteController spriteController;
     public virtual void Awake() {
         //Going to remove this later:
         Global.Boss = this;
         bossHP = 50;//DON"T DO THIS, just need a quick way to set boss health
+    }
+
+    public void SongStarted() {
+        AttackAI.SongStarted();
+        spriteController.SongStarted();
     }
 
     //Allows player attacks to interupt the boss' current attack

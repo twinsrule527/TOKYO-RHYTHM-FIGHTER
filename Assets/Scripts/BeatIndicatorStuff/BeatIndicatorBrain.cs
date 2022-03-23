@@ -43,12 +43,13 @@ public class BeatIndicatorBrain : MonoBehaviour
         BossIndicators = new List<BossBeatIndicator>();
         PlayerBeats = new List<beatIndicatorInfo>();
         PlayerIndicators = new List<PlayerBeatIndicator>();
-    }
-    void Start() {
         BossIndicatorStartPos = startPosBossTransform.position;//TODO: Change the way that the bossindicator start pos is set
         BossIndicatorEndPos = endPosTransform.position + Vector3.back;
         PlayerIndicatorStartPos = startPosPlayerTransform.position;
         PlayerIndicatorEndPos = endPosTransform.position + Vector3.back;
+        enabled = false;
+    }
+    public void SongStarted() {
         for(int i = 0; i < 10; i++) {
             AddBaseBeat(PlayerBeats);
         }
