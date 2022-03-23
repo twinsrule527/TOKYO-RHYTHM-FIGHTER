@@ -180,7 +180,7 @@ public class BeatController : MonoBehaviour
     }
 
     //interpolates w/ Time.time if audio time hasn't changed between frames. 
-    //may cause the beat to go backwards?
+    //may cause the beat to go backwards. 
     public static float GetBeatInterp() {
         double newPos = AudioSettings.dspTime - songStartTime;
         if(newPos != audioPos) {
