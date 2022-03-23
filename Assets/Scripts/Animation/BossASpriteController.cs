@@ -50,7 +50,7 @@ public class BossASpriteController : BossSpriteController
     public override void CallAttack(string ATKname, float beatFraction)
     {
         if(ATKname == "ShortAttack") {
-            ShortAttack(beatFraction);
+            ShortAttack();
         }
         else if(ATKname == "LongAttack") {
             LongAttack();
@@ -79,7 +79,7 @@ public class BossASpriteController : BossSpriteController
             Hurt();
         }*/
     }
-    public void ShortAttack(float beatFraction)
+    public void ShortAttack()
     {
         shortAttack.spriteRenderer.sprite = shortAttack.Sprites[0];
         shortAttack.PlayAnimation();//Beat(beatFraction);
