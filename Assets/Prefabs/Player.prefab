@@ -77,6 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatFraction: 1
+  length: 1
   key: 0
 --- !u!1 &4081028334381491184
 GameObject:
@@ -122,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatFraction: 1
+  length: 1
   key: 122
 --- !u!1 &6482545777454454005
 GameObject:
@@ -210,6 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatFraction: 1
+  length: 2
   key: 32
   damage: 5
 --- !u!1 &8597708211883435790
@@ -263,6 +266,7 @@ MonoBehaviour:
   messUpAction: {fileID: 9180100372514155346}
   comboCounter: 0
   CurrentAction: {fileID: 4472115705231886289}
+  currActionEndBeat: 0
   playerStartHealth: 50
 --- !u!212 &7554666834438711988
 SpriteRenderer:

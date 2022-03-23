@@ -5,7 +5,7 @@ using UnityEngine;
 public class BeatIndicator : MonoBehaviour
 {
 
-    [SerializeField] public SpriteRenderer mySprite {protected set; get;}
+    [SerializeField] public SpriteRenderer mySprite;
     [SerializeField] public float beatToHit {private set; get;}
     [SerializeField] protected float startBeat;//The beat that this first shows up on
     public bool moving;
@@ -14,9 +14,10 @@ public class BeatIndicator : MonoBehaviour
     public Vector3 endPos;
 
     Vector3 distPerBeat;
-    Color originalColor;
+    [SerializeField] Color originalColor;
 
-    void Start() {
+    void Awake() {
+        mySprite = GetComponent<SpriteRenderer>();
         originalColor = mySprite.color;
     }
 
@@ -50,8 +51,10 @@ public class BeatIndicator : MonoBehaviour
 
     public IEnumerator Disappear() {
         float beatToStopOn = BeatController.GetBeat() + fadeOutTime;
+        Debug.Log(beatToStopOn + " insideDisappear");
         //Color originalColor = new Color(mySprite.color.r, mySprite.color.g, mySprite.color.b);
         while(BeatController.GetBeat() < beatToStopOn) {
+            Debug.Log(BeatController.GetBeat());
             transform.position = endPos + (distPerBeat * (BeatController.GetBeat() - beatToHit));
 
             //fade out
