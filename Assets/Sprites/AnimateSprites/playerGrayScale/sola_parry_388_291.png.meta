@@ -1,19 +1,34 @@
 fileFormatVersion: 2
-guid: 6b1dc922729eedd449304075ae34e819
+guid: f3f4f90116884b6498863536b6a10beb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8019882508769279564
-    second: midboss_idle (1)_0
+      213: 5479671988523243234
+    second: sola_parry_388_291_0
   - first:
-      213: 7702388302835967444
-    second: midboss_idle (1)_1
+      213: 9060812008783134217
+    second: sola_parry_388_291_1
   - first:
-      213: -4711218983162176914
-    second: midboss_idle (1)_2
+      213: -8212199889203045587
+    second: sola_parry_388_291_2
   - first:
-      213: -4450681984383573566
-    second: midboss_idle (1)_3
+      213: 4937898668450420035
+    second: sola_parry_388_291_3
+  - first:
+      213: -1387194846461127492
+    second: sola_parry_388_291_4
+  - first:
+      213: 4763098512595793445
+    second: sola_parry_388_291_5
+  - first:
+      213: -3073412160605506604
+    second: sola_parry_388_291_6
+  - first:
+      213: -7184592418277009027
+    second: sola_parry_388_291_7
+  - first:
+      213: 1274507554275650244
+    second: sola_parry_388_291_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,13 +130,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: midboss_idle (1)_0
+      name: sola_parry_388_291_0
       rect:
         serializedVersion: 2
-        x: 123
+        x: 77
         y: 0
-        width: 186
-        height: 226
+        width: 181
+        height: 221
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -129,20 +144,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4ebf8b86a85c4f60800000000000000
-      internalID: 8019882508769279564
+      spriteID: 2e6169914a4bb0c40800000000000000
+      internalID: 5479671988523243234
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: midboss_idle (1)_1
+      name: sola_parry_388_291_1
       rect:
         serializedVersion: 2
-        x: 511
+        x: 427
         y: 0
-        width: 209
-        height: 226
+        width: 210
+        height: 236
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d569a83a5164ea60800000000000000
-      internalID: 7702388302835967444
+      spriteID: 90ebc1804887ebd70800000000000000
+      internalID: 9060812008783134217
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: midboss_idle (1)_2
+      name: sola_parry_388_291_2
       rect:
         serializedVersion: 2
-        x: 898
-        y: 0
-        width: 188
-        height: 223
+        x: 635
+        y: 171
+        width: 17
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +186,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6a9a81cb436e9eb0800000000000000
-      internalID: -4711218983162176914
+      spriteID: d2bdc8bf5b7680e80800000000000000
+      internalID: -8212199889203045587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: midboss_idle (1)_3
+      name: sola_parry_388_291_3
       rect:
         serializedVersion: 2
-        x: 1286
-        y: 0
-        width: 187
-        height: 228
+        x: 642
+        y: 142
+        width: 41
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,8 +207,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c12690e0500c32c0800000000000000
-      internalID: -4450681984383573566
+      spriteID: 3459cd54da0f68440800000000000000
+      internalID: 4937898668450420035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sola_parry_388_291_4
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 0
+        width: 260
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb49e6603a1bfbce0800000000000000
+      internalID: -1387194846461127492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sola_parry_388_291_5
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 196
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 526b6797cdce91240800000000000000
+      internalID: 4763098512595793445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sola_parry_388_291_6
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 113
+        width: 51
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d33ebe6ceb0955d0800000000000000
+      internalID: -3073412160605506604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sola_parry_388_291_7
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 136
+        width: 46
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7952acd2433b4c90800000000000000
+      internalID: -7184592418277009027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sola_parry_388_291_8
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 87
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cae6243ed5ffa110800000000000000
+      internalID: 1274507554275650244
       vertices: []
       indices: 
       edges: []
@@ -201,7 +321,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ee62e996439dbe64092021b7a4f5f0ef
+    spriteID: 2abebcbaa7f193140a136a43882dbb23
     internalID: 0
     vertices: []
     indices: 

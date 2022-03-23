@@ -52,8 +52,8 @@ MonoBehaviour:
   attack: {fileID: 8782506968028784539, guid: fbe029537b81c8142bda525498f18e20, type: 3}
   messUp: {fileID: 57715720951305127, guid: dd3043a85bcf1c540a9ca6f806f5fc6e, type: 3}
   hurt: {fileID: 57715720951305127, guid: dd3043a85bcf1c540a9ca6f806f5fc6e, type: 3}
-  idle: {fileID: 0}
-  parry: {fileID: 0}
+  idle: {fileID: 4531053231120884361, guid: eba6838e999b52044b6ade648c697e06, type: 3}
+  parry: {fileID: 7809159037744067818, guid: ce55ad5f226d3dc4c9e30e0e85368c7e, type: 3}
   accuracyTOO_EARLY: {fileID: 8365393106499576175}
   accuracyTOO_LATE: {fileID: 8702491011107371623}
   accuracyMINIMUM: {fileID: 5002445740012086187}

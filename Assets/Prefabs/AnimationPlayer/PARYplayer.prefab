@@ -43,9 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12c0b1b4475024f49b0164d1c0472d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayFraction: 0
+  delayFraction: 0.25
   loops: 0
   startAnimation: 0
-  animationName: 
+  animationName: Parry
   spriteRenderer: {fileID: 0}
-  Sprites: []
+  Sprites:
+  - {fileID: 5479671988523243234, guid: f3f4f90116884b6498863536b6a10beb, type: 3}
+  - {fileID: 9060812008783134217, guid: f3f4f90116884b6498863536b6a10beb, type: 3}
+  - {fileID: -1387194846461127492, guid: f3f4f90116884b6498863536b6a10beb, type: 3}
+  - {fileID: 4763098512595793445, guid: f3f4f90116884b6498863536b6a10beb, type: 3}

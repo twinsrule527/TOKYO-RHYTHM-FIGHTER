@@ -49,8 +49,8 @@ MonoBehaviour:
   animationName: PlayerAttack
   spriteRenderer: {fileID: 0}
   Sprites:
-  - {fileID: -6023953105487370197, guid: 4e33ed857d877da4885829020e578eec, type: 3}
-  - {fileID: -2839788543315251068, guid: 4e33ed857d877da4885829020e578eec, type: 3}
-  - {fileID: 268896629609289671, guid: 4e33ed857d877da4885829020e578eec, type: 3}
-  - {fileID: 7699522592387791285, guid: 4e33ed857d877da4885829020e578eec, type: 3}
-  - {fileID: -8289831350077894408, guid: c3c17d4a43db09f41bcba84dd0fcbaed, type: 3}
+  - {fileID: -2090542714555317724, guid: 58bc99976f9b4774eb04a405b6d5f65c, type: 3}
+  - {fileID: -1884367787302861963, guid: 58bc99976f9b4774eb04a405b6d5f65c, type: 3}
+  - {fileID: -4032114526262131529, guid: 58bc99976f9b4774eb04a405b6d5f65c, type: 3}
+  - {fileID: -6191315739861667036, guid: 58bc99976f9b4774eb04a405b6d5f65c, type: 3}
+  - {fileID: -2090542714555317724, guid: 58bc99976f9b4774eb04a405b6d5f65c, type: 3}

@@ -21,6 +21,8 @@ public class AnimationController : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public List<Sprite> Sprites;
 
+    
+
 
     private void Awake()
     {
