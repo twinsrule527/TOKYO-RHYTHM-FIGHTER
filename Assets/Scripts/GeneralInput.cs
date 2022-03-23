@@ -14,6 +14,8 @@ public class GeneralInput : MonoBehaviour
 
     KeyCode key_restart = KeyCode.R;
 
+    KeyCode key_startsong = KeyCode.Return;
+
     KeyCode [] key_select = {KeyCode.E, KeyCode.Space, KeyCode.Return};
     KeyCode [] key_back = {KeyCode.Escape, KeyCode.Backspace};
 
@@ -29,6 +31,10 @@ public class GeneralInput : MonoBehaviour
         
         if(Input.GetKeyDown(key_restart)) {
             Restart();
+        }
+
+        if(Input.GetKeyDown(key_startsong)) {
+            GameManager.StartSong();
         }
 
         foreach(KeyCode kc in key_select) {
