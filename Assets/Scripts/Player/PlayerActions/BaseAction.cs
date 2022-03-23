@@ -39,7 +39,12 @@ public class BaseAction : PlayerAction
     protected override void Success()
     {
         base.Success();
-        Global.Boss.ChangeBossHP(-damage);
-        Global.Player.spriteController.Attack(1);
+        if(!Global.Boss.makeAttackThisBeat) {//DOesn't always work correctly
+            Global.Boss.ChangeBossHP(-damage);
+            Global.Player.spriteController.Attack(1);
+        }
+        else {
+            //Play the MessUp/Hurt Animation
+        }
     }
 }

@@ -4,9 +4,11 @@ using UnityEngine;
 //A boss attack that waits until a given beat/waits a certain amt
 public class WaitAttack : BossAttack
 {
-    [SerializeField] private float beatToWait;
+    [SerializeField] private int beatToWait;
     public override IEnumerator Attack() {
-        yield return BeatController.WaitForBeat(beatToWait);//Never do this
+        Global.Boss.CurrentMakingAttack = this;
+        yield return BeatController.WaitForBeatsMulti(beatToWait, 1);
+        Debug.Log("Wait");
     }
 
     public override void Interrupt(PlayerAction action) {
