@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class SpriteController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public IEnumerator currentCoroutine;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
