@@ -45,16 +45,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayFraction: 0.2
   loops: 0
+  startAnimation: 0
   animationName: PlayerAttack
   spriteRenderer: {fileID: 0}
   Sprites:
-  - {fileID: 21300000, guid: 4d60b66137883ae4fbfaad8fd1ac1bef, type: 3}
-  - {fileID: 21300000, guid: 5137e76a9bcc271429f319a3070c702a, type: 3}
-  - {fileID: 21300000, guid: 5137e76a9bcc271429f319a3070c702a, type: 3}
-  - {fileID: 21300000, guid: 8c89a8cc03874f94895f0d999707ec25, type: 3}
-  - {fileID: 21300000, guid: 5137e76a9bcc271429f319a3070c702a, type: 3}
-  frame0: {fileID: 21300000, guid: 4d60b66137883ae4fbfaad8fd1ac1bef, type: 3}
-  frame1: {fileID: 21300000, guid: 5137e76a9bcc271429f319a3070c702a, type: 3}
-  frame2: {fileID: 21300000, guid: 8c89a8cc03874f94895f0d999707ec25, type: 3}
-  frame3: {fileID: 21300000, guid: 8c89a8cc03874f94895f0d999707ec25, type: 3}
-  frame4: {fileID: 21300000, guid: 5137e76a9bcc271429f319a3070c702a, type: 3}
+  - {fileID: -6023953105487370197, guid: 4e33ed857d877da4885829020e578eec, type: 3}
+  - {fileID: -2839788543315251068, guid: 4e33ed857d877da4885829020e578eec, type: 3}
+  - {fileID: 268896629609289671, guid: 4e33ed857d877da4885829020e578eec, type: 3}
+  - {fileID: 7699522592387791285, guid: 4e33ed857d877da4885829020e578eec, type: 3}
+  - {fileID: -8289831350077894408, guid: c3c17d4a43db09f41bcba84dd0fcbaed, type: 3}

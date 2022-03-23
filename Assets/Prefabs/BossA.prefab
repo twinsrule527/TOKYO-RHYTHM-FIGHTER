@@ -78,7 +78,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7374144326298839357}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1249257266678878243
 MonoBehaviour:
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   length: 2
   attackIndicatorSprite: {fileID: 0}
-  myAnimationController: {fileID: 7572151231906659114}
+  myAnimationController: {fileID: 0}
   atkName: WaitAttack
   beatToWait: 2
 --- !u!1 &7374144325323111436
@@ -126,7 +126,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7374144326298839357}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7374144325323111439
 MonoBehaviour:
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   length: 2
   attackIndicatorSprite: {fileID: 21300000, guid: cb6dda2c0410b074c86d40e7d679b57d, type: 3}
-  myAnimationController: {fileID: 4431511137712019732}
+  myAnimationController: {fileID: 0}
   atkName: ShortAttack
   mySprite: {fileID: 7374144326298839354}
   damageToDeal: 5
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   length: 1
   attackIndicatorSprite: {fileID: 0}
-  myAnimationController: {fileID: 7572151231906659114}
+  myAnimationController: {fileID: 0}
   atkName: WaitAttack
   beatToWait: 1
 --- !u!1 &7374144326084580891
@@ -223,7 +223,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7374144326298839357}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7374144326084580890
 MonoBehaviour:
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   length: 4
   attackIndicatorSprite: {fileID: 21300000, guid: cb6dda2c0410b074c86d40e7d679b57d, type: 3}
-  myAnimationController: {fileID: 7572151231438386553}
+  myAnimationController: {fileID: 0}
   atkName: LongAttack
   mySprite: {fileID: 7374144326298839354}
   damageToDeal: 10
@@ -271,15 +271,15 @@ Transform:
   m_GameObject: {fileID: 7374144326298839353}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.7322958, y: 0.63740706, z: -0.27247265}
-  m_LocalScale: {x: 1.9987, y: 1.9987, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 7374144325704998249}
-  - {fileID: 7374144325323111438}
+  - {fileID: 939773572143581820}
   - {fileID: 9126627768777922809}
+  - {fileID: 7374144325323111438}
+  - {fileID: 5180745747708026406}
   - {fileID: 7374144326084580893}
   - {fileID: 7572151231474549404}
-  - {fileID: 939773572143581820}
-  - {fileID: 5180745747708026406}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -400,7 +400,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7374144326298839357}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6201973474100251465
 MonoBehaviour:
@@ -416,7 +416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   length: 3
   attackIndicatorSprite: {fileID: 21300000, guid: cb6dda2c0410b074c86d40e7d679b57d, type: 3}
-  myAnimationController: {fileID: 4431511137712019732}
+  myAnimationController: {fileID: 0}
   atkName: ThreeBeatAttack
   mySprite: {fileID: 0}
   damageToDeal: 7
@@ -427,9 +427,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7374144326298839357}
     m_Modifications:
+    - target: {fileID: 8055880833133826, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1945800691831502529, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1945800691831502529, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
       propertyPath: m_LocalPosition.x
@@ -519,6 +523,14 @@ PrefabInstance:
       propertyPath: Sprites.Array.data[8]
       value: 
       objectReference: {fileID: 21300000, guid: 9b5791b886bb5ec43a972e38643b3d61, type: 3}
+    - target: {fileID: 1945800692340572453, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1945800692808912756, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1945800692808912759, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
       propertyPath: delayFraction
       value: 0.4
@@ -527,6 +539,10 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 7374144326298839354}
+    - target: {fileID: 4827229096351329635, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5722548867283791177, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
       propertyPath: delayFraction
       value: 0.4
@@ -567,38 +583,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe4084e0abee743448c193b0104fd455, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4431511137712019732 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5722548867283791177, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
-  m_PrefabInstance: {fileID: 8220599868352148573}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12c0b1b4475024f49b0164d1c0472d27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7572151231438386553 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1945800692340572452, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
-  m_PrefabInstance: {fileID: 8220599868352148573}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12c0b1b4475024f49b0164d1c0472d27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7572151231906659114 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1945800692808912759, guid: aedcbf1e896ac674a82ff6f1e593c184, type: 3}
-  m_PrefabInstance: {fileID: 8220599868352148573}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12c0b1b4475024f49b0164d1c0472d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
