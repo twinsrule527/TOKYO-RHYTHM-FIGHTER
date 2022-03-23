@@ -84,7 +84,7 @@ public class BossASpriteController : BossSpriteController
     {
         
     }
-    public void ShortAttack(float beatFraction)
+    public void ShortAttack()
     {
         shortAttack.spriteRenderer.sprite = shortAttack.Sprites[0];
         shortAttack.PlayAnimation();//Beat(beatFraction);
