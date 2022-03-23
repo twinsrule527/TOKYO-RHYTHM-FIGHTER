@@ -79,6 +79,11 @@ public class BossASpriteController : BossSpriteController
             Hurt();
         }*/
     }
+    
+    public override void SongStarted()
+    {
+        
+    }
     public void ShortAttack()
     {
         shortAttack.spriteRenderer.sprite = shortAttack.Sprites[0];
