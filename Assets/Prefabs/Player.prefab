@@ -77,6 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatFraction: 1
+  length: 1
   key: 0
 --- !u!1 &4081028334381491184
 GameObject:
@@ -122,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatFraction: 1
+  length: 1
   key: 122
 --- !u!1 &6482545777454454005
 GameObject:
@@ -210,6 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatFraction: 1
+  length: 1
   key: 32
   damage: 5
 --- !u!1 &8597708211883435790
@@ -239,7 +242,7 @@ Transform:
   m_GameObject: {fileID: 8597708211883435790}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 5448173835734764356}
   - {fileID: 4951750101672851491}
@@ -263,6 +266,7 @@ MonoBehaviour:
   messUpAction: {fileID: 9180100372514155346}
   comboCounter: 0
   CurrentAction: {fileID: 4472115705231886289}
+  currActionEndBeat: 0
   playerStartHealth: 50
 --- !u!212 &7554666834438711988
 SpriteRenderer:
@@ -304,7 +308,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 4d60b66137883ae4fbfaad8fd1ac1bef, type: 3}
+  m_Sprite: {fileID: 4463307110657780765, guid: 6b48eff0a8db3784e8381856afdea1ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

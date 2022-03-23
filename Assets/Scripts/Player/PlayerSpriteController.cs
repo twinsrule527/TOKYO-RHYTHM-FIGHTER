@@ -9,9 +9,14 @@ public class PlayerSpriteController : MonoBehaviour
     [SerializeField] AnimationController attack;
     [SerializeField] AnimationController messUp;
     [SerializeField] AnimationController hurt;
+    [SerializeField] AnimationController idle;
+    [SerializeField] AnimationController parry;
+
+
 
 
     [SerializeField] AccuracyPrefab accuracyTOO_EARLY, accuracyTOO_LATE, accuracyMINIMUM, accuracyGREAT, accuracyPERFECT;
+
 
 
     private void Awake()
@@ -19,6 +24,9 @@ public class PlayerSpriteController : MonoBehaviour
         attack.spriteRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
         messUp.spriteRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
         hurt.spriteRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
+        idle.spriteRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
+        parry.spriteRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
+
 
     }
 
@@ -68,6 +76,18 @@ public class PlayerSpriteController : MonoBehaviour
     {
         hurt.spriteRenderer.sprite = hurt.Sprites[0];
         hurt.PlayAnimation();
+    }
+
+    public void Idle()
+    {
+        idle.spriteRenderer.sprite = idle.Sprites[0];
+        idle.PlayAnimation();
+    }
+
+    public void Parry()
+    {
+        parry.spriteRenderer.sprite = parry.Sprites[0];
+        parry.PlayAnimation();
     }
 
     public void DisplayAccuracy(Accuracy acc) {
