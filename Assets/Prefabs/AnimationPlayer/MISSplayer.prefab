@@ -49,7 +49,7 @@ MonoBehaviour:
   animationName: PlayerMiss
   spriteRenderer: {fileID: 0}
   Sprites:
-  - {fileID: -8289831350077894408, guid: c3c17d4a43db09f41bcba84dd0fcbaed, type: 3}
+  - {fileID: 8597338460940970874, guid: c3c17d4a43db09f41bcba84dd0fcbaed, type: 3}
   - {fileID: -8083094487403186087, guid: c3c17d4a43db09f41bcba84dd0fcbaed, type: 3}
   - {fileID: 8597338460940970874, guid: c3c17d4a43db09f41bcba84dd0fcbaed, type: 3}
   - {fileID: -7107636961885540721, guid: c3c17d4a43db09f41bcba84dd0fcbaed, type: 3}
