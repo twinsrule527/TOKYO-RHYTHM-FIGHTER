@@ -14,6 +14,11 @@ public class GameManager : MonoBehaviour
     */
 
     //start playing the song. 
+    //this one with no input uses the one given to the beat controller.
+    public static void StartSong() {
+        BeatController.StartSong();
+    }
+    //this one uses whatever input you give it.
     public static void StartSong(SongData songData) {
         BeatController.StartSong(songData);
     }

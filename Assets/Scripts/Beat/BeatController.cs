@@ -58,7 +58,8 @@ public class BeatController : MonoBehaviour
     public static AudioSource audioSource; //TODO temp weird thing lol 
     [SerializeField] GameObject songDataHolder;
     List<SongData> songDataList = new List<SongData>();
-    [SerializeField] SongData songToPlay;
+    [SerializeField] SongData _songToPlay;
+    public static SongData songToPlay; //TODO another temp weird thing 
 
     //will be calculated from BPM. in seconds. 
     private static double secPerBeat;
@@ -89,6 +90,7 @@ public class BeatController : MonoBehaviour
     {
 
         audioSource = _audioSource;
+        songToPlay = _songToPlay;
 
         //populate the list of songs with refs to their data 
         songDataHolder.GetComponentsInChildren<SongData>(songDataList);
@@ -108,6 +110,11 @@ public class BeatController : MonoBehaviour
             }
         }
         Debug.Log("ERROR: StartSongByName tried to play song \"" + songName + ",\" which was not found in the song data list!");
+    }
+
+    //uses the song given to the beatcontroller object.
+    public static void StartSong() {
+        StartSong(songToPlay);
     }
 
     //call when we start the song. 
