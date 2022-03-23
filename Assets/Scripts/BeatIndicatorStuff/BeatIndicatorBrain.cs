@@ -164,7 +164,7 @@ public class BeatIndicatorBrain : MonoBehaviour
         foreach(PlayerBeatIndicator beatIndicator in PlayerIndicators) {
             if(beatIndicator.enabled) {
                 if(beatIndicator.beatToHit < beatTil) {
-                    beatIndicator.enabled = false;
+                    beatIndicator.mySprite.color = Color.gray;
                 }
             }
         }

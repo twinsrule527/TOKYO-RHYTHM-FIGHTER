@@ -5,7 +5,7 @@ using UnityEngine;
 public class BeatIndicator : MonoBehaviour
 {
 
-    [SerializeField] protected SpriteRenderer mySprite;
+    [SerializeField] public SpriteRenderer mySprite {protected set; get;}
     [SerializeField] public float beatToHit {private set; get;}
     [SerializeField] protected float startBeat;//The beat that this first shows up on
     public bool moving;
@@ -34,6 +34,7 @@ public class BeatIndicator : MonoBehaviour
     }
 
     public virtual void SetIndicatorStart(beatIndicatorInfo info) {
+        mySprite.color = originalColor;
         mySprite.enabled = true;
         beatToHit = info.beatToHit;
         startBeat = beatToHit - BeatIndicatorBrain.beatsInAdvanceShown;
