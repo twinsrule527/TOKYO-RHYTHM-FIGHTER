@@ -159,4 +159,15 @@ public class BeatIndicatorBrain : MonoBehaviour
         }
     }
 
+    //Greys out the Player BeatIndicators for the corresponding attack length
+    public void DisablePlayerIndicators(float beatTil) {
+        foreach(PlayerBeatIndicator beatIndicator in PlayerIndicators) {
+            if(beatIndicator.enabled) {
+                if(beatIndicator.beatToHit < beatTil) {
+                    beatIndicator.enabled = false;
+                }
+            }
+        }
+    }
+
 }

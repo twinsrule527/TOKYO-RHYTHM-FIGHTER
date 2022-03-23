@@ -6,7 +6,7 @@ public class BeatIndicator : MonoBehaviour
 {
 
     [SerializeField] protected SpriteRenderer mySprite;
-    [SerializeField] protected float beatToHit;
+    [SerializeField] public float beatToHit {private set; get;}
     [SerializeField] protected float startBeat;//The beat that this first shows up on
     public bool moving;
     float fadeOutTime = 0.25f;
