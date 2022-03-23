@@ -22,6 +22,10 @@ public class PlayerSpriteController : MonoBehaviour
 
     }
 
+    public void SongStarted() {
+        
+    }
+
     // Start is called before the first frame update
     void Start()
     {

@@ -14,6 +14,12 @@ public class A_BossAI : BossAI
         attackBag = new Bag<AttackPattern>();
         CreateAttackPatterns();
         attackBag.Refill();
+        
+    }
+    //Called by Boss SongStarted
+    public override void SongStarted()
+    {
+        base.SongStarted();
         RefillAttackQueue();
         StartCoroutine("StateUpdate");
     }

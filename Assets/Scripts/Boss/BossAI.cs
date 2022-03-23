@@ -16,6 +16,9 @@ public abstract class BossAI : MonoBehaviour
         AttackQueue = new List<AttackPattern>();
 
     }
+    public virtual void SongStarted() {
+        
+    }
     //Updates the Boss State after each attack pattern
     public virtual IEnumerator StateUpdate() {
         while(AttackQueue.Count > 0) {
