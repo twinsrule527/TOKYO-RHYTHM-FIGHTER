@@ -27,6 +27,8 @@ public abstract class BossAI : MonoBehaviour
     }
     
     public IEnumerator StartAttacks(AttackPattern myAttack) {
+        Debug.Log(myAttack.name);
+        //For some reason, all of the coroutines run, but not all have a chance to check for end of Beat
         for(int i = 0; i < myAttack.coroutines.Count; i++) {
             CurrentAttack = myAttack.coroutines[i];
             //mySpriteController.StartAttackAnim(CurrentAttack.name);//FOR ERIC

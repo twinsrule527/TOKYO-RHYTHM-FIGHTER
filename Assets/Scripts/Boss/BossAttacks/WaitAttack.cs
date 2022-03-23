@@ -9,6 +9,7 @@ public class WaitAttack : BossAttack
         Global.Boss.CurrentMakingAttack = this;
         yield return BeatController.WaitForBeatsMulti(beatToWait, 1);
         Debug.Log("Wait");
+        yield return null;
     }
 
     public override void Interrupt(PlayerAction action) {

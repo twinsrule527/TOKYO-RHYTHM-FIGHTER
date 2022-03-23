@@ -19,6 +19,7 @@ public class A_BossShortAttack : BossAttack
         //Checks to see if they can hit the player - if they do, the player gets hit
         Global.Boss.makeAttackThisBeat = true;
         Global.Boss.CurrentMakingAttack = this;
+        Debug.Log("2");
         yield return null;
         //mySprite.color = Color.black;
     }   
@@ -37,7 +38,6 @@ public class A_BossShortAttack : BossAttack
     public override void CheckAttackSuccess()
     {
         
-        Debug.Log("2");
         if(Global.Player.CurrentAction == null || Global.Player.CurrentAction.GetComponent<ParryAction>() == null) {
             Global.Player.ChangeHP(-damageToDeal);
             Global.Boss.CurrentMakingAttack = null;
