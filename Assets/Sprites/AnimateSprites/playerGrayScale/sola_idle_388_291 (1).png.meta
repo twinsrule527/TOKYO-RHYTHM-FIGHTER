@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 6b48eff0a8db3784e8381856afdea1ad
+guid: 0475a92bee260d24595ee78c2e18359f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4463307110657780765
-    second: sola_idle (2)_0
+      213: 1307935492094069122
+    second: sola_idle_388_291 (1)_0
   - first:
-      213: -5701200184375791423
-    second: sola_idle (2)_1
+      213: -8710128474714534381
+    second: sola_idle_388_291 (1)_1
   - first:
-      213: 2054791495449147965
-    second: sola_idle (2)_2
+      213: 2046957901714320752
+    second: sola_idle_388_291 (1)_2
   - first:
-      213: -5044343690983263885
-    second: sola_idle (2)_3
+      213: 3237436881797812316
+    second: sola_idle_388_291 (1)_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,13 +115,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sola_idle (2)_0
+      name: sola_idle_388_291 (1)_0
       rect:
         serializedVersion: 2
-        x: 83
+        x: 77
         y: 0
-        width: 194
-        height: 238
+        width: 181
+        height: 221
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -129,20 +129,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1c6b366b2ad0fd30800000000000000
-      internalID: 4463307110657780765
+      spriteID: 289846b7668b62210800000000000000
+      internalID: 1307935492094069122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sola_idle (2)_1
+      name: sola_idle_388_291 (1)_1
       rect:
         serializedVersion: 2
-        x: 464
-        y: 10
-        width: 202
-        height: 234
+        x: 430
+        y: 0
+        width: 188
+        height: 218
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c0b3e873a441e0b0800000000000000
-      internalID: -5701200184375791423
+      spriteID: 31e00acec486f1780800000000000000
+      internalID: -8710128474714534381
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sola_idle (2)_2
+      name: sola_idle_388_291 (1)_2
       rect:
         serializedVersion: 2
-        x: 858
+        x: 796
         y: 0
-        width: 196
-        height: 236
+        width: 182
+        height: 219
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3a7db57af5148c10800000000000000
-      internalID: 2054791495449147965
+      spriteID: 07d6cd9cd51486c10800000000000000
+      internalID: 2046957901714320752
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sola_idle (2)_3
+      name: sola_idle_388_291 (1)_3
       rect:
         serializedVersion: 2
-        x: 1246
+        x: 1156
         y: 0
-        width: 195
-        height: 237
+        width: 182
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,8 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 371b5fd9324eef9b0800000000000000
-      internalID: -5044343690983263885
+      spriteID: c509e4af0bfadec20800000000000000
+      internalID: 3237436881797812316
       vertices: []
       indices: 
       edges: []
@@ -201,7 +201,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0f72e48b375d8ce41917ec7f10ae27bb
+    spriteID: 3f1e1d456951f1f4585dd6fc887e5151
     internalID: 0
     vertices: []
     indices: 

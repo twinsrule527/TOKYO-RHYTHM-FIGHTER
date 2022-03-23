@@ -47,9 +47,9 @@ MonoBehaviour:
   loops: 1
   startAnimation: 1
   animationName: PlayerIdle
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 7554666834438711988, guid: 0bae8102314e7a642b51f834926338da, type: 3}
   Sprites:
-  - {fileID: 4463307110657780765, guid: 6b48eff0a8db3784e8381856afdea1ad, type: 3}
-  - {fileID: -5701200184375791423, guid: 6b48eff0a8db3784e8381856afdea1ad, type: 3}
-  - {fileID: 2054791495449147965, guid: 6b48eff0a8db3784e8381856afdea1ad, type: 3}
-  - {fileID: -5044343690983263885, guid: 6b48eff0a8db3784e8381856afdea1ad, type: 3}
+  - {fileID: 1307935492094069122, guid: 0475a92bee260d24595ee78c2e18359f, type: 3}
+  - {fileID: -8710128474714534381, guid: 0475a92bee260d24595ee78c2e18359f, type: 3}
+  - {fileID: 2046957901714320752, guid: 0475a92bee260d24595ee78c2e18359f, type: 3}
+  - {fileID: 3237436881797812316, guid: 0475a92bee260d24595ee78c2e18359f, type: 3}

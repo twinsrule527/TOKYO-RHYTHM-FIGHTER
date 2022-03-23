@@ -8,5 +8,6 @@ public class ParryAction : PlayerAction
     {
         base.Success();
         //Play the Parry Animation
+        Global.Player.spriteController.Parry();
     }
 }

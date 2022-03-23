@@ -49,8 +49,8 @@ MonoBehaviour:
   animationName: PlayerHurt
   spriteRenderer: {fileID: 0}
   Sprites:
-  - {fileID: 1794831845764508488, guid: 5b0b6d7d6e1c7714f84c7dbb0b4d91e7, type: 3}
-  - {fileID: 750371857431247752, guid: 5b0b6d7d6e1c7714f84c7dbb0b4d91e7, type: 3}
-  - {fileID: 1794831845764508488, guid: 5b0b6d7d6e1c7714f84c7dbb0b4d91e7, type: 3}
-  - {fileID: 750371857431247752, guid: 5b0b6d7d6e1c7714f84c7dbb0b4d91e7, type: 3}
-  - {fileID: 4463307110657780765, guid: 6b48eff0a8db3784e8381856afdea1ad, type: 3}
+  - {fileID: -6586208022798464863, guid: 31a6fda7ab7448c4dbd5ab0645ec892e, type: 3}
+  - {fileID: -3829035972999975890, guid: 31a6fda7ab7448c4dbd5ab0645ec892e, type: 3}
+  - {fileID: -6586208022798464863, guid: 31a6fda7ab7448c4dbd5ab0645ec892e, type: 3}
+  - {fileID: -3829035972999975890, guid: 31a6fda7ab7448c4dbd5ab0645ec892e, type: 3}
+  - {fileID: -3829035972999975890, guid: 31a6fda7ab7448c4dbd5ab0645ec892e, type: 3}
