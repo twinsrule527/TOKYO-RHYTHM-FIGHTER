@@ -54,7 +54,8 @@ public class BeatController : MonoBehaviour
     //easy to know and set. human-readable, will be used to do some conversion 
     public static double BPM { get; private set; }
 
-    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioSource _audioSource;
+    public static AudioSource audioSource; //TODO temp weird thing lol 
     [SerializeField] GameObject songDataHolder;
     List<SongData> songDataList = new List<SongData>();
     [SerializeField] SongData songToPlay;
@@ -86,17 +87,15 @@ public class BeatController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        audioSource = _audioSource;
+
         //populate the list of songs with refs to their data 
         songDataHolder.GetComponentsInChildren<SongData>(songDataList);
 
         if(songDataList.Count <= 0) {
             Debug.Log("ERROR: no song data found by the BeatController! (Is an object with SongData components provided?)");
         }
-
-
-        //TODO the song should be started by something else.
-        //for now just starts at startup 
-        StartSong(songToPlay);
 
     }
 
@@ -113,17 +112,24 @@ public class BeatController : MonoBehaviour
 
     //call when we start the song. 
     //records the time, sets BPM/info, ect 
-    public void StartSong(SongData songData) {
+    public static void StartSong(SongData songData) {
     
+        //set up BPM 
         BPM = songData.BPM;
         secPerBeat = 60 / BPM;
 
         //set the audio source audio clip to this song 
         audioSource.clip = songData.songAudioClip;
 
-        //kick off tracker with current time 
+        //set a start time just in case other stuff needs it 
         songStartTime = AudioSettings.dspTime + songData.mp3Delay + songData.songDelay;
+        //set off all stuff related to the song playing- lag spike here 
+        GameManager.SongStarted(songData);
+
         audioSource.Play();
+        //kick off tracker with current time after lag spike
+        songStartTime = AudioSettings.dspTime + songData.mp3Delay + songData.songDelay;
+
     }
 
     // Update is called once per frame
