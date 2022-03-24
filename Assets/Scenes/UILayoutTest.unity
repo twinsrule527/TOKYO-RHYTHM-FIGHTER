@@ -657,6 +657,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossA
       objectReference: {fileID: 0}
+    - target: {fileID: 7374144326298839354, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8019882508769279564, guid: 6d71e22db415fcf4696eefe53501f807, type: 3}
     - target: {fileID: 7374144326298839357, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1163,7 +1167,7 @@ PrefabInstance:
     - target: {fileID: 8734817730455187976, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: Sprites.Array.data[0]
       value: 
-      objectReference: {fileID: -2090542714555317724, guid: 58bc99976f9b4774eb04a405b6d5f65c, type: 3}
+      objectReference: {fileID: 1307935492094069122, guid: 0475a92bee260d24595ee78c2e18359f, type: 3}
     - target: {fileID: 8734817730455187976, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: Sprites.Array.data[1]
       value: 
