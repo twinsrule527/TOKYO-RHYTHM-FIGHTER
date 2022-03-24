@@ -43,9 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12c0b1b4475024f49b0164d1c0472d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayFraction: 0
+  delayFraction: 1
   loops: 0
   startAnimation: 0
   animationName: 3 length attack
   spriteRenderer: {fileID: 0}
-  Sprites: []
+  Sprites:
+  - {fileID: 3138478409094064639, guid: b6de4ed1e56206f46890c1f57d6065f3, type: 3}
+  - {fileID: -4067605783768547865, guid: b6de4ed1e56206f46890c1f57d6065f3, type: 3}
+  - {fileID: -4067605783768547865, guid: b6de4ed1e56206f46890c1f57d6065f3, type: 3}
