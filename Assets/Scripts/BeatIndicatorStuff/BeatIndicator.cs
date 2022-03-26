@@ -51,7 +51,7 @@ public class BeatIndicator : MonoBehaviour
         StartCoroutine(PastCenterCoroutine());
     }
 
-    public IEnumerator PastCenterCoroutine() {
+    protected virtual IEnumerator PastCenterCoroutine() {
         float beatToStopOn = BeatController.GetBeat() + fadeOutTime;
         Debug.Log(beatToStopOn + " insideDisappear");
         //Color originalColor = new Color(mySprite.color.r, mySprite.color.g, mySprite.color.b);
@@ -74,15 +74,18 @@ public class BeatIndicator : MonoBehaviour
     //make it disappear like it's been hit- like if the player parries this boss indicator
     //TODO use this for the player hitting their own notes, or some other thing tied to the center?
         //might use this to show how on or off beat they are w/ location of effect.
-    public virtual void Pop() {
+    public void Pop() {
         //TODO
         //stop moving 
         //start a coroutine for whatever visual effect 
         //at the end of the coroutine, disable the indicator 
     }
 
-    IEnumerator PopCoroutine() {
-        //TODO: visual effect, disable it at the end 
+    protected virtual IEnumerator PopCoroutine() {
+        //TODO:
+        //stop moving 
+        //visual effect
+        //disable it at the end 
         yield return null;
         enabled = false;
         mySprite.enabled = false;
