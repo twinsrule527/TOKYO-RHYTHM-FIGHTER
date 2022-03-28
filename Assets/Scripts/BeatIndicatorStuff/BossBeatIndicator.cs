@@ -21,9 +21,10 @@ public class BossBeatIndicator : BeatIndicator
     public override void PastCenter() {
         bossHitsPlayerEffect.enabled = true;
         moving = false;
-        //TODO wait a slight amount of time before disappearing 
+        //TODO wait a slight amount of time before disappearing. might override PastCenterCoroutine instead
         enabled = false;
         mySprite.enabled = false;
+        bossHitsPlayerEffect.enabled = false;
     }
     
 }
