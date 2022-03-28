@@ -36,6 +36,10 @@ public class BeatIndicatorBrain : MonoBehaviour
     //Information that the BeatIndicatorBrain needs to give to a beat indicator:
         //How long (in beat-form) from now does that note actually occur
         //what type of beat it is
+
+
+    [SerializeField] BossHitsPlayerScript _BossHitsPlayerEffect;
+    public static BossHitsPlayerScript BossHitsPlayerEffect;
    
     void Awake() {
         Global.BeatIndicatorBrain = this;
@@ -47,6 +51,9 @@ public class BeatIndicatorBrain : MonoBehaviour
         BossIndicatorEndPos = endPosTransform.position + Vector3.back;
         PlayerIndicatorStartPos = startPosPlayerTransform.position;
         PlayerIndicatorEndPos = endPosTransform.position + Vector3.back;
+
+        BossHitsPlayerEffect = _BossHitsPlayerEffect;
+        
         enabled = false;
     }
     public void SongStarted() {

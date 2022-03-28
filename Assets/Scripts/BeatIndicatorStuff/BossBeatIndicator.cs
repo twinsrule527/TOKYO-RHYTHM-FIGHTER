@@ -5,11 +5,12 @@ using UnityEngine;
 public class BossBeatIndicator : BeatIndicator
 {
 
-    //[SerializeField] 
+    BossHitsPlayerScript bossHitsPlayerEffect;
     
     void Awake() {
         startPos = BeatIndicatorBrain.BossIndicatorStartPos;
         endPos = BeatIndicatorBrain.BossIndicatorEndPos;
+        bossHitsPlayerEffect = BeatIndicatorBrain.BossHitsPlayerEffect;
     }
 
     public override void SetIndicatorStart(beatIndicatorInfo info) {
@@ -18,7 +19,9 @@ public class BossBeatIndicator : BeatIndicator
     }
 
     public override void PastCenter() {
+        bossHitsPlayerEffect.enabled = true;
         moving = false;
+        //TODO wait a slight amount of time before disappearing 
         enabled = false;
         mySprite.enabled = false;
     }
