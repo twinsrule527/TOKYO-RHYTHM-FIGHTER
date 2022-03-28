@@ -53,10 +53,9 @@ public class BeatIndicator : MonoBehaviour
 
     protected virtual IEnumerator PastCenterCoroutine() {
         float beatToStopOn = BeatController.GetBeat() + fadeOutTime;
-        Debug.Log(beatToStopOn + " insideDisappear");
+        //Debug.Log(beatToStopOn + " insideDisappear");
         //Color originalColor = new Color(mySprite.color.r, mySprite.color.g, mySprite.color.b);
         while(BeatController.GetBeat() < beatToStopOn) {
-            Debug.Log(BeatController.GetBeat());
             transform.position = endPos + (distPerBeat * (BeatController.GetBeat() - beatToHit));
 
             //fade out

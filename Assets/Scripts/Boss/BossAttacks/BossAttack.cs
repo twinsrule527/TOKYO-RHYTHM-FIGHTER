@@ -27,7 +27,9 @@ public struct InterruptInput {
         //A CheckAttackSuccess Coroutine which checks to see if the attack hits after the beat leeway time passes
 public abstract class BossAttack : MonoBehaviour
 {
-
+    void Awake() {
+        myAnimationController.spriteRenderer = GetComponentInParent<SpriteRenderer>();
+    }
     public abstract IEnumerator Attack();
 
     public abstract void Interrupt(PlayerAction action);
