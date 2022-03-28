@@ -277,8 +277,6 @@ public class BeatController : MonoBehaviour
         float distFromBeat = GetDistanceFromBeat(fraction, beat);
         float distFromBeatAbs = GetAbsDistanceFromBeat(fraction, beat);
 
-        Debug.Log(distFromBeat);
-
         if(distFromBeat < fraction / 2) {
             //if after
             foreach(Accuracy a in accuraciesToCheck) {

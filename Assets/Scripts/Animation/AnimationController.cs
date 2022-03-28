@@ -29,7 +29,7 @@ public class AnimationController : MonoBehaviour
         //for just making the animationController go ahead and begin its own animation
         if (startAnimation) 
         {
-            spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+            //spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
             PlayAnimation();
         }
     }
