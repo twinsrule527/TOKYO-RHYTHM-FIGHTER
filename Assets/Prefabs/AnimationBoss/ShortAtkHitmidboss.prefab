@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4472352764262151365
+--- !u!1 &4487045624410171946
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5788247593526227579}
-  - component: {fileID: 7532928071224024579}
+  - component: {fileID: 5962308255514055171}
+  - component: {fileID: 4740926163840099864}
   m_Layer: 0
-  m_Name: MISSplayer
+  m_Name: ShortAtkHitmidboss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5788247593526227579
+--- !u!4 &5962308255514055171
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4472352764262151365}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 4487045624410171946}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.2848558, y: -0.31986335, z: 0.27247265}
+  m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7532928071224024579
+--- !u!114 &4740926163840099864
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4472352764262151365}
+  m_GameObject: {fileID: 4487045624410171946}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6966d96fe74fa4043ac653ec3efeec20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animDuration: 0.75
-  lerpDistance: {x: 0, y: 0, z: 0}
-  initialLerpTime: 0.25
+  animDuration: 0.35
+  lerpDistance: {x: -0.25, y: 0, z: 0}
+  initialLerpTime: 0.1
   snapbackLerpTime: 0
   AnimSwitchTo: {fileID: 0}
-  spriteSwitchTo: {fileID: 2046957901714320752, guid: 0475a92bee260d24595ee78c2e18359f, type: 3}
-  AnimSprite: {fileID: -2573705465220065108, guid: ea131a6ba7d4711459c8cc0c68f02fcc, type: 3}
+  spriteSwitchTo: {fileID: -4711218983162176914, guid: 6d71e22db415fcf4696eefe53501f807, type: 3}
+  AnimSprite: {fileID: -4067605783768547865, guid: b6de4ed1e56206f46890c1f57d6065f3, type: 3}
   spriteRenderer: {fileID: 0}
   playOnAwake: 0

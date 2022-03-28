@@ -4,149 +4,81 @@ using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
-    //The only way to streamline is to keep each animation within 5 frames. 
-    //This code assumes us to make every animation 5 frames (with just different speeds)
-
-
-    //Delay is the time played in between frames of animation. THIS IS THE FLOAT FRACTION
-    //delayFraction should be like the beat which each animation frame plays on, like every 0.5 beat (It should hit by frame 3); we can change this later accordingly
-    public float delayFraction;
-    private float AnimationEnd;
-    public bool loops;
-
-    public bool startAnimation;
-
-    public string animationName; 
+    
+    [SerializeField] private float animDuration = 0.75f;//How long the animation lasts (total time)    
+    [SerializeField] private Vector3 lerpDistance;//the distance the animation bounces the object from their base pos
+    [SerializeField] private float initialLerpTime = 0.25f;
+    [SerializeField] private float snapbackLerpTime = 0;
+    [SerializeField] private AnimationController AnimSwitchTo;//The animaton the object switches to after this one
+    [SerializeField] private Sprite spriteSwitchTo;//If the animation just switches to a single sprite
+    [SerializeField] private Sprite AnimSprite;
 
     public SpriteRenderer spriteRenderer;
-    public List<Sprite> Sprites;
+    private Transform spriteTransform;
+    private SpriteController spriteParent;//The parent to this spritecontroller
+    [SerializeField] private bool playOnAwake;
 
     
 
 
     private void Awake()
     {
-        //for just making the animationController go ahead and begin its own animation
-        if (startAnimation) 
-        {
-            //spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-            PlayAnimation();
-        }
+        spriteParent = GetComponentInParent<SpriteController>();
+        spriteTransform = spriteRenderer.transform;
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        //Sprites = new List<Sprite>();
-        //Pass renderer here
-        //hard drag it in
-        //At runtime get component in parent
-        //spriteRenderer = gameObject.transform.parent.GetComponentInParent<SpriteRenderer>();
-
-        //gameObject.GetComponentInParent<SpriteRenderer>();
-        //gameObject.transform.parent.GetComponentInParent<SpriteRenderer>();
-
-
-        SetFrame(0);
-        AnimationEnd = delayFraction * Sprites.Count;
+        
 
         
 
 
     }
 
-    // Update is called once per frame
     void Update()
     {
-
     }
 
-
-    //no sync, plays from 0 frame. 
-    public void PlayAnimation()
-    {
-        StartCoroutine(PlayFromFrame(0));
-        SetFrame(0);
+    public void PlayAnimation() {
+        if(spriteParent.currentCoroutine != null) {
+            StopCoroutine(spriteParent.currentCoroutine);
+        }
+        spriteTransform.position = spriteParent.basePosition;
+        spriteParent.currentCoroutine = RunAnimation();
+        StartCoroutine(spriteParent.currentCoroutine);
     }
-
-
-    //Whole note for heavy attack, half note attack for medium attack, quarter note attack
-    //could start quarter note attack 
-    //Change when the attack finishes
-
-    //MAKE THE ATTACKS END on the beat
-    public void PlayAnimationOnBeat(float beatFraction)
-    {
-        //Okay this is how long the attack, where I am, this is how long I will need to play for. 
-        if(beatFraction == 0)
-        {
-            PlayAnimation();
-            return;
+    public IEnumerator RunAnimation() {
+        //Gets the sprite's position, as well as the current beat
+        float animStartTime = BeatController.GetBeat();
+        Vector3 animStartPos = spriteTransform.position;
+        //Switches the sprite's sprite
+        spriteRenderer.sprite = AnimSprite;
+        float curTime = BeatController.GetBeat();
+        while(curTime < animStartTime + initialLerpTime) {
+            spriteTransform.position = Vector3.Lerp(animStartPos, animStartPos + lerpDistance, (curTime - animStartTime) / initialLerpTime);
+            curTime = BeatController.GetBeat();
+            yield return null;
         }
-        //If its early it should be a realm greater than or above the designated half beat
-        //Inputting fractions, 
-
-        float distFromBeat = BeatController.GetDistanceFromBeat(beatFraction);
-        //modeled after the BeatController checks for early or lateness
-
-        if (distFromBeat >= beatFraction/2)
-        {
-            //If we are early and off beat
-            StartCoroutine(BeatController.WaitForBeat(beatFraction));
-            PlayAnimation();
-
+        spriteTransform.position = animStartPos + lerpDistance;
+        //Get when the animation should pop back
+        float lerpBackStartTime = animStartTime + animDuration - snapbackLerpTime;
+        //Animation waits until it pops back
+        yield return StartCoroutine(BeatController.WaitForBeat(lerpBackStartTime));
+        curTime = BeatController.GetBeat();
+        while(curTime < animStartTime + animDuration) {
+            spriteTransform.position = Vector3.Lerp(animStartPos + lerpDistance, animStartPos, (curTime - lerpBackStartTime) / snapbackLerpTime);
+            curTime = BeatController.GetBeat();
+            yield return null;
         }
-        else if (distFromBeat < beatFraction/2)
-        {
-            //if we are late
-            SetFrame(Sprites.IndexOf(spriteRenderer.sprite));
-
-            //calculate frames to cut out
-            int framesToCut = 0;
-
-            //cuts out frames based on how many delayFractions(distance between each frame) would have fit within the abs distance from beat
-            framesToCut = (int)(distFromBeat/delayFraction);
-
-            PlayFromFrame(framesToCut);
+        spriteTransform.position = animStartPos;
+        if(AnimSwitchTo != null) {
+            AnimSwitchTo.PlayAnimation();
         }
-        else
-        {
-            PlayAnimation();
+        else if(spriteSwitchTo != null) {
+            spriteRenderer.sprite = spriteSwitchTo;
         }
-
-
-
-
-
-
-    }
-
-    //Plays animation from frame and checks if it should loop. 
-    private IEnumerator PlayFromFrame(int frame)
-    {
-
-        for (int i = frame; i < Sprites.Count; i++)
-        {
-            spriteRenderer.sprite = Sprites[i];
-            //StartCoroutine(BeatController.WaitForBeat(1.0f));
-            yield return StartCoroutine(BeatController.WaitForBeat(delayFraction));
-            ;
-
-            if (loops == true)
-            {
-                if (i == Sprites.Count - 1)
-                {
-                    i = frame;
-                }
-            }
-        }
-
-        SetFrame(0);
-    }
-
-    private void SetFrame(int frame)
-    {
-        spriteRenderer.sprite = Sprites[frame];
     }
 }

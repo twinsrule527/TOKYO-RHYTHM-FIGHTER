@@ -21,11 +21,13 @@ public class PlayerSpriteController : SpriteController
 
     private void Awake()
     {
-        attack.spriteRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
-        messUp.spriteRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
-        hurt.spriteRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
-        idle.spriteRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
-        parry.spriteRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
+        SpriteRenderer Srenderer = GetComponentInParent<SpriteRenderer>();
+        basePosition = Srenderer.transform.position;
+        attack.spriteRenderer = Srenderer;
+        messUp.spriteRenderer = Srenderer;
+        hurt.spriteRenderer = Srenderer;
+        idle.spriteRenderer = Srenderer;
+        parry.spriteRenderer = Srenderer;
 
 
     }
@@ -58,15 +60,15 @@ public class PlayerSpriteController : SpriteController
     //Attack is usually played as animation on beat
     public void Attack(float beatFraction)
     {
-        attack.spriteRenderer.sprite = attack.Sprites[0];
-        attack.PlayAnimationOnBeat(beatFraction);
+        //attack.spriteRenderer.sprite = attack.Sprites[0];
+        attack.PlayAnimation();
     }
 
 
     //Mess Up plays from 0 bc it should play immediately when players mess up. 
     public void MessUp()
     {
-        messUp.spriteRenderer.sprite = messUp.Sprites[0];
+        //messUp.spriteRenderer.sprite = messUp.Sprites[0];
         messUp.PlayAnimation();
     }
 
@@ -74,19 +76,19 @@ public class PlayerSpriteController : SpriteController
     //Might replace with a block/Parry
     public void Hurt()
     {
-        hurt.spriteRenderer.sprite = hurt.Sprites[0];
+        //hurt.spriteRenderer.sprite = hurt.Sprites[0];
         hurt.PlayAnimation();
     }
 
     public void Idle()
     {
-        idle.spriteRenderer.sprite = idle.Sprites[0];
+        //idle.spriteRenderer.sprite = idle.Sprites[0];
         idle.PlayAnimation();
     }
 
     public void Parry()
     {
-        parry.spriteRenderer.sprite = parry.Sprites[0];
+        //parry.spriteRenderer.sprite = parry.Sprites[0];
         parry.PlayAnimation();
     }
 
@@ -107,4 +109,7 @@ public class PlayerSpriteController : SpriteController
         }
 
     }
+
+
 }
+
