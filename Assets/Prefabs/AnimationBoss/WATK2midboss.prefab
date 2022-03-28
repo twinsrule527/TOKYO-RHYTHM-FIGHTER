@@ -43,9 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12c0b1b4475024f49b0164d1c0472d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayFraction: 0
+  delayFraction: 0.5
   loops: 0
   startAnimation: 0
   animationName: Wait Attack 2
   spriteRenderer: {fileID: 0}
-  Sprites: []
+  Sprites:
+  - {fileID: -6178259389156198044, guid: 72b6512283ef44848abe12c04a328efc, type: 3}
+  - {fileID: 2353781617300473497, guid: 72b6512283ef44848abe12c04a328efc, type: 3}
+  - {fileID: -6178259389156198044, guid: 72b6512283ef44848abe12c04a328efc, type: 3}
+  - {fileID: -6178259389156198044, guid: 72b6512283ef44848abe12c04a328efc, type: 3}

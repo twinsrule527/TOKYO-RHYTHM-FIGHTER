@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 6d71e22db415fcf4696eefe53501f807
+guid: 72b6512283ef44848abe12c04a328efc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8019882508769279564
-    second: midboss_idle (1)_0
+      213: -6178259389156198044
+    second: midboss_atk (1)_0
   - first:
-      213: 7702388302835967444
-    second: midboss_idle (1)_1
+      213: 2353781617300473497
+    second: midboss_atk (1)_1
   - first:
-      213: -4711218983162176914
-    second: midboss_idle (1)_2
+      213: -4465085675572567155
+    second: midboss_atk (1)_2
   - first:
-      213: -4450681984383573566
-    second: midboss_idle (1)_3
+      213: -5665240910320100620
+    second: midboss_atk (1)_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,7 +115,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: midboss_idle (1)_0
+      name: midboss_atk (1)_0
       rect:
         serializedVersion: 2
         x: 123
@@ -129,19 +129,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4ebf8b86a85c4f60800000000000000
-      internalID: 8019882508769279564
+      spriteID: 4697f13c1d9624aa0800000000000000
+      internalID: -6178259389156198044
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: midboss_idle (1)_1
+      name: midboss_atk (1)_1
       rect:
         serializedVersion: 2
         x: 511
         y: 0
-        width: 209
+        width: 187
         height: 226
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d569a83a5164ea60800000000000000
-      internalID: 7702388302835967444
+      spriteID: 9960a0af8ef4aa020800000000000000
+      internalID: 2353781617300473497
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: midboss_idle (1)_2
+      name: midboss_atk (1)_2
       rect:
         serializedVersion: 2
         x: 898
         y: 0
         width: 188
-        height: 223
+        height: 219
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6a9a81cb436e9eb0800000000000000
-      internalID: -4711218983162176914
+      spriteID: d83efcf2c34d802c0800000000000000
+      internalID: -4465085675572567155
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: midboss_idle (1)_3
+      name: midboss_atk (1)_3
       rect:
         serializedVersion: 2
         x: 1286
         y: 0
         width: 187
-        height: 228
+        height: 222
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,8 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c12690e0500c32c0800000000000000
-      internalID: -4450681984383573566
+      spriteID: 4fa1c5568650161b0800000000000000
+      internalID: -5665240910320100620
       vertices: []
       indices: 
       edges: []
@@ -201,7 +201,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 4b03fe7a08e45d0489d5c9988ca6330c
+    spriteID: c780992182289244aa95d6c111ecb76a
     internalID: 0
     vertices: []
     indices: 

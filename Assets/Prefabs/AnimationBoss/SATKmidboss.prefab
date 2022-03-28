@@ -43,13 +43,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12c0b1b4475024f49b0164d1c0472d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayFraction: 1
+  delayFraction: 0.2
   loops: 0
+  startAnimation: 0
   animationName: MidbossAttack
   spriteRenderer: {fileID: 0}
   Sprites:
-  - {fileID: 21300000, guid: fac95527dc04fec40bf499a16d89cbe6, type: 3}
-  - {fileID: 21300000, guid: 9b5791b886bb5ec43a972e38643b3d61, type: 3}
-  - {fileID: 21300000, guid: 9b5791b886bb5ec43a972e38643b3d61, type: 3}
-  - {fileID: 21300000, guid: 740e0ca8936520a498f39eb3b26ebfd4, type: 3}
-  - {fileID: 21300000, guid: 9b5791b886bb5ec43a972e38643b3d61, type: 3}
+  - {fileID: 8019882508769279564, guid: 6d71e22db415fcf4696eefe53501f807, type: 3}
+  - {fileID: 3138478409094064639, guid: b6de4ed1e56206f46890c1f57d6065f3, type: 3}
+  - {fileID: 3138478409094064639, guid: b6de4ed1e56206f46890c1f57d6065f3, type: 3}
+  - {fileID: -4067605783768547865, guid: b6de4ed1e56206f46890c1f57d6065f3, type: 3}
+  - {fileID: 4978015359022864965, guid: b6de4ed1e56206f46890c1f57d6065f3, type: 3}
