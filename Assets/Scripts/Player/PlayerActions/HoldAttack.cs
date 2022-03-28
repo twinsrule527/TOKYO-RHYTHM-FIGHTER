@@ -37,7 +37,7 @@ public class HoldAttack : PlayerAction
     }
     */
 //Override succcess function if you need to override the function from the original script
-//disable BaseAction when testing holdAttack?: Set to seperate key commands for test (C)
+//disable BaseAction when testing holdAttack?: Set to seperate key input for test (C)
 //do i need to override the checkInput or just need to reference it?: override checkInput to change input conditions
 
     protected override void Success()
