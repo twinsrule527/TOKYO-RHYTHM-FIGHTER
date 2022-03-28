@@ -35,7 +35,7 @@ public class BaseAction : PlayerAction
 
     }
     */
-
+//Override succcess function if you need to override the function from the original script
     protected override void Success()
     {
         base.Success();
