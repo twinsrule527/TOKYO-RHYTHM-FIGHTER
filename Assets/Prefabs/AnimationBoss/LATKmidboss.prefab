@@ -45,11 +45,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayFraction: 1
   loops: 0
+  startAnimation: 0
   animationName: LongMidbossAttack
   spriteRenderer: {fileID: 0}
   Sprites:
-  - {fileID: 21300000, guid: fac95527dc04fec40bf499a16d89cbe6, type: 3}
-  - {fileID: 21300000, guid: 9b5791b886bb5ec43a972e38643b3d61, type: 3}
-  - {fileID: 21300000, guid: 9b5791b886bb5ec43a972e38643b3d61, type: 3}
-  - {fileID: 21300000, guid: 740e0ca8936520a498f39eb3b26ebfd4, type: 3}
-  - {fileID: 21300000, guid: 9b5791b886bb5ec43a972e38643b3d61, type: 3}
+  - {fileID: 8019882508769279564, guid: 6d71e22db415fcf4696eefe53501f807, type: 3}
+  - {fileID: -6178259389156198044, guid: 72b6512283ef44848abe12c04a328efc, type: 3}
+  - {fileID: -4067605783768547865, guid: b6de4ed1e56206f46890c1f57d6065f3, type: 3}
+  - {fileID: -4067605783768547865, guid: b6de4ed1e56206f46890c1f57d6065f3, type: 3}
+  - {fileID: 4978015359022864965, guid: b6de4ed1e56206f46890c1f57d6065f3, type: 3}
