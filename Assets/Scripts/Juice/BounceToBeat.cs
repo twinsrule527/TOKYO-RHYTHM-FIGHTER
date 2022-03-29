@@ -7,7 +7,9 @@ public class BounceToBeat : MonoBehaviour
     //scale something's transform so it bounces to the beat!
     //TIP: utilize SQUASH AND STRETCH! 
 
-    public float beatFrac = 1f;
+    [SerializeField] bool valuesAreDifferences = false;
+    public float beatFraction = 1f;
+
     public float xScaleMax = 1;
     public float xScaleMin = 1;
     public float yScaleMax = 1;
@@ -15,16 +17,36 @@ public class BounceToBeat : MonoBehaviour
     public float zScaleMin = 1;
     public float zScaleMax = 1;
 
+    float xdiff, ydiff, zdiff;
+
+    void Start() {
+        xdiff = xScaleMax - xScaleMin;
+        ydiff = yScaleMax - yScaleMin;
+        zdiff = zScaleMax - zScaleMin;
+
+        if(valuesAreDifferences) {
+            xScaleMax = transform.localScale.x + xScaleMax;
+            xScaleMin = transform.localScale.x + xScaleMin;
+            yScaleMax = transform.localScale.y + yScaleMax;
+            yScaleMin = transform.localScale.y + yScaleMin;
+            zScaleMax = transform.localScale.z + zScaleMax;
+            zScaleMin = transform.localScale.z + zScaleMin;
+        }
+    }
 
     // Update is called once per frame
     void Update()
     {
-        //bounce 2 the music 
-        //scale according to BeatController.nearToBeat
-        float vx = xScaleMin + ((xScaleMax - xScaleMin) * func(BeatController.GetDistanceFromBeat(beatFrac)));
-        float vy = yScaleMin + ((yScaleMax - yScaleMin) * func(BeatController.GetDistanceFromBeat(beatFrac)));
-        float vz = zScaleMin + ((zScaleMax - zScaleMin) * func(BeatController.GetDistanceFromBeat(beatFrac)));
-        transform.localScale = new Vector3(vx, vy, vz);
+        if(BeatController.isPlaying) {
+            //bounce 2 the music 
+            //scale according to BeatController.nearToBeat
+            float val = func(BeatController.GetDistanceFromBeat(beatFraction));
+            float vx = xScaleMin + (xdiff * val);
+            float vy = yScaleMin + (ydiff * val);
+            float vz = zScaleMin + (zdiff * val);
+            transform.localScale = new Vector3(vx, vy, vz);
+        }
+        
     }
 
     //|sin(x/2*pi)|
