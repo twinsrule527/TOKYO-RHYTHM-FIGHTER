@@ -267,7 +267,7 @@ MonoBehaviour:
   comboCounter: 0
   CurrentAction: {fileID: 4472115705231886289}
   currActionEndBeat: 0
-  playerStartHealth: 50
+  _playerStartHealth: 50
 --- !u!212 &7554666834438711988
 SpriteRenderer:
   m_ObjectHideFlags: 0

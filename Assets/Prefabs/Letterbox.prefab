@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3536864791719764910}
   - component: {fileID: 2274374658124358746}
-  - component: {fileID: 7935833226098494117}
   - component: {fileID: 3469992310037502051}
   m_Layer: 0
   m_Name: LetterboxSprite
@@ -84,30 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7935833226098494117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4946160822435898168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84cabc00fe53bc446b8adcbf43c8e51c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scaleFullX: 0
-  scaleFullY: 0
-  scaleFullZ: 0
-  scaleDeadX: 0
-  scaleDeadY: 0
-  scaleDeadZ: 0
-  transFullX: 0
-  transFullY: 0
-  transFullZ: 0
-  transDeadX: 0
-  transDeadY: 0
-  transDeadZ: 0
 --- !u!114 &3469992310037502051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +112,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5358534396593589524}
+  - component: {fileID: 4581303891649273551}
   m_Layer: 0
   m_Name: Letterbox
   m_TagString: Untagged
@@ -151,7 +127,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8349203806193679128}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.23344536, w: 0.97236997}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -159,3 +135,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4581303891649273551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8349203806193679128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84cabc00fe53bc446b8adcbf43c8e51c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transFullX: 0
+  transFullY: 0
+  transFullZ: 0
+  transDeadX: 0
+  transDeadY: 0
+  transDeadZ: 0
