@@ -11,10 +11,13 @@ public class Boss : MonoBehaviour
     public bool makeAttackThisBeat;
     public BossAttack CurrentMakingAttack;//Whichever attack is the one actually making an attack this beat (in case it ends before it has a chance to check)
         //Probably there's a better way to do this - should check w/ Jaden
+    
+    [SerializeField] HealthBar healthBar;
 
     public void ChangeBossHP(float amt) {//Function to be called by others when increasing/decreasing hp
         bossHP += amt;
         Global.UIManager.SetHealthText();
+        healthBar.ChangeHealth(amt);
         if(bossHP <= 0) {
             GameManager.PlayerWins();
         }
