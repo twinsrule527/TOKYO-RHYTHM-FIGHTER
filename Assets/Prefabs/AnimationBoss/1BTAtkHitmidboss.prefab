@@ -46,7 +46,9 @@ MonoBehaviour:
   animDuration: 0.35
   lerpDistance: {x: -0.25, y: 0, z: 0}
   initialLerpTime: 0.1
+  initialLerpCoefficient: 0.05
   snapbackLerpTime: 0
+  snapbackLerpCoefficient: 0
   AnimSwitchTo: {fileID: 0}
   spriteSwitchTo: {fileID: -4711218983162176914, guid: 6d71e22db415fcf4696eefe53501f807, type: 3}
   AnimSprite: {fileID: -4465085675572567155, guid: 72b6512283ef44848abe12c04a328efc, type: 3}

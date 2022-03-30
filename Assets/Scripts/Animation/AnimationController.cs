@@ -8,7 +8,9 @@ public class AnimationController : MonoBehaviour
     [SerializeField] private float animDuration = 0.75f;//How long the animation lasts (total time)    
     [SerializeField] private Vector3 lerpDistance;//the distance the animation bounces the object from their base pos
     [SerializeField] private float initialLerpTime = 0.25f;
+    [SerializeField] private float initialLerpCoefficient = 0.05f;
     [SerializeField] private float snapbackLerpTime = 0;
+    [SerializeField] private float snapbackLerpCoefficient = 0;
     [SerializeField] private AnimationController AnimSwitchTo;//The animaton the object switches to after this one
     [SerializeField] private Sprite spriteSwitchTo;//If the animation just switches to a single sprite
     [SerializeField] private Sprite AnimSprite;
@@ -58,7 +60,7 @@ public class AnimationController : MonoBehaviour
         spriteRenderer.sprite = AnimSprite;
         float curTime = BeatController.GetBeat();
         while(curTime < animStartTime + initialLerpTime) {
-            spriteTransform.position = Vector3.Lerp(animStartPos, animStartPos + lerpDistance, (curTime - animStartTime) / initialLerpTime);
+            spriteTransform.position = Vector3.Lerp(spriteTransform.position, animStartPos + lerpDistance, initialLerpCoefficient);
             curTime = BeatController.GetBeat();
             yield return null;
         }
@@ -69,7 +71,7 @@ public class AnimationController : MonoBehaviour
         yield return StartCoroutine(BeatController.WaitForBeat(lerpBackStartTime));
         curTime = BeatController.GetBeat();
         while(curTime < animStartTime + animDuration) {
-            spriteTransform.position = Vector3.Lerp(animStartPos + lerpDistance, animStartPos, (curTime - lerpBackStartTime) / snapbackLerpTime);
+            spriteTransform.position = Vector3.Lerp(spriteTransform.position, animStartPos, snapbackLerpCoefficient);
             curTime = BeatController.GetBeat();
             yield return null;
         }
