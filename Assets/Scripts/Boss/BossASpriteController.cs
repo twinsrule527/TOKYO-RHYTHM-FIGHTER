@@ -57,23 +57,23 @@ public class BossASpriteController : BossSpriteController
         }
         else if (ATKname == "WaitAttack1")
         {
-            LongAttack();
+            //LongAttack();
         }
         else if (ATKname == "WaitAttack2")
         {
-            LongAttack();
+            //LongAttack();
         }
         else if (ATKname == "OneBeatAttack")
         {
-            LongAttack();
+            OneBeatAttack();
         }
         else if (ATKname == "Length1Attack")
         {
-            LongAttack();
+            Length1Attack();
         }
         else if (ATKname == "Length3Attack")
         {
-            LongAttack();
+            Length3Attack();
         }
         /*else if(ATKname == "WaitAttack") {
             Hurt();
@@ -117,7 +117,7 @@ public class BossASpriteController : BossSpriteController
 
     public void Length1Attack()
     {
-        length3Attack.PlayAnimation();
+        length1Attack.PlayAnimation();
     }
     public void Length3Attack()
     {
