@@ -680,12 +680,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1502304164}
     - target: {fileID: 2767866006440598940, guid: 0bae8102314e7a642b51f834926338da, type: 3}
-      propertyPath: animDuration
-      value: 1.75
+      propertyPath: lerpCurve.m_PreInfinity
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2767866006440598940, guid: 0bae8102314e7a642b51f834926338da, type: 3}
-      propertyPath: initialLerpTime
-      value: 0.25
+      propertyPath: lerpCurve.m_Curve.Array.data[1].time
+      value: 0.99999624
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767866006440598940, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].value
+      value: 1.009433
       objectReference: {fileID: 0}
     - target: {fileID: 3795154453095853364, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: loops
