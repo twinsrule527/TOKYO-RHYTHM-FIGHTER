@@ -11,6 +11,7 @@ public class BeatIndicator : MonoBehaviour
     public bool moving;
     float fadeOutTime = 0.25f;
     public Vector3 startPos;
+    public Quaternion startRot;
     public Vector3 endPos;
 
     Vector3 distPerBeat;
@@ -41,7 +42,7 @@ public class BeatIndicator : MonoBehaviour
         startBeat = beatToHit - BeatIndicatorBrain.beatsInAdvanceShown;
         //Sets position to the starting position
         transform.position = startPos;
-
+        transform.rotation = startRot;
         distPerBeat = (endPos - startPos) / (beatToHit - startBeat);
     }
 
