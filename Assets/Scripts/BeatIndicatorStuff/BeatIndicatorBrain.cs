@@ -80,6 +80,8 @@ public class BeatIndicatorBrain : MonoBehaviour
                 if(newIndicator == null) {
                     newIndicator = Instantiate(bossIndicatorPrefab, Vector3.zero, Quaternion.identity);
                     BossIndicators.Add(newIndicator);
+                    newIndicator.transform.rotation = startPosBossTransform.rotation;
+                    newIndicator.startRot = newIndicator.transform.rotation;
                 }
                 //Now, it gives the boss beat indicator the information it needs to operate
                 newIndicator.SetIndicatorStart(BossBeats[0]);
@@ -109,6 +111,8 @@ public class BeatIndicatorBrain : MonoBehaviour
                 if(newIndicator == null) {
                     newIndicator = Instantiate(playerIndicatorPrefab, Vector3.zero, Quaternion.identity);
                     PlayerIndicators.Add(newIndicator);
+                    newIndicator.transform.rotation = startPosPlayerTransform.rotation;
+                    newIndicator.startRot = newIndicator.transform.rotation;
                 }
                 //Now, it gives the boss beat indicator the information it needs to operate
                 newIndicator.SetIndicatorStart(PlayerBeats[0]);
