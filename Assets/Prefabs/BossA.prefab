@@ -95,7 +95,7 @@ MonoBehaviour:
   length: 2
   attackIndicatorSprite: {fileID: 0}
   myAnimationController: {fileID: 6338650603145882749}
-  atkName: WaitAttack
+  atkName: WaitAttack2
   beatToWait: 2
 --- !u!1 &7374144325323111436
 GameObject:
@@ -192,7 +192,7 @@ MonoBehaviour:
   length: 1
   attackIndicatorSprite: {fileID: 0}
   myAnimationController: {fileID: 8178247261502864739}
-  atkName: WaitAttack
+  atkName: WaitAttack1
   beatToWait: 1
 --- !u!1 &7374144326084580891
 GameObject:
@@ -417,7 +417,7 @@ MonoBehaviour:
   length: 3
   attackIndicatorSprite: {fileID: 21300000, guid: cb6dda2c0410b074c86d40e7d679b57d, type: 3}
   myAnimationController: {fileID: 2403645037667687425}
-  atkName: ThreeBeatAttack
+  atkName: Length3Attack
   mySprite: {fileID: 0}
   damageToDeal: 7
 --- !u!1001 &8220599868352148573
