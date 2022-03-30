@@ -30,7 +30,7 @@ public class PlayerAction : MonoBehaviour
     //what order they check in and what may or may not get checked for. 
     //Checks GetKeyDown by default, but can be overridden if other behavior wanted.
     //Should call TryAction(). 
-    public void CheckInput() {
+    public virtual void CheckInput() {
         
         if(Input.GetKeyDown(key)) {
             TryAction();
