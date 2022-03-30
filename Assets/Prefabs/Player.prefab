@@ -364,7 +364,7 @@ SpriteRenderer:
   m_Size: {x: 1.82, y: 2.19}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &6562861732006516200
@@ -446,6 +446,26 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 7554666834438711988}
+    - target: {fileID: 9041706940061026420, guid: e27ce9a720fdda84d99bd4392814a1df, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041706940061026420, guid: e27ce9a720fdda84d99bd4392814a1df, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041706940061026420, guid: e27ce9a720fdda84d99bd4392814a1df, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041706940061026420, guid: e27ce9a720fdda84d99bd4392814a1df, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041706940061026420, guid: e27ce9a720fdda84d99bd4392814a1df, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9162389738005459901, guid: e27ce9a720fdda84d99bd4392814a1df, type: 3}
       propertyPath: spriteRenderer
       value: 
