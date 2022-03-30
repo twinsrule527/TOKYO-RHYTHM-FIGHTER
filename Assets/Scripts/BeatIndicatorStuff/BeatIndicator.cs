@@ -47,7 +47,7 @@ public class BeatIndicator : MonoBehaviour
 
     //when beat passes the center without being acted on 
     //player default indicators might fade out, boss indicators might look like they're hitting and dealing damage...
-    public void PastCenter() {
+    public virtual void PastCenter() {
         StartCoroutine(PastCenterCoroutine());
     }
 
