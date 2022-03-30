@@ -28,7 +28,7 @@ public class Shake : MonoBehaviour
     //shake anything with this thing anywhere
     public static IEnumerator ShakeTransform(Transform t, float magnitude, float time, float perlinMultiplier) {
 
-        Vector3 origPos = t.position;
+        Vector3 origPos = new Vector3(t.position.x, t.position.y, t.position.z);
 
         for(float tracker = 0; tracker < time; tracker += Time.deltaTime) {
             float thisMag = magnitude * (1 - (tracker / time)); //decreases mag over time 

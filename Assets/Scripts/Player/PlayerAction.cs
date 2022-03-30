@@ -12,7 +12,7 @@ public class PlayerAction : MonoBehaviour
     [SerializeField] protected float length = 1f;
     //what key, when pressed, makes this action happen
     //override CheckInput for other behavior that isn't a KeyCode press, this is just a useful default
-    [SerializeField] protected KeyCode key; 
+    [SerializeField] protected KeyCode key;
 
     int comboCounter;   //may be used if needed 
 

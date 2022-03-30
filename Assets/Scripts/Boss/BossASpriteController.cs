@@ -18,7 +18,7 @@ public class BossASpriteController : BossSpriteController
 
      void Awake()
     {
-        
+        basePosition = GetComponentInParent<SpriteRenderer>().transform.position;
     }
     // Start is called before the first frame update
     void Start()
@@ -86,7 +86,7 @@ public class BossASpriteController : BossSpriteController
     }
     public void ShortAttack()
     {
-        shortAttack.spriteRenderer.sprite = shortAttack.Sprites[0];
+        //shortAttack.spriteRenderer.sprite = shortAttack.Sprites[0];
         shortAttack.PlayAnimation();//Beat(beatFraction);
     }
 
@@ -94,7 +94,6 @@ public class BossASpriteController : BossSpriteController
     //Mess Up plays from 0 bc it should play immediately when players mess up. 
     public void LongAttack()
     {
-        longAttack.spriteRenderer.sprite = longAttack.Sprites[0];
         longAttack.PlayAnimation();
     }
 
@@ -102,31 +101,26 @@ public class BossASpriteController : BossSpriteController
     //Might replace with a block/Parry
     public void Hurt()
     {
-        hurt.spriteRenderer.sprite = hurt.Sprites[0];
         hurt.PlayAnimation();
     }
 
     public void WaitAttack1()
     {
-        waitAttack1.spriteRenderer.sprite = waitAttack1.Sprites[0];
         waitAttack1.PlayAnimation();
     }
 
 
     public void WaitAttack2()
     {
-        waitAttack2.spriteRenderer.sprite = waitAttack2.Sprites[0];
         waitAttack2.PlayAnimation();
     }
 
     public void Length1Attack()
     {
-        length1Attack.spriteRenderer.sprite = length1Attack.Sprites[0];
         length3Attack.PlayAnimation();
     }
     public void Length3Attack()
     {
-        length3Attack.spriteRenderer.sprite = length3Attack.Sprites[0];
         length3Attack.PlayAnimation();//Beat(beatFraction);
     }
 
@@ -134,7 +128,7 @@ public class BossASpriteController : BossSpriteController
     //Mess Up plays from 0 bc it should play immediately when players mess up. 
     public void OneBeatAttack()
     {
-        oneBeatAttack.spriteRenderer.sprite = oneBeatAttack.Sprites[0];
+        //oneBeatAttack.spriteRenderer.sprite = oneBeatAttack.Sprites[0];
         oneBeatAttack.PlayAnimation();
     }
 

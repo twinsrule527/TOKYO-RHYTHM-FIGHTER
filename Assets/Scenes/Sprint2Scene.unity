@@ -350,6 +350,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &840649311 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7374144326298839354, guid: 5616b084a679a6943949e139a843212b, type: 3}
+  m_PrefabInstance: {fileID: 1177901358}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1003621329
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,10 +502,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 816332862464312378, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 840649311}
+    - target: {fileID: 1038761121228914463, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 840649311}
     - target: {fileID: 4242145293405554476, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: attackIndicatorSprite
       value: 
       objectReference: {fileID: 21300000, guid: cb6dda2c0410b074c86d40e7d679b57d, type: 3}
+    - target: {fileID: 4502089846754818445, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 840649311}
     - target: {fileID: 7374144325323111439, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: damageToDeal
       value: 5
@@ -565,6 +582,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7808435164365564726, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 840649311}
+    - target: {fileID: 7967395259597515059, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 840649311}
+    - target: {fileID: 9156956826881162296, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 840649311}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5616b084a679a6943949e139a843212b, type: 3}
 --- !u!1 &1323163724
