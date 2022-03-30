@@ -189,7 +189,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4581303891649273551, guid: cbe59aabe4fcf134db3f288bbb85527f, type: 3}
       propertyPath: transDeadY
-      value: 8.5
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4581303891649273551, guid: cbe59aabe4fcf134db3f288bbb85527f, type: 3}
+      propertyPath: transEmptyY
+      value: -8.5
       objectReference: {fileID: 0}
     - target: {fileID: 5358534396593589524, guid: cbe59aabe4fcf134db3f288bbb85527f, type: 3}
       propertyPath: m_RootOrder
@@ -315,14 +319,6 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 1254663176}
-    - target: {fileID: 1249257266678878243, guid: 5616b084a679a6943949e139a843212b, type: 3}
-      propertyPath: attackIndicatorSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: cb6dda2c0410b074c86d40e7d679b57d, type: 3}
-    - target: {fileID: 1249257266678878243, guid: 5616b084a679a6943949e139a843212b, type: 3}
-      propertyPath: myAnimationController
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2496528148581121667, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: delayFraction
       value: 1
@@ -375,10 +371,6 @@ PrefabInstance:
       propertyPath: Sprites.Array.data[3]
       value: 
       objectReference: {fileID: 21300000, guid: fac95527dc04fec40bf499a16d89cbe6, type: 3}
-    - target: {fileID: 4242145293405554476, guid: 5616b084a679a6943949e139a843212b, type: 3}
-      propertyPath: myAnimationController
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4502089846754818445, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: delayFraction
       value: 0.5
@@ -407,26 +399,6 @@ PrefabInstance:
       propertyPath: Sprites.Array.data[3]
       value: 
       objectReference: {fileID: 21300000, guid: fac95527dc04fec40bf499a16d89cbe6, type: 3}
-    - target: {fileID: 6201973474100251465, guid: 5616b084a679a6943949e139a843212b, type: 3}
-      propertyPath: myAnimationController
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7374144325323111439, guid: 5616b084a679a6943949e139a843212b, type: 3}
-      propertyPath: myAnimationController
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7374144325704998262, guid: 5616b084a679a6943949e139a843212b, type: 3}
-      propertyPath: attackIndicatorSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: cb6dda2c0410b074c86d40e7d679b57d, type: 3}
-    - target: {fileID: 7374144325704998262, guid: 5616b084a679a6943949e139a843212b, type: 3}
-      propertyPath: myAnimationController
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7374144326084580890, guid: 5616b084a679a6943949e139a843212b, type: 3}
-      propertyPath: myAnimationController
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7374144326298839353, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: m_Name
       value: BossA
@@ -490,38 +462,6 @@ PrefabInstance:
     - target: {fileID: 7374144326298839357, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7572151231474549405, guid: 5616b084a679a6943949e139a843212b, type: 3}
-      propertyPath: hurt
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7572151231474549405, guid: 5616b084a679a6943949e139a843212b, type: 3}
-      propertyPath: longAttack
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7572151231474549405, guid: 5616b084a679a6943949e139a843212b, type: 3}
-      propertyPath: shortAttack
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7572151231474549405, guid: 5616b084a679a6943949e139a843212b, type: 3}
-      propertyPath: waitAttack1
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7572151231474549405, guid: 5616b084a679a6943949e139a843212b, type: 3}
-      propertyPath: waitAttack2
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7572151231474549405, guid: 5616b084a679a6943949e139a843212b, type: 3}
-      propertyPath: length1Attack
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7572151231474549405, guid: 5616b084a679a6943949e139a843212b, type: 3}
-      propertyPath: length3Attack
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7572151231474549405, guid: 5616b084a679a6943949e139a843212b, type: 3}
-      propertyPath: oneBeatAttack
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7808435164365564726, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: delayFraction
@@ -803,26 +743,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.21
       objectReference: {fileID: 0}
-    - target: {fileID: 5491050542424892196, guid: 0bae8102314e7a642b51f834926338da, type: 3}
-      propertyPath: hurt
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5491050542424892196, guid: 0bae8102314e7a642b51f834926338da, type: 3}
-      propertyPath: idle
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5491050542424892196, guid: 0bae8102314e7a642b51f834926338da, type: 3}
-      propertyPath: parry
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5491050542424892196, guid: 0bae8102314e7a642b51f834926338da, type: 3}
-      propertyPath: attack
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5491050542424892196, guid: 0bae8102314e7a642b51f834926338da, type: 3}
-      propertyPath: messUp
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5796356841045519873, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -963,7 +883,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4581303891649273551, guid: cbe59aabe4fcf134db3f288bbb85527f, type: 3}
       propertyPath: transDeadY
-      value: -8.5
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4581303891649273551, guid: cbe59aabe4fcf134db3f288bbb85527f, type: 3}
+      propertyPath: transEmptyY
+      value: 8.5
       objectReference: {fileID: 0}
     - target: {fileID: 5358534396593589524, guid: cbe59aabe4fcf134db3f288bbb85527f, type: 3}
       propertyPath: m_RootOrder

@@ -7,8 +7,9 @@ public class ScaleByHealthPlayer : MonoBehaviour
 
     //TODO: differences or hard values?
     //right now only transform, cause writing this for the letterbox and its scale is for bounce
-    //[SerializeField] float scaleFullX, scaleFullY, scaleDeadX, scaleDeadY;
-    [SerializeField] float transFullX, transFullY, transFullZ, transDeadX, transDeadY, transDeadZ;
+    [SerializeField] float transFullX, transFullY, transFullZ, transEmptyX, transEmptyY, transEmptyZ, transDeadX, transDeadY, transDeadZ;
+
+    Vector3 deadPos;
 
     // Start is called before the first frame update
     void Start()
@@ -17,33 +18,39 @@ public class ScaleByHealthPlayer : MonoBehaviour
         //hm. come to think of it these could have been vector3s maybe. oh well 
 
         //if empty, initialize full to starting scale 
-        /*
-        if(scaleFullX == 0)
-            scaleFullX = transform.localScale.x;
-        if(scaleFullY == 0)
-            scaleFullY = transform.localScale.y;
-        if(scaleFullZ == 0)
-            scaleFullZ = transform.localScale.z; */
-        if(transFullX == 0)
-            transFullX = transform.position.x;
-        if(transFullY == 0) 
-            transFullY = transform.position.y;
-        if(transFullZ == 0)
-            transFullZ = transform.position.z;
 
-       /* if(scaleDeadX == 0)
-            scaleDeadX = transform.localScale.x;
-        if(scaleDeadY == 0)
-            scaleDeadY = transform.localScale.y;
-        if(scaleDeadZ == 0)
-            scaleDeadZ = transform.localScale.z;*/
-        if(transDeadX == 0)
-            transDeadX = transform.position.x;
-        if(transDeadY == 0) 
-            transDeadY = transform.position.y;
-        if(transDeadZ == 0)
-            transDeadZ = transform.position.z;
-        
+        if(transFullX == 0) {
+            transFullX = transform.localPosition.x;
+        }
+        if(transFullY == 0) {
+            transFullY = transform.localPosition.y;
+        }
+        if(transFullZ == 0) {
+            transFullZ = transform.localPosition.z;
+        }
+
+        if(transEmptyX == 0) {
+            transEmptyX = transform.localPosition.x;
+        }
+        if(transEmptyY == 0) {
+            transEmptyY = transform.localPosition.y;
+        }
+        if(transEmptyZ == 0) {
+            transEmptyZ = transform.localPosition.z;
+        }
+            
+        if(transDeadX == 0) {
+            transDeadX = transform.localPosition.x;
+        }
+        if(transDeadY == 0) {
+            transDeadY = transform.localPosition.y;
+        }
+        if(transDeadZ == 0) {
+            transDeadZ = transform.localPosition.z;
+        }
+
+        deadPos = new Vector3(transDeadX, transDeadY, transDeadZ);
+            
     }
 
     // Update is called once per frame
@@ -51,14 +58,16 @@ public class ScaleByHealthPlayer : MonoBehaviour
     {
         //TODO: make this only happen when the health changes. 
         float healthPercent = Global.Player.playerHealth / Global.Player.playerStartHealth;
-        if(healthPercent == float.NaN) {
-            //if we divided by zero 
-            healthPercent = 0;
+
+        if(healthPercent < 0 || healthPercent == float.NaN) {
+            //if we divided by zero or a negative number 
+            transform.localPosition = deadPos;
+        } else {
+            float vx = Mathf.Lerp(transEmptyX, transFullX, healthPercent);
+            float vy = Mathf.Lerp(transEmptyY, transFullY, healthPercent);
+            float vz = Mathf.Lerp(transEmptyZ, transFullZ, healthPercent);
+            transform.localPosition = new Vector3(vx, vy, vz);
         }
-        float vx = Mathf.Lerp(transDeadX, transFullX, healthPercent);
-        float vy = Mathf.Lerp(transDeadY, transFullY, healthPercent);
-        float vz = Mathf.Lerp(transDeadZ, transFullZ, healthPercent);
-        transform.position = new Vector3(vx, vy, vz);
         
 
         //TODO coroutine to lerp into a new value, which can get interrupted by subsequent dmg
