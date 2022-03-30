@@ -12,7 +12,12 @@ public class AnimationController : MonoBehaviour
     [SerializeField] private float snapbackLerpTime = 0;
     [SerializeField] private float snapbackLerpCoefficient = 0;
     [SerializeField] private AnimationCurve lerpCurve;
-    [SerializeField] private AnimationController AnimSwitchTo;//The animaton the object switches to after this one
+    [SerializeField] private AnimationController _animSwitchTo;//The animaton the object switches to after this one
+    public AnimationController AnimSwitchTo {
+        get {
+            return _animSwitchTo;
+        }
+    }
     [SerializeField] private Sprite spriteSwitchTo;//If the animation just switches to a single sprite
     [SerializeField] private Sprite AnimSprite;
 
@@ -40,16 +45,20 @@ public class AnimationController : MonoBehaviour
 
 
     }
-
     void Update()
     {
+        
     }
 
     public void PlayAnimation() {
         if(spriteParent.currentCoroutine != null) {
             StopCoroutine(spriteParent.currentCoroutine);
+            //Only resets the position if the previous coroutine was interrupted prematurely
+            if(!spriteParent.currentAnimation.AnimSwitchTo == this) {
+                spriteTransform.position = spriteParent.basePosition;
+            }
         }
-        spriteTransform.position = spriteParent.basePosition;
+        spriteParent.currentAnimation = this;
         spriteParent.currentCoroutine = RunAnimation();
         StartCoroutine(spriteParent.currentCoroutine);
     }
