@@ -44,10 +44,10 @@ public class AttackReader : MonoBehaviour
             List<char> currentPattern = new List<char>();
 
             //look for patterns
-            for(int i = 0; i < line.Length; i++) {
+            for(int i = 0; i < line.Length - 1; i++) { //-1 cause dont hit ending char
 
                 int symbolIndex = Array.IndexOf(attackChars, line[i]);
-                if(symbolIndex > 0) { //if symbol exists 
+                if(symbolIndex >= 0) { //if symbol exists 
 
                     //make sure the length is correct, and move to the end of the long symbol
                     for(int j = 1; j < charRepeatNum[symbolIndex]; j++) {
@@ -77,10 +77,15 @@ public class AttackReader : MonoBehaviour
 
     //temporary for debugging
     //TODO delete later
+    /*
     void Start() {
         List<List<char>> chars = GetPatterns();
         foreach(List<char> cl in chars) {
-            Debug.Log(cl.ToString());
+            string line = "";
+            foreach(char c in cl) {
+                line = line + c;
+            }
+            Debug.Log(line);
         }
-    }
+    } */
 }
