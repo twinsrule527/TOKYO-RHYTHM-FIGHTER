@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9126627768777922809}
   - component: {fileID: 4242145293405554476}
   m_Layer: 0
-  m_Name: OneBeatAttack
+  m_Name: 1 OneBeatAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 939773572143581820}
   - component: {fileID: 1249257266678878243}
   m_Layer: 0
-  m_Name: WaitAttack2
+  m_Name: ____ WaitAttack2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 7374144325323111438}
   - component: {fileID: 7374144325323111439}
   m_Layer: 0
-  m_Name: ShortAttack
+  m_Name: SS ShortAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 7374144325704998249}
   - component: {fileID: 7374144325704998262}
   m_Layer: 0
-  m_Name: WaitAttack1
+  m_Name: '- WaitAttack1'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 7374144326084580893}
   - component: {fileID: 7374144326084580890}
   m_Layer: 0
-  m_Name: LongAttack
+  m_Name: LLLL LongAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 7374144326298839354}
   - component: {fileID: 7374144326298839355}
   - component: {fileID: 7374144326298839352}
+  - component: {fileID: 4091139673094082168}
   m_Layer: 0
   m_Name: BossA
   m_TagString: Untagged
@@ -367,10 +368,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c355a0baa75e0eb49a1f6b0168b505e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossStartingHPArray:
+  - 50
   makeAttackThisBeat: 0
   CurrentMakingAttack: {fileID: 0}
+  healthBar: {fileID: 0}
   AttackAI: {fileID: 7374144326298839355}
   spriteController: {fileID: 7572151231474549405}
+--- !u!114 &4091139673094082168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7374144326298839353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d78a6a07afd6f44697045f9e94deeae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patternsText: {fileID: 4900000, guid: 55977158abb0d564380254f74245c18a, type: 3}
 --- !u!1 &8729248318235316810
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,7 +399,7 @@ GameObject:
   - component: {fileID: 5180745747708026406}
   - component: {fileID: 6201973474100251465}
   m_Layer: 0
-  m_Name: ThreeLengthAttack
+  m_Name: 333 ThreeLengthAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

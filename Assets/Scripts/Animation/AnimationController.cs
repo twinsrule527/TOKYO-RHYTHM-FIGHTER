@@ -45,9 +45,9 @@ public class AnimationController : MonoBehaviour
 
 
     }
-
     void Update()
     {
+        
     }
 
     public void PlayAnimation() {
