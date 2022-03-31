@@ -13,10 +13,11 @@ public class AttackReader : MonoBehaviour
     //don't use spaces
 
     //the attack patterns for this boss.
-    [SerializeField] TextAsset [] patternsText;
+    //[x][y] is the yth file corresponding to the xth boss stage.
+    [SerializeField] TextAsset [][] patternsText;
 
-    // Start is called before the first frame update
-    public List<List<char>> GetPatterns()
+    //pass in the stage number (starting from 0) of attacks to get.
+    public List<List<char>> GetPatterns(int stage)
     {
         //read the object names of all the attacks children of the object.
 
@@ -39,7 +40,7 @@ public class AttackReader : MonoBehaviour
 
         //collect all lines from all files in one list 
         List<string> linesFromFile = new List<string>();
-        foreach(TextAsset txt in patternsText) {
+        foreach(TextAsset txt in patternsText[stage]) {
             string[] linesFromFileArr = txt.text.Split("\n"[0]);
             foreach(string s in linesFromFileArr) {
                 linesFromFile.Add(s);
