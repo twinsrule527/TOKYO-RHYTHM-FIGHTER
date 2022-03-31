@@ -13,7 +13,7 @@ public class AttackReader : MonoBehaviour
     //don't use spaces
 
     //the attack patterns for this boss.
-    [SerializeField] TextAsset patternsText;
+    [SerializeField] TextAsset [] patternsText;
 
     // Start is called before the first frame update
     public List<List<char>> GetPatterns()
@@ -37,9 +37,16 @@ public class AttackReader : MonoBehaviour
         //generate char lists for each attack pattern from a file.
         List<List<char>> patterns = new List<List<char>>();
 
-        //for each line in the file 
-        string[] linesFromfile = patternsText.text.Split("\n"[0]);
-        foreach (string line in linesFromfile) {
+        //collect all lines from all files in one list 
+        List<string> linesFromFile = new List<string>();
+        foreach(TextAsset txt in patternsText) {
+            string[] linesFromFileArr = txt.text.Split("\n"[0]);
+            foreach(string s in linesFromFileArr) {
+                linesFromFile.Add(s);
+            }
+        }
+        //for each line
+        foreach (string line in linesFromFile) {
 
             List<char> currentPattern = new List<char>();
 
