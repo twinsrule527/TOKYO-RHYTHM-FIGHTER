@@ -53,6 +53,7 @@ public class HoldAttack : PlayerAction
         if(isHolding){
             if(!Input.GetKey(key)){
                 isHolding = false;//DEBUG
+                //Debug.Log("isHolding = false line 55");
             }
         }
 
@@ -73,7 +74,7 @@ public class HoldAttack : PlayerAction
                 //}
 
                 Success();
-                
+                Debug.Log("Success() line 77");
                 
             }
             else {
@@ -112,6 +113,7 @@ public class HoldAttack : PlayerAction
             if(isHolding != true) {
                 //break;
                 MessupHold();
+                Debug.Log("isHolding != true line 113");
             }
             yield return null;
         }  
@@ -122,6 +124,7 @@ public class HoldAttack : PlayerAction
     //have a function that controls HoldCourotine
     void MessupHold(){//DEBUG
         StopCoroutine(currentCoroutine);
+        Debug.Log("MessupHold() line 125");
     }
 
     //order fix: Put success at the beginning, put startCourotine in success override, and put change boss hp towards the end
