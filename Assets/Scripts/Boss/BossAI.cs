@@ -14,10 +14,16 @@ public abstract class BossAI : MonoBehaviour
     
     public virtual void Start() {
         AttackQueue = new List<AttackPattern>();
-
+        CreateAttackPatterns();
     }
     public virtual void SongStarted() {
         
+    }
+    //Creates attack patterns for the boss - takes it from text files
+    public virtual void CreateAttackPatterns() {
+        List<List<char>> newAtks = GetComponent<AttackReader>().GetPatterns(0);
+        AttackCreator.CreateAttackPatterns(newAtks, this);
+        attackBag.Refill();
     }
     //Updates the Boss State after each attack pattern
     public virtual IEnumerator StateUpdate() {
