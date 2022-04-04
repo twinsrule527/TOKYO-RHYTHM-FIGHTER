@@ -31,6 +31,7 @@ Transform:
   - {fileID: 8851067507104277674}
   - {fileID: 6598295370701174149}
   - {fileID: 5371725925808906634}
+  - {fileID: 2873656863541114516}
   m_Father: {fileID: 8597708211883435789}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -80,6 +81,53 @@ MonoBehaviour:
   beatFraction: 1
   length: 1
   key: 0
+--- !u!1 &2891822075298407844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2873656863541114516}
+  - component: {fileID: 845160438165941862}
+  m_Layer: 0
+  m_Name: OneLengthBaseAction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2873656863541114516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2891822075298407844}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5448173835734764356}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &845160438165941862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2891822075298407844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27aede90d7eec954c995d17127fbf383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatFraction: 1
+  length: 1
+  key: 118
+  damage: 5
 --- !u!1 &4081028334381491184
 GameObject:
   m_ObjectHideFlags: 0

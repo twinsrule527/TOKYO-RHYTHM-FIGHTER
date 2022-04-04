@@ -27,8 +27,15 @@ public struct InterruptInput {
         //A CheckAttackSuccess Coroutine which checks to see if the attack hits after the beat leeway time passes
 public abstract class BossAttack : MonoBehaviour
 {
+    [SerializeField] private char _creatorKey;//The char used to create this from a text doc
+    public char CreatorKey {
+        get {
+            return _creatorKey;
+        }
+    }
     void Awake() {
         myAnimationController.spriteRenderer = GetComponentInParent<SpriteRenderer>();
+        _creatorKey = name[0];
     }
     public abstract IEnumerator Attack();
 
@@ -41,6 +48,7 @@ public abstract class BossAttack : MonoBehaviour
     public abstract void AddBeatToIndicator();
     public float length = 1f;//How long in beats this attack should take
     public Sprite attackIndicatorSprite;//The Sprite the beat Indicator should take when making this attack
+    public bool playsHitAnimation;
     [SerializeField] protected AnimationController myAnimationController;
     
     [SerializeField] protected string atkName;//what the boss sprite controller calls this
