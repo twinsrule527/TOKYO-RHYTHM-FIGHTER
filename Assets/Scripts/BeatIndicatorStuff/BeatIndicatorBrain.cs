@@ -138,7 +138,7 @@ public class BeatIndicatorBrain : MonoBehaviour
         }
     }
     //This adds a boss beat to the boss beat indicator
-    public void AddBossBeat(float beatLength, Sprite sprite) {
+    public void AddBossBeat(float beatLength, Sprite sprite, bool bossHitOccurs = true) {
         //Whenever adding a beat, it checks to see if it needs to add a base beat in between
         beatIndicatorInfo newInfo;
         newInfo.indicatorSprite = sprite;

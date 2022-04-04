@@ -10,6 +10,7 @@ public abstract class ActionIndicator : MonoBehaviour
        if(parentAction == null) {
            parentAction = GetComponentInParent<PlayerAction>();
        }
+       transform.position = Global.BeatIndicatorBrain.VisualEndPos.transform.position;
        gameObject.SetActive(false);
     }
 
