@@ -6,6 +6,9 @@ public class HoldAttack : PlayerAction
 
 {
     public float damage;//How much damage this attack does
+    public float baseDamage;//How much damage this attack does at the start
+
+    public float DamageGain; //how mucn damage gains per frame of hold
 
     bool isHolding = true; //check if player is holding the key
 
@@ -14,7 +17,8 @@ public class HoldAttack : PlayerAction
     // Start is called before the first frame update
     void Start()
     {
-        
+        baseDamage = damage;
+        DamageGain = 0.01f;
     }
 
     // Update is called once per frame
@@ -53,7 +57,7 @@ public class HoldAttack : PlayerAction
         if(isHolding){
             if(!Input.GetKey(key)){
                 isHolding = false;//DEBUG
-                Debug.Log("isHolding = false line 55");
+                //Debug.Log("isHolding = false line 55");
 
                 if(isHolding != true) {
                 //break;
@@ -113,11 +117,14 @@ public class HoldAttack : PlayerAction
         float startTime = BeatController.GetBeat();
         Global.Player.spriteController.Attack(1);
         isHolding = true;
-//DEBUG
-        while(t < startTime + 2 * Time.deltaTime){
-            t = BeatController.GetBeat();
+        t = BeatController.GetBeat();
 
-            Global.Boss.ChangeBossHP(-damage);
+//DEBUG
+        while(t < startTime + 2){
+            t = BeatController.GetBeat();
+            damage += DamageGain;
+
+            //Global.Boss.ChangeBossHP(-damage);
 
             /*if(isHolding != true) {
                 //break;
@@ -126,10 +133,21 @@ public class HoldAttack : PlayerAction
             }*/
             yield return null;
         }  
+        
+        /*if(t >= startTime){
+           
+            Global.Boss.ChangeBossHP(-damage);
+
+            yield return null;
+        }*/
 
     }
     //have a function that controls HoldCourotine
     void MessupHold(){//DEBUG
+        
+        Global.Boss.ChangeBossHP(-damage);
+        damage = baseDamage;
+        
         StopCoroutine(currentCoroutine);
         //Debug.Log("MessupHold() line 125");
     }
