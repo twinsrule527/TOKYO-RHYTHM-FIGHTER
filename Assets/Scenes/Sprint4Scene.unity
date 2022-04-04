@@ -307,7 +307,6 @@ GameObject:
   - component: {fileID: 882834023}
   - component: {fileID: 882834022}
   - component: {fileID: 882834021}
-  - component: {fileID: 882834024}
   m_Layer: 0
   m_Name: Main Camera (1)
   m_TagString: MainCamera
@@ -517,6 +516,10 @@ PrefabInstance:
       propertyPath: stage0Intro.Array.data[1]
       value: 
       objectReference: {fileID: 4900000, guid: 90b9944654ca10643a37b03a7e2ab017, type: 3}
+    - target: {fileID: 4242145293405554476, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: playsHitAnimation
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4502089846754818445, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: delayFraction
       value: 0.5
@@ -545,6 +548,18 @@ PrefabInstance:
       propertyPath: Sprites.Array.data[3]
       value: 
       objectReference: {fileID: 21300000, guid: fac95527dc04fec40bf499a16d89cbe6, type: 3}
+    - target: {fileID: 6201973474100251465, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: playsHitAnimation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7374144325323111439, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: playsHitAnimation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7374144326084580890, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: playsHitAnimation
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7374144326298839353, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: m_Name
       value: BossA

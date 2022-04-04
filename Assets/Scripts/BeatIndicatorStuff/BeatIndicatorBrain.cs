@@ -9,6 +9,7 @@ public struct beatIndicatorInfo {
     public float beatToHit;//The beat on which the indicator hits the center
     //Also needs information on the type of indicator
     public Sprite indicatorSprite;//The sprite which should be shown by this indicator
+    public bool playsAnimationAtEnd;//Whether the indicator plays a specific animation at its end - needs to be true for some boss animations
 }
 
 public class BeatIndicatorBrain : MonoBehaviour
@@ -144,6 +145,7 @@ public class BeatIndicatorBrain : MonoBehaviour
         newInfo.indicatorSprite = sprite;
         curBossStartBeat += beatLength;
         newInfo.beatToHit = curBossStartBeat;
+        newInfo.playsAnimationAtEnd = bossHitOccurs;
         BossBeats.Add(newInfo);
     }
 
@@ -153,6 +155,7 @@ public class BeatIndicatorBrain : MonoBehaviour
         beatIndicatorInfo newInfo;
         newInfo.indicatorSprite = baseBeatSprite;
         newInfo.beatToHit = curBaseBeat;
+        newInfo.playsAnimationAtEnd = false;
         beats.Add(newInfo);
         //Then sorts the newInfo into the spot it should go in
         SortLatestBeat(beats);

@@ -16,6 +16,7 @@ public class BossBeatIndicator : BeatIndicator
 
     public override void SetIndicatorStart(beatIndicatorInfo info) {
         mySprite.sprite = info.indicatorSprite;
+        doesBossHitsPlayerEffect = info.playsAnimationAtEnd;
         base.SetIndicatorStart(info);
     }
 
