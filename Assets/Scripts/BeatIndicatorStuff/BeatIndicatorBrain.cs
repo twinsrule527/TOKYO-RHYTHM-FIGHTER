@@ -36,6 +36,10 @@ public class BeatIndicatorBrain : MonoBehaviour
     //Information that the BeatIndicatorBrain needs to give to a beat indicator:
         //How long (in beat-form) from now does that note actually occur
         //what type of beat it is
+
+
+    [SerializeField] BossHitsPlayerScript _BossHitsPlayerEffect;
+    public static BossHitsPlayerScript BossHitsPlayerEffect;
    
     void Awake() {
         Global.BeatIndicatorBrain = this;
@@ -47,6 +51,9 @@ public class BeatIndicatorBrain : MonoBehaviour
         BossIndicatorEndPos = endPosTransform.position + Vector3.back;
         PlayerIndicatorStartPos = startPosPlayerTransform.position;
         PlayerIndicatorEndPos = endPosTransform.position + Vector3.back;
+
+        BossHitsPlayerEffect = _BossHitsPlayerEffect;
+        
         enabled = false;
     }
     public void SongStarted() {
@@ -73,6 +80,8 @@ public class BeatIndicatorBrain : MonoBehaviour
                 if(newIndicator == null) {
                     newIndicator = Instantiate(bossIndicatorPrefab, Vector3.zero, Quaternion.identity);
                     BossIndicators.Add(newIndicator);
+                    newIndicator.transform.rotation = startPosBossTransform.rotation;
+                    newIndicator.startRot = newIndicator.transform.rotation;
                 }
                 //Now, it gives the boss beat indicator the information it needs to operate
                 newIndicator.SetIndicatorStart(BossBeats[0]);
@@ -102,6 +111,8 @@ public class BeatIndicatorBrain : MonoBehaviour
                 if(newIndicator == null) {
                     newIndicator = Instantiate(playerIndicatorPrefab, Vector3.zero, Quaternion.identity);
                     PlayerIndicators.Add(newIndicator);
+                    newIndicator.transform.rotation = startPosPlayerTransform.rotation;
+                    newIndicator.startRot = newIndicator.transform.rotation;
                 }
                 //Now, it gives the boss beat indicator the information it needs to operate
                 newIndicator.SetIndicatorStart(PlayerBeats[0]);

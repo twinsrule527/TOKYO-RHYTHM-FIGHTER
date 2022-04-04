@@ -5,14 +5,19 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
     //public static Boss CurrentBoss;//Declares whichever boss is the current boss, for reference with player input & such
+    [SerializeField] float [] bossStartingHPArray = {50f}; //starting HP for each stage, in order 
+    public float currentStageStartingHP {get; protected set;}
     public float bossHP {get; protected set;}
     public bool makeAttackThisBeat;
     public BossAttack CurrentMakingAttack;//Whichever attack is the one actually making an attack this beat (in case it ends before it has a chance to check)
         //Probably there's a better way to do this - should check w/ Jaden
+    
+    [SerializeField] HealthBar healthBar;
 
     public void ChangeBossHP(float amt) {//Function to be called by others when increasing/decreasing hp
         bossHP += amt;
         Global.UIManager.SetHealthText();
+        healthBar.ChangeHealth(amt);
         if(bossHP <= 0) {
             GameManager.PlayerWins();
         }
@@ -23,7 +28,8 @@ public class Boss : MonoBehaviour
     public virtual void Awake() {
         //Going to remove this later:
         Global.Boss = this;
-        bossHP = 50;//DON"T DO THIS, just need a quick way to set boss health
+        currentStageStartingHP = bossStartingHPArray[0];
+        bossHP = currentStageStartingHP;
     }
 
     public void SongStarted() {

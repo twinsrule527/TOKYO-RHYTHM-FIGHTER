@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2427063016690972231
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6755052850652652640}
+  - component: {fileID: 7975755479232201817}
+  m_Layer: 0
+  m_Name: LongAtkHitmidboss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6755052850652652640
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2427063016690972231}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.2848558, y: -0.31986335, z: 0.27247265}
+  m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7975755479232201817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2427063016690972231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6966d96fe74fa4043ac653ec3efeec20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animDuration: 0.35
+  lerpDistance: {x: -0.25, y: 0, z: 0}
+  initialLerpTime: 0.1
+  initialLerpCoefficient: 0.05
+  snapbackLerpTime: 0
+  snapbackLerpCoefficient: 0
+  AnimSwitchTo: {fileID: 0}
+  spriteSwitchTo: {fileID: -4711218983162176914, guid: 6d71e22db415fcf4696eefe53501f807, type: 3}
+  AnimSprite: {fileID: -4465085675572567155, guid: 72b6512283ef44848abe12c04a328efc, type: 3}
+  spriteRenderer: {fileID: 0}
+  playOnAwake: 0

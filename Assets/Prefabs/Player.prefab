@@ -363,7 +363,7 @@ MonoBehaviour:
   comboCounter: 0
   CurrentAction: {fileID: 4472115705231886289}
   currActionEndBeat: 0
-  playerStartHealth: 50
+  _playerStartHealth: 50
 --- !u!212 &7554666834438711988
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -404,15 +404,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 4463307110657780765, guid: 6b48eff0a8db3784e8381856afdea1ad, type: 3}
+  m_Sprite: {fileID: 2046957901714320752, guid: 0475a92bee260d24595ee78c2e18359f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.56, y: 2.56}
+  m_Size: {x: 1.82, y: 2.19}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &6562861732006516200
@@ -475,6 +475,46 @@ PrefabInstance:
       value: PlayerSpriteController
       objectReference: {fileID: 0}
     - target: {fileID: 2462265628607670240, guid: e27ce9a720fdda84d99bd4392814a1df, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 7554666834438711988}
+    - target: {fileID: 4648661227464224616, guid: e27ce9a720fdda84d99bd4392814a1df, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 7554666834438711988}
+    - target: {fileID: 5453391113795408385, guid: e27ce9a720fdda84d99bd4392814a1df, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 7554666834438711988}
+    - target: {fileID: 6348893717698557980, guid: e27ce9a720fdda84d99bd4392814a1df, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 7554666834438711988}
+    - target: {fileID: 9041706940061026420, guid: e27ce9a720fdda84d99bd4392814a1df, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 7554666834438711988}
+    - target: {fileID: 9041706940061026420, guid: e27ce9a720fdda84d99bd4392814a1df, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041706940061026420, guid: e27ce9a720fdda84d99bd4392814a1df, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041706940061026420, guid: e27ce9a720fdda84d99bd4392814a1df, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041706940061026420, guid: e27ce9a720fdda84d99bd4392814a1df, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041706940061026420, guid: e27ce9a720fdda84d99bd4392814a1df, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162389738005459901, guid: e27ce9a720fdda84d99bd4392814a1df, type: 3}
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 7554666834438711988}

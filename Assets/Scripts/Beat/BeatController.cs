@@ -32,6 +32,8 @@ public struct Accuracy {
 public class BeatController : MonoBehaviour
 {
 
+    public static bool isPlaying { get; private set; }
+
     //// Beat accuracies! 
     //You might get these from BeatController functions.
     //You can check them against each other
@@ -137,6 +139,8 @@ public class BeatController : MonoBehaviour
         //kick off tracker with current time after lag spike
         songStartTime = AudioSettings.dspTime + songData.mp3Delay + songData.songDelay;
 
+        isPlaying = true;
+
     }
 
     // Update is called once per frame
@@ -207,10 +211,12 @@ public class BeatController : MonoBehaviour
 
     //ex. for 1, 5.1 returns 0.1, 5.5 returns 0.5, 5.9 returns 0.9
     public static float GetDistanceFromBeat() {
-        return GetDistanceFromBeat(1);
+        //return GetDistanceFromBeat(1);
+        return GetBeat() % 1;
     }
     public static float GetDistanceFromBeat(float fraction) {
-        return GetDistanceFromBeat(fraction, GetBeat());
+        //return GetDistanceFromBeat(fraction, GetBeat());
+        return GetBeat() % fraction;
     }
     public static float GetDistanceFromBeat(float fraction, float beat) {
         return beat % fraction;
@@ -276,8 +282,6 @@ public class BeatController : MonoBehaviour
 
         float distFromBeat = GetDistanceFromBeat(fraction, beat);
         float distFromBeatAbs = GetAbsDistanceFromBeat(fraction, beat);
-
-        //Debug.Log(distFromBeat);
 
         if(distFromBeat < fraction / 2) {
             //if after
