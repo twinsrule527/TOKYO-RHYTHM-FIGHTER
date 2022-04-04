@@ -7,7 +7,7 @@ public class HoldAttack : PlayerAction
 {
     public float damage;//How much damage this attack does
 
-    bool isHolding; //check if player is holding the key
+    bool isHolding = true; //check if player is holding the key
 
     IEnumerator currentCoroutine;
 
@@ -53,7 +53,7 @@ public class HoldAttack : PlayerAction
         if(isHolding){
             if(!Input.GetKey(key)){
                 isHolding = false;//DEBUG
-                //Debug.Log("isHolding = false line 55");
+                Debug.Log("isHolding = false line 55");
             }
         }
 
@@ -106,9 +106,12 @@ public class HoldAttack : PlayerAction
         float t = 0;
         float startTime = BeatController.GetBeat();
         Global.Player.spriteController.Attack(1);
+        isHolding = true;
 //DEBUG
-        while(t < startTime + 1){
+        while(t < startTime + 2 * Time.deltaTime){
             t = BeatController.GetBeat();
+
+            Global.Boss.ChangeBossHP(-damage);
 
             if(isHolding != true) {
                 //break;
@@ -118,13 +121,11 @@ public class HoldAttack : PlayerAction
             yield return null;
         }  
 
-        Global.Boss.ChangeBossHP(-damage);
-
     }
     //have a function that controls HoldCourotine
     void MessupHold(){//DEBUG
         StopCoroutine(currentCoroutine);
-        Debug.Log("MessupHold() line 125");
+        //Debug.Log("MessupHold() line 125");
     }
 
     //order fix: Put success at the beginning, put startCourotine in success override, and put change boss hp towards the end
