@@ -18,6 +18,17 @@ public class BeatIndicatorBrain : MonoBehaviour
     [SerializeField] private Transform startPosBossTransform;//A transform indicator for the start position of the boss indicator
     [SerializeField] private Transform startPosPlayerTransform;//A transform indicator for the start position of the player indicator
     [SerializeField] private Transform endPosTransform;//Similarly to above, but for end pos
+    public Transform EndPosTransform {
+        get {
+            return endPosTransform;
+        }
+    }
+    [SerializeField] private GameObject _visualEndPos;
+    public GameObject VisualEndPos {
+        get {
+            return _visualEndPos;
+        }
+    }
     public static Vector3 BossIndicatorStartPos;
     public static Vector3 BossIndicatorEndPos;
     public static Vector3 PlayerIndicatorStartPos;

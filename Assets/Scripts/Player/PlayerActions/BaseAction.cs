@@ -6,11 +6,7 @@ public class BaseAction : PlayerAction
 {
     public float damage;//How much damage this attack does
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
     // Update is called once per frame
     void Update()
@@ -39,9 +35,11 @@ public class BaseAction : PlayerAction
     protected override void Success()
     {
         base.Success();
+        myActionIndicator.gameObject.SetActive(true);
+        myActionIndicator.PerformAction();
+        Global.Player.spriteController.Attack(1);
         //if(!Global.Boss.makeAttackThisBeat) {//DOesn't always work correctly
             Global.Boss.ChangeBossHP(-damage);
-            Global.Player.spriteController.Attack(1);
         /*}
         else {
             //Play the MessUp/Hurt Animation
