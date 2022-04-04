@@ -212,6 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valuesAreDifferences: 0
+  invertBounce: 1
   beatFraction: 1
   xScaleMax: 1.25
   xScaleMin: 1
