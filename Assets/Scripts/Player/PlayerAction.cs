@@ -13,7 +13,7 @@ public class PlayerAction : MonoBehaviour
     //what key, when pressed, makes this action happen
     //override CheckInput for other behavior that isn't a KeyCode press, this is just a useful default
     [SerializeField] protected KeyCode key;
-
+    [SerializeField] protected ActionIndicator myActionIndicator;
     int comboCounter;   //may be used if needed 
 
     bool canInterrupt;  //do we call Boss.Interrupt()?
@@ -30,6 +30,11 @@ public class PlayerAction : MonoBehaviour
     //what order they check in and what may or may not get checked for. 
     //Checks GetKeyDown by default, but can be overridden if other behavior wanted.
     //Should call TryAction(). 
+    protected virtual void Start() {
+        if(myActionIndicator == null) {
+            myActionIndicator = GetComponentInChildren<ActionIndicator>();
+        }
+    }
     public virtual void CheckInput() {
         
         if(Input.GetKeyDown(key)) {
