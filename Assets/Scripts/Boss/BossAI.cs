@@ -6,7 +6,7 @@ using UnityEngine;
         //Subclasses are implementations of each boss with actual attack pattern
 public abstract class BossAI : MonoBehaviour
 {
-    protected Bag<AttackPattern> attackBag;
+    public Bag<AttackPattern> attackBag {protected set; get;}
     public BossAttack CurrentAttack { get; private set; }//Whatever the attack the boss is currently on - is needed for Interrupts
     public List<AttackPattern> AttackQueue;
 

@@ -492,6 +492,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1249257266678878243, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: _creatorKey
+      value: 95
+      objectReference: {fileID: 0}
+    - target: {fileID: 4242145293405554476, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: _creatorKey
+      value: 49
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201973474100251465, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: _creatorKey
+      value: 51
+      objectReference: {fileID: 0}
+    - target: {fileID: 7374144325323111439, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: _creatorKey
+      value: 83
+      objectReference: {fileID: 0}
+    - target: {fileID: 7374144325704998262, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: _creatorKey
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7374144326084580890, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: _creatorKey
+      value: 76
+      objectReference: {fileID: 0}
     - target: {fileID: 7374144326298839353, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: m_Name
       value: BossA
@@ -737,6 +761,10 @@ PrefabInstance:
     - target: {fileID: 2767866006440598940, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: lerpCurve.m_Curve.Array.data[1].value
       value: 1.009433
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873656863541114516, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3795154453095853364, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: loops
