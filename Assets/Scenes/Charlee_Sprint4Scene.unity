@@ -746,6 +746,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 218489227868990964, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 218489227868990964, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 218489227868990964, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 218489227868990964, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 218489227868990964, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 218489227868990964, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 218489227868990964, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 218489227868990964, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 218489227868990964, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 218489227868990964, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 459825548545723476, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: delayFraction
       value: 0.25
@@ -758,10 +798,130 @@ PrefabInstance:
       propertyPath: key
       value: 99
       objectReference: {fileID: 0}
+    - target: {fileID: 1206298028219877353, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206298028219877353, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206298028219877353, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206298028219877353, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206298028219877353, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206298028219877353, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206298028219877353, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206298028219877353, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206298028219877353, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206298028219877353, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1494253301700028827, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 1502304164}
+    - target: {fileID: 1986275696944757376, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986275696944757376, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986275696944757376, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986275696944757376, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986275696944757376, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986275696944757376, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986275696944757376, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986275696944757376, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986275696944757376, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986275696944757376, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2608902590447953493, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2608902590447953493, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2608902590447953493, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2608902590447953493, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2608902590447953493, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2608902590447953493, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2608902590447953493, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2608902590447953493, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2608902590447953493, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2608902590447953493, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2767866006440598940, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: animDuration
       value: 1.75
@@ -777,6 +937,10 @@ PrefabInstance:
     - target: {fileID: 2767866006440598940, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: lerpCurve.m_Curve.Array.data[1].time
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767866006440598940, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].value
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2767866006440598940, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: lerpCurve.m_Curve.Array.data[1].value
@@ -796,6 +960,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2767866006440598940, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: lerpCurve.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767866006440598940, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767866006440598940, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].tangentMode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3414772834812628416, guid: 0bae8102314e7a642b51f834926338da, type: 3}
