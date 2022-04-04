@@ -39,7 +39,8 @@ public class BaseAction : PlayerAction
         myActionIndicator.PerformAction();
         Global.Player.spriteController.Attack(1);
         //if(!Global.Boss.makeAttackThisBeat) {//DOesn't always work correctly
-            Global.Boss.ChangeBossHP(-damage);
+        Global.Player.spriteController.Attack(1);
+        Global.Boss.ChangeBossHP(-damage);
         /*}
         else {
             //Play the MessUp/Hurt Animation

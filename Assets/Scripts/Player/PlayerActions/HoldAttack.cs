@@ -105,6 +105,8 @@ public class HoldAttack : PlayerAction
             //Play the MessUp/Hurt Animation
         }*/
 
+        Global.Player.spriteController.Attack(1);
+
         currentCoroutine = HoldCoroutine();
         StartCoroutine(currentCoroutine);
     }
