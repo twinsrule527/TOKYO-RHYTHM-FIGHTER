@@ -12,7 +12,7 @@ public class A_BossAI : BossAI
     public override void Start() {
         attackBag = new Bag<AttackPattern>();
         base.Start();
-        CreateAttackPatterns2();//COMMENT THIS OUT WHEN NEW VERSION IS READY
+        //CreateAttackPatterns2();//COMMENT THIS OUT WHEN NEW VERSION IS READY
         attackBag.Refill();
         
     }
