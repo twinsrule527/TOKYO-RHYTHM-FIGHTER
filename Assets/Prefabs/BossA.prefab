@@ -43,8 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff4864de17b92854db00ce37f9eaee33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _creatorKey: 0
   length: 1
   attackIndicatorSprite: {fileID: 21300000, guid: cb6dda2c0410b074c86d40e7d679b57d, type: 3}
+  playsHitAnimation: 0
   myAnimationController: {fileID: 2023890976701665613}
   atkName: OneBeatAttack
   mySprite: {fileID: 7374144326298839354}
@@ -92,8 +94,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a389297447d9b3a4581c5f975f18622e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _creatorKey: 0
   length: 2
   attackIndicatorSprite: {fileID: 0}
+  playsHitAnimation: 0
   myAnimationController: {fileID: 6338650603145882749}
   atkName: WaitAttack2
   beatToWait: 2
@@ -140,8 +144,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f646808c8a74614b9dc85362e4d9552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _creatorKey: 0
   length: 2
   attackIndicatorSprite: {fileID: 21300000, guid: cb6dda2c0410b074c86d40e7d679b57d, type: 3}
+  playsHitAnimation: 0
   myAnimationController: {fileID: 3916436914547534296}
   atkName: ShortAttack
   mySprite: {fileID: 7374144326298839354}
@@ -189,8 +195,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a389297447d9b3a4581c5f975f18622e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _creatorKey: 0
   length: 1
   attackIndicatorSprite: {fileID: 0}
+  playsHitAnimation: 0
   myAnimationController: {fileID: 8178247261502864739}
   atkName: WaitAttack1
   beatToWait: 1
@@ -237,8 +245,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ab4a00a14e07e4cac285512b5b0a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _creatorKey: 0
   length: 4
   attackIndicatorSprite: {fileID: 21300000, guid: cb6dda2c0410b074c86d40e7d679b57d, type: 3}
+  playsHitAnimation: 0
   myAnimationController: {fileID: 1166183043910410771}
   atkName: LongAttack
   mySprite: {fileID: 7374144326298839354}
@@ -387,8 +397,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d78a6a07afd6f44697045f9e94deeae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patternsText:
+  stage0Intro:
   - {fileID: 4900000, guid: 55977158abb0d564380254f74245c18a, type: 3}
+  - {fileID: 4900000, guid: 90b9944654ca10643a37b03a7e2ab017, type: 3}
+  stage1FirstStage: []
+  stage2Transition: []
+  stage3SecondStage: []
+  stage4Finale: []
 --- !u!1 &8729248318235316810
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,8 +447,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb7793f66bbde7b4e97e9c482f999551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _creatorKey: 0
   length: 3
   attackIndicatorSprite: {fileID: 21300000, guid: cb6dda2c0410b074c86d40e7d679b57d, type: 3}
+  playsHitAnimation: 0
   myAnimationController: {fileID: 2403645037667687425}
   atkName: Length3Attack
   mySprite: {fileID: 0}
