@@ -864,15 +864,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1986275696944757376, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: lerpCurve.m_Curve.Array.data[1].inSlope
-      value: 0
+      value: 0.21826266
       objectReference: {fileID: 0}
     - target: {fileID: 1986275696944757376, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1986275696944757376, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].inWeight
+      value: 0.23750001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986275696944757376, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: lerpCurve.m_Curve.Array.data[1].outSlope
-      value: 0
+      value: 0.21826266
       objectReference: {fileID: 0}
     - target: {fileID: 1986275696944757376, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: lerpCurve.m_Curve.Array.data[0].tangentMode
@@ -952,15 +956,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2767866006440598940, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: lerpCurve.m_Curve.Array.data[1].inSlope
-      value: 0
+      value: 0.25267246
       objectReference: {fileID: 0}
     - target: {fileID: 2767866006440598940, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2767866006440598940, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].inWeight
+      value: 0.19583333
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767866006440598940, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: lerpCurve.m_Curve.Array.data[1].outSlope
-      value: 0
+      value: 0.25267246
       objectReference: {fileID: 0}
     - target: {fileID: 2767866006440598940, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: lerpCurve.m_Curve.Array.data[0].tangentMode
