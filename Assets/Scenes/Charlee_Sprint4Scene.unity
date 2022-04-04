@@ -394,6 +394,70 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 1254663176}
+    - target: {fileID: 1166183043910410771, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166183043910410771, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166183043910410771, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166183043910410771, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166183043910410771, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023890976701665613, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023890976701665613, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023890976701665613, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023890976701665613, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023890976701665613, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403645037667687425, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: AnimSprite
+      value: 
+      objectReference: {fileID: -4067605783768547865, guid: b6de4ed1e56206f46890c1f57d6065f3, type: 3}
+    - target: {fileID: 2403645037667687425, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403645037667687425, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403645037667687425, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403645037667687425, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403645037667687425, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2496528148581121667, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: delayFraction
       value: 1
@@ -418,6 +482,30 @@ PrefabInstance:
       propertyPath: Sprites.Array.data[2]
       value: 
       objectReference: {fileID: 21300000, guid: 9b5791b886bb5ec43a972e38643b3d61, type: 3}
+    - target: {fileID: 3167351895183794102, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: AnimSprite
+      value: 
+      objectReference: {fileID: 4978015359022864965, guid: b6de4ed1e56206f46890c1f57d6065f3, type: 3}
+    - target: {fileID: 3167351895183794102, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167351895183794102, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167351895183794102, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167351895183794102, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167351895183794102, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3458722030318523980, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: delayFraction
       value: 0.25
@@ -446,6 +534,50 @@ PrefabInstance:
       propertyPath: Sprites.Array.data[3]
       value: 
       objectReference: {fileID: 21300000, guid: fac95527dc04fec40bf499a16d89cbe6, type: 3}
+    - target: {fileID: 3916436914547534296, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: AnimSprite
+      value: 
+      objectReference: {fileID: -4067605783768547865, guid: b6de4ed1e56206f46890c1f57d6065f3, type: 3}
+    - target: {fileID: 3916436914547534296, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916436914547534296, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916436914547534296, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916436914547534296, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916436914547534296, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493288082988070812, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493288082988070812, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493288082988070812, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493288082988070812, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493288082988070812, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4502089846754818445, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: delayFraction
       value: 0.5
@@ -474,6 +606,126 @@ PrefabInstance:
       propertyPath: Sprites.Array.data[3]
       value: 
       objectReference: {fileID: 21300000, guid: fac95527dc04fec40bf499a16d89cbe6, type: 3}
+    - target: {fileID: 5050382706412933566, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: AnimSprite
+      value: 
+      objectReference: {fileID: 4978015359022864965, guid: b6de4ed1e56206f46890c1f57d6065f3, type: 3}
+    - target: {fileID: 5050382706412933566, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050382706412933566, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050382706412933566, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050382706412933566, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050382706412933566, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5163186638380198863, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5163186638380198863, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5163186638380198863, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5163186638380198863, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5163186638380198863, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6338650603145882749, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6338650603145882749, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6338650603145882749, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6338650603145882749, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6338650603145882749, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6338650603145882749, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6338650603145882749, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6338650603145882749, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6338650603145882749, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037155013398541054, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037155013398541054, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037155013398541054, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037155013398541054, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037155013398541054, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353712187074949741, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353712187074949741, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353712187074949741, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353712187074949741, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353712187074949741, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7374144326298839353, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: m_Name
       value: BossA
@@ -550,6 +802,62 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 1254663176}
+    - target: {fileID: 8178247261502864739, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178247261502864739, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178247261502864739, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178247261502864739, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178247261502864739, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178247261502864739, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178247261502864739, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178247261502864739, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178247261502864739, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510566413202864509, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510566413202864509, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510566413202864509, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510566413202864509, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510566413202864509, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9156956826881162296, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: delayFraction
       value: 0.25
