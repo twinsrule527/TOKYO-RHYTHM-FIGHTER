@@ -29,4 +29,13 @@ public static class AttackCreator
             bossBag.AddToLineup(new AttackPattern(newAttacks, myBoss, i.ToString()));
         }
     }
+
+    public static void CreateAttackPatterns(List<string> atks, BossAI myBoss) {
+        List<List<char>> atksNew = new List<List<char>>();
+        for(int i = 0; i < atks.Count; i++) {
+            List<char> pattern = new List<char>(atks[i]);
+            atksNew.Add(pattern);
+        }
+        CreateAttackPatterns(atksNew, myBoss);
+    }
 }
