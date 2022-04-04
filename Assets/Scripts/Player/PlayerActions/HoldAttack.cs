@@ -54,6 +54,12 @@ public class HoldAttack : PlayerAction
             if(!Input.GetKey(key)){
                 isHolding = false;//DEBUG
                 Debug.Log("isHolding = false line 55");
+
+                if(isHolding != true) {
+                //break;
+                    MessupHold();
+                    Debug.Log("MessupHold()");
+                }
             }
         }
 
@@ -113,11 +119,11 @@ public class HoldAttack : PlayerAction
 
             Global.Boss.ChangeBossHP(-damage);
 
-            if(isHolding != true) {
+            /*if(isHolding != true) {
                 //break;
                 MessupHold();
                 Debug.Log("isHolding != true line 113");
-            }
+            }*/
             yield return null;
         }  
 
