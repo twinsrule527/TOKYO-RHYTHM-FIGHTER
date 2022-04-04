@@ -307,6 +307,7 @@ GameObject:
   - component: {fileID: 882834023}
   - component: {fileID: 882834022}
   - component: {fileID: 882834021}
+  - component: {fileID: 882834024}
   m_Layer: 0
   m_Name: Main Camera (1)
   m_TagString: MainCamera
@@ -379,6 +380,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &882834024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882834020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52716f55b5059d94ab5114f90df3cbaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inspectorPerlinMult: 50
+  inspectorMagnitude: 1
+  inspectorShakeTime: 1
 --- !u!1001 &1031086323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -456,6 +472,18 @@ PrefabInstance:
       objectReference: {fileID: 4900000, guid: 55977158abb0d564380254f74245c18a, type: 3}
     - target: {fileID: 4091139673094082168, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: stage0.Array.data[1]
+      value: 
+      objectReference: {fileID: 4900000, guid: 90b9944654ca10643a37b03a7e2ab017, type: 3}
+    - target: {fileID: 4091139673094082168, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: stage0Intro.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4091139673094082168, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: stage0Intro.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: 55977158abb0d564380254f74245c18a, type: 3}
+    - target: {fileID: 4091139673094082168, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: stage0Intro.Array.data[1]
       value: 
       objectReference: {fileID: 4900000, guid: 90b9944654ca10643a37b03a7e2ab017, type: 3}
     - target: {fileID: 4502089846754818445, guid: 5616b084a679a6943949e139a843212b, type: 3}
@@ -1055,6 +1083,10 @@ PrefabInstance:
     - target: {fileID: 6235135138149832325, guid: eebb5be358696e947981cdae45b75fbf, type: 3}
       propertyPath: m_LocalPosition.y
       value: -3.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132286401433672305, guid: eebb5be358696e947981cdae45b75fbf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8350610518483508729, guid: eebb5be358696e947981cdae45b75fbf, type: 3}
       propertyPath: m_Name
