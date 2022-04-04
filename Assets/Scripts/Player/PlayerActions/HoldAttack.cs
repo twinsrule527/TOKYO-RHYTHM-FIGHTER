@@ -10,7 +10,7 @@ public class HoldAttack : PlayerAction
 
     public float DamageGain; //how mucn damage gains per frame of hold
 
-    bool isHolding = true; //check if player is holding the key
+    bool isHolding = false; //check if player is holding the key
 
     IEnumerator currentCoroutine;
 
