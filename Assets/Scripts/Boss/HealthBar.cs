@@ -26,13 +26,13 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        /*
         ////Testing function
         if (Input.GetKey(KeyCode.Space))
         {
            ChangeHealth(5);
         }
-        
+        */
     }
 
     public void ChangeHealth(float healthDifference)
