@@ -766,6 +766,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4086836469007911517, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: holdObj
+      value: 
+      objectReference: {fileID: 2135379586}
     - target: {fileID: 4472115705231886289, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: damage
       value: 5
@@ -1211,6 +1215,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}
+--- !u!1 &2135379586 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5054704183310986166, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}
+  m_PrefabInstance: {fileID: 2135379585}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2135379588 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5696759025919761133, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}

@@ -9,6 +9,7 @@ public class HoldAttack : PlayerAction
     public float baseDamage;//How much damage this attack does at the start
 
     public float DamageGain; //how mucn damage gains per frame of hold
+    [SerializeField] private float maxHoldLength;//How long you can hold for
 
     bool isHolding = false; //check if player is holding the key
 
@@ -106,7 +107,8 @@ public class HoldAttack : PlayerAction
         }*/
 
         Global.Player.spriteController.Attack(1);
-
+        myActionIndicator.gameObject.SetActive(true);
+        myActionIndicator.PerformAction();
         currentCoroutine = HoldCoroutine();
         StartCoroutine(currentCoroutine);
     }
@@ -122,7 +124,7 @@ public class HoldAttack : PlayerAction
         t = BeatController.GetBeat();
 
 //DEBUG
-        while(t < startTime + 2){
+        while(t < startTime + maxHoldLength){
             t = BeatController.GetBeat();
             damage += DamageGain;
 
@@ -134,7 +136,8 @@ public class HoldAttack : PlayerAction
                 Debug.Log("isHolding != true line 113");
             }*/
             yield return null;
-        }  
+        } 
+        isHolding = false;
         
         /*if(t >= startTime){
            
