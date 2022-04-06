@@ -821,11 +821,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5907701392646776093, guid: eebb5be358696e947981cdae45b75fbf, type: 3}
       propertyPath: m_Color.b
-      value: 0.21960783
+      value: 0.11107162
       objectReference: {fileID: 0}
     - target: {fileID: 5907701392646776093, guid: eebb5be358696e947981cdae45b75fbf, type: 3}
       propertyPath: m_Color.g
-      value: 0.5518606
+      value: 0.21758735
+      objectReference: {fileID: 0}
+    - target: {fileID: 5907701392646776093, guid: eebb5be358696e947981cdae45b75fbf, type: 3}
+      propertyPath: m_Color.r
+      value: 0.754717
       objectReference: {fileID: 0}
     - target: {fileID: 6235135138149832325, guid: eebb5be358696e947981cdae45b75fbf, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1348,6 +1352,14 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 322448708}
+    - target: {fileID: 746537116547153872, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: key
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 845160438165941862, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: key
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1494253301700028827, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: spriteRenderer
       value: 
@@ -1440,6 +1452,10 @@ PrefabInstance:
       propertyPath: Sprites.Array.data[3]
       value: 
       objectReference: {fileID: 3237436881797812316, guid: 0475a92bee260d24595ee78c2e18359f, type: 3}
+    - target: {fileID: 4472115705231886289, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: key
+      value: 122
+      objectReference: {fileID: 0}
     - target: {fileID: 4472115705231886289, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: damage
       value: 5
@@ -1592,6 +1608,10 @@ PrefabInstance:
       propertyPath: Sprites.Array.data[4]
       value: 
       objectReference: {fileID: 1307935492094069122, guid: 0475a92bee260d24595ee78c2e18359f, type: 3}
+    - target: {fileID: 8927797165699515235, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: key
+      value: 120
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bae8102314e7a642b51f834926338da, type: 3}
 --- !u!1 &1995314453
