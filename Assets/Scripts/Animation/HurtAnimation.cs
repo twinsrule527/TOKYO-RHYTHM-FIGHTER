@@ -2,23 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //Janky Boss Hurt Animation - switches which sprite renderer the boss is using for their hurt animation
-public class BossHurtAnimation : MonoBehaviour
+public class HurtAnimation : MonoBehaviour
 {
     [SerializeField] private float hurtTime;
-    [SerializeField] private SpriteRenderer bossRenderer;
+    [SerializeField] private SpriteRenderer baseRenderer;
     [SerializeField] private SpriteRenderer hurtRenderer;
-    public void BossHurt() {
-        StartCoroutine(BossHurts());
+    public void Hurt() {
+        StartCoroutine(Hurts());
     }
 
-    private IEnumerator BossHurts() {
+    private IEnumerator Hurts() {
         //Switches the spriterenderer being used for the length of the hurt animation
 
         //TODO: Add ability to have the hurt animation lerp
         hurtRenderer.enabled = true;
-        bossRenderer.enabled = false;
+        baseRenderer.enabled = false;
         yield return BeatController.WaitForBeat(BeatController.GetBeat() + hurtTime);
         hurtRenderer.enabled = false;
-        bossRenderer.enabled = true;
+        baseRenderer.enabled = true;
     }
 }

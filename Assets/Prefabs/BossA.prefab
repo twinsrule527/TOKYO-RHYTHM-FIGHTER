@@ -364,6 +364,7 @@ GameObject:
   - component: {fileID: 7374144326298839355}
   - component: {fileID: 7374144326298839352}
   - component: {fileID: 4091139673094082168}
+  - component: {fileID: 5308652391981561851}
   m_Layer: 0
   m_Name: BossA
   m_TagString: Untagged
@@ -485,6 +486,7 @@ MonoBehaviour:
   hurtAnimation: {fileID: 4758325490003686201}
   AttackAI: {fileID: 7374144326298839355}
   spriteController: {fileID: 7572151231474549405}
+  sfxController: {fileID: 5308652391981561851}
 --- !u!114 &4091139673094082168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,6 +505,20 @@ MonoBehaviour:
   stage2Transition: []
   stage3SecondStage: []
   stage4Finale: []
+--- !u!114 &5308652391981561851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7374144326298839353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f337281922af51479687c74f808f31c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossAudioSource: {fileID: 0}
+  bossHurtSound: {fileID: 0}
 --- !u!1 &8729248318235316810
 GameObject:
   m_ObjectHideFlags: 0
