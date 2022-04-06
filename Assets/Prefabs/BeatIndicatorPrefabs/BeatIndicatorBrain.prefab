@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2203281497986221825}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 2, z: 1}
+  m_LocalScale: {x: 0.5, y: 2, z: 1}
   m_Children:
   - {fileID: 7852724720496708060}
   m_Father: {fileID: 8979469280142938681}
@@ -191,7 +191,7 @@ Transform:
   m_GameObject: {fileID: 8979469279705331523}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 2, z: 1}
+  m_LocalScale: {x: 0.75, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 8979469280142938681}
   m_RootOrder: 1
@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossIndicatorPrefab: {fileID: 5593002669349206948, guid: 49b94e13ba272c94099e4b4da6dd927b, type: 3}
-  playerIndicatorPrefab: {fileID: 249800432800487370, guid: 50bdacf38b59f4d4499a23c541e49235, type: 3}
+  playerIndicatorPrefab: {fileID: 2340596762357477336, guid: 13df0f823341a3245b216c7d31287530, type: 3}
   startPosBossTransform: {fileID: 8979469280394433382}
   startPosPlayerTransform: {fileID: 6395201610741742735}
   endPosTransform: {fileID: 8979469279705331520}
@@ -403,11 +403,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4594703663463410590, guid: d96e64e7d5385e341814cbf38580fcf3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.25
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4594703663463410590, guid: d96e64e7d5385e341814cbf38580fcf3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4594703663463410590, guid: d96e64e7d5385e341814cbf38580fcf3, type: 3}
       propertyPath: m_LocalPosition.x

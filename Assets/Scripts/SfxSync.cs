@@ -1,18 +1,31 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SfxSync : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public static void PlaySoundPerfect(AudioClip clip, AudioSource source, float beatNumber) {
+
+        source.PlayOneShot(clip);
+
+        //check if we're before or after the beat needed 
+
+        //if before: 
+        //use play at audio time 
+        //calculate what audio time to play on using beat, bpm 
+
+        //if after: 
+        //calculate how many samples we need to cut off 
+        //play from point in sample 
+        //safeguard: if past end, dont 
+
+
+        //IF WE CANCEL, USE SHUTTING DOWN VOLUME TO CANCEL BOSS SFX 
+        //so it can be played in advance 
+
+
     }
+    
 }
