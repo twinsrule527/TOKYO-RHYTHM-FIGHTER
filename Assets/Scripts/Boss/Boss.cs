@@ -13,11 +13,13 @@ public class Boss : MonoBehaviour
         //Probably there's a better way to do this - should check w/ Jaden
     
     [SerializeField] HealthBar healthBar;
+    [SerializeField] private BossHurtAnimation hurtAnimation;
 
     public void ChangeBossHP(float amt) {//Function to be called by others when increasing/decreasing hp
         bossHP += amt;
         Global.UIManager.SetHealthText();
         healthBar.ChangeHealth(amt);
+        hurtAnimation.BossHurt();
         if(bossHP <= 0) {
             GameManager.PlayerWins();
         }
