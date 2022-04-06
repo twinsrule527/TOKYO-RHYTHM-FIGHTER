@@ -22,10 +22,6 @@ public class SfxSync : MonoBehaviour
         //safeguard: if past end, dont 
 
 
-        //IF WE CANCEL, USE SHUTTING DOWN VOLUME TO CANCEL BOSS SFX 
-        //so it can be played in advance 
-
-
     }
     
 }
