@@ -1336,6 +1336,10 @@ PrefabInstance:
       propertyPath: zScaleMin
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 111418488407690341, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 459825548545723476, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: delayFraction
       value: 0.25
@@ -1348,6 +1352,14 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 322448708}
+    - target: {fileID: 2147477063709197977, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334108773207777109, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2767866006440598940, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: animDuration
       value: 1.75
@@ -1385,8 +1397,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3027436363086987332, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3027436363086987332, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: m_LocalPosition.z
       value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221980642733524061, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3795154453095853364, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: loops
@@ -1468,6 +1488,10 @@ PrefabInstance:
       propertyPath: Sprites.Array.data[4]
       value: 
       objectReference: {fileID: -3829035972999975890, guid: 31a6fda7ab7448c4dbd5ab0645ec892e, type: 3}
+    - target: {fileID: 6982542285825990437, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7554666834438711988, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: m_Size.x
       value: 1.81
@@ -1480,6 +1504,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 1f35259fc237d804492884dae5fc3a13, type: 3}
+    - target: {fileID: 7554666834438711988, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7554666834438711988, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
