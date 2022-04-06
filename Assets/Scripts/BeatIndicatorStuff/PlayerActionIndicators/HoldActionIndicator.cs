@@ -16,5 +16,6 @@ public class HoldActionIndicator : ActionIndicator
         holdObj.SetActive(true);
         yield return BeatController.WaitForBeat(BeatController.GetBeat() + holdLength);
         holdObj.SetActive(false);
+        gameObject.SetActive(false);
     }
 }

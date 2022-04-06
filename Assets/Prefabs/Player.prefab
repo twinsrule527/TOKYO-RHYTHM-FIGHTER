@@ -557,10 +557,11 @@ MonoBehaviour:
   beatFraction: 1
   length: 2
   key: 99
-  myActionIndicator: {fileID: 0}
+  myActionIndicator: {fileID: 4086836469007911517}
   damage: 5
   baseDamage: 0
   DamageGain: 0
+  maxHoldLength: 1
 --- !u!1 &8597708211883435790
 GameObject:
   m_ObjectHideFlags: 0
