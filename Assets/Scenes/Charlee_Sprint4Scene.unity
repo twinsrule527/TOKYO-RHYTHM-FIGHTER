@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1105,7 +1105,7 @@ PrefabInstance:
       objectReference: {fileID: 1502304164}
     - target: {fileID: 845160438165941862, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: key
-      value: 99
+      value: 118
       objectReference: {fileID: 0}
     - target: {fileID: 1206298028219877353, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: lerpCurve.m_Curve.Array.size
@@ -1293,7 +1293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3414772834812628416, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: key
-      value: 120
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 3795154453095853364, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: loops
@@ -1327,6 +1327,10 @@ PrefabInstance:
       propertyPath: Sprites.Array.data[3]
       value: 
       objectReference: {fileID: 3237436881797812316, guid: 0475a92bee260d24595ee78c2e18359f, type: 3}
+    - target: {fileID: 4472115705231886289, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: key
+      value: 122
+      objectReference: {fileID: 0}
     - target: {fileID: 4472115705231886289, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: damage
       value: 5
@@ -1467,6 +1471,10 @@ PrefabInstance:
       propertyPath: Sprites.Array.data[4]
       value: 
       objectReference: {fileID: 1307935492094069122, guid: 0475a92bee260d24595ee78c2e18359f, type: 3}
+    - target: {fileID: 8927797165699515235, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: key
+      value: 120
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bae8102314e7a642b51f834926338da, type: 3}
 --- !u!212 &1502304164 stripped
