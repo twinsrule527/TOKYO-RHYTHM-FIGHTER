@@ -7,6 +7,6 @@ public class BossSFXController : SFXController
     [SerializeField] private AudioSource bossAudioSource;
     [SerializeField] private AudioClip bossHurtSound;
     public void PlayHurtSound() {
-        SfxSync.PlaySoundPerfect(bossAudioSource, bossHurtSound, 0);
+        SfxSync.PlaySoundPerfect(bossHurtSound, bossAudioSource, BeatController.GetBeat());
     }
 }
