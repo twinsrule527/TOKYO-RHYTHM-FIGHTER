@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hurtTime: 0.5
-  bossRenderer: {fileID: 7374144326298839354}
+  baseRenderer: {fileID: 7374144326298839354}
   hurtRenderer: {fileID: 4364891582654279996}
 --- !u!1 &1141037379685921581
 GameObject:
