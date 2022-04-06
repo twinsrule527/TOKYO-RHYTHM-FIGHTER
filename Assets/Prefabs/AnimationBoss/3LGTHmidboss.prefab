@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3000956787757107831}
-  - component: {fileID: 2132388413536649019}
+  - component: {fileID: 2191500965534916025}
   m_Layer: 0
   m_Name: 3LGTHmidboss
   m_TagString: Untagged
@@ -24,14 +24,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4000090668648494897}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.9305177, y: 0.6607115, z: 2.8283765}
   m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2132388413536649019
+--- !u!114 &2191500965534916025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,12 +40,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4000090668648494897}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12c0b1b4475024f49b0164d1c0472d27, type: 3}
+  m_Script: {fileID: 11500000, guid: 6966d96fe74fa4043ac653ec3efeec20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayFraction: 0
-  loops: 0
-  startAnimation: 0
-  animationName: 3 length attack
+  animDuration: 2.75
+  lerpDistance: {x: -1, y: 0, z: 0}
+  initialLerpTime: 0.25
+  initialLerpCoefficient: 0.05
+  snapbackLerpTime: 0
+  snapbackLerpCoefficient: 0
+  AnimSwitchTo: {fileID: 0}
+  spriteSwitchTo: {fileID: -4067605783768547865, guid: b6de4ed1e56206f46890c1f57d6065f3, type: 3}
+  AnimSprite: {fileID: 4978015359022864965, guid: b6de4ed1e56206f46890c1f57d6065f3, type: 3}
   spriteRenderer: {fileID: 0}
-  Sprites: []
+  playOnAwake: 0

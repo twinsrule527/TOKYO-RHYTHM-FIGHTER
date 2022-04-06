@@ -27,6 +27,6 @@ public class WaitAttack : BossAttack
     }
     public override void AddBeatToIndicator()
     {
-        Global.BeatIndicatorBrain.AddBossBeat(beatToWait, attackIndicatorSprite);
+        Global.BeatIndicatorBrain.AddBossBeat(beatToWait, attackIndicatorSprite, playsHitAnimation);
     }
 }

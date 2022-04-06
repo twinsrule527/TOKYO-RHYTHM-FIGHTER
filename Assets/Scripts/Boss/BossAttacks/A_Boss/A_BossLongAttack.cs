@@ -46,6 +46,6 @@ public class A_BossLongAttack : BossAttack
     }
     public override void AddBeatToIndicator()
     {
-        Global.BeatIndicatorBrain.AddBossBeat(length, attackIndicatorSprite);
+        Global.BeatIndicatorBrain.AddBossBeat(length, attackIndicatorSprite, playsHitAnimation);
     }
 }

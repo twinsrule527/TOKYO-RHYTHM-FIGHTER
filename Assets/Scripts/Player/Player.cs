@@ -16,7 +16,9 @@ public class Player : MonoBehaviour
     public float currActionEndBeat;//The exact beat in the song that the current action is supposed to end on
     
     //How much health the player starts with
-    [SerializeField] private float playerStartHealth;
+    [SerializeField] float _playerStartHealth = 50;
+    [SerializeField] private HurtAnimation playerHurtAnimation;
+    public float playerStartHealth {get; private set;}
     public float playerHealth {get; private set;}
 
     // Start is called before the first frame update
@@ -24,6 +26,7 @@ public class Player : MonoBehaviour
     {   
         //There can only be 1 player, and it will be the Instance of the player
         Global.Player = this;
+        playerStartHealth = _playerStartHealth;
         playerHealth = playerStartHealth;
         //load PlayerActions, which will be components on the Player object or its children 
         actions = GetComponentsInChildren<PlayerAction>();
@@ -50,6 +53,7 @@ public class Player : MonoBehaviour
     public void ChangeHP(float amt = 0) {
         playerHealth += amt;
         Global.UIManager.SetHealthText();
+        playerHurtAnimation.Hurt();
         if(playerHealth <= 0) {
             GameManager.PlayerLoses();
         }
