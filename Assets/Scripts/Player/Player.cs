@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     
     //How much health the player starts with
     [SerializeField] float _playerStartHealth = 50;
+    [SerializeField] private HurtAnimation playerHurtAnimation;
     public float playerStartHealth {get; private set;}
     public float playerHealth {get; private set;}
 
@@ -52,6 +53,7 @@ public class Player : MonoBehaviour
     public void ChangeHP(float amt = 0) {
         playerHealth += amt;
         Global.UIManager.SetHealthText();
+        playerHurtAnimation.Hurt();
         if(playerHealth <= 0) {
             GameManager.PlayerLoses();
         }
