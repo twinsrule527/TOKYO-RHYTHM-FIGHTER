@@ -180,6 +180,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6ce47af54d1ef74eb6c5f969128b4b9, type: 3}
+--- !u!114 &365510955 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3809152020080880882, guid: 1c847fce25ad7ba49938433488bcb334, type: 3}
+  m_PrefabInstance: {fileID: 1134527942}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3caedba4d365eec479aa48e95c46f5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &860532822
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,6 +570,10 @@ PrefabInstance:
       propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4091139673094082168, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: stage0Intro.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: fbd4b8e0d5d9e3f42a765714a0531986, type: 3}
     - target: {fileID: 4493288082988070812, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: lerpCurve.m_Curve.Array.size
       value: 2
@@ -900,6 +915,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicController
       objectReference: {fileID: 0}
+    - target: {fileID: 502760128720185393, guid: 1c847fce25ad7ba49938433488bcb334, type: 3}
+      propertyPath: _songToPlay
+      value: 
+      objectReference: {fileID: 365510955}
     - target: {fileID: 502760128720185394, guid: 1c847fce25ad7ba49938433488bcb334, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -947,6 +966,10 @@ PrefabInstance:
     - target: {fileID: 502760128720185395, guid: 1c847fce25ad7ba49938433488bcb334, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3809152020080880882, guid: 1c847fce25ad7ba49938433488bcb334, type: 3}
+      propertyPath: _BPM
+      value: 160
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c847fce25ad7ba49938433488bcb334, type: 3}
