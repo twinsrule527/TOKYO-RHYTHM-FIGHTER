@@ -44,13 +44,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animDuration: 0.75
-  lerpDistance: {x: 0.5, y: 0, z: 0}
+  lerpDistance: {x: 0.5, y: 0.2, z: 0}
   initialLerpTime: 0.25
   initialLerpCoefficient: 0.05
   snapbackLerpTime: 0
   snapbackLerpCoefficient: 0
-  AnimSwitchTo: {fileID: 0}
-  spriteSwitchTo: {fileID: 2046957901714320752, guid: 0475a92bee260d24595ee78c2e18359f, type: 3}
-  AnimSprite: {fileID: 9060812008783134217, guid: f3f4f90116884b6498863536b6a10beb, type: 3}
+  lerpCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _animSwitchTo: {fileID: 0}
+  spriteSwitchTo: {fileID: 21300000, guid: 1f35259fc237d804492884dae5fc3a13, type: 3}
+  AnimSprite: {fileID: 21300000, guid: a13fbd340234edd4ab3e7590f2cd8431, type: 3}
   spriteRenderer: {fileID: 0}
   playOnAwake: 0
