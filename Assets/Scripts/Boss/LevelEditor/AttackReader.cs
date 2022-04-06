@@ -5,7 +5,6 @@ using System;
 
 public class AttackReader : MonoBehaviour
 {
-
     //this is attached to a boss AI prefab.
 
     //RULES FOR TEXT:
@@ -14,7 +13,17 @@ public class AttackReader : MonoBehaviour
 
     //the attack patterns for this boss.
     //[x][y] is the yth file corresponding to the xth boss stage.
-    [SerializeField] TextAsset [][] patternsText;
+    [SerializeField] List<TextAsset> stage0Intro, stage1FirstStage, stage2Transition, stage3SecondStage, stage4Finale; 
+    //add more stages as needed 
+    List<List<TextAsset>> patternsText = new List<List<TextAsset>>();
+
+    void Awake() {
+        patternsText.Add(stage0Intro); //dont forget to add stages here 
+        patternsText.Add(stage1FirstStage);
+        patternsText.Add(stage2Transition);
+        patternsText.Add(stage3SecondStage);
+        patternsText.Add(stage4Finale);
+    }
 
     //pass in the stage number (starting from 0) of attacks to get.
     public List<List<char>> GetPatterns(int stage)
@@ -46,6 +55,7 @@ public class AttackReader : MonoBehaviour
                 linesFromFile.Add(s);
             }
         }
+        
         //for each line
         foreach (string line in linesFromFile) {
 
@@ -78,11 +88,10 @@ public class AttackReader : MonoBehaviour
         }
 
         return patterns;
-
-        //TODO- should this object also disable or destroy itself when done, for efficiency?
-        
     }
 
+    //TODO- should this object also disable or destroy itself when done, for efficiency?
+    
     //temporary for debugging
     //TODO delete later
     /*
