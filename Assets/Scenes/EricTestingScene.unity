@@ -1003,6 +1003,22 @@ PrefabInstance:
       propertyPath: Sprites.Array.data[3]
       value: 
       objectReference: {fileID: 21300000, guid: fac95527dc04fec40bf499a16d89cbe6, type: 3}
+    - target: {fileID: 4364891582654279996, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: m_Size.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364891582654279996, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: m_Size.y
+      value: 2.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364891582654279996, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6721684927283995574, guid: c53eea22b0ccc534d8103857cc98db6e, type: 3}
+    - target: {fileID: 4364891582654279996, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4502089846754818445, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: delayFraction
       value: 0.5
@@ -1673,9 +1689,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6778894235880490553, guid: 537ea3f48b2145047b2c836cfba2f86d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778894235880490558, guid: 537ea3f48b2145047b2c836cfba2f86d, type: 3}
+      propertyPath: stopAction
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6778894235880490558, guid: 537ea3f48b2145047b2c836cfba2f86d, type: 3}
       propertyPath: playOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778894236134607258, guid: 537ea3f48b2145047b2c836cfba2f86d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778894236134607259, guid: 537ea3f48b2145047b2c836cfba2f86d, type: 3}
+      propertyPath: stopAction
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6778894236134607259, guid: 537ea3f48b2145047b2c836cfba2f86d, type: 3}
       propertyPath: playOnAwake
