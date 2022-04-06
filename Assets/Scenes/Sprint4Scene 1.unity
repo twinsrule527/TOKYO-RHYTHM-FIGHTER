@@ -212,6 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valuesAreDifferences: 0
+  invertBounce: 1
   beatFraction: 1
   xScaleMax: 1.25
   xScaleMin: 1
@@ -506,12 +507,12 @@ PrefabInstance:
       objectReference: {fileID: 4900000, guid: 90b9944654ca10643a37b03a7e2ab017, type: 3}
     - target: {fileID: 4091139673094082168, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: stage0Intro.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4091139673094082168, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: stage0Intro.Array.data[0]
       value: 
-      objectReference: {fileID: 4900000, guid: 55977158abb0d564380254f74245c18a, type: 3}
+      objectReference: {fileID: 4900000, guid: 5a142879b13aad24fa416c23b853317b, type: 3}
     - target: {fileID: 4091139673094082168, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: stage0Intro.Array.data[1]
       value: 
@@ -551,6 +552,14 @@ PrefabInstance:
     - target: {fileID: 6201973474100251465, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: playsHitAnimation
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7374144325323111436, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: m_Name
+      value: 22 ShortAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 7374144325323111439, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: _creatorKey
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7374144325323111439, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: playsHitAnimation
