@@ -47,6 +47,53 @@ MonoBehaviour:
   songAudioClip: {fileID: 8300000, guid: 75538c59f5e0ce345946b6a40ec39965, type: 3}
   _BPM: 148
   _songDelay: 0
+--- !u!1 &962306179727074502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2861650390600368248}
+  - component: {fileID: 68899186396081725}
+  m_Layer: 0
+  m_Name: TRF_rock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2861650390600368248
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962306179727074502}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5878511654760581720}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &68899186396081725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962306179727074502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3caedba4d365eec479aa48e95c46f5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _songName: TRF_rock
+  songAudioClip: {fileID: 8300000, guid: b6e4749ecaa8a954ca132af8ac423123, type: 3}
+  _BPM: 160
+  _songDelay: 0.0015
 --- !u!1 &1802976958144967013
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,6 +170,7 @@ Transform:
   m_Children:
   - {fileID: 2009682494728130133}
   - {fileID: 1617897332262952060}
+  - {fileID: 2861650390600368248}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
