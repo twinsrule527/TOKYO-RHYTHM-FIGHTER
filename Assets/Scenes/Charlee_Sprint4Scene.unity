@@ -1329,7 +1329,7 @@ PrefabInstance:
       objectReference: {fileID: 3237436881797812316, guid: 0475a92bee260d24595ee78c2e18359f, type: 3}
     - target: {fileID: 4472115705231886289, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: key
-      value: 122
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 4472115705231886289, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: damage
@@ -1473,7 +1473,7 @@ PrefabInstance:
       objectReference: {fileID: 1307935492094069122, guid: 0475a92bee260d24595ee78c2e18359f, type: 3}
     - target: {fileID: 8927797165699515235, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: key
-      value: 120
+      value: 122
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bae8102314e7a642b51f834926338da, type: 3}
