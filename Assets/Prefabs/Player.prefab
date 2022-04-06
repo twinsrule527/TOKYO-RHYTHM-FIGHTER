@@ -128,6 +128,55 @@ MonoBehaviour:
   beatFraction: 1
   length: 1
   key: 0
+  myActionIndicator: {fileID: 0}
+--- !u!1 &2891822075298407844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2873656863541114516}
+  - component: {fileID: 845160438165941862}
+  m_Layer: 0
+  m_Name: OneLengthBaseAction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2873656863541114516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2891822075298407844}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5448173835734764356}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &845160438165941862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2891822075298407844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27aede90d7eec954c995d17127fbf383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatFraction: 1
+  length: 1
+  key: 118
+  myActionIndicator: {fileID: 0}
+  damage: 5
 --- !u!1 &4081028334381491184
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,6 +223,7 @@ MonoBehaviour:
   beatFraction: 1
   length: 1
   key: 122
+  myActionIndicator: {fileID: 0}
 --- !u!1 &6482545777454454005
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,6 +313,7 @@ MonoBehaviour:
   beatFraction: 1
   length: 2
   key: 32
+  myActionIndicator: {fileID: 0}
   damage: 5
 --- !u!1 &8216630639901541565
 GameObject:
@@ -310,6 +361,7 @@ MonoBehaviour:
   beatFraction: 1
   length: 2
   key: 99
+  myActionIndicator: {fileID: 0}
   damage: 5
   baseDamage: 0
   DamageGain: 0
@@ -324,6 +376,7 @@ GameObject:
   - component: {fileID: 8597708211883435789}
   - component: {fileID: 8597708211883435788}
   - component: {fileID: 7554666834438711988}
+  - component: {fileID: -5429380818993679024}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -406,7 +459,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 2046957901714320752, guid: 0475a92bee260d24595ee78c2e18359f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1f35259fc237d804492884dae5fc3a13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -417,6 +470,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-5429380818993679024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8597708211883435790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e344c68e2ce94644294a848a27de4b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valuesAreDifferences: 0
+  invertBounce: 1
+  beatFraction: 1
+  xScaleMax: 3
+  xScaleMin: 3
+  yScaleMax: 3
+  yScaleMin: 2.9
+  zScaleMin: 3
+  zScaleMax: 3
 --- !u!1001 &6562861732006516200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -492,6 +566,10 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 7554666834438711988}
+    - target: {fileID: 8147129014216447404, guid: e27ce9a720fdda84d99bd4392814a1df, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9041706940061026420, guid: e27ce9a720fdda84d99bd4392814a1df, type: 3}
       propertyPath: spriteRenderer
       value: 

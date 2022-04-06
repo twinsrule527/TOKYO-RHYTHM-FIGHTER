@@ -96,9 +96,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valuesAreDifferences: 1
+  invertBounce: 0
   beatFraction: 1
-  xScaleMax: 0.1
-  xScaleMin: -0.1
+  xScaleMax: 0.5
+  xScaleMin: -0.5
   yScaleMax: 0
   yScaleMin: 0
   zScaleMin: 0
@@ -150,6 +151,9 @@ MonoBehaviour:
   transFullX: 0
   transFullY: 0
   transFullZ: 0
+  transEmptyX: 0
+  transEmptyY: 0
+  transEmptyZ: 0
   transDeadX: 0
   transDeadY: 0
   transDeadZ: 0
