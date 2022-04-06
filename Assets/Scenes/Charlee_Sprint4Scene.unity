@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -575,10 +575,6 @@ PrefabInstance:
       propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4242145293405554476, guid: 5616b084a679a6943949e139a843212b, type: 3}
-      propertyPath: attackIndicatorSprite
-      value: 
-      objectReference: {fileID: -8506385498346739953, guid: 2f38be9458483c74299804d5e35050c3, type: 3}
     - target: {fileID: 4493288082988070812, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: lerpCurve.m_Curve.Array.size
       value: 2
@@ -671,10 +667,6 @@ PrefabInstance:
       propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 6201973474100251465, guid: 5616b084a679a6943949e139a843212b, type: 3}
-      propertyPath: attackIndicatorSprite
-      value: 
-      objectReference: {fileID: -3795339071163260973, guid: 2f38be9458483c74299804d5e35050c3, type: 3}
     - target: {fileID: 6338650603145882749, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: lerpCurve.m_Curve.Array.size
       value: 2
@@ -751,14 +743,6 @@ PrefabInstance:
       propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 7374144325323111439, guid: 5616b084a679a6943949e139a843212b, type: 3}
-      propertyPath: attackIndicatorSprite
-      value: 
-      objectReference: {fileID: -8812421473458378982, guid: 2f38be9458483c74299804d5e35050c3, type: 3}
-    - target: {fileID: 7374144326084580890, guid: 5616b084a679a6943949e139a843212b, type: 3}
-      propertyPath: attackIndicatorSprite
-      value: 
-      objectReference: {fileID: 75050689400061820, guid: 2f38be9458483c74299804d5e35050c3, type: 3}
     - target: {fileID: 7374144326298839352, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: healthBar
       value: 
