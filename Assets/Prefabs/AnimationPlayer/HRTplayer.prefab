@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animDuration: 0.75
-  lerpDistance: {x: -0.5, y: 0, z: 0}
+  lerpDistance: {x: -0.25, y: 0, z: 0}
+  startDelay: 0
   initialLerpTime: 0.25
   initialLerpCoefficient: 0.05
   snapbackLerpTime: 0
