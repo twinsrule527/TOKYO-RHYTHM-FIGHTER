@@ -34,6 +34,9 @@ public class BeatController : MonoBehaviour
 
     public static bool isPlaying { get; private set; }
 
+    //accuracy thresholds, in seconds 
+    //will be converted into 
+
     //// Beat accuracies! 
     //You might get these from BeatController functions.
     //You can check them against each other
@@ -41,7 +44,7 @@ public class BeatController : MonoBehaviour
 
     //TODO: should there be different thresholds for different fractions of beats? 
     //they could be repurposed as percents?
-    public static readonly Accuracy MINIMUM = new Accuracy(0.12f, 0.12f, "OK", 1);
+    public static readonly Accuracy MINIMUM = new Accuracy(0.13f, 0.13f, "OK", 1);
     public static readonly Accuracy GREAT = new Accuracy(0.08f, 0.08f, "GREAT", 5);
     public static readonly Accuracy PERFECT = new Accuracy(0.04f, 0.04f, "PERFECT", 9);
     public static readonly Accuracy TOO_EARLY = new Accuracy(float.NaN, float.NaN, "TOO EARLY", -1);
@@ -126,6 +129,13 @@ public class BeatController : MonoBehaviour
         //set up BPM 
         BPM = songData.BPM;
         secPerBeat = 60 / BPM;
+
+        //set up thresholds based on BPM.
+        //given thresholds in seconds, what's the threshold in beat fractions?
+        //TODO 
+
+
+
 
         //set the audio source audio clip to this song 
         audioSource.clip = songData.songAudioClip;

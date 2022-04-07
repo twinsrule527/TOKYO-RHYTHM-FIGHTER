@@ -10,29 +10,29 @@ public class HealthBar : MonoBehaviour
 
     //Between 0,1 and this decides the rate at which health is visually decreased from the health bar (the higher the decimal, the faster it changes)
     [SerializeField] float interpolationSpeed;
-    Shake shaker;
-    private float shakeMagnitude = 5f;
-    private float shakeTimeMultiplier = 0.5f;
+    ShakeRect shaker;
+    private float shakeMagnitude = 6f;
+    private float shakeTimeMultiplier = -0.25f;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        shaker = GetComponent<Shake>();
+        shaker = GetComponent<ShakeRect>();
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        /*
         ////Testing function
         if (Input.GetKey(KeyCode.Space))
         {
            ChangeHealth(5);
         }
-        
+        */
     }
 
     public void ChangeHealth(float healthDifference)

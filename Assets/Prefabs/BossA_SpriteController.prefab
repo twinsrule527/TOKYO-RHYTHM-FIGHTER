@@ -586,6 +586,26 @@ PrefabInstance:
       propertyPath: _animSwitchTo
       value: 
       objectReference: {fileID: 3748085977730803171}
+    - target: {fileID: 7807515143569716775, guid: 7c3bad4af671b394eb53049c46864dcd, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7807515143569716775, guid: 7c3bad4af671b394eb53049c46864dcd, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7807515143569716775, guid: 7c3bad4af671b394eb53049c46864dcd, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7807515143569716775, guid: 7c3bad4af671b394eb53049c46864dcd, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7807515143569716775, guid: 7c3bad4af671b394eb53049c46864dcd, type: 3}
+      propertyPath: lerpCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c3bad4af671b394eb53049c46864dcd, type: 3}
 --- !u!4 &8970919472258173773 stripped
