@@ -271,7 +271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beatFraction: 1
   length: 1
-  key: 122
+  key: 120
   myActionIndicator: {fileID: 0}
 --- !u!1 &4232121906358341200
 GameObject:
@@ -507,7 +507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beatFraction: 1
   length: 2
-  key: 32
+  key: 122
   myActionIndicator: {fileID: 0}
   damage: 5
 --- !u!1 &8216630639901541565
