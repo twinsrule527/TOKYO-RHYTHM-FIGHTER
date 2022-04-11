@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class TextPicker : MonoBehaviour
 {
-    [SerializeField] Text myText;
+    TextMeshProUGUI myText;
     [SerializeField] TextAsset textList;
 
     private string [] linesFromFile;
 
     void Start()
     {
+        myText = GetComponent<TextMeshProUGUI>();
         linesFromFile = textList.text.Split("\n"[0]);
     }
 

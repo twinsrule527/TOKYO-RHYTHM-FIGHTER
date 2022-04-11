@@ -41,7 +41,6 @@ public class GameManager : MonoBehaviour
     }
 
     //change to a specific scene 
-    //TODO 
     public static void ChangeScene(string sceneName) {
         SceneManager.LoadScene(sceneName);
     }
