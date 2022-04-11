@@ -195,4 +195,17 @@ public class BeatIndicatorBrain : MonoBehaviour
         }
     }
 
+    public PlayerBeatIndicator GetPlayerIndicator(float beatToGet) {
+        float distFromBeat = 1000;
+        PlayerBeatIndicator chosenIndicator = null;
+        for(int i = 0; i < PlayerIndicators.Count; i++) {
+            float newDist = Mathf.Abs(PlayerIndicators[i].beatToHit - beatToGet);
+            if(newDist < distFromBeat) {
+                distFromBeat = newDist;
+                chosenIndicator = PlayerIndicators[i];
+            }
+        }
+        return chosenIndicator;
+    }
+
 }

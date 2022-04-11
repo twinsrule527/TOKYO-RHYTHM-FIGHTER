@@ -672,6 +672,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &558136366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5054704183310986166, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}
+  m_PrefabInstance: {fileID: 73355277}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &819559730 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8851067507104277674, guid: 0bae8102314e7a642b51f834926338da, type: 3}
@@ -1337,6 +1342,10 @@ PrefabInstance:
       propertyPath: Sprites.Array.data[3]
       value: 
       objectReference: {fileID: 3237436881797812316, guid: 0475a92bee260d24595ee78c2e18359f, type: 3}
+    - target: {fileID: 4086836469007911517, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: holdObj
+      value: 
+      objectReference: {fileID: 558136366}
     - target: {fileID: 4472115705231886289, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: key
       value: 122
@@ -1536,6 +1545,7 @@ GameObject:
   - component: {fileID: 2023597625}
   - component: {fileID: 2023597624}
   - component: {fileID: 2023597623}
+  - component: {fileID: 2023597626}
   m_Layer: 0
   m_Name: Main Camera (1)
   m_TagString: MainCamera
@@ -1608,3 +1618,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2023597626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023597622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52716f55b5059d94ab5114f90df3cbaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inspectorPerlinMult: 50
+  inspectorMagnitude: 1
+  inspectorShakeTime: 1

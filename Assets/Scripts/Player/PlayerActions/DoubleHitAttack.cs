@@ -5,6 +5,7 @@ using UnityEngine;
 public class DoubleHitAttack : PlayerAction
 {
     [SerializeField] private float damage;
+    [SerializeField] private float secondHitTime = 1f;//The time (approximately) when the second beat should hit
     private bool isAttacking;
     private float secondHitBeat;
     //After the first success, disables other actions for the next beat

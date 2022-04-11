@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class ActionIndicator : MonoBehaviour
 {
     [SerializeField] private PlayerAction parentAction;//The action which performs this indicator
-    void Start()
+    protected virtual void Start()
     {
        if(parentAction == null) {
            parentAction = GetComponentInParent<PlayerAction>();
