@@ -5,6 +5,7 @@ using UnityEngine;
 public class DoubleHitAttack : PlayerAction
 {
     [SerializeField] private float damage;
+    [SerializeField] private float secondHitTime = 1f;//The time (approximately) when the second beat should hit
     private bool isAttacking;
     private float secondHitBeat;
     //After the first success, disables other actions for the next beat
@@ -40,10 +41,14 @@ public class DoubleHitAttack : PlayerAction
 
     protected override void Success()
     {
+        //After making your first action, it sets it so it's ready to make a second hit
+            //Also deals damage on the first attack
         isAttacking = true;
-        secondHitBeat = BeatController.GetNearestBeat() + 1;
+        secondHitBeat = BeatController.GetNearestBeat() + secondHitTime;
         base.Success();
-        
+        Global.Boss.ChangeBossHP(-damage);
+        myActionIndicator.gameObject.SetActive(true);
+        myActionIndicator.PerformAction();
         Global.Player.spriteController.Attack(1);
         
     }
@@ -53,10 +58,12 @@ public class DoubleHitAttack : PlayerAction
         //Prevents the player from acting until the end of this Length
         Global.Player.CurrentAction = Global.Player.messUpAction;
         Global.Player.spriteController.MessUp();
+        //Debug.Log("MESSUP");
     }
 
     //This is the secondary success function for when the second attack hit
     private void Hit() {
+        Debug.Log("HIT");
         Global.Boss.ChangeBossHP(-damage);
     }
 
