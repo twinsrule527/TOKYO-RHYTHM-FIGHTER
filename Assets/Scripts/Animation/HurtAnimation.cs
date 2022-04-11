@@ -27,7 +27,7 @@ public class HurtAnimation : MonoBehaviour
         //TODO: Add ability to have the hurt animation lerp
         hurtRenderer.enabled = true;
         // Change the 'color' property of the 'Sprite Renderer'
-        sprite.color = new Color (50, 0, 0, 1); 
+        sprite.color = new Color (25, 0, 0, 1); 
 
         baseRenderer.enabled = false;
         yield return BeatController.WaitForBeat(BeatController.GetBeat() + hurtTime);
