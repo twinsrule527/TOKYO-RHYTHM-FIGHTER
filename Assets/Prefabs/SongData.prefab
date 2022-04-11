@@ -93,7 +93,7 @@ MonoBehaviour:
   _songName: TRF_rock
   songAudioClip: {fileID: 8300000, guid: b6e4749ecaa8a954ca132af8ac423123, type: 3}
   _BPM: 160
-  _songDelay: 0
+  _songDelay: 0.0015
 --- !u!1 &1802976958144967013
 GameObject:
   m_ObjectHideFlags: 0

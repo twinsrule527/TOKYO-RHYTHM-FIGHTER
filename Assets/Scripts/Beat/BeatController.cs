@@ -34,6 +34,9 @@ public class BeatController : MonoBehaviour
 
     public static bool isPlaying { get; private set; }
 
+    //accuracy thresholds, in seconds 
+    //will be converted into 
+
     //// Beat accuracies! 
     //You might get these from BeatController functions.
     //You can check them against each other
@@ -126,6 +129,13 @@ public class BeatController : MonoBehaviour
         //set up BPM 
         BPM = songData.BPM;
         secPerBeat = 60 / BPM;
+
+        //set up thresholds based on BPM.
+        //given thresholds in seconds, what's the threshold in beat fractions?
+        //TODO 
+
+
+
 
         //set the audio source audio clip to this song 
         audioSource.clip = songData.songAudioClip;

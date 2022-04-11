@@ -11,20 +11,22 @@ public class SfxSync : MonoBehaviour
         source.PlayOneShot(clip);
 
         //check if we're before or after the beat needed 
+        float beat = BeatController.GetBeat();
+        if(beat < beatNumber) {
+            //we're before the beat
 
-        //if before: 
-        //use play at audio time 
-        //calculate what audio time to play on using beat, bpm 
+            //if before: 
+            //use play at audio time 
+            //calculate what audio time to play on using beat, bpm 
 
-        //if after: 
-        //calculate how many samples we need to cut off 
-        //play from point in sample 
-        //safeguard: if past end, dont 
+        } else {
+            //we're after the beat
 
+            //calculate how many samples we need to cut off 
+            //play from point in sample 
+            //safeguard: if past end, dont, and print error
 
-        //IF WE CANCEL, USE SHUTTING DOWN VOLUME TO CANCEL BOSS SFX 
-        //so it can be played in advance 
-
+        }
 
     }
     
