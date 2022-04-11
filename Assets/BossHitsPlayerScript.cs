@@ -7,6 +7,7 @@ public class BossHitsPlayerScript : MonoBehaviour
 
     void OnEnable() {
         //IF GETTING AN ERROR HERE, PUT A SHAKE SCRIPT ON THE CAMERA! 
+        Debug.Log("tried to shake cam");
         Camera.main.gameObject.GetComponent<Shake>().ShakeIt(2f, 0.2f, 50f);
         //StartCoroutine(Shake.ShakeTransform(Camera.main.transform, 10, 0.2f, 50));
     }
