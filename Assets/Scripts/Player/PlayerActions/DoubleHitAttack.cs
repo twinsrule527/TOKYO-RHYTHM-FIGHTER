@@ -41,10 +41,12 @@ public class DoubleHitAttack : PlayerAction
 
     protected override void Success()
     {
+        //After making your first action, it sets it so it's ready to make a second hit
         isAttacking = true;
-        secondHitBeat = BeatController.GetNearestBeat() + 1;
+        secondHitBeat = BeatController.GetNearestBeat() + secondHitTime;
         base.Success();
-        
+        myActionIndicator.gameObject.SetActive(true);
+        myActionIndicator.PerformAction();
         Global.Player.spriteController.Attack(1);
         
     }
@@ -54,10 +56,12 @@ public class DoubleHitAttack : PlayerAction
         //Prevents the player from acting until the end of this Length
         Global.Player.CurrentAction = Global.Player.messUpAction;
         Global.Player.spriteController.MessUp();
+        //Debug.Log("MESSUP");
     }
 
     //This is the secondary success function for when the second attack hit
     private void Hit() {
+        Debug.Log("HIT");
         Global.Boss.ChangeBossHP(-damage);
     }
 

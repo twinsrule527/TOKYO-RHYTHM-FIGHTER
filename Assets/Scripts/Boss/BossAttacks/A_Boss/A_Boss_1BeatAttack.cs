@@ -16,7 +16,7 @@ public class A_Boss_1BeatAttack : BossAttack
         Global.Boss.makeAttackThisBeat = true;
         Global.Boss.CurrentMakingAttack = this;
         //Debug.Log("1");
-        Debug.Log(BeatController.GetBeat());
+        //Debug.Log(BeatController.GetBeat());
         yield return null;
         //mySprite.color = Color.black;
     }   

@@ -1290,6 +1290,14 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 322448708}
+    - target: {fileID: 2127048691682601911, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: key
+      value: 118
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127048691682601911, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: damage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2147477063709197977, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: m_SortingOrder
       value: 5
