@@ -15,10 +15,14 @@ public class DoubleHitAttack : PlayerAction
         //If the player is currently performing this action, it checks that first
         if(Global.Player.CurrentAction == this) {
             //Gets the nearest beat - 
-            if(BeatController.GetNearestBeat() == secondHitBeat) {
+            float hitTimeBeatFraction = secondHitTime % 1;
+            if(hitTimeBeatFraction == 0) {
+                hitTimeBeatFraction = 1;
+            }
+            if(BeatController.GetNearestBeat(hitTimeBeatFraction) == secondHitBeat) {
                 //if it's not the beat this action started on, 
                     //and the player's accuracy is good enough, the action follows through
-                Accuracy curAccuracy = BeatController.GetAccuracy(beatFraction);
+                Accuracy curAccuracy = BeatController.GetAccuracy(hitTimeBeatFraction);
                 Global.Player.spriteController.DisplayAccuracy(curAccuracy);
             
                 if(BeatController.IsOnBeat()) {
