@@ -16,10 +16,10 @@ public class HoldAttack : PlayerAction
     IEnumerator currentCoroutine;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         baseDamage = damage;
-        DamageGain = 0.01f;
     }
 
     // Update is called once per frame
@@ -122,11 +122,12 @@ public class HoldAttack : PlayerAction
         Global.Player.spriteController.Attack(1);
         isHolding = true;
         t = BeatController.GetBeat();
-
-//DEBUG
+        damage = baseDamage;
+        Debug.Log("startattack");
+//DEBUG 
         while(t < startTime + maxHoldLength){
+            damage += DamageGain * (BeatController.GetBeat() - t);
             t = BeatController.GetBeat();
-            damage += DamageGain;
 
             //Global.Boss.ChangeBossHP(-damage);
 
@@ -136,7 +137,9 @@ public class HoldAttack : PlayerAction
                 Debug.Log("isHolding != true line 113");
             }*/
             yield return null;
-        } 
+        }
+        Debug.Log("Attacked: " + damage);
+        Global.Boss.ChangeBossHP(-damage);
         isHolding = false;
         
         /*if(t >= startTime){
