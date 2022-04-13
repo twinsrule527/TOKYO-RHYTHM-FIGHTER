@@ -8,6 +8,8 @@ public class DmgNumber : MonoBehaviour
     [SerializeField] private TMP_Text PlayerDmgText;
     [SerializeField] private TMP_Text BossDmgText;
 
+    
+
     private Vector3 originalPlayerDmg;
     private Vector3 originalBossDmg;
 
@@ -15,6 +17,8 @@ public class DmgNumber : MonoBehaviour
     private bool resetBossText;
 
     [SerializeField] private float distanceToCenter;
+    [SerializeField] private float bossHeightMultiplier;
+
 
 
     // Start is called before the first frame update
@@ -22,62 +26,83 @@ public class DmgNumber : MonoBehaviour
     {
         originalPlayerDmg = PlayerDmgText.transform.position;
         originalBossDmg = BossDmgText.transform.position;
+  
+
+
         resetBossText = false;
         resetPlayerText = false;
 
         PlayerDmgText.text = "";
         BossDmgText.text = "";
 
+
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        /*
         if (Input.GetKey(KeyCode.Escape))
         {
-            StartCoroutine(PlayerDmg(-5));
+
+            StartCoroutine(PlayerDmg(-4));
         }
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            StartCoroutine(BossDmg(-5));
+            StartCoroutine(BossDmg(-3));
         }
-
+        */
 
     }
 
+    public void PlayerDMGChange(float damage)
+    {
+        StartCoroutine(PlayerDmg(damage));
+    }
 
-    public IEnumerator PlayerDmg(float damage)
+    public void BossDMGChange(float damage)
+    {
+        StartCoroutine(BossDmg(damage));
+    }
+
+
+    IEnumerator PlayerDmg(float damage)
     {
         resetPlayerText = true;
         PlayerDmgText.text = damage.ToString();
+
         if (resetPlayerText)
         {
-            for (float t = 0f; t <= 0.5f; t += Time.deltaTime)
+            for (float t = 0f; t <= 0.8f; t += Time.deltaTime)
             {
-                PlayerDmgText.transform.position = Vector3.Lerp(PlayerDmgText.transform.position, transform.position + new Vector3(-distanceToCenter,0,0), t);
+                PlayerDmgText.transform.position = Vector3.Lerp(PlayerDmgText.transform.position, transform.position + new Vector3(-distanceToCenter,-distanceToCenter,0), t);
                 yield return null;
             }
             PlayerDmgText.transform.position = originalPlayerDmg;
             PlayerDmgText.text = "";
+
             resetPlayerText = false;
         }
     }
 
-    public IEnumerator BossDmg(float damage)
+     IEnumerator BossDmg(float damage)
     {
         resetBossText = true;
         BossDmgText.text = damage.ToString();
+
         if (resetBossText)
         {
-            for (float t = 0f; t <= 0.5f; t += Time.deltaTime)
+            for (float t = 0f; t <= 0.8f; t += Time.deltaTime)
             {
-                BossDmgText.transform.position = Vector3.Lerp(BossDmgText.transform.position, transform.position + new Vector3(distanceToCenter, 0, 0), t);
+                BossDmgText.transform.position = Vector3.Lerp(BossDmgText.transform.position, transform.position + new Vector3(distanceToCenter, distanceToCenter*bossHeightMultiplier, 0), t);
                 yield return null;
             }
             BossDmgText.transform.position = originalBossDmg;
             BossDmgText.text = "";
+
             resetBossText = false;
         }
     }
