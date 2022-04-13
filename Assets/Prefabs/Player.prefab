@@ -417,7 +417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beatFraction: 1
   length: 1
-  key: 120
+  key: 122
   myActionIndicator: {fileID: 0}
 --- !u!1 &4232121906358341200
 GameObject:
@@ -492,7 +492,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: eb2ee5ff7cfc5ba4fab7d23b1fb08d98, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.50377357, b: 0.50377357, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -656,7 +656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beatFraction: 1
   length: 2
-  key: 122
+  key: 120
   myActionIndicator: {fileID: 3608641872491304081}
   damage: 5
 --- !u!1 &8216630639901541565
