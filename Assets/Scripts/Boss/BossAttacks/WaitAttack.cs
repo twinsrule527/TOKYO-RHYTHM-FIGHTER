@@ -6,8 +6,8 @@ public class WaitAttack : BossAttack
 {
     [SerializeField] private int beatToWait;
     public override IEnumerator Attack() {
-        Global.Boss.CurrentMakingAttack = this;
         yield return BeatController.WaitForBeatsMulti(beatToWait, 1);
+        Global.Boss.CurrentMakingAttack = this;
         Debug.Log("Wait");
         yield return null;
     }

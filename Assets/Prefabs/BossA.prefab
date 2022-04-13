@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 7374144325323111438}
   - component: {fileID: 7374144325323111439}
   m_Layer: 0
-  m_Name: SS ShortAttack
+  m_Name: 22 ShortAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
