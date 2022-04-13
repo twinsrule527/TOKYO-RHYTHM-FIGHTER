@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     //How much health the player starts with
     [SerializeField] float _playerStartHealth = 50;
     [SerializeField] private HurtAnimation playerHurtAnimation;
+    [SerializeField] DmgNumber dmgNumber;
+
     public float playerStartHealth {get; private set;}
     public float playerHealth {get; private set;}
 
@@ -28,6 +30,7 @@ public class Player : MonoBehaviour
         Global.Player = this;
         playerStartHealth = _playerStartHealth;
         playerHealth = playerStartHealth;
+        dmgNumber = GameObject.FindGameObjectWithTag("DmgManager").GetComponent<DmgNumber>();
         //load PlayerActions, which will be components on the Player object or its children 
         actions = GetComponentsInChildren<PlayerAction>();
         enabled = false;
@@ -52,6 +55,7 @@ public class Player : MonoBehaviour
     //How outside objects should affect the player's health
     public void ChangeHP(float amt = 0) {
         playerHealth += amt;
+        dmgNumber.PlayerDMGChange(amt);
         Global.UIManager.SetHealthText();
         playerHurtAnimation.Hurt();
         if(playerHealth <= 0) {

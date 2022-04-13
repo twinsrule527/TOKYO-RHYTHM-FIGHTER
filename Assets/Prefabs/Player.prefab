@@ -767,6 +767,7 @@ MonoBehaviour:
   currActionEndBeat: 0
   _playerStartHealth: 50
   playerHurtAnimation: {fileID: 970594237769943624}
+  dmgNumber: {fileID: 7556804363992587736, guid: e6503903af7ae1e42b3c07813d6de643, type: 3}
 --- !u!212 &7554666834438711988
 SpriteRenderer:
   m_ObjectHideFlags: 0

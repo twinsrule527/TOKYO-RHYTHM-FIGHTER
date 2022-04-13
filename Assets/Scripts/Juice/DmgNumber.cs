@@ -16,8 +16,10 @@ public class DmgNumber : MonoBehaviour
     private bool resetPlayerText;
     private bool resetBossText;
 
-    [SerializeField] private float distanceToCenter;
-    [SerializeField] private float bossHeightMultiplier;
+    private float distanceToCenter;
+    [SerializeField] private float PlayerHeightMultiplier;
+    [SerializeField] private float BossHeightMultiplier;
+
 
 
 
@@ -35,7 +37,7 @@ public class DmgNumber : MonoBehaviour
         PlayerDmgText.text = "";
         BossDmgText.text = "";
 
-
+        distanceToCenter = Screen.width / 5;
 
 
     }
@@ -78,7 +80,7 @@ public class DmgNumber : MonoBehaviour
         {
             for (float t = 0f; t <= 0.8f; t += Time.deltaTime)
             {
-                PlayerDmgText.transform.position = Vector3.Lerp(PlayerDmgText.transform.position, transform.position + new Vector3(-distanceToCenter,-distanceToCenter,0), t);
+                PlayerDmgText.transform.position = Vector3.Lerp(PlayerDmgText.transform.position, transform.position + new Vector3(-distanceToCenter,-distanceToCenter/PlayerHeightMultiplier,0), t);
                 yield return null;
             }
             PlayerDmgText.transform.position = originalPlayerDmg;
@@ -97,7 +99,7 @@ public class DmgNumber : MonoBehaviour
         {
             for (float t = 0f; t <= 0.8f; t += Time.deltaTime)
             {
-                BossDmgText.transform.position = Vector3.Lerp(BossDmgText.transform.position, transform.position + new Vector3(distanceToCenter, distanceToCenter*bossHeightMultiplier, 0), t);
+                BossDmgText.transform.position = Vector3.Lerp(BossDmgText.transform.position, transform.position + new Vector3(distanceToCenter*BossHeightMultiplier, distanceToCenter*BossHeightMultiplier, 0), t);
                 yield return null;
             }
             BossDmgText.transform.position = originalBossDmg;

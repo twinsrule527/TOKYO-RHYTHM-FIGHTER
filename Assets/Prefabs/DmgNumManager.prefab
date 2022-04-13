@@ -53,7 +53,7 @@ MonoBehaviour:
   PlayerDmgText: {fileID: 4225836929661095389}
   BossDmgText: {fileID: 8961742384567198428}
   distanceToCenter: 35
-  bossHeightMultiplier: 6
+  bossHeightMultiplier: 5
 --- !u!1 &3188378101562626599
 GameObject:
   m_ObjectHideFlags: 0

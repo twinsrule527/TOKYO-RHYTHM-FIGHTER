@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _creatorKey: 49
+  _parryable: 0
   length: 1
   attackIndicatorSprite: {fileID: -8506385498346739953, guid: 2f38be9458483c74299804d5e35050c3, type: 3}
   playsHitAnimation: 0
@@ -193,6 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _creatorKey: 95
+  _parryable: 0
   length: 2
   attackIndicatorSprite: {fileID: 0}
   playsHitAnimation: 0
@@ -243,6 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _creatorKey: 83
+  _parryable: 0
   length: 2
   attackIndicatorSprite: {fileID: -8812421473458378982, guid: 2f38be9458483c74299804d5e35050c3, type: 3}
   playsHitAnimation: 0
@@ -294,6 +297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _creatorKey: 45
+  _parryable: 0
   length: 1
   attackIndicatorSprite: {fileID: 0}
   playsHitAnimation: 0
@@ -344,6 +348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _creatorKey: 76
+  _parryable: 0
   length: 4
   attackIndicatorSprite: {fileID: 75050689400061820, guid: 2f38be9458483c74299804d5e35050c3, type: 3}
   playsHitAnimation: 0
@@ -482,7 +487,8 @@ MonoBehaviour:
   - 50
   makeAttackThisBeat: 0
   CurrentMakingAttack: {fileID: 0}
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 1219686146336150580, guid: be19fa031271c7c4b9586fb3a9c2d7fe, type: 3}
+  dmgNumber: {fileID: 7556804363992587736, guid: e6503903af7ae1e42b3c07813d6de643, type: 3}
   hurtAnimation: {fileID: 4758325490003686201}
   AttackAI: {fileID: 7374144326298839355}
   spriteController: {fileID: 7572151231474549405}
@@ -563,6 +569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _creatorKey: 51
+  _parryable: 0
   length: 3
   attackIndicatorSprite: {fileID: -3795339071163260973, guid: 2f38be9458483c74299804d5e35050c3, type: 3}
   playsHitAnimation: 0

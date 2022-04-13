@@ -519,6 +519,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: DmgNumManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1294947086377559208, guid: e6503903af7ae1e42b3c07813d6de643, type: 3}
+      propertyPath: m_TagString
+      value: DmgManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357116216619558712, guid: e6503903af7ae1e42b3c07813d6de643, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 49
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357116216619558712, guid: e6503903af7ae1e42b3c07813d6de643, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 145
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556804363992587736, guid: e6503903af7ae1e42b3c07813d6de643, type: 3}
+      propertyPath: HeightMultiplier
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556804363992587736, guid: e6503903af7ae1e42b3c07813d6de643, type: 3}
+      propertyPath: BossHeightMultiplier
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556804363992587736, guid: e6503903af7ae1e42b3c07813d6de643, type: 3}
+      propertyPath: bossHeightMultiplier
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556804363992587736, guid: e6503903af7ae1e42b3c07813d6de643, type: 3}
+      propertyPath: PlayerHeightMultiplier
+      value: 1.6
+      objectReference: {fileID: 0}
     - target: {fileID: 8016346893611268907, guid: e6503903af7ae1e42b3c07813d6de643, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -589,7 +617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8016346893611268907, guid: e6503903af7ae1e42b3c07813d6de643, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -37
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8016346893611268907, guid: e6503903af7ae1e42b3c07813d6de643, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -721,6 +749,10 @@ PrefabInstance:
     - target: {fileID: 7669122365477563606, guid: be19fa031271c7c4b9586fb3a9c2d7fe, type: 3}
       propertyPath: m_Name
       value: CenterHealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669122365477563606, guid: be19fa031271c7c4b9586fb3a9c2d7fe, type: 3}
+      propertyPath: m_TagString
+      value: CenterHealth
       objectReference: {fileID: 0}
     - target: {fileID: 7669122365477563607, guid: be19fa031271c7c4b9586fb3a9c2d7fe, type: 3}
       propertyPath: m_Pivot.x
