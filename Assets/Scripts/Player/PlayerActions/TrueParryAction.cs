@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//An attack action where the player has to successfully hit 2 beats in a row
-public class DoubleHitAttack : PlayerAction
+//This is a parry action that counts as a block, and then an attack immediaely after
+public class TrueParryAction : PlayerAction
 {
     [SerializeField] private float damage;
     [SerializeField] private float secondHitTime = 1f;//The time (approximately) when the second beat should hit
-    private bool isAttacking;
+    private bool isParrying;
     private float secondHitBeat;
     //After the first success, disables other actions for the next beat
 
@@ -45,12 +45,13 @@ public class DoubleHitAttack : PlayerAction
 
     protected override void Success()
     {
-        //After making your first action, it sets it so it's ready to make a second hit
-            //Also deals damage on the first attack
-        isAttacking = true;
-        secondHitBeat = BeatController.GetNearestBeat() + secondHitTime;
+        //First action is a block
+            //If the enemy is performing a parry-able action, it preps for the parry
+        if(Global.Boss.CurrentMakingAttack.Parryable) {
+            isParrying = true;
+            secondHitBeat = BeatController.GetNearestBeat() + secondHitTime;
+        }
         base.Success();
-        Global.Boss.ChangeBossHP(-damage);
         myActionIndicator.gameObject.SetActive(true);
         myActionIndicator.PerformAction();
         Global.Player.spriteController.Attack(1);
@@ -69,6 +70,4 @@ public class DoubleHitAttack : PlayerAction
     private void Hit() {
         Global.Boss.ChangeBossHP(-damage);
     }
-
-
 }

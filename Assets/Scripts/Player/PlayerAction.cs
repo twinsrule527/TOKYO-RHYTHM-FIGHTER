@@ -59,6 +59,9 @@ public class PlayerAction : MonoBehaviour
                 MessUp();
             }
         }
+        else {
+            MessUp();
+        }
 
     }
 
