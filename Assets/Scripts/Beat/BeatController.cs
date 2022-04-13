@@ -32,6 +32,8 @@ public struct Accuracy {
 public class BeatController : MonoBehaviour
 {
 
+    [SerializeField] bool isGameScene = true;
+
     public static bool isPlaying { get; private set; }
 
     //accuracy thresholds, in seconds 
@@ -162,6 +164,10 @@ public class BeatController : MonoBehaviour
         //beatOffset = GetAbsDistanceFromBeat(1);
         //^^^^ moved these to more direct getters.
 
+        if(!isGameScene) {
+            return;
+        }
+
 
         //If we've hit major beats (1, 0.5, 0.25) send out events.
         float beat = GetBeat();
@@ -220,11 +226,11 @@ public class BeatController : MonoBehaviour
     }
 
     //ex. for 1, 5.1 returns 0.1, 5.5 returns 0.5, 5.9 returns 0.9
-    public static float GetDistanceFromBeat() {
+    /*public static float GetDistanceFromBeat() {
         //return GetDistanceFromBeat(1);
         return GetBeat() % 1;
-    }
-    public static float GetDistanceFromBeat(float fraction) {
+    }*/
+    public static float GetDistanceFromBeat(float fraction = 1) {
         //return GetDistanceFromBeat(fraction, GetBeat());
         return GetBeat() % fraction;
     }
@@ -238,10 +244,10 @@ public class BeatController : MonoBehaviour
         b = -Mathf.Abs(b);
         return b + 0.5f;
     }*/
-    public static float GetAbsDistanceFromBeat() {
+    /*public static float GetAbsDistanceFromBeat() {
         return GetAbsDistanceFromBeat(1);
-    }
-    public static float GetAbsDistanceFromBeat(float fraction) {
+    }*/
+    public static float GetAbsDistanceFromBeat(float fraction = 1) {
         return GetAbsDistanceFromBeat(fraction, GetBeat());
     }
     public static float GetAbsDistanceFromBeat(float fraction, float beat) {
@@ -252,10 +258,10 @@ public class BeatController : MonoBehaviour
 
     //for use by player actions. 
     //are we on beat, within the actionable threshold, according to a certain fraction?
-    public static bool IsOnBeat() {
+    /*public static bool IsOnBeat() {
         return IsOnBeat(1);
-    }
-    public static bool IsOnBeat(float fraction) {
+    }*/
+    public static bool IsOnBeat(float fraction = 1) {
         return IsOnBeat(fraction, GetBeat());
     }
     public static bool IsOnBeat(float fraction, float beat) {
@@ -282,10 +288,10 @@ public class BeatController : MonoBehaviour
 
     //get the current accuracy. returns an Accuracy, which 
     //can be checked against, for example. BeatController.PERFECT 
-    public static Accuracy GetAccuracy() {
+    /*public static Accuracy GetAccuracy() {
         return GetAccuracy(1);
-    }
-    public static Accuracy GetAccuracy(float fraction) {
+    }*/
+    public static Accuracy GetAccuracy(float fraction = 1) {
         return GetAccuracy(fraction, GetBeat());
     }
     public static Accuracy GetAccuracy(float fraction, float beat) {
