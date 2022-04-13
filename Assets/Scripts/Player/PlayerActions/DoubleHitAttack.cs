@@ -42,9 +42,11 @@ public class DoubleHitAttack : PlayerAction
     protected override void Success()
     {
         //After making your first action, it sets it so it's ready to make a second hit
+            //Also deals damage on the first attack
         isAttacking = true;
         secondHitBeat = BeatController.GetNearestBeat() + secondHitTime;
         base.Success();
+        Global.Boss.ChangeBossHP(-damage);
         myActionIndicator.gameObject.SetActive(true);
         myActionIndicator.PerformAction();
         Global.Player.spriteController.Attack(1);
