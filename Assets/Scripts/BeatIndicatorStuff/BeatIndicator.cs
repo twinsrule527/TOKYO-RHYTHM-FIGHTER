@@ -9,7 +9,8 @@ public class BeatIndicator : MonoBehaviour
     [SerializeField] public float beatToHit {private set; get;}
     [SerializeField] protected float startBeat;//The beat that this first shows up on
     public bool moving;
-    float fadeOutTime = 0.25f;
+    //float fadeOutTime = BeatController.MINIMUM.thresholdAfterBeat;
+    float fadeOutTime = 0;
     public Vector3 startPos;
     public Quaternion startRot;
     public Vector3 endPos;
