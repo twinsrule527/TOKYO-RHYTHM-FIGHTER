@@ -225,6 +225,8 @@ Transform:
   - {fileID: 6598295370701174149}
   - {fileID: 5371725925808906634}
   - {fileID: 5212819645275076352}
+  - {fileID: 407761055419231029}
+  - {fileID: 2873656863541114516}
   m_Father: {fileID: 8597708211883435789}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -414,7 +416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beatFraction: 1
   length: 1
-  key: 120
+  key: 122
   myActionIndicator: {fileID: 0}
 --- !u!1 &4232121906358341200
 GameObject:
@@ -653,7 +655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beatFraction: 1
   length: 2
-  key: 122
+  key: 120
   myActionIndicator: {fileID: 3608641872491304081}
   damage: 5
 --- !u!1 &8216630639901541565
