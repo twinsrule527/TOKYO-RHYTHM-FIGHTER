@@ -58,8 +58,18 @@ public class DmgNumber : MonoBehaviour
 
     }
 
+    public void PlayerDMGChange(float damage)
+    {
+        StartCoroutine(PlayerDmg(damage));
+    }
 
-    public IEnumerator PlayerDmg(float damage)
+    public void BossDMGChange(float damage)
+    {
+        StartCoroutine(BossDmg(damage));
+    }
+
+
+    IEnumerator PlayerDmg(float damage)
     {
         resetPlayerText = true;
         PlayerDmgText.text = damage.ToString();
@@ -78,7 +88,7 @@ public class DmgNumber : MonoBehaviour
         }
     }
 
-    public IEnumerator BossDmg(float damage)
+     IEnumerator BossDmg(float damage)
     {
         resetBossText = true;
         BossDmgText.text = damage.ToString();
