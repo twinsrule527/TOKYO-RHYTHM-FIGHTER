@@ -7,6 +7,16 @@ public class HurtAnimation : MonoBehaviour
     [SerializeField] private float hurtTime;
     [SerializeField] private SpriteRenderer baseRenderer;
     [SerializeField] private SpriteRenderer hurtRenderer;
+
+     SpriteRenderer sprite;
+
+
+    void Start()
+    {
+        sprite = GetComponent<SpriteRenderer>();
+    }
+
+
     public void Hurt() {
         StartCoroutine(Hurts());
     }
@@ -16,6 +26,9 @@ public class HurtAnimation : MonoBehaviour
 
         //TODO: Add ability to have the hurt animation lerp
         hurtRenderer.enabled = true;
+        // Change the 'color' property of the 'Sprite Renderer'
+        //sprite.color = new Color (255, 1, 1, 1); 
+
         baseRenderer.enabled = false;
         yield return BeatController.WaitForBeat(BeatController.GetBeat() + hurtTime);
         hurtRenderer.enabled = false;

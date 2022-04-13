@@ -23,6 +23,16 @@ public class UIManager : MonoBehaviour
         EnemyHealthText.text = "Boss Health: " + ((int)Global.Boss.bossHP).ToString();
     }
 
+    public void RestartButtonPressed() {
+        Debug.Log("restart button pressed");
+        GameManager.RestartScene();
+    }
+
+    public void ExitButtonPressed() {
+        Debug.Log("exit button pressed");
+        GameManager.GoToTitle();
+    }
+
     public void PlayerWins() {
         //TODO show sprite 
     }
