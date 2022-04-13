@@ -47,6 +47,7 @@ MonoBehaviour:
   parentAction: {fileID: 3414772834812628416}
   holdLength: 1
   holdObj: {fileID: 0}
+<<<<<<< HEAD
   holdLine: {fileID: 7421385569951105280}
 --- !u!1 &1269733307042010174
 GameObject:
@@ -193,6 +194,8 @@ MonoBehaviour:
   key: 0
   myActionIndicator: {fileID: 0}
   damage: 5
+=======
+>>>>>>> Charlee
 --- !u!1 &2119660171438282353
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,6 +278,7 @@ MonoBehaviour:
   length: 1
   key: 0
   myActionIndicator: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &2646914500754095716
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,6 +373,8 @@ MonoBehaviour:
   key: 0
   myActionIndicator: {fileID: 0}
   damage: 5
+=======
+>>>>>>> Charlee
 --- !u!1 &4081028334381491184
 GameObject:
   m_ObjectHideFlags: 0
