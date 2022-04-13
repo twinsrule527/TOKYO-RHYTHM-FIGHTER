@@ -35,9 +35,17 @@ public class GameManager : MonoBehaviour
         Global.UIManager.SongStarted();
     }
 
+    public static void GoToGame() {
+        SceneManager.LoadScene(1);
+    }
+
     //restart the current scene 
     public static void RestartScene() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public static void GoToTitle() {
+        SceneManager.LoadScene("StartScene");
     }
 
     //change to a specific scene 
