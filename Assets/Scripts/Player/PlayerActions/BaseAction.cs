@@ -34,16 +34,17 @@ public class BaseAction : PlayerAction
 //Override succcess function if you need to override the function from the original script
     protected override void Success()
     {
-        base.Success();
         //myActionIndicator.gameObject.SetActive(true);
         //myActionIndicator.PerformAction();
-        Global.Player.spriteController.Attack(1);
-        //if(!Global.Boss.makeAttackThisBeat) {//DOesn't always work correctly
-        Global.Player.spriteController.Attack(1);
-        Global.Boss.ChangeBossHP(-damage);
-        /*}
+        if(!Global.Boss.makeAttackThisBeat) {//DOesn't always work correctly
+            Global.Player.spriteController.Attack(1);
+            Global.Boss.ChangeBossHP(-damage);
+            base.Success();
+        
+        }
         else {
             //Play the MessUp/Hurt Animation
-        }*/
+            Global.Player.ChangeHP();
+        }
     }
 }
