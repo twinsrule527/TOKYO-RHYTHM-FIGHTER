@@ -12,5 +12,11 @@ public class ComboIndicator : MonoBehaviour
     void Update()
     {
         comboText.text = comboCounter.ToString() + " HITS!";
+
+        if(comboCounter == 0){
+            comboText.enabled = false;
+        } else{
+            comboText.enabled = true;
+        }
     }
 }
