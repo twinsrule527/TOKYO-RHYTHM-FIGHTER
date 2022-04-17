@@ -26,18 +26,30 @@ public class GameManager : MonoBehaviour
     //the song has started playing- call everybody who needs to know!
     public static void SongStarted(SongData songData) {
 
+        if(Global.BeatIndicatorBrain == null) { //but don't do anything if we're not in the game scene
+            return;
+        }  
+        
         Global.BeatIndicatorBrain.enabled = true;
         Global.Player.enabled = true;
-
+        
         Global.BeatIndicatorBrain.SongStarted(); //boss attacks depend on brain, call first 
         Global.Player.SongStarted();
         Global.Boss.SongStarted();
         Global.UIManager.SongStarted();
     }
 
+    public static void GoToGame() {
+        SceneManager.LoadScene(1);
+    }
+
     //restart the current scene 
     public static void RestartScene() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public static void GoToTitle() {
+        SceneManager.LoadScene("StartScene");
     }
 
     //change to a specific scene 

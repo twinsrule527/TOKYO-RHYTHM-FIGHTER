@@ -33,6 +33,12 @@ public abstract class BossAttack : MonoBehaviour
             return _creatorKey;
         }
     }
+    [SerializeField] private bool _parryable;//Whether the player's parry action works against this attack or not
+    public bool Parryable {
+        get {
+            return _parryable;
+        }
+    }
     void Awake() {
         myAnimationController.spriteRenderer = GetComponentInParent<SpriteRenderer>();
         _creatorKey = name[0];

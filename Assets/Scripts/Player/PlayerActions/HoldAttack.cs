@@ -53,8 +53,6 @@ public class HoldAttack : PlayerAction
     
     public override void CheckInput() {
         
-        base.CheckInput();
-
         if(isHolding){
             if(!Input.GetKey(key)){
                 isHolding = false;//DEBUG
@@ -67,6 +65,9 @@ public class HoldAttack : PlayerAction
                 }
             }
         }
+        base.CheckInput();
+
+        
 
     }
     
