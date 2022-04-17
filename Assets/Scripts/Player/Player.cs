@@ -58,6 +58,9 @@ public class Player : MonoBehaviour
         dmgNumber.PlayerDMGChange(amt);
         Global.UIManager.SetHealthText();
         playerHurtAnimation.Hurt();
+
+        ComboIndicator.comboCounter = 0;
+
         if(playerHealth <= 0) {
             GameManager.PlayerLoses();
         }
