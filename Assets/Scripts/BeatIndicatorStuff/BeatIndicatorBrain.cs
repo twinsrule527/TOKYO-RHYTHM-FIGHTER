@@ -39,7 +39,7 @@ public class BeatIndicatorBrain : MonoBehaviour
     private float curBaseBeat;
     [SerializeField] private Sprite baseBeatSprite;
     private List<BossBeatIndicator> BossIndicators;//a list of exisitng indicators - so that when they deactive, this can start using them again
-    private List<PlayerBeatIndicator> PlayerIndicators;
+    public List<PlayerBeatIndicator> PlayerIndicators;
     private List<beatIndicatorInfo> BossBeats;
     private List<beatIndicatorInfo> PlayerLeftBeats;
     private List<beatIndicatorInfo> PlayerRightBeats;
@@ -142,7 +142,7 @@ public class BeatIndicatorBrain : MonoBehaviour
                 }
                 if(newIndicator2 == null) {
                     newIndicator2 = Instantiate(playerIndicatorPrefab, Vector3.zero, Quaternion.identity);
-                    PlayerIndicators.Add(newIndicator1);
+                    PlayerIndicators.Add(newIndicator2);
                     newIndicator2.transform.rotation = startPosBossTransform.rotation;
                     newIndicator2.startRot = newIndicator2.transform.rotation;
                 }
@@ -218,7 +218,7 @@ public class BeatIndicatorBrain : MonoBehaviour
         foreach(PlayerBeatIndicator beatIndicator in PlayerIndicators) {
             if(beatIndicator.enabled) {
                 if(beatIndicator.beatToHit < beatTil) {
-                    beatIndicator.mySprite.color = Color.gray;
+                    beatIndicator.mySprite.color = new Color(beatIndicator.mySprite.color.r, beatIndicator.mySprite.color.g, beatIndicator.mySprite.color.b, 0);
                 }
             }
         }

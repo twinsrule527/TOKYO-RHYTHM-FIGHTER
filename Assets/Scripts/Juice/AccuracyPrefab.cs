@@ -27,6 +27,10 @@ public class AccuracyPrefab : MonoBehaviour
         
     }
 
+    public void StopDisplay() {
+        StopCoroutine(DisplayCoroutine());
+    }
+
     IEnumerator DisplayCoroutine() {
         mySpriteRenderer.enabled = true;
 
