@@ -142,7 +142,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _creatorKey: 49
+  _parryable: 0
   length: 1
+  _isAnAttack: 1
   attackIndicatorSprite: {fileID: -8506385498346739953, guid: 2f38be9458483c74299804d5e35050c3, type: 3}
   playsHitAnimation: 0
   myAnimationController: {fileID: 2023890976701665613}
@@ -193,7 +195,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _creatorKey: 95
+  _parryable: 0
   length: 2
+  _isAnAttack: 0
   attackIndicatorSprite: {fileID: 0}
   playsHitAnimation: 0
   myAnimationController: {fileID: 6338650603145882749}
@@ -243,7 +247,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _creatorKey: 83
+  _parryable: 0
   length: 2
+  _isAnAttack: 1
   attackIndicatorSprite: {fileID: -8812421473458378982, guid: 2f38be9458483c74299804d5e35050c3, type: 3}
   playsHitAnimation: 0
   myAnimationController: {fileID: 3916436914547534296}
@@ -294,7 +300,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _creatorKey: 45
+  _parryable: 0
   length: 1
+  _isAnAttack: 0
   attackIndicatorSprite: {fileID: 0}
   playsHitAnimation: 0
   myAnimationController: {fileID: 8178247261502864739}
@@ -344,7 +352,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _creatorKey: 76
+  _parryable: 0
   length: 4
+  _isAnAttack: 1
   attackIndicatorSprite: {fileID: 75050689400061820, guid: 2f38be9458483c74299804d5e35050c3, type: 3}
   playsHitAnimation: 0
   myAnimationController: {fileID: 1166183043910410771}
@@ -457,6 +467,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f405f6be44144a743b4f35a481ba1eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentAttackOutgoing: {fileID: 0}
+  AttackBeatHitOn: 0
   AttackChildren:
   - {fileID: 7374144325704998262}
   - {fileID: 1249257266678878243}
@@ -563,7 +575,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _creatorKey: 51
+  _parryable: 0
   length: 3
+  _isAnAttack: 1
   attackIndicatorSprite: {fileID: -3795339071163260973, guid: 2f38be9458483c74299804d5e35050c3, type: 3}
   playsHitAnimation: 0
   myAnimationController: {fileID: 2403645037667687425}

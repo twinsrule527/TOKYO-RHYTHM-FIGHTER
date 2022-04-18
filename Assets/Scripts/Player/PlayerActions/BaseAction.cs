@@ -36,9 +36,10 @@ public class BaseAction : PlayerAction
     {
         //myActionIndicator.gameObject.SetActive(true);
         //myActionIndicator.PerformAction();
-        if(!Global.Boss.makeAttackThisBeat) {//DOesn't always work correctly
+        if(Global.Boss.AttackAI.AttackBeatHitOn != BeatController.GetNearestBeat() || !Global.Boss.AttackAI.CurrentAttackOutgoing.IsAnAttack) {//DOesn't always work correctly
             Global.Player.spriteController.Attack(1);
-            Global.Boss.ChangeBossHP(-damage);
+            currentActionCoroutine = ActionCoroutine();
+            StartCoroutine(currentActionCoroutine);
             base.Success();
         
         }
@@ -46,5 +47,24 @@ public class BaseAction : PlayerAction
             //Play the MessUp/Hurt Animation
             Global.Player.ChangeHP();
         }
+    }
+    protected override void MessUp()
+    {
+        base.MessUp();
+        if(currentActionCoroutine != null) {
+            StopCoroutine(currentActionCoroutine);
+        }
+    }
+    public override IEnumerator ActionCoroutine()
+    {
+        //Deals damage at the end of the action, in case it get messed up
+        float startTime =  BeatController.GetBeat();
+        float t = startTime;
+        while(t < startTime + length - 0.5f) {
+            yield return null;
+            t = BeatController.GetBeat();
+        }
+        Debug.Log("DAMAGED");
+        Global.Boss.ChangeBossHP(-damage);
     }
 }

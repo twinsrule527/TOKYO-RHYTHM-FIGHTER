@@ -61,6 +61,7 @@ public class PlayerAction : MonoBehaviour
         }
         else {
             MessUp();
+            Global.Player.spriteController.DisplayMessup();
         }
 
     }
@@ -94,5 +95,11 @@ public class PlayerAction : MonoBehaviour
         Debug.Log("you messed up, you were off beat");
         Global.Player.CurrentAction = Global.Player.messUpAction;
         Global.Player.spriteController.MessUp();
+    }
+
+    protected IEnumerator currentActionCoroutine;
+    //This coroutine is performed so that the boss loses HP at the right moment, etc.
+    public virtual IEnumerator ActionCoroutine() {
+        yield return null;
     }
 }
