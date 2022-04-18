@@ -12,6 +12,8 @@ public class ComboIndicator : MonoBehaviour
     public static int comboCounter = 0;
     private List<PlayerAction> playerActions;
 
+    public float dmgMultiplier = 0.2f;
+
     void Start()
     {
         playerActions = new List<PlayerAction>(FindObjectsOfType<PlayerAction>());
@@ -25,5 +27,23 @@ public class ComboIndicator : MonoBehaviour
         } else{
             comboText.enabled = true;
         }
+
+        foreach (PlayerAction action in playerActions )
+        {
+            action.damage = comboMultiplier(action.baseDamage);// * ((comboCounter + 1) * 1.2f);
+            //action.damage = action.baseDamage;
+
+            if(comboCounter == 0){
+                action.damage = action.baseDamage;
+            }
+        }
+    }
+
+    private float comboMultiplier(float inputAmt) {
+        
+        inputAmt = inputAmt + inputAmt*(comboCounter * dmgMultiplier);
+        
+        return inputAmt;
+
     }
 }

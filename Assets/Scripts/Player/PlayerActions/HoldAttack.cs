@@ -5,7 +5,7 @@ using UnityEngine;
 public class HoldAttack : PlayerAction
 
 {
-    public float damage;//How much damage this attack does
+    //public float damage;//How much damage this attack does
     public float startDamage;//How much damage this attack does at the start
 
     public float DamageGain; //how mucn damage gains per frame of hold

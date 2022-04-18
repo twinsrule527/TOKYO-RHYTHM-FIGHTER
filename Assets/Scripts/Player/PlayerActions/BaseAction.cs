@@ -4,7 +4,7 @@ using UnityEngine;
 //A starting action in the game, which works as both an attack & a parry
 public class BaseAction : PlayerAction
 {
-    public float damage;//How much damage this attack does
+    //public float damage;//How much damage this attack does
 
 
     // Update is called once per frame

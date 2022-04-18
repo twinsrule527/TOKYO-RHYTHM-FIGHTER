@@ -4,7 +4,7 @@ using UnityEngine;
 //An attack action where the player has to successfully hit 2 beats in a row
 public class DoubleHitAttack : PlayerAction
 {
-    [SerializeField] private float damage;
+    //[SerializeField] private float damage;
     [SerializeField] private float secondHitTime = 1f;//The time (approximately) when the second beat should hit
     private bool isAttacking;
     private float secondHitBeat;
