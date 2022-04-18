@@ -1521,6 +1521,8 @@ MonoBehaviour:
   spriteRenderer: {fileID: 51019779}
   noHover: {fileID: 21300000, guid: d54c7b4c172671e459373a29b7fe6ba7, type: 3}
   hover: {fileID: 21300000, guid: 4cd471b6e10e08a48a0800140694e73c, type: 3}
+  noHoverScale: {x: 1, y: 1, z: 1}
+  hoverScale: {x: 1.2, y: 1.2, z: 1}
 --- !u!1 &1824136029
 GameObject:
   m_ObjectHideFlags: 0
