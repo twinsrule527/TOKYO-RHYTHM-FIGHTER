@@ -780,6 +780,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8132286401433672305, guid: eebb5be358696e947981cdae45b75fbf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8350610518483508729, guid: eebb5be358696e947981cdae45b75fbf, type: 3}
       propertyPath: m_Name
       value: BeatIndicatorParent
@@ -1400,7 +1404,7 @@ PrefabInstance:
     - target: {fileID: 7421385569951105280, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0191e28d448203b42bda0cb099307e02, type: 2}
+      objectReference: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7421385569951105280, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: m_Parameters.colorGradient.ctime0
       value: 0

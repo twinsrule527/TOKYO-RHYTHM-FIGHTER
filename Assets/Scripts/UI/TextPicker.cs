@@ -10,7 +10,7 @@ public class TextPicker : MonoBehaviour
 
     private string [] linesFromFile;
 
-    void Start()
+    void Awake()
     {
         myText = GetComponent<TextMeshProUGUI>();
         linesFromFile = textList.text.Split("\n"[0]);
