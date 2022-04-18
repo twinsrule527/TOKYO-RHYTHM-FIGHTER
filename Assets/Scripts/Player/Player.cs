@@ -23,6 +23,9 @@ public class Player : MonoBehaviour
     public float playerStartHealth {get; private set;}
     public float playerHealth {get; private set;}
 
+
+    //public float damage;//How much damage this attack does
+
     // Start is called before the first frame update
     void Start()
     {   

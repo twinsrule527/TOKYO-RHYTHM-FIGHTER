@@ -6,7 +6,6 @@ public class BaseAction : PlayerAction
 {
     public float damage;//How much damage this attack does
 
-    
 
     // Update is called once per frame
     void Update()
