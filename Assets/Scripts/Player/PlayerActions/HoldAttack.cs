@@ -155,6 +155,7 @@ public class HoldAttack : PlayerAction
         damage = startDamage;
         
         StopCoroutine(currentCoroutine);
+        myActionIndicator.StopAction();
         //Debug.Log("MessupHold() line 125");
     }
 
