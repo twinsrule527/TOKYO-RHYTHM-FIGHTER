@@ -8,6 +8,8 @@ public abstract class BossAI : MonoBehaviour
 {
     public Bag<AttackPattern> attackBag {protected set; get;}
     public BossAttack CurrentAttack { get; private set; }//Whatever the attack the boss is currently on - is needed for Interrupts
+    public BossAttack CurrentAttackOutgoing;//Whatever attack the boss is making - but doesn't change until after the attack lands, rather than changing at the instance of the beat change
+    public float AttackBeatHitOn;//Indicates the beat on which this attack will hit
     public List<AttackPattern> AttackQueue;
 
     //[SerializeField] private BossSpriteController mySpriteController; /- For ERIC
@@ -40,6 +42,7 @@ public abstract class BossAI : MonoBehaviour
         //For some reason, all of the coroutines run, but not all have a chance to check for end of Beat
         for(int i = 0; i < myAttack.coroutines.Count; i++) {
             CurrentAttack = myAttack.coroutines[i];
+            AttackBeatHitOn = BeatController.GetNearestBeat(1, BeatController.GetBeat() + CurrentAttack.length);
             //mySpriteController.StartAttackAnim(CurrentAttack.name);//FOR ERIC
             yield return StartCoroutine(CurrentAttack.Attack());
             //yield return myAttack.CoroutineSource.StartCoroutine(myAttack.coroutines[i]);

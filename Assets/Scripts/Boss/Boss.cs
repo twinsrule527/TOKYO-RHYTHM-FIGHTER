@@ -57,6 +57,11 @@ public class Boss : MonoBehaviour
             makeAttackThisBeat = false;
             CurrentMakingAttack.CheckAttackSuccess();
         }
+        //At the end of every beat, it makes sure the current set attack is the correct one
+        if(AttackAI.CurrentAttackOutgoing != AttackAI.CurrentAttack) {
+            //This is set here, so the player will succesfully get interrupted if they attempt to attack at the same time as the enemy
+            AttackAI.CurrentAttackOutgoing = AttackAI.CurrentAttack;
+        }
     }
 
     public void EndOfBeat05() {

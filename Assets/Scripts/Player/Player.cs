@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     public float playerStartHealth {get; private set;}
     public float playerHealth {get; private set;}
 
+
     // Start is called before the first frame update
     void Start()
     {   
@@ -58,6 +59,9 @@ public class Player : MonoBehaviour
         dmgNumber.PlayerDMGChange(amt);
         Global.UIManager.SetHealthText();
         playerHurtAnimation.Hurt();
+
+        ComboIndicator.comboCounter = 0;
+
         if(playerHealth <= 0) {
             GameManager.PlayerLoses();
         }

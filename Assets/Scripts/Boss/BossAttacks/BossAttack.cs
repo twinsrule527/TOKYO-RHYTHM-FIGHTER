@@ -53,6 +53,12 @@ public abstract class BossAttack : MonoBehaviour
 
     public abstract void AddBeatToIndicator();
     public float length = 1f;//How long in beats this attack should take
+    [SerializeField] private bool _isAnAttack;//Boolean value used to determine if it counts as an attack for the sake of interrupting actions, etc
+    public bool IsAnAttack {
+        get {
+            return _isAnAttack;
+        }
+    }
     public Sprite attackIndicatorSprite;//The Sprite the beat Indicator should take when making this attack
     public bool playsHitAnimation;
     [SerializeField] protected AnimationController myAnimationController;

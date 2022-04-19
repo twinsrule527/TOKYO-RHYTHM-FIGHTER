@@ -18,6 +18,10 @@ public class PlayerAction : MonoBehaviour
 
     bool canInterrupt;  //do we call Boss.Interrupt()?
 
+
+    public float damage;//How much damage this attack does
+    public float baseDamage;//How much base damage this attack does
+
     
     //TODO: track when the player has done input for a beat and what type of beat. 
     //ex. locking down input however long needed 
@@ -61,6 +65,7 @@ public class PlayerAction : MonoBehaviour
         }
         else {
             MessUp();
+            Global.Player.spriteController.DisplayMessup();
         }
 
     }
@@ -94,5 +99,11 @@ public class PlayerAction : MonoBehaviour
         Debug.Log("you messed up, you were off beat");
         Global.Player.CurrentAction = Global.Player.messUpAction;
         Global.Player.spriteController.MessUp();
+    }
+
+    protected IEnumerator currentActionCoroutine;
+    //This coroutine is performed so that the boss loses HP at the right moment, etc.
+    public virtual IEnumerator ActionCoroutine() {
+        yield return null;
     }
 }

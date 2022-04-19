@@ -5,8 +5,8 @@ using UnityEngine;
 public class HoldAttack : PlayerAction
 
 {
-    public float damage;//How much damage this attack does
-    public float baseDamage;//How much damage this attack does at the start
+    //public float damage;//How much damage this attack does
+    public float startDamage;//How much damage this attack does at the start
 
     public float DamageGain; //how mucn damage gains per frame of hold
     [SerializeField] private float maxHoldLength;//How long you can hold for
@@ -19,7 +19,6 @@ public class HoldAttack : PlayerAction
     protected override void Start()
     {
         base.Start();
-        baseDamage = damage;
     }
 
     // Update is called once per frame
@@ -58,11 +57,9 @@ public class HoldAttack : PlayerAction
                 isHolding = false;//DEBUG
                 //Debug.Log("isHolding = false line 55");
 
-                if(isHolding != true) {
-                //break;
-                    MessupHold();
-                    Debug.Log("MessupHold()");
-                }
+                
+                MessupHold();
+                Debug.Log("MessupHold()");
             }
         }
         base.CheckInput();
@@ -123,7 +120,7 @@ public class HoldAttack : PlayerAction
         Global.Player.spriteController.Attack(1);
         isHolding = true;
         t = BeatController.GetBeat();
-        damage = baseDamage;
+        damage = startDamage;
         Debug.Log("startattack");
 //DEBUG 
         while(t < startTime + maxHoldLength){
@@ -155,7 +152,7 @@ public class HoldAttack : PlayerAction
     void MessupHold(){//DEBUG
         
         Global.Boss.ChangeBossHP(-damage);
-        damage = baseDamage;
+        damage = startDamage;
         
         StopCoroutine(currentCoroutine);
         //Debug.Log("MessupHold() line 125");
