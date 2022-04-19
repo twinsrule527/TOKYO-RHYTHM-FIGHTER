@@ -20,6 +20,13 @@ public class HoldActionIndicator : ActionIndicator
         StartCoroutine(IndicatorCoroutine());
     }
 
+    public override void StopAction()
+    {
+        holdObj.SetActive(false);
+        holdLine.SetPosition(0, basePos);
+        base.StopAction();
+    }
+
     protected override IEnumerator IndicatorCoroutine()
     {
         //Gets the closest beatIndicator to the hold length of this attack

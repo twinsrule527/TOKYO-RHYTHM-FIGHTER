@@ -16,5 +16,10 @@ public abstract class ActionIndicator : MonoBehaviour
 
     public abstract void PerformAction();
 
+    public virtual void StopAction() {
+        StopCoroutine(IndicatorCoroutine());
+        gameObject.SetActive(false);
+    }
+
     protected abstract IEnumerator IndicatorCoroutine();
 }
