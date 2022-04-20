@@ -1712,10 +1712,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8569826397455794480, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
+      propertyPath: m_fontSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569826397455794480, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8569826397921986874, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
       propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1805567804}
+    - target: {fileID: 8569826398282449682, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8569826398355308436, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
       propertyPath: m_RootOrder
       value: 14
