@@ -75,7 +75,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _animSwitchTo: {fileID: 0}
-  spriteSwitchTo: {fileID: 21300000, guid: 1f35259fc237d804492884dae5fc3a13, type: 3}
+  spriteSwitchTo: {fileID: 21300000, guid: 29581cd159b26574aa48f04f21643dff, type: 3}
   AnimSprite: {fileID: 21300000, guid: 29581cd159b26574aa48f04f21643dff, type: 3}
   spriteRenderer: {fileID: 0}
   playOnAwake: 0
