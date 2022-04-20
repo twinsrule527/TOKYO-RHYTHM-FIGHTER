@@ -43,8 +43,9 @@ public class HealthBar : MonoBehaviour
         // /*
         StopCoroutine(HealthBarChange());
         StartCoroutine(HealthBarChange());
-       // */
+        // */
 
+        
         shaker.ShakeIt(healthDifference * shakeMagnitude, healthDifference * shakeTimeMultiplier);
     }
 
