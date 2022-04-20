@@ -88,6 +88,8 @@ public class GameManager : MonoBehaviour
         //TODO call other things' functions here, this is the high level one 
         Global.UIManager.PlayerWins();
 
+        GoToWin();
+
     }
 
     //this is the high level function called when the player loses 
