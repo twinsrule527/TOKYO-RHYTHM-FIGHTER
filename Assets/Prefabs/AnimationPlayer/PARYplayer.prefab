@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6966d96fe74fa4043ac653ec3efeec20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animDuration: 0.75
-  lerpDistance: {x: 0.25, y: 0.1, z: 0}
+  animDuration: 1
+  lerpDistance: {x: 0.6, y: 0.1, z: 0}
   startDelay: 0
   initialLerpTime: 0.25
   initialLerpCoefficient: 0.05
