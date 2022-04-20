@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public struct Accuracy {
+
     public Accuracy(float threshBefore, float threshAfter, string nam, int num) {
         this.thresholdBeforeBeat = threshBefore;
         this.thresholdAfterBeat = threshAfter;
@@ -39,6 +41,10 @@ public class BeatController : MonoBehaviour
     static BeatController instance;
 
     public static bool isPlaying { get; private set; }
+
+
+    //public GameObject comboIndicator;
+    //private ComboIndicator ComboIndicator;
 
     //accuracy thresholds, in seconds 
     //will be converted into fractions of beats on start. 
@@ -133,6 +139,9 @@ public class BeatController : MonoBehaviour
         if(songDataList.Count <= 0) {
             Debug.Log("ERROR: no song data found by the BeatController! (Is an object with SongData components provided?)");
         }
+
+
+        //ComboIndicator = comboIndicator.GetComponent<ComboIndicator>();
 
     }
 
@@ -360,6 +369,9 @@ public class BeatController : MonoBehaviour
         return GetAccuracy(1);
     }*/
     public static Accuracy GetAccuracy(float fraction = 1) {
+       
+        ComboIndicator.comboCounter += 1;
+       
         return GetAccuracy(fraction, GetBeat());
     }
     public static Accuracy GetAccuracy(float fraction, float beat) {
@@ -374,7 +386,12 @@ public class BeatController : MonoBehaviour
                     return a;
                 }
             }
+
+            ComboIndicator.comboCounter = 0;
+
             return TOO_LATE;
+            
+            
         } else {
             //if before 
             foreach(Accuracy a in accuraciesToCheck) {
@@ -382,8 +399,12 @@ public class BeatController : MonoBehaviour
                     return a;
                 }
             }
+
+            ComboIndicator.comboCounter = 0;
+
             return TOO_EARLY;
         }
+
     }
 
     //Gets the nearest beat of this fraction, both before and after.
@@ -457,4 +478,6 @@ public class BeatController : MonoBehaviour
         }
     }
 
+
+    
 }
