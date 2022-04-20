@@ -20,6 +20,8 @@ public class Boss : MonoBehaviour
 
     public void ChangeBossHP(float amt) {//Function to be called by others when increasing/decreasing hp
         bossHP += amt;
+        bossVisualHP = bossHP;
+        healthBar.ChangeHealthLerp(amt);
         Global.UIManager.SetHealthText();
         healthBar.ChangeHealth(amt);
         dmgNumber.BossDMGChange(amt);
