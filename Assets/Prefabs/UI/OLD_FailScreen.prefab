@@ -796,7 +796,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8862359318814463630}
   m_Layer: 5
-  m_Name: FailScreen
+  m_Name: OLD_FailScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

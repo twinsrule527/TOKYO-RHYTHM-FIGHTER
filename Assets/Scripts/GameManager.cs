@@ -13,6 +13,17 @@ public class GameManager : MonoBehaviour
         little logic should be in here, it should call other scripts' functions. 
     */
 
+    public static bool hasSeenOpeningCutscene = false;
+
+    static GameObject failScreenObj;
+
+    void Start() {
+        failScreenObj = GameObject.FindWithTag("FailScreenObj");
+        if(failScreenObj != null) {
+            failScreenObj.SetActive(false);
+        }
+    }
+
     //start playing the song. 
     //this one with no input uses the one given to the beat controller.
     public static void StartSong() {
@@ -39,17 +50,30 @@ public class GameManager : MonoBehaviour
         Global.UIManager.SongStarted();
     }
 
-    public static void GoToGame() {
+    public static void GoToTitle() {
+        SceneManager.LoadScene(0);
+    }
+
+    public static void GoToIntroCutscene() {
         SceneManager.LoadScene(1);
+    }
+
+    public static void StartFromIntroCutscene() {
+        hasSeenOpeningCutscene = true;
+        GoToGame();
+    }
+
+    public static void GoToGame() {
+        SceneManager.LoadScene(2);
+    }
+
+    public static void GoToWin() {
+        SceneManager.LoadScene(3);
     }
 
     //restart the current scene 
     public static void RestartScene() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    public static void GoToTitle() {
-        SceneManager.LoadScene("StartScene");
     }
 
     //change to a specific scene 
@@ -72,6 +96,9 @@ public class GameManager : MonoBehaviour
 
         //TODO call other things' functions here, this is the high level one 
         Global.UIManager.PlayerLoses();
+
+        //show the fail ui 
+        failScreenObj.SetActive(true);
 
     }
   
