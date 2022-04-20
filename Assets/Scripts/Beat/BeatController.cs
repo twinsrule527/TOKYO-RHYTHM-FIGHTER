@@ -11,8 +11,8 @@ public struct Accuracy {
         this.name = nam;
         this.priority = num;
     }
-    public float thresholdBeforeBeat { get; }
-    public float thresholdAfterBeat { get; }
+    public float thresholdBeforeBeat;
+    public float thresholdAfterBeat;
 
     //for doing faster equals comparisons, i think 
     //Negative = Off-beat, positive = on-beat
@@ -43,20 +43,39 @@ public class BeatController : MonoBehaviour
     //private ComboIndicator ComboIndicator;
 
     //accuracy thresholds, in seconds 
-    //will be converted into 
+    //will be converted into fractions of beats on start. 
+    static float secondsMINIMUM = 0.22f;
+    static float secondsGREAT = 0.14f;
+    static float secondsPERFECT = 0.07f;
+
 
     //// Beat accuracies! 
     //You might get these from BeatController functions.
     //You can check them against each other
     //ex. if(accuracyPassedIn.Equals(BeatController.PERFECT)) { do something cause it's perfect }
 
-    //TODO: should there be different thresholds for different fractions of beats? 
-    //they could be repurposed as percents?
-    public static readonly Accuracy MINIMUM = new Accuracy(0.13f, 0.13f, "OK", 1);
-    public static readonly Accuracy GREAT = new Accuracy(0.08f, 0.08f, "GREAT", 5);
-    public static readonly Accuracy PERFECT = new Accuracy(0.04f, 0.04f, "PERFECT", 9);
-    public static readonly Accuracy TOO_EARLY = new Accuracy(float.NaN, float.NaN, "TOO EARLY", -1);
-    public static readonly Accuracy TOO_LATE = new Accuracy(float.NaN, float.NaN, "TOO LATE", -2);
+    private static Accuracy minimum = new Accuracy(0.13f, 0.13f, "OK", 1);
+    public static Accuracy MINIMUM {
+        get { return minimum; }
+    }
+    private static Accuracy great = new Accuracy(0.08f, 0.08f, "GREAT", 5);
+    public static Accuracy GREAT {
+        get { return great; }
+    }
+
+    private static Accuracy perfect = new Accuracy(0.04f, 0.04f, "PERFECT", 9);
+    public static Accuracy PERFECT {
+        get { return perfect; }
+    }
+    private static Accuracy too_early = new Accuracy(float.NaN, float.NaN, "TOO EARLY", -1);
+    public static Accuracy TOO_EARLY {
+        get { return too_early; }
+    }
+    private static Accuracy too_late = new Accuracy(float.NaN, float.NaN, "TOO LATE", -2);
+    public static Accuracy TOO_LATE {
+        get { return too_late; }
+    }
+
     //below: accuracies checked in GetAccuracy() func
     //declared up here so we don't forget anything when making new ones.
     //IN ORDER of checked. So, go SMALLEST TO GREATEST window 
@@ -117,7 +136,7 @@ public class BeatController : MonoBehaviour
 
     }
 
-    //start the song with the given name. 
+    //start the song with the given name.  
     public void StartSongByName(string songName) {
         foreach(SongData data in songDataList) {
             if(data.songName.Equals(songName)) {
@@ -126,6 +145,10 @@ public class BeatController : MonoBehaviour
             }
         }
         Debug.Log("ERROR: StartSongByName tried to play song \"" + songName + ",\" which was not found in the song data list!");
+    }
+
+    static float SecondsToBeatFrac(float seconds) {
+        return seconds * ((float)(BPM) / 60f);
     }
 
     //uses the song given to the beatcontroller object.
@@ -141,12 +164,18 @@ public class BeatController : MonoBehaviour
         BPM = songData.BPM;
         secPerBeat = 60 / BPM;
 
+        Debug.Log("original minimum: " + MINIMUM.thresholdBeforeBeat);
+
         //set up thresholds based on BPM.
         //given thresholds in seconds, what's the threshold in beat fractions?
-        //TODO 
+        minimum.thresholdBeforeBeat = SecondsToBeatFrac(secondsMINIMUM);
+        minimum.thresholdAfterBeat = SecondsToBeatFrac(secondsMINIMUM);
+        great.thresholdBeforeBeat = SecondsToBeatFrac(secondsGREAT);
+        great.thresholdAfterBeat = SecondsToBeatFrac(secondsGREAT);
+        perfect.thresholdBeforeBeat = SecondsToBeatFrac(secondsPERFECT);
+        perfect.thresholdAfterBeat = SecondsToBeatFrac(secondsPERFECT);
 
-
-
+        Debug.Log("new minimum: " + MINIMUM.thresholdBeforeBeat);
 
         //set the audio source audio clip to this song 
         audioSource.clip = songData.songAudioClip;
@@ -186,7 +215,6 @@ public class BeatController : MonoBehaviour
             Global.Boss.EndOfBeat1();
             Global.Player.EndOfBeat1();
         } else if(dist < MINIMUM.thresholdAfterBeat) {//> 1 - MINIMUM.thresholdBeforeBeat) {
-            //Debug.Log(dist - MINIMUM.thresholdAfterBeat);
             //if we've moved on to the next beat, open this flag 
             beatEnded1 = false;
         }
