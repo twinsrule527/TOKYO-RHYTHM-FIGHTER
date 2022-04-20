@@ -1062,6 +1062,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7554666834438711988}
     - target: {fileID: 9041706940061026420, guid: e27ce9a720fdda84d99bd4392814a1df, type: 3}
+      propertyPath: spriteSwitchTo
+      value: 
+      objectReference: {fileID: 21300000, guid: 29581cd159b26574aa48f04f21643dff, type: 3}
+    - target: {fileID: 9041706940061026420, guid: e27ce9a720fdda84d99bd4392814a1df, type: 3}
       propertyPath: lerpCurve.m_Curve.Array.size
       value: 2
       objectReference: {fileID: 0}
