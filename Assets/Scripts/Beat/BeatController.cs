@@ -34,6 +34,10 @@ public class BeatController : MonoBehaviour
 
     [SerializeField] bool isGameScene = true;
 
+    //non-static reference to the BeatController in scene 
+    //used to call coroutines
+    static BeatController instance;
+
     public static bool isPlaying { get; private set; }
 
     //accuracy thresholds, in seconds 
@@ -111,6 +115,11 @@ public class BeatController : MonoBehaviour
     bool beatEnded1, beatEnded05, beatEnded025;
 
 
+    void Awake() {
+        instance = this;
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -142,6 +151,10 @@ public class BeatController : MonoBehaviour
         return seconds * ((float)(BPM) / 60f);
     }
 
+    static void CalculateSecPerBeat() {
+        secPerBeat = 60 / BPM;
+    }
+
     //uses the song given to the beatcontroller object.
     public static void StartSong() {
         StartSong(songToPlay);
@@ -153,7 +166,7 @@ public class BeatController : MonoBehaviour
     
         //set up BPM 
         BPM = songData.BPM;
-        secPerBeat = 60 / BPM;
+        CalculateSecPerBeat();
 
         Debug.Log("original minimum: " + MINIMUM.thresholdBeforeBeat);
 
@@ -182,6 +195,33 @@ public class BeatController : MonoBehaviour
 
         isPlaying = true;
 
+    }
+
+    //stops everything from moving
+    public static void FailStop() {
+        instance.StartCoroutine(instance.SlowToStop());
+    }
+
+    float secToSlowToStop = 4f;
+    IEnumerator SlowToStop() {
+
+        float timeLeft = secToSlowToStop;
+        double originalBPM = BPM;
+
+        while(timeLeft > 0) {
+            timeLeft -= Time.deltaTime;
+            float percent = (timeLeft / secToSlowToStop);
+            audioSource.pitch = percent;
+            BPM = (double)(originalBPM * percent); //BPM needs to go to very small number 
+            Debug.Log(percent);
+            CalculateSecPerBeat();
+            yield return null;
+        }
+
+        audioSource.Stop();
+        isPlaying = false;
+        BPM = originalBPM;
+        CalculateSecPerBeat();
     }
 
     // Update is called once per frame
