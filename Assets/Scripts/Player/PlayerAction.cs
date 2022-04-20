@@ -76,7 +76,8 @@ public class PlayerAction : MonoBehaviour
     protected virtual void Success() {
 
         //Debug.Log("Success, you're on beat");
-        //Typically, sets the Player's current action to be this
+        //Typically, sets the Player's current action to be this and plays an on beat sound
+        Global.Player.sfxController.PlayOnBeatSound();
         Global.Player.CurrentAction = this;
         Global.Player.currActionEndBeat = BeatController.GetNearestBeat(beatFraction) + length;//Subtracts smallest beat fraction, so that it actually occurs before the beat, rather than after
         //Disables the next few BeatIndicators

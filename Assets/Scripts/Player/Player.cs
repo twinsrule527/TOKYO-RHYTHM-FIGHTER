@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
 
     public PlayerSpriteController spriteController;
-
+    public PlayerSFXController sfxController;
     PlayerAction[] actions;
     public MessUpAction messUpAction;//The player has a mess-up action that their current action gets set to if they fail to perform an action
 
@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
         dmgNumber.PlayerDMGChange(amt);
         Global.UIManager.SetHealthText();
         playerHurtAnimation.Hurt();
-
+        sfxController.PlayHurtSound();
         ComboIndicator.comboCounter = 0;
 
         if(playerHealth <= 0) {
