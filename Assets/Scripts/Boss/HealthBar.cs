@@ -9,8 +9,8 @@ public class HealthBar : MonoBehaviour
     [SerializeField] Image healthBarRight;
 
 
-    [SerializeField] Image healthBarLeftYell;
-    [SerializeField] Image healthBarRightYell;
+    [SerializeField] Image healthBarLeftLerp;
+    [SerializeField] Image healthBarRightLerp;
     //Between 0,1 and this decides the rate at which health is visually decreased from the health bar (the higher the decimal, the faster it changes)
     [SerializeField] float interpolationSpeed;
     ShakeRect shaker;
@@ -45,8 +45,16 @@ public class HealthBar : MonoBehaviour
         StartCoroutine(HealthBarChange());
        // */
 
-        StopCoroutine(HealthBarChangeYellow(healthDifference));
-        StartCoroutine(HealthBarChangeYellow(healthDifference));
+        shaker.ShakeIt(healthDifference * shakeMagnitude, healthDifference * shakeTimeMultiplier);
+    }
+
+    public void ChangeHealthLerp(float healthDifference)
+    {
+        // /*
+        StopCoroutine(HealthBarChangeLerp());
+        StartCoroutine(HealthBarChangeLerp());
+        // */
+
         shaker.ShakeIt(healthDifference * shakeMagnitude, healthDifference * shakeTimeMultiplier);
     }
 
@@ -57,21 +65,21 @@ public class HealthBar : MonoBehaviour
         for (float t = 0f; t <= 2f; t += Time.deltaTime)
         {
             
-            healthBarLeft.fillAmount = Mathf.Lerp(healthBarLeft.fillAmount, (((float)Global.Boss.bossHP) / ((float)Global.Boss.currentStageStartingHP)), t );
-            healthBarRight.fillAmount = Mathf.Lerp(healthBarRight.fillAmount, (((float)Global.Boss.bossHP) / ((float)Global.Boss.currentStageStartingHP)), t );
+            healthBarLeft.fillAmount = Mathf.Lerp(healthBarLeft.fillAmount, (((float)Global.Boss.bossHP) / ((float)Global.Boss.currentStageStartingHP)), t *interpolationSpeed );
+            healthBarRight.fillAmount = Mathf.Lerp(healthBarRight.fillAmount, (((float)Global.Boss.bossHP) / ((float)Global.Boss.currentStageStartingHP)), t *interpolationSpeed);
 
 
             yield return null;
         }
     }
 
-    public IEnumerator HealthBarChangeYellow(float amount)
+    public IEnumerator HealthBarChangeLerp()
     {
         for (float t = 0f; t <= 3f; t += Time.deltaTime)
         {
 
-            healthBarLeftYell.fillAmount = Mathf.Lerp(healthBarLeftYell.fillAmount, healthBarLeft.fillAmount, t * interpolationSpeed);
-            healthBarRightYell.fillAmount = Mathf.Lerp(healthBarRightYell.fillAmount, healthBarRight.fillAmount, t * interpolationSpeed);
+            healthBarLeftLerp.fillAmount = Mathf.Lerp(healthBarLeftLerp.fillAmount, (((float)Global.Boss.bossVisualHP) / ((float)Global.Boss.currentStageStartingHP)), t);
+            healthBarRightLerp.fillAmount = Mathf.Lerp(healthBarRightLerp.fillAmount, (((float)Global.Boss.bossVisualHP) / ((float)Global.Boss.currentStageStartingHP)), t);
 
 
             yield return null;

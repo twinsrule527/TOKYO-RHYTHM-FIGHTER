@@ -59,6 +59,8 @@ public class BaseAction : PlayerAction
         //Deals damage at the end of the action, in case it get messed up
         float startTime =  BeatController.GetBeat();
         float t = startTime;
+        Global.Boss.ChangeVisualBossHP(-damage);
+        Debug.Log("viz " + Global.Boss.bossVisualHP);
         while(t < startTime + length - 0.5f) {
             yield return null;
             t = BeatController.GetBeat();
