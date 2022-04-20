@@ -13,12 +13,14 @@ public class Boss : MonoBehaviour
         //Probably there's a better way to do this - should check w/ Jaden
     
     [SerializeField] HealthBar healthBar;
+    [SerializeField] DmgNumber dmgNumber;
     [SerializeField] private HurtAnimation hurtAnimation;
 
     public void ChangeBossHP(float amt) {//Function to be called by others when increasing/decreasing hp
         bossHP += amt;
         Global.UIManager.SetHealthText();
         healthBar.ChangeHealth(amt);
+        dmgNumber.BossDMGChange(amt);
         hurtAnimation.Hurt();
         sfxController.PlayHurtSound();
         if(bossHP <= 0) {
@@ -34,6 +36,9 @@ public class Boss : MonoBehaviour
         Global.Boss = this;
         currentStageStartingHP = bossStartingHPArray[0];
         bossHP = currentStageStartingHP;
+        dmgNumber = GameObject.FindGameObjectWithTag("DmgManager").GetComponent<DmgNumber>();
+        healthBar = GameObject.FindGameObjectWithTag("CenterHealth").GetComponent<HealthBar>();
+
     }
 
     public void SongStarted() {

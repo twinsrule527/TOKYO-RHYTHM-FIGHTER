@@ -494,7 +494,8 @@ MonoBehaviour:
   - 50
   makeAttackThisBeat: 0
   CurrentMakingAttack: {fileID: 0}
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 1219686146336150580, guid: be19fa031271c7c4b9586fb3a9c2d7fe, type: 3}
+  dmgNumber: {fileID: 7556804363992587736, guid: e6503903af7ae1e42b3c07813d6de643, type: 3}
   hurtAnimation: {fileID: 4758325490003686201}
   AttackAI: {fileID: 7374144326298839355}
   spriteController: {fileID: 7572151231474549405}

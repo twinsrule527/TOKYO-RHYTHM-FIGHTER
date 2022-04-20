@@ -4,7 +4,7 @@ using UnityEngine;
 //This is a parry action that counts as a block, and then an attack immediaely after
 public class TrueParryAction : PlayerAction
 {
-    [SerializeField] private float damage;
+    //[SerializeField] private float damage;
     [SerializeField] private float secondHitTime = 1f;//The time (approximately) when the second beat should hit
     private bool isParrying;
     private float secondHitBeat;
