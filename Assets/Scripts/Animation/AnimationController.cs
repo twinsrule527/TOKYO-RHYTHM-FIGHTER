@@ -100,5 +100,8 @@ public class AnimationController : MonoBehaviour
         else if(spriteSwitchTo != null) {
             spriteRenderer.sprite = spriteSwitchTo;
         }
+        
     }
+
+    /*to bugifx: after a parry, attacks do not play the attack animation*/
 }
