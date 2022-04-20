@@ -13,6 +13,17 @@ public class GameManager : MonoBehaviour
         little logic should be in here, it should call other scripts' functions. 
     */
 
+    public static bool hasSeenOpeningCutscene = false;
+
+    static GameObject failScreenObj;
+
+    void Start() {
+        failScreenObj = GameObject.FindWithTag("FailScreenObj");
+        if(failScreenObj != null) {
+            failScreenObj.SetActive(false);
+        }
+    }
+
     //start playing the song. 
     //this one with no input uses the one given to the beat controller.
     public static void StartSong() {
@@ -45,6 +56,11 @@ public class GameManager : MonoBehaviour
 
     public static void GoToIntroCutscene() {
         SceneManager.LoadScene(1);
+    }
+
+    public static void StartFromIntroCutscene() {
+        hasSeenOpeningCutscene = true;
+        GoToGame();
     }
 
     public static void GoToGame() {
@@ -80,6 +96,9 @@ public class GameManager : MonoBehaviour
 
         //TODO call other things' functions here, this is the high level one 
         Global.UIManager.PlayerLoses();
+
+        //show the fail ui 
+        failScreenObj.SetActive(true);
 
     }
   

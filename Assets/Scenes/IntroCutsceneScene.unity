@@ -274,7 +274,7 @@ PrefabInstance:
       objectReference: {fileID: 1452858281}
     - target: {fileID: 2928123967641673926, guid: 8291044063db9d24cb4068092fcbb1d0, type: 3}
       propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoToGame
+      value: StartFromIntroCutscene
       objectReference: {fileID: 0}
     - target: {fileID: 2928123969131975494, guid: 8291044063db9d24cb4068092fcbb1d0, type: 3}
       propertyPath: m_SortingOrder

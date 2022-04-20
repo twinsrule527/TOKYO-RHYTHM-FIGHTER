@@ -9,7 +9,7 @@ public class ObjectButton : MonoBehaviour
     //a gameobject as clickable button.
     //needs a collider.
 
-    [SerializeField] KeyCode key;
+    [SerializeField] KeyCode [] keys;
 
     [SerializeField] UnityEvent functionToCall;
 
@@ -22,17 +22,12 @@ public class ObjectButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(key)) {
-            functionToCall.Invoke();
+        foreach(KeyCode key in keys) {
+            if(Input.GetKeyDown(key)) {
+                functionToCall.Invoke();
+            }
         }
         
-        /* else if(Input.GetMouseButtonDown(0)) {
-
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast()
-
-            if(hit.collider.gameObject 
-        }*/
     }
 
     void OnMouseDown() {
