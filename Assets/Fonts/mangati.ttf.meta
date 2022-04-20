@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 9317034a0344b2640871bb2aee0debc6
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Manga Temple
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f17ac0a35d84fb34c96e9e61b09989f3, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
