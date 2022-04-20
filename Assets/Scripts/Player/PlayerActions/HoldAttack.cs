@@ -137,7 +137,7 @@ public class HoldAttack : PlayerAction
             yield return null;
         }
         Debug.Log("Attacked: " + damage);
-        Global.Boss.ChangeBossHP(-damage);
+        Global.Boss.ChangeBossHP(Mathf.RoundToInt(-damage));
         isHolding = false;
         
         /*if(t >= startTime){
