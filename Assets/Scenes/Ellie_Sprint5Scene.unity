@@ -500,6 +500,10 @@ PrefabInstance:
       propertyPath: Sprites.Array.data[3]
       value: 
       objectReference: {fileID: 21300000, guid: fac95527dc04fec40bf499a16d89cbe6, type: 3}
+    - target: {fileID: 4364891582654279996, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0e1727e6a28fff14eb43dcc4c481cc96, type: 3}
     - target: {fileID: 4502089846754818445, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: delayFraction
       value: 0.5
@@ -536,29 +540,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossA
       objectReference: {fileID: 0}
-    - target: {fileID: 7374144326298839354, guid: 5616b084a679a6943949e139a843212b, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8019882508769279564, guid: 6d71e22db415fcf4696eefe53501f807, type: 3}
     - target: {fileID: 7374144326298839357, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7374144326298839357, guid: 5616b084a679a6943949e139a843212b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7374144326298839357, guid: 5616b084a679a6943949e139a843212b, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7374144326298839357, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.23
+      value: 2.72
       objectReference: {fileID: 0}
     - target: {fileID: 7374144326298839357, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.59
+      value: -1.66
       objectReference: {fileID: 0}
     - target: {fileID: 7374144326298839357, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: m_LocalPosition.z
