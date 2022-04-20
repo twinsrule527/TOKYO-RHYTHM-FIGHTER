@@ -151,6 +151,10 @@ public class BeatController : MonoBehaviour
         return seconds * ((float)(BPM) / 60f);
     }
 
+    static void CalculateSecPerBeat() {
+        secPerBeat = 60 / BPM;
+    }
+
     //uses the song given to the beatcontroller object.
     public static void StartSong() {
         StartSong(songToPlay);
@@ -162,7 +166,7 @@ public class BeatController : MonoBehaviour
     
         //set up BPM 
         BPM = songData.BPM;
-        secPerBeat = 60 / BPM;
+        CalculateSecPerBeat();
 
         Debug.Log("original minimum: " + MINIMUM.thresholdBeforeBeat);
 
@@ -198,7 +202,7 @@ public class BeatController : MonoBehaviour
         instance.StartCoroutine(instance.SlowToStop());
     }
 
-    float secToSlowToStop = 2f;
+    float secToSlowToStop = 4f;
     IEnumerator SlowToStop() {
 
         float timeLeft = secToSlowToStop;
@@ -208,13 +212,16 @@ public class BeatController : MonoBehaviour
             timeLeft -= Time.deltaTime;
             float percent = (timeLeft / secToSlowToStop);
             audioSource.pitch = percent;
-            BPM = (double)(percent);
+            BPM = (double)(originalBPM * percent); //BPM needs to go to very small number 
+            Debug.Log(percent);
+            CalculateSecPerBeat();
             yield return null;
         }
 
         audioSource.Stop();
         isPlaying = false;
         BPM = originalBPM;
+        CalculateSecPerBeat();
     }
 
     // Update is called once per frame
