@@ -5,20 +5,21 @@ using TMPro;
 
 public class TextPicker : MonoBehaviour
 {
-    TextMeshProUGUI myText;
+    TextMeshPro myText;
     [SerializeField] TextAsset textList;
 
     private string [] linesFromFile;
 
     void Start()
     {
-        myText = GetComponent<TextMeshProUGUI>();
+        myText = GetComponent<TextMeshPro>();
         linesFromFile = textList.text.Split("\n"[0]);
     }
 
     void OnEnable() {
         //pick a new string to display every time this obj is enabled 
         int rand = Random.Range(0, linesFromFile.Length);
+        Debug.Log(linesFromFile[rand]);
         myText.text = linesFromFile[rand];
     }
 }
