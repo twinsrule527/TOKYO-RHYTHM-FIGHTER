@@ -39,17 +39,25 @@ public class GameManager : MonoBehaviour
         Global.UIManager.SongStarted();
     }
 
-    public static void GoToGame() {
+    public static void GoToTitle() {
+        SceneManager.LoadScene(0);
+    }
+
+    public static void GoToIntroCutscene() {
         SceneManager.LoadScene(1);
+    }
+
+    public static void GoToGame() {
+        SceneManager.LoadScene(2);
+    }
+
+    public static void GoToWin() {
+        SceneManager.LoadScene(3);
     }
 
     //restart the current scene 
     public static void RestartScene() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    public static void GoToTitle() {
-        SceneManager.LoadScene("StartScene");
     }
 
     //change to a specific scene 

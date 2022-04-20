@@ -15,6 +15,7 @@ public class ObjectButton : MonoBehaviour
 
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] Sprite noHover, hover;
+    [SerializeField] Transform scaleOnHover;
     [SerializeField] Vector3 noHoverScale = new Vector3(1, 1, 1);
     [SerializeField] Vector3 hoverScale = new Vector3(1.2f, 1.2f, 1f);
 
@@ -40,14 +41,12 @@ public class ObjectButton : MonoBehaviour
 
     void OnMouseEnter() {
         spriteRenderer.sprite = hover;
-        //spriteRenderer.gameObject.transform.localScale = hoverScale;
-        //transform.localScale = hoverScale;
+        scaleOnHover.localScale = hoverScale;
     }
 
     void OnMouseExit() {
         spriteRenderer.sprite = noHover;
-        //spriteRenderer.gameObject.transform.localScale = noHoverScale;
-        //transform.localScale = noHoverScale;
+        scaleOnHover.localScale = noHoverScale;
     }
     
 }
