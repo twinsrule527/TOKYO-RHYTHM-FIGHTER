@@ -8,6 +8,8 @@ public class Boss : MonoBehaviour
     [SerializeField] float [] bossStartingHPArray = {50f}; //starting HP for each stage, in order 
     public float currentStageStartingHP {get; protected set;}
     public float bossHP {get; protected set;}
+    public float bossVisualHP { get; protected set; }
+
     public bool makeAttackThisBeat;
     public BossAttack CurrentMakingAttack;//Whichever attack is the one actually making an attack this beat (in case it ends before it has a chance to check)
         //Probably there's a better way to do this - should check w/ Jaden
@@ -21,11 +23,18 @@ public class Boss : MonoBehaviour
         Global.UIManager.SetHealthText();
         healthBar.ChangeHealth(amt);
         dmgNumber.BossDMGChange(amt);
-        hurtAnimation.Hurt();
-        //sfxController.PlayHurtSound();
+        
+        sfxController.PlayHurtSound();
         if(bossHP <= 0) {
             GameManager.PlayerWins();
         }
+    }
+
+    public void ChangeVisualBossHP(float amt)
+    {
+        bossVisualHP += amt;
+        hurtAnimation.Hurt();
+        healthBar.ChangeHealthLerp(amt);
     }
 
     public BossAI AttackAI;
@@ -36,6 +45,7 @@ public class Boss : MonoBehaviour
         Global.Boss = this;
         currentStageStartingHP = bossStartingHPArray[0];
         bossHP = currentStageStartingHP;
+        bossVisualHP = currentStageStartingHP;
         dmgNumber = GameObject.FindGameObjectWithTag("DmgManager").GetComponent<DmgNumber>();
         healthBar = GameObject.FindGameObjectWithTag("CenterHealth").GetComponent<HealthBar>();
 
