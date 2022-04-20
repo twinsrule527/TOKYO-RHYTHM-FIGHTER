@@ -14,6 +14,12 @@ public class PlayerAction : MonoBehaviour
     //override CheckInput for other behavior that isn't a KeyCode press, this is just a useful default
     [SerializeField] protected KeyCode key;
     [SerializeField] protected ActionIndicator myActionIndicator;
+    [SerializeField] private bool isComboable = true;
+    public bool IsComboable {
+        get {
+            return isComboable;
+        }
+    }
     int comboCounter;   //may be used if needed 
 
     bool canInterrupt;  //do we call Boss.Interrupt()?

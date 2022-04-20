@@ -30,11 +30,13 @@ public class ComboIndicator : MonoBehaviour
 
         foreach (PlayerAction action in playerActions )
         {
-            action.damage = comboMultiplier(action.baseDamage);// * ((comboCounter + 1) * 1.2f);
-            //action.damage = action.baseDamage;
+            if(action.IsComboable) {
+                action.damage = comboMultiplier(action.baseDamage);// * ((comboCounter + 1) * 1.2f);
+                //action.damage = action.baseDamage;
 
-            if(comboCounter == 0){
-                action.damage = action.baseDamage;
+                if(comboCounter == 0){
+                    action.damage = action.baseDamage;
+                }
             }
         }
     }
