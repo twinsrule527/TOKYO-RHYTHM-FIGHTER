@@ -10,7 +10,7 @@ public class TextPicker : MonoBehaviour
 
     private string [] linesFromFile;
 
-    void Start()
+    void Awake()
     {
         myText = GetComponent<TextMeshPro>();
         linesFromFile = textList.text.Split("\n"[0]);
@@ -19,7 +19,6 @@ public class TextPicker : MonoBehaviour
     void OnEnable() {
         //pick a new string to display every time this obj is enabled 
         int rand = Random.Range(0, linesFromFile.Length);
-        Debug.Log(linesFromFile[rand]);
         myText.text = linesFromFile[rand];
     }
 }

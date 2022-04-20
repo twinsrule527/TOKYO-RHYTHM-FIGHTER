@@ -94,10 +94,10 @@ public class GameManager : MonoBehaviour
     //it shouldn't really do any logic here, it should call other things' highlevel functions
     public static void PlayerLoses() {
 
-        //TODO call other things' functions here, this is the high level one 
+        BeatController.FailStop();
+
         Global.UIManager.PlayerLoses();
 
-        //show the fail ui 
         failScreenObj.SetActive(true);
 
     }
