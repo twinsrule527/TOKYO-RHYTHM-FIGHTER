@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartScene : MonoBehaviour
+public class AutoStartMusic : MonoBehaviour
 {
-
-    int startDelay = 5;
+    [SerializeField] int startDelay = 5;
 
     // Update is called once per frame
     void Update()

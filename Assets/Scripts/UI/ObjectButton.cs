@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 public class ObjectButton : MonoBehaviour
 {
@@ -9,29 +10,32 @@ public class ObjectButton : MonoBehaviour
     //a gameobject as clickable button.
     //needs a collider.
 
-    [SerializeField] KeyCode key;
+    [SerializeField] KeyCode [] keys;
 
     [SerializeField] UnityEvent functionToCall;
 
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] Sprite noHover, hover;
+    [SerializeField] Transform scaleOnHover;
     [SerializeField] Vector3 noHoverScale = new Vector3(1, 1, 1);
     [SerializeField] Vector3 hoverScale = new Vector3(1.2f, 1.2f, 1f);
+
+    [SerializeField] int increaseOrderInLayerBy = 0;
+    TextMeshPro [] buttonText;
+
+    void Start() {
+        buttonText = GetComponentsInChildren<TextMeshPro>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(key)) {
-            functionToCall.Invoke();
+        foreach(KeyCode key in keys) {
+            if(Input.GetKeyDown(key)) {
+                functionToCall.Invoke();
+            }
         }
         
-        /* else if(Input.GetMouseButtonDown(0)) {
-
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast()
-
-            if(hit.collider.gameObject 
-        }*/
     }
 
     void OnMouseDown() {
@@ -40,14 +44,20 @@ public class ObjectButton : MonoBehaviour
 
     void OnMouseEnter() {
         spriteRenderer.sprite = hover;
-        //spriteRenderer.gameObject.transform.localScale = hoverScale;
-        //transform.localScale = hoverScale;
+        scaleOnHover.localScale = hoverScale;
+        spriteRenderer.sortingOrder += increaseOrderInLayerBy;
+        foreach(TextMeshPro text in buttonText) {
+            text.sortingOrder += increaseOrderInLayerBy;
+        }
     }
 
     void OnMouseExit() {
         spriteRenderer.sprite = noHover;
-        //spriteRenderer.gameObject.transform.localScale = noHoverScale;
-        //transform.localScale = noHoverScale;
+        scaleOnHover.localScale = noHoverScale;
+        spriteRenderer.sortingOrder -= increaseOrderInLayerBy;
+        foreach(TextMeshPro text in buttonText) {
+            text.sortingOrder -= increaseOrderInLayerBy;
+        }
     }
     
 }

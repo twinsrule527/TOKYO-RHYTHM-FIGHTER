@@ -26,7 +26,6 @@ public class Boss : MonoBehaviour
         healthBar.ChangeHealth(amt);
         dmgNumber.BossDMGChange(amt);
         
-        sfxController.PlayHurtSound();
         if(bossHP <= 0) {
             GameManager.PlayerWins();
         }

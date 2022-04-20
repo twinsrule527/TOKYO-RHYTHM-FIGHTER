@@ -5,14 +5,14 @@ using TMPro;
 
 public class TextPicker : MonoBehaviour
 {
-    TextMeshProUGUI myText;
+    TextMeshPro myText;
     [SerializeField] TextAsset textList;
 
     private string [] linesFromFile;
 
     void Awake()
     {
-        myText = GetComponent<TextMeshProUGUI>();
+        myText = GetComponent<TextMeshPro>();
         linesFromFile = textList.text.Split("\n"[0]);
     }
 
