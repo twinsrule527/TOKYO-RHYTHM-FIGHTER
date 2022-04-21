@@ -48,9 +48,9 @@ public class BeatController : MonoBehaviour
 
     //accuracy thresholds, in seconds 
     //will be converted into fractions of beats on start. 
-    static float secondsMINIMUM = 0.22f;
+    static float secondsMINIMUM = 0.23f;
     static float secondsGREAT = 0.14f;
-    static float secondsPERFECT = 0.07f;
+    static float secondsPERFECT = 0.08f;
 
 
     //// Beat accuracies! 
@@ -239,8 +239,10 @@ public class BeatController : MonoBehaviour
                 audioSource.Stop();
                 isPlaying = false;
 
-                //we're done, hold everything in place 
+                //we're done, try to hold everything in place 
                 secPerBeat = ((AudioSettings.dspTime - songStartTime) / (lastBeat));
+
+                Debug.Log("dsp time is " + AudioSettings.dspTime);
 
             }
 
