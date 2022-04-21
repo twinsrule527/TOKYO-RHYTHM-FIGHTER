@@ -215,8 +215,6 @@ public class BeatController : MonoBehaviour
     IEnumerator SlowToStop() {
 
         double timeLeft = secToSlowToStop;
-        //double originalBPM = BPM;
-        //double lastAudioTime = AudioSettings.dspTime - songStartTime;
         float lastBeat = GetBeat();
 
          while(1 == 1) {
@@ -228,8 +226,7 @@ public class BeatController : MonoBehaviour
                 //wind down pitch
                 double percent = (timeLeft / secToSlowToStop);
                 audioSource.pitch = (float)percent;
-                //audioSource.pitch = (float)(timeLeft / secToSlowToStop);
-
+                
                 //wind down speed
                 double currentTime = AudioSettings.dspTime - songStartTime;
                 secPerBeat = ((currentTime / lastBeat) - secPerBeat) * (1 - percent) + secPerBeat;
@@ -242,30 +239,14 @@ public class BeatController : MonoBehaviour
                 //we're done, try to hold everything in place 
                 secPerBeat = ((AudioSettings.dspTime - songStartTime) / (lastBeat));
 
-                Debug.Log("dsp time is " + AudioSettings.dspTime);
-
             }
 
             lastBeat = GetBeat();
 
             yield return null;
-
-
-            //BPM = (double)(originalBPM * percent); //BPM needs to go to very small number 
-            //CalculateSecPerBeat();
-
-            //BPM = (double)(originalBPM * percent);
-            //CalculateSecPerBeat();
-
-            
-            //lastAudioTime = AudioSettings.dspTime - songStartTime;
-
-            //Debug.Log("percent: " + percent + ", sec per beat: " + secPerBeat);
             
         }
 
-        //BPM = originalBPM;
-        //CalculateSecPerBeat();
     }
 
     // Update is called once per frame
