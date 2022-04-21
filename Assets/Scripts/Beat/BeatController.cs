@@ -211,26 +211,59 @@ public class BeatController : MonoBehaviour
         instance.StartCoroutine(instance.SlowToStop());
     }
 
-    float secToSlowToStop = 4f;
+    double secToSlowToStop = 3.5;
     IEnumerator SlowToStop() {
 
-        float timeLeft = secToSlowToStop;
-        double originalBPM = BPM;
+        double timeLeft = secToSlowToStop;
+        //double originalBPM = BPM;
+        //double lastAudioTime = AudioSettings.dspTime - songStartTime;
+        float lastBeat = GetBeat();
 
-        while(timeLeft > 0) {
+         while(1 == 1) {
+
             timeLeft -= Time.deltaTime;
-            float percent = (timeLeft / secToSlowToStop);
-            audioSource.pitch = percent;
-            BPM = (double)(originalBPM * percent); //BPM needs to go to very small number 
-            Debug.Log(percent);
-            CalculateSecPerBeat();
+
+            if(timeLeft > 0) {
+
+                //wind down pitch
+                double percent = (timeLeft / secToSlowToStop);
+                audioSource.pitch = (float)percent;
+                //audioSource.pitch = (float)(timeLeft / secToSlowToStop);
+
+                //wind down speed
+                double currentTime = AudioSettings.dspTime - songStartTime;
+                secPerBeat = ((currentTime / lastBeat) - secPerBeat) * (1 - percent) + secPerBeat;
+
+            } else {
+
+                audioSource.Stop();
+                isPlaying = false;
+
+                //we're done, hold everything in place 
+                secPerBeat = ((AudioSettings.dspTime - songStartTime) / (lastBeat));
+
+            }
+
+            lastBeat = GetBeat();
+
             yield return null;
+
+
+            //BPM = (double)(originalBPM * percent); //BPM needs to go to very small number 
+            //CalculateSecPerBeat();
+
+            //BPM = (double)(originalBPM * percent);
+            //CalculateSecPerBeat();
+
+            
+            //lastAudioTime = AudioSettings.dspTime - songStartTime;
+
+            //Debug.Log("percent: " + percent + ", sec per beat: " + secPerBeat);
+            
         }
 
-        audioSource.Stop();
-        isPlaying = false;
-        BPM = originalBPM;
-        CalculateSecPerBeat();
+        //BPM = originalBPM;
+        //CalculateSecPerBeat();
     }
 
     // Update is called once per frame
