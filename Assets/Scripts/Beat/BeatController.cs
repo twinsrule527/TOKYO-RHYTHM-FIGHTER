@@ -36,6 +36,10 @@ public class BeatController : MonoBehaviour
 
     [SerializeField] bool isGameScene = true;
 
+    //non-static reference to the BeatController in scene 
+    //used to call coroutines
+    static BeatController instance;
+
     public static bool isPlaying { get; private set; }
 
 
@@ -44,9 +48,9 @@ public class BeatController : MonoBehaviour
 
     //accuracy thresholds, in seconds 
     //will be converted into fractions of beats on start. 
-    static float secondsMINIMUM = 0.22f;
+    static float secondsMINIMUM = 0.23f;
     static float secondsGREAT = 0.14f;
-    static float secondsPERFECT = 0.07f;
+    static float secondsPERFECT = 0.08f;
 
 
     //// Beat accuracies! 
@@ -117,6 +121,11 @@ public class BeatController : MonoBehaviour
     bool beatEnded1, beatEnded05, beatEnded025;
 
 
+    void Awake() {
+        instance = this;
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -151,6 +160,10 @@ public class BeatController : MonoBehaviour
         return seconds * ((float)(BPM) / 60f);
     }
 
+    static void CalculateSecPerBeat() {
+        secPerBeat = 60 / BPM;
+    }
+
     //uses the song given to the beatcontroller object.
     public static void StartSong() {
         StartSong(songToPlay);
@@ -162,7 +175,7 @@ public class BeatController : MonoBehaviour
     
         //set up BPM 
         BPM = songData.BPM;
-        secPerBeat = 60 / BPM;
+        CalculateSecPerBeat();
 
         Debug.Log("original minimum: " + MINIMUM.thresholdBeforeBeat);
 
@@ -190,6 +203,49 @@ public class BeatController : MonoBehaviour
         songStartTime = AudioSettings.dspTime + songData.mp3Delay + songData.songDelay;
 
         isPlaying = true;
+
+    }
+
+    //stops everything from moving
+    public static void FailStop() {
+        instance.StartCoroutine(instance.SlowToStop());
+    }
+
+    double secToSlowToStop = 3.5;
+    IEnumerator SlowToStop() {
+
+        double timeLeft = secToSlowToStop;
+        float lastBeat = GetBeat();
+
+         while(1 == 1) {
+
+            timeLeft -= Time.deltaTime;
+
+            if(timeLeft > 0) {
+
+                //wind down pitch
+                double percent = (timeLeft / secToSlowToStop);
+                audioSource.pitch = (float)percent;
+                
+                //wind down speed
+                double currentTime = AudioSettings.dspTime - songStartTime;
+                secPerBeat = ((currentTime / lastBeat) - secPerBeat) * (1 - percent) + secPerBeat;
+
+            } else {
+
+                audioSource.Stop();
+                isPlaying = false;
+
+                //we're done, try to hold everything in place 
+                secPerBeat = ((AudioSettings.dspTime - songStartTime) / (lastBeat));
+
+            }
+
+            lastBeat = GetBeat();
+
+            yield return null;
+            
+        }
 
     }
 

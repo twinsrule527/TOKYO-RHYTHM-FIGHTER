@@ -15,6 +15,7 @@ public class A_Boss_1BeatAttack : BossAttack
         //Checks to see if they can hit the player - if they do, the player gets hit
         Global.Boss.makeAttackThisBeat = true;
         Global.Boss.CurrentMakingAttack = this;
+        Global.Boss.sfxController.PlayAttackSound(1);
         //Debug.Log("1");
         //Debug.Log(BeatController.GetBeat());
         yield return null;
