@@ -38,7 +38,7 @@ public abstract class BossAI : MonoBehaviour
     }
     
     public IEnumerator StartAttacks(AttackPattern myAttack) {
-        Debug.Log(myAttack.name);
+        //Debug.Log(myAttack.name);
         //For some reason, all of the coroutines run, but not all have a chance to check for end of Beat
         for(int i = 0; i < myAttack.coroutines.Count; i++) {
             CurrentAttack = myAttack.coroutines[i];
@@ -84,5 +84,10 @@ public abstract class BossAI : MonoBehaviour
             newAttack.AddAttacksToBeatIndicator();
         }
         
+    }
+
+    //This is called whenever the boss loses hp, to check whether they move to the next stage
+    public virtual void CheckStageChange() {
+
     }
 }
