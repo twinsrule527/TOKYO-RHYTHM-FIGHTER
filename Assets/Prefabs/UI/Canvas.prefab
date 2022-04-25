@@ -974,7 +974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7669122365477563606, guid: be19fa031271c7c4b9586fb3a9c2d7fe, type: 3}
       propertyPath: m_TagString
-      value: CenterHealth
+      value: PlayerHealth
       objectReference: {fileID: 0}
     - target: {fileID: 7669122365477563607, guid: be19fa031271c7c4b9586fb3a9c2d7fe, type: 3}
       propertyPath: m_Pivot.x
@@ -1220,8 +1220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1e67137b7e8c749a4ca17c3381b130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 6872776941643848814}
-  healthBarLerp: {fileID: 3604121243827065237}
+  healthBar: {fileID: 3604121243827065237}
+  healthBarLerp: {fileID: 6872776941643848814}
   interpolationSpeed: 0.1
 --- !u!114 &2642556738987841506
 MonoBehaviour:

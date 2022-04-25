@@ -20,6 +20,8 @@ public class A_BossShortAttack : BossAttack
         Global.Boss.makeAttackThisBeat = true;
         Global.Boss.CurrentMakingAttack = this;
         Global.Boss.sfxController.PlayAttackSound(2);
+        Global.Player.ChangeVisualHP(-damageToDeal);
+
         //Debug.Log("2");
         yield return null;
         //mySprite.color = Color.black;
@@ -45,6 +47,8 @@ public class A_BossShortAttack : BossAttack
         }
         else {
             mySprite.color = Color.white;
+            Global.Player.ChangeVisualHP(damageToDeal);
+
         }
         //CheckPlayerCurrentAction;
         //If player action is on beat, this attack is blocked and does nothing
