@@ -219,6 +219,9 @@ public class BeatIndicatorBrain : MonoBehaviour
             if(beatIndicator.enabled) {
                 if(beatIndicator.beatToHit < beatTil) {
                     beatIndicator.mySprite.color = new Color(beatIndicator.mySprite.color.r, beatIndicator.mySprite.color.g, beatIndicator.mySprite.color.b, 0);
+                } else if(beatIndicator.leftIndicator && beatIndicator.beatToHit < beatTil + 1) {
+                    //show outlines on player's side
+                    beatIndicator.showOutline();
                 }
             }
         }
