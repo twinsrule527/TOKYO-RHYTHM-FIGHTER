@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
 
     public float playerStartHealth {get; private set;}
     public float playerHealth {get; private set;}
+    public float playerVisualHealth { get; private set; }
+
 
 
     // Start is called before the first frame update
@@ -31,6 +33,7 @@ public class Player : MonoBehaviour
         Global.Player = this;
         playerStartHealth = _playerStartHealth;
         playerHealth = playerStartHealth;
+        playerVisualHealth = playerStartHealth;
         dmgNumber = GameObject.FindGameObjectWithTag("DmgManager").GetComponent<DmgNumber>();
         //load PlayerActions, which will be components on the Player object or its children 
         actions = GetComponentsInChildren<PlayerAction>();
