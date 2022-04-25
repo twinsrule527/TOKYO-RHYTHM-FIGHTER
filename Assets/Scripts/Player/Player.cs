@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
         {
             playerVisualHealth += amt;
         }
-        playerHurtAnimation.Hurt();
+        //playerHurtAnimation.Hurt();
         healthBarPlayer.ChangeHealthLerp(amt);
     }
 

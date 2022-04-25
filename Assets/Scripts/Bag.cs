@@ -80,9 +80,11 @@ public class Bag<T>
 
     //Draw a random item from the bag, without replacement. (the item is removed)
     public T Draw() {
-        int rand = Random.Range(0, list.Count);
-        lastDrawn = list[rand];
-        list.RemoveAt(rand);
+        if(list.Count > 0) {
+            int rand = Random.Range(0, list.Count);
+            lastDrawn = list[rand];
+            list.RemoveAt(rand);
+        }
         RefillIfNeeded();
         return lastDrawn;
     }
