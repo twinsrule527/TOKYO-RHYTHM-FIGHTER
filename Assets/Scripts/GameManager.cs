@@ -71,6 +71,9 @@ public class GameManager : MonoBehaviour
 
     public static void GoToGame() {
         SceneManager.LoadScene(2);
+
+        ComboIndicator.comboCounter = 0;
+
     }
 
     public static void GoToWin() {
@@ -79,7 +82,10 @@ public class GameManager : MonoBehaviour
 
     //restart the current scene 
     public static void RestartScene() {
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        ComboIndicator.comboCounter = 0;
     }
 
     //change to a specific scene 
