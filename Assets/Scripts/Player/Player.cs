@@ -19,9 +19,13 @@ public class Player : MonoBehaviour
     [SerializeField] float _playerStartHealth = 50;
     [SerializeField] private HurtAnimation playerHurtAnimation;
     [SerializeField] DmgNumber dmgNumber;
+    [SerializeField] PlayerHealthBar healthBarPlayer;
+
 
     public float playerStartHealth {get; private set;}
     public float playerHealth {get; private set;}
+    public float playerVisualHealth { get; private set; }
+
 
 
     // Start is called before the first frame update
@@ -31,7 +35,9 @@ public class Player : MonoBehaviour
         Global.Player = this;
         playerStartHealth = _playerStartHealth;
         playerHealth = playerStartHealth;
+        playerVisualHealth = playerStartHealth;
         dmgNumber = GameObject.FindGameObjectWithTag("DmgManager").GetComponent<DmgNumber>();
+        healthBarPlayer = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<PlayerHealthBar>();
         //load PlayerActions, which will be components on the Player object or its children 
         actions = GetComponentsInChildren<PlayerAction>();
         enabled = false;
@@ -59,6 +65,7 @@ public class Player : MonoBehaviour
             playerHealth += amt;
         }
         dmgNumber.PlayerDMGChange(amt);
+        healthBarPlayer.ChangeHealth(amt);
         Global.UIManager.SetHealthText();
         playerHurtAnimation.Hurt();
         sfxController.PlayHurtSound();
@@ -67,6 +74,17 @@ public class Player : MonoBehaviour
         if(playerHealth <= 0) {
             GameManager.PlayerLoses();
         }
+    }
+
+
+    public void ChangeVisualHP(float amt = 0)
+    {
+        if (!Global.Tutorial)
+        {
+            playerVisualHealth += amt;
+        }
+        //playerHurtAnimation.Hurt();
+        healthBarPlayer.ChangeHealthLerp(amt);
     }
 
     public void EndOfBeat1() {
