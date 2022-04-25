@@ -199,6 +199,14 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 282726590}
+    - target: {fileID: 746537116547153872, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 845160438165941862, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1206298028219877353, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: animDuration
       value: 0.75
@@ -207,6 +215,10 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 282726590}
+    - target: {fileID: 2127048691682601911, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2147477063709197977, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: m_SortingOrder
       value: 5
