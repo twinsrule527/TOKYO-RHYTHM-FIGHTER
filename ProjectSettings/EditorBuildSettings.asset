@@ -12,13 +12,13 @@ EditorBuildSettings:
     path: Assets/Scenes/IntroCutsceneScene.unity
     guid: 4d8aadf9fabac2b43b5a859e86229239
   - enabled: 1
-    path: Assets/Scenes/Sprint5Scenes/Sprint5Final.unity
+    path: Assets/Scenes/Sprint 5 Scenes/Sprint5Final.unity
     guid: cafb19360401aa34ebfcf50edb5bd20e
   - enabled: 1
     path: Assets/Scenes/EndingCutsceneScene.unity
     guid: e44491f4fb1680c4f95f236299497b63
   - enabled: 0
-    path: Assets/Scenes/Sprint5Scenes/Sprint5Jaden.unity
+    path: Assets/Scenes/Sprint 5 Scenes/Sprint5Jaden.unity
     guid: 45ee8e5b8e20112408033b58d11b74ff
   - enabled: 0
     path: Assets/Scenes/Other Test Scenes/NewScene.unity
@@ -27,9 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Other Test Scenes/Sprint2Scene.unity
     guid: 050ee893f0b2f91459d85ce728fffc79
   - enabled: 0
-    path: Assets/Scenes/Sprint4 Scenes/Charlee_Sprint4Scene.unity
+    path: Assets/Scenes/Sprint 4 Scenes/Charlee_Sprint4Scene.unity
     guid: 3081dff46308b0d4ba6e8991cd59cc36
   - enabled: 0
-    path: Assets/Scenes/Sprint4 Scenes/OLD Sprint4Scene.unity
+    path: Assets/Scenes/Sprint 4 Scenes/OLD Sprint4Scene.unity
     guid: 06d0d4b3744a4994a9197febe6515aac
   m_configObjects: {}
