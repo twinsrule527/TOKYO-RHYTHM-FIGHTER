@@ -892,6 +892,7 @@ MonoBehaviour:
   _playerStartHealth: 50
   playerHurtAnimation: {fileID: 970594237769943624}
   dmgNumber: {fileID: 7556804363992587736, guid: e6503903af7ae1e42b3c07813d6de643, type: 3}
+  healthBarPlayer: {fileID: 0}
 --- !u!212 &7554666834438711988
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1172,10 +1173,6 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 7554666834438711988}
-    - target: {fileID: 8147129014216447404, guid: e27ce9a720fdda84d99bd4392814a1df, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.5
-      objectReference: {fileID: 0}
     - target: {fileID: 9041706940061026420, guid: e27ce9a720fdda84d99bd4392814a1df, type: 3}
       propertyPath: spriteRenderer
       value: 
