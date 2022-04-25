@@ -687,7 +687,7 @@ MonoBehaviour:
   _nextStageButton: {fileID: 39896145}
   _deactivatedObjects:
   - {fileID: 541462318}
-  - {fileID: 784584334}
+  - {fileID: 1564729987}
   - {fileID: 575574941}
   _activatedObjects: []
 --- !u!1 &498249071
@@ -1581,7 +1581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 186f863982703cb4fa777f502dad3626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finalStage: 2
+  finalStage: 1
   TutorialBoss: {fileID: 135689413621083469}
   RealBoss: {fileID: 135689413621083469}
   Stages:
@@ -2098,9 +2098,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1492784417741273145, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: stage1FirstStage.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492784417741273145, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: stage2Transition.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492784417741273145, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: stage3SecondStage.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492784417741273145, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: stage1FirstStage.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: 66bfba7e6c290794c9e9cb23d04086c4, type: 3}
+    - target: {fileID: 1492784417741273145, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: stage2Transition.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: 66bfba7e6c290794c9e9cb23d04086c4, type: 3}
+    - target: {fileID: 1492784417741273145, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: stage3SecondStage.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: eb190cd431c81d840b6ccb2d77f71be2, type: 3}
     - target: {fileID: 2263738688694692412, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: stageChangeHP.Array.data[0]
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2263738688694692412, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: stageChangeHP.Array.data[1]
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2263738688694692412, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: stageChangeHP.Array.data[2]
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2263738688694692412, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: stageChangeHP.Array.data[3]
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085112, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: m_Name
@@ -2110,6 +2146,26 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1845617466}
+    - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: bossStartingHPArray.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: bossStartingHPArray.Array.data[1]
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: bossStartingHPArray.Array.data[2]
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: bossStartingHPArray.Array.data[3]
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: bossStartingHPArray.Array.data[4]
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085116, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: m_RootOrder
       value: 11

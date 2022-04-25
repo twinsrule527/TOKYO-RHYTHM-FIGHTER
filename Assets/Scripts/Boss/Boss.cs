@@ -6,10 +6,14 @@ public class Boss : MonoBehaviour
 {
     //public static Boss CurrentBoss;//Declares whichever boss is the current boss, for reference with player input & such
     [SerializeField] float [] bossStartingHPArray = {50f}; //starting HP for each stage, in order 
-    public float currentStageStartingHP {get; protected set;}
+    public float [] BossStartingHPArray {
+        get {
+            return bossStartingHPArray;
+        }
+    }
+    public float currentStageStartingHP;
     public float bossHP {get; protected set;}
     public float bossVisualHP { get; protected set; }
-
     public bool makeAttackThisBeat;
     public BossAttack CurrentMakingAttack;//Whichever attack is the one actually making an attack this beat (in case it ends before it has a chance to check)
         //Probably there's a better way to do this - should check w/ Jaden
@@ -42,6 +46,16 @@ public class Boss : MonoBehaviour
         bossVisualHP += amt;
         hurtAnimation.Hurt();
         healthBar.ChangeHealthLerp(amt);
+    }
+
+    //Sets the Boss' HP to a certain amt
+    public void SetBossHP(float amt) {
+        bossHP = amt;
+        bossVisualHP = bossHP;
+        healthBar.ChangeHealthLerp(amt);
+        Global.UIManager.SetHealthText();
+        healthBar.ChangeHealth(amt);
+        dmgNumber.BossDMGChange(amt);
     }
 
     public BossAI AttackAI;

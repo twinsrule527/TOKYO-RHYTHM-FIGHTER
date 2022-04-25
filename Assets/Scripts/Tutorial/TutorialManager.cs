@@ -32,6 +32,7 @@ public class TutorialManager : MonoBehaviour
         Stages[_tutorialStage].NextStageButton.SetActive(false);
         _tutorialStage++;
         GameManager.currentStage = _tutorialStage;
+        Global.Boss.AttackAI.StartStage(_tutorialStage);
         if(_tutorialStage > finalStage) {
             EndTutorial();
             return;

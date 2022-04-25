@@ -16,7 +16,11 @@ public class AttackReader : MonoBehaviour
     [SerializeField] List<TextAsset> stage0Intro, stage1FirstStage, stage2Transition, stage3SecondStage, stage4Finale; 
     //add more stages as needed 
     List<List<TextAsset>> patternsText = new List<List<TextAsset>>();
-
+    public List<List<TextAsset>> PatternsText {
+        get {
+            return patternsText;
+        }
+    }
     void Awake() {
         patternsText.Add(stage0Intro); //dont forget to add stages here 
         patternsText.Add(stage1FirstStage);
