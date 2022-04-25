@@ -46,9 +46,10 @@ public class PlayerAction : MonoBehaviour
         }
     }
     public virtual void CheckInput() {
-        
-        if(Input.GetKeyDown(key)) {
-            TryAction();
+        if(gameObject.activeInHierarchy) {
+            if(Input.GetKeyDown(key)) {
+                TryAction();
+            }
         }
 
     }

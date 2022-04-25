@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     public static bool gameplayRunning = false;
 
+    public static int currentStage;//The current stage that the boss is in
+
     static GameObject failScreenObj;
 
     void Awake() {
