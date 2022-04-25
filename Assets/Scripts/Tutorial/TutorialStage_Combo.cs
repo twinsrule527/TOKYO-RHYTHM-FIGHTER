@@ -8,8 +8,9 @@ public class TutorialStage_Combo : TutorialStage
     //If they do, the button shows up
     [SerializeField] private int comboRequired;
     private bool stageCompleted;
+    [SerializeField] private int stageNumber;
     void Update() {
-        if(!stageCompleted) {
+        if(!stageCompleted && GameManager.currentStage == stageNumber) {
             Debug.Log("going");
             if(ComboIndicator.comboCounter > comboRequired) {
                 NextStageButton.SetActive(true);

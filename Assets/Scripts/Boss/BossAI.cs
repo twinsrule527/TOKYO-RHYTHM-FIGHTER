@@ -76,6 +76,7 @@ public abstract class BossAI : MonoBehaviour
     public void RefillAttackQueue() {
         float attackQueueBeatLength = 0;
         //Get the length of the attackQueue
+        Debug.Log(AttackQueue.Count);
         for(int i = 0; i < AttackQueue.Count; i++) {
             attackQueueBeatLength += AttackQueue[i].AttackPatternLength();
         }
