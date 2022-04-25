@@ -6,7 +6,7 @@ using UnityEngine;
         //Subclasses are implementations of each boss with actual attack pattern
 public abstract class BossAI : MonoBehaviour
 {
-    public Bag<AttackPattern> attackBag {protected set; get;}
+    public List<Bag<AttackPattern>> attackBag {protected set; get;}
     public BossAttack CurrentAttack { get; private set; }//Whatever the attack the boss is currently on - is needed for Interrupts
     public BossAttack CurrentAttackOutgoing;//Whatever attack the boss is making - but doesn't change until after the attack lands, rather than changing at the instance of the beat change
     public float AttackBeatHitOn;//Indicates the beat on which this attack will hit
@@ -17,15 +17,21 @@ public abstract class BossAI : MonoBehaviour
     public virtual void Start() {
         AttackQueue = new List<AttackPattern>();
         CreateAttackPatterns();
+        for(int i = 0; i < attackBag.Count; i++) {
+            Debug.Log(attackBag[i].CountLineup);
+        }
     }
     public virtual void SongStarted() {
         
     }
     //Creates attack patterns for the boss - takes it from text files
     public virtual void CreateAttackPatterns() {
-        List<List<char>> newAtks = GetComponent<AttackReader>().GetPatterns(0);
-        AttackCreator.CreateAttackPatterns(newAtks, this);
-        attackBag.Refill();
+        AttackReader atkReader = GetComponent<AttackReader>();
+        for(int i = 0; i < atkReader.PatternsText.Count; i++) {
+            List<List<char>> newAtks = atkReader.GetPatterns(i);
+            AttackCreator.CreateAttackPatterns(newAtks, this, i);
+            attackBag[i].Refill();
+        }
     }
     //Updates the Boss State after each attack pattern
     public virtual IEnumerator StateUpdate() {
@@ -70,6 +76,7 @@ public abstract class BossAI : MonoBehaviour
     public void RefillAttackQueue() {
         float attackQueueBeatLength = 0;
         //Get the length of the attackQueue
+        Debug.Log(AttackQueue.Count);
         for(int i = 0; i < AttackQueue.Count; i++) {
             attackQueueBeatLength += AttackQueue[i].AttackPatternLength();
         }
@@ -77,7 +84,7 @@ public abstract class BossAI : MonoBehaviour
         float temp = 0;
         while(attackQueueBeatLength < BeatIndicatorBrain.beatsInAdvanceShown && temp < 20) {
             temp++;
-            AttackPattern newAttack = attackBag.Draw();
+            AttackPattern newAttack = attackBag[GameManager.currentStage].Draw();
             AttackQueue.Add(newAttack);
             attackQueueBeatLength += newAttack.AttackPatternLength();
             //Also, needs to add the attackPattern to the BeatIndicatorBrain
@@ -90,4 +97,9 @@ public abstract class BossAI : MonoBehaviour
     public virtual void CheckStageChange() {
 
     }
+
+    public virtual void StartStage(int stageNum) {
+
+    }
+
 }

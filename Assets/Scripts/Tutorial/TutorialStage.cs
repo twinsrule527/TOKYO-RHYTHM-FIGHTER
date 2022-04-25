@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TutorialStage : MonoBehaviour
 {
     //For the time being, you can go to the next stage of the tutorial using a button
-    [SerializeField] private GameObject _nextStageButton;
+    [SerializeField] protected GameObject _nextStageButton;
     public GameObject NextStageButton {
         get {
             return _nextStageButton;
@@ -15,7 +15,7 @@ public class TutorialStage : MonoBehaviour
 
     //Has a list of objects which are deactivated for the length of the stage
         //This allows us to only have the player action we want to be active be active
-    [SerializeField] private List<GameObject> _deactivatedObjects;
+    [SerializeField] protected List<GameObject> _deactivatedObjects;
     public List<GameObject> DeactivatedObjects {
         get {
             return _deactivatedObjects;
@@ -23,7 +23,7 @@ public class TutorialStage : MonoBehaviour
     }
 
     //Same as above, but for objects which are only active when this stage is active
-    [SerializeField] private List<GameObject> _activatedObjects;
+    [SerializeField] protected List<GameObject> _activatedObjects;
     public List<GameObject> ActivatedObjects {
         get {
             return _activatedObjects;
