@@ -14,6 +14,8 @@ public class A_BossLongAttack : BossAttack
         Global.Boss.makeAttackThisBeat = true;
         Global.Boss.CurrentMakingAttack = this;
         Global.Boss.sfxController.PlayAttackSound(4);
+        Global.Player.ChangeVisualHP(-damageToDeal);
+
         //Debug.Log("4");
         yield return null;
     }   
@@ -38,12 +40,14 @@ public class A_BossLongAttack : BossAttack
         }
         else {
             mySprite.color = Color.white;
+            Global.Player.ChangeVisualHP(damageToDeal);
+
         }
         //CheckPlayerCurrentAction;
         //If player action is on beat, this attack is blocked and does nothing
 
         //else { Global.PlayerInstance.ChangeHP(-damage);}
-        
+
     }
     public override void AddBeatToIndicator()
     {

@@ -1202,6 +1202,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7374144326298839352, guid: 5616b084a679a6943949e139a843212b, type: 3}
+      propertyPath: bossStartingHPArray.Array.data[0]
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 7374144326298839353, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: m_Name
       value: BossA
