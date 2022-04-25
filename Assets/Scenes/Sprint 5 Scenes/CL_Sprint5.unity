@@ -1329,10 +1329,6 @@ PrefabInstance:
       propertyPath: key
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1206298028219877353, guid: 0bae8102314e7a642b51f834926338da, type: 3}
-      propertyPath: animDuration
-      value: 0.75
-      objectReference: {fileID: 0}
     - target: {fileID: 1494253301700028827, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: spriteRenderer
       value: 
