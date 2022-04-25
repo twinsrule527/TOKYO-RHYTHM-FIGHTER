@@ -15,9 +15,13 @@ public class GameManager : MonoBehaviour
 
     public static bool hasSeenOpeningCutscene = false;
 
+    public static bool gameplayRunning = false;
+
+    public static int currentStage;//The current stage that the boss is in
+
     static GameObject failScreenObj;
 
-    void Start() {
+    void Awake() {
         failScreenObj = GameObject.FindWithTag("FailScreenObj");
         if(failScreenObj != null) {
             failScreenObj.SetActive(false);
@@ -28,10 +32,12 @@ public class GameManager : MonoBehaviour
     //this one with no input uses the one given to the beat controller.
     public static void StartSong() {
         BeatController.StartSong();
+        gameplayRunning = true;
     }
     //this one uses whatever input you give it.
     public static void StartSong(SongData songData) {
         BeatController.StartSong(songData);
+        gameplayRunning = true;
     }
 
     //the song has started playing- call everybody who needs to know!
@@ -96,12 +102,21 @@ public class GameManager : MonoBehaviour
     //it shouldn't really do any logic here, it should call other things' highlevel functions
     public static void PlayerLoses() {
 
-        BeatController.FailStop();
+        if(gameplayRunning) {
 
-        Global.UIManager.PlayerLoses();
+            gameplayRunning = false;
 
-        failScreenObj.SetActive(true);
+            BeatController.FailStop();
 
+            Global.UIManager.PlayerLoses();
+
+            if(failScreenObj != null) {
+                failScreenObj.SetActive(true);
+            } else {
+                Debug.Log("ERROR: couldn't enable fail screen because reference was null!");
+            }
+
+        }
     }
   
 }

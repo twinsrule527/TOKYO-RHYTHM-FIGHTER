@@ -1076,6 +1076,7 @@ MonoBehaviour:
   endPosTransform: {fileID: 8979469279705331520}
   _visualEndPos: {fileID: 2203281497986221825}
   baseBeatSprite: {fileID: 8338978881563222977, guid: 8fe07d4e5af736949ac9e9e8b949edf3, type: 3}
+  PlayerIndicators: []
   TestBeats: []
   TestSprites: []
   _BossHitsPlayerEffect: {fileID: 6774834856101934257}

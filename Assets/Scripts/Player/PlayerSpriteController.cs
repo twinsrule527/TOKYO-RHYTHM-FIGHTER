@@ -15,7 +15,7 @@ public class PlayerSpriteController : SpriteController
 
 
 
-    [SerializeField] AccuracyPrefab accuracyTOO_EARLY, accuracyTOO_LATE, accuracyMINIMUM, accuracyGREAT, accuracyPERFECT;
+    [SerializeField] AccuracyPrefab accuracyTOO_EARLY, accuracyTOO_LATE, accuracyMINIMUM, accuracyGREAT, accuracyPERFECT, accuracyMESSUP;
 
 
 
@@ -108,6 +108,22 @@ public class PlayerSpriteController : SpriteController
             Debug.Log("ERROR: an Accuracy was passed to PlayerSpriteController.DisplayAccuracy that doesn't match any of the ones checked!!!");
         }
 
+    }
+    //If all accuracies need to be ended prematurely
+    public void StopDisplayingAccuracies() {
+        accuracyTOO_EARLY.StopDisplay();
+        accuracyTOO_LATE.StopDisplay();
+        accuracyMINIMUM.StopDisplay();
+        accuracyGREAT.StopDisplay();
+        accuracyPERFECT.StopDisplay();
+        accuracyMESSUP.StopDisplay();
+    }
+
+    //This is separate from DisplayAccuracy bc its not triggered in the same way
+        //Is separate from SpriteController.MessUp bc there are times when the player messes up but this isn't shown
+    public void DisplayMessup() {
+        StopDisplayingAccuracies();
+        accuracyMESSUP.DisplayAccuracy();
     }
 
 

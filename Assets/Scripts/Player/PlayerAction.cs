@@ -14,9 +14,19 @@ public class PlayerAction : MonoBehaviour
     //override CheckInput for other behavior that isn't a KeyCode press, this is just a useful default
     [SerializeField] protected KeyCode key;
     [SerializeField] protected ActionIndicator myActionIndicator;
+    [SerializeField] private bool isComboable = true;
+    public bool IsComboable {
+        get {
+            return isComboable;
+        }
+    }
     int comboCounter;   //may be used if needed 
 
     bool canInterrupt;  //do we call Boss.Interrupt()?
+
+
+    public float damage;//How much damage this attack does
+    public float baseDamage;//How much base damage this attack does
 
     
     //TODO: track when the player has done input for a beat and what type of beat. 
@@ -36,9 +46,10 @@ public class PlayerAction : MonoBehaviour
         }
     }
     public virtual void CheckInput() {
-        
-        if(Input.GetKeyDown(key)) {
-            TryAction();
+        if(gameObject.activeInHierarchy) {
+            if(Input.GetKeyDown(key)) {
+                TryAction();
+            }
         }
 
     }
@@ -59,6 +70,10 @@ public class PlayerAction : MonoBehaviour
                 MessUp();
             }
         }
+        else {
+            MessUp();
+            Global.Player.spriteController.DisplayMessup();
+        }
 
     }
 
@@ -68,7 +83,8 @@ public class PlayerAction : MonoBehaviour
     protected virtual void Success() {
 
         //Debug.Log("Success, you're on beat");
-        //Typically, sets the Player's current action to be this
+        //Typically, sets the Player's current action to be this and plays an on beat sound
+        Global.Player.sfxController.PlayOnBeatSound();
         Global.Player.CurrentAction = this;
         Global.Player.currActionEndBeat = BeatController.GetNearestBeat(beatFraction) + length;//Subtracts smallest beat fraction, so that it actually occurs before the beat, rather than after
         //Disables the next few BeatIndicators
@@ -91,5 +107,11 @@ public class PlayerAction : MonoBehaviour
         Debug.Log("you messed up, you were off beat");
         Global.Player.CurrentAction = Global.Player.messUpAction;
         Global.Player.spriteController.MessUp();
+    }
+
+    protected IEnumerator currentActionCoroutine;
+    //This coroutine is performed so that the boss loses HP at the right moment, etc.
+    public virtual IEnumerator ActionCoroutine() {
+        yield return null;
     }
 }

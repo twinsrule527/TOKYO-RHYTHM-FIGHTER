@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public struct Accuracy {
+
     public Accuracy(float threshBefore, float threshAfter, string nam, int num) {
         this.thresholdBeforeBeat = threshBefore;
         this.thresholdAfterBeat = threshAfter;
@@ -40,11 +42,15 @@ public class BeatController : MonoBehaviour
 
     public static bool isPlaying { get; private set; }
 
+
+    //public GameObject comboIndicator;
+    //private ComboIndicator ComboIndicator;
+
     //accuracy thresholds, in seconds 
     //will be converted into fractions of beats on start. 
-    static float secondsMINIMUM = 0.22f;
+    static float secondsMINIMUM = 0.23f;
     static float secondsGREAT = 0.14f;
-    static float secondsPERFECT = 0.07f;
+    static float secondsPERFECT = 0.08f;
 
 
     //// Beat accuracies! 
@@ -134,6 +140,9 @@ public class BeatController : MonoBehaviour
             Debug.Log("ERROR: no song data found by the BeatController! (Is an object with SongData components provided?)");
         }
 
+
+        //ComboIndicator = comboIndicator.GetComponent<ComboIndicator>();
+
     }
 
     //start the song with the given name.  
@@ -202,26 +211,42 @@ public class BeatController : MonoBehaviour
         instance.StartCoroutine(instance.SlowToStop());
     }
 
-    float secToSlowToStop = 4f;
+    double secToSlowToStop = 3.5;
     IEnumerator SlowToStop() {
 
-        float timeLeft = secToSlowToStop;
-        double originalBPM = BPM;
+        double timeLeft = secToSlowToStop;
+        float lastBeat = GetBeat();
 
-        while(timeLeft > 0) {
+         while(1 == 1) {
+
             timeLeft -= Time.deltaTime;
-            float percent = (timeLeft / secToSlowToStop);
-            audioSource.pitch = percent;
-            BPM = (double)(originalBPM * percent); //BPM needs to go to very small number 
-            Debug.Log(percent);
-            CalculateSecPerBeat();
+
+            if(timeLeft > 0) {
+
+                //wind down pitch
+                double percent = (timeLeft / secToSlowToStop);
+                audioSource.pitch = (float)percent;
+                
+                //wind down speed
+                double currentTime = AudioSettings.dspTime - songStartTime;
+                secPerBeat = ((currentTime / lastBeat) - secPerBeat) * (1 - percent) + secPerBeat;
+
+            } else {
+
+                audioSource.Stop();
+                isPlaying = false;
+
+                //we're done, try to hold everything in place 
+                secPerBeat = ((AudioSettings.dspTime - songStartTime) / (lastBeat));
+
+            }
+
+            lastBeat = GetBeat();
+
             yield return null;
+            
         }
 
-        audioSource.Stop();
-        isPlaying = false;
-        BPM = originalBPM;
-        CalculateSecPerBeat();
     }
 
     // Update is called once per frame
@@ -360,6 +385,9 @@ public class BeatController : MonoBehaviour
         return GetAccuracy(1);
     }*/
     public static Accuracy GetAccuracy(float fraction = 1) {
+       
+        ComboIndicator.comboCounter += 1;
+       
         return GetAccuracy(fraction, GetBeat());
     }
     public static Accuracy GetAccuracy(float fraction, float beat) {
@@ -374,7 +402,12 @@ public class BeatController : MonoBehaviour
                     return a;
                 }
             }
+
+            ComboIndicator.comboCounter = 0;
+
             return TOO_LATE;
+            
+            
         } else {
             //if before 
             foreach(Accuracy a in accuraciesToCheck) {
@@ -382,8 +415,12 @@ public class BeatController : MonoBehaviour
                     return a;
                 }
             }
+
+            ComboIndicator.comboCounter = 0;
+
             return TOO_EARLY;
         }
+
     }
 
     //Gets the nearest beat of this fraction, both before and after.
@@ -457,4 +494,6 @@ public class BeatController : MonoBehaviour
         }
     }
 
+
+    
 }

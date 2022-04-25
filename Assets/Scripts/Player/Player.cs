@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
 
     public PlayerSpriteController spriteController;
-
+    public PlayerSFXController sfxController;
     PlayerAction[] actions;
     public MessUpAction messUpAction;//The player has a mess-up action that their current action gets set to if they fail to perform an action
 
@@ -18,8 +18,11 @@ public class Player : MonoBehaviour
     //How much health the player starts with
     [SerializeField] float _playerStartHealth = 50;
     [SerializeField] private HurtAnimation playerHurtAnimation;
+    [SerializeField] DmgNumber dmgNumber;
+
     public float playerStartHealth {get; private set;}
     public float playerHealth {get; private set;}
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +31,7 @@ public class Player : MonoBehaviour
         Global.Player = this;
         playerStartHealth = _playerStartHealth;
         playerHealth = playerStartHealth;
+        dmgNumber = GameObject.FindGameObjectWithTag("DmgManager").GetComponent<DmgNumber>();
         //load PlayerActions, which will be components on the Player object or its children 
         actions = GetComponentsInChildren<PlayerAction>();
         enabled = false;
@@ -51,9 +55,15 @@ public class Player : MonoBehaviour
 
     //How outside objects should affect the player's health
     public void ChangeHP(float amt = 0) {
-        playerHealth += amt;
+        if(!Global.Tutorial) {
+            playerHealth += amt;
+        }
+        dmgNumber.PlayerDMGChange(amt);
         Global.UIManager.SetHealthText();
         playerHurtAnimation.Hurt();
+        sfxController.PlayHurtSound();
+        ComboIndicator.comboCounter = 0;
+
         if(playerHealth <= 0) {
             GameManager.PlayerLoses();
         }
