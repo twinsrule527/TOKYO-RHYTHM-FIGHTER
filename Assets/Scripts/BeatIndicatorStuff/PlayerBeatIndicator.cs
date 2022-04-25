@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class PlayerBeatIndicator : BeatIndicator
 {
-    private bool leftIndicator;
+    public bool leftIndicator;
+    public SpriteRenderer outline;
+    Color invisible = new Color(1, 1, 1, 0);
     void Awake()
     {
         startPos = BeatIndicatorBrain.PlayerIndicatorStartPos;
         endPos = BeatIndicatorBrain.PlayerIndicatorEndPos;
-        mySprite = GetComponent<SpriteRenderer>();   
+        if(mySprite == null) {
+            mySprite = GetComponent<SpriteRenderer>();  
+        }
     }
 
     public void SetPlayerIndicatorStart(beatIndicatorInfo info, bool left) {
         leftIndicator = left;
+        outline.enabled = leftIndicator;
         SetIndicatorStart(info);
     }
     public override void SetIndicatorStart(beatIndicatorInfo info) {
@@ -33,6 +38,21 @@ public class PlayerBeatIndicator : BeatIndicator
         transform.position = startPos;
         transform.rotation = startRot;
         distPerBeat = (endPos - startPos) / (beatToHit - startBeat);
+    }
+
+    protected override IEnumerator PastCenterCoroutine() {
+        yield return base.PastCenterCoroutine();
+        showOutline(false);
+    }
+
+    public void showOutline(bool show = true) {
+        if(show) {
+            outline.color = Color.white;
+            mySprite.color = invisible;
+        } else {
+            outline.color = invisible;
+            mySprite.color = originalColor;
+        }
     }
     
 }
