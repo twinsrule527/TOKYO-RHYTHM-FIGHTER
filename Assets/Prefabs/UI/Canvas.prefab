@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comboText: {fileID: 1082648535848932763}
-  dmgMultiplier: 0.2
+  dmgMultiplier: 0.1
 --- !u!1 &7825075961009921753
 GameObject:
   m_ObjectHideFlags: 0
