@@ -498,6 +498,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicController
       objectReference: {fileID: 0}
+    - target: {fileID: 502760128720185393, guid: 1c847fce25ad7ba49938433488bcb334, type: 3}
+      propertyPath: _songToPlay
+      value: 
+      objectReference: {fileID: 1402336998}
     - target: {fileID: 502760128720185394, guid: 1c847fce25ad7ba49938433488bcb334, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -885,6 +889,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3277de67649b144c9430589eb8be31e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1402336998 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6857293080711129489, guid: 1c847fce25ad7ba49938433488bcb334, type: 3}
+  m_PrefabInstance: {fileID: 658625973}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3caedba4d365eec479aa48e95c46f5ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1452970605

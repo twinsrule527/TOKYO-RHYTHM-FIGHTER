@@ -7,7 +7,7 @@ public class BossBeatIndicator : BeatIndicator
 
     BossHitsPlayerScript bossHitsPlayerEffect;
     public bool doesBossHitsPlayerEffect = true;
-    
+
     void Awake() {
         startPos = BeatIndicatorBrain.BossIndicatorStartPos;
         endPos = BeatIndicatorBrain.BossIndicatorEndPos;
