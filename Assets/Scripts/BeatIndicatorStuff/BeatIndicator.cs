@@ -45,6 +45,7 @@ public class BeatIndicator : MonoBehaviour
 
             if(animated) {
                 int frame = Mathf.FloorToInt(lerpValue * animationFrames.Count);
+                Debug.Log("frame " + frame);
                 mySprite.sprite = animationFrames[frame];
             }
         //}
