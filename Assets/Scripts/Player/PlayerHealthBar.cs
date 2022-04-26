@@ -76,7 +76,7 @@ public class PlayerHealthBar : MonoBehaviour
         for (float t = 0f; t <= 3f; t += Time.deltaTime)
         {
 
-            healthBarLerp.fillAmount = Mathf.Lerp(healthBarLerp.fillAmount, (((float)Global.Player.playerVisualHealth) / ((float)Global.Player.playerVisualHealth)), t);
+            healthBarLerp.fillAmount = Mathf.Lerp(healthBarLerp.fillAmount, (((float)Global.Player.playerVisualHealth) / ((float)Global.Player.playerStartHealth)), t);
 
 
             yield return null;

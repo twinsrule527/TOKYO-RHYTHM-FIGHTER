@@ -9,9 +9,9 @@ public class A_and_Tutorial_BossAI : BossAI
     [SerializeField] private SpriteRenderer mySprite;//This will eventually go in a separate object
     [SerializeField] private List<float> stageChangeHP;
     public override void Start() {
-        attackBag = new Bag<AttackPattern>();
+        attackBag = new List<Bag<AttackPattern>>();
         base.Start();
-        attackBag.Refill();
+        attackBag[GameManager.currentStage].Refill();
         
     }
     //Called by Boss SongStarted
@@ -41,7 +41,11 @@ public class A_and_Tutorial_BossAI : BossAI
         }
     }
 
-    private void StartStage(int stageNum) {
-
+    public override void StartStage(int stageNum) {
+        //During the tutorial, the boss' health resets when they enter a new stage
+        if(Global.Tutorial) {
+            Global.Boss.SetBossHP(Global.Boss.BossStartingHPArray[stageNum]);
+        }
+        Global.Boss.currentStageStartingHP = Global.Boss.BossStartingHPArray[stageNum];
     }
 }

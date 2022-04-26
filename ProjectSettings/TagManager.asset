@@ -5,9 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - FailScreenObj
-  tags:
-  - CenterHealth
   - DmgManager
+  - CenterHealth
+  - PlayerHealth
   layers:
   - Default
   - TransparentFX

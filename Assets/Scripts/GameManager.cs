@@ -97,7 +97,6 @@ public class GameManager : MonoBehaviour
     //it shouldn't really do any logic here, it should call other things' highlevel functions
     public static void PlayerWins() {
 
-        //TODO call other things' functions here, this is the high level one 
         Global.UIManager.PlayerWins();
 
         GoToWin();
