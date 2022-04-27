@@ -26,7 +26,7 @@ public class Boss : MonoBehaviour
         bossHP += amt;
         bossVisualHP = bossHP;
         healthBar.ChangeHealthLerp(amt);
-        Global.UIManager.SetHealthText();
+        //Global.UIManager.SetHealthText();
         healthBar.ChangeHealth(amt);
         dmgNumber.BossDMGChange(amt);
         AttackAI.CheckStageChange();
@@ -39,6 +39,8 @@ public class Boss : MonoBehaviour
                 bossHP = currentStageStartingHP;
             }
         }
+        //TODO: where in here to check GameManager.gameplayRunning 
+        //same for changing player health 
     }
 
     public void ChangeVisualBossHP(float amt)
@@ -53,7 +55,7 @@ public class Boss : MonoBehaviour
         bossHP = amt;
         bossVisualHP = bossHP;
         healthBar.ChangeHealthLerp(amt);
-        Global.UIManager.SetHealthText();
+        //Global.UIManager.SetHealthText();
         healthBar.ChangeHealth(amt);
         dmgNumber.BossDMGChange(amt);
     }
