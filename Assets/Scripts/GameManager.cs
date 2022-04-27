@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
         if(failScreenObj != null) {
             failScreenObj.SetActive(false);
         }
+        SfxSync.soundEffectsEnabled = true;
     }
 
     //start playing the song. 
@@ -71,21 +72,20 @@ public class GameManager : MonoBehaviour
 
     public static void GoToGame() {
         SceneManager.LoadScene(2);
-
-        ComboIndicator.comboCounter = 0;
-
     }
 
     public static void GoToWin() {
         SceneManager.LoadScene(3);
     }
 
+    public static void QuitGame() {
+        //todo: do we want to save anything? like if player has viewed intro cutscene 
+        Application.Quit();
+    }
+
     //restart the current scene 
     public static void RestartScene() {
-        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
-        ComboIndicator.comboCounter = 0;
     }
 
     //change to a specific scene 
@@ -101,10 +101,15 @@ public class GameManager : MonoBehaviour
 
         BeatController.WinStop();
 
+        SfxSync.soundEffectsEnabled = false;
+
     }
 
     //called after the game has slowed to a stop. 
     public static void PlayerWinsFinish() {
+
+            SfxSync.soundEffectsEnabled = true;
+
             GameManager.GoToWin();
     }
 
@@ -120,11 +125,15 @@ public class GameManager : MonoBehaviour
 
             Global.UIManager.PlayerLoses();
 
+            SfxSync.soundEffectsEnabled = false;
+
         }
     }
 
     //called after the game has slowed to a stop. 
     public static void PlayerLosesFinish() {
+
+        SfxSync.soundEffectsEnabled = true;
 
         if(failScreenObj != null) {
             failScreenObj.SetActive(true);
