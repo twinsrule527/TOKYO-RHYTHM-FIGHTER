@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 186f863982703cb4fa777f502dad3626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finalStage: 3
+  finalStage: 4
   TutorialBoss: {fileID: 0}
   RealBoss: {fileID: 0}
   Stages:
