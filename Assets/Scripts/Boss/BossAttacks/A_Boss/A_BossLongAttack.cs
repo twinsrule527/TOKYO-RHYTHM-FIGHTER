@@ -41,6 +41,7 @@ public class A_BossLongAttack : BossAttack
         else {
             mySprite.color = Color.white;
             Global.Player.ChangeVisualHP(damageToDeal);
+            isParried();
 
         }
         //CheckPlayerCurrentAction;

@@ -11,11 +11,9 @@ public class TutorialStage_Combo : TutorialStage
     [SerializeField] private int stageNumber;
     void Update() {
         if(!stageCompleted && GameManager.currentStage == stageNumber) {
-            Debug.Log("going");
             if(ComboIndicator.comboCounter > comboRequired) {
                 NextStageButton.SetActive(true);
                 stageCompleted = true;
-                Debug.Log("COMPLETED");
             }
         }
     }
