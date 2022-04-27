@@ -137,6 +137,8 @@ public class HoldAttack : PlayerAction
             yield return null;
         }
         Debug.Log("Attacked: " + damage);
+        //Damage is comboed
+        damage = ComboIndicator.comboMultiplier(damage);
         damage= Mathf.Round(damage);
         Global.Boss.ChangeBossHP(-damage);
         isHolding = false;
@@ -152,6 +154,7 @@ public class HoldAttack : PlayerAction
     //have a function that controls HoldCourotine
     void MessupHold(){//DEBUG
         
+        damage = ComboIndicator.comboMultiplier(damage);
         damage= Mathf.Round(damage);
         Global.Boss.ChangeBossHP(-damage);
         damage = startDamage;

@@ -386,8 +386,6 @@ public class BeatController : MonoBehaviour
     }*/
     public static Accuracy GetAccuracy(float fraction = 1) {
        
-        ComboIndicator.comboCounter += 1;
-       
         return GetAccuracy(fraction, GetBeat());
     }
     public static Accuracy GetAccuracy(float fraction, float beat) {

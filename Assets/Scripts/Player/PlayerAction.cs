@@ -59,11 +59,12 @@ public class PlayerAction : MonoBehaviour
     protected virtual void TryAction() {
 
         if(Global.Player.CurrentAction == null) { //if we aren't locked down 
-
+            
             //if we're on beat 
             Accuracy curAccuracy = BeatController.GetAccuracy(beatFraction);
             Global.Player.spriteController.DisplayAccuracy(curAccuracy);
             if(BeatController.IsOnBeat(beatFraction)) {//curAccuracy.priority > 0) {
+                
                 Success();
             }
             else {
@@ -81,7 +82,8 @@ public class PlayerAction : MonoBehaviour
     //This function gets called when the player presses this key on beat. Carry out whatever action this is. 
     //Should be overridden and implemented with what pressing this key does.
     protected virtual void Success() {
-
+        //On a success, increases the combo counter
+        ComboIndicator.comboCounter += 1;
         //Debug.Log("Success, you're on beat");
         //Typically, sets the Player's current action to be this and plays an on beat sound
         Global.Player.sfxController.PlayOnBeatSound();
