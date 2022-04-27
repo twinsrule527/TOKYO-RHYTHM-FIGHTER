@@ -68,6 +68,7 @@ public class DoubleHitAttack : PlayerAction
     //This is the secondary success function for when the second attack hit
     private void Hit() {
         Global.Boss.ChangeBossHP(-damage);
+        
     }
 
 
