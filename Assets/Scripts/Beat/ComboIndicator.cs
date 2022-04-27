@@ -10,9 +10,10 @@ public class ComboIndicator : MonoBehaviour
     public TextMeshProUGUI comboText;
 
     public static int comboCounter = 0;
+    private static int maxComboCountDmg = 20;//How much the combo Multiplier can apply to attacks, at most
     private List<PlayerAction> playerActions;
 
-    public float dmgMultiplier = 0.2f;
+    private static float dmgMultiplier = 0.1f;
 
     void Start()
     {
@@ -43,9 +44,9 @@ public class ComboIndicator : MonoBehaviour
         }
     }
 
-    private float comboMultiplier(float inputAmt) {
-        
-        inputAmt = inputAmt + inputAmt*(comboCounter * dmgMultiplier);
+    public static float comboMultiplier(float inputAmt) {
+        int comboAmt = Mathf.Min(comboCounter, maxComboCountDmg);
+        inputAmt = inputAmt + inputAmt*(comboAmt * dmgMultiplier);
         
         return inputAmt;
 

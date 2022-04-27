@@ -573,7 +573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beatFraction: 1
   length: 2
-  key: 118
+  key: 0
   myActionIndicator: {fileID: 3394866044708623383}
   isComboable: 1
   damage: 2
@@ -633,6 +633,9 @@ MonoBehaviour:
   playerOnBeatSounds:
   - {fileID: 8300000, guid: 4a32f1f312ece4449b0c5e8b08ffded6, type: 3}
   - {fileID: 8300000, guid: a3ffff2815a8bf2458fe6f8de15a7bfb, type: 3}
+  - {fileID: 8300000, guid: 23713549412a7e94da4a0f8524bb3492, type: 3}
+  - {fileID: 8300000, guid: 3c08402016aea2d4b986b80a51ec8cfb, type: 3}
+  - {fileID: 8300000, guid: c0566b0d402a0034a86741771a20b3e1, type: 3}
 --- !u!82 &1667185636934181239
 AudioSource:
   m_ObjectHideFlags: 0

@@ -93,6 +93,10 @@ public class Player : MonoBehaviour
     }
 
     public void EndOfBeat1() {
+        //If the player doesn't act, they reset the comboIndicator
+        if(CurrentAction == null) {
+            ComboIndicator.comboCounter = 0;
+        }
         //CurrentAction = null; //TODO bandaid fix 
     }
 
