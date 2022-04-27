@@ -18,9 +18,18 @@ public class BeatIndicator : MonoBehaviour
     protected Vector3 distPerBeat;
     [SerializeField] protected Color originalColor;
 
+    [SerializeField] List<Sprite> animationFrames;
+    bool animated = false;
+
     void Awake() {
         mySprite = GetComponent<SpriteRenderer>();
         originalColor = mySprite.color;
+    }
+
+    void Start() {
+        if(animationFrames.Count > 1) {
+            animated = true;
+        }
     }
 
     void Update()
@@ -32,6 +41,13 @@ public class BeatIndicator : MonoBehaviour
             if(lerpValue == 1) { //&& !moving) {
                 //Deactivates when it reaches 1
                 PastCenter();
+            }
+
+            if(animated) {
+                
+                //pick the frame based on where we are between 0 and 1, but dont go over Count-1
+                int frame = Mathf.FloorToInt(Mathf.Clamp((lerpValue * animationFrames.Count), 0f, (animationFrames.Count - 1f)));
+                mySprite.sprite = animationFrames[frame];
             }
         //}
     }

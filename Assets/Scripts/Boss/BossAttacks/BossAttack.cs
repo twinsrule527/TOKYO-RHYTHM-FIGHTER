@@ -52,6 +52,12 @@ public abstract class BossAttack : MonoBehaviour
     public abstract void CheckAttackSuccess();
 
     public abstract void AddBeatToIndicator();
+    //Whenever a boss attack is parried, it should call this
+    protected virtual void isParried() {
+        if(Global.Tutorial) {
+            TutorialStage_Parry.IncreaseParryNumber();
+        }
+    }
     public float length = 1f;//How long in beats this attack should take
     [SerializeField] private bool _isAnAttack;//Boolean value used to determine if it counts as an attack for the sake of interrupting actions, etc
     public bool IsAnAttack {

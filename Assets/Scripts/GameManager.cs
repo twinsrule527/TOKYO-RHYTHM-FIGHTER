@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
         if(failScreenObj != null) {
             failScreenObj.SetActive(false);
         }
+        SfxSync.soundEffectsEnabled = true;
     }
 
     //start playing the song. 
@@ -71,21 +72,20 @@ public class GameManager : MonoBehaviour
 
     public static void GoToGame() {
         SceneManager.LoadScene(2);
-
-        ComboIndicator.comboCounter = 0;
-
     }
 
     public static void GoToWin() {
         SceneManager.LoadScene(3);
     }
 
+    public static void QuitGame() {
+        //todo: do we want to save anything? like if player has viewed intro cutscene 
+        Application.Quit();
+    }
+
     //restart the current scene 
     public static void RestartScene() {
-        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
-        ComboIndicator.comboCounter = 0;
     }
 
     //change to a specific scene 
@@ -97,11 +97,20 @@ public class GameManager : MonoBehaviour
     //it shouldn't really do any logic here, it should call other things' highlevel functions
     public static void PlayerWins() {
 
-        //TODO call other things' functions here, this is the high level one 
         Global.UIManager.PlayerWins();
 
-        GoToWin();
+        BeatController.WinStop();
 
+        SfxSync.soundEffectsEnabled = false;
+
+    }
+
+    //called after the game has slowed to a stop. 
+    public static void PlayerWinsFinish() {
+
+            SfxSync.soundEffectsEnabled = true;
+
+            GameManager.GoToWin();
     }
 
     //this is the high level function called when the player loses 
@@ -116,12 +125,20 @@ public class GameManager : MonoBehaviour
 
             Global.UIManager.PlayerLoses();
 
-            if(failScreenObj != null) {
-                failScreenObj.SetActive(true);
-            } else {
-                Debug.Log("ERROR: couldn't enable fail screen because reference was null!");
-            }
+            SfxSync.soundEffectsEnabled = false;
 
+        }
+    }
+
+    //called after the game has slowed to a stop. 
+    public static void PlayerLosesFinish() {
+
+        SfxSync.soundEffectsEnabled = true;
+
+        if(failScreenObj != null) {
+            failScreenObj.SetActive(true);
+        } else {
+            Debug.Log("ERROR: couldn't enable fail screen because reference was null!");
         }
     }
   
