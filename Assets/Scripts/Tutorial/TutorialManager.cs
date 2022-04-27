@@ -4,16 +4,16 @@ using UnityEngine;
 //This script manages the general tutorial, such as determining what stage of the tutorial the player is on
 public class TutorialManager : MonoBehaviour
 {
-    private int _tutorialStage;//What stage of the tutorial we are on
+    private int _currentStage;//What stage of the tutorial we are on
         //Stage 0: Intro to Acting - Parry
             //Stage 1: Intro to Base Attack
                 //Stage 2: Intro to Hold Attack
     [SerializeField] private int finalStage;//Number of the last stage
     [SerializeField] private GameObject TutorialBoss;//The Boss for for the tutorial
     [SerializeField] private GameObject RealBoss;//The Boss for after the tutorial
-    public int TutorialStage {
+    public int CurrentStage {
         get {
-            return _tutorialStage;
+            return _currentStage;
         }
     }
 
@@ -22,29 +22,29 @@ public class TutorialManager : MonoBehaviour
     void Start() {
         Global.TutorialManager = this;
         Global.Tutorial = true;
-        SetObjects(Stages[_tutorialStage], true);
+        SetObjects(Stages[_currentStage], true);
     }
 
     //Moves to the next stage of the tutorial
     public void NextStage() {
         //Resets all objects changed by the current stage
-        SetObjects(Stages[_tutorialStage], false);
-        Stages[_tutorialStage].NextStageButton.SetActive(false);
-        _tutorialStage++;
-        GameManager.currentStage = _tutorialStage;
+        SetObjects(Stages[_currentStage], false);
+        Stages[_currentStage].NextStageButton.SetActive(false);
+        //Goes to the next stage
+        _currentStage++;
+        GameManager.currentStage = _currentStage;
         Debug.Log(GameManager.currentStage);
-        Global.Boss.AttackAI.StartStage(_tutorialStage);
-        if(_tutorialStage > finalStage) {
+        Global.Boss.AttackAI.StartStage(_currentStage);
+        if(_currentStage == finalStage) {
             EndTutorial();
-            return;
         }
         //Sets new objects in accordance with the new stage
-        SetObjects(Stages[_tutorialStage], true);
+        SetObjects(Stages[_currentStage], true);
         
     }
     //Sets up the next stage of the tutorial, which the player is then sent to when they press a button
     public void SetUpNextStage() {
-        Stages[_tutorialStage].NextStageButton.SetActive(true);
+        Stages[_currentStage].StageConditionsMet();
     }
     public void EndTutorial() {
         Global.Tutorial = false;

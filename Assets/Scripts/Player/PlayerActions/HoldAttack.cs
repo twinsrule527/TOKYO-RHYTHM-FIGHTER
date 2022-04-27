@@ -152,6 +152,7 @@ public class HoldAttack : PlayerAction
     //have a function that controls HoldCourotine
     void MessupHold(){//DEBUG
         
+        damage= Mathf.Round(damage);
         Global.Boss.ChangeBossHP(-damage);
         damage = startDamage;
         

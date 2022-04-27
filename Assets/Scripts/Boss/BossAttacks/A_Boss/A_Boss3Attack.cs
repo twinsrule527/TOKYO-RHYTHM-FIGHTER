@@ -41,6 +41,7 @@ public class A_Boss3Attack : BossAttack
         }
         else {
             Global.Player.ChangeVisualHP(damageToDeal);
+            isParried();
         }
         //CheckPlayerCurrentAction;
         //If player action is on beat, this attack is blocked and does nothing
