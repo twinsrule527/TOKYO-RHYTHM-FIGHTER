@@ -11,6 +11,7 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private int finalStage;//Number of the last stage
     [SerializeField] private GameObject TutorialBoss;//The Boss for for the tutorial
     [SerializeField] private GameObject RealBoss;//The Boss for after the tutorial
+    [SerializeField] private List<TutorialLerpIn> lerpInObjects;//Objects which may lerp in during various stages
     public int CurrentStage {
         get {
             return _currentStage;
@@ -35,8 +36,15 @@ public class TutorialManager : MonoBehaviour
         GameManager.currentStage = _currentStage;
         Debug.Log(GameManager.currentStage);
         Global.Boss.AttackAI.StartStage(_currentStage);
+        //Lerp In all objects which need to lerp in on this scene
+        foreach(TutorialLerpIn obj in lerpInObjects) {
+            if(obj.stageToLerpInOn == _currentStage) {
+                StartCoroutine(obj.LerpToPos());
+            }
+        }
         if(_currentStage == finalStage) {
             EndTutorial();
+            return;
         }
         //Sets new objects in accordance with the new stage
         SetObjects(Stages[_currentStage], true);

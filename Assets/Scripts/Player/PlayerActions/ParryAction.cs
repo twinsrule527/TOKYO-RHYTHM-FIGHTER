@@ -9,5 +9,9 @@ public class ParryAction : PlayerAction
         base.Success();
         //Play the Parry Animation
         Global.Player.spriteController.Parry();
+        //Check to see if the boss is attacking - if they aren't, the combo breaks
+        if(Global.Boss.AttackAI.AttackBeatHitOn != BeatController.GetNearestBeat()) {
+            ComboIndicator.comboCounter = 0;
+        }
     }
 }
