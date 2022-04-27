@@ -217,7 +217,7 @@ public class BeatController : MonoBehaviour
     }
 
     //stops everything from 
-    static double secToSlowFail = 3.5;
+    static double secToSlowFail = 3d;
     public static void FailStop() {
         instance.StartCoroutine(instance.SlowToStop(true, secToSlowFail));
     }
@@ -225,7 +225,7 @@ public class BeatController : MonoBehaviour
     //slow to stop, but tuned differently cause... you won! 
     //like slow to stop but only changes the beat, not the actual audio time. 
     //TODO-- could have it switch intelligently to the ending sample here, or another func for general switching 
-    static double secToSlowWin = 5;
+    static double secToSlowWin = 5d;
     public static void WinStop() {
         instance.StartCoroutine(instance.SlowToStop(false, secToSlowWin));
     }
