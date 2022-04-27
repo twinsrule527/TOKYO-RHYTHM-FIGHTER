@@ -141,5 +141,21 @@ public class GameManager : MonoBehaviour
             Debug.Log("ERROR: couldn't enable fail screen because reference was null!");
         }
     }
+
+    public static void Pause() {
+        gameplayRunning = false;
+        BeatController.Pause();
+        Global.UIManager.Pause();
+        //todo pause coroutines
+        //todo pause time?
+    }
+
+    public static void UnPause() {
+        gameplayRunning = true;
+        BeatController.UnPause();
+        Global.UIManager.UnPause();
+        //todo unpause coroutines 
+        //todo pause time? 
+    }
   
 }

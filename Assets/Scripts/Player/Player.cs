@@ -27,19 +27,22 @@ public class Player : MonoBehaviour
     public float playerVisualHealth { get; private set; }
 
 
-
-    // Start is called before the first frame update
-    void Start()
-    {   
+    void Awake() {
+        //Things that have to occur at the very very beginning all occur in Awake
         //There can only be 1 player, and it will be the Instance of the player
         Global.Player = this;
         playerStartHealth = _playerStartHealth;
         playerHealth = playerStartHealth;
         playerVisualHealth = playerStartHealth;
-        dmgNumber = GameObject.FindGameObjectWithTag("DmgManager").GetComponent<DmgNumber>();
-        healthBarPlayer = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<PlayerHealthBar>();
         //load PlayerActions, which will be components on the Player object or its children 
         actions = GetComponentsInChildren<PlayerAction>();
+    }
+    // Start is called before the first frame update
+    void Start()
+    {   
+        
+        dmgNumber = GameObject.FindGameObjectWithTag("DmgManager").GetComponent<DmgNumber>();
+        healthBarPlayer = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<PlayerHealthBar>();
         enabled = false;
     }
 
@@ -61,12 +64,17 @@ public class Player : MonoBehaviour
 
     //How outside objects should affect the player's health
     public void ChangeHP(float amt = 0) {
+
+        if(!GameManager.gameplayRunning) {
+            return;
+        }
+
         if(!Global.Tutorial) {
             playerHealth += amt;
         }
         dmgNumber.PlayerDMGChange(amt);
         healthBarPlayer.ChangeHealth(amt);
-        Global.UIManager.SetHealthText();
+        //Global.UIManager.SetHealthText();
         playerHurtAnimation.Hurt();
         sfxController.PlayHurtSound();
         ComboIndicator.comboCounter = 0;
@@ -88,6 +96,10 @@ public class Player : MonoBehaviour
     }
 
     public void EndOfBeat1() {
+        //If the player doesn't act, they reset the comboIndicator
+        if(CurrentAction == null) {
+            ComboIndicator.comboCounter = 0;
+        }
         //CurrentAction = null; //TODO bandaid fix 
     }
 

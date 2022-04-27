@@ -23,10 +23,15 @@ public class Boss : MonoBehaviour
     [SerializeField] private HurtAnimation hurtAnimation;
 
     public void ChangeBossHP(float amt) {//Function to be called by others when increasing/decreasing hp
+        
+        if(!GameManager.gameplayRunning) {
+            return;
+        }
+        
         bossHP += amt;
         bossVisualHP = bossHP;
         healthBar.ChangeHealthLerp(amt);
-        Global.UIManager.SetHealthText();
+        //Global.UIManager.SetHealthText();
         healthBar.ChangeHealth(amt);
         dmgNumber.BossDMGChange(amt);
         AttackAI.CheckStageChange();
@@ -53,9 +58,14 @@ public class Boss : MonoBehaviour
         bossHP = amt;
         bossVisualHP = bossHP;
         healthBar.ChangeHealthLerp(amt);
-        Global.UIManager.SetHealthText();
+        //Global.UIManager.SetHealthText();
         healthBar.ChangeHealth(amt);
         dmgNumber.BossDMGChange(amt);
+    }
+
+    public void SetBossVisualHP(float amt)
+    {
+        bossVisualHP = amt;
     }
 
     public BossAI AttackAI;

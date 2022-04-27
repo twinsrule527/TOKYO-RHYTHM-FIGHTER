@@ -18,11 +18,11 @@ public class UIManager : MonoBehaviour
     }
 
     //Sets the text to player and enemy's current health - called by change Health functions
-    public void SetHealthText() {
+    /*public void SetHealthText() {
         PlayerHealthText.text = "Player Health: " + ((int)Global.Player.playerHealth).ToString();
         EnemyHealthText.text = "Boss Health: " + ((int)Global.Boss.bossHP).ToString();
-    }
-
+    }*/
+/*
     public void RestartButtonPressed() {
         Debug.Log("restart button pressed");
         GameManager.RestartScene();
@@ -32,7 +32,7 @@ public class UIManager : MonoBehaviour
         Debug.Log("exit button pressed");
         GameManager.GoToTitle();
     }
-
+*/
     public void PlayerWins() {
         //TODO show sprite 
     }
@@ -40,4 +40,14 @@ public class UIManager : MonoBehaviour
     public void PlayerLoses() {
         //TODO show sprite
     }
+
+    public void Pause() {
+        //TODO
+    }
+
+    public void UnPause() {
+        //TODO
+    }
+
+    //TODO if window not focused and/or mouse leaves window, pause the game 
 }
