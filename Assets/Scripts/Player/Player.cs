@@ -61,6 +61,11 @@ public class Player : MonoBehaviour
 
     //How outside objects should affect the player's health
     public void ChangeHP(float amt = 0) {
+
+        if(!GameManager.gameplayRunning) {
+            return;
+        }
+
         if(!Global.Tutorial) {
             playerHealth += amt;
         }
