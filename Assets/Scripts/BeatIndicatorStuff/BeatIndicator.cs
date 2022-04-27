@@ -44,7 +44,9 @@ public class BeatIndicator : MonoBehaviour
             }
 
             if(animated) {
-                int frame = Mathf.FloorToInt(lerpValue * animationFrames.Count);
+                
+                //pick the frame based on where we are between 0 and 1, but dont go over Count-1
+                int frame = Mathf.FloorToInt(Mathf.Clamp((lerpValue * animationFrames.Count), 0f, (animationFrames.Count - 1f)));
                 mySprite.sprite = animationFrames[frame];
             }
         //}

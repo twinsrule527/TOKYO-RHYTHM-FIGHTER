@@ -99,8 +99,13 @@ public class GameManager : MonoBehaviour
 
         Global.UIManager.PlayerWins();
 
-        GoToWin();
+        BeatController.WinStop();
 
+    }
+
+    //called after the game has slowed to a stop. 
+    public static void PlayerWinsFinish() {
+            GameManager.GoToWin();
     }
 
     //this is the high level function called when the player loses 
@@ -115,12 +120,16 @@ public class GameManager : MonoBehaviour
 
             Global.UIManager.PlayerLoses();
 
-            if(failScreenObj != null) {
-                failScreenObj.SetActive(true);
-            } else {
-                Debug.Log("ERROR: couldn't enable fail screen because reference was null!");
-            }
+        }
+    }
 
+    //called after the game has slowed to a stop. 
+    public static void PlayerLosesFinish() {
+
+        if(failScreenObj != null) {
+            failScreenObj.SetActive(true);
+        } else {
+            Debug.Log("ERROR: couldn't enable fail screen because reference was null!");
         }
     }
   
