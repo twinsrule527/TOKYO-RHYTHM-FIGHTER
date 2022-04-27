@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
         }
         dmgNumber.PlayerDMGChange(amt);
         healthBarPlayer.ChangeHealth(amt);
-        Global.UIManager.SetHealthText();
+        //Global.UIManager.SetHealthText();
         playerHurtAnimation.Hurt();
         sfxController.PlayHurtSound();
         ComboIndicator.comboCounter = 0;

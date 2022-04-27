@@ -18,6 +18,8 @@ public class ComboIndicator : MonoBehaviour
     void Start()
     {
         playerActions = new List<PlayerAction>(FindObjectsOfType<PlayerAction>());
+        
+        ComboIndicator.comboCounter = 0;
     }
     void Update()
     {

@@ -206,13 +206,35 @@ public class BeatController : MonoBehaviour
 
     }
 
-    //stops everything from moving
-    public static void FailStop() {
-        instance.StartCoroutine(instance.SlowToStop());
+    //pause the beat and music.
+    public static void Pause() {
+        
     }
 
-    double secToSlowToStop = 3.5;
-    IEnumerator SlowToStop() {
+    //unpause the beat and music. 
+    public static void UnPause() {
+        
+    }
+
+    //stops everything from 
+    static double secToSlowFail = 3d;
+    public static void FailStop() {
+        instance.StartCoroutine(instance.SlowToStop(true, secToSlowFail));
+    }
+
+    //slow to stop, but tuned differently cause... you won! 
+    //like slow to stop but only changes the beat, not the actual audio time. 
+    //TODO-- could have it switch intelligently to the ending sample here, or another func for general switching 
+    static double secToSlowWin = 5d;
+    public static void WinStop() {
+        instance.StartCoroutine(instance.SlowToStop(false, secToSlowWin));
+    }
+
+    //TODO: ummmmmm this causes weird stuff like repeating sfx on win. what do 
+    //maybe disable being able to play sounds or smth?
+    IEnumerator SlowToStop(bool fail, double secToSlowToStop) {
+
+        //Debug.Log("BEGINNING SLOW TO STOP");
 
         double timeLeft = secToSlowToStop;
         float lastBeat = GetBeat();
@@ -223,21 +245,56 @@ public class BeatController : MonoBehaviour
 
             if(timeLeft > 0) {
 
-                //wind down pitch
                 double percent = (timeLeft / secToSlowToStop);
-                audioSource.pitch = (float)percent;
-                
-                //wind down speed
+
+                //wind down speed of audio via pitch
+                if(fail) {
+                    audioSource.pitch = (float)percent;
+                }
+
+                //wind down speed of beat and things dependent on it
                 double currentTime = AudioSettings.dspTime - songStartTime;
                 secPerBeat = ((currentTime / lastBeat) - secPerBeat) * (1 - percent) + secPerBeat;
 
-            } else {
-
-                audioSource.Stop();
-                isPlaying = false;
+            } //else if(timeLeft == double.NaN) {
 
                 //we're done, try to hold everything in place 
-                secPerBeat = ((AudioSettings.dspTime - songStartTime) / (lastBeat));
+                //TODO Pause() will hopefully make this obselete 
+                //secPerBeat = ((AudioSettings.dspTime - songStartTime) / (lastBeat));
+                
+           // } 
+           else {
+
+               //Debug.Log("SLOWED TO STOP");
+
+            //TODO hopefully move this out 
+               secPerBeat = ((AudioSettings.dspTime - songStartTime) / (lastBeat));
+
+                //the frame we pass 0 
+
+                isPlaying = false;
+                audioSource.Stop();
+                Pause();
+
+                //TODO let ending stinger be on some other thing? idk
+                //otherwise the above might only go in if(fail)
+
+                if(fail) {
+                    
+                    GameManager.PlayerLosesFinish();
+
+                } else if(!fail) {
+                    //TODO 
+                    //GameManager.something 
+                    //or, display some button
+                    //i dont know 
+
+                    //TODO this is a placeholder for some transition idk 
+                    //because we want to let it play out the uhhh ending of the song where it like wrrrrrrrrr final note 
+                    GameManager.PlayerWinsFinish();
+                }
+                
+                //timeLeft = double.NaN;
 
             }
 
@@ -246,6 +303,10 @@ public class BeatController : MonoBehaviour
             yield return null;
             
         }
+    }
+
+    //TODO 
+    public static void ContinuousSwitchSample(SongData newSong) {
 
     }
 
