@@ -1193,7 +1193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nextStageButton: {fileID: 3994846419220510012}
   _deactivatedObjects:
-  - {fileID: 7085108908885902760}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   _activatedObjects: []
