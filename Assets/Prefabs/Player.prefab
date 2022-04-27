@@ -378,7 +378,7 @@ MonoBehaviour:
   myActionIndicator: {fileID: 0}
   isComboable: 1
   damage: 5
-  baseDamage: 0
+  baseDamage: 5
 --- !u!1 &4081028334381491184
 GameObject:
   m_ObjectHideFlags: 0
