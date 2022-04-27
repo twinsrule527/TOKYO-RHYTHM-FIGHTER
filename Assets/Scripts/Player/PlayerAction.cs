@@ -109,6 +109,7 @@ public class PlayerAction : MonoBehaviour
         Debug.Log("you messed up, you were off beat");
         Global.Player.CurrentAction = Global.Player.messUpAction;
         Global.Player.spriteController.MessUp();
+        Global.Boss.SetBossVisualHP(Global.Boss.bossHP);
     }
 
     protected IEnumerator currentActionCoroutine;
