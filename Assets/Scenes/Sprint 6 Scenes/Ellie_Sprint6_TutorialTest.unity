@@ -209,7 +209,7 @@ PrefabInstance:
     - target: {fileID: 7156878336211704347, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}
       propertyPath: Stages.Array.data[3]
       value: 
-      objectReference: {fileID: 665739816}
+      objectReference: {fileID: 0}
     - target: {fileID: 7650307020723682419, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -392,6 +392,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}
+--- !u!1 &73355278 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7085108908885902760, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}
+  m_PrefabInstance: {fileID: 73355277}
+  m_PrefabAsset: {fileID: 0}
 --- !u!212 &322448708 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7554666834438711988, guid: 0bae8102314e7a642b51f834926338da, type: 3}
@@ -535,17 +540,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4344965911156535034, guid: 0bae8102314e7a642b51f834926338da, type: 3}
   m_PrefabInstance: {fileID: 1955278364}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &665739816 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4593424317681219774, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}
-  m_PrefabInstance: {fileID: 73355277}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f308a80f2827fd24496a12cb98f33e46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &784584334 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8216630639901541565, guid: 0bae8102314e7a642b51f834926338da, type: 3}
@@ -1124,10 +1118,6 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 3414772834812628416, guid: 0bae8102314e7a642b51f834926338da, type: 3}
-      propertyPath: length
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3795154453095853364, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: loops
       value: 0
@@ -1405,9 +1395,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 532670720117191820, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: _deactivatedObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1564729987}
+    - target: {fileID: 5227038871817257810, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: _deactivatedObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 73355278}
+    - target: {fileID: 5227038871817257810, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: _deactivatedObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 784584334}
+    - target: {fileID: 5227038871817257810, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: _deactivatedObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 1564729987}
     - target: {fileID: 5343507138540085112, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: m_Name
-      value: Tutorial&ABoss
+      value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: healthBar
@@ -1457,5 +1463,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8627357009024049223, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: _deactivatedObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 73355278}
+    - target: {fileID: 8627357009024049223, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: _deactivatedObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 541462318}
+    - target: {fileID: 8627357009024049223, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: _deactivatedObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 1564729987}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: babc52131f06bb346b277df732e2e316, type: 3}

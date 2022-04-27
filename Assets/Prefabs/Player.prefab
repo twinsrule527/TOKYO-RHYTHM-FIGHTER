@@ -573,7 +573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beatFraction: 1
   length: 2
-  key: 118
+  key: 0
   myActionIndicator: {fileID: 3394866044708623383}
   isComboable: 1
   damage: 2
