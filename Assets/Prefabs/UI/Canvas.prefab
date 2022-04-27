@@ -169,8 +169,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -288.3, y: 8}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 67.712, y: -98}
+  m_SizeDelta: {x: 372.5751, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1752028357969938149
 CanvasRenderer:
@@ -285,6 +285,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comboText: {fileID: 1082648535848932763}
+  TextBeforeComboNum: X
+  TextAfterComboNum: ' Combo!'
 --- !u!1 &7825075961009921753
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,7 +321,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 286, y: -217}
+  m_AnchoredPosition: {x: 244, y: -297}
   m_SizeDelta: {x: 273.503, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7825075961009921700
@@ -453,7 +455,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -226, y: -214}
+  m_AnchoredPosition: {x: -209, y: -297}
   m_SizeDelta: {x: 326.9597, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7825075962337567366

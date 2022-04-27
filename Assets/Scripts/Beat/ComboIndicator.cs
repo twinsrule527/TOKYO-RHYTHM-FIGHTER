@@ -8,6 +8,8 @@ public class ComboIndicator : MonoBehaviour
 {
     
     public TextMeshProUGUI comboText;
+    [SerializeField] private string TextBeforeComboNum;
+    [SerializeField] private string TextAfterComboNum;
 
     public static int comboCounter = 0;
     private static int maxComboCountDmg = 20;//How much the combo Multiplier can apply to attacks, at most
@@ -23,7 +25,7 @@ public class ComboIndicator : MonoBehaviour
     }
     void Update()
     {
-        comboText.text = comboCounter.ToString() + " HITS!";
+        comboText.text = TextBeforeComboNum + comboCounter.ToString() + TextAfterComboNum;
 
         if(comboCounter == 0){
             comboText.enabled = false;
