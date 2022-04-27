@@ -10,9 +10,9 @@ public class ObjectButton : MonoBehaviour
     //a gameobject as clickable button.
     //needs a collider.
 
-    [SerializeField] KeyCode [] keys;
+    [SerializeField] protected List<KeyCode> keys;
 
-    [SerializeField] UnityEvent functionToCall;
+    [SerializeField] protected UnityEvent functionToCall;
 
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] Sprite noHover, hover;
@@ -23,8 +23,14 @@ public class ObjectButton : MonoBehaviour
     [SerializeField] int increaseOrderInLayerBy = 0;
     TextMeshPro [] buttonText;
 
-    void Start() {
+    protected virtual void Start() {
         buttonText = GetComponentsInChildren<TextMeshPro>();
+        if(hover == null) {
+            hover = spriteRenderer.sprite;
+        }
+        if(noHover == null) {
+            noHover = spriteRenderer.sprite;
+        }
     }
 
     // Update is called once per frame
@@ -32,13 +38,16 @@ public class ObjectButton : MonoBehaviour
     {
         foreach(KeyCode key in keys) {
             if(Input.GetKeyDown(key)) {
-                functionToCall.Invoke();
+                ButtonPressed();
             }
         }
-        
     }
 
     void OnMouseDown() {
+        ButtonPressed();
+    }
+
+    protected virtual void ButtonPressed() {
         functionToCall.Invoke();
     }
 
