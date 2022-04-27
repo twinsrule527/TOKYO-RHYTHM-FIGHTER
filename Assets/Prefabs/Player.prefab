@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentAction: {fileID: 3414772834812628416}
-  holdLength: 1
+  holdLength: 2
   holdObj: {fileID: 0}
   holdLine: {fileID: 7421385569951105280}
 --- !u!1 &1269733307042010174
@@ -774,7 +774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatFraction: 1
-  length: 2
+  length: 1
   key: 122
   myActionIndicator: {fileID: 3608641872491304081}
   isComboable: 1
@@ -833,7 +833,7 @@ MonoBehaviour:
   baseDamage: 3
   startDamage: 0
   DamageGain: 5
-  maxHoldLength: 1
+  maxHoldLength: 2
 --- !u!1 &8597708211883435790
 GameObject:
   m_ObjectHideFlags: 0
