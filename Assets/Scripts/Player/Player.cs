@@ -61,12 +61,17 @@ public class Player : MonoBehaviour
 
     //How outside objects should affect the player's health
     public void ChangeHP(float amt = 0) {
+
+        if(!GameManager.gameplayRunning) {
+            return;
+        }
+
         if(!Global.Tutorial) {
             playerHealth += amt;
         }
         dmgNumber.PlayerDMGChange(amt);
         healthBarPlayer.ChangeHealth(amt);
-        Global.UIManager.SetHealthText();
+        //Global.UIManager.SetHealthText();
         playerHurtAnimation.Hurt();
         sfxController.PlayHurtSound();
         ComboIndicator.comboCounter = 0;

@@ -6,7 +6,13 @@ using UnityEngine;
 public class SfxSync : MonoBehaviour
 {
 
+    public static bool soundEffectsEnabled = true;
+
     public static void PlaySoundPerfect(AudioClip clip, AudioSource source, float beatNumber) {
+
+        if(!soundEffectsEnabled) {
+            return;
+        }
 
         source.PlayOneShot(clip);
 
