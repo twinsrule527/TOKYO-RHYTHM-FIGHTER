@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentAction: {fileID: 3414772834812628416}
-  holdLength: 1
+  holdLength: 2
   holdObj: {fileID: 0}
   holdLine: {fileID: 7421385569951105280}
 --- !u!1 &1269733307042010174
