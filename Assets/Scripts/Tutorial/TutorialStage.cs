@@ -29,4 +29,8 @@ public class TutorialStage : MonoBehaviour
             return _activatedObjects;
         }
     }
+
+    public virtual void StageConditionsMet() {
+        _nextStageButton.SetActive(true);
+    }
 }
