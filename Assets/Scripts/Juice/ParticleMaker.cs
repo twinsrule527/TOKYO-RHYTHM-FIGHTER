@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class ParticleMaker : MonoBehaviour
 {
-
-    [SerializeField] ParticleSystem playerParticles;
-    [SerializeField] ParticleSystem bossParticles;
-    static ParticleSystem StatPlayerParticles;
-    static ParticleSystem StatBossParticles;
+    [SerializeField] protected List<Sprite> sprites;
+    private SpriteRenderer render;
 
     // Start is called before the first frame update
     void Start()
     {
-        StatPlayerParticles = playerParticles;
-        StatBossParticles = bossParticles;
+        Global.ParticleMaker = this;
+        render = GetComponentInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -30,14 +27,22 @@ public class ParticleMaker : MonoBehaviour
     }
 
 
-    public static void SpawnPlayerParticles(Vector3 pos, Quaternion rot)
+    //one time animation method
+    public void playAnimation()
     {
-        Instantiate(StatPlayerParticles, pos, rot);
+        for(int i = 0; i < sprites.Count; i++)
+        {
+            render.sprite = sprites[i];
+        }
+
+        render.sprite = null;
     }
 
 
-    public static void SpawnBossParticles(Vector3 pos, Quaternion rot)
+    public static void SpawnBossParticles()
     {
-        Instantiate(StatBossParticles, pos, rot);
     }
+
+
+    
 }

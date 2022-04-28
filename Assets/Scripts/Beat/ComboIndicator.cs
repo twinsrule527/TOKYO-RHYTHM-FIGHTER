@@ -8,11 +8,14 @@ public class ComboIndicator : MonoBehaviour
 {
     
     public TextMeshProUGUI comboText;
+    [SerializeField] private string TextBeforeComboNum;
+    [SerializeField] private string TextAfterComboNum;
 
     public static int comboCounter = 0;
+    private static int maxComboCountDmg = 20;//How much the combo Multiplier can apply to attacks, at most
     private List<PlayerAction> playerActions;
 
-    public float dmgMultiplier = 0.2f;
+    private static float dmgMultiplier = 0.1f;
 
     void Start()
     {
@@ -22,7 +25,7 @@ public class ComboIndicator : MonoBehaviour
     }
     void Update()
     {
-        comboText.text = comboCounter.ToString() + " HITS!";
+        comboText.text = TextBeforeComboNum + comboCounter.ToString() + TextAfterComboNum;
 
         if(comboCounter == 0){
             comboText.enabled = false;
@@ -43,9 +46,9 @@ public class ComboIndicator : MonoBehaviour
         }
     }
 
-    private float comboMultiplier(float inputAmt) {
-        
-        inputAmt = inputAmt + inputAmt*(comboCounter * dmgMultiplier);
+    public static float comboMultiplier(float inputAmt) {
+        int comboAmt = Mathf.Min(comboCounter, maxComboCountDmg);
+        inputAmt = inputAmt + inputAmt*(comboAmt * dmgMultiplier);
         
         return inputAmt;
 
