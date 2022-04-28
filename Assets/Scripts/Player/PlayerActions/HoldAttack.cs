@@ -140,7 +140,10 @@ public class HoldAttack : PlayerAction
         //Damage is comboed
         damage = ComboIndicator.comboMultiplier(damage);
         damage= Mathf.Round(damage);
+
+        Global.Boss.ChangeVisualBossHP(-damage);
         Global.Boss.ChangeBossHP(-damage);
+        
         isHolding = false;
         
         /*if(t >= startTime){
@@ -157,6 +160,7 @@ public class HoldAttack : PlayerAction
         damage = ComboIndicator.comboMultiplier(damage);
         damage= Mathf.Round(damage);
         Global.Boss.ChangeBossHP(-damage);
+        //Global.Boss.ChangeVisualBossHP(-damage);
         damage = startDamage;
         
         StopCoroutine(currentCoroutine);
