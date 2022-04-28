@@ -63,6 +63,11 @@ public class Boss : MonoBehaviour
         dmgNumber.BossDMGChange(amt);
     }
 
+    public void SetBossVisualHP(float amt)
+    {
+        bossVisualHP = amt;
+    }
+
     public BossAI AttackAI;
     public BossSpriteController spriteController;
     public BossSFXController sfxController;

@@ -9,5 +9,6 @@ public static class Global
     public static UIManager UIManager;
     public static BeatIndicatorBrain BeatIndicatorBrain;
     public static TutorialManager TutorialManager;
+    public static ParticleMaker ParticleMaker;
     public static bool Tutorial;//Whether the tutorial is currently running
 }
