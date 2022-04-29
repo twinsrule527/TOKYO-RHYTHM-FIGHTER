@@ -42,15 +42,14 @@ public class BeatController : MonoBehaviour
 
     public static bool isPlaying { get; private set; }
 
+    public static bool songPaused  { get; private set; }
 
-    //public GameObject comboIndicator;
-    //private ComboIndicator ComboIndicator;
 
     //accuracy thresholds, in seconds 
     //will be converted into fractions of beats on start. 
-    static float secondsMINIMUM = 0.23f;
-    static float secondsGREAT = 0.14f;
-    static float secondsPERFECT = 0.08f;
+    static float secondsMINIMUM = 0.24f;
+    static float secondsGREAT = 0.15f;
+    static float secondsPERFECT = 0.10f;
 
 
     //// Beat accuracies! 
@@ -140,9 +139,6 @@ public class BeatController : MonoBehaviour
             Debug.Log("ERROR: no song data found by the BeatController! (Is an object with SongData components provided?)");
         }
 
-
-        //ComboIndicator = comboIndicator.GetComponent<ComboIndicator>();
-
     }
 
     //start the song with the given name.  
@@ -160,10 +156,6 @@ public class BeatController : MonoBehaviour
         return seconds * ((float)(BPM) / 60f);
     }
 
-    static void CalculateSecPerBeat() {
-        secPerBeat = 60 / BPM;
-    }
-
     //uses the song given to the beatcontroller object.
     public static void StartSong() {
         StartSong(songToPlay);
@@ -172,10 +164,10 @@ public class BeatController : MonoBehaviour
     //call when we start the song. 
     //records the time, sets BPM/info, ect 
     public static void StartSong(SongData songData) {
-    
+
         //set up BPM 
         BPM = songData.BPM;
-        CalculateSecPerBeat();
+        secPerBeat = 60 / BPM;
 
         Debug.Log("original minimum: " + MINIMUM.thresholdBeforeBeat);
 
@@ -206,14 +198,39 @@ public class BeatController : MonoBehaviour
 
     }
 
-    //pause the beat and music.
-    public static void Pause() {
-        
+    static bool pausedOutsideMenu = false;
+    //pause menu has been brought up.
+    public static void PauseByMenu() {
+        pausedOutsideMenu = songPaused;
+        Pause();
+    }
+
+    //pause menu closed.
+    public static void UnPauseByMenu() {
+        if(!pausedOutsideMenu) {
+            UnPause();
+        }
+    }
+
+    public static void PauseOutsideMenu() {
+        pausedOutsideMenu = true;
+        Pause();
+    }
+    public static void UnPauseOutsideMenu() {
+        pausedOutsideMenu = false;
+        UnPause();
+    }
+
+    //pause the beat and music. DO NOT CALL DIRECTLY call FromMenu/OutsideMenu instead
+    private static void Pause() {
+        songPaused = true;
+        AudioListener.pause = true;
     }
 
     //unpause the beat and music. 
-    public static void UnPause() {
-        
+    private static void UnPause() {
+        AudioListener.pause = false;
+        songPaused = false;
     }
 
     //stops everything from 
@@ -233,8 +250,6 @@ public class BeatController : MonoBehaviour
     //TODO: ummmmmm this causes weird stuff like repeating sfx on win. what do 
     //maybe disable being able to play sounds or smth?
     IEnumerator SlowToStop(bool fail, double secToSlowToStop) {
-
-        //Debug.Log("BEGINNING SLOW TO STOP");
 
         double timeLeft = secToSlowToStop;
         float lastBeat = GetBeat();
@@ -256,46 +271,27 @@ public class BeatController : MonoBehaviour
                 double currentTime = AudioSettings.dspTime - songStartTime;
                 secPerBeat = ((currentTime / lastBeat) - secPerBeat) * (1 - percent) + secPerBeat;
 
-            } //else if(timeLeft == double.NaN) {
-
-                //we're done, try to hold everything in place 
-                //TODO Pause() will hopefully make this obselete 
-                //secPerBeat = ((AudioSettings.dspTime - songStartTime) / (lastBeat));
-                
-           // } 
-           else {
-
-               //Debug.Log("SLOWED TO STOP");
-
-            //TODO hopefully move this out 
-               secPerBeat = ((AudioSettings.dspTime - songStartTime) / (lastBeat));
+            } else {
 
                 //the frame we pass 0 
 
-                isPlaying = false;
-                audioSource.Stop();
-                Pause();
+                PauseOutsideMenu();
 
-                //TODO let ending stinger be on some other thing? idk
-                //otherwise the above might only go in if(fail)
+                isPlaying = false;
+                //audioSource.Stop();
 
                 if(fail) {
                     
                     GameManager.PlayerLosesFinish();
 
                 } else if(!fail) {
-                    //TODO 
-                    //GameManager.something 
-                    //or, display some button
-                    //i dont know 
 
                     //TODO this is a placeholder for some transition idk 
                     //because we want to let it play out the uhhh ending of the song where it like wrrrrrrrrr final note 
+                    
                     GameManager.PlayerWinsFinish();
                 }
                 
-                //timeLeft = double.NaN;
-
             }
 
             lastBeat = GetBeat();
@@ -380,10 +376,6 @@ public class BeatController : MonoBehaviour
     }
 
     //ex. for 1, 5.1 returns 0.1, 5.5 returns 0.5, 5.9 returns 0.9
-    /*public static float GetDistanceFromBeat() {
-        //return GetDistanceFromBeat(1);
-        return GetBeat() % 1;
-    }*/
     public static float GetDistanceFromBeat(float fraction = 1) {
         //return GetDistanceFromBeat(fraction, GetBeat());
         return GetBeat() % fraction;
@@ -398,9 +390,6 @@ public class BeatController : MonoBehaviour
         b = -Mathf.Abs(b);
         return b + 0.5f;
     }*/
-    /*public static float GetAbsDistanceFromBeat() {
-        return GetAbsDistanceFromBeat(1);
-    }*/
     public static float GetAbsDistanceFromBeat(float fraction = 1) {
         return GetAbsDistanceFromBeat(fraction, GetBeat());
     }
@@ -412,9 +401,6 @@ public class BeatController : MonoBehaviour
 
     //for use by player actions. 
     //are we on beat, within the actionable threshold, according to a certain fraction?
-    /*public static bool IsOnBeat() {
-        return IsOnBeat(1);
-    }*/
     public static bool IsOnBeat(float fraction = 1) {
         return IsOnBeat(fraction, GetBeat());
     }
@@ -442,9 +428,6 @@ public class BeatController : MonoBehaviour
 
     //get the current accuracy. returns an Accuracy, which 
     //can be checked against, for example. BeatController.PERFECT 
-    /*public static Accuracy GetAccuracy() {
-        return GetAccuracy(1);
-    }*/
     public static Accuracy GetAccuracy(float fraction = 1) {
        
         return GetAccuracy(fraction, GetBeat());
@@ -463,9 +446,7 @@ public class BeatController : MonoBehaviour
             }
 
             ComboIndicator.comboCounter = 0;
-
             return TOO_LATE;
-            
             
         } else {
             //if before 
@@ -476,16 +457,12 @@ public class BeatController : MonoBehaviour
             }
 
             ComboIndicator.comboCounter = 0;
-
             return TOO_EARLY;
         }
 
     }
 
     //Gets the nearest beat of this fraction, both before and after.
-    /*public static float GetNearestBeat() {
-        return GetNearestBeat(1);
-    }*/
     public static float GetNearestBeat(float fraction = 1) {
         return GetNearestBeat(fraction, GetBeat());
     }
@@ -552,7 +529,4 @@ public class BeatController : MonoBehaviour
             yield return null;
         }
     }
-
-
-    
 }
