@@ -1476,5 +1476,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2869404789999310144, guid: 4a0b3f1e153ff124390e3d26f9b6234e, type: 3}
+      propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 741067154}
+    - target: {fileID: 2869404789999310144, guid: 4a0b3f1e153ff124390e3d26f9b6234e, type: 3}
+      propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnPause
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a0b3f1e153ff124390e3d26f9b6234e, type: 3}
