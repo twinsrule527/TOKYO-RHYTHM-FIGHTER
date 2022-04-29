@@ -19,6 +19,7 @@ public class PauseMenu : MonoBehaviour
         foreach(KeyCode key in pauseKeys) {
             if(Input.GetKeyDown(key)) {
                 GameManager.Pause();
+                Global.PauseScreen.GetComponent<AudioSource>().Play();
             }
         }
     }

@@ -8,6 +8,10 @@ public class PlayDuringPause : MonoBehaviour
         AudioSource [] audioSources = GetComponentsInChildren<AudioSource>();
         foreach(AudioSource s in audioSources) {
             s.ignoreListenerPause = true;
+
+            //https://answers.unity.com/questions/571482/audioignorelistenerpause.html lol 
+            s.enabled = false;
+            s.enabled = true;
         }
     }
 }
