@@ -240,4 +240,15 @@ public class BeatIndicatorBrain : MonoBehaviour
         return chosenIndicator;
     }
 
+    public void ShowNextIndicatorOutline() {
+        float curBeat = BeatController.GetBeat();
+        if(Global.Player.CurrentAction == null) {
+            foreach(PlayerBeatIndicator indicator in PlayerIndicators) {
+                if(indicator.leftIndicator && indicator.beatToHit < curBeat + 1) {
+                    indicator.showOutline();
+                }
+            }
+        }
+    }
+
 }
