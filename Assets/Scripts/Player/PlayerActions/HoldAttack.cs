@@ -11,20 +11,16 @@ public class HoldAttack : PlayerAction
     public float DamageGain; //how mucn damage gains per frame of hold
     [SerializeField] private float maxHoldLength;//How long you can hold for
 
-    bool isHolding = false; //check if player is holding the key
+//check if player is holding the key
+    public static bool isHolding {get; private set;}
 
     IEnumerator currentCoroutine;
 
     // Start is called before the first frame update
     protected override void Start()
     {
+        isHolding = false;
         base.Start();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
 /*
@@ -54,17 +50,14 @@ public class HoldAttack : PlayerAction
         
         if(isHolding){
             if(!Input.GetKey(key)){
-                isHolding = false;//DEBUG
+                isHolding = false;
                 //Debug.Log("isHolding = false line 55");
 
-                
                 MessupHold();
                 //Debug.Log("MessupHold()");
             }
         }
         base.CheckInput();
-
-        
 
     }
     
@@ -110,8 +103,6 @@ public class HoldAttack : PlayerAction
         currentCoroutine = HoldCoroutine();
         StartCoroutine(currentCoroutine);
     }
-
-
 
 
     public IEnumerator HoldCoroutine() {
