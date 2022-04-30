@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stage_EndTutorial : Stage
+public class Stage_EndTutorial : TutorialStage
 {
 
     //Tutorial stops 
