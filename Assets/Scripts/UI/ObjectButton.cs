@@ -22,9 +22,13 @@ public class ObjectButton : MonoBehaviour
 
     [SerializeField] int increaseOrderInLayerBy = 0;
     TextMeshPro [] buttonText;
+    //public TextMeshPro mainText;
 
     protected virtual void Start() {
         buttonText = GetComponentsInChildren<TextMeshPro>();
+       /* if(buttonText.Length > 0) {
+            mainText = buttonText[0];
+        }*/
         if(hover == null) {
             hover = spriteRenderer.sprite;
         }
