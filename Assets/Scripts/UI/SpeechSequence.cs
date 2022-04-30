@@ -19,7 +19,6 @@ public class SpeechSequence : MonoBehaviour
     //You still have to make + position the speech bubbles yourself though.
     
     [SerializeField] TextAsset linesFile;
-   //[SerializeField] TextMeshPro [] textMeshPros;
 
     void Awake()
     {
@@ -41,12 +40,7 @@ public class SpeechSequence : MonoBehaviour
         string [] linesFromFile = linesFile.text.Split("\n"[0]);
 
         //grab the children speech bubbles.
-        ProgressableBubble [] bubbles = GetComponentsInChildren<ProgressableBubble>();
-
-/*        if(linesFromFile.Length != bubbles.Length) {
-            Debug.Log("ERROR: number of lines in a script file =\\= number of speech bubbles!!!");
-            return;
-        }*/
+        ProgressableBubble [] bubbles = GetComponentsInChildren<ProgressableBubble>(true);
 
         //for each line, grab the text after the first ':', 
         //and put it in the speech bubbles, in order in scene hierarchy
@@ -65,7 +59,6 @@ public class SpeechSequence : MonoBehaviour
             }
             
             bubbles[i].GetComponentInChildren<TextMeshPro>().text = linesFromFile[lineIndex];
-            //bubbles[i].mainText.text = linesFromFile[lineIndex];
             lineIndex++;
         }
     }

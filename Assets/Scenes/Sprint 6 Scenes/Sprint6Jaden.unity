@@ -899,7 +899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3991341046704215829, guid: c35ada2b96d96e546a86683363b1636c, type: 3}
       propertyPath: m_Name
-      value: Tutorial1Speech
+      value: TutorialSpeech
       objectReference: {fileID: 0}
     - target: {fileID: 8844032793624319054, guid: c35ada2b96d96e546a86683363b1636c, type: 3}
       propertyPath: m_IsActive
