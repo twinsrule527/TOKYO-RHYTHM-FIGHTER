@@ -45,7 +45,9 @@ public class ComboIndicator : MonoBehaviour
         builder.Append(TextBeforeComboNum);
         builder.Append(comboCounter);
         builder.Append(TextAfterComboNum);
-        builder.Append('!', comboCounter - 1);
+        if(comboCounter > 1) {
+            builder.Append('!', comboCounter - 1);
+        }
 
         foreach(TextMeshProUGUI comboText in comboTexts) {
             
