@@ -105,7 +105,7 @@ public class PlayerAction : MonoBehaviour
     //This function gets called when the player presses this key, but it's off beat.
     //Should be overridden and implemented. 
     protected virtual void MessUp() {
-        ComboIndicator.comboCounter--;
+        ComboIndicator.comboCounter = 0;
         Debug.Log("you messed up, you were off beat");
         Global.Player.CurrentAction = Global.Player.messUpAction;
         Global.Player.spriteController.MessUp();

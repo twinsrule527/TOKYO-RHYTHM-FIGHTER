@@ -445,7 +445,6 @@ public class BeatController : MonoBehaviour
                 }
             }
 
-            ComboIndicator.comboCounter = 0;
             return TOO_LATE;
             
         } else {
@@ -456,7 +455,6 @@ public class BeatController : MonoBehaviour
                 }
             }
 
-            ComboIndicator.comboCounter = 0;
             return TOO_EARLY;
         }
 
