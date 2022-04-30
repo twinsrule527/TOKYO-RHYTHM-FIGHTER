@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2075992022178060827}
   m_Layer: 0
-  m_Name: Stage3 (combos)
+  m_Name: Stage2 (combos)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 393033617824333751}
   m_Layer: 0
-  m_Name: Stage5 (boss incoming!)
+  m_Name: Stage4 (boss incoming!)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3835908173518716083}
   m_Layer: 0
-  m_Name: Stage4 (harmonizing)
+  m_Name: Stage3 (harmonizing)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,7 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4945565375090595278}
   m_Layer: 0
-  m_Name: Stage2 (long note)
+  m_Name: Stage1 (long note)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -192,7 +192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6133613845561692734}
   m_Layer: 0
-  m_Name: Stage1 (tap note)
+  m_Name: Stage0 (tap note)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
