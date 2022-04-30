@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Text;
 
 public class ComboIndicator : MonoBehaviour
 {
@@ -12,18 +13,12 @@ public class ComboIndicator : MonoBehaviour
     [SerializeField] private string TextAfterComboNum;
 
     public static int comboCounter = 0;
+    private int prevComboCounter;
     private static int maxComboCountDmg = 20;//How much the combo Multiplier can apply to attacks, at most
     private List<PlayerAction> playerActions;
 
     private static float dmgMultiplier = 0.1f;
 
-    string [] exclaims = {
-        "!", "!", "!", "!", "!",
-        "!!", "!!", "!!", "!!", "!!", 
-        "!!!", "!!!", "!!!", "!!!", "!!!",
-        "!!!!", "!!!!", "!!!!", "!!!!", "!!!!",
-        "!!!!!"
-    };
 
     void Start()
     {
@@ -33,7 +28,19 @@ public class ComboIndicator : MonoBehaviour
     }
     void Update()
     {
-        comboText.text = TextBeforeComboNum + comboCounter.ToString() + TextAfterComboNum + exclaims[comboCounter + 1];
+
+        if(comboCounter == prevComboCounter) {
+            return;
+        }
+
+        prevComboCounter = comboCounter;
+
+        StringBuilder builder = new StringBuilder();
+        builder.Append(TextBeforeComboNum);
+        builder.Append(comboCounter);
+        builder.Append(TextAfterComboNum);
+        builder.Append('!', comboCounter - 1);
+        comboText.text = builder.ToString();
 
         if(comboCounter >= 2){
             comboText.enabled = true;
