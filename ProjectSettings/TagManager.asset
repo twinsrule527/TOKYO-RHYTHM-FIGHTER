@@ -8,6 +8,7 @@ TagManager:
   - DmgManager
   - CenterHealth
   - PlayerHealth
+  - PauseScreenObj
   layers:
   - Default
   - TransparentFX

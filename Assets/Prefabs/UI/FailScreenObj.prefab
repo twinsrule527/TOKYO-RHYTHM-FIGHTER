@@ -351,6 +351,7 @@ GameObject:
   - component: {fileID: 8569826398355308436}
   - component: {fileID: 5804938106310144335}
   - component: {fileID: 4645089209080870558}
+  - component: {fileID: 4246994298721629819}
   m_Layer: 0
   m_Name: FailScreenObj
   m_TagString: FailScreenObj
@@ -483,6 +484,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4246994298721629819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8569826398355308437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85033e59661755340adcfc2bf43706b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2586483281539277287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -782,9 +795,9 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6286357178842429133, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
   m_PrefabInstance: {fileID: 2742717999324593650}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &174964959519063345 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2629414751402836163, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
+--- !u!1 &2226262243799484418 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4104277663194527216, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
   m_PrefabInstance: {fileID: 2742717999324593650}
   m_PrefabAsset: {fileID: 0}
 --- !u!212 &5232053424396079819 stripped
@@ -792,9 +805,9 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7965719452491804473, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
   m_PrefabInstance: {fileID: 2742717999324593650}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2226262243799484418 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4104277663194527216, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
+--- !u!4 &174964959519063345 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2629414751402836163, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
   m_PrefabInstance: {fileID: 2742717999324593650}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &918797860636518665
@@ -919,6 +932,10 @@ PrefabInstance:
     - target: {fileID: 6286357178842429133, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_Name
       value: BossSpeechBubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575911127307147586, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
+      propertyPath: keys.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7211149247663022817, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_text

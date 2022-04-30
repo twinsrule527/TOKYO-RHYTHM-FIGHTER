@@ -19,15 +19,19 @@ public class GameManager : MonoBehaviour
 
     public static int currentStage;//The current stage that the boss is in
 
-    static GameObject failScreenObj;
 
     void Awake() {
-        failScreenObj = GameObject.FindWithTag("FailScreenObj");
-        if(failScreenObj != null) {
-            failScreenObj.SetActive(false);
+        Global.FailScreen = GameObject.FindWithTag("FailScreenObj");
+        if(Global.FailScreen != null) {
+            Global.FailScreen.SetActive(false);
+        }
+        Global.PauseScreen = GameObject.FindWithTag("PauseScreenObj");
+        if(Global.PauseScreen != null) {
+            Global.PauseScreen.SetActive(false);
         }
         SfxSync.soundEffectsEnabled = true;
     }
+
 
     //start playing the song. 
     //this one with no input uses the one given to the beat controller.
@@ -85,6 +89,7 @@ public class GameManager : MonoBehaviour
 
     //restart the current scene 
     public static void RestartScene() {
+        BeatController.UnPauseOutsideMenu();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -135,27 +140,31 @@ public class GameManager : MonoBehaviour
 
         SfxSync.soundEffectsEnabled = true;
 
-        if(failScreenObj != null) {
-            failScreenObj.SetActive(true);
+        if(Global.FailScreen != null) {
+            Global.FailScreen.SetActive(true);
         } else {
             Debug.Log("ERROR: couldn't enable fail screen because reference was null!");
         }
     }
 
     public static void Pause() {
+        //AudioListener.pause = true;
+        BeatController.PauseByMenu();
         gameplayRunning = false;
-        BeatController.Pause();
+        Global.PauseScreen.SetActive(true);
         Global.UIManager.Pause();
         //todo pause coroutines
         //todo pause time?
     }
 
     public static void UnPause() {
-        gameplayRunning = true;
-        BeatController.UnPause();
+        Global.PauseScreen.SetActive(false);
         Global.UIManager.UnPause();
+        gameplayRunning = true;
+        BeatController.UnPauseByMenu();
         //todo unpause coroutines 
         //todo pause time? 
+        //AudioListener.pause = false;
     }
   
 }
