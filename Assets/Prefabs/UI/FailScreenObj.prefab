@@ -920,6 +920,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossSpeechBubble
       objectReference: {fileID: 0}
+    - target: {fileID: 6575911127307147586, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
+      propertyPath: keys.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7211149247663022817, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_text
       value: booo our band sucks lol
