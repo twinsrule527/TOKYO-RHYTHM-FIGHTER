@@ -450,14 +450,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentAttackOutgoing: {fileID: 0}
   AttackBeatHitOn: 0
+  _stageChangeHP:
+  - 40
+  - 40
+  - -50
+  - -50
+  - -50
   bossBeat: 1
   mySprite: {fileID: 5343507138540085115}
-  stageChangeHP:
-  - 40
-  - 40
-  - -5
-  - -5
-  - 0
 --- !u!114 &1492784417741273145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,9 +530,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentAttackOutgoing: {fileID: 0}
   AttackBeatHitOn: 0
+  _stageChangeHP: []
   bossBeat: 0
   mySprite: {fileID: 0}
-  stageChangeHP: []
 --- !u!114 &8609914694361396131
 MonoBehaviour:
   m_ObjectHideFlags: 0
