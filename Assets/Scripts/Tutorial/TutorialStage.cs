@@ -5,6 +5,15 @@ using UnityEngine.UI;
 //A parent class that other tutorials inherit from - functions similarly to a Finite State Machine, in that only 1 stage is active at a time
 public class TutorialStage : MonoBehaviour
 {
+
+    public virtual void OnStageStart() {
+
+    }
+
+    public virtual void OnStageEnd() {
+
+    }
+
     //For the time being, you can go to the next stage of the tutorial using a button
     [SerializeField] protected GameObject _nextStageButton;
     public GameObject NextStageButton {
