@@ -11,6 +11,12 @@ public abstract class BossAI : MonoBehaviour
     public BossAttack CurrentAttackOutgoing;//Whatever attack the boss is making - but doesn't change until after the attack lands, rather than changing at the instance of the beat change
     public float AttackBeatHitOn;//Indicates the beat on which this attack will hit
     public List<AttackPattern> AttackQueue;
+    [SerializeField] protected List<float> _stageChangeHP;
+    public List<float> StageChangeHP {
+        get {
+            return _stageChangeHP;
+        }
+    }
 
     //[SerializeField] private BossSpriteController mySpriteController; /- For ERIC
     

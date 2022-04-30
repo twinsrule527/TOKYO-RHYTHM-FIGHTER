@@ -73,4 +73,11 @@ public class TutorialManager : MonoBehaviour
             obj.SetActive(active);
         }
     }
+
+    public void CheckStageChange() {
+        //if we can go to the next stage 
+        if(Stages[_currentStage].CheckStageChange()) {
+            Global.TutorialManager.SetUpNextStage();
+        }
+    }
 }
