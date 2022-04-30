@@ -28,6 +28,9 @@ public class TutorialManager : MonoBehaviour
 
     //Moves to the next stage of the tutorial
     public void NextStage() {
+
+        Stages[_currentStage].OnStageEnd();
+
         //Resets all objects changed by the current stage
         SetObjects(Stages[_currentStage], false);
         Stages[_currentStage].NextStageButton.SetActive(false);
@@ -48,6 +51,8 @@ public class TutorialManager : MonoBehaviour
         }
         //Sets new objects in accordance with the new stage
         SetObjects(Stages[_currentStage], true);
+
+        Stages[_currentStage].OnStageStart();
         
     }
     //Sets up the next stage of the tutorial, which the player is then sent to when they press a button

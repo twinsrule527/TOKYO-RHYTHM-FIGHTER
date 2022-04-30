@@ -8,4 +8,5 @@ public class Stage : TutorialStage
     {
         Global.TutorialManager.NextStage();
     }
+
 }
