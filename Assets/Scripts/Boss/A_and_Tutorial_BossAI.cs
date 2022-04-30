@@ -7,7 +7,6 @@ public class A_and_Tutorial_BossAI : BossAI
 
     [SerializeField] private float bossBeat;//The beat that this goes along with
     [SerializeField] private SpriteRenderer mySprite;//This will eventually go in a separate object
-    [SerializeField] private List<float> stageChangeHP;
     public override void Start() {
         attackBag = new List<Bag<AttackPattern>>();
         base.Start();

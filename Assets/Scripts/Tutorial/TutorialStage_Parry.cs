@@ -29,4 +29,15 @@ public class TutorialStage_Parry : TutorialStage
             currParryNum++;
         }
     }
+
+    public override void OnStageStart()
+    {
+        Global.Boss.GetComponent<SpriteRenderer>().enabled = false;
+        base.OnStageStart();
+    }
+    public override void OnStageEnd()
+    {
+        Global.Boss.transform.position = Global.Boss.GetComponent<TutorialLerpIn>().StartPos;
+        base.OnStageEnd();
+    }
 }

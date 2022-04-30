@@ -59,7 +59,7 @@ public class HoldAttack : PlayerAction
 
                 
                 MessupHold();
-                Debug.Log("MessupHold()");
+                //Debug.Log("MessupHold()");
             }
         }
         base.CheckInput();
@@ -83,7 +83,7 @@ public class HoldAttack : PlayerAction
                 //}
 
                 Success();
-                Debug.Log("Success() line 77");
+                //Debug.Log("Success() line 77");
                 
             }
             else {
@@ -121,7 +121,7 @@ public class HoldAttack : PlayerAction
         isHolding = true;
         t = BeatController.GetBeat();
         damage = startDamage;
-        Debug.Log("startattack");
+        //Debug.Log("startattack");
 //DEBUG 
         while(t < startTime + maxHoldLength){
             damage += DamageGain * (BeatController.GetBeat() - t);
@@ -136,7 +136,7 @@ public class HoldAttack : PlayerAction
             }*/
             yield return null;
         }
-        Debug.Log("Attacked: " + damage);
+       // Debug.Log("Attacked: " + damage);
         //Damage is comboed
         damage = ComboIndicator.comboMultiplier(damage);
         damage= Mathf.Round(damage);
