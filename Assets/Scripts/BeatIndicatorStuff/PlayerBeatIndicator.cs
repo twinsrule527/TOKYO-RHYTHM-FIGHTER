@@ -19,6 +19,7 @@ public class PlayerBeatIndicator : BeatIndicator
     public void SetPlayerIndicatorStart(beatIndicatorInfo info, bool left) {
         leftIndicator = left;
         outline.enabled = leftIndicator;
+        showOutline(false);
         SetIndicatorStart(info);
     }
     public override void SetIndicatorStart(beatIndicatorInfo info) {
@@ -43,6 +44,8 @@ public class PlayerBeatIndicator : BeatIndicator
     protected override IEnumerator PastCenterCoroutine() {
         yield return base.PastCenterCoroutine();
         showOutline(false);
+        //Now, it needs to activate the next available ShowOutline
+        Global.BeatIndicatorBrain.ShowNextIndicatorOutline();
     }
 
     public void showOutline(bool show = true) {
