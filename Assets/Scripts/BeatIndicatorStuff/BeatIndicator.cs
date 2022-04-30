@@ -24,14 +24,10 @@ public class BeatIndicator : MonoBehaviour
     void Awake() {
         mySprite = GetComponent<SpriteRenderer>();
         originalColor = mySprite.color;
-    }
-
-    void Start() {
         if(animationFrames.Count > 1) {
             animated = true;
         }
     }
-
     void Update()
     {   
         //if(moving) {

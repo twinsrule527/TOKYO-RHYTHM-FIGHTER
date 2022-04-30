@@ -20,11 +20,9 @@ public class BossBeatIndicator : BeatIndicator
         mySprite.sprite = info.indicatorSprite;
         doesBossHitsPlayerEffect = info.playsAnimationAtEnd;
         if(mySprite.sprite == null) {
-            Debug.Log("FALSE");
             animated = false;
         }
         else {
-            Debug.Log("TRUE");
             animated = true;
         }
         base.SetIndicatorStart(info);
