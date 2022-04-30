@@ -25,11 +25,6 @@ public class A_and_Tutorial_BossAI : BossAI
         yield return null;
     }
 
-    public override void CheckStageChange()
-    {
-        Global.TutorialManager.CheckStageChange();
-    }
-
     public override void StartStage(int stageNum) {
         //During the tutorial, the boss' health resets when they enter a new stage
         if(Global.Tutorial) {

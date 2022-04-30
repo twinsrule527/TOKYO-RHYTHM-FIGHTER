@@ -77,13 +77,7 @@ public class TutorialManager : MonoBehaviour
     public void CheckStageChange() {
         //if we can go to the next stage 
         if(Stages[_currentStage].CheckStageChange()) {
-            // if(Global.Tutorial) {
-                Global.TutorialManager.SetUpNextStage();
-            //}
-            //Normally, the boss will automatically go to the next stage
-           // else {
-
-//}
+            Global.TutorialManager.SetUpNextStage();
         }
     }
 }
