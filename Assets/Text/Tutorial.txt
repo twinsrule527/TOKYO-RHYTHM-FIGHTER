@@ -6,19 +6,19 @@ Game: Tap Z on the beat to play a note.
 
 [Gameplay]
 
-Button:Continue
+Button; Continue
 
 STAGE 2, 2-beat hold attack 
 
-Sola: Ah, that’s good. Now for some longer notes.
+Sola: Yep, I'm in tune. Now for some longer notes.
 
 Game: Hold X for 2 beats to hold a longer note.
 
-Button: Continue
+Button; Continue
 
 [Gameplay]
 
-Button: Continue
+Button; Continue
 
 STAGE 3, combos 
 
@@ -28,11 +28,11 @@ Game: Hitting multiple notes in a row will build up a combo.
 Game: Missing a note will end a combo.
 Game: Try a 2-beat hold immediately followed by a tap! 
 
-Button: Continue
+Button; Continue
 
 [Gameplay] 
 
-Button: Continue
+Button; Continue
 
 STAGE 4, harmonizing w/ boss 
 
@@ -46,10 +46,10 @@ Sola: I can’t let any of her notes go un-harmonized with, or I’ll make a foo
 
 Game: Harmonizing keeps up a combo, but only if you’re harmonizing with one of Sforzanda’s notes.
 
-Button: Continue 
+Button; Continue 
 
 [Gameplay]
 
-Button: Continue
+Button; Continue
 
-Sola: Here she comes. I’ll have to combine my own notes with harmonizing with hers to show her we can make this band work. 
+Sola: Here she comes. I’ll have to combine my own notes with harmonizing with hers to show her we can make this band work! 
