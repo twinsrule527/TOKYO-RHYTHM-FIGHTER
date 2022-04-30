@@ -47,9 +47,9 @@ public class BeatController : MonoBehaviour
 
     //accuracy thresholds, in seconds 
     //will be converted into fractions of beats on start. 
-    static float secondsMINIMUM = 0.24f;
-    static float secondsGREAT = 0.15f;
-    static float secondsPERFECT = 0.10f;
+    static float secondsMINIMUM = 0.20f;
+    static float secondsGREAT = 0.13f;
+    static float secondsPERFECT = 0.08f;
 
 
     //// Beat accuracies! 
@@ -180,7 +180,12 @@ public class BeatController : MonoBehaviour
         perfect.thresholdBeforeBeat = SecondsToBeatFrac(secondsPERFECT);
         perfect.thresholdAfterBeat = SecondsToBeatFrac(secondsPERFECT);
 
+        accuraciesToCheck[0] = perfect;
+        accuraciesToCheck[1] = great;
+        accuraciesToCheck[2] = minimum;
+
         Debug.Log("new minimum: " + MINIMUM.thresholdBeforeBeat);
+        Debug.Log("minimum in array: " + accuraciesToCheck[2].thresholdBeforeBeat);
 
         //set the audio source audio clip to this song 
         audioSource.clip = songData.songAudioClip;
@@ -445,6 +450,7 @@ public class BeatController : MonoBehaviour
                 }
             }
 
+            //ComboIndicator.comboCounter = 0;
             return TOO_LATE;
             
         } else {
@@ -455,6 +461,7 @@ public class BeatController : MonoBehaviour
                 }
             }
 
+            //ComboIndicator.comboCounter = 0;
             return TOO_EARLY;
         }
 

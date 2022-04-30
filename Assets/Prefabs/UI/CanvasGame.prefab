@@ -286,7 +286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   comboText: {fileID: 1082648535848932763}
   TextBeforeComboNum: X
-  TextAfterComboNum: ' Combo!'
+  TextAfterComboNum: ' Combo'
 --- !u!1 &7825075961009921753
 GameObject:
   m_ObjectHideFlags: 0

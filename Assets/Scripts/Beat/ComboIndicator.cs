@@ -17,6 +17,14 @@ public class ComboIndicator : MonoBehaviour
 
     private static float dmgMultiplier = 0.1f;
 
+    string [] exclaims = {
+        "!", "!", "!", "!", "!",
+        "!!", "!!", "!!", "!!", "!!", 
+        "!!!", "!!!", "!!!", "!!!", "!!!",
+        "!!!!", "!!!!", "!!!!", "!!!!", "!!!!",
+        "!!!!!"
+    };
+
     void Start()
     {
         playerActions = new List<PlayerAction>(FindObjectsOfType<PlayerAction>());
@@ -25,12 +33,12 @@ public class ComboIndicator : MonoBehaviour
     }
     void Update()
     {
-        comboText.text = TextBeforeComboNum + comboCounter.ToString() + TextAfterComboNum;
+        comboText.text = TextBeforeComboNum + comboCounter.ToString() + TextAfterComboNum + exclaims[comboCounter + 1];
 
-        if(comboCounter == 0){
-            comboText.enabled = false;
-        } else{
+        if(comboCounter >= 2){
             comboText.enabled = true;
+        } else{
+            comboText.enabled = false;
         }
 
         foreach (PlayerAction action in playerActions )
