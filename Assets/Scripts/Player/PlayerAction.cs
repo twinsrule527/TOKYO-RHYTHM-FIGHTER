@@ -83,7 +83,7 @@ public class PlayerAction : MonoBehaviour
     //Should be overridden and implemented with what pressing this key does.
     protected virtual void Success() {
         //On a success, increases the combo counter
-        ComboIndicator.comboCounter += 1;
+        Global.ComboIndicator.IncrementCombo();
         //Debug.Log("Success, you're on beat");
         //Typically, sets the Player's current action to be this and plays an on beat sound
         Global.Player.sfxController.PlayOnBeatSound();
