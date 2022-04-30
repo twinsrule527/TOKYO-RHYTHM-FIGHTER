@@ -547,7 +547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPosTransform: {fileID: 0}
   timeToLerp: 2
-  stageToLerpInOn: 3
+  stageToLerpInOn: 5
 --- !u!1 &5634354019715469590
 GameObject:
   m_ObjectHideFlags: 0

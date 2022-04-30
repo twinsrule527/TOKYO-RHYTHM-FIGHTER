@@ -7,7 +7,6 @@ public class A_and_Tutorial_BossAI : BossAI
 
     [SerializeField] private float bossBeat;//The beat that this goes along with
     [SerializeField] private SpriteRenderer mySprite;//This will eventually go in a separate object
-    [SerializeField] private List<float> stageChangeHP;
     public override void Start() {
         attackBag = new List<Bag<AttackPattern>>();
         base.Start();
@@ -29,7 +28,7 @@ public class A_and_Tutorial_BossAI : BossAI
     public override void CheckStageChange()
     {
         //If it's in a position to go to the next stage, it does
-        if(Global.Boss.bossHP < stageChangeHP[GameManager.currentStage]) {
+        if(Global.Boss.bossHP < _stageChangeHP[GameManager.currentStage]) {
             //During the tutorial, the boss goes to the next stage after a button is pressed
             if(Global.Tutorial) {
                 Global.TutorialManager.SetUpNextStage();
