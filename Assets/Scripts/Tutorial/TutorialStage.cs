@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class TutorialStage : MonoBehaviour
 {
 
+    //override and fill this with stuff that happens when this stage starts
     public virtual void OnStageStart() {
 
     }
 
+    //override and fill this with stuff that happens when this stage ends
     public virtual void OnStageEnd() {
 
     }
