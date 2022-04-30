@@ -7,6 +7,11 @@ public class TutorialLerpIn : MonoBehaviour
     [SerializeField] private Transform startPosTransform;
     [SerializeField] private float timeToLerp;
     private Vector3 startPos;
+    public Vector3 StartPos {
+        get {
+            return startPos;
+        }
+    }
     private Vector3 finalPos;
     public int stageToLerpInOn;
 
