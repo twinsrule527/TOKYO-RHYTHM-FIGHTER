@@ -19,7 +19,7 @@ public class BeatIndicator : MonoBehaviour
     [SerializeField] protected Color originalColor;
 
     [SerializeField] List<Sprite> animationFrames;
-    bool animated = false;
+    [SerializeField] protected bool animated = false;
 
     void Awake() {
         mySprite = GetComponent<SpriteRenderer>();
