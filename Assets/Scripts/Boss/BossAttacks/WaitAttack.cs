@@ -8,7 +8,7 @@ public class WaitAttack : BossAttack
     public override IEnumerator Attack() {
         yield return BeatController.WaitForBeatsMulti(beatToWait, 1);
         Global.Boss.CurrentMakingAttack = this;
-        Debug.Log("Wait");
+        //Debug.Log("Wait");
         yield return null;
     }
 

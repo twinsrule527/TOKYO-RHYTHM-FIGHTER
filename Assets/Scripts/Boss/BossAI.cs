@@ -17,9 +17,6 @@ public abstract class BossAI : MonoBehaviour
     public virtual void Start() {
         AttackQueue = new List<AttackPattern>();
         CreateAttackPatterns();
-        for(int i = 0; i < attackBag.Count; i++) {
-            Debug.Log(attackBag[i].CountLineup);
-        }
     }
     public virtual void SongStarted() {
         
@@ -76,7 +73,7 @@ public abstract class BossAI : MonoBehaviour
     public void RefillAttackQueue() {
         float attackQueueBeatLength = 0;
         //Get the length of the attackQueue
-        Debug.Log(AttackQueue.Count);
+        //Debug.Log(AttackQueue.Count);
         for(int i = 0; i < AttackQueue.Count; i++) {
             attackQueueBeatLength += AttackQueue[i].AttackPatternLength();
         }
