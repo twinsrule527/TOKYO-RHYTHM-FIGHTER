@@ -25,21 +25,6 @@ public class A_and_Tutorial_BossAI : BossAI
         yield return null;
     }
 
-    public override void CheckStageChange()
-    {
-        //If it's in a position to go to the next stage, it does
-        if(Global.Boss.bossHP < _stageChangeHP[GameManager.currentStage]) {
-            //During the tutorial, the boss goes to the next stage after a button is pressed
-            if(Global.Tutorial) {
-                Global.TutorialManager.SetUpNextStage();
-            }
-            //Normally, the boss will automatically go to the next stage
-            else {
-
-            }
-        }
-    }
-
     public override void StartStage(int stageNum) {
         //During the tutorial, the boss' health resets when they enter a new stage
         if(Global.Tutorial) {

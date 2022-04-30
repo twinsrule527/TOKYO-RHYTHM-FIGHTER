@@ -34,7 +34,7 @@ public class Boss : MonoBehaviour
         //Global.UIManager.SetHealthText();
         healthBar.ChangeHealth(amt);
         dmgNumber.BossDMGChange(amt);
-        AttackAI.CheckStageChange();
+        Global.TutorialManager.CheckStageChange();
         if(bossHP <= 0) {
             if(!Global.Tutorial) {
                 GameManager.PlayerWins();

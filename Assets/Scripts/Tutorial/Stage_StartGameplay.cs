@@ -25,7 +25,8 @@ public class Stage_StartGameplay : Stage
 
     public override void OnStageStart() {
         //switch the music.
-        
+        Global.Boss.GetComponent<SpriteRenderer>().enabled = true;
+
     }
 
     public override void OnStageEnd() {
