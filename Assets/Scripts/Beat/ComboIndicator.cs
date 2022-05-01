@@ -18,6 +18,8 @@ public class ComboIndicator : MonoBehaviour
 
     private static float dmgMultiplier = 0.1f;
 
+    [SerializeField] ShakeRect shaker;
+
 
     void Start()
     {
@@ -26,7 +28,8 @@ public class ComboIndicator : MonoBehaviour
 
         playerActions = new List<PlayerAction>(FindObjectsOfType<PlayerAction>());
         
-        comboCounter = 0;
+        SetCombo(0);
+
     }
 
     public int GetCombo() {
@@ -55,6 +58,7 @@ public class ComboIndicator : MonoBehaviour
 
             if(comboCounter >= 2){
                 comboText.enabled = true;
+                shaker.ShakeIt();
             } else{
                 comboText.enabled = false;
             }
@@ -80,4 +84,9 @@ public class ComboIndicator : MonoBehaviour
         return inputAmt;
 
     }
+
+    IEnumerator ComboJuice() {
+        yield return null;
+    }
+
 }

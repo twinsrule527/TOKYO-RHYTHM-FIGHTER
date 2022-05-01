@@ -128,17 +128,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7085108908885902760, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}
   m_PrefabInstance: {fileID: 826068198}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &14439236 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1082648535848932763, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}
-  m_PrefabInstance: {fileID: 826068198}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 14439233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &32835712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -708,9 +697,33 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 822010791268473432, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}
+      propertyPath: inspectorMagnitude
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 822010791268473432, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}
+      propertyPath: inspectorShakeTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 822010791268473432, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}
+      propertyPath: inspectorPerlinMult
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082648535848932763, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278379775
+      objectReference: {fileID: 0}
     - target: {fileID: 2124410465915678436, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604121245285276111, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -208
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604121245285276111, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -603
       objectReference: {fileID: 0}
     - target: {fileID: 3973146640955126545, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}
       propertyPath: m_IsActive
@@ -728,18 +741,6 @@ PrefabInstance:
       propertyPath: RealBoss
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 7543752602699659867, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}
-      propertyPath: comboTexts.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7543752602699659867, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}
-      propertyPath: comboTexts.Array.data[0]
-      value: 
-      objectReference: {fileID: 14439236}
-    - target: {fileID: 7543752602699659867, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}
-      propertyPath: comboTexts.Array.data[1]
-      value: 
-      objectReference: {fileID: 1737800816}
     - target: {fileID: 7650307020723682419, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -924,8 +925,7 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 418
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 221861367326088326, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}
 --- !u!1 &898869862
 GameObject:
@@ -1105,17 +1105,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6ce47af54d1ef74eb6c5f969128b4b9, type: 3}
---- !u!114 &1737800816 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7251544861295424326, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}
-  m_PrefabInstance: {fileID: 826068198}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1809110979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1486,10 +1475,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 5150761845356275180, guid: eebb5be358696e947981cdae45b75fbf, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -12
-      objectReference: {fileID: 0}
     - target: {fileID: 5907701392646776093, guid: eebb5be358696e947981cdae45b75fbf, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1517,10 +1502,6 @@ PrefabInstance:
     - target: {fileID: 8949732627565917133, guid: eebb5be358696e947981cdae45b75fbf, type: 3}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8949732627565917133, guid: eebb5be358696e947981cdae45b75fbf, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 9002592406595732361, guid: eebb5be358696e947981cdae45b75fbf, type: 3}
       propertyPath: delayFraction
@@ -1566,6 +1547,10 @@ PrefabInstance:
     - target: {fileID: 870532493406921923, guid: 4a0b3f1e153ff124390e3d26f9b6234e, type: 3}
       propertyPath: m_Name
       value: PauseControlsListener
+      objectReference: {fileID: 0}
+    - target: {fileID: 870532493406921923, guid: 4a0b3f1e153ff124390e3d26f9b6234e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 870532493406921933, guid: 4a0b3f1e153ff124390e3d26f9b6234e, type: 3}
       propertyPath: m_RootOrder
@@ -1624,6 +1609,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 741067154}
     - target: {fileID: 2869404789999310144, guid: 4a0b3f1e153ff124390e3d26f9b6234e, type: 3}
+      propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnPause
+      objectReference: {fileID: 0}
+    - target: {fileID: 7444927514562263675, guid: 4a0b3f1e153ff124390e3d26f9b6234e, type: 3}
+      propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 741067154}
+    - target: {fileID: 7444927514562263675, guid: 4a0b3f1e153ff124390e3d26f9b6234e, type: 3}
       propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UnPause
       objectReference: {fileID: 0}
