@@ -169,7 +169,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 14}
+  m_AnchoredPosition: {x: 0, y: -5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6664647310837789458
@@ -1239,7 +1239,7 @@ MonoBehaviour:
   healthBarLerp: {fileID: 6872776941643848814}
   interpolationSpeed: 0.1
   shakeMagnitude: 4
-  shakeTimeMultiplier: -0.15
+  shakeTimeMultiplier: -0.1
 --- !u!114 &2642556738987841506
 MonoBehaviour:
   m_ObjectHideFlags: 0
