@@ -1140,10 +1140,6 @@ PrefabInstance:
       propertyPath: Sprites.Array.data[3]
       value: 
       objectReference: {fileID: 21300000, guid: fac95527dc04fec40bf499a16d89cbe6, type: 3}
-    - target: {fileID: 4091139673094082168, guid: 5616b084a679a6943949e139a843212b, type: 3}
-      propertyPath: stage0Intro.Array.data[0]
-      value: 
-      objectReference: {fileID: 4900000, guid: 3332d9d24e7c0174bbbf0d344ce3930d, type: 3}
     - target: {fileID: 4502089846754818445, guid: 5616b084a679a6943949e139a843212b, type: 3}
       propertyPath: delayFraction
       value: 0.5
