@@ -26,7 +26,7 @@ public class ComboIndicator : MonoBehaviour
 
         playerActions = new List<PlayerAction>(FindObjectsOfType<PlayerAction>());
         
-        comboCounter = 0;
+        SetCombo(0);
     }
 
     public int GetCombo() {
