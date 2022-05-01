@@ -7,16 +7,24 @@ public class BossBeatIndicator : BeatIndicator
 
     BossHitsPlayerScript bossHitsPlayerEffect;
     public bool doesBossHitsPlayerEffect = true;
+    private Animator myAnimator;
 
     void Awake() {
         startPos = BeatIndicatorBrain.BossIndicatorStartPos;
         endPos = BeatIndicatorBrain.BossIndicatorEndPos;
         bossHitsPlayerEffect = BeatIndicatorBrain.BossHitsPlayerEffect;
+        myAnimator = GetComponent<Animator>();
     }
 
     public override void SetIndicatorStart(beatIndicatorInfo info) {
         mySprite.sprite = info.indicatorSprite;
         doesBossHitsPlayerEffect = info.playsAnimationAtEnd;
+        if(mySprite.sprite == null) {
+            animated = false;
+        }
+        else {
+            animated = true;
+        }
         base.SetIndicatorStart(info);
     }
 

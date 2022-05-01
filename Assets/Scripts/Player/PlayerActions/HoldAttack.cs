@@ -11,20 +11,16 @@ public class HoldAttack : PlayerAction
     public float DamageGain; //how mucn damage gains per frame of hold
     [SerializeField] private float maxHoldLength;//How long you can hold for
 
-    bool isHolding = false; //check if player is holding the key
+//check if player is holding the key
+    public static bool isHolding {get; private set;}
 
     IEnumerator currentCoroutine;
 
     // Start is called before the first frame update
     protected override void Start()
     {
+        isHolding = false;
         base.Start();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
 /*
@@ -54,17 +50,14 @@ public class HoldAttack : PlayerAction
         
         if(isHolding){
             if(!Input.GetKey(key)){
-                isHolding = false;//DEBUG
+                isHolding = false;
                 //Debug.Log("isHolding = false line 55");
 
-                
                 MessupHold();
-                Debug.Log("MessupHold()");
+                //Debug.Log("MessupHold()");
             }
         }
         base.CheckInput();
-
-        
 
     }
     
@@ -83,7 +76,7 @@ public class HoldAttack : PlayerAction
                 //}
 
                 Success();
-                Debug.Log("Success() line 77");
+                //Debug.Log("Success() line 77");
                 
             }
             else {
@@ -112,8 +105,6 @@ public class HoldAttack : PlayerAction
     }
 
 
-
-
     public IEnumerator HoldCoroutine() {
         float t = 0;
         float startTime = BeatController.GetBeat();
@@ -121,7 +112,7 @@ public class HoldAttack : PlayerAction
         isHolding = true;
         t = BeatController.GetBeat();
         damage = startDamage;
-        Debug.Log("startattack");
+        //Debug.Log("startattack");
 //DEBUG 
         while(t < startTime + maxHoldLength){
             damage += DamageGain * (BeatController.GetBeat() - t);
@@ -136,7 +127,7 @@ public class HoldAttack : PlayerAction
             }*/
             yield return null;
         }
-        Debug.Log("Attacked: " + damage);
+       // Debug.Log("Attacked: " + damage);
         //Damage is comboed
         damage = ComboIndicator.comboMultiplier(damage);
         damage= Mathf.Round(damage);

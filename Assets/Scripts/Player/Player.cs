@@ -77,7 +77,7 @@ public class Player : MonoBehaviour
         //Global.UIManager.SetHealthText();
         playerHurtAnimation.Hurt();
         sfxController.PlayHurtSound();
-        ComboIndicator.comboCounter = 0;
+        Global.ComboIndicator.SetCombo(0);
 
         if(playerHealth <= 0) {
             GameManager.PlayerLoses();
@@ -98,7 +98,7 @@ public class Player : MonoBehaviour
     public void EndOfBeat1() {
         //If the player doesn't act, they reset the comboIndicator
         if(CurrentAction == null) {
-            ComboIndicator.comboCounter = 0;
+            Global.ComboIndicator.SetCombo(0);
         }
         //CurrentAction = null; //TODO bandaid fix 
     }
