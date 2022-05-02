@@ -7,6 +7,7 @@ public class HurtAnimation : MonoBehaviour
     [SerializeField] private float hurtTime;
     [SerializeField] private SpriteRenderer baseRenderer;
     [SerializeField] private SpriteRenderer hurtRenderer;
+    public bool hurtEnabled = true;
 
      SpriteRenderer sprite;
 
@@ -18,7 +19,9 @@ public class HurtAnimation : MonoBehaviour
 
 
     public void Hurt() {
-        StartCoroutine(Hurts());
+        if(hurtEnabled) {
+            StartCoroutine(Hurts());
+        }
     }
 
     private IEnumerator Hurts() {

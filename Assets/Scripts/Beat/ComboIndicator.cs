@@ -20,15 +20,15 @@ public class ComboIndicator : MonoBehaviour
 
     [SerializeField] ShakeRect shaker;
 
-
-    void Start()
-    {
-
+    void Awake() {
         Global.ComboIndicator = this;
 
         playerActions = new List<PlayerAction>(FindObjectsOfType<PlayerAction>());
         
         SetCombo(0);
+    }
+    void Start()
+    {
 
     }
 
