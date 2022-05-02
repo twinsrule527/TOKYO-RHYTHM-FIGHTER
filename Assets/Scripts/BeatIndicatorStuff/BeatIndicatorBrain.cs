@@ -255,6 +255,9 @@ public class BeatIndicatorBrain : MonoBehaviour
         if(prevBeat < 0) {
             prevBeat = curBaseBeat;
         }
+        foreach(BeatIndicator indicator in BossIndicators) {
+            indicator.SetBeatToHit(indicator.beatToHit - prevBeat + curBeat);
+        }
         curBaseBeat = curBeat;
     }
 

@@ -41,7 +41,6 @@ public class Stage_StartGameplay : Stage
 
         //switch the music.
         BeatController.StartSong(songToStart);
-
         checkNextStage = true;
 
     }
