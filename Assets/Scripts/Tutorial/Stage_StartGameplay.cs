@@ -49,6 +49,6 @@ public class Stage_StartGameplay : Stage
     }
 
     public override void OnStageEnd() {
-
+        Debug.Log("moved on from start gameplay stage");
     }
 }
