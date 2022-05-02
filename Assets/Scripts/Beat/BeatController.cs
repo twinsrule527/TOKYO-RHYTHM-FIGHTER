@@ -271,7 +271,7 @@ public class BeatController : MonoBehaviour
     IEnumerator SlowToStop(bool fail, double secToSlowToStop) {
 
         double timeLeft = secToSlowToStop;
-        float lastBeat = GetBeat();
+        float lastBeat = GetBeat() - (float)baselineBeat;
 
          while(1 == 1) {
 
