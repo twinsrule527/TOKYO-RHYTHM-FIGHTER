@@ -426,6 +426,7 @@ MonoBehaviour:
   - 50
   - 50
   - 50
+  - 50
   currentStageStartingHP: 0
   makeAttackThisBeat: 0
   CurrentMakingAttack: {fileID: 0}
@@ -455,6 +456,7 @@ MonoBehaviour:
   - -50
   - -50
   - -50
+  - -50
   bossBeat: 1
   mySprite: {fileID: 5343507138540085115}
 --- !u!114 &1492784417741273145
@@ -469,16 +471,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d78a6a07afd6f44697045f9e94deeae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stage0Intro:
-  - {fileID: 4900000, guid: 66bfba7e6c290794c9e9cb23d04086c4, type: 3}
-  stage1FirstStage:
-  - {fileID: 4900000, guid: 66bfba7e6c290794c9e9cb23d04086c4, type: 3}
-  stage2Transition:
-  - {fileID: 4900000, guid: 66bfba7e6c290794c9e9cb23d04086c4, type: 3}
-  stage3SecondStage:
-  - {fileID: 4900000, guid: eb190cd431c81d840b6ccb2d77f71be2, type: 3}
-  stage4Finale:
-  - {fileID: 4900000, guid: bbcf2c5abd586644bac9c45e666e07d4, type: 3}
+  stage0Tutorial0: []
+  stage1Tutorial1: []
+  stage2Tutorial2: []
+  stage3Tutorial3: []
+  stage4EndTutorial: []
+  stage5StartGameplay: []
+  stage6Battle1: []
 --- !u!114 &7340257605251858874
 MonoBehaviour:
   m_ObjectHideFlags: 0
