@@ -144,8 +144,8 @@ public class BeatController : MonoBehaviour
 
     }
 
-    public void SwitchSongContinuous(SongData songToStart) {
-        instance.StartCoroutine(SwitchClean(songToStart));
+    public static void SwitchSongContinuous(SongData songToStart) {
+        instance.StartCoroutine(instance.SwitchClean(songToStart));
     }
     IEnumerator SwitchClean(SongData songToStart) {
         yield return WaitForBeat(1);

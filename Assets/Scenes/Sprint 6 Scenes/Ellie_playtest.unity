@@ -202,6 +202,14 @@ PrefabInstance:
       propertyPath: _deactivatedObjects.Array.data[0]
       value: 
       objectReference: {fileID: 306754074}
+    - target: {fileID: 2263738688694692412, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: _stageChangeHP.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2263738688694692412, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: _stageChangeHP.Array.data[6]
+      value: -50
+      objectReference: {fileID: 0}
     - target: {fileID: 3538772858826874398, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.41
