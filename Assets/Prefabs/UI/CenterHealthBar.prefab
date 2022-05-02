@@ -539,9 +539,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52716f55b5059d94ab5114f90df3cbaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inspectorPerlinMult: 50
-  inspectorMagnitude: 1
-  inspectorShakeTime: 1
+  inspectorPerlinMult: 40
+  inspectorMagnitude: 0.5
+  inspectorShakeTime: 0.25
 --- !u!114 &1219686146336150580
 MonoBehaviour:
   m_ObjectHideFlags: 0
