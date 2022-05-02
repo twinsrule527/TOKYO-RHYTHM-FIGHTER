@@ -9,7 +9,11 @@ public class Stage_StartGameplay : Stage
     //Give the player a few beats to let the song start.
     //Then, kick off gameplay.
 
+    [SerializeField] SongData songToStart;
+
     public float introBeats = 16;
+
+    bool checkNextStage = false;
 
     // Start is called before the first frame update
     void Start()
@@ -20,12 +24,24 @@ public class Stage_StartGameplay : Stage
     // Update is called once per frame
     void Update()
     {
-        
+        if(checkNextStage && BeatController.GetBeat() >= introBeats) {
+            Global.TutorialManager.NextStage();
+            checkNextStage = false;
+        }
     }
 
     public override void OnStageStart() {
-        //switch the music.
+        
+        //boss enabled.
         Global.Boss.GetComponent<SpriteRenderer>().enabled = true;
+
+        //boss lerps in.
+        //TODO
+
+        //switch the music.
+        BeatController.StartSong(songToStart);
+
+        checkNextStage = true;
 
     }
 
