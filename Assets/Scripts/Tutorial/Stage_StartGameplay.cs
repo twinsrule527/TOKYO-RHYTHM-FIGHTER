@@ -13,6 +13,8 @@ public class Stage_StartGameplay : Stage
 
     public float introBeats = 16;
 
+    bool checkNextStage = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +24,9 @@ public class Stage_StartGameplay : Stage
     // Update is called once per frame
     void Update()
     {
-        if(BeatController.GetBeat() >= introBeats) {
+        if(checkNextStage && BeatController.GetBeat() >= introBeats) {
             Global.TutorialManager.NextStage();
+            checkNextStage = false;
         }
     }
 
@@ -38,6 +41,8 @@ public class Stage_StartGameplay : Stage
 
         //switch the music.
         BeatController.StartSong(songToStart);
+
+        checkNextStage = true;
 
     }
 
