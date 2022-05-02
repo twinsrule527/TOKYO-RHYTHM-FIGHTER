@@ -107,6 +107,7 @@ public class BeatController : MonoBehaviour
     //song position, in seconds 
     private static double audioPos = 0;
     private static double timePos = 0;
+    private static double baselineBeat = 0;
 
     //what beat the song is on ex. 1, 2, 4, 5.5, 6.75 
     //we will use a threshold with this for reaction 
@@ -141,6 +142,15 @@ public class BeatController : MonoBehaviour
             Debug.Log("ERROR: no song data found by the BeatController! (Is an object with SongData components provided?)");
         }
 
+    }
+
+    public void SwitchSongContinuous(SongData songToStart) {
+        instance.StartCoroutine(SwitchClean(songToStart));
+    }
+    IEnumerator SwitchClean(SongData songToStart) {
+        yield return WaitForBeat(1);
+        baselineBeat = GetNearestBeat();
+        StartSong(songToStart);
     }
 
     //start the song with the given name.  
@@ -310,11 +320,6 @@ public class BeatController : MonoBehaviour
         }
     }
 
-    //TODO 
-    public static void ContinuousSwitchSample(SongData newSong) {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -360,14 +365,13 @@ public class BeatController : MonoBehaviour
             //if we've moved on to the next beat, open this flag 
             beatEnded025 = false;
         }
-
     }
 
     //instead of tracker variables, use more direct getters. 
     //non-interpolated.
     public static float GetBeat() {
         double pos = AudioSettings.dspTime - songStartTime;
-        return (float)(pos / secPerBeat);
+        return (float)(baselineBeat + (pos / secPerBeat));
     }
 
     //interpolates w/ Time.time if audio time hasn't changed between frames. 
