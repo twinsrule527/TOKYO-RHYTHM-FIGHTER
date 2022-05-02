@@ -24,10 +24,14 @@ public class GameManager : MonoBehaviour
         Global.FailScreen = GameObject.FindWithTag("FailScreenObj");
         if(Global.FailScreen != null) {
             Global.FailScreen.SetActive(false);
+        } else if(SceneManager.GetActiveScene().buildIndex == 2){
+            Debug.Log("ERR: no FailScreen found-- make sure it's ENABLED in the scene");
         }
         Global.PauseScreen = GameObject.FindWithTag("PauseScreenObj");
         if(Global.PauseScreen != null) {
             Global.PauseScreen.SetActive(false);
+        } else if(SceneManager.GetActiveScene().buildIndex == 2){
+            Debug.Log("ERR: no PauseMenu found-- make sure it's ENABLED in the scene");
         }
         SfxSync.soundEffectsEnabled = true;
     }

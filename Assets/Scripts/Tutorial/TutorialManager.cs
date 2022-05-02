@@ -12,6 +12,9 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private GameObject TutorialBoss;//The Boss for for the tutorial
     [SerializeField] private GameObject RealBoss;//The Boss for after the tutorial
     [SerializeField] private List<TutorialLerpIn> lerpInObjects;//Objects which may lerp in during various stages
+
+    private static bool dialogueFinished = false;
+
     public int CurrentStage {
         get {
             return _currentStage;
@@ -52,6 +55,8 @@ public class TutorialManager : MonoBehaviour
         //Sets new objects in accordance with the new stage
         SetObjects(Stages[_currentStage], true);
 
+        dialogueFinished = false;
+
         Stages[_currentStage].OnStageStart();
         
     }
@@ -74,9 +79,14 @@ public class TutorialManager : MonoBehaviour
         }
     }
 
+    public static void SetDialogueFinished() {
+        dialogueFinished = true;
+        Global.TutorialManager.CheckStageChange();
+    }
+
     public void CheckStageChange() {
         //if we can go to the next stage 
-        if(Stages[_currentStage].CheckStageChange()) {
+        if(Stages[_currentStage].CheckStageChange() && dialogueFinished) {
             Global.TutorialManager.SetUpNextStage();
         }
     }

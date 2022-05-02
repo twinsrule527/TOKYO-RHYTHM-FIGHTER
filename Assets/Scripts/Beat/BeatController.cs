@@ -42,14 +42,16 @@ public class BeatController : MonoBehaviour
 
     public static bool isPlaying { get; private set; }
 
-    public static bool songPaused  { get; private set; }
+    //non-static so it'll get reset when scene changes or is reloaded
+    public bool songPaused  { get; private set; }
+    private bool pausedOutsideMenu = false;
 
 
     //accuracy thresholds, in seconds 
     //will be converted into fractions of beats on start. 
     static float secondsMINIMUM = 0.20f;
     static float secondsGREAT = 0.13f;
-    static float secondsPERFECT = 0.08f;
+    static float secondsPERFECT = 0.07f;
 
 
     //// Beat accuracies! 
@@ -199,43 +201,45 @@ public class BeatController : MonoBehaviour
         //kick off tracker with current time after lag spike
         songStartTime = AudioSettings.dspTime + songData.mp3Delay + songData.songDelay;
 
+        UnPauseOutsideMenu();
+
         isPlaying = true;
 
     }
 
-    static bool pausedOutsideMenu = false;
+    
     //pause menu has been brought up.
     public static void PauseByMenu() {
-        pausedOutsideMenu = songPaused;
+        instance.pausedOutsideMenu = instance.songPaused;
         Pause();
     }
 
     //pause menu closed.
     public static void UnPauseByMenu() {
-        if(!pausedOutsideMenu) {
+        if(!instance.pausedOutsideMenu) {
             UnPause();
         }
     }
 
     public static void PauseOutsideMenu() {
-        pausedOutsideMenu = true;
+        instance.pausedOutsideMenu = true;
         Pause();
     }
     public static void UnPauseOutsideMenu() {
-        pausedOutsideMenu = false;
+        instance.pausedOutsideMenu = false;
         UnPause();
     }
 
     //pause the beat and music. DO NOT CALL DIRECTLY call FromMenu/OutsideMenu instead
     private static void Pause() {
-        songPaused = true;
+        instance.songPaused = true;
         AudioListener.pause = true;
     }
 
     //unpause the beat and music. 
     private static void UnPause() {
         AudioListener.pause = false;
-        songPaused = false;
+        instance.songPaused = false;
     }
 
     //stops everything from 

@@ -471,6 +471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentAttackOutgoing: {fileID: 0}
   AttackBeatHitOn: 0
+  _stageChangeHP: []
   AttackChildren:
   - {fileID: 7374144325704998262}
   - {fileID: 1249257266678878243}
@@ -494,6 +495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossStartingHPArray:
   - 50
+  currentStageStartingHP: 0
   makeAttackThisBeat: 0
   CurrentMakingAttack: {fileID: 0}
   healthBar: {fileID: 1219686146336150580, guid: be19fa031271c7c4b9586fb3a9c2d7fe, type: 3}
@@ -515,11 +517,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage0Intro:
-  - {fileID: 4900000, guid: 5a142879b13aad24fa416c23b853317b, type: 3}
-  stage1FirstStage: []
+  - {fileID: 4900000, guid: 3332d9d24e7c0174bbbf0d344ce3930d, type: 3}
+  stage1FirstStage:
+  - {fileID: 4900000, guid: ac9381901d16d5144b0e0c5e13c17d41, type: 3}
   stage2Transition: []
-  stage3SecondStage: []
-  stage4Finale: []
+  stage3SecondStage:
+  - {fileID: 4900000, guid: ac9381901d16d5144b0e0c5e13c17d41, type: 3}
+  stage4Finale:
+  - {fileID: 4900000, guid: be38a7a0347cd4a4f9ed3c6c4157e1bd, type: 3}
 --- !u!114 &5308652391981561851
 MonoBehaviour:
   m_ObjectHideFlags: 0

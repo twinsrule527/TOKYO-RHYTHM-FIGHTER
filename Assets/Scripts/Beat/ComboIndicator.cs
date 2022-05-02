@@ -3,42 +3,65 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Text;
 
 public class ComboIndicator : MonoBehaviour
 {
     
-    public TextMeshProUGUI comboText;
+    [SerializeField] TextMeshProUGUI [] comboTexts;
     [SerializeField] private string TextBeforeComboNum;
     [SerializeField] private string TextAfterComboNum;
 
-    public static int comboCounter = 0;
+    private static int comboCounter = 0;
     private static int maxComboCountDmg = 20;//How much the combo Multiplier can apply to attacks, at most
     private List<PlayerAction> playerActions;
 
     private static float dmgMultiplier = 0.1f;
 
-    string [] exclaims = {
-        "!", "!", "!", "!", "!",
-        "!!", "!!", "!!", "!!", "!!", 
-        "!!!", "!!!", "!!!", "!!!", "!!!",
-        "!!!!", "!!!!", "!!!!", "!!!!", "!!!!",
-        "!!!!!"
-    };
+    [SerializeField] ShakeRect shaker;
+
 
     void Start()
     {
+
+        Global.ComboIndicator = this;
+
         playerActions = new List<PlayerAction>(FindObjectsOfType<PlayerAction>());
         
-        ComboIndicator.comboCounter = 0;
-    }
-    void Update()
-    {
-        comboText.text = TextBeforeComboNum + comboCounter.ToString() + TextAfterComboNum + exclaims[comboCounter + 1];
+        SetCombo(0);
 
-        if(comboCounter >= 2){
-            comboText.enabled = true;
-        } else{
-            comboText.enabled = false;
+    }
+
+    public int GetCombo() {
+        return comboCounter;
+    }
+
+    public void IncrementCombo(int numChangeBy = 1) {
+        SetCombo(comboCounter + numChangeBy);
+    }
+
+    public void SetCombo(int numSetTo) {
+
+        comboCounter = numSetTo;
+
+        StringBuilder builder = new StringBuilder();
+        builder.Append(TextBeforeComboNum);
+        builder.Append(comboCounter);
+        builder.Append(TextAfterComboNum);
+        if(comboCounter > 1) {
+            builder.Append('!', comboCounter - 1);
+        }
+
+        foreach(TextMeshProUGUI comboText in comboTexts) {
+            
+            comboText.text = builder.ToString();
+
+            if(comboCounter >= 2){
+                comboText.enabled = true;
+                shaker.ShakeIt();
+            } else{
+                comboText.enabled = false;
+            }
         }
 
         foreach (PlayerAction action in playerActions )
@@ -61,4 +84,9 @@ public class ComboIndicator : MonoBehaviour
         return inputAmt;
 
     }
+
+    IEnumerator ComboJuice() {
+        yield return null;
+    }
+
 }
