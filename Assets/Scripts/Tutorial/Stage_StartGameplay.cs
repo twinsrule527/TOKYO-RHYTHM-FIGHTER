@@ -25,8 +25,8 @@ public class Stage_StartGameplay : Stage
     void Update()
     {
         if(checkNextStage && BeatController.GetBeat() >= introBeats) {
-            Global.TutorialManager.NextStage();
             checkNextStage = false;
+            Global.TutorialManager.NextStage();
         }
     }
 

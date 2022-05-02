@@ -1200,6 +1200,10 @@ PrefabInstance:
       propertyPath: nextObject
       value: 
       objectReference: {fileID: 1876776973}
+    - target: {fileID: 9149089532026872313, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
+      propertyPath: songToStart
+      value: 
+      objectReference: {fileID: 1022969852}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
 --- !u!1 &963997553 stripped
@@ -1207,6 +1211,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6810793216271741178, guid: 0bae8102314e7a642b51f834926338da, type: 3}
   m_PrefabInstance: {fileID: 2113633694}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1022969852 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3809152020080880882, guid: 1c847fce25ad7ba49938433488bcb334, type: 3}
+  m_PrefabInstance: {fileID: 1203827962}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3caedba4d365eec479aa48e95c46f5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1031703239 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7085108908885902760, guid: 780b80ae03142f740937a52ba709a4c7, type: 3}

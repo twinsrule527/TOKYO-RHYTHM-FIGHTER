@@ -5,13 +5,16 @@ using UnityEngine;
 public class WaitAttack_EndTutorialStage : BossAttack
 {
     [SerializeField] private int beatToWait;
+    [SerializeField] private int myStage;
     public override IEnumerator Attack() {
         yield return BeatController.WaitForBeatsMulti(beatToWait, 1);
         Global.Boss.CurrentMakingAttack = this;
         //Debug.Log("Wait");
         yield return null;
         //Calls the Ready to go to next Stage from the TutorialManager
-        Global.TutorialManager.SetUpNextStage();
+        if(Global.TutorialManager.CurrentStage == myStage) {
+            Global.TutorialManager.SetUpNextStage();
+        }
     }
 
     public override void Interrupt(PlayerAction action) {

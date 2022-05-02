@@ -251,4 +251,11 @@ public class BeatIndicatorBrain : MonoBehaviour
         }
     }
 
+    public void ResetBeat(float curBeat, float prevBeat = -1) {
+        if(prevBeat < 0) {
+            prevBeat = curBaseBeat;
+        }
+        curBaseBeat = curBeat;
+    }
+
 }
