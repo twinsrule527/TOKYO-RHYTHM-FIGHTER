@@ -38,6 +38,8 @@ public class Stage_StartGameplay : Stage
         //boss lerps in.
         //TODO
 
+        introBeats = introBeats + Mathf.Ceil(BeatController.GetBeat());
+
         //switch the music.
         BeatController.StartSong(songToStart);
 
