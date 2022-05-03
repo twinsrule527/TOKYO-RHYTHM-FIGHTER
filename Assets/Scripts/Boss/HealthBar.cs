@@ -14,8 +14,8 @@ public class HealthBar : MonoBehaviour
     //Between 0,1 and this decides the rate at which health is visually decreased from the health bar (the higher the decimal, the faster it changes)
     [SerializeField] float interpolationSpeed;
     ShakeRect shaker;
-    private float shakeMagnitude = 6f;
-    private float shakeTimeMultiplier = -0.25f;
+    [SerializeField] float shakeMagnitude = 6f;
+    [SerializeField] float shakeTimeMultiplier = -0.25f;
 
 
 

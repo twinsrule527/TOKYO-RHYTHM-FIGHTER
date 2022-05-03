@@ -44,6 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9133ea7a5d54e6dbd9780a0956f5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectList:
+  - {fileID: 7386890940831903533, guid: 76c8d4991c8bc0d4c8459f0b2863b35e, type: 3}
+  - {fileID: -9079545175819313884, guid: 76c8d4991c8bc0d4c8459f0b2863b35e, type: 3}
+  - {fileID: 4960718392958072578, guid: 76c8d4991c8bc0d4c8459f0b2863b35e, type: 3}
+  - {fileID: -8406352744801909369, guid: 76c8d4991c8bc0d4c8459f0b2863b35e, type: 3}
+  - {fileID: 2755880429849033000, guid: 76c8d4991c8bc0d4c8459f0b2863b35e, type: 3}
 --- !u!212 &4995360315769129683
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -84,7 +90,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: ccda75a68368d6344a14021d3aa279c3, type: 3}
+  m_Sprite: {fileID: 7386890940831903533, guid: 76c8d4991c8bc0d4c8459f0b2863b35e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

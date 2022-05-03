@@ -15,6 +15,7 @@ public static class Global
     public static ParticleMaker ParticleMaker;
     public static GameObject FailScreen;
     public static GameObject PauseScreen;
+    public static ComboIndicator ComboIndicator;
 
     public static bool Tutorial;//Whether the tutorial is currently running
     //todo: move this to gamemanager, since it's game state?
