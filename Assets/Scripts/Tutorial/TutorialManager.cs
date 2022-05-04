@@ -27,6 +27,18 @@ public class TutorialManager : MonoBehaviour
         Global.TutorialManager = this;
         Global.Tutorial = true;
         SetObjects(Stages[_currentStage], true);
+        
+    }
+
+    public void SongStarted() {
+        foreach(TutorialLerpIn obj in lerpInObjects) {
+            if(obj.stageToLerpInOn == _currentStage) {
+                StartCoroutine(obj.LerpToPos());
+            }
+        }
+        if(_currentStage == finalStage) {
+            EndTutorial();
+        }
     }
 
     //Moves to the next stage of the tutorial

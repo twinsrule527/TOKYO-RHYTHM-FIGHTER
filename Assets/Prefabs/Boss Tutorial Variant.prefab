@@ -8,6 +8,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1492784417741273145, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: stage0Tutorial0.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: 66bfba7e6c290794c9e9cb23d04086c4, type: 3}
+    - target: {fileID: 1492784417741273145, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: stage1Tutorial1.Array.data[0]
       value: 
       objectReference: {fileID: 4900000, guid: 66bfba7e6c290794c9e9cb23d04086c4, type: 3}
@@ -70,6 +74,10 @@ PrefabInstance:
     - target: {fileID: 8609914694361396131, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: stageToLerpInOn
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138705366555306685, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: myStage
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: babc52131f06bb346b277df732e2e316, type: 3}
