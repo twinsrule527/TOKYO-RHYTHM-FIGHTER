@@ -38,6 +38,9 @@ public class Stage_StartGameplay : Stage
         //boss lerps in.
         //TODO
 
+        introBeats = introBeats + Mathf.Ceil(BeatController.GetBeat());
+        Debug.Log("current beat: " + BeatController.GetBeat() + " attacks will start on: " + introBeats);
+
         //switch the music.
         BeatController.StartSong(songToStart);
 
@@ -46,6 +49,6 @@ public class Stage_StartGameplay : Stage
     }
 
     public override void OnStageEnd() {
-
+        Debug.Log("moved on from start gameplay stage");
     }
 }
