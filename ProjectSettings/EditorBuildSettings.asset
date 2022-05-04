@@ -12,12 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/IntroCutsceneScene.unity
     guid: 4d8aadf9fabac2b43b5a859e86229239
   - enabled: 1
-    path: Assets/Scenes/Sprint 6 Scenes/Sprint6Jaden.unity
-    guid: fad6e92dd1454aa478f2832e65cfc386
+    path: Assets/Scenes/TutorialScene.unity
+    guid: f3872141d2fa6d24e881c1db1d3748c0
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: 2f5d2b1e921115649b304438d4ebde09
   - enabled: 0
     path: Assets/Scenes/Sprint 6 Scenes/playtestEric.unity
     guid: 5761c93c4f58f6d40915b7526a49450b
+  - enabled: 0
+    path: Assets/Scenes/Sprint 6 Scenes/Sprint6Jaden.unity
+    guid: fad6e92dd1454aa478f2832e65cfc386
   - enabled: 1
-    path: Assets/Scenes/EndingCutsceneScene.unity
+    path: Assets/Scenes/EndingScene.unity
     guid: e44491f4fb1680c4f95f236299497b63
   m_configObjects: {}
