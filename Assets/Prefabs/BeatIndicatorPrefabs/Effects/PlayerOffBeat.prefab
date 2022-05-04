@@ -46,11 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayFraction: 0.2
   effectList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -7850893329201927209, guid: 3e3180b4bf2f8a744a8c3fa5662ca55d, type: 3}
+  - {fileID: 2172919202517371999, guid: 3e3180b4bf2f8a744a8c3fa5662ca55d, type: 3}
+  - {fileID: 4841743312355672077, guid: 3e3180b4bf2f8a744a8c3fa5662ca55d, type: 3}
+  - {fileID: 8027753131854865477, guid: 3e3180b4bf2f8a744a8c3fa5662ca55d, type: 3}
   rendererCur: {fileID: -2697140190597044196}
 --- !u!212 &-2697140190597044196
 SpriteRenderer:
@@ -92,7 +91,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3997179018472016763, guid: c714b5d6d9db28745887d36c54065862, type: 3}
+  m_Sprite: {fileID: -7850893329201927209, guid: 3e3180b4bf2f8a744a8c3fa5662ca55d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

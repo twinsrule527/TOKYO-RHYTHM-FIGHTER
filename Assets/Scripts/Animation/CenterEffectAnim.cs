@@ -11,7 +11,7 @@ public class CenterEffectAnim : MonoBehaviour
     public virtual void OnEnable()
     {
         
-        Camera.main.gameObject.GetComponent<Shake>().ShakeIt(1.5f, 0.2f, 50f);
+        Camera.main.gameObject.GetComponent<Shake>().ShakeIt(1.2f, 0.2f, 50f);
         StartCoroutine(PlayAnimation());
     }
 
@@ -32,13 +32,20 @@ public class CenterEffectAnim : MonoBehaviour
 
     public virtual IEnumerator PlayAnimation()
     {
-        for (int i = 0; i < effectList.Count; i++)
+        if (effectList.Count > 0)
         {
-            rendererCur.sprite = effectList[i];
-            yield return StartCoroutine(BeatController.WaitForBeat(delayFraction));
+            for (int i = 0; i < effectList.Count; i++)
+            {
+                rendererCur.sprite = effectList[i];
+                yield return StartCoroutine(BeatController.WaitForBeat(delayFraction));
 
+            }
+            rendererCur.sprite = null;
+            gameObject.SetActive(false);
         }
-        rendererCur.sprite = null;
-       
     }
+
+
 }
+
+
