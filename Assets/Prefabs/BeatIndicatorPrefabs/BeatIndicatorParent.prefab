@@ -181,6 +181,7 @@ MonoBehaviour:
   inspectorPerlinMult: 50
   inspectorMagnitude: 1
   inspectorShakeTime: 1
+  myTransform: {fileID: 4998099239986298278}
 --- !u!114 &5858299354177255524
 MonoBehaviour:
   m_ObjectHideFlags: 0
