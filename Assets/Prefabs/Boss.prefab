@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage0Tutorial0:
-  - {fileID: 4900000, guid: 66bfba7e6c290794c9e9cb23d04086c4, type: 3}
+  - {fileID: 4900000, guid: 3d6bdb9f042d6494ea52a8ceb8313dd8, type: 3}
   stage1Tutorial1:
   - {fileID: 4900000, guid: 55977158abb0d564380254f74245c18a, type: 3}
   stage2Tutorial2:
@@ -589,7 +589,7 @@ MonoBehaviour:
   myAnimationController: {fileID: 6705634249174895394}
   atkName: Wait_EndStageAttack
   beatToWait: 1
-  myStage: 4
+  myStage: 0
 --- !u!1 &5839447795423925115
 GameObject:
   m_ObjectHideFlags: 0

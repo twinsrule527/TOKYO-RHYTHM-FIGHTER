@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
         Global.Player.SongStarted();
         Global.Boss.SongStarted();
         Global.UIManager.SongStarted();
+        Global.TutorialManager.SongStarted();
     }
 
     public static void GoToTitle() {
