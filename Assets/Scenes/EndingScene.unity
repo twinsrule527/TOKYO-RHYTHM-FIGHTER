@@ -187,6 +187,30 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 85480481}
     - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: hoverScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: hoverScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: hoverScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: noHoverScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: noHoverScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: noHoverScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
       objectReference: {fileID: 0}
@@ -376,6 +400,30 @@ PrefabInstance:
       propertyPath: nextObject
       value: 
       objectReference: {fileID: 901870466}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: hoverScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: hoverScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: hoverScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: noHoverScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: noHoverScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: noHoverScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
@@ -589,6 +637,30 @@ PrefabInstance:
       propertyPath: nextObject
       value: 
       objectReference: {fileID: 197538224}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: hoverScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: hoverScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: hoverScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: noHoverScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: noHoverScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: noHoverScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
@@ -835,6 +907,30 @@ PrefabInstance:
       propertyPath: nextObject
       value: 
       objectReference: {fileID: 47686663}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: hoverScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: hoverScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: hoverScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: noHoverScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: noHoverScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: noHoverScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1

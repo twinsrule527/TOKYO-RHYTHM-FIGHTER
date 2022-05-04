@@ -31,6 +31,10 @@ public class ObjectButton : MonoBehaviour
         if(noHover == null) {
             noHover = spriteRenderer.sprite;
         }
+        if(noHoverScale.Equals(hoverScale)) {
+            noHoverScale = scaleOnHover.localScale;
+            hoverScale = scaleOnHover.localScale;
+        }
     }
 
     // Update is called once per frame
