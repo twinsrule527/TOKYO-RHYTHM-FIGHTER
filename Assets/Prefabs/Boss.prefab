@@ -452,8 +452,8 @@ MonoBehaviour:
   CurrentAttackOutgoing: {fileID: 0}
   AttackBeatHitOn: 0
   _stageChangeHP:
-  - 40
-  - 40
+  - -50
+  - -50
   - -50
   - -50
   - -50
@@ -475,7 +475,7 @@ MonoBehaviour:
   stage0Tutorial0:
   - {fileID: 4900000, guid: 66bfba7e6c290794c9e9cb23d04086c4, type: 3}
   stage1Tutorial1:
-  - {fileID: 4900000, guid: 66bfba7e6c290794c9e9cb23d04086c4, type: 3}
+  - {fileID: 4900000, guid: 55977158abb0d564380254f74245c18a, type: 3}
   stage2Tutorial2:
   - {fileID: 4900000, guid: 66bfba7e6c290794c9e9cb23d04086c4, type: 3}
   stage3Tutorial3:
@@ -536,7 +536,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPosTransform: {fileID: 0}
   timeToLerp: 2
-  stageToLerpInOn: 5
+  stageToLerpInOn: 0
 --- !u!1 &5634354019715469590
 GameObject:
   m_ObjectHideFlags: 0
