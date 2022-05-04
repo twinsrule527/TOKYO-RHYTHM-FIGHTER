@@ -15,9 +15,6 @@ public class BossHitsPlayerScript : CenterEffectAnim
         base.Update();
     }
 
-    public override void PlayAnimation()
-    {
-        base.PlayAnimation();
-    }
+   
 
 }
