@@ -9,7 +9,7 @@ public class CenterEffectAnim : MonoBehaviour
 
     public virtual void OnEnable()
     {
-        
+        Debug.Log("hello i am attached to " + gameObject.name);
         Camera.main.gameObject.GetComponent<Shake>().ShakeIt(1.5f, 0.2f, 50f);
         PlayAnimation();
     }

@@ -189,8 +189,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 8866325430233348381, guid: d2952a7b803db444a80a9b0b001a3236, type: 3}
+      propertyPath: myTransform
+      value: 
+      objectReference: {fileID: 67000890}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2952a7b803db444a80a9b0b001a3236, type: 3}
+--- !u!4 &67000890 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 517660563047577971, guid: d2952a7b803db444a80a9b0b001a3236, type: 3}
+  m_PrefabInstance: {fileID: 67000889}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &219063110 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2153063792729243570, guid: eebb5be358696e947981cdae45b75fbf, type: 3}
@@ -534,6 +543,10 @@ PrefabInstance:
     - target: {fileID: 2278161979399499421, guid: eebb5be358696e947981cdae45b75fbf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 15.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132286401433672305, guid: eebb5be358696e947981cdae45b75fbf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8350610518483508729, guid: eebb5be358696e947981cdae45b75fbf, type: 3}
       propertyPath: m_Name
