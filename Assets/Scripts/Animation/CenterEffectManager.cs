@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CenterEffect
+{
+    BossHits, PlayerHits, PlayerMisses, Harmonizes
+}
+
 public class CenterEffectManager : MonoBehaviour
 {
 
@@ -22,10 +27,7 @@ public class CenterEffectManager : MonoBehaviour
     {
         
     }
-    public enum CenterEffect
-    {
-        BossHits, PlayerHits, PlayerMisses, Harmonizes
-    }
+    
 
     public void CallCenterEffect(CenterEffect effect)
     {
