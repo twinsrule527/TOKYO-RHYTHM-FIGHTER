@@ -10,9 +10,11 @@ public class CenterEffectAnim : MonoBehaviour
 
     public virtual void OnEnable()
     {
-        
-        Camera.main.gameObject.GetComponent<Shake>().ShakeIt(1.2f, 0.2f, 50f);
-        StartCoroutine(PlayAnimation());
+        if (effectList.Count > 0)
+        {
+            Camera.main.gameObject.GetComponent<Shake>().ShakeIt(1.2f, 0.2f, 50f);
+            StartCoroutine(PlayAnimation());
+        }
     }
 
     public virtual void Start()
@@ -22,12 +24,13 @@ public class CenterEffectAnim : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
+        /*
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             gameObject.SetActive(true);
 
             
-        }
+        }*/
     }
 
     public virtual IEnumerator PlayAnimation()
