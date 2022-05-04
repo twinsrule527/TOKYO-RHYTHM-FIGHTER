@@ -781,8 +781,8 @@ MonoBehaviour:
   key: 122
   myActionIndicator: {fileID: 3608641872491304081}
   isComboable: 1
-  damage: 5
-  baseDamage: 5
+  damage: 1
+  baseDamage: 1
 --- !u!1 &8216630639901541565
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,10 +832,10 @@ MonoBehaviour:
   key: 120
   myActionIndicator: {fileID: 4086836469007911517}
   isComboable: 0
-  damage: 3
-  baseDamage: 3
+  damage: 1
+  baseDamage: 1
   startDamage: 0
-  DamageGain: 5
+  DamageGain: 1
   maxHoldLength: 2
 --- !u!1 &8597708211883435790
 GameObject:

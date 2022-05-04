@@ -715,6 +715,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: DmgManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4225836929661095389, guid: e6503903af7ae1e42b3c07813d6de643, type: 3}
+      propertyPath: m_margin.w
+      value: -24.412674
+      objectReference: {fileID: 0}
+    - target: {fileID: 4225836929661095389, guid: e6503903af7ae1e42b3c07813d6de643, type: 3}
+      propertyPath: m_margin.z
+      value: -133.52881
+      objectReference: {fileID: 0}
     - target: {fileID: 7357116216619558712, guid: e6503903af7ae1e42b3c07813d6de643, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 49
@@ -822,6 +830,14 @@ PrefabInstance:
     - target: {fileID: 8016346893611268907, guid: e6503903af7ae1e42b3c07813d6de643, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961742384567198428, guid: e6503903af7ae1e42b3c07813d6de643, type: 3}
+      propertyPath: m_margin.w
+      value: -22.19334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961742384567198428, guid: e6503903af7ae1e42b3c07813d6de643, type: 3}
+      propertyPath: m_margin.z
+      value: -136.96738
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6503903af7ae1e42b3c07813d6de643, type: 3}
@@ -1276,7 +1292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 682305933778544706, guid: be19fa031271c7c4b9586fb3a9c2d7fe, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 425
+      value: 468
       objectReference: {fileID: 0}
     - target: {fileID: 1219686146336150580, guid: be19fa031271c7c4b9586fb3a9c2d7fe, type: 3}
       propertyPath: shakeMagnitude
@@ -1643,6 +1659,10 @@ PrefabInstance:
     - target: {fileID: 7970366902056058773, guid: 6ecaca4699fd0f742b1d9829f0434938, type: 3}
       propertyPath: m_fontColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970366902056058773, guid: 6ecaca4699fd0f742b1d9829f0434938, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278379775
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ecaca4699fd0f742b1d9829f0434938, type: 3}

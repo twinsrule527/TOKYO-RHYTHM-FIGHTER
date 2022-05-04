@@ -150,7 +150,7 @@ MonoBehaviour:
   myAnimationController: {fileID: 2023890976701665613}
   atkName: OneBeatAttack
   mySprite: {fileID: 7374144326298839354}
-  damageToDeal: 1
+  damageToDeal: 5
 --- !u!1 &6385858517873614868
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +255,7 @@ MonoBehaviour:
   myAnimationController: {fileID: 3916436914547534296}
   atkName: ShortAttack
   mySprite: {fileID: 7374144326298839354}
-  damageToDeal: 5
+  damageToDeal: 8
 --- !u!1 &7374144325704998263
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,7 +360,7 @@ MonoBehaviour:
   myAnimationController: {fileID: 1166183043910410771}
   atkName: LongAttack
   mySprite: {fileID: 7374144326298839354}
-  damageToDeal: 10
+  damageToDeal: 14
 --- !u!1 &7374144326298839353
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,7 +613,7 @@ MonoBehaviour:
   myAnimationController: {fileID: 2403645037667687425}
   atkName: Length3Attack
   mySprite: {fileID: 0}
-  damageToDeal: 7
+  damageToDeal: 11
 --- !u!1 &9041020830592361786
 GameObject:
   m_ObjectHideFlags: 0
