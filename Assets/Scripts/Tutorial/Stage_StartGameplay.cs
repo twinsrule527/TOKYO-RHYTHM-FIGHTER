@@ -40,6 +40,7 @@ public class Stage_StartGameplay : Stage
         //TODO
 
         introBeats = introBeats + Mathf.Ceil(BeatController.GetBeat());
+        Debug.Log("current beat: " + BeatController.GetBeat() + " attacks will start on: " + introBeats);
 
         //switch the music.
         BeatController.SwitchSongContinuous(songToStart);
