@@ -15,6 +15,7 @@ public class A_BossLongAttack : BossAttack
         Global.Boss.CurrentMakingAttack = this;
         Global.Boss.sfxController.PlayAttackSound(4);
         Global.Player.ChangeVisualHP(-damageToDeal);
+        Global.CenterEffectManager.CallCenterEffect(CenterEffect.BossHits);
 
         //Debug.Log("4");
         yield return null;
