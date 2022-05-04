@@ -25,8 +25,8 @@ public class Stage_StartGameplay : Stage
     void Update()
     {
         if(checkNextStage && BeatController.GetBeat() >= introBeats) {
-            Global.TutorialManager.NextStage();
             checkNextStage = false;
+            Global.TutorialManager.NextStage();
         }
     }
 
@@ -34,6 +34,7 @@ public class Stage_StartGameplay : Stage
         
         //boss enabled.
         Global.Boss.GetComponent<SpriteRenderer>().enabled = true;
+        Global.Boss.GetComponentInChildren<HurtAnimation>().hurtEnabled = true;
 
         //boss lerps in.
         //TODO
@@ -42,8 +43,7 @@ public class Stage_StartGameplay : Stage
         Debug.Log("current beat: " + BeatController.GetBeat() + " attacks will start on: " + introBeats);
 
         //switch the music.
-        BeatController.StartSong(songToStart);
-
+        BeatController.SwitchSongContinuous(songToStart);
         checkNextStage = true;
 
     }
