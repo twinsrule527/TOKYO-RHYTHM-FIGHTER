@@ -44,12 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9133ea7a5d54e6dbd9780a0956f5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delayFraction: 0.2
   effectList:
-  - {fileID: 7386890940831903533, guid: e46eadef8b589884e8f76b13d098bff6, type: 3}
-  - {fileID: -9079545175819313884, guid: e46eadef8b589884e8f76b13d098bff6, type: 3}
-  - {fileID: 4960718392958072578, guid: e46eadef8b589884e8f76b13d098bff6, type: 3}
-  - {fileID: -8406352744801909369, guid: e46eadef8b589884e8f76b13d098bff6, type: 3}
-  - {fileID: 2755880429849033000, guid: e46eadef8b589884e8f76b13d098bff6, type: 3}
+  - {fileID: 5365690554306424457, guid: 91beb82a82f3ac84993b90ad0fb344ef, type: 3}
+  - {fileID: -2868871382044202770, guid: 91beb82a82f3ac84993b90ad0fb344ef, type: 3}
+  - {fileID: -5054411365116580789, guid: 91beb82a82f3ac84993b90ad0fb344ef, type: 3}
+  - {fileID: -5907238890852217150, guid: 91beb82a82f3ac84993b90ad0fb344ef, type: 3}
+  - {fileID: 5338081146735338597, guid: 91beb82a82f3ac84993b90ad0fb344ef, type: 3}
   rendererCur: {fileID: 4995360315769129683}
 --- !u!212 &4995360315769129683
 SpriteRenderer:
@@ -91,7 +92,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7386890940831903533, guid: e46eadef8b589884e8f76b13d098bff6, type: 3}
+  m_Sprite: {fileID: 5365690554306424457, guid: 91beb82a82f3ac84993b90ad0fb344ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

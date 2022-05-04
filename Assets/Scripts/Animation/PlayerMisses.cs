@@ -16,8 +16,5 @@ public class PlayerMisses : CenterEffectAnim
         base.Update();
     }
 
-    public override void PlayAnimation()
-    {
-        base.PlayAnimation();
-    }
+   
 }
