@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106018907027298930}
-  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &953880541481752307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44,12 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9133ea7a5d54e6dbd9780a0956f5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delayFraction: 0.2
   effectList:
-  - {fileID: 7386890940831903533, guid: 76c8d4991c8bc0d4c8459f0b2863b35e, type: 3}
-  - {fileID: -9079545175819313884, guid: 76c8d4991c8bc0d4c8459f0b2863b35e, type: 3}
-  - {fileID: 4960718392958072578, guid: 76c8d4991c8bc0d4c8459f0b2863b35e, type: 3}
-  - {fileID: -8406352744801909369, guid: 76c8d4991c8bc0d4c8459f0b2863b35e, type: 3}
-  - {fileID: 2755880429849033000, guid: 76c8d4991c8bc0d4c8459f0b2863b35e, type: 3}
+  - {fileID: 6968845979273412207, guid: a7355ad4af4ca7848abd7618776bfc2b, type: 3}
+  - {fileID: 2404833575098260292, guid: a7355ad4af4ca7848abd7618776bfc2b, type: 3}
+  - {fileID: -1642094717950735180, guid: a7355ad4af4ca7848abd7618776bfc2b, type: 3}
+  - {fileID: -5844066883454722530, guid: a7355ad4af4ca7848abd7618776bfc2b, type: 3}
+  - {fileID: -2415828634386998070, guid: a7355ad4af4ca7848abd7618776bfc2b, type: 3}
+  rendererCur: {fileID: 4995360315769129683}
 --- !u!212 &4995360315769129683
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -90,12 +92,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7386890940831903533, guid: 76c8d4991c8bc0d4c8459f0b2863b35e, type: 3}
+  m_Sprite: {fileID: 6968845979273412207, guid: a7355ad4af4ca7848abd7618776bfc2b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.56, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

@@ -16,6 +16,7 @@ public class A_Boss3Attack : BossAttack
         Global.Boss.CurrentMakingAttack = this;
         Global.Boss.sfxController.PlayAttackSound(3);
         Global.Player.ChangeVisualHP(-damageToDeal);
+        Global.CenterEffectManager.CallCenterEffect(CenterEffect.BossHits);
         //Debug.Log("3");
         yield return null;
         //mySprite.color = Color.black;

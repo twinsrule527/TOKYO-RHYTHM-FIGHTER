@@ -30,6 +30,7 @@ public class A_and_Tutorial_BossAI : BossAI
         if(Global.Tutorial) {
             Global.Boss.SetBossHP(Global.Boss.BossStartingHPArray[stageNum]);
         }
+        Debug.Log(stageNum);
         Global.Boss.currentStageStartingHP = Global.Boss.BossStartingHPArray[stageNum];
     }
 }
