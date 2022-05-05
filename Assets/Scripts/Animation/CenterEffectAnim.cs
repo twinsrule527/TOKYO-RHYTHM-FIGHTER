@@ -4,32 +4,51 @@ using UnityEngine;
 
 public class CenterEffectAnim : MonoBehaviour
 {
+    [SerializeField] float delayFraction;
     [SerializeField] List<Sprite> effectList;
-    private SpriteRenderer renderer;
+    [SerializeField] SpriteRenderer rendererCur;
 
-    void OnEnable()
+    public virtual void OnEnable()
     {
-        
-        Camera.main.gameObject.GetComponent<Shake>().ShakeIt(2f, 0.2f, 50f);
-        PlayAnimation();
+        if (effectList.Count > 0)
+        {
+            Camera.main.gameObject.GetComponent<Shake>().ShakeIt(1.2f, 0.2f, 50f);
+            StartCoroutine(PlayAnimation());
+        }
     }
 
-    private void Start()
+    public virtual void Start()
     {
-        renderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
+        /*
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            gameObject.SetActive(true);
 
+            
+        }*/
     }
 
-    public void PlayAnimation()
+    public virtual IEnumerator PlayAnimation()
     {
-        for (int i = 0; i < effectList.Count; i++)
+        if (effectList.Count > 0)
         {
-            renderer.sprite = effectList[i];
+            for (int i = 0; i < effectList.Count; i++)
+            {
+                rendererCur.sprite = effectList[i];
+                yield return StartCoroutine(BeatController.WaitForBeat(delayFraction));
+
+            }
+            rendererCur.sprite = null;
+            gameObject.SetActive(false);
         }
     }
+
+
 }
+
+

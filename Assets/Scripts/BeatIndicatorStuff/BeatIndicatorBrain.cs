@@ -223,6 +223,7 @@ public class BeatIndicatorBrain : MonoBehaviour
                 } else if(beatIndicator.leftIndicator && beatIndicator.beatToHit < beatTil + 1) {
                     //show outlines on player's side
                     beatIndicator.showOutline();
+
                 }
             }
         }

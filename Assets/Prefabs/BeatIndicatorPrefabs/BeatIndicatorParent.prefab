@@ -313,9 +313,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9008738516676145522}
     m_Modifications:
+    - target: {fileID: 510153530305127798, guid: 09f5d69eabb3a464ba3e472c36b819cf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2203281497986221825, guid: 09f5d69eabb3a464ba3e472c36b819cf, type: 3}
       propertyPath: m_Name
       value: VisualEndPos
+      objectReference: {fileID: 0}
+    - target: {fileID: 2421424328096932770, guid: 09f5d69eabb3a464ba3e472c36b819cf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4608305426801033477, guid: 09f5d69eabb3a464ba3e472c36b819cf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643332234435737990, guid: 09f5d69eabb3a464ba3e472c36b819cf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8518509583155008088, guid: 09f5d69eabb3a464ba3e472c36b819cf, type: 3}
       propertyPath: m_LocalScale.x

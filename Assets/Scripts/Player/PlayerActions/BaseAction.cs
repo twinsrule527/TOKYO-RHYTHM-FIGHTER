@@ -37,6 +37,7 @@ public class BaseAction : PlayerAction
         //myActionIndicator.PerformAction();
         if(Global.Boss.AttackAI.AttackBeatHitOn != BeatController.GetNearestBeat() || !Global.Boss.AttackAI.CurrentAttackOutgoing.IsAnAttack) {//DOesn't always work correctly
             Global.Player.spriteController.Attack(1);
+            Global.CenterEffectManager.CallCenterEffect(CenterEffect.PlayerHits);
             currentActionCoroutine = ActionCoroutine();
             StartCoroutine(currentActionCoroutine);
             base.Success();
@@ -50,7 +51,8 @@ public class BaseAction : PlayerAction
     protected override void MessUp()
     {
         base.MessUp();
-        if(currentActionCoroutine != null) {
+        Global.CenterEffectManager.CallCenterEffect(CenterEffect.PlayerMisses);
+        if (currentActionCoroutine != null) {
             StopCoroutine(currentActionCoroutine);
         }
     }

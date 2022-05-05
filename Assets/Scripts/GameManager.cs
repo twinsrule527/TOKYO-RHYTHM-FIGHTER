@@ -67,27 +67,33 @@ public class GameManager : MonoBehaviour
     }
 
     public static void GoToTitle() {
+        BeatController.UnPauseOutsideMenu();
         SceneManager.LoadScene(0);
     }
 
     public static void GoToIntroCutscene() {
+        BeatController.UnPauseOutsideMenu();
         SceneManager.LoadScene(1);
     }
 
     public static void StartFromIntroCutscene() {
+        BeatController.UnPauseOutsideMenu();
         hasSeenOpeningCutscene = true;
         GoToTutorial();
     }
 
     public static void GoToTutorial() {
+        BeatController.UnPauseOutsideMenu();
         SceneManager.LoadScene(2);
     }
 
     public static void GoToGame() {
+        BeatController.UnPauseOutsideMenu();
         SceneManager.LoadScene(3);
     }
 
     public static void GoToWin() {
+        BeatController.UnPauseOutsideMenu();
         SceneManager.LoadScene(4);
     }
 

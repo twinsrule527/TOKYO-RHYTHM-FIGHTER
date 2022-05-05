@@ -4,24 +4,17 @@ using UnityEngine;
 
 public class BossHitsPlayerScript : CenterEffectAnim
 {
-    void OnEnable()
+    public override void Start()
     {
-
-    }
-
-    private void Start()
-    {
+        base.Start();
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
-
+        base.Update();
     }
 
-    public void PlayAnimation()
-    {
-
-    }
+   
 
 }

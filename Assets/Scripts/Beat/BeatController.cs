@@ -181,7 +181,7 @@ public class BeatController : MonoBehaviour
         BPM = songData.BPM;
         secPerBeat = 60 / BPM;
 
-        Debug.Log("original minimum: " + MINIMUM.thresholdBeforeBeat);
+        //Debug.Log("original minimum: " + MINIMUM.thresholdBeforeBeat);
 
         //set up thresholds based on BPM.
         //given thresholds in seconds, what's the threshold in beat fractions?
@@ -196,8 +196,8 @@ public class BeatController : MonoBehaviour
         accuraciesToCheck[1] = great;
         accuraciesToCheck[2] = minimum;
 
-        Debug.Log("new minimum: " + MINIMUM.thresholdBeforeBeat);
-        Debug.Log("minimum in array: " + accuraciesToCheck[2].thresholdBeforeBeat);
+        //Debug.Log("new minimum: " + MINIMUM.thresholdBeforeBeat);
+        //Debug.Log("minimum in array: " + accuraciesToCheck[2].thresholdBeforeBeat);
 
         //set the audio source audio clip to this song 
         audioSource.clip = songData.songAudioClip;

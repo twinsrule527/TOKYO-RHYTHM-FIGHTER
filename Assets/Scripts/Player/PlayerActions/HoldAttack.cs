@@ -102,6 +102,8 @@ public class HoldAttack : PlayerAction
         myActionIndicator.PerformAction();
         currentCoroutine = HoldCoroutine();
         StartCoroutine(currentCoroutine);
+        Global.CenterEffectManager.CallCenterEffect(CenterEffect.PlayerHits);
+
     }
 
 
