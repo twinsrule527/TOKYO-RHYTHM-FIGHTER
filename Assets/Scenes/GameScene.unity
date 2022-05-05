@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -882,7 +882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 369dc4cc392a6d44d8b827a64c44c34b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nextStageButton: {fileID: 0}
+  _nextStageButton: {fileID: 2092628702}
   _deactivatedObjects: []
   _activatedObjects: []
   songToStart: {fileID: 939140044}
@@ -1287,6 +1287,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dd8fdcc29c10bd488cf86f003c5bf12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2092628702 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8422005984616086760, guid: 28a6ae2a5790d534297ac734ec64dd98, type: 3}
+  m_PrefabInstance: {fileID: 7397874477780787558}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2140992684
 PrefabInstance:
   m_ObjectHideFlags: 0
