@@ -740,7 +740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 369dc4cc392a6d44d8b827a64c44c34b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nextStageButton: {fileID: 1397920993}
+  _nextStageButton: {fileID: 0}
   _deactivatedObjects: []
   _activatedObjects: []
   songToStart: {fileID: 939140044}
@@ -767,11 +767,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511688601ae63d247ac52abbed37e4b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1397920993 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1590616163290629602, guid: 28a6ae2a5790d534297ac734ec64dd98, type: 3}
-  m_PrefabInstance: {fileID: 7397874477780787558}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1512714696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1311,6 +1306,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5740692644100595652, guid: 28a6ae2a5790d534297ac734ec64dd98, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422005984616086760, guid: 28a6ae2a5790d534297ac734ec64dd98, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8786049718607511864, guid: 28a6ae2a5790d534297ac734ec64dd98, type: 3}
