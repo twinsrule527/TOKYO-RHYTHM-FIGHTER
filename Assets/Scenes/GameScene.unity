@@ -1410,6 +1410,10 @@ PrefabInstance:
       propertyPath: lerpInObjects.Array.data[0]
       value: 
       objectReference: {fileID: 1363927356}
+    - target: {fileID: 5599437667897426901, guid: 28a6ae2a5790d534297ac734ec64dd98, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5740692644100595652, guid: 28a6ae2a5790d534297ac734ec64dd98, type: 3}
       propertyPath: m_RootOrder
       value: 13
