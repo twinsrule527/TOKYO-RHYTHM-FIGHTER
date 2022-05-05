@@ -46,11 +46,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayFraction: 0.2
   effectList:
-  - {fileID: 5365690554306424457, guid: 91beb82a82f3ac84993b90ad0fb344ef, type: 3}
-  - {fileID: -2868871382044202770, guid: 91beb82a82f3ac84993b90ad0fb344ef, type: 3}
-  - {fileID: -5054411365116580789, guid: 91beb82a82f3ac84993b90ad0fb344ef, type: 3}
-  - {fileID: -5907238890852217150, guid: 91beb82a82f3ac84993b90ad0fb344ef, type: 3}
-  - {fileID: 5338081146735338597, guid: 91beb82a82f3ac84993b90ad0fb344ef, type: 3}
+  - {fileID: 6968845979273412207, guid: a7355ad4af4ca7848abd7618776bfc2b, type: 3}
+  - {fileID: 2404833575098260292, guid: a7355ad4af4ca7848abd7618776bfc2b, type: 3}
+  - {fileID: -1642094717950735180, guid: a7355ad4af4ca7848abd7618776bfc2b, type: 3}
+  - {fileID: -5844066883454722530, guid: a7355ad4af4ca7848abd7618776bfc2b, type: 3}
+  - {fileID: -2415828634386998070, guid: a7355ad4af4ca7848abd7618776bfc2b, type: 3}
   rendererCur: {fileID: 4995360315769129683}
 --- !u!212 &4995360315769129683
 SpriteRenderer:
@@ -92,7 +92,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5365690554306424457, guid: 91beb82a82f3ac84993b90ad0fb344ef, type: 3}
+  m_Sprite: {fileID: 6968845979273412207, guid: a7355ad4af4ca7848abd7618776bfc2b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
