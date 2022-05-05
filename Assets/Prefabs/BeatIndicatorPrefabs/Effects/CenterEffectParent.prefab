@@ -74,6 +74,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3501958242727611132}
     m_Modifications:
+    - target: {fileID: -7115518450444452193, guid: badaebccd6e36ab47af37c9bc678113d, type: 3}
+      propertyPath: delayFraction
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5189440041684383377, guid: badaebccd6e36ab47af37c9bc678113d, type: 3}
       propertyPath: m_Name
       value: BossAttBlocked
@@ -145,6 +149,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3501958242727611132}
     m_Modifications:
+    - target: {fileID: -6204045617321803586, guid: fcb31019cefc2b849b395dd9f27e186b, type: 3}
+      propertyPath: delayFraction
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3501958242727611132, guid: fcb31019cefc2b849b395dd9f27e186b, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -268,6 +276,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6173508579426567117, guid: 22ffccaa67d86f84bb0c9c8438255e36, type: 3}
+      propertyPath: delayFraction
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22ffccaa67d86f84bb0c9c8438255e36, type: 3}
 --- !u!1 &2334074827306126711 stripped
@@ -294,6 +306,10 @@ PrefabInstance:
     - target: {fileID: 106018907027298930, guid: d96e64e7d5385e341814cbf38580fcf3, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 953880541481752307, guid: d96e64e7d5385e341814cbf38580fcf3, type: 3}
+      propertyPath: delayFraction
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4594703663463410590, guid: d96e64e7d5385e341814cbf38580fcf3, type: 3}
       propertyPath: m_RootOrder
