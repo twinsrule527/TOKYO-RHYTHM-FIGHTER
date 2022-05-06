@@ -49,9 +49,9 @@ public class BeatController : MonoBehaviour
 
     //accuracy thresholds, in seconds 
     //will be converted into fractions of beats on start. 
-    static float secondsMINIMUM = 0.20f;
-    static float secondsGREAT = 0.13f;
-    static float secondsPERFECT = 0.07f;
+    static float secondsMINIMUM = 0.17f;
+    static float secondsGREAT = 0.10f;
+    static float secondsPERFECT = 0.04f;
 
 
     //// Beat accuracies! 
@@ -107,6 +107,7 @@ public class BeatController : MonoBehaviour
     //song position, in seconds 
     private static double audioPos = 0;
     private static double timePos = 0;
+    private static double baselineBeat = 0;
 
     //what beat the song is on ex. 1, 2, 4, 5.5, 6.75 
     //we will use a threshold with this for reaction 
@@ -143,6 +144,15 @@ public class BeatController : MonoBehaviour
 
     }
 
+    public static void SwitchSongContinuous(SongData songToStart) {
+        instance.StartCoroutine(instance.SwitchClean(songToStart));
+    }
+    IEnumerator SwitchClean(SongData songToStart) {
+        yield return WaitForBeat(1);
+        baselineBeat = GetNearestBeat();
+        StartSong(songToStart);
+    }
+
     //start the song with the given name.  
     public void StartSongByName(string songName) {
         foreach(SongData data in songDataList) {
@@ -171,7 +181,7 @@ public class BeatController : MonoBehaviour
         BPM = songData.BPM;
         secPerBeat = 60 / BPM;
 
-        Debug.Log("original minimum: " + MINIMUM.thresholdBeforeBeat);
+        //Debug.Log("original minimum: " + MINIMUM.thresholdBeforeBeat);
 
         //set up thresholds based on BPM.
         //given thresholds in seconds, what's the threshold in beat fractions?
@@ -186,8 +196,8 @@ public class BeatController : MonoBehaviour
         accuraciesToCheck[1] = great;
         accuraciesToCheck[2] = minimum;
 
-        Debug.Log("new minimum: " + MINIMUM.thresholdBeforeBeat);
-        Debug.Log("minimum in array: " + accuraciesToCheck[2].thresholdBeforeBeat);
+        //Debug.Log("new minimum: " + MINIMUM.thresholdBeforeBeat);
+        //Debug.Log("minimum in array: " + accuraciesToCheck[2].thresholdBeforeBeat);
 
         //set the audio source audio clip to this song 
         audioSource.clip = songData.songAudioClip;
@@ -261,7 +271,7 @@ public class BeatController : MonoBehaviour
     IEnumerator SlowToStop(bool fail, double secToSlowToStop) {
 
         double timeLeft = secToSlowToStop;
-        float lastBeat = GetBeat();
+        float lastBeat = GetBeat() - (float)baselineBeat;
 
          while(1 == 1) {
 
@@ -310,11 +320,6 @@ public class BeatController : MonoBehaviour
         }
     }
 
-    //TODO 
-    public static void ContinuousSwitchSample(SongData newSong) {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -360,14 +365,13 @@ public class BeatController : MonoBehaviour
             //if we've moved on to the next beat, open this flag 
             beatEnded025 = false;
         }
-
     }
 
     //instead of tracker variables, use more direct getters. 
     //non-interpolated.
     public static float GetBeat() {
         double pos = AudioSettings.dspTime - songStartTime;
-        return (float)(pos / secPerBeat);
+        return (float)(baselineBeat + (pos / secPerBeat));
     }
 
     //interpolates w/ Time.time if audio time hasn't changed between frames. 

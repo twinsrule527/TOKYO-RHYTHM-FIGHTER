@@ -105,6 +105,10 @@ public class BeatIndicator : MonoBehaviour
         mySprite.enabled = false;
     }
 
+    public void SetBeatToHit(float beat) {
+        beatToHit = beat;
+    }
+
 
 
 

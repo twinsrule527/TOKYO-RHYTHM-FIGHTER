@@ -14,8 +14,9 @@ public class GeneralInput : MonoBehaviour
 
     KeyCode key_restart = KeyCode.R;
 
-    KeyCode key_startsong = KeyCode.Return;
+    //KeyCode key_startsong = KeyCode.Return;
 
+/*
     KeyCode [] key_select = {KeyCode.E, KeyCode.Space, KeyCode.Return};
     KeyCode [] key_back = {KeyCode.Escape, KeyCode.Backspace};
 
@@ -23,7 +24,7 @@ public class GeneralInput : MonoBehaviour
     KeyCode [] key_right = {KeyCode.D, KeyCode.RightArrow};
     KeyCode [] key_up = {KeyCode.W, KeyCode.UpArrow};
     KeyCode [] key_down = {KeyCode.S, KeyCode.DownArrow};
-
+*/
 
     // Update is called once per frame
     void Update()
@@ -32,7 +33,7 @@ public class GeneralInput : MonoBehaviour
         if(Input.GetKeyDown(key_restart)) {
             Restart();
         }
-
+/*
         if(Input.GetKeyDown(key_startsong)) {
             GameManager.StartSong();
         }
@@ -72,12 +73,14 @@ public class GeneralInput : MonoBehaviour
                 Down();
             }
         }
-
+*/
     }
 
     void Restart() {
         GameManager.RestartScene();
     }
+
+    /*
 
     void Select() {
         //TODO what to do when we press select?
@@ -101,5 +104,5 @@ public class GeneralInput : MonoBehaviour
 
     void Down() {
 
-    }
+    } */
 }

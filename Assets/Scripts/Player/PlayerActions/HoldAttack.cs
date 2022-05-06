@@ -67,6 +67,7 @@ public class HoldAttack : PlayerAction
 
             //if we're on beat 
             Accuracy curAccuracy = BeatController.GetAccuracy(beatFraction);
+            Debug.Log(curAccuracy.name);
             Global.Player.spriteController.DisplayAccuracy(curAccuracy);
             if(BeatController.IsOnBeat(beatFraction)) {//curAccuracy.priority > 0) {
                 
@@ -74,7 +75,6 @@ public class HoldAttack : PlayerAction
                 //if(isHolding == true){
                     //Success();
                 //}
-
                 Success();
                 //Debug.Log("Success() line 77");
                 
@@ -102,6 +102,8 @@ public class HoldAttack : PlayerAction
         myActionIndicator.PerformAction();
         currentCoroutine = HoldCoroutine();
         StartCoroutine(currentCoroutine);
+        Global.CenterEffectManager.CallCenterEffect(CenterEffect.PlayerHits);
+
     }
 
 

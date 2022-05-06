@@ -17,6 +17,7 @@ public class A_Boss_1BeatAttack : BossAttack
         Global.Boss.CurrentMakingAttack = this;
         Global.Boss.sfxController.PlayAttackSound(1);
         Global.Player.ChangeVisualHP(-damageToDeal);
+        Global.CenterEffectManager.CallCenterEffect(CenterEffect.BossHits);
 
         //Debug.Log("1");
         //Debug.Log(BeatController.GetBeat());

@@ -17,20 +17,20 @@ public class GameManager : MonoBehaviour
 
     public static bool gameplayRunning = false;
 
-    public static int currentStage;//The current stage that the boss is in
+    public static int currentStage; //The current stage that the boss is in
 
 
     void Awake() {
         Global.FailScreen = GameObject.FindWithTag("FailScreenObj");
         if(Global.FailScreen != null) {
             Global.FailScreen.SetActive(false);
-        } else if(SceneManager.GetActiveScene().buildIndex == 2){
+        } else if(SceneManager.GetActiveScene().buildIndex == 3){
             Debug.Log("ERR: no FailScreen found-- make sure it's ENABLED in the scene");
         }
         Global.PauseScreen = GameObject.FindWithTag("PauseScreenObj");
         if(Global.PauseScreen != null) {
             Global.PauseScreen.SetActive(false);
-        } else if(SceneManager.GetActiveScene().buildIndex == 2){
+        } else if(SceneManager.GetActiveScene().buildIndex >= 2){
             Debug.Log("ERR: no PauseMenu found-- make sure it's ENABLED in the scene");
         }
         SfxSync.soundEffectsEnabled = true;
@@ -63,27 +63,38 @@ public class GameManager : MonoBehaviour
         Global.Player.SongStarted();
         Global.Boss.SongStarted();
         Global.UIManager.SongStarted();
+        Global.TutorialManager.SongStarted();
     }
 
     public static void GoToTitle() {
+        BeatController.UnPauseOutsideMenu();
         SceneManager.LoadScene(0);
     }
 
     public static void GoToIntroCutscene() {
+        BeatController.UnPauseOutsideMenu();
         SceneManager.LoadScene(1);
     }
 
     public static void StartFromIntroCutscene() {
+        BeatController.UnPauseOutsideMenu();
         hasSeenOpeningCutscene = true;
-        GoToGame();
+        GoToTutorial();
     }
 
-    public static void GoToGame() {
+    public static void GoToTutorial() {
+        BeatController.UnPauseOutsideMenu();
         SceneManager.LoadScene(2);
     }
 
-    public static void GoToWin() {
+    public static void GoToGame() {
+        BeatController.UnPauseOutsideMenu();
         SceneManager.LoadScene(3);
+    }
+
+    public static void GoToWin() {
+        BeatController.UnPauseOutsideMenu();
+        SceneManager.LoadScene(4);
     }
 
     public static void QuitGame() {
