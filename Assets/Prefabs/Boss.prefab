@@ -148,10 +148,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802dcc3bfaee461419a560a5e3fca999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hurtTime: 0.5
+  hurtTime: 1
   baseRenderer: {fileID: 5343507138540085115}
   hurtRenderer: {fileID: 1216815891195381629}
-  hurtEnabled: 0
+  hurtEnabled: 1
 --- !u!1 &5343507137302334029
 GameObject:
   m_ObjectHideFlags: 0
