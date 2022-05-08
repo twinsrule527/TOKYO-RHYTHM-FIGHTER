@@ -17,10 +17,6 @@ public class ProgressableBubble : ObjectButton
         if(progressOnClickAnywhere) {
             keys.Add(KeyCode.Mouse0);
         }
-        if(hideObjOnAppear != null) {
-            hideObjOnAppear.SetActive(false);
-        }
-        
     }
 
     public override void ButtonPressed()
@@ -35,6 +31,9 @@ public class ProgressableBubble : ObjectButton
         
         if(hideOnClick) {
             this.gameObject.SetActive(false);
+        }
+        if(hideObjOnAppear != null) {
+            hideObjOnAppear.SetActive(false);
         }
     }
 }
