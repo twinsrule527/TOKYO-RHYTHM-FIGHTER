@@ -22,9 +22,11 @@ public class ObjectButton : MonoBehaviour
 
     [SerializeField] int increaseOrderInLayerBy = 0;
     TextMeshPro [] buttonText;
+    [SerializeField] bool changeSprite = true;
 
     protected virtual void Start() {
         buttonText = GetComponentsInChildren<TextMeshPro>();
+        
         if(hover == null) {
             hover = spriteRenderer.sprite;
         }
@@ -56,19 +58,23 @@ public class ObjectButton : MonoBehaviour
     }
 
     public virtual void ButtonSelected() {
-        spriteRenderer.sprite = hover;
+        if(changeSprite) {
+            spriteRenderer.sprite = hover;
+        }
         scaleOnHover.localScale = hoverScale;
         spriteRenderer.sortingOrder += increaseOrderInLayerBy;
-        foreach(TextMeshPro text in buttonText) {
+        foreach(TextMeshPro text in buttonText) { //here
             text.sortingOrder += increaseOrderInLayerBy;
         }
     }
 
     public virtual void ButtonDeselected() {
-        spriteRenderer.sprite = noHover;
+        if(changeSprite) {
+            spriteRenderer.sprite = noHover;
+        }
         scaleOnHover.localScale = noHoverScale;
         spriteRenderer.sortingOrder -= increaseOrderInLayerBy;
-        foreach(TextMeshPro text in buttonText) {
+        foreach(TextMeshPro text in buttonText) { //here
             text.sortingOrder -= increaseOrderInLayerBy;
         }
     }

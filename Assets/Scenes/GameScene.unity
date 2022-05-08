@@ -279,7 +279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1271370044447919385, guid: 77f185d4374d10f459b83e0443651967, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1271370044447919386, guid: 77f185d4374d10f459b83e0443651967, type: 3}
       propertyPath: m_RootOrder
@@ -480,6 +480,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8694019324916856997, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
+      propertyPath: changeSprite
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8694019324916856997, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
       propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2140992685}
@@ -494,6 +498,10 @@ PrefabInstance:
     - target: {fileID: 8694019324916856997, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
       propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030354047368012976, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
+      propertyPath: changeSprite
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9030354047368012976, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
       propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_Target
