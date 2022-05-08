@@ -17,4 +17,10 @@ public class TutorialStage_Combo : TutorialStage
             }
         }
     }
+
+    public override void OnStageStart()
+    {
+        base.OnStageStart();
+        Global.ComboIndicator.SetCombo(0);
+    }
 }
