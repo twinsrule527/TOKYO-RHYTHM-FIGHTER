@@ -439,14 +439,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5232053424396079819, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
-      propertyPath: m_SortingOrder
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5579647077720510174, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
-      propertyPath: m_SortingOrder
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 8569826398355308436, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -888,18 +880,6 @@ PrefabInstance:
     - target: {fileID: 5343507138540085112, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: m_Name
       value: Boss
-      objectReference: {fileID: 0}
-    - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
-      propertyPath: bossStartingHPArray.Array.data[0]
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
-      propertyPath: bossStartingHPArray.Array.data[1]
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
-      propertyPath: bossStartingHPArray.Array.data[2]
-      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085116, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: m_RootOrder
