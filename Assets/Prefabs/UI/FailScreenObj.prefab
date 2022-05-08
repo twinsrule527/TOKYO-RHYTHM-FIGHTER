@@ -994,6 +994,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2629414751402836163, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629414751402836163, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629414751402836163, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
@@ -1031,11 +1039,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5433375483438195776, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5433375483438195776, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5871634102901519416, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_IsActive
@@ -1054,6 +1062,10 @@ PrefabInstance:
       value: booo our band sucks lol
       objectReference: {fileID: 0}
     - target: {fileID: 7211149247663022817, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
+      propertyPath: m_fontSize
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211149247663022817, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: cbac001c6fd17ab42934a753d5ac9c9f, type: 2}
@@ -1061,6 +1073,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 7014922158103364701, guid: cbac001c6fd17ab42934a753d5ac9c9f, type: 2}
+    - target: {fileID: 7843026513665709905, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 7843026513665709905, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1075,7 +1091,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7965719452491804473, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_SortingOrder
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
