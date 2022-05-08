@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
 
 
     void Awake() {
+        currentStage = 0;
         Global.FailScreen = GameObject.FindWithTag("FailScreenObj");
         if(Global.FailScreen != null) {
             Global.FailScreen.SetActive(false);
