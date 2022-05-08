@@ -352,6 +352,7 @@ GameObject:
   - component: {fileID: 5804938106310144335}
   - component: {fileID: 4645089209080870558}
   - component: {fileID: 4246994298721629819}
+  - component: {fileID: 5889228152382312333}
   m_Layer: 0
   m_Name: FailScreenObj
   m_TagString: FailScreenObj
@@ -496,6 +497,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85033e59661755340adcfc2bf43706b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5889228152382312333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8569826398355308437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8717f5b5cb4ba9a45bccfa782eda69e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plus: 6100000014010000
+  minus: 6400000013010000
+  pressButton: 0d000000730000001201000020000000
+  buttons:
+  - {fileID: 9030354047368012976}
+  - {fileID: 8694019324916856997}
 --- !u!1001 &2586483281539277287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -671,6 +690,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2629414751402836163, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
   m_PrefabInstance: {fileID: 2586483281539277287}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8694019324916856997 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6575911127307147586, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
+  m_PrefabInstance: {fileID: 2586483281539277287}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8419664612391360298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc39dea3d2f54c40bb9e4f1005a11e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &5579647077720510174 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7965719452491804473, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
@@ -837,8 +867,12 @@ PrefabInstance:
       value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6575911127307147586, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
+      propertyPath: keys.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575911127307147586, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: keys.Array.data[0]
-      value: 13
+      value: 114
       objectReference: {fileID: 0}
     - target: {fileID: 6575911127307147586, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: keys.Array.data[1]
@@ -903,6 +937,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6286357178842429133, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
   m_PrefabInstance: {fileID: 2742717999324593650}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &174964959519063345 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2629414751402836163, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
+  m_PrefabInstance: {fileID: 2742717999324593650}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2226262243799484418 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4104277663194527216, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
@@ -913,11 +952,17 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7965719452491804473, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
   m_PrefabInstance: {fileID: 2742717999324593650}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &174964959519063345 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2629414751402836163, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
+--- !u!114 &9030354047368012976 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6575911127307147586, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
   m_PrefabInstance: {fileID: 2742717999324593650}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8155376746304031551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc39dea3d2f54c40bb9e4f1005a11e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &918797860636518665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -994,6 +1039,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2629414751402836163, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629414751402836163, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629414751402836163, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
@@ -1031,11 +1084,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5433375483438195776, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5433375483438195776, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5871634102901519416, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_IsActive
@@ -1054,6 +1107,10 @@ PrefabInstance:
       value: booo our band sucks lol
       objectReference: {fileID: 0}
     - target: {fileID: 7211149247663022817, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
+      propertyPath: m_fontSize
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211149247663022817, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: cbac001c6fd17ab42934a753d5ac9c9f, type: 2}
@@ -1061,6 +1118,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 7014922158103364701, guid: cbac001c6fd17ab42934a753d5ac9c9f, type: 2}
+    - target: {fileID: 7843026513665709905, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 7843026513665709905, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1075,7 +1136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7965719452491804473, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_SortingOrder
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
