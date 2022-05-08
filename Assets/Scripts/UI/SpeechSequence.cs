@@ -25,7 +25,7 @@ public class SpeechSequence : MonoBehaviour
         FillBubblesFromFile();
     }
 
-    [MenuItem("CUSTOM/Fill speech bubbles from files")]
+    //[MenuItem("CUSTOM/Fill speech bubbles from files")]
     static void FillAllBubbles() {
         SpeechSequence [] allSequences = Resources.FindObjectsOfTypeAll<SpeechSequence>();
         foreach(SpeechSequence sequence in allSequences) {
