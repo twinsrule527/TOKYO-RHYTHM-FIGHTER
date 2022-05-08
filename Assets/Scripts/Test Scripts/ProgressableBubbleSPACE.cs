@@ -23,7 +23,7 @@ public class ProgressableBubbleSPACE : ObjectButton
 
     }
 
-    protected override void ButtonPressed()
+    public override void ButtonPressed()
     {
         if(nextObject != null) {
             nextObject.SetActive(true);
