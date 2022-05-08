@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     //How much health the player starts with
     [SerializeField] float _playerStartHealth = 50;
     [SerializeField] private HurtAnimation playerHurtAnimation;
-    [SerializeField] DmgNumber dmgNumber;
+    public DmgNumber dmgNumber;
     [SerializeField] PlayerHealthBar healthBarPlayer;
 
 

@@ -1351,6 +1351,10 @@ PrefabInstance:
       value: 1.47
       objectReference: {fileID: 0}
     - target: {fileID: 3114750662055666727, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
+      propertyPath: finalStage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114750662055666727, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
       propertyPath: Stages.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -1411,6 +1415,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4588387718061894316, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
+      propertyPath: nextObject
+      value: 
+      objectReference: {fileID: 1219776768}
+    - target: {fileID: 4588387718061894316, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
       propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1419,11 +1427,23 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4588387718061894316, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
+      propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588387718061894316, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
       propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1259916517}
     - target: {fileID: 4588387718061894316, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
+      propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1219776768}
+    - target: {fileID: 4588387718061894316, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
       propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588387718061894316, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
+      propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4588387718061894316, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
@@ -1431,11 +1451,27 @@ PrefabInstance:
       value: SetDialogueFinished
       objectReference: {fileID: 0}
     - target: {fileID: 4588387718061894316, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
+      propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588387718061894316, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
       propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: TutorialManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4588387718061894316, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
+      propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588387718061894316, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
+      propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588387718061894316, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
       propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588387718061894316, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
+      propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4653028535496061741, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}

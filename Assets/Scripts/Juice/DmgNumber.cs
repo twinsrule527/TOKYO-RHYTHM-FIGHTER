@@ -90,6 +90,22 @@ public class DmgNumber : MonoBehaviour
         }
     }
 
+    public static float curContinuousPlayerDamage;
+
+    public void StartPlayerDamageContinuous(float timeToCheck) {
+        StartCoroutine(PlayerDmgContinuous(timeToCheck));
+    }
+    private IEnumerator PlayerDmgContinuous(float timeToCheck) {
+        BossDmgText.text = curContinuousPlayerDamage.ToString();
+        float startTime = BeatController.GetBeat();
+        float t = startTime;
+        while(t < startTime + timeToCheck) {
+            yield return null;
+            BossDmgText.text = curContinuousPlayerDamage.ToString();
+            t = BeatController.GetBeat();
+        }
+    }
+
      IEnumerator BossDmg(float damage)
     {
         resetBossText = true;
