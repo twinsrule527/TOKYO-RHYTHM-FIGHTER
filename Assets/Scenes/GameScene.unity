@@ -625,6 +625,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7960461492181534072, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: hurtTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8609914694361396131, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: startPosTransform
       value: 
