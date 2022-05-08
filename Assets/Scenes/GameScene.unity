@@ -279,7 +279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1271370044447919385, guid: 77f185d4374d10f459b83e0443651967, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1271370044447919386, guid: 77f185d4374d10f459b83e0443651967, type: 3}
       propertyPath: m_RootOrder
@@ -863,7 +863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2263738688694692412, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: _stageChangeHP.Array.data[2]
-      value: 5
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 2263738688694692412, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: _stageChangeHP.Array.data[3]
