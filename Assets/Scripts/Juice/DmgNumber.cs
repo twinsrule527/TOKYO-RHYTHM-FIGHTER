@@ -96,12 +96,12 @@ public class DmgNumber : MonoBehaviour
         StartCoroutine(PlayerDmgContinuous(timeToCheck));
     }
     private IEnumerator PlayerDmgContinuous(float timeToCheck) {
-        BossDmgText.text = curContinuousPlayerDamage.ToString();
+        BossDmgText.text = (-curContinuousPlayerDamage).ToString();
         float startTime = BeatController.GetBeat();
         float t = startTime;
         while(t < startTime + timeToCheck) {
             yield return null;
-            BossDmgText.text = curContinuousPlayerDamage.ToString();
+            BossDmgText.text = (-curContinuousPlayerDamage).ToString();
             t = BeatController.GetBeat();
         }
     }
