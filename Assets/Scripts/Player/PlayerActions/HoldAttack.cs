@@ -114,10 +114,13 @@ public class HoldAttack : PlayerAction
         isHolding = true;
         t = BeatController.GetBeat();
         damage = startDamage;
+        DmgNumber.curContinuousPlayerDamage = Mathf.RoundToInt(damage*10)/10f;
+        Global.Player.dmgNumber.StartPlayerDamageContinuous(maxHoldLength);
         //Debug.Log("startattack");
 //DEBUG 
         while(t < startTime + maxHoldLength){
             damage += DamageGain * (BeatController.GetBeat() - t);
+            DmgNumber.curContinuousPlayerDamage = Mathf.RoundToInt(damage*10)/10f;
             t = BeatController.GetBeat();
 
             //Global.Boss.ChangeBossHP(-damage);
