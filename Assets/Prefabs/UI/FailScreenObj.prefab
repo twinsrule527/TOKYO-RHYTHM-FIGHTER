@@ -503,6 +503,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8569826398355308436}
     m_Modifications:
+    - target: {fileID: 1109022042890642325, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2629414751402836163, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -567,18 +571,14 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 2.3
       objectReference: {fileID: 0}
+    - target: {fileID: 5871634102901519416, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6286357178842429133, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_Name
       value: ExitBubble
       objectReference: {fileID: 0}
-    - target: {fileID: 6575911127307147586, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
-      propertyPath: hover
-      value: 
-      objectReference: {fileID: 21300000, guid: 0024c4e7656df394691c2a27958fcf2f, type: 3}
-    - target: {fileID: 6575911127307147586, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
-      propertyPath: noHover
-      value: 
-      objectReference: {fileID: 21300000, guid: 0414050736a2ec14c986f49f023d7750, type: 3}
     - target: {fileID: 6575911127307147586, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: hoverScale.x
       value: 1.2
@@ -658,7 +658,7 @@ PrefabInstance:
     - target: {fileID: 7965719452491804473, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0414050736a2ec14c986f49f023d7750, type: 3}
+      objectReference: {fileID: 21300000, guid: 47034a5aad823df4886aa481ae107f65, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
 --- !u!1 &8419664612391360298 stripped
@@ -752,6 +752,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8569826398355308436}
     m_Modifications:
+    - target: {fileID: 1109022042890642325, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2629414751402836163, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -816,18 +820,14 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 2.3
       objectReference: {fileID: 0}
+    - target: {fileID: 5871634102901519416, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6286357178842429133, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_Name
       value: RetryBubble
       objectReference: {fileID: 0}
-    - target: {fileID: 6575911127307147586, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
-      propertyPath: hover
-      value: 
-      objectReference: {fileID: 21300000, guid: 0024c4e7656df394691c2a27958fcf2f, type: 3}
-    - target: {fileID: 6575911127307147586, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
-      propertyPath: noHover
-      value: 
-      objectReference: {fileID: 21300000, guid: 0414050736a2ec14c986f49f023d7750, type: 3}
     - target: {fileID: 6575911127307147586, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: hoverScale.x
       value: 1.2
@@ -891,7 +891,7 @@ PrefabInstance:
     - target: {fileID: 7965719452491804473, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0414050736a2ec14c986f49f023d7750, type: 3}
+      objectReference: {fileID: 21300000, guid: 47034a5aad823df4886aa481ae107f65, type: 3}
     - target: {fileID: 7965719452491804473, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_SortingOrder
       value: 7
@@ -1031,11 +1031,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5433375483438195776, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5433375483438195776, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871634102901519416, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6286357178842429133, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_Name
@@ -1061,6 +1065,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 7014922158103364701, guid: cbac001c6fd17ab42934a753d5ac9c9f, type: 2}
+    - target: {fileID: 7965719452491804473, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
+      propertyPath: m_Size.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7965719452491804473, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
+      propertyPath: m_Size.y
+      value: 1.75
+      objectReference: {fileID: 0}
     - target: {fileID: 7965719452491804473, guid: e9092656407d1a749a3bccff8b961a34, type: 3}
       propertyPath: m_SortingOrder
       value: 6
