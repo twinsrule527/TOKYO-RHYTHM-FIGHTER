@@ -996,7 +996,7 @@ MonoBehaviour:
   damage: 1
   baseDamage: 1
   startDamage: 0
-  DamageGain: 1
+  DamageGain: 5
   maxHoldLength: 2
 --- !u!1 &8597708211883435790
 GameObject:
