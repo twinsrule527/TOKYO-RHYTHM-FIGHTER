@@ -9,12 +9,18 @@ public class ProgressableBubble : ObjectButton
     [SerializeField] bool progressOnClickAnywhere = false;
     [SerializeField] bool hideOnClick = false;
 
+    [SerializeField] GameObject hideObjOnAppear;
+
     protected override void Start()
     {
         base.Start();
         if(progressOnClickAnywhere) {
             keys.Add(KeyCode.Mouse0);
         }
+        if(hideObjOnAppear != null) {
+            hideObjOnAppear.SetActive(false);
+        }
+        
     }
 
     public override void ButtonPressed()

@@ -12,16 +12,16 @@ public class ButtonKeySelector : MonoBehaviour
     [SerializeField] List<KeyCode> pressButton;
     [SerializeField] List<ObjectButton> buttons;
     int index = -1;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] bool ignoreWhenPaused = true;
 
     // Update is called once per frame
     void Update()
     {
+
+        if(ignoreWhenPaused && GameManager.paused) {
+            return;
+        }
+
         foreach(KeyCode key in plus) {
             if(Input.GetKeyDown(key)) {
                 int oldIndex = index;

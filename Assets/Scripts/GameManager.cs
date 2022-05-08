@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public static bool hasSeenOpeningCutscene = false;
 
     public static bool gameplayRunning = false;
+    public static bool paused = false;
 
     public static int currentStage; //The current stage that the boss is in
 
@@ -67,34 +68,35 @@ public class GameManager : MonoBehaviour
     }
 
     public static void GoToTitle() {
-        BeatController.UnPauseOutsideMenu();
-        SceneManager.LoadScene(0);
+        ChangeScene(0);
     }
 
     public static void GoToIntroCutscene() {
-        BeatController.UnPauseOutsideMenu();
-        SceneManager.LoadScene(1);
+        ChangeScene(1);
     }
 
     public static void StartFromIntroCutscene() {
-        BeatController.UnPauseOutsideMenu();
         hasSeenOpeningCutscene = true;
         GoToTutorial();
     }
 
     public static void GoToTutorial() {
-        BeatController.UnPauseOutsideMenu();
-        SceneManager.LoadScene(2);
+        ChangeScene(2);
     }
 
     public static void GoToGame() {
-        BeatController.UnPauseOutsideMenu();
-        SceneManager.LoadScene(3);
+        ChangeScene(3);
     }
 
     public static void GoToWin() {
+        ChangeScene(4);
+    }
+
+    static void ChangeScene(int id) {
         BeatController.UnPauseOutsideMenu();
-        SceneManager.LoadScene(4);
+        paused = false;
+        gameplayRunning = false;
+        SceneManager.LoadScene(id);
     }
 
     public static void QuitGame() {
@@ -104,13 +106,7 @@ public class GameManager : MonoBehaviour
 
     //restart the current scene 
     public static void RestartScene() {
-        BeatController.UnPauseOutsideMenu();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    //change to a specific scene 
-    public static void ChangeScene(string sceneName) {
-        SceneManager.LoadScene(sceneName);
+        ChangeScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     //this is the high level function called when the player wins
@@ -168,6 +164,7 @@ public class GameManager : MonoBehaviour
         gameplayRunning = false;
         Global.PauseScreen.SetActive(true);
         Global.UIManager.Pause();
+        paused = true;
         //todo pause coroutines
         //todo pause time?
     }
@@ -177,6 +174,7 @@ public class GameManager : MonoBehaviour
         Global.UIManager.UnPause();
         gameplayRunning = true;
         BeatController.UnPauseByMenu();
+        paused = false;
         //todo unpause coroutines 
         //todo pause time? 
         //AudioListener.pause = false;
