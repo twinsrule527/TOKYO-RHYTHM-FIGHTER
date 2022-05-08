@@ -290,7 +290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4117416162699704405, guid: d44e8d9e7f80bfd49addb597acc872e9, type: 3}
       propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_BoolArgument
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4117416162699704405, guid: d44e8d9e7f80bfd49addb597acc872e9, type: 3}
       propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -350,47 +350,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d44e8d9e7f80bfd49addb597acc872e9, type: 3}
---- !u!1 &188994581 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4117416162699704400, guid: d44e8d9e7f80bfd49addb597acc872e9, type: 3}
-  m_PrefabInstance: {fileID: 188994580}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &188994582 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4117416162004563233, guid: d44e8d9e7f80bfd49addb597acc872e9, type: 3}
-  m_PrefabInstance: {fileID: 188994580}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &188994583 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 4117416162004563232, guid: d44e8d9e7f80bfd49addb597acc872e9, type: 3}
-  m_PrefabInstance: {fileID: 188994580}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &188994584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 188994581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efc39dea3d2f54c40bb9e4f1005a11e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keys: 
-  functionToCall:
-    m_PersistentCalls:
-      m_Calls: []
-  spriteRenderer: {fileID: 188994583}
-  noHover: {fileID: 0}
-  hover: {fileID: 0}
-  scaleOnHover: {fileID: 188994582}
-  noHoverScale: {x: 1, y: 1, z: 1}
-  hoverScale: {x: 1.2, y: 1.2, z: 1}
-  increaseOrderInLayerBy: 0
-  nextObject: {fileID: 0}
-  progressOnClickAnywhere: 1
-  hideOnClick: 0
 --- !u!114 &325152121 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 815729832573062617, guid: 1c847fce25ad7ba49938433488bcb334, type: 3}
