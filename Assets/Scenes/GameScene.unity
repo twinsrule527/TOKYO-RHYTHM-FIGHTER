@@ -423,9 +423,21 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 2.2
       objectReference: {fileID: 0}
+    - target: {fileID: 2061011332637592238, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307189566980332284, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5225891158219648242, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5232053424396079819, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8569826398355308436, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
       propertyPath: m_RootOrder
