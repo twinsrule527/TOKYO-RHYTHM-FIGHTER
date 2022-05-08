@@ -51,11 +51,11 @@ public class ObjectButton : MonoBehaviour
         ButtonPressed();
     }
 
-    protected virtual void ButtonPressed() {
+    public virtual void ButtonPressed() {
         functionToCall.Invoke();
     }
 
-    void OnMouseEnter() {
+    public virtual void ButtonSelected() {
         spriteRenderer.sprite = hover;
         scaleOnHover.localScale = hoverScale;
         spriteRenderer.sortingOrder += increaseOrderInLayerBy;
@@ -64,13 +64,21 @@ public class ObjectButton : MonoBehaviour
         }
     }
 
-    void OnMouseExit() {
+    public virtual void ButtonDeselected() {
         spriteRenderer.sprite = noHover;
         scaleOnHover.localScale = noHoverScale;
         spriteRenderer.sortingOrder -= increaseOrderInLayerBy;
         foreach(TextMeshPro text in buttonText) {
             text.sortingOrder -= increaseOrderInLayerBy;
         }
+    }
+
+    void OnMouseEnter() {
+        ButtonSelected();
+    }
+
+    void OnMouseExit() {
+        ButtonDeselected();
     }
     
 }

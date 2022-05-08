@@ -693,6 +693,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78b9d7554c6128d43847c40badc1c523, type: 3}
+--- !u!114 &707919463 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8892179914041993511, guid: 78b9d7554c6128d43847c40badc1c523, type: 3}
+  m_PrefabInstance: {fileID: 707919462}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a991a5c04303b674ba5a2cce1e14f443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &775133225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,6 +1410,7 @@ GameObject:
   - component: {fileID: 1824136031}
   - component: {fileID: 1824136030}
   - component: {fileID: 1824136032}
+  - component: {fileID: 1824136033}
   m_Layer: 0
   m_Name: StartScene
   m_TagString: Untagged
@@ -1446,6 +1458,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enableIfSeenCutscene: {fileID: 170883542}
+--- !u!114 &1824136033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824136029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8717f5b5cb4ba9a45bccfa782eda69e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plus: 7700000011010000
+  minus: 7300000012010000
+  pressButton: 0d0000001301000064000000
+  buttons:
+  - {fileID: 2928123969360719281}
+  - {fileID: 707919463}
 --- !u!1001 &2928123969360719280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1511,11 +1541,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2928123967641673926, guid: 8291044063db9d24cb4068092fcbb1d0, type: 3}
       propertyPath: keys.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2928123967641673926, guid: 8291044063db9d24cb4068092fcbb1d0, type: 3}
       propertyPath: keys.Array.data[0]
-      value: 13
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 2928123967641673926, guid: 8291044063db9d24cb4068092fcbb1d0, type: 3}
       propertyPath: keys.Array.data[1]
@@ -1539,6 +1569,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8291044063db9d24cb4068092fcbb1d0, type: 3}
+--- !u!114 &2928123969360719281 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2928123967641673926, guid: 8291044063db9d24cb4068092fcbb1d0, type: 3}
+  m_PrefabInstance: {fileID: 2928123969360719280}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a991a5c04303b674ba5a2cce1e14f443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6918031141690386669
 PrefabInstance:
   m_ObjectHideFlags: 0
