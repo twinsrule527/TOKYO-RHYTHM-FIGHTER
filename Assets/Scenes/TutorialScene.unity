@@ -1825,5 +1825,9 @@ PrefabInstance:
       propertyPath: startPosTransform
       value: 
       objectReference: {fileID: 939833469}
+    - target: {fileID: 8793661838122029259, guid: d6ffd0b468e23514694b9673f3adffd6, type: 3}
+      propertyPath: hurtEnabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6ffd0b468e23514694b9673f3adffd6, type: 3}
