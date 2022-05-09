@@ -27,10 +27,8 @@ public class A_and_Tutorial_BossAI : BossAI
 
     public override void StartStage(int stageNum) {
         //During the tutorial, the boss' health resets when they enter a new stage
-        if(Global.Tutorial) {
-            Global.Boss.SetBossHP(Global.Boss.BossStartingHPArray[stageNum]);
-        }
-        Debug.Log(stageNum);
+        Global.Boss.SetBossHP(Global.Boss.BossStartingHPArray[stageNum]);
+        Debug.Log("CurrentStage: " + stageNum);
         Global.Boss.currentStageStartingHP = Global.Boss.BossStartingHPArray[stageNum];
     }
 }

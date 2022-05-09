@@ -42,8 +42,10 @@ public class TutorialStage : MonoBehaviour
     }
 
     public virtual bool CheckStageChange() {
+        Debug.Log(Global.Boss.AttackAI.StageChangeHP[Global.TutorialManager.CurrentStage]);
         //If it's in a position to go to the next stage, it does
-        if(Global.Boss.bossHP < Global.Boss.AttackAI.StageChangeHP[GameManager.currentStage]) {
+        if(Global.Boss.bossHP < Global.Boss.AttackAI.StageChangeHP[Global.TutorialManager.CurrentStage]) {
+
             //During the tutorial, the boss goes to the next stage after a button is pressed
            return true;
         }
