@@ -49,9 +49,9 @@ public class BeatController : MonoBehaviour
 
     //accuracy thresholds, in seconds 
     //will be converted into fractions of beats on start. 
-    static float secondsMINIMUM = 0.17f;
-    static float secondsGREAT = 0.10f;
-    static float secondsPERFECT = 0.04f;
+    static float secondsMINIMUM = 0.16f;
+    static float secondsGREAT = 0.95f;
+    static float secondsPERFECT = 0.035f;
 
 
     //// Beat accuracies! 
