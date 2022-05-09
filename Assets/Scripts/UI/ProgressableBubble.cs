@@ -9,6 +9,8 @@ public class ProgressableBubble : ObjectButton
     [SerializeField] bool progressOnClickAnywhere = false;
     [SerializeField] bool hideOnClick = false;
 
+    [SerializeField] GameObject hideObjOnAppear;
+
     protected override void Start()
     {
         base.Start();
@@ -29,6 +31,9 @@ public class ProgressableBubble : ObjectButton
         
         if(hideOnClick) {
             this.gameObject.SetActive(false);
+        }
+        if(hideObjOnAppear != null) {
+            hideObjOnAppear.SetActive(false);
         }
     }
 }

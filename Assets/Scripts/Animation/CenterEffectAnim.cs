@@ -12,7 +12,7 @@ public class CenterEffectAnim : MonoBehaviour
     {
         if (effectList.Count > 0)
         {
-            Camera.main.gameObject.GetComponent<Shake>().ShakeIt(1.2f, 0.2f, 50f);
+            Camera.main.gameObject.GetComponent<Shake>().ShakeIt(0.5f, 0.2f, 50f);
             StartCoroutine(PlayAnimation());
         }
     }
