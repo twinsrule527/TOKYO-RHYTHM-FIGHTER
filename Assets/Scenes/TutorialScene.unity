@@ -388,6 +388,7 @@ MonoBehaviour:
   noHoverScale: {x: 1, y: 1, z: 1}
   hoverScale: {x: 1.2, y: 1.2, z: 1}
   increaseOrderInLayerBy: 0
+  changeSprite: 1
   nextObject: {fileID: 0}
   progressOnClickAnywhere: 1
   hideOnClick: 0
@@ -1789,7 +1790,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5682163076444737984, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5715094812503075057, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
       propertyPath: m_IsActive
