@@ -49,9 +49,9 @@ public class BeatController : MonoBehaviour
 
     //accuracy thresholds, in seconds 
     //will be converted into fractions of beats on start. 
-    static float secondsMINIMUM = 0.17f;
-    static float secondsGREAT = 0.10f;
-    static float secondsPERFECT = 0.04f;
+    static float secondsMINIMUM = 0.16f;
+    static float secondsGREAT = 0.95f;
+    static float secondsPERFECT = 0.035f;
 
 
     //// Beat accuracies! 
@@ -272,6 +272,12 @@ public class BeatController : MonoBehaviour
 
         double timeLeft = secToSlowToStop;
         float lastBeat = GetBeat() - (float)baselineBeat;
+        SpriteRenderer fade2white = null;
+
+        if(!fail) {
+            fade2white = GameObject.FindGameObjectWithTag("Fade2White").GetComponent<SpriteRenderer>(); 
+            fade2white.enabled = true;
+        }
 
          while(1 == 1) {
 
@@ -289,6 +295,11 @@ public class BeatController : MonoBehaviour
                 //wind down speed of beat and things dependent on it
                 double currentTime = AudioSettings.dspTime - songStartTime;
                 secPerBeat = ((currentTime / lastBeat) - secPerBeat) * (1 - percent) + secPerBeat;
+
+                if(!fail) {
+                    //fade 2 white
+                    fade2white.color = new Color(1f, 1f, 1f, (float)(1 - percent));
+                }
 
             } else {
 
