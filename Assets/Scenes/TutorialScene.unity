@@ -891,6 +891,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 970594237769943624, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: fishEnabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4086836469007911517, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: holdObj
       value: 
