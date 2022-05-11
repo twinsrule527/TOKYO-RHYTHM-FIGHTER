@@ -388,6 +388,7 @@ MonoBehaviour:
   noHoverScale: {x: 1, y: 1, z: 1}
   hoverScale: {x: 1.2, y: 1.2, z: 1}
   increaseOrderInLayerBy: 0
+  changeSprite: 1
   nextObject: {fileID: 0}
   progressOnClickAnywhere: 1
   hideOnClick: 0
@@ -1631,6 +1632,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3405009835232009817, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
+      propertyPath: m_SortingOrder
+      value: 41
+      objectReference: {fileID: 0}
     - target: {fileID: 3734274132797768995, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1771,6 +1776,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.77
       objectReference: {fileID: 0}
+    - target: {fileID: 5280683760628374947, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
+      propertyPath: m_SortingOrder
+      value: 41
+      objectReference: {fileID: 0}
     - target: {fileID: 5438449915891339085, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1789,7 +1798,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5682163076444737984, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5715094812503075057, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
       propertyPath: m_IsActive
@@ -1918,6 +1927,10 @@ PrefabInstance:
     - target: {fileID: 7743075183747957840, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7830649205336814861, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
+      propertyPath: m_SortingOrder
+      value: 41
       objectReference: {fileID: 0}
     - target: {fileID: 7926324946183932471, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
       propertyPath: m_LocalPosition.y
