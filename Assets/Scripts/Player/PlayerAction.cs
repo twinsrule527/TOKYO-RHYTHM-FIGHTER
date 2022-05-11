@@ -15,6 +15,7 @@ public class PlayerAction : MonoBehaviour
     [SerializeField] protected KeyCode key;
     [SerializeField] protected ActionIndicator myActionIndicator;
     [SerializeField] private bool isComboable = true;
+    [SerializeField] protected bool isAttack;//WHether or not this action is an attack
     public bool IsComboable {
         get {
             return isComboable;
@@ -62,7 +63,27 @@ public class PlayerAction : MonoBehaviour
             
             //if we're on beat 
             Accuracy curAccuracy = BeatController.GetAccuracy(beatFraction);
-            Global.Player.spriteController.DisplayAccuracy(curAccuracy);
+            //Not being an attack can always be on beat
+            if(!isAttack) {
+                Global.Player.spriteController.DisplayAccuracy(curAccuracy);
+            }
+            else {
+                //Otherwise, it needs to check to see if the boss is attacking
+                if(BeatController.GetNearestBeat() != Global.Boss.AttackAI.AttackBeatHitOn || Global.Boss.AttackAI.CurrentAttackOutgoing.GetComponent<WaitAttack>() != null) {
+                    Global.Player.spriteController.DisplayAccuracy(curAccuracy);
+                }
+                //if you attack on the boss' attack, it displays "messup"
+                else {
+                    //If offbeat, displays correct offbeat accuracy
+                    if(!BeatController.IsOnBeat(beatFraction))  {
+                        Global.Player.spriteController.DisplayAccuracy(curAccuracy);
+                    }
+                    //otherwise, displays messup
+                    else {  
+                        Global.Player.spriteController.DisplayMessup();
+                    }
+                }
+            }
             if(BeatController.IsOnBeat(beatFraction)) {//curAccuracy.priority > 0) {
                 
                 Success();

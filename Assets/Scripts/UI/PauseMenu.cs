@@ -15,11 +15,12 @@ public class PauseMenu : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        foreach(KeyCode key in pauseKeys) {
-            if(Input.GetKeyDown(key)) {
-                GameManager.Pause();
-                Global.PauseScreen.GetComponent<AudioSource>().Play();
+    {   if(GameManager.paused == false) {
+            foreach(KeyCode key in pauseKeys) {
+                if(Input.GetKeyDown(key)) {
+                    GameManager.Pause();
+                    Global.PauseScreen.GetComponent<AudioSource>().Play();
+                }
             }
         }
     }
