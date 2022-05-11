@@ -11,7 +11,7 @@ public class ParryAction : PlayerAction
         Global.Player.spriteController.Parry();
         Global.CenterEffectManager.CallCenterEffect(CenterEffect.Harmonizes);
         //Check to see if the boss is attacking - if they aren't, the combo breaks
-        if(BeatController.GetNearestBeat() != Global.Boss.AttackAI.AttackBeatHitOn){
+        if(BeatController.GetNearestBeat() != Global.Boss.AttackAI.AttackBeatHitOn || Global.Boss.AttackAI.CurrentAttackOutgoing.GetComponent<WaitAttack>() != null){
             Global.ComboIndicator.SetCombo(0);
         }
     }
