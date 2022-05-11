@@ -192,8 +192,12 @@ PrefabInstance:
       objectReference: {fileID: 1660627290}
     - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: hideOnClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: hideObjOnAppear
+      value: 
+      objectReference: {fileID: 2074822978}
     - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
@@ -279,8 +283,12 @@ PrefabInstance:
       objectReference: {fileID: 1155640198}
     - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: hideOnClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: hideObjOnAppear
+      value: 
+      objectReference: {fileID: 1855527010}
     - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
@@ -366,8 +374,12 @@ PrefabInstance:
       objectReference: {fileID: 793971229}
     - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: hideOnClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: hideObjOnAppear
+      value: 
+      objectReference: {fileID: 1660627290}
     - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
@@ -493,8 +505,12 @@ PrefabInstance:
       objectReference: {fileID: 1855527010}
     - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: hideOnClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: hideObjOnAppear
+      value: 
+      objectReference: {fileID: 697929161}
     - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
@@ -544,8 +560,12 @@ PrefabInstance:
       objectReference: {fileID: 1836055292}
     - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: hideOnClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: hideObjOnAppear
+      value: 
+      objectReference: {fileID: 1967265070}
     - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
@@ -707,7 +727,7 @@ PrefabInstance:
       objectReference: {fileID: 2076612755}
     - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: hideOnClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: progressOnClickAnywhere
@@ -1017,7 +1037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3777000093022217756, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.96
+      value: 5.26
       objectReference: {fileID: 0}
     - target: {fileID: 3777000093022217756, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1073,7 +1093,7 @@ PrefabInstance:
       objectReference: {fileID: 697929161}
     - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: hideOnClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: progressOnClickAnywhere
@@ -1189,8 +1209,12 @@ PrefabInstance:
       objectReference: {fileID: 286031244}
     - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: hideOnClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: hideObjOnAppear
+      value: 
+      objectReference: {fileID: 102645438}
     - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
@@ -1508,8 +1532,12 @@ PrefabInstance:
       objectReference: {fileID: 207685450}
     - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: hideOnClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: hideObjOnAppear
+      value: 
+      objectReference: {fileID: 307757178}
     - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
@@ -1667,8 +1695,12 @@ PrefabInstance:
       objectReference: {fileID: 2074822978}
     - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: hideOnClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: hideObjOnAppear
+      value: 
+      objectReference: {fileID: 2076612755}
     - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
@@ -1735,8 +1767,12 @@ PrefabInstance:
       objectReference: {fileID: 102645438}
     - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: hideOnClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: hideObjOnAppear
+      value: 
+      objectReference: {fileID: 1836055292}
     - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
@@ -1901,6 +1937,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e007a0ed20ee67a458dca4306b2bd67d, type: 3}
+--- !u!1 &1967265070 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5128113262136397842, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+  m_PrefabInstance: {fileID: 698568651}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2074822976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1914,8 +1955,12 @@ PrefabInstance:
       objectReference: {fileID: 307757178}
     - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: hideOnClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: hideObjOnAppear
+      value: 
+      objectReference: {fileID: 929848230}
     - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
@@ -2001,7 +2046,7 @@ PrefabInstance:
       objectReference: {fileID: 929848230}
     - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: hideOnClick
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: progressOnClickAnywhere
