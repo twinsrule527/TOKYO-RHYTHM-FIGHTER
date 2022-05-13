@@ -7,6 +7,9 @@ public class HurtAnimation : MonoBehaviour
     [SerializeField] private float hurtTime;
     [SerializeField] private SpriteRenderer baseRenderer;
     [SerializeField] private SpriteRenderer hurtRenderer;
+    [SerializeField] private SpriteRenderer fishRenderer;
+    [SerializeField] private bool fishEnabled;
+    [SerializeField] private float fishPercentileChance;
     public bool hurtEnabled = true;
 
      SpriteRenderer sprite;
@@ -28,13 +31,20 @@ public class HurtAnimation : MonoBehaviour
         //Switches the spriterenderer being used for the length of the hurt animation
 
         //TODO: Add ability to have the hurt animation lerp
-        hurtRenderer.enabled = true;
+        SpriteRenderer rendererToEnable = hurtRenderer;
+        if(fishEnabled) {
+            float rnd =Random.Range(0f, 1f);
+            if(rnd < fishPercentileChance) {
+                rendererToEnable = fishRenderer;
+            }
+        }
+        rendererToEnable.enabled = true;
         // Change the 'color' property of the 'Sprite Renderer'
         //sprite.color = new Color (255, 1, 1, 1); 
 
         baseRenderer.enabled = false;
         yield return BeatController.WaitForBeat(BeatController.GetBeat() + hurtTime);
-        hurtRenderer.enabled = false;
+        rendererToEnable.enabled = false;
         baseRenderer.enabled = true;
     }
 }

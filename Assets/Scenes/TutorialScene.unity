@@ -891,6 +891,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 970594237769943624, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: fishEnabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4086836469007911517, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: holdObj
       value: 
@@ -1792,6 +1796,18 @@ PrefabInstance:
       propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1259916517}
+    - target: {fileID: 5553926364679398792, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
+      propertyPath: m_margin.x
+      value: -0.3594699
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553926364679398792, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
+      propertyPath: m_margin.y
+      value: -0.2230717
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553926364679398792, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
+      propertyPath: m_margin.z
+      value: -0.39257687
+      objectReference: {fileID: 0}
     - target: {fileID: 5661061886223232254, guid: ff64609538d38704fb436bb2cb01b6ab, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1
