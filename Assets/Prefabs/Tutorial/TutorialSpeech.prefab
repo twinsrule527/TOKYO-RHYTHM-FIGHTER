@@ -111,6 +111,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3166659926186184363}
+  - {fileID: 326349465192013650}
   m_Father: {fileID: 3991341046704215828}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -179,6 +180,7 @@ Transform:
   m_Children:
   - {fileID: 909506096576118928}
   - {fileID: 477146449774720945}
+  - {fileID: 6393847887751301611}
   m_Father: {fileID: 3991341046704215828}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -222,6 +224,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3835908173518716083}
     m_Modifications:
+    - target: {fileID: 320853467702290491, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4999999
+      objectReference: {fileID: 0}
     - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: nextObject
       value: 
@@ -236,12 +242,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1741059329485683382, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2422715679977235266, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_Size.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2422715679977235266, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_Size.y
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 3100722539664060058, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: m_text
-      value: "If I want to make this band work, I\u2019ll have to harmonize with
-        her notes on the fly. \r"
+      value: "I can hear Sforzanda warming up too. \r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100722539664060058, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_margin.x
+      value: -0.25371307
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100722539664060058, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_margin.z
+      value: -0.2706281
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643445533941018606, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.28
       objectReference: {fileID: 0}
     - target: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: m_RootOrder
@@ -384,18 +409,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7192227350518034973, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
       propertyPath: m_text
-      value: "Playing your own notes with Z or X won\u2019t harmonize. \r"
+      value: "Tap (C) to harmonize with Sforzanda\u2019s incoming notes when they
+        hit the center.\r"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
---- !u!4 &2733963608624189816 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2567408486828183615, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
-  m_PrefabInstance: {fileID: 455348447970869575}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6246724884266428278 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5828056145878541873, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+  m_PrefabInstance: {fileID: 455348447970869575}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2733963608624189816 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2567408486828183615, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
   m_PrefabInstance: {fileID: 455348447970869575}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1379564964340260331
@@ -475,7 +501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7192227350518034973, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
       propertyPath: m_text
-      value: "Hitting multiple notes in a row will build up a combo.\r"
+      value: "If I can keep a groove going, that\u2019ll really show her. \r"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
@@ -562,8 +588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7192227350518034973, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
       propertyPath: m_text
-      value: "Harmonizing keeps up a combo, but only if you\u2019re harmonizing with
-        one of Sforzanda\u2019s notes.\r"
+      value: "I can\u2019t miss anything she throws at me!\r"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
@@ -650,18 +675,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7192227350518034973, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
       propertyPath: m_text
-      value: "Hold 'X' for 2 beats to hold a longer note.\r"
+      value: "Hold (X) for 2 beats to hold a long note.\r"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
---- !u!1 &8493512293609488831 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5828056145878541873, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
-  m_PrefabInstance: {fileID: 2683703655661479822}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &477146449774720945 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2567408486828183615, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+  m_PrefabInstance: {fileID: 2683703655661479822}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8493512293609488831 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5828056145878541873, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
   m_PrefabInstance: {fileID: 2683703655661479822}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3037464815802277950
@@ -689,8 +714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3100722539664060058, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: m_text
-      value: "I can\u2019t let any of her notes go un-harmonized with, or I\u2019ll
-        make a fool of myself!\r"
+      value: "Playing your own notes with (Z) or (X) won't harmonize with hers.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: m_RootOrder
@@ -833,7 +857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7192227350518034973, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
       propertyPath: m_text
-      value: "Tap 'Z' on the beat to play a note.\r"
+      value: "Tap (Z) on the beat to play a note.\r"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
@@ -950,8 +974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3100722539664060058, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: m_text
-      value: "Here she comes. I\u2019ll have to combine my own notes with harmonizing
-        with hers to show her we can make this band work! \r"
+      value: "Harmonizing keeps up a combo, but failing to do so ends one!\r"
       objectReference: {fileID: 0}
     - target: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: m_RootOrder
@@ -1089,8 +1112,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7192227350518034973, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
       propertyPath: m_text
-      value: "Tap C to harmonize with Sforzanda\u2019s incoming notes when they hit
-        the center.\r"
+      value: "If I want to make this band work, I\u2019ll have to improvise and harmonize
+        with her notes on the fly. \r"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
@@ -1129,7 +1152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3100722539664060058, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: m_text
-      value: "I can hear Sforzanda warming up too. \r"
+      value: "Try a 2-beat hold (X) immediately followed by a tap (Z)! \r"
       objectReference: {fileID: 0}
     - target: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: m_RootOrder
@@ -1263,7 +1286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7192227350518034973, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
       propertyPath: m_text
-      value: "Try a 2-beat hold immediately followed by a tap! \r"
+      value: "Missing a note will end a combo.\r"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
@@ -1302,7 +1325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3100722539664060058, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: m_text
-      value: "If I can keep a groove going, that\u2019ll really show her. \r"
+      value: "You're freestyling. You choose when to Tap (Z) or Hold (X). \r"
       objectReference: {fileID: 0}
     - target: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: m_RootOrder
@@ -1436,7 +1459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7192227350518034973, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
       propertyPath: m_text
-      value: "Press 'SPACE' to continue.\r"
+      value: "Press 'SPACE' to move on.\r"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
@@ -1470,7 +1493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3100722539664060058, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: m_text
-      value: "Yep, I'm in tune. Now for some longer notes.\r"
+      value: "Yep, I'm in tune. Now for some longer, badder notes.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: m_RootOrder
@@ -1530,6 +1553,120 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
   m_PrefabInstance: {fileID: 7491285534267903016}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8065453687488631786
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 393033617824333751}
+    m_Modifications:
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: nextObject
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: hideOnClick
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetDialogueFinished
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TutorialManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741059329485683382, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_Name
+      value: SpeechBubbleProtag (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741059329485683382, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100722539664060058, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_text
+      value: "Here she comes. \r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+--- !u!4 &326349465192013650 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+  m_PrefabInstance: {fileID: 8065453687488631786}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8091069263247370559
 PrefabInstance:
@@ -1608,7 +1745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7192227350518034973, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
       propertyPath: m_text
-      value: "Missing a note will end a combo.\r"
+      value: "Hitting multiple notes in a row will build up a combo.\r"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
@@ -1621,4 +1758,114 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5828056145878541873, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
   m_PrefabInstance: {fileID: 8091069263247370559}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8870620865142446548
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4945565375090595278}
+    m_Modifications:
+    - target: {fileID: 2567408486828183615, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567408486828183615, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567408486828183615, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567408486828183615, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567408486828183615, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567408486828183615, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567408486828183615, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567408486828183615, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567408486828183615, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567408486828183615, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567408486828183615, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567408486828183615, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567408486828183615, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5828056145878541873, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+      propertyPath: m_Name
+      value: SpeechBubbleGame (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5828056145878541873, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6673946485321632190, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+      propertyPath: hideOnClick
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6673946485321632190, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+      propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6673946485321632190, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+      propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6673946485321632190, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+      propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6673946485321632190, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+      propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6673946485321632190, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+      propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetDialogueFinished
+      objectReference: {fileID: 0}
+    - target: {fileID: 6673946485321632190, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+      propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TutorialManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6673946485321632190, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+      propertyPath: functionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192227350518034973, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+      propertyPath: m_text
+      value: "You're freestyling. You choose when to Tap (Z) or Hold (X). \r"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+--- !u!4 &6393847887751301611 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2567408486828183615, guid: b18c53e748fed3643a8871dacd6b8a28, type: 3}
+  m_PrefabInstance: {fileID: 8870620865142446548}
   m_PrefabAsset: {fileID: 0}

@@ -21,10 +21,13 @@ public class ObjectButton : MonoBehaviour
     [SerializeField] Vector3 hoverScale = new Vector3(1.2f, 1.2f, 1f);
 
     [SerializeField] int increaseOrderInLayerBy = 0;
+    int originalSortOrder;
     TextMeshPro [] buttonText;
+    [SerializeField] bool changeSprite = true;
 
     protected virtual void Start() {
         buttonText = GetComponentsInChildren<TextMeshPro>();
+        originalSortOrder = spriteRenderer.sortingOrder;
         if(hover == null) {
             hover = spriteRenderer.sprite;
         }
@@ -51,12 +54,14 @@ public class ObjectButton : MonoBehaviour
         ButtonPressed();
     }
 
-    protected virtual void ButtonPressed() {
+    public virtual void ButtonPressed() {
         functionToCall.Invoke();
     }
 
-    void OnMouseEnter() {
-        spriteRenderer.sprite = hover;
+    public virtual void ButtonSelected() {
+        if(changeSprite) {
+            spriteRenderer.sprite = hover;
+        }
         scaleOnHover.localScale = hoverScale;
         spriteRenderer.sortingOrder += increaseOrderInLayerBy;
         foreach(TextMeshPro text in buttonText) {
@@ -64,13 +69,25 @@ public class ObjectButton : MonoBehaviour
         }
     }
 
-    void OnMouseExit() {
-        spriteRenderer.sprite = noHover;
-        scaleOnHover.localScale = noHoverScale;
-        spriteRenderer.sortingOrder -= increaseOrderInLayerBy;
-        foreach(TextMeshPro text in buttonText) {
-            text.sortingOrder -= increaseOrderInLayerBy;
+    public virtual void ButtonDeselected() {
+        if(changeSprite) {
+            spriteRenderer.sprite = noHover;
         }
+        scaleOnHover.localScale = noHoverScale;
+        if(spriteRenderer.sortingOrder > originalSortOrder) {
+            spriteRenderer.sortingOrder -= increaseOrderInLayerBy;
+            foreach(TextMeshPro text in buttonText) {
+                text.sortingOrder -= increaseOrderInLayerBy;
+            }
+        }
+    }
+
+    void OnMouseEnter() {
+        ButtonSelected();
+    }
+
+    void OnMouseExit() {
+        ButtonDeselected();
     }
     
 }

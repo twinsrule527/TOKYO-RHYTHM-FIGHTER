@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -174,6 +174,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4713908992194024167, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5128113262136397842, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: m_Name
       value: SpeechBubbleBoss (4)
@@ -186,6 +190,14 @@ PrefabInstance:
       propertyPath: nextObject
       value: 
       objectReference: {fileID: 1660627290}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: hideOnClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: hideObjOnAppear
+      value: 
+      objectReference: {fileID: 2074822978}
     - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
@@ -253,6 +265,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4713908992194024167, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5128113262136397842, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: m_Name
       value: SpeechBubbleBoss (5)
@@ -265,6 +281,14 @@ PrefabInstance:
       propertyPath: nextObject
       value: 
       objectReference: {fileID: 1155640198}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: hideOnClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: hideObjOnAppear
+      value: 
+      objectReference: {fileID: 1855527010}
     - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
@@ -332,6 +356,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4713908992194024167, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5128113262136397842, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: m_Name
       value: SpeechBubbleBoss (6)
@@ -344,6 +372,14 @@ PrefabInstance:
       propertyPath: nextObject
       value: 
       objectReference: {fileID: 793971229}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: hideOnClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: hideObjOnAppear
+      value: 
+      objectReference: {fileID: 1660627290}
     - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
@@ -399,6 +435,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 729578748}
     m_Modifications:
+    - target: {fileID: 2266189086642275658, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 3438364395255914461, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.21
+      objectReference: {fileID: 0}
     - target: {fileID: 3777000093022217756, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -443,6 +487,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4713908992194024167, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5128113262136397842, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: m_Name
       value: SpeechBubbleBoss (3)
@@ -456,8 +504,36 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1855527010}
     - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: hideOnClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: hideObjOnAppear
+      value: 
+      objectReference: {fileID: 697929161}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359861042686886974, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_margin.x
+      value: -0.18693018
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359861042686886974, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_margin.y
+      value: -0.3459952
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359861042686886974, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_margin.z
+      value: -0.1687243
+      objectReference: {fileID: 0}
+    - target: {fileID: 9123445091381037542, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_Size.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9123445091381037542, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_Size.y
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
@@ -483,6 +559,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1836055292}
     - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: hideOnClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: hideObjOnAppear
+      value: 
+      objectReference: {fileID: 1967265070}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
       objectReference: {fileID: 0}
@@ -493,6 +577,22 @@ PrefabInstance:
     - target: {fileID: 1741059329485683382, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191248244170635331, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2422715679977235266, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_Size.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2422715679977235266, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_Size.y
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643445533941018606, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.36
       objectReference: {fileID: 0}
     - target: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: m_RootOrder
@@ -557,6 +657,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 729578748}
     m_Modifications:
+    - target: {fileID: 2266189086642275658, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 3438364395255914461, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1.25
+      objectReference: {fileID: 0}
     - target: {fileID: 3777000093022217756, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -601,17 +709,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4713908992194024167, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5128113262136397842, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: m_Name
       value: SpeechBubbleBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 5128113262136397842, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: nextObject
       value: 
       objectReference: {fileID: 2076612755}
     - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: hideOnClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6588816199811547807, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 6588816199811547807, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9123445091381037542, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9123445091381037542, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_Size.y
+      value: 1.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
@@ -883,13 +1019,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 729578748}
     m_Modifications:
+    - target: {fileID: 2266189086642275658, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 3438364395255914461, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3438364395255914461, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3777000093022217756, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3777000093022217756, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.96
+      value: 5.26
       objectReference: {fileID: 0}
     - target: {fileID: 3777000093022217756, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -927,6 +1075,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4713908992194024167, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5128113262136397842, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: m_Name
       value: SpeechBubbleBoss (1)
@@ -940,8 +1092,36 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 697929161}
     - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: hideOnClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6588816199811547807, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6588816199811547807, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359861042686886974, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_margin.x
+      value: -0.32771254
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359861042686886974, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_margin.z
+      value: -0.3641262
+      objectReference: {fileID: 0}
+    - target: {fileID: 9123445091381037542, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_Size.x
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9123445091381037542, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_Size.y
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
@@ -1028,6 +1208,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 286031244}
     - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: hideOnClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: hideObjOnAppear
+      value: 
+      objectReference: {fileID: 102645438}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
       objectReference: {fileID: 0}
@@ -1038,6 +1226,22 @@ PrefabInstance:
     - target: {fileID: 1741059329485683382, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191248244170635331, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2422715679977235266, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_Size.x
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2422715679977235266, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643445533941018606, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.36
       objectReference: {fileID: 0}
     - target: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: m_RootOrder
@@ -1327,6 +1531,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 207685450}
     - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: hideOnClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: hideObjOnAppear
+      value: 
+      objectReference: {fileID: 307757178}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
       objectReference: {fileID: 0}
@@ -1335,6 +1547,10 @@ PrefabInstance:
       value: SpeechBubbleProtag (4)
       objectReference: {fileID: 0}
     - target: {fileID: 1741059329485683382, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191248244170635331, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -1401,6 +1617,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 729578748}
     m_Modifications:
+    - target: {fileID: 2266189086642275658, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 3438364395255914461, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3438364395255914461, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 3438364395255914461, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.32
+      objectReference: {fileID: 0}
     - target: {fileID: 3777000093022217756, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1445,6 +1677,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4713908992194024167, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5128113262136397842, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: m_Name
       value: SpeechBubbleBoss (2)
@@ -1458,8 +1694,53 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2074822978}
     - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: hideOnClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: hideObjOnAppear
+      value: 
+      objectReference: {fileID: 2076612755}
+    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6588816199811547807, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 6588816199811547807, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359861042686886974, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_text
+      value: "What is there to figure out? The Rhythm Fighters is dead. We were all
+        just too different\u2026 wanted different things\u2026 different music\u2026\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359861042686886974, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_margin.x
+      value: -0.32625175
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359861042686886974, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_margin.y
+      value: -0.5645194
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359861042686886974, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_margin.z
+      value: 0.30395842
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359861042686886974, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 9123445091381037542, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_Size.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9123445091381037542, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+      propertyPath: m_Size.y
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
@@ -1485,6 +1766,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 102645438}
     - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: hideOnClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: hideObjOnAppear
+      value: 
+      objectReference: {fileID: 1836055292}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
       objectReference: {fileID: 0}
@@ -1493,6 +1782,10 @@ PrefabInstance:
       value: SpeechBubbleProtag (3)
       objectReference: {fileID: 0}
     - target: {fileID: 1741059329485683382, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191248244170635331, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -1644,6 +1937,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e007a0ed20ee67a458dca4306b2bd67d, type: 3}
+--- !u!1 &1967265070 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5128113262136397842, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
+  m_PrefabInstance: {fileID: 698568651}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2074822976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1656,6 +1954,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 307757178}
     - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: hideOnClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: hideObjOnAppear
+      value: 
+      objectReference: {fileID: 929848230}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
       objectReference: {fileID: 0}
@@ -1664,6 +1970,10 @@ PrefabInstance:
       value: SpeechBubbleProtag (2)
       objectReference: {fileID: 0}
     - target: {fileID: 1741059329485683382, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191248244170635331, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -1735,6 +2045,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 929848230}
     - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: hideOnClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465509241645225273, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
       objectReference: {fileID: 0}
@@ -1746,17 +2060,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2191248244170635331, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643445533941018606, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.81
+      objectReference: {fileID: 0}
     - target: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.59
+      value: -2.7
       objectReference: {fileID: 0}
     - target: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.09
+      value: 1.57
       objectReference: {fileID: 0}
     - target: {fileID: 7739808115909414072, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
       propertyPath: m_LocalPosition.z

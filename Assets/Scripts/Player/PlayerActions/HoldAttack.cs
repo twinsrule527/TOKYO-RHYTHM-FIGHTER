@@ -114,10 +114,13 @@ public class HoldAttack : PlayerAction
         isHolding = true;
         t = BeatController.GetBeat();
         damage = startDamage;
+        DmgNumber.curContinuousPlayerDamage = Mathf.RoundToInt(damage*10)/10f;
+        Global.Player.dmgNumber.StartPlayerDamageContinuous(maxHoldLength);
         //Debug.Log("startattack");
 //DEBUG 
         while(t < startTime + maxHoldLength){
             damage += DamageGain * (BeatController.GetBeat() - t);
+            DmgNumber.curContinuousPlayerDamage = Mathf.RoundToInt(damage*10)/10f;
             t = BeatController.GetBeat();
 
             //Global.Boss.ChangeBossHP(-damage);
@@ -133,7 +136,7 @@ public class HoldAttack : PlayerAction
         //Damage is comboed
         damage = ComboIndicator.comboMultiplier(damage);
         damage= Mathf.Round(damage);
-
+        Global.CenterEffectManager.CallCenterEffect(CenterEffect.PlayerHits);
         Global.Boss.ChangeVisualBossHP(-damage);
         Global.Boss.ChangeBossHP(-damage);
         
@@ -149,7 +152,7 @@ public class HoldAttack : PlayerAction
     }
     //have a function that controls HoldCourotine
     void MessupHold(){//DEBUG
-        
+
         damage = ComboIndicator.comboMultiplier(damage);
         damage= Mathf.Round(damage);
         Global.Boss.ChangeBossHP(-damage);

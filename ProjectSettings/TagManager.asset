@@ -9,6 +9,7 @@ TagManager:
   - CenterHealth
   - PlayerHealth
   - PauseScreenObj
+  - Fade2White
   layers:
   - Default
   - TransparentFX
