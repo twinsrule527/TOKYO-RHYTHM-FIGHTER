@@ -165,6 +165,7 @@ public class GameManager : MonoBehaviour
         gameplayRunning = false;
         Global.PauseScreen.SetActive(true);
         Global.UIManager.Pause();
+        Global.ComboIndicator.Pause();
         paused = true;
         //todo pause coroutines
         //todo pause time?
@@ -175,6 +176,7 @@ public class GameManager : MonoBehaviour
         Global.UIManager.UnPause();
         gameplayRunning = true;
         BeatController.UnPauseByMenu();
+        Global.ComboIndicator.Unpause();
         paused = false;
         //todo unpause coroutines 
         //todo pause time? 

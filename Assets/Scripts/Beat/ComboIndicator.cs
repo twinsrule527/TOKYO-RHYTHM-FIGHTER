@@ -85,6 +85,20 @@ public class ComboIndicator : MonoBehaviour
 
     }
 
+    bool enabledBeforePause = false;
+    public void Pause() {
+        enabledBeforePause = comboTexts[0].enabled;
+        foreach(TextMeshProUGUI comboText in comboTexts) {
+            comboText.enabled = false;
+        }
+    }
+
+    public void Unpause() {
+        foreach(TextMeshProUGUI comboText in comboTexts) {
+            comboText.enabled = enabledBeforePause;
+        }
+    }
+
     IEnumerator ComboJuice() {
         yield return null;
     }

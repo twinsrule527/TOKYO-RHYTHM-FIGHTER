@@ -16,9 +16,4 @@ public class HoldObj : MonoBehaviour
         gameObject.GetComponent<Shake>().ShakeIt(2f, 0.2f, 50f);
     }
 
-        // Update is called once per frame
-        void Update()
-    {
-        
-    }
 }
