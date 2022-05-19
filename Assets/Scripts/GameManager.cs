@@ -169,6 +169,7 @@ public class GameManager : MonoBehaviour
         paused = true;
         //todo pause coroutines
         //todo pause time?
+        //todo hide ui elems?
     }
 
     public static void UnPause() {
@@ -180,6 +181,7 @@ public class GameManager : MonoBehaviour
         paused = false;
         //todo unpause coroutines 
         //todo pause time? 
+        //todo show ui elems? show the whole canvas?
         //AudioListener.pause = false;
     }
   
