@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -469,6 +469,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 10011690485906272, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 174964959519063345, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.75
@@ -480,6 +484,10 @@ PrefabInstance:
     - target: {fileID: 175778066049647368, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
       propertyPath: m_Size.y
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 175778066049647368, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 547334819158909220, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -516,6 +524,14 @@ PrefabInstance:
     - target: {fileID: 5579647077720510174, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
       propertyPath: m_Size.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6006403272417072435, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6006403272417072435, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 8569826398355308436, guid: edb44b0dfd50dbc49802630b452dbd3f, type: 3}
       propertyPath: m_RootOrder
@@ -1120,7 +1136,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2153063792729243570, guid: eebb5be358696e947981cdae45b75fbf, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2278161979399499421, guid: eebb5be358696e947981cdae45b75fbf, type: 3}
       propertyPath: m_RootOrder
