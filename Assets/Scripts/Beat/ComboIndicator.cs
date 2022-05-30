@@ -27,10 +27,6 @@ public class ComboIndicator : MonoBehaviour
         
         SetCombo(0);
     }
-    void Start()
-    {
-
-    }
 
     public int GetCombo() {
         return comboCounter;
@@ -96,6 +92,12 @@ public class ComboIndicator : MonoBehaviour
     public void Unpause() {
         foreach(TextMeshProUGUI comboText in comboTexts) {
             comboText.enabled = enabledBeforePause;
+        }
+    }
+
+    public void FailScreen() {
+        foreach(TextMeshProUGUI comboText in comboTexts) {
+            comboText.enabled = false;
         }
     }
 

@@ -142,6 +142,8 @@ public class GameManager : MonoBehaviour
 
             Global.UIManager.PlayerLoses();
 
+            Global.ComboIndicator.FailScreen();
+
             SfxSync.soundEffectsEnabled = false;
 
         }
