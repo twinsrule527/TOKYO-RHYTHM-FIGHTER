@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1021,6 +1021,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 948777597412780608, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: lerpDistance.x
+      value: -0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1309025681422467549, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: lerpDistance.x
+      value: -0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 1492784417741273145, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: stage6Battle1.Array.size
       value: 0
@@ -1053,6 +1061,10 @@ PrefabInstance:
       propertyPath: stage5StartGameplay.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1884810045919993753, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: lerpDistance.x
+      value: -0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 2263738688694692412, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: _stageChangeHP.Array.data[1]
       value: 5
@@ -1073,6 +1085,10 @@ PrefabInstance:
       propertyPath: _stageChangeHP.Array.data[5]
       value: -50
       objectReference: {fileID: 0}
+    - target: {fileID: 4350150767624983634, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: lerpDistance.x
+      value: -0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085112, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: m_Name
       value: Boss
@@ -1083,11 +1099,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085116, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.33
+      value: 3.311
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085116, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8
+      value: -1.842
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085116, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1144,11 +1160,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2278161979399499421, guid: eebb5be358696e947981cdae45b75fbf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.000000039728263
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2278161979399499421, guid: eebb5be358696e947981cdae45b75fbf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.14
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2278161979399499421, guid: eebb5be358696e947981cdae45b75fbf, type: 3}
       propertyPath: m_LocalPosition.z

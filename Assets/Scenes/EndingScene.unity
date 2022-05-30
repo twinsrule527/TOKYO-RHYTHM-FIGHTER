@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -214,10 +214,6 @@ PrefabInstance:
       propertyPath: noHoverScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
-      propertyPath: hideObjOnAppear
-      value: 
-      objectReference: {fileID: 936437348}
     - target: {fileID: 5428318661260836765, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
       propertyPath: progressOnClickAnywhere
       value: 1
@@ -1047,11 +1043,6 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1741059329485683382, guid: 1a2f046b376d77344ab99cce752a197e, type: 3}
   m_PrefabInstance: {fileID: 901870464}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &936437348 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5128113262136397842, guid: b4add7dbf0527de4484f09906e93472f, type: 3}
-  m_PrefabInstance: {fileID: 444384937}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1431153719
 PrefabInstance:
