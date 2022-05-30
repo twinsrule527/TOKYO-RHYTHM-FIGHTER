@@ -42,24 +42,6 @@ public class DmgNumber : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        /*
-        if (Input.GetKey(KeyCode.Escape))
-        {
-
-            StartCoroutine(PlayerDmg(-4));
-        }
-
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            StartCoroutine(BossDmg(-3));
-        }
-        */
-
-    }
-
     public void PlayerDMGChange(float damage)
     {
         StartCoroutine(PlayerDmg(damage));
@@ -109,7 +91,8 @@ public class DmgNumber : MonoBehaviour
      IEnumerator BossDmg(float damage)
     {
         resetBossText = true;
-        BossDmgText.text = damage.ToString();
+        BossDmgText.text = (-1 * damage).ToString(); //show positive numbers so player doesnt think 
+                                                     //negative # = bad 
 
         if (resetBossText)
         {
