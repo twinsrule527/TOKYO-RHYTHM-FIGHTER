@@ -17,7 +17,6 @@ public class TutorialStage_Parry : TutorialStage
     void Update() {
         if(!stageCompleted && GameManager.currentStage == stageNumber) {
             if(currParryNum > parryNumRequired) {
-                NextStageButton.SetActive(true);
                 stageCompleted = true;
             }
         }
@@ -28,6 +27,10 @@ public class TutorialStage_Parry : TutorialStage
         if(!stageCompleted) {
             currParryNum++;
         }
+    }
+
+    public override bool CheckStageChange() {
+        return stageCompleted;
     }
 
 }
