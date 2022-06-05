@@ -80,6 +80,9 @@ public class PlayerSpriteController : SpriteController
 
     public void DisplayAccuracy(Accuracy acc) {
 
+        //only show one at a time
+        StopDisplayingAccuracies();
+
         if(acc.Equals(BeatController.TOO_EARLY)) {
             accuracyTOO_EARLY.DisplayAccuracy();
         } else if(acc.Equals(BeatController.TOO_LATE)) {

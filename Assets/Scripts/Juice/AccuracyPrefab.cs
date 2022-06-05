@@ -13,12 +13,6 @@ public class AccuracyPrefab : MonoBehaviour
         mySpriteRenderer.enabled = false;   
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     //Called by the PlayerSpriteController when this accuracy needs to be displayed.
     public void DisplayAccuracy() {
 
@@ -29,6 +23,7 @@ public class AccuracyPrefab : MonoBehaviour
 
     public void StopDisplay() {
         StopCoroutine(DisplayCoroutine());
+        mySpriteRenderer.enabled = false;
     }
 
     IEnumerator DisplayCoroutine() {
