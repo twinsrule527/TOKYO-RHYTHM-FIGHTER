@@ -1095,31 +1095,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: bossStartingHPArray.Array.data[0]
-      value: 55
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: bossStartingHPArray.Array.data[1]
-      value: 55
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: bossStartingHPArray.Array.data[2]
-      value: 55
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: bossStartingHPArray.Array.data[3]
-      value: 55
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: bossStartingHPArray.Array.data[4]
-      value: 55
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: bossStartingHPArray.Array.data[5]
-      value: 55
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: bossStartingHPArray.Array.data[6]
-      value: 55
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085116, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: m_RootOrder
