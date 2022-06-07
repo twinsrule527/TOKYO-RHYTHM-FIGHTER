@@ -26,6 +26,8 @@ public class DmgNumber : MonoBehaviour
     private float showPlayerText = 0f;
     private bool playerRunning = false;
     private bool bossRunning = false;
+    private Coroutine bossCoroutine = null;
+    private Coroutine playerCoroutine = null;
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +52,7 @@ public class DmgNumber : MonoBehaviour
         PlayerDmgText.transform.position = originalPlayerDmg;
 
         if(!playerRunning) {
-            StartCoroutine(PlayerDmg(damage));
+            playerCoroutine = StartCoroutine(PlayerDmg(damage));
         }
     }
 
@@ -66,7 +68,7 @@ public class DmgNumber : MonoBehaviour
         BossDmgText.transform.position = originalBossDmg;
 
         if(!bossRunning) {
-            StartCoroutine(BossDmg(damage));
+            bossCoroutine = StartCoroutine(BossDmg(damage));
         }
     }
 
@@ -130,4 +132,34 @@ public class DmgNumber : MonoBehaviour
             //resetBossText = false;
         //}
     }
+
+
+    //to show numbers immediately for responsiveness
+    public void ResponsiveDisplayBoss(float damage) {
+        if(bossRunning == true) {
+            StopCoroutine(bossCoroutine);
+            bossRunning = false;
+        }
+        BossDmgText.transform.position = originalBossDmg;
+        BossDmgText.text = damage.ToString();
+    }
+
+/*
+    public void ResponsiveDisplayPlayer(float damage) {
+        if(playerRunning == true) {
+            StopCoroutine(playerCoroutine);
+            playerRunning = false;
+        }
+        PlayerDmgText.transform.position = originalPlayerDmg;
+        PlayerDmgText.text = damage.ToString();
+    } */
+
+    //to cancel a number if the damage isn't actually made ex. messup, hit by attack, parried 
+    public void CancelBossDisplay() {
+        BossDmgText.text = "";
+    }
+    /*
+    public void CancelPlayerDisplay() {
+        PlayerDmgText.text = "";
+    }*/
 }

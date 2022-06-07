@@ -29,6 +29,8 @@ public class PlayerAction : MonoBehaviour
     public float damage;//How much damage this attack does
     public float baseDamage;//How much base damage this attack does
 
+    protected IEnumerator currentActionCoroutine;
+
     
     //TODO: track when the player has done input for a beat and what type of beat. 
     //ex. locking down input however long needed 
@@ -133,7 +135,7 @@ public class PlayerAction : MonoBehaviour
         Global.Boss.SetBossVisualHP(Global.Boss.bossHP);
     }
 
-    protected IEnumerator currentActionCoroutine;
+    
     //This coroutine is performed so that the boss loses HP at the right moment, etc.
     public virtual IEnumerator ActionCoroutine() {
         yield return null;
