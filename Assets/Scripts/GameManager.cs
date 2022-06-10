@@ -140,11 +140,11 @@ public class GameManager : MonoBehaviour
 
             BeatController.FailStop();
 
-            Global.UIManager.PlayerLoses();
-
             Global.ComboIndicator.FailScreen();
 
             SfxSync.soundEffectsEnabled = false;
+
+            Global.UIManager.PlayerLoses();
 
         }
     }
