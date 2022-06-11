@@ -6,6 +6,7 @@ public class AccuracyPrefab : MonoBehaviour
 {
 
     [SerializeField] SpriteRenderer mySpriteRenderer;
+    public bool isEnabled { get { return mySpriteRenderer.enabled; } }
 
     // Start is called before the first frame update
     void Start()

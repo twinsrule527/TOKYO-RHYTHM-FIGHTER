@@ -1085,6 +1085,10 @@ PrefabInstance:
       propertyPath: stage5StartGameplay.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1634502051427496301, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: damageToDeal
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1884810045919993753, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: lerpDistance.x
       value: -0.75
@@ -1113,37 +1117,45 @@ PrefabInstance:
       propertyPath: lerpDistance.x
       value: -0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 5343507137302334030, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: damageToDeal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343507138185060443, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: damageToDeal
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085112, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: bossStartingHPArray.Array.data[0]
-      value: 75
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: bossStartingHPArray.Array.data[1]
-      value: 75
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: bossStartingHPArray.Array.data[2]
-      value: 75
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: bossStartingHPArray.Array.data[3]
-      value: 75
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: bossStartingHPArray.Array.data[4]
-      value: 75
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: bossStartingHPArray.Array.data[5]
-      value: 75
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: bossStartingHPArray.Array.data[6]
-      value: 75
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085116, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: m_RootOrder
@@ -1193,6 +1205,10 @@ PrefabInstance:
       propertyPath: startPosTransform
       value: 
       objectReference: {fileID: 432398960}
+    - target: {fileID: 8818079253646490888, guid: babc52131f06bb346b277df732e2e316, type: 3}
+      propertyPath: damageToDeal
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: babc52131f06bb346b277df732e2e316, type: 3}
 --- !u!1001 &799563466

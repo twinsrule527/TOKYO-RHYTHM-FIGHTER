@@ -13,10 +13,7 @@ public class PlayerSpriteController : SpriteController
     [SerializeField] AnimationController parry;
 
 
-
-
     [SerializeField] AccuracyPrefab accuracyTOO_EARLY, accuracyTOO_LATE, accuracyMINIMUM, accuracyGREAT, accuracyPERFECT, accuracyMESSUP;
-
 
 
     private void Awake()
@@ -111,7 +108,15 @@ public class PlayerSpriteController : SpriteController
     //This is separate from DisplayAccuracy bc its not triggered in the same way
         //Is separate from SpriteController.MessUp bc there are times when the player messes up but this isn't shown
     public void DisplayMessup() {
+        
+        //don't override too late or too early 
+        if(accuracyTOO_LATE.isEnabled || accuracyTOO_EARLY.isEnabled) {
+            return;
+        }
+
+        //one at a time please
         StopDisplayingAccuracies();
+
         accuracyMESSUP.DisplayAccuracy();
     }
 

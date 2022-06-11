@@ -13,7 +13,7 @@ public class ComboIndicator : MonoBehaviour
     [SerializeField] private string TextAfterComboNum;
 
     private static int comboCounter = 0;
-    private static int maxComboCountDmg = 20;//How much the combo Multiplier can apply to attacks, at most
+    private static int maxComboCounted = 20; //past this number of notes combo'd, won't matter
     private List<PlayerAction> playerActions;
 
     private static float dmgMultiplier = 0.2f;
@@ -74,7 +74,7 @@ public class ComboIndicator : MonoBehaviour
     }
 
     public static float comboMultiplier(float inputAmt) {
-        int comboAmt = Mathf.Min(comboCounter, maxComboCountDmg);
+        int comboAmt = Mathf.Min(comboCounter - 1, maxComboCounted); //-1 because a single attack is "1" 
         inputAmt = inputAmt + (comboAmt * dmgMultiplier);
         
         return inputAmt;
