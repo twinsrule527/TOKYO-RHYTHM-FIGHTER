@@ -22,7 +22,7 @@ Sola: If I can keep a groove going, that’ll really show her.
 
 Game: Hitting multiple notes in a row will build up a combo.
 Game: Missing a note will end a combo.
-Game: Try a 2-beat hold (X) immediately followed by a tap (Z)! 
+Game: Try a 2-beat hold (X) immediately followed by a few taps (Z)! 
 
 
 

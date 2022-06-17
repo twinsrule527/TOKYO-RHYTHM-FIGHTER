@@ -396,6 +396,14 @@ PrefabInstance:
       value: 156
       objectReference: {fileID: 0}
     - target: {fileID: 4108999670033384736, guid: 77f185d4374d10f459b83e0443651967, type: 3}
+      propertyPath: hoverScale.x
+      value: 1.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4108999670033384736, guid: 77f185d4374d10f459b83e0443651967, type: 3}
+      propertyPath: hoverScale.y
+      value: 1.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4108999670033384736, guid: 77f185d4374d10f459b83e0443651967, type: 3}
       propertyPath: keys.Array.size
       value: 2
       objectReference: {fileID: 0}
