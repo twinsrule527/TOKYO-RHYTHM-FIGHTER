@@ -996,6 +996,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 8597708211883435788, guid: 0bae8102314e7a642b51f834926338da, type: 3}
+      propertyPath: _playerStartHealth
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 8597708211883435789, guid: 0bae8102314e7a642b51f834926338da, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1139,31 +1143,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: bossStartingHPArray.Array.data[0]
-      value: 80
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: bossStartingHPArray.Array.data[1]
-      value: 80
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: bossStartingHPArray.Array.data[2]
-      value: 80
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: bossStartingHPArray.Array.data[3]
-      value: 80
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: bossStartingHPArray.Array.data[4]
-      value: 80
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: bossStartingHPArray.Array.data[5]
-      value: 80
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085113, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: bossStartingHPArray.Array.data[6]
-      value: 80
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 5343507138540085116, guid: babc52131f06bb346b277df732e2e316, type: 3}
       propertyPath: m_RootOrder
