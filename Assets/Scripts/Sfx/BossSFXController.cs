@@ -36,6 +36,9 @@ public class BossSFXController : SFXController
             bossAudioSource.volume = volumeNormal;
         }
 
+        Debug.Log("volume " + bossAudioSource.volume + ", beat dont play on " + dontPlayOnThisBeat + ", beat " + BeatController.GetNearestBeat());
+
+
         if(atkNum == -1 || atkNum >= bossAttackSounds.Count) {
             atkNum = Random.Range(0, bossAttackSounds.Count);
         }
@@ -50,13 +53,15 @@ public class BossSFXController : SFXController
 
         bossAudioSource.volume = volumeLow;
 
+        dontPlayOnThisBeat = Mathf.RoundToInt(BeatController.GetNearestBeat());
+
         //if already playing, stop
-        if(bossAudioSource.isPlaying) {
+        //if(bossAudioSource.isPlaying) {
             //bossAudioSource.Stop();
 
-        } else {
+        //} else {
             //if not playing, mark this beat as not to play a sound on 
-            dontPlayOnThisBeat = (int)(BeatController.GetNearestBeat());
-        }
+            
+        //}
     }
 }
