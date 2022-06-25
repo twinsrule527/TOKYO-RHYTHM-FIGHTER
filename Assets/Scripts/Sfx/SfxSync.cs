@@ -14,8 +14,14 @@ public class SfxSync : MonoBehaviour
             return;
         }
 
+        //TODO
+        //this function would have made the sound effects play perfectly on beat
+        //like in rez
+        //fudge it a bit so it sounds good
+        //but this was out of scope for the deadline, so instead we just play stuff when it happens. 
         source.PlayOneShot(clip);
 
+        /*
         //check if we're before or after the beat needed 
         float beat = BeatController.GetBeat();
         if(beat < beatNumber) {
@@ -33,6 +39,7 @@ public class SfxSync : MonoBehaviour
             //safeguard: if past end, dont, and print error
 
         }
+        */
 
     }
     
