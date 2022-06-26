@@ -1,0 +1,46 @@
+STAGE 1, 1-beat tap attack 
+
+Sola: I’m early. Sforzanda will be here soon. I should warm up. 
+Game: Press 'SPACE' to continue the tutorial.
+
+Game: Tap (Z) on the beat to play a note.
+
+
+
+STAGE 2, 2-beat hold attack 
+
+Sola: Yep, I'm in tune. Now for some longer, badder notes.
+
+Game: Hold (X) for 2 beats to hold a long note.
+Game: You're freestyling. You choose when to either Tap (Z) or Hold (X). 
+
+
+
+STAGE 3, combos 
+
+Sola: If I can keep a groove going, that’ll really show her. 
+
+Game: Hitting multiple notes in a row will build up a combo.
+Game: Missing a note will end a combo.
+Game: Try a 2-beat hold (X) immediately followed by a few taps (Z)! 
+
+
+
+STAGE 4, harmonizing w/ boss 
+
+Sola: I can hear Sforzanda warming up too. 
+Sola: If I want to make this band work, I’ll have to improvise and harmonize with her notes on the fly. 
+
+Game: Tap (C) instead of (Z) or (X) to harmonize with Sforzanda’s incoming notes when they hit the center.
+Game: Playing your own notes with (Z) or (X) won't harmonize with hers.
+
+Sola: I can’t miss anything she throws at me!
+
+Game: Harmonizing keeps up a combo, but failing to do so ends one!
+
+
+
+STAGE 5; end 
+
+Sola: Here she comes. 
+Sola: If I can blend my freestyle with harmonizing with her notes, I can show her we can make this band work!

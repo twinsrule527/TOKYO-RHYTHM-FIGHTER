@@ -13,7 +13,7 @@ public class Shake : MonoBehaviour
     bool shaking;
     Vector3 originalPosition;
     float myTimeTracker = 0;
-    Transform myTransform;
+    [SerializeField] Transform myTransform;
     float myMagnitude;
     float myTime;
     float myPerlin;

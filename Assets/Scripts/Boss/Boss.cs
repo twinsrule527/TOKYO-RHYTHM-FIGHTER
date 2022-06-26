@@ -6,24 +6,66 @@ public class Boss : MonoBehaviour
 {
     //public static Boss CurrentBoss;//Declares whichever boss is the current boss, for reference with player input & such
     [SerializeField] float [] bossStartingHPArray = {50f}; //starting HP for each stage, in order 
-    public float currentStageStartingHP {get; protected set;}
+    public float [] BossStartingHPArray {
+        get {
+            return bossStartingHPArray;
+        }
+    }
+    public float currentStageStartingHP;
     public float bossHP {get; protected set;}
+    public float bossVisualHP { get; protected set; }
     public bool makeAttackThisBeat;
     public BossAttack CurrentMakingAttack;//Whichever attack is the one actually making an attack this beat (in case it ends before it has a chance to check)
         //Probably there's a better way to do this - should check w/ Jaden
     
     [SerializeField] HealthBar healthBar;
+    [SerializeField] public DmgNumber dmgNumber;
     [SerializeField] private HurtAnimation hurtAnimation;
 
     public void ChangeBossHP(float amt) {//Function to be called by others when increasing/decreasing hp
-        bossHP += amt;
-        Global.UIManager.SetHealthText();
-        healthBar.ChangeHealth(amt);
-        hurtAnimation.Hurt();
-        sfxController.PlayHurtSound();
-        if(bossHP <= 0) {
-            GameManager.PlayerWins();
+        
+        if(!GameManager.gameplayRunning) {
+            return;
         }
+        
+        bossHP += amt;
+        bossVisualHP = bossHP;
+        healthBar.ChangeHealthLerp(amt);
+        //Global.UIManager.SetHealthText();
+        healthBar.ChangeHealth(amt);
+        dmgNumber.BossDMGChange(amt);
+        Global.TutorialManager.CheckStageChange();
+        if(bossHP <= 0) {
+            if(!Global.Tutorial) {
+                GameManager.PlayerWins();
+            }
+            else {
+                //Resets boss health to their health for the start of the stage if they would die during the tutorial
+                bossHP = currentStageStartingHP;
+            }
+        }
+    }
+
+    public void ChangeVisualBossHP(float amt)
+    {
+        bossVisualHP += amt;
+        hurtAnimation.Hurt();
+        healthBar.ChangeHealthLerp(amt);
+    }
+
+    //Sets the Boss' HP to a certain amt
+    public void SetBossHP(float amt) {
+        bossHP = amt;
+        bossVisualHP = bossHP;
+        healthBar.ChangeHealthLerp(amt);
+        //Global.UIManager.SetHealthText();
+        healthBar.ChangeHealth(amt);
+        dmgNumber.BossDMGChange(amt);
+    }
+
+    public void SetBossVisualHP(float amt)
+    {
+        bossVisualHP = amt;
     }
 
     public BossAI AttackAI;
@@ -34,6 +76,10 @@ public class Boss : MonoBehaviour
         Global.Boss = this;
         currentStageStartingHP = bossStartingHPArray[0];
         bossHP = currentStageStartingHP;
+        bossVisualHP = currentStageStartingHP;
+        dmgNumber = GameObject.FindGameObjectWithTag("DmgManager").GetComponent<DmgNumber>();
+        healthBar = GameObject.FindGameObjectWithTag("CenterHealth").GetComponent<HealthBar>();
+
     }
 
     public void SongStarted() {
@@ -51,6 +97,11 @@ public class Boss : MonoBehaviour
         if(makeAttackThisBeat) {
             makeAttackThisBeat = false;
             CurrentMakingAttack.CheckAttackSuccess();
+        }
+        //At the end of every beat, it makes sure the current set attack is the correct one
+        if(AttackAI.CurrentAttackOutgoing != AttackAI.CurrentAttack) {
+            //This is set here, so the player will succesfully get interrupted if they attempt to attack at the same time as the enemy
+            AttackAI.CurrentAttackOutgoing = AttackAI.CurrentAttack;
         }
     }
 

@@ -14,9 +14,22 @@ public class PlayerAction : MonoBehaviour
     //override CheckInput for other behavior that isn't a KeyCode press, this is just a useful default
     [SerializeField] protected KeyCode key;
     [SerializeField] protected ActionIndicator myActionIndicator;
+    [SerializeField] private bool isComboable = true;
+    [SerializeField] protected bool isAttack;//WHether or not this action is an attack
+    public bool IsComboable {
+        get {
+            return isComboable;
+        }
+    }
     int comboCounter;   //may be used if needed 
 
     bool canInterrupt;  //do we call Boss.Interrupt()?
+
+
+    public float damage;//How much damage this attack does
+    public float baseDamage;//How much base damage this attack does
+
+    protected IEnumerator currentActionCoroutine;
 
     
     //TODO: track when the player has done input for a beat and what type of beat. 
@@ -36,9 +49,10 @@ public class PlayerAction : MonoBehaviour
         }
     }
     public virtual void CheckInput() {
-        
-        if(Input.GetKeyDown(key)) {
-            TryAction();
+        if(gameObject.activeInHierarchy) {
+            if(Input.GetKeyDown(key)) {
+                TryAction();
+            }
         }
 
     }
@@ -48,16 +62,41 @@ public class PlayerAction : MonoBehaviour
     protected virtual void TryAction() {
 
         if(Global.Player.CurrentAction == null) { //if we aren't locked down 
-
+            
             //if we're on beat 
             Accuracy curAccuracy = BeatController.GetAccuracy(beatFraction);
-            Global.Player.spriteController.DisplayAccuracy(curAccuracy);
+            //Not being an attack can always be on beat
+            if(!isAttack) {
+                Global.Player.spriteController.DisplayAccuracy(curAccuracy);
+            }
+            else {
+                //Otherwise, it needs to check to see if the boss is attacking
+                if(BeatController.GetNearestBeat() != Global.Boss.AttackAI.AttackBeatHitOn || Global.Boss.AttackAI.CurrentAttackOutgoing.GetComponent<WaitAttack>() != null) {
+                    Global.Player.spriteController.DisplayAccuracy(curAccuracy);
+                }
+                //if you attack on the boss' attack, it displays "messup"
+                else {
+                    //If offbeat, displays correct offbeat accuracy
+                    if(!BeatController.IsOnBeat(beatFraction))  {
+                        Global.Player.spriteController.DisplayAccuracy(curAccuracy);
+                    }
+                    //otherwise, displays messup
+                    else {  
+                        Global.Player.spriteController.DisplayMessup();
+                    }
+                }
+            }
             if(BeatController.IsOnBeat(beatFraction)) {//curAccuracy.priority > 0) {
+                
                 Success();
             }
             else {
                 MessUp();
             }
+        }
+        else {
+            MessUp();
+            Global.Player.spriteController.DisplayMessup();
         }
 
     }
@@ -66,9 +105,11 @@ public class PlayerAction : MonoBehaviour
     //This function gets called when the player presses this key on beat. Carry out whatever action this is. 
     //Should be overridden and implemented with what pressing this key does.
     protected virtual void Success() {
-
+        //On a success, increases the combo counter
+        Global.ComboIndicator.IncrementCombo();
         //Debug.Log("Success, you're on beat");
-        //Typically, sets the Player's current action to be this
+        //Typically, sets the Player's current action to be this and plays an on beat sound
+        Global.Player.sfxController.PlayOnBeatSound();
         Global.Player.CurrentAction = this;
         Global.Player.currActionEndBeat = BeatController.GetNearestBeat(beatFraction) + length;//Subtracts smallest beat fraction, so that it actually occurs before the beat, rather than after
         //Disables the next few BeatIndicators
@@ -87,9 +128,16 @@ public class PlayerAction : MonoBehaviour
     //This function gets called when the player presses this key, but it's off beat.
     //Should be overridden and implemented. 
     protected virtual void MessUp() {
-
+        Global.ComboIndicator.SetCombo(0);
         Debug.Log("you messed up, you were off beat");
         Global.Player.CurrentAction = Global.Player.messUpAction;
         Global.Player.spriteController.MessUp();
+        Global.Boss.SetBossVisualHP(Global.Boss.bossHP);
+    }
+
+    
+    //This coroutine is performed so that the boss loses HP at the right moment, etc.
+    public virtual IEnumerator ActionCoroutine() {
+        yield return null;
     }
 }

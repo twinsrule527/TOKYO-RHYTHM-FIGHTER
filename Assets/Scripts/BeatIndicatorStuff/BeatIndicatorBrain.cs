@@ -39,9 +39,10 @@ public class BeatIndicatorBrain : MonoBehaviour
     private float curBaseBeat;
     [SerializeField] private Sprite baseBeatSprite;
     private List<BossBeatIndicator> BossIndicators;//a list of exisitng indicators - so that when they deactive, this can start using them again
-    private List<PlayerBeatIndicator> PlayerIndicators;
+    public List<PlayerBeatIndicator> PlayerIndicators;
     private List<beatIndicatorInfo> BossBeats;
-    private List<beatIndicatorInfo> PlayerBeats;
+    private List<beatIndicatorInfo> PlayerLeftBeats;
+    private List<beatIndicatorInfo> PlayerRightBeats;
     //Test lists
     [SerializeField] private List<float> TestBeats;
     [SerializeField] private List<Sprite> TestSprites;
@@ -57,7 +58,8 @@ public class BeatIndicatorBrain : MonoBehaviour
         Global.BeatIndicatorBrain = this;
         BossBeats = new List<beatIndicatorInfo>();
         BossIndicators = new List<BossBeatIndicator>();
-        PlayerBeats = new List<beatIndicatorInfo>();
+        PlayerLeftBeats = new List<beatIndicatorInfo>();
+        PlayerRightBeats = new List<beatIndicatorInfo>();
         PlayerIndicators = new List<PlayerBeatIndicator>();
         BossIndicatorStartPos = startPosBossTransform.position;//TODO: Change the way that the bossindicator start pos is set
         BossIndicatorEndPos = endPosTransform.position + Vector3.back;
@@ -70,7 +72,7 @@ public class BeatIndicatorBrain : MonoBehaviour
     }
     public void SongStarted() {
         for(int i = 0; i < 10; i++) {
-            AddBaseBeat(PlayerBeats);
+            AddBaseBeat(PlayerLeftBeats, PlayerRightBeats);
         }
     }
     void Update() {
@@ -106,36 +108,57 @@ public class BeatIndicatorBrain : MonoBehaviour
             }
         }
         //ALso plays out the player beat indicators
-        if(PlayerBeats.Count > 0) {
+        if(PlayerLeftBeats.Count > 0) {
             float curBeat = BeatController.GetBeat();
             //Checks to see if the current beat is close enough to the beat to hit - if it is, the beat shows up
-            if(curBeat >= PlayerBeats[0].beatToHit - beatsInAdvanceShown) {
+            if(curBeat >= PlayerLeftBeats[0].beatToHit - beatsInAdvanceShown) {
                 //Activates a BeatIndicator and gives it the information it needs
-                PlayerBeatIndicator newIndicator = null;
+                PlayerBeatIndicator newIndicator1 = null;
+                PlayerBeatIndicator newIndicator2 = null;
                 //So that it doesn't usually create a new indicator, it checks to see if it has a disabled indicator it can use
                 for(int i = 0; i < PlayerIndicators.Count; i++) {
                     if(PlayerIndicators[i].enabled == false) {
-                        newIndicator = PlayerIndicators[i];
-                        newIndicator.enabled = true;
+                        newIndicator1 = PlayerIndicators[i];
+                        newIndicator1.enabled = true;
+                        newIndicator1.transform.rotation = startPosPlayerTransform.rotation;
+                        newIndicator1.startRot = newIndicator1.transform.rotation;
                         break;
                     }
                 }
-                if(newIndicator == null) {
-                    newIndicator = Instantiate(playerIndicatorPrefab, Vector3.zero, Quaternion.identity);
-                    PlayerIndicators.Add(newIndicator);
-                    newIndicator.transform.rotation = startPosPlayerTransform.rotation;
-                    newIndicator.startRot = newIndicator.transform.rotation;
+                for(int i = 0; i < PlayerIndicators.Count; i++) {
+                    if(PlayerIndicators[i].enabled == false) {
+                        newIndicator2 = PlayerIndicators[i];
+                        newIndicator2.enabled = true;
+                        newIndicator2.transform.rotation = startPosBossTransform.rotation;
+                        newIndicator2.startRot = newIndicator2.transform.rotation;
+                        break;
+                    }
+                }
+                if(newIndicator1 == null) {
+                    newIndicator1 = Instantiate(playerIndicatorPrefab, Vector3.zero, Quaternion.identity);
+                    PlayerIndicators.Add(newIndicator1);
+                    newIndicator1.transform.rotation = startPosPlayerTransform.rotation;
+                    newIndicator1.startRot = newIndicator1.transform.rotation;
+                }
+                if(newIndicator2 == null) {
+                    newIndicator2 = Instantiate(playerIndicatorPrefab, Vector3.zero, Quaternion.identity);
+                    PlayerIndicators.Add(newIndicator2);
+                    newIndicator2.transform.rotation = startPosBossTransform.rotation;
+                    newIndicator2.startRot = newIndicator2.transform.rotation;
                 }
                 //Now, it gives the boss beat indicator the information it needs to operate
-                newIndicator.SetIndicatorStart(PlayerBeats[0]);
+                newIndicator1.SetPlayerIndicatorStart(PlayerLeftBeats[0], true);
+                newIndicator2.SetPlayerIndicatorStart(PlayerRightBeats[0], false);
                 //Checks to see if it needs to add a base beat
                     //Does so if the next beat that will appear doesn't exist
                 /*if(BossBeats.Count <= 10) {
                     AddBaseBeat(BossBeats);
                 }*/
-                PlayerBeats.RemoveAt(0);
-                AddBaseBeat(PlayerBeats);
+                PlayerLeftBeats.RemoveAt(0);
+                PlayerRightBeats.RemoveAt(0);
+                AddBaseBeat(PlayerLeftBeats, PlayerRightBeats);
             }
+            
         }
     }
     //This adds a boss beat to the boss beat indicator
@@ -150,15 +173,21 @@ public class BeatIndicatorBrain : MonoBehaviour
     }
 
     //Adds a base beat to a list of beat indicators
-    public void AddBaseBeat(List<beatIndicatorInfo> beats) {
+    public void AddBaseBeat(List<beatIndicatorInfo> LeftBeats, List<beatIndicatorInfo> RightBeats) {
         curBaseBeat++;
-        beatIndicatorInfo newInfo;
-        newInfo.indicatorSprite = baseBeatSprite;
-        newInfo.beatToHit = curBaseBeat;
-        newInfo.playsAnimationAtEnd = false;
-        beats.Add(newInfo);
+        beatIndicatorInfo newInfo1;
+        beatIndicatorInfo newInfo2;
+        newInfo1.indicatorSprite = baseBeatSprite;
+        newInfo1.beatToHit = curBaseBeat;
+        newInfo1.playsAnimationAtEnd = false;
+        newInfo2.indicatorSprite = baseBeatSprite;
+        newInfo2.beatToHit = curBaseBeat;
+        newInfo2.playsAnimationAtEnd = false;
+        LeftBeats.Add(newInfo1);
+        RightBeats.Add(newInfo2);
         //Then sorts the newInfo into the spot it should go in
-        SortLatestBeat(beats);
+        SortLatestBeat(LeftBeats);
+        SortLatestBeat(RightBeats);
     }
 
     //Makes sure the newest beat added to the list is added to the end of the list
@@ -189,10 +218,49 @@ public class BeatIndicatorBrain : MonoBehaviour
         foreach(PlayerBeatIndicator beatIndicator in PlayerIndicators) {
             if(beatIndicator.enabled) {
                 if(beatIndicator.beatToHit < beatTil) {
-                    beatIndicator.mySprite.color = Color.gray;
+                    beatIndicator.mySprite.color = new Color(beatIndicator.mySprite.color.r, beatIndicator.mySprite.color.g, beatIndicator.mySprite.color.b, 0);
+                    beatIndicator.showOutline(false);
+                } else if(beatIndicator.leftIndicator && beatIndicator.beatToHit < beatTil + 1) {
+                    //show outlines on player's side
+                    beatIndicator.showOutline();
+
                 }
             }
         }
+    }
+
+    public PlayerBeatIndicator GetPlayerIndicator(float beatToGet) {
+        float distFromBeat = 1000;
+        PlayerBeatIndicator chosenIndicator = null;
+        for(int i = 0; i < PlayerIndicators.Count; i++) {
+            float newDist = Mathf.Abs(PlayerIndicators[i].beatToHit - beatToGet);
+            if(newDist < distFromBeat) {
+                distFromBeat = newDist;
+                chosenIndicator = PlayerIndicators[i];
+            }
+        }
+        return chosenIndicator;
+    }
+
+    public void ShowNextIndicatorOutline() {
+        float curBeat = BeatController.GetBeat();
+        if(Global.Player.CurrentAction == null) {
+            foreach(PlayerBeatIndicator indicator in PlayerIndicators) {
+                if(indicator.leftIndicator && indicator.beatToHit < curBeat + 1) {
+                    indicator.showOutline();
+                }
+            }
+        }
+    }
+
+    public void ResetBeat(float curBeat, float prevBeat = -1) {
+        if(prevBeat < 0) {
+            prevBeat = curBaseBeat;
+        }
+        foreach(BeatIndicator indicator in BossIndicators) {
+            indicator.SetBeatToHit(indicator.beatToHit - prevBeat + curBeat);
+        }
+        curBaseBeat = curBeat;
     }
 
 }

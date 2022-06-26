@@ -13,10 +13,7 @@ public class PlayerSpriteController : SpriteController
     [SerializeField] AnimationController parry;
 
 
-
-
-    [SerializeField] AccuracyPrefab accuracyTOO_EARLY, accuracyTOO_LATE, accuracyMINIMUM, accuracyGREAT, accuracyPERFECT;
-
+    [SerializeField] AccuracyPrefab accuracyTOO_EARLY, accuracyTOO_LATE, accuracyMINIMUM, accuracyGREAT, accuracyPERFECT, accuracyMESSUP;
 
 
     private void Awake()
@@ -41,20 +38,6 @@ public class PlayerSpriteController : SpriteController
     {
         
         //trueRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //if (Input.GetKey(KeyCode.O))
-        //{
-        //    Attack(1.0f);
-        //}
-
-        //if (Input.GetKey(KeyCode.P))
-        //{
-        //    Hurt();
-        //}
     }
 
     //Attack is usually played as animation on beat
@@ -94,6 +77,9 @@ public class PlayerSpriteController : SpriteController
 
     public void DisplayAccuracy(Accuracy acc) {
 
+        //only show one at a time
+        StopDisplayingAccuracies();
+
         if(acc.Equals(BeatController.TOO_EARLY)) {
             accuracyTOO_EARLY.DisplayAccuracy();
         } else if(acc.Equals(BeatController.TOO_LATE)) {
@@ -109,7 +95,30 @@ public class PlayerSpriteController : SpriteController
         }
 
     }
+    //If all accuracies need to be ended prematurely
+    public void StopDisplayingAccuracies() {
+        accuracyTOO_EARLY.StopDisplay();
+        accuracyTOO_LATE.StopDisplay();
+        accuracyMINIMUM.StopDisplay();
+        accuracyGREAT.StopDisplay();
+        accuracyPERFECT.StopDisplay();
+        accuracyMESSUP.StopDisplay();
+    }
 
+    //This is separate from DisplayAccuracy bc its not triggered in the same way
+        //Is separate from SpriteController.MessUp bc there are times when the player messes up but this isn't shown
+    public void DisplayMessup() {
+        
+        //don't override too late or too early 
+        if(accuracyTOO_LATE.isEnabled || accuracyTOO_EARLY.isEnabled) {
+            return;
+        }
+
+        //one at a time please
+        StopDisplayingAccuracies();
+
+        accuracyMESSUP.DisplayAccuracy();
+    }
 
 }
 

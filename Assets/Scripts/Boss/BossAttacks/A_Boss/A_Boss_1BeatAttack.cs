@@ -15,8 +15,12 @@ public class A_Boss_1BeatAttack : BossAttack
         //Checks to see if they can hit the player - if they do, the player gets hit
         Global.Boss.makeAttackThisBeat = true;
         Global.Boss.CurrentMakingAttack = this;
-        Debug.Log("1");
-        Debug.Log(BeatController.GetBeat());
+        Global.Boss.sfxController.PlayAttackSound(1);
+        Global.Player.ChangeVisualHP(-damageToDeal);
+        Global.CenterEffectManager.CallCenterEffect(CenterEffect.BossHits);
+
+        //Debug.Log("1");
+        //Debug.Log(BeatController.GetBeat());
         yield return null;
         //mySprite.color = Color.black;
     }   
@@ -40,6 +44,9 @@ public class A_Boss_1BeatAttack : BossAttack
         }
         else {
             mySprite.color = Color.white;
+            Global.Player.ChangeVisualHP(damageToDeal);
+            isParried();
+
         }
         //CheckPlayerCurrentAction;
         //If player action is on beat, this attack is blocked and does nothing

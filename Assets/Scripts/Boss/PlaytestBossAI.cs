@@ -13,14 +13,14 @@ public class PlaytestBossAI : BossAI
     [SerializeField] private float bossBeat;//The beat that this goes along with
     [SerializeField] private SpriteRenderer mySprite;//This will eventually go in a separate object
     void Start() {
-        attackBag = new Bag<AttackPattern>();
+        attackBag = new List<Bag<AttackPattern>>();
         CreateAttackPatterns();
-        attackBag.Refill();
+        attackBag[GameManager.currentStage].Refill();
         StartCoroutine("StateUpdate");
     }
 
     //Creates all attack patterns - a temporary measure until we get a tool to do this working
-    public void CreateAttackPatterns() {
+    /*public void CreateAttackPatterns() {
         List<BossAttack> newAttacks = new List<BossAttack>();
         newAttacks.Add(AttackChildren[0]);
         newAttacks.Add(AttackChildren[1]);
@@ -38,7 +38,7 @@ public class PlaytestBossAI : BossAI
         newAttacks.Add(AttackChildren[5]);
         attackBag.AddToLineup(new AttackPattern(newAttacks, this, "3"));
 
-    }
+    }*/
 
     //Example attacks
     private IEnumerator ChargeAttack(int val) {

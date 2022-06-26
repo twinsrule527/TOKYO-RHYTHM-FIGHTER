@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class ActionIndicator : MonoBehaviour
 {
     [SerializeField] private PlayerAction parentAction;//The action which performs this indicator
-    void Start()
+    protected virtual void Start()
     {
        if(parentAction == null) {
            parentAction = GetComponentInParent<PlayerAction>();
@@ -15,6 +15,11 @@ public abstract class ActionIndicator : MonoBehaviour
     }
 
     public abstract void PerformAction();
+
+    public virtual void StopAction() {
+        StopCoroutine(IndicatorCoroutine());
+        gameObject.SetActive(false);
+    }
 
     protected abstract IEnumerator IndicatorCoroutine();
 }

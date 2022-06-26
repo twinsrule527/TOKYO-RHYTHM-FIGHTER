@@ -13,16 +13,22 @@ public class AttackReader : MonoBehaviour
 
     //the attack patterns for this boss.
     //[x][y] is the yth file corresponding to the xth boss stage.
-    [SerializeField] List<TextAsset> stage0Intro, stage1FirstStage, stage2Transition, stage3SecondStage, stage4Finale; 
+    [SerializeField] List<TextAsset> stage0Tutorial0, stage1Tutorial1, stage2Tutorial2, stage3Tutorial3, stage4EndTutorial, stage5StartGameplay, stage6Battle1; 
     //add more stages as needed 
     List<List<TextAsset>> patternsText = new List<List<TextAsset>>();
-
+    public List<List<TextAsset>> PatternsText {
+        get {
+            return patternsText;
+        }
+    }
     void Awake() {
-        patternsText.Add(stage0Intro); //dont forget to add stages here 
-        patternsText.Add(stage1FirstStage);
-        patternsText.Add(stage2Transition);
-        patternsText.Add(stage3SecondStage);
-        patternsText.Add(stage4Finale);
+        patternsText.Add(stage0Tutorial0); //dont forget to add stages here 
+        patternsText.Add(stage1Tutorial1);
+        patternsText.Add(stage2Tutorial2);
+        patternsText.Add(stage3Tutorial3);
+        patternsText.Add(stage4EndTutorial);
+        patternsText.Add(stage5StartGameplay);
+        patternsText.Add(stage6Battle1);
     }
 
     //pass in the stage number (starting from 0) of attacks to get.

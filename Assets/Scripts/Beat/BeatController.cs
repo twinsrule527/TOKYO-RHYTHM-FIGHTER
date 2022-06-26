@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public struct Accuracy {
+
     public Accuracy(float threshBefore, float threshAfter, string nam, int num) {
         this.thresholdBeforeBeat = threshBefore;
         this.thresholdAfterBeat = threshAfter;
         this.name = nam;
         this.priority = num;
     }
-    public float thresholdBeforeBeat { get; }
-    public float thresholdAfterBeat { get; }
+    public float thresholdBeforeBeat;
+    public float thresholdAfterBeat;
 
     //for doing faster equals comparisons, i think 
     //Negative = Off-beat, positive = on-beat
@@ -32,20 +34,56 @@ public struct Accuracy {
 public class BeatController : MonoBehaviour
 {
 
+    [SerializeField] bool isGameScene = true;
+
+    //non-static reference to the BeatController in scene 
+    //used to call coroutines
+    static BeatController instance;
+
     public static bool isPlaying { get; private set; }
+
+    //non-static so it'll get reset when scene changes or is reloaded
+    public bool songPaused  { get; private set; }
+    private bool pausedOutsideMenu = false;
+
+
+    //accuracy thresholds, in seconds 
+    //will be converted into fractions of beats on start. 
+    //0.6 sec in 1 beat 
+    //so 0.3 is half, covering everything 
+    //0.15 is a quarter on either side, or half/half chance of hitting 
+    static float secondsMINIMUM = 0.15f;
+    static float secondsGREAT = 0.095f;
+    static float secondsPERFECT = 0.033f;
+
 
     //// Beat accuracies! 
     //You might get these from BeatController functions.
     //You can check them against each other
     //ex. if(accuracyPassedIn.Equals(BeatController.PERFECT)) { do something cause it's perfect }
 
-    //TODO: should there be different thresholds for different fractions of beats? 
-    //they could be repurposed as percents?
-    public static readonly Accuracy MINIMUM = new Accuracy(0.13f, 0.13f, "OK", 1);
-    public static readonly Accuracy GREAT = new Accuracy(0.08f, 0.08f, "GREAT", 5);
-    public static readonly Accuracy PERFECT = new Accuracy(0.04f, 0.04f, "PERFECT", 9);
-    public static readonly Accuracy TOO_EARLY = new Accuracy(float.NaN, float.NaN, "TOO EARLY", -1);
-    public static readonly Accuracy TOO_LATE = new Accuracy(float.NaN, float.NaN, "TOO LATE", -2);
+    private static Accuracy minimum = new Accuracy(0.13f, 0.13f, "OK", 1);
+    public static Accuracy MINIMUM {
+        get { return minimum; }
+    }
+    private static Accuracy great = new Accuracy(0.08f, 0.08f, "GREAT", 5);
+    public static Accuracy GREAT {
+        get { return great; }
+    }
+
+    private static Accuracy perfect = new Accuracy(0.04f, 0.04f, "PERFECT", 9);
+    public static Accuracy PERFECT {
+        get { return perfect; }
+    }
+    private static Accuracy too_early = new Accuracy(float.NaN, float.NaN, "TOO EARLY", -1);
+    public static Accuracy TOO_EARLY {
+        get { return too_early; }
+    }
+    private static Accuracy too_late = new Accuracy(float.NaN, float.NaN, "TOO LATE", -2);
+    public static Accuracy TOO_LATE {
+        get { return too_late; }
+    }
+
     //below: accuracies checked in GetAccuracy() func
     //declared up here so we don't forget anything when making new ones.
     //IN ORDER of checked. So, go SMALLEST TO GREATEST window 
@@ -72,6 +110,7 @@ public class BeatController : MonoBehaviour
     //song position, in seconds 
     private static double audioPos = 0;
     private static double timePos = 0;
+    private static double baselineBeat = 0;
 
     //what beat the song is on ex. 1, 2, 4, 5.5, 6.75 
     //we will use a threshold with this for reaction 
@@ -85,6 +124,11 @@ public class BeatController : MonoBehaviour
     //^^^ REPLACED WITH GetDistanceFromBeat(1)
 
     bool beatEnded1, beatEnded05, beatEnded025;
+
+
+    void Awake() {
+        instance = this;
+    }
 
 
     // Start is called before the first frame update
@@ -103,7 +147,16 @@ public class BeatController : MonoBehaviour
 
     }
 
-    //start the song with the given name. 
+    public static void SwitchSongContinuous(SongData songToStart) {
+        instance.StartCoroutine(instance.SwitchClean(songToStart));
+    }
+    IEnumerator SwitchClean(SongData songToStart) {
+        yield return WaitForBeat(1);
+        baselineBeat = GetNearestBeat();
+        StartSong(songToStart);
+    }
+
+    //start the song with the given name.  
     public void StartSongByName(string songName) {
         foreach(SongData data in songDataList) {
             if(data.songName.Equals(songName)) {
@@ -114,6 +167,10 @@ public class BeatController : MonoBehaviour
         Debug.Log("ERROR: StartSongByName tried to play song \"" + songName + ",\" which was not found in the song data list!");
     }
 
+    static float SecondsToBeatFrac(float seconds) {
+        return seconds * ((float)(BPM) / 60f);
+    }
+
     //uses the song given to the beatcontroller object.
     public static void StartSong() {
         StartSong(songToPlay);
@@ -122,10 +179,28 @@ public class BeatController : MonoBehaviour
     //call when we start the song. 
     //records the time, sets BPM/info, ect 
     public static void StartSong(SongData songData) {
-    
+
         //set up BPM 
         BPM = songData.BPM;
         secPerBeat = 60 / BPM;
+
+        //Debug.Log("original minimum: " + MINIMUM.thresholdBeforeBeat);
+
+        //set up thresholds based on BPM.
+        //given thresholds in seconds, what's the threshold in beat fractions?
+        minimum.thresholdBeforeBeat = SecondsToBeatFrac(secondsMINIMUM);
+        minimum.thresholdAfterBeat = SecondsToBeatFrac(secondsMINIMUM);
+        great.thresholdBeforeBeat = SecondsToBeatFrac(secondsGREAT);
+        great.thresholdAfterBeat = SecondsToBeatFrac(secondsGREAT);
+        perfect.thresholdBeforeBeat = SecondsToBeatFrac(secondsPERFECT);
+        perfect.thresholdAfterBeat = SecondsToBeatFrac(secondsPERFECT);
+
+        accuraciesToCheck[0] = perfect;
+        accuraciesToCheck[1] = great;
+        accuraciesToCheck[2] = minimum;
+
+        //Debug.Log("new minimum: " + MINIMUM.thresholdBeforeBeat);
+        //Debug.Log("minimum in array: " + accuraciesToCheck[2].thresholdBeforeBeat);
 
         //set the audio source audio clip to this song 
         audioSource.clip = songData.songAudioClip;
@@ -139,8 +214,124 @@ public class BeatController : MonoBehaviour
         //kick off tracker with current time after lag spike
         songStartTime = AudioSettings.dspTime + songData.mp3Delay + songData.songDelay;
 
+        UnPauseOutsideMenu();
+
         isPlaying = true;
 
+    }
+
+    
+    //pause menu has been brought up.
+    public static void PauseByMenu() {
+        instance.pausedOutsideMenu = instance.songPaused;
+        Pause();
+    }
+
+    //pause menu closed.
+    public static void UnPauseByMenu() {
+        if(!instance.pausedOutsideMenu) {
+            UnPause();
+        }
+    }
+
+    public static void PauseOutsideMenu() {
+        instance.pausedOutsideMenu = true;
+        Pause();
+    }
+    public static void UnPauseOutsideMenu() {
+        instance.pausedOutsideMenu = false;
+        UnPause();
+    }
+
+    //pause the beat and music. DO NOT CALL DIRECTLY call FromMenu/OutsideMenu instead
+    private static void Pause() {
+        instance.songPaused = true;
+        AudioListener.pause = true;
+    }
+
+    //unpause the beat and music. 
+    private static void UnPause() {
+        AudioListener.pause = false;
+        instance.songPaused = false;
+    }
+
+    //stops everything from 
+    static double secToSlowFail = 3d;
+    public static void FailStop() {
+        instance.StartCoroutine(instance.SlowToStop(true, secToSlowFail));
+    }
+
+    //slow to stop, but tuned differently cause... you won! 
+    //like slow to stop but only changes the beat, not the actual audio time. 
+    //TODO-- could have it switch intelligently to the ending sample here, or another func for general switching 
+    static double secToSlowWin = 4d;
+    public static void WinStop() {
+        instance.StartCoroutine(instance.SlowToStop(false, secToSlowWin));
+    }
+
+    //TODO: ummmmmm this causes weird stuff like repeating sfx on win. what do 
+    //maybe disable being able to play sounds or smth?
+    IEnumerator SlowToStop(bool fail, double secToSlowToStop) {
+
+        double timeLeft = secToSlowToStop;
+        float lastBeat = GetBeat() - (float)baselineBeat;
+        SpriteRenderer fade2white = null;
+
+        if(!fail) {
+            fade2white = GameObject.FindGameObjectWithTag("Fade2White").GetComponent<SpriteRenderer>(); 
+            fade2white.enabled = true;
+        }
+
+         while(1 == 1) {
+
+            timeLeft -= Time.deltaTime;
+
+            if(timeLeft > 0) {
+
+                double percent = (timeLeft / secToSlowToStop);
+
+                //wind down speed of audio via pitch
+                if(fail) {
+                    audioSource.pitch = (float)percent;
+                }
+
+                //wind down speed of beat and things dependent on it
+                double currentTime = AudioSettings.dspTime - songStartTime;
+                secPerBeat = ((currentTime / lastBeat) - secPerBeat) * (1 - percent) + secPerBeat;
+
+                if(!fail) {
+                    //fade 2 white
+                    fade2white.color = new Color(1f, 1f, 1f, (float)(1 - percent));
+                }
+
+            } else {
+
+                //the frame we pass 0 
+
+                PauseOutsideMenu();
+
+                isPlaying = false;
+                //audioSource.Stop();
+
+                if(fail) {
+                    
+                    GameManager.PlayerLosesFinish();
+
+                } else if(!fail) {
+
+                    //TODO this is a placeholder for some transition idk 
+                    //because we want to let it play out the uhhh ending of the song where it like wrrrrrrrrr final note 
+                    
+                    GameManager.PlayerWinsFinish();
+                }
+                
+            }
+
+            lastBeat = GetBeat();
+
+            yield return null;
+            
+        }
     }
 
     // Update is called once per frame
@@ -152,6 +343,10 @@ public class BeatController : MonoBehaviour
         //beatOffset = GetAbsDistanceFromBeat(1);
         //^^^^ moved these to more direct getters.
 
+        if(!isGameScene) {
+            return;
+        }
+
 
         //If we've hit major beats (1, 0.5, 0.25) send out events.
         float beat = GetBeat();
@@ -161,7 +356,6 @@ public class BeatController : MonoBehaviour
             Global.Boss.EndOfBeat1();
             Global.Player.EndOfBeat1();
         } else if(dist < MINIMUM.thresholdAfterBeat) {//> 1 - MINIMUM.thresholdBeforeBeat) {
-            //Debug.Log(dist - MINIMUM.thresholdAfterBeat);
             //if we've moved on to the next beat, open this flag 
             beatEnded1 = false;
         }
@@ -185,14 +379,13 @@ public class BeatController : MonoBehaviour
             //if we've moved on to the next beat, open this flag 
             beatEnded025 = false;
         }
-
     }
 
     //instead of tracker variables, use more direct getters. 
     //non-interpolated.
     public static float GetBeat() {
         double pos = AudioSettings.dspTime - songStartTime;
-        return (float)(pos / secPerBeat);
+        return (float)(baselineBeat + (pos / secPerBeat));
     }
 
     //interpolates w/ Time.time if audio time hasn't changed between frames. 
@@ -210,11 +403,7 @@ public class BeatController : MonoBehaviour
     }
 
     //ex. for 1, 5.1 returns 0.1, 5.5 returns 0.5, 5.9 returns 0.9
-    public static float GetDistanceFromBeat() {
-        //return GetDistanceFromBeat(1);
-        return GetBeat() % 1;
-    }
-    public static float GetDistanceFromBeat(float fraction) {
+    public static float GetDistanceFromBeat(float fraction = 1) {
         //return GetDistanceFromBeat(fraction, GetBeat());
         return GetBeat() % fraction;
     }
@@ -228,10 +417,7 @@ public class BeatController : MonoBehaviour
         b = -Mathf.Abs(b);
         return b + 0.5f;
     }*/
-    public static float GetAbsDistanceFromBeat() {
-        return GetAbsDistanceFromBeat(1);
-    }
-    public static float GetAbsDistanceFromBeat(float fraction) {
+    public static float GetAbsDistanceFromBeat(float fraction = 1) {
         return GetAbsDistanceFromBeat(fraction, GetBeat());
     }
     public static float GetAbsDistanceFromBeat(float fraction, float beat) {
@@ -242,10 +428,7 @@ public class BeatController : MonoBehaviour
 
     //for use by player actions. 
     //are we on beat, within the actionable threshold, according to a certain fraction?
-    public static bool IsOnBeat() {
-        return IsOnBeat(1);
-    }
-    public static bool IsOnBeat(float fraction) {
+    public static bool IsOnBeat(float fraction = 1) {
         return IsOnBeat(fraction, GetBeat());
     }
     public static bool IsOnBeat(float fraction, float beat) {
@@ -272,10 +455,8 @@ public class BeatController : MonoBehaviour
 
     //get the current accuracy. returns an Accuracy, which 
     //can be checked against, for example. BeatController.PERFECT 
-    public static Accuracy GetAccuracy() {
-        return GetAccuracy(1);
-    }
-    public static Accuracy GetAccuracy(float fraction) {
+    public static Accuracy GetAccuracy(float fraction = 1) {
+       
         return GetAccuracy(fraction, GetBeat());
     }
     public static Accuracy GetAccuracy(float fraction, float beat) {
@@ -290,7 +471,10 @@ public class BeatController : MonoBehaviour
                     return a;
                 }
             }
+
+            //ComboIndicator.comboCounter = 0;
             return TOO_LATE;
+            
         } else {
             //if before 
             foreach(Accuracy a in accuraciesToCheck) {
@@ -298,15 +482,15 @@ public class BeatController : MonoBehaviour
                     return a;
                 }
             }
+
+            //ComboIndicator.comboCounter = 0;
             return TOO_EARLY;
         }
+
     }
 
     //Gets the nearest beat of this fraction, both before and after.
-    public static float GetNearestBeat() {
-        return GetNearestBeat(1);
-    }
-    public static float GetNearestBeat(float fraction) {
+    public static float GetNearestBeat(float fraction = 1) {
         return GetNearestBeat(fraction, GetBeat());
     }
     public static float GetNearestBeat(float fraction, float beat) {
@@ -372,5 +556,4 @@ public class BeatController : MonoBehaviour
             yield return null;
         }
     }
-
 }

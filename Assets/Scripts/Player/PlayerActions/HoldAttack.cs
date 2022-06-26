@@ -5,27 +5,22 @@ using UnityEngine;
 public class HoldAttack : PlayerAction
 
 {
-    public float damage;//How much damage this attack does
-    public float baseDamage;//How much damage this attack does at the start
+    //public float damage;//How much damage this attack does
+    public float startDamage;//How much damage this attack does at the start
 
     public float DamageGain; //how mucn damage gains per frame of hold
     [SerializeField] private float maxHoldLength;//How long you can hold for
 
-    bool isHolding = false; //check if player is holding the key
+//check if player is holding the key
+    public static bool isHolding {get; private set;}
 
     IEnumerator currentCoroutine;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        baseDamage = damage;
-        DamageGain = 0.01f;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        isHolding = false;
+        base.Start();
     }
 
 /*
@@ -53,20 +48,16 @@ public class HoldAttack : PlayerAction
     
     public override void CheckInput() {
         
-        base.CheckInput();
-
         if(isHolding){
             if(!Input.GetKey(key)){
-                isHolding = false;//DEBUG
+                isHolding = false;
                 //Debug.Log("isHolding = false line 55");
 
-                if(isHolding != true) {
-                //break;
-                    MessupHold();
-                    Debug.Log("MessupHold()");
-                }
+                MessupHold();
+                //Debug.Log("MessupHold()");
             }
         }
+        base.CheckInput();
 
     }
     
@@ -76,6 +67,7 @@ public class HoldAttack : PlayerAction
 
             //if we're on beat 
             Accuracy curAccuracy = BeatController.GetAccuracy(beatFraction);
+            Debug.Log(curAccuracy.name);
             Global.Player.spriteController.DisplayAccuracy(curAccuracy);
             if(BeatController.IsOnBeat(beatFraction)) {//curAccuracy.priority > 0) {
                 
@@ -83,9 +75,8 @@ public class HoldAttack : PlayerAction
                 //if(isHolding == true){
                     //Success();
                 //}
-
                 Success();
-                Debug.Log("Success() line 77");
+                //Debug.Log("Success() line 77");
                 
             }
             else {
@@ -111,9 +102,9 @@ public class HoldAttack : PlayerAction
         myActionIndicator.PerformAction();
         currentCoroutine = HoldCoroutine();
         StartCoroutine(currentCoroutine);
+        Global.CenterEffectManager.CallCenterEffect(CenterEffect.PlayerHits);
+
     }
-
-
 
 
     public IEnumerator HoldCoroutine() {
@@ -122,11 +113,15 @@ public class HoldAttack : PlayerAction
         Global.Player.spriteController.Attack(1);
         isHolding = true;
         t = BeatController.GetBeat();
-
-//DEBUG
+        damage = startDamage;
+        DmgNumber.curContinuousPlayerDamage = Mathf.RoundToInt(damage*10)/10f;
+        Global.Player.dmgNumber.StartPlayerDamageContinuous(maxHoldLength);
+        //Debug.Log("startattack");
+//DEBUG 
         while(t < startTime + maxHoldLength){
+            damage += DamageGain * (BeatController.GetBeat() - t);
+            DmgNumber.curContinuousPlayerDamage = Mathf.RoundToInt(damage*10)/10f;
             t = BeatController.GetBeat();
-            damage += DamageGain;
 
             //Global.Boss.ChangeBossHP(-damage);
 
@@ -136,7 +131,15 @@ public class HoldAttack : PlayerAction
                 Debug.Log("isHolding != true line 113");
             }*/
             yield return null;
-        } 
+        }
+       // Debug.Log("Attacked: " + damage);
+        //Damage is comboed
+        damage = ComboIndicator.comboMultiplier(damage);
+        damage= Mathf.Round(damage);
+        Global.CenterEffectManager.CallCenterEffect(CenterEffect.PlayerHits);
+        Global.Boss.ChangeVisualBossHP(-damage);
+        Global.Boss.ChangeBossHP(-damage);
+        
         isHolding = false;
         
         /*if(t >= startTime){
@@ -149,11 +152,15 @@ public class HoldAttack : PlayerAction
     }
     //have a function that controls HoldCourotine
     void MessupHold(){//DEBUG
-        
+
+        damage = ComboIndicator.comboMultiplier(damage);
+        damage= Mathf.Round(damage);
         Global.Boss.ChangeBossHP(-damage);
-        damage = baseDamage;
+        //Global.Boss.ChangeVisualBossHP(-damage);
+        damage = startDamage;
         
         StopCoroutine(currentCoroutine);
+        myActionIndicator.StopAction();
         //Debug.Log("MessupHold() line 125");
     }
 

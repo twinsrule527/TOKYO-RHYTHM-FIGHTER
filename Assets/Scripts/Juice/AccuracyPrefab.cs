@@ -6,17 +6,12 @@ public class AccuracyPrefab : MonoBehaviour
 {
 
     [SerializeField] SpriteRenderer mySpriteRenderer;
+    public bool isEnabled { get { return mySpriteRenderer.enabled; } }
 
     // Start is called before the first frame update
     void Start()
     {
         mySpriteRenderer.enabled = false;   
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     //Called by the PlayerSpriteController when this accuracy needs to be displayed.
@@ -25,6 +20,11 @@ public class AccuracyPrefab : MonoBehaviour
         StopCoroutine(DisplayCoroutine()); //if this accuracy was already being displayed
         StartCoroutine(DisplayCoroutine());
         
+    }
+
+    public void StopDisplay() {
+        StopCoroutine(DisplayCoroutine());
+        mySpriteRenderer.enabled = false;
     }
 
     IEnumerator DisplayCoroutine() {

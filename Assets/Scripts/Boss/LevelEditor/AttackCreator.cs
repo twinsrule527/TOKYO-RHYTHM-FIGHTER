@@ -4,8 +4,12 @@ using UnityEngine;
 //Input script that outputs the attack patterns for a boss
 public static class AttackCreator
 {
-    public static void CreateAttackPatterns(List<List<char>> atks, BossAI myBoss) {
-        Bag<AttackPattern> bossBag = myBoss.attackBag;
+    public static void CreateAttackPatterns(List<List<char>> atks, BossAI myBoss, int stage) {
+        //First, makes sure the proper bag exists, by adding empty bags to the bossAI
+        while(myBoss.attackBag.Count <= stage) {
+            myBoss.attackBag.Add(new Bag<AttackPattern>());
+        }
+        Bag<AttackPattern> bossBag = new Bag<AttackPattern>();
         //Gets a dictionary, for which it will assign all attacks
         Dictionary<char, BossAttack> atkKeys = new Dictionary<char, BossAttack>();
         List<BossAttack> bossAttacks = new List<BossAttack>(myBoss.GetComponentsInChildren<BossAttack>());
@@ -28,14 +32,16 @@ public static class AttackCreator
             }
             bossBag.AddToLineup(new AttackPattern(newAttacks, myBoss, i.ToString()));
         }
+        //Add this pattern to the bossList
+        myBoss.attackBag[stage] = bossBag;
     }
 
-    public static void CreateAttackPatterns(List<string> atks, BossAI myBoss) {
+    public static void CreateAttackPatterns(List<string> atks, BossAI myBoss, int stage) {
         List<List<char>> atksNew = new List<List<char>>();
         for(int i = 0; i < atks.Count; i++) {
             List<char> pattern = new List<char>(atks[i]);
             atksNew.Add(pattern);
         }
-        CreateAttackPatterns(atksNew, myBoss);
+        CreateAttackPatterns(atksNew, myBoss, stage);
     }
 }

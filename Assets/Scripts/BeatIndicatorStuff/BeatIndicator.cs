@@ -6,22 +6,28 @@ public class BeatIndicator : MonoBehaviour
 {
 
     [SerializeField] public SpriteRenderer mySprite;
-    [SerializeField] public float beatToHit {private set; get;}
+    [SerializeField] public float beatToHit {protected set; get;}
     [SerializeField] protected float startBeat;//The beat that this first shows up on
     public bool moving;
-    float fadeOutTime = 0.25f;
+    //float fadeOutTime = BeatController.MINIMUM.thresholdAfterBeat;
+    float fadeOutTime = 0;
     public Vector3 startPos;
     public Quaternion startRot;
     public Vector3 endPos;
 
-    Vector3 distPerBeat;
-    [SerializeField] Color originalColor;
+    protected Vector3 distPerBeat;
+    [SerializeField] protected Color originalColor;
+
+    [SerializeField] List<Sprite> animationFrames;
+    [SerializeField] protected bool animated = false;
 
     void Awake() {
         mySprite = GetComponent<SpriteRenderer>();
         originalColor = mySprite.color;
+        if(animationFrames.Count > 1) {
+            animated = true;
+        }
     }
-
     void Update()
     {   
         //if(moving) {
@@ -31,6 +37,13 @@ public class BeatIndicator : MonoBehaviour
             if(lerpValue == 1) { //&& !moving) {
                 //Deactivates when it reaches 1
                 PastCenter();
+            }
+
+            if(animated) {
+                
+                //pick the frame based on where we are between 0 and 1, but dont go over Count-1
+                int frame = Mathf.FloorToInt(Mathf.Clamp((lerpValue * animationFrames.Count), 0f, (animationFrames.Count - 1f)));
+                mySprite.sprite = animationFrames[frame];
             }
         //}
     }
@@ -90,6 +103,10 @@ public class BeatIndicator : MonoBehaviour
         yield return null;
         enabled = false;
         mySprite.enabled = false;
+    }
+
+    public void SetBeatToHit(float beat) {
+        beatToHit = beat;
     }
 
 
