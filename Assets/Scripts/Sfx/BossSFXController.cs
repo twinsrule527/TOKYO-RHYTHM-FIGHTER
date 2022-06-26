@@ -11,7 +11,7 @@ public class BossSFXController : SFXController
     int dontPlayOnThisBeat = -1; //this is hardcoded to only work on on-beat attacks- would have to change if adding off beat attacks (!!!)
 
     float volumeNormal = 1;
-    float volumeLow = 0.60f;
+    float volumeLow = 0.55f;
 
     void Start() {
     }
