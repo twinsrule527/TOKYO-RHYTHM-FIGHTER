@@ -36,9 +36,6 @@ public class BossSFXController : SFXController
             bossAudioSource.volume = volumeNormal;
         }
 
-        Debug.Log("volume " + bossAudioSource.volume + ", beat dont play on " + dontPlayOnThisBeat + ", beat " + BeatController.GetNearestBeat());
-
-
         if(atkNum == -1 || atkNum >= bossAttackSounds.Count) {
             atkNum = Random.Range(0, bossAttackSounds.Count);
         }
