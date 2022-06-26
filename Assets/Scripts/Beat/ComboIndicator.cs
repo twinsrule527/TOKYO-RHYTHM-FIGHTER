@@ -16,7 +16,7 @@ public class ComboIndicator : MonoBehaviour
     private static int maxComboCounted = 20; //past this number of notes combo'd, won't matter
     private List<PlayerAction> playerActions;
 
-    private static float dmgMultiplier = 0.2f;
+    public static readonly float dmgMultiplier = 0.2f; //actually the amount of damage added with each note in a combo- TODO rename this 
 
     [SerializeField] ShakeRect shaker;
 

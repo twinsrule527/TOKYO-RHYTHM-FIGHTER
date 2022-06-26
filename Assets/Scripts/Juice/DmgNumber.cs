@@ -94,10 +94,15 @@ public class DmgNumber : MonoBehaviour
 
     public static float curContinuousPlayerDamage;
     public void StartPlayerDamageContinuous(float timeToCheck) {
+
+        //jump the number up to the top for responsiveness 
+        ResponsiveDisplayBoss(0f); //damage will be set in the coroutine
+
         StartCoroutine(PlayerDmgContinuous(timeToCheck));
     }
 
     private IEnumerator PlayerDmgContinuous(float timeToCheck) {
+        
         BossDmgText.text = (curContinuousPlayerDamage).ToString();
         float startTime = BeatController.GetBeat();
         float t = startTime;
@@ -141,7 +146,14 @@ public class DmgNumber : MonoBehaviour
             bossRunning = false;
         }
         BossDmgText.transform.position = originalBossDmg;
-        BossDmgText.text = damage.ToString();
+
+        //assume keeping a combo so the # doesn't change midway once the combo is actually added to 
+        if(Global.ComboIndicator.GetCombo() > 0) {
+            BossDmgText.text = (damage + ComboIndicator.dmgMultiplier).ToString();
+        } else {
+            BossDmgText.text = damage.ToString();
+        }
+        
     }
 
 /*
